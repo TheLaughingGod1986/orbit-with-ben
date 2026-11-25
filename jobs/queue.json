@@ -341520,7 +341520,7 @@
     {
       "id": "J3737",
       "title": "HOS 013 Darwin & Wallace: non-producer review & port of J2652 v03f-r4 (ad52a2dc) to main",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Queued by Acting Chief (gemini, J3734, 25 Nov 2026). HOS 013 (Darwin & Wallace) is slotted **Thu 31 Dec 2026 18:00 London** (early Ben watch target Tue 22 Dec; hard cutoff Mon 28 Dec).\n\n**Why:** `J2652` (v03f-r4 £0 free graphics 35/35 + 515 s timing rough `hos_013_timing_rough_J2652_v03f_r4bb.mp4`) was authored by `gemini` on commit `ad52a2dc10601e9cc875e248abb2c83d0e0612a6` (HOS PR `#551`, which was closed unmerged on 18 Nov). Under the studio non-producer rule, `gemini` cannot self-review `ad52a2dc`.\n\n**Do (independent non-producer reviewer — Claude or Codex, NOT gemini; £0):**\n1. Inspect `ad52a2dc` (390px sheets `CONTACT_SHEET_v03f_r4_390px.jpg`, `CHAPTER_WINDOWS_v03f_r4_390px.jpg`, and the 7 checks from Chief ruling `#6808560760`).\n2. Confirm `PICTURE_PLAN_v02.json` is not overwritten and all 3 prior Claude/Chief review items (`#6945397541` / `#6957443445`) are fixed.\n3. On PASS: port `ad52a2dc` cleanly onto current HOS `main` in a fresh PR (preserving newer `main` files), verify `check_all.sh` + CI green, merge (if elected Chief) or park for Chief merge, and close `J2652` as `done`. £0 / 0 credits spent.\n",
       "ref": "J2652",
@@ -341540,12 +341540,25 @@
           "at": "2026-11-25T19:17Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T19:17Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Claude or Codex (not gemini) reviews ad52a2dc 390px sheets, ports to main, and closes J2652",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
-      "plain": "Independently review and merge 013's 35 free graphics and timing rough (J2652)"
+      "plain": "Independently review and merge 013's 35 free graphics and timing rough (J2652)",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3738",
