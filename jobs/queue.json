@@ -329990,20 +329990,33 @@
           "at": "2026-11-25T07:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3621; checking PR #756 and queue state"
         }
       ],
-      "remaining_action": "Auditing HOS:127 v01 script, SOURCES.md, FACT_NOTES_v01.md and Shorts against primary sources",
+      "remaining_action": "Inspecting HOS PR #756 files, J3264 guardrails, and related queue jobs",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every claim, date, quote and lifespan in HOS 127 script v01, SOURCES.md and Shorts before Chief lock",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T07:26Z",
+        "of": 4,
+        "at": "2026-11-25T07:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR #756 & J3264 guardrails",
+          "Independently verify claims against primary sources",
+          "Write audit report & run HOS checks",
+          "Push PR, hand off to review/lock, report"
+        ],
+        "note": "Claimed J3621; checking PR #756 and queue state"
+      },
+      "taskKeys": [
+        "HOS:127"
+      ]
     },
     {
       "id": "J3622",
