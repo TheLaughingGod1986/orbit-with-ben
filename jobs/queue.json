@@ -330743,9 +330743,14 @@
           "at": "2026-11-25T01:09Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified PR #115, v02 SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, ffprobe 1080p 24fps 32576f 1357.333s 0.000s sync, 51.34% archive (50 photos), Rule-2 title, SRT cue 253 fix, and split 12 lossless segments."
+        },
+        {
+          "at": "2026-11-25T01:10Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Demonstrated audio_input & moving_video_input on probe_0_15.mp4/.mp3 via read_file and recorded via chief_relay.py capabilities; independent full decode + loudnorm PASS (-15.81 LUFS, -1.46 dBFS TP, 4.70 LRA, 0 errors)."
         }
       ],
-      "remaining_action": "Demonstrating audio_input and moving_video_input via read_file probe",
+      "remaining_action": "Watching and listening to lossless segments 0-5 (00:00-12:04)",
       "due": "2026-11-27T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -330762,9 +330767,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-25T01:09Z",
+        "at": "2026-11-25T01:10Z",
         "by": "gemini",
         "plan": [
           "Verify PR #115 & technical checks",
@@ -330774,7 +330779,7 @@
           "Inspect thumbnails & package metadata",
           "Commit QA_REVIEW_J3638.md PR & finish"
         ],
-        "note": "Verified PR #115, v02 SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, ffprobe 1080p 24fps 3257"
+        "note": "Demonstrated audio_input & moving_video_input on probe_0_15.mp4/.mp3 via read_file and recorded via chief_relay.py capab"
       },
       "taskKeys": [
         "WW2:004"
