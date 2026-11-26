@@ -299926,22 +299926,28 @@
           "at": "2026-11-26T04:39Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-26T04:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c, 204117 B, 1280x720). Blocked: Orbit Studio CDP :9223 is signed out at accounts.google.com after 02:06Z reboot (0 auth cookies)."
         }
       ],
-      "remaining_action": "Verify J3307/J3382 preconditions, file hash, and read-only Studio state on CDP 9223",
+      "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T016 check on REXYxuLOBoI and arm T043",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-26T04:39Z",
+        "at": "2026-11-26T04:41Z",
         "by": "gemini",
         "plan": [
           "Verify preconditions and file hash",
           "Fresh read-only Studio check on REXYxuLOBoI",
           "Arm T043 and verify reload Test running",
           "Update THUMB_LEDGER and publish"
-        ]
+        ],
+        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7"
       },
       "taskKeys": [
         "OWB:005"
