@@ -350242,9 +350242,14 @@
           "at": "2026-11-26T20:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T20:37Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Verify PT21M2S/PT21M1S live, shift description chapters (00:00/02:08/05:00/09:24/13:25/17:57), check/upload retimed en-GB SRT v07 from NAS trim_receipt_v01, restore end screen in last 20s, read back Studio + API, and open ww2-channel PR with TRIM_RECEIPT_v01.md, status.json and LEARNINGS.md",
+      "remaining_action": "Inspecting NAS master, WW2 API tools, and recording before state",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -350253,11 +350258,17 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T20:36Z",
+        "of": 6,
+        "at": "2026-11-26T20:37Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Record before state",
+          "Measure master audio",
+          "Cut A and B in Studio",
+          "Wait for processing",
+          "Update chapters captions end screen",
+          "Write receipt and open PR"
+        ]
       }
     },
     {
