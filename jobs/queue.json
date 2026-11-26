@@ -318641,9 +318641,14 @@
           "at": "2026-11-26T00:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:41Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3469; starting condition verification for J2704"
         }
       ],
-      "remaining_action": "Verify readiness: Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
+      "remaining_action": "Inspect J2704, J2708, related jobs, and HOS validation evidence",
       "kind": "review",
       "recheck_of": "J2704",
       "mini_only": true,
@@ -318662,8 +318667,12 @@
         "of": 3,
         "at": "2026-11-26T00:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J2704/J2708 history & evidence",
+          "Verify hosted Preview PostgreSQL condition",
+          "Update J2704 state & complete J3469"
+        ],
+        "note": "Claimed J3469; starting condition verification for J2704"
       }
     },
     {
