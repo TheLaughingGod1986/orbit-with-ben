@@ -348147,15 +348147,20 @@
           "at": "2026-11-26T12:55Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Claude heartbeat 2026-11-26T12:52:25Z says out until 17:50Z. Codex still limited until Nov 27 16:26. HOS PRs 799 and 798 still open, mergeable, checks green. Condition unmet."
+        },
+        {
+          "at": "2026-11-26T12:55Z",
+          "by": "cursor",
+          "what": "step 3 of 3 done: Hold update refused: only the holder or elected Chief may update J3781. Parked for the Chief with the 17:50Z check."
         }
       ],
-      "remaining_action": "Record the unmet Chief-availability hold on the Trinity Shorts voice review",
+      "remaining_action": "Elected Chief records the unmet hold and closes this check",
       "kind": "review",
       "recheck_of": "J3781",
       "due": "2026-11-26T13:50:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-26T12:55Z",
         "by": "cursor",
@@ -348164,7 +348169,7 @@
           "Check heartbeat and pull requests",
           "Record the condition"
         ],
-        "note": "Claude heartbeat 2026-11-26T12:52:25Z says out until 17:50Z. Codex still limited until Nov 27 16:26. HOS PRs 799 and 798"
+        "note": "Hold update refused: only the holder or elected Chief may update J3781. Parked for the Chief with the 17:50Z check."
       },
       "taskKeys": [
         "HOS:136"
