@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3704 | mini | blocked | codex | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
-| J3714 | mini | blocked | gemini | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
+| J3714 | mini | open | – | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
 | J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |

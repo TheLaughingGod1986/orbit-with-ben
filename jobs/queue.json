@@ -341153,13 +341153,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T18:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
-      "result": "Waiting for: YouTube Studio editor processing of RqYjADxvJy8 (confirmed 2026-11-26T19:03:22Z; Cut A 93.749-183.064s, Cut B 411.952-444.579s, target 23:48 / PT23M49S; 3-way T&C intact). Retimed v02 captions/chapters committed locally at 5859e21 on gemini/J3714-b29-pre-air-trim in /Volumes/MiniWork/scratch/J3714-gemini-ww2; join_A.mp4 and join_B.mp4 on NAS 07_Edit/v01_trim/.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T14:02Z",
@@ -341270,6 +341270,11 @@
           "at": "2026-11-26T19:08Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T19:35:00Z"
+        },
+        {
+          "at": "2026-11-26T19:37Z",
+          "by": "relay",
+          "what": "reopened: its start time 2026-11-26T19:35:00Z has come (release-at-time hold)"
         }
       ],
       "remaining_action": "Confirm RqYjADxvJy8 finished processing (~23:48), apply DESCRIPTION_v02.txt, verify/replace en-GB captions, verify/set end screen in last 20s, read back Studio + API, commit TRIM_RECEIPT_v01.md + status.json + LEARNINGS.md PR for Chief, and restore Orbit on browser 9223",
@@ -341279,29 +341284,7 @@
       "taskKeys": [
         "WW2:003"
       ],
-      "urgent": 8,
-      "progress": {
-        "step": 4,
-        "of": 7,
-        "at": "2026-11-26T19:05Z",
-        "by": "gemini",
-        "plan": [
-          "Measure silence and music on master",
-          "Record before state in Studio and API",
-          "Cut A and B in Studio editor and save",
-          "Render join clips and sync trim package",
-          "Update description captions and end screen",
-          "Read back processed video in Studio and API",
-          "Commit receipt learnings and open PR"
-        ],
-        "note": "Rendered 20s join_A.mp4 (sha256 7dedb584...) and join_B.mp4 (sha256 61723322...) on NAS 07_Edit/v01_trim/; regenerated w"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "YouTube Studio editor processing of RqYjADxvJy8 (confirmed 2026-11-26T19:03:22Z; Cut A 93.749-183.064s, Cut B 411.952-444.579s, target 23:48 / PT23M49S; 3-way T&C intact). Retimed v02 captions/chapters committed locally at 5859e21 on gemini/J3714-b29-pre-air-trim in /Volumes/MiniWork/scratch/J3714-gemini-ww2; join_A.mp4 and join_B.mp4 on NAS 07_Edit/v01_trim/.",
-        "check_at": "2026-11-26T19:35:00Z",
-        "release": "auto"
-      }
+      "urgent": 8
     },
     {
       "id": "J3715",
