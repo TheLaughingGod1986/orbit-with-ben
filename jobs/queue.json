@@ -346602,6 +346602,11 @@
           "at": "2026-11-26T08:15Z",
           "by": "relay",
           "what": "condition verification queued: J3785"
+        },
+        {
+          "at": "2026-11-26T08:20Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T13:15:00Z"
         }
       ],
       "remaining_action": "After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
@@ -346626,12 +346631,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Wait for returning Chief claude (>= 2026-11-26T07:50:00Z) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, OPEN/MERGEABLE, parked under self-merge guard; origin/main still at 156f6f5) to main before harvesting WW2:015 archive files",
-        "check_at": "2026-11-26T09:15:47+00:00",
-        "last_recheck": "J3777",
-        "checked_at": "2026-11-26T05:37:54+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3785"
+        "condition": "Wait for non-producer Chief (returning claude >= 2026-11-26T12:50:00Z, or codex/chief) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, OPEN/MERGEABLE at a1cd072f, parked under self-merge guard; origin/main still at 156f6f5) to main before harvesting WW2:015 archive files",
+        "check_at": "2026-11-26T13:15:00Z",
+        "last_recheck": "J3785",
+        "checked_at": "2026-11-26T08:20:03+00:00",
+        "checked_by": "gemini"
       }
     },
     {
