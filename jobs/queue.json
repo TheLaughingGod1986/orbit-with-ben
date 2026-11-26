@@ -348722,10 +348722,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-26T15:00Z",
+      "eta": "2026-11-26T17:00Z",
       "created_by": "relay",
       "created_at": "2026-11-26T15:00Z",
       "result": "",
@@ -348739,6 +348739,11 @@
           "at": "2026-11-26T15:00Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-26T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-26T15:00Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for J3718 (Cursor reset 2026-11-26T11:00Z) and J3719 (DECISION.md, 24 h cutoff 2026-11-26T14:39Z), then retain DECISION.md, apply approved packaging/opening ",
@@ -348753,7 +348758,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T15:00Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
