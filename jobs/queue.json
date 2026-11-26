@@ -344047,15 +344047,20 @@
           "at": "2026-11-26T00:24Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Dry run passed 5/7 gates (gate_shorts_open, frame0, cover, sfx_level, music_gate); swapped S04/S05/S06/S08/S09 to polish_gate-clean 032 plates and tightened hook fade to 1.76s."
+        },
+        {
+          "at": "2026-11-26T00:29Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: All 7 gates PASS (0/25 & 0/50 padded frames, 0 polish_gate/picture_qa fails, SFX/music/thumb PASS) and NAS SHA-256 verified: 494f092b857d."
         }
       ],
-      "remaining_action": "Rebuilding 032 Short #1 with 5 polish-gate-clean plates, re-running all 7 gates, and verifying NAS copies",
+      "remaining_action": "Writing handoff report, pushing PR, posting #99 report, and parking J3758 for Chief Short PASS",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-26T00:24Z",
+        "at": "2026-11-26T00:29Z",
         "by": "gemini",
         "plan": [
           "Select OWB long with fewest Shorts",
@@ -344064,7 +344069,7 @@
           "Run Short, SFX and thumb gates",
           "Commit, post report on #99 and park for Chief"
         ],
-        "note": "Dry run passed 5/7 gates (gate_shorts_open, frame0, cover, sfx_level, music_gate); swapped S04/S05/S06/S08/S09 to polish"
+        "note": "All 7 gates PASS (0/25 & 0/50 padded frames, 0 polish_gate/picture_qa fails, SFX/music/thumb PASS) and NAS SHA-256 verif"
       },
       "taskKeys": [
         "OWB:032"
