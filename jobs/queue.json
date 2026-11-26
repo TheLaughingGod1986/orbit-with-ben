@@ -323062,13 +323062,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T23:39Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-26T23:57Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "parked for Chief: merge fresh verify-swap readback PR #1356 (at 2026-11-26T23:43:24.928Z, valid 2h until 2026-11-27T01:43Z) and close J3510 done; swap already live and accepted in PR #1258/#1259/#1335 (k2kEaA7ICjc private/null, emKN9xjDswI private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM 2026-12-06T18:00:00Z)",
+      "result": "Swap to v06 complete and freshly read back (jobs/readbacks/J3510.json at 2026-11-26T23:43:24Z, ok; PR #1356 merged): emKN9xjDswI Private for Fri 11 Dec 2026 11:30Z; old k2kEaA7ICjc retired Private. Claude, acting Chief.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -323159,6 +323159,21 @@
           "at": "2026-11-26T23:44Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: merge fresh verify-swap readback PR #1356 (at 2026-11-26T23:43:24.928Z, valid 2h until 2026-11-27T01:43Z) and close J3510 done; swap already live and accepted in PR #1258/#1259/#1335 (k2kEaA7ICjc private/null, emKN9xjDswI private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM 2026-12-06T18:00:00Z)"
+        },
+        {
+          "at": "2026-11-26T23:57Z",
+          "by": "claude",
+          "what": "reopened: PR #1356 merged (982a425d): fresh verify-swap read-back at 2026-11-26T23:43:24Z, ok."
+        },
+        {
+          "at": "2026-11-26T23:57Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:57Z",
+          "by": "claude",
+          "what": "done: Swap to v06 complete and freshly read back (jobs/readbacks/J3510.json at 2026-11-26T23:43:24Z, ok; PR #1356 merged): emKN9xjDswI Private for Fri 11 Dec 2026 11:30Z; old k2kEaA7ICjc retired Private. Claude, acting Chief."
         }
       ],
       "remaining_action": "Chief merge of fresh readback PR #1356 and close J3510 done before 2026-11-27T01:43Z",
@@ -323184,19 +323199,7 @@
       "taskKeys": [
         "OWB:029"
       ],
-      "escalated_at": "2026-11-24T16:56Z",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-26T23:44Z",
-        "by": "gemini",
-        "plan": [
-          "Read back YouTube state & verify-swap",
-          "Check records and save readback",
-          "Post report and close J3510"
-        ],
-        "note": "Opened PR #1356 (fresh 23:43:24Z verify-swap readback) and posted studio thread report; parking for Chief merge/close"
-      }
+      "escalated_at": "2026-11-24T16:56Z"
     },
     {
       "id": "J3511",
