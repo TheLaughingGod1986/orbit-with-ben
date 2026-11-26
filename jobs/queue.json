@@ -329445,13 +329445,13 @@
       "stage": "vo",
       "after": "J3555",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T07:46Z",
-      "eta": "2026-11-26T09:46Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T17:02Z",
-      "result": "",
+      "result": "Waiting for: ElevenLabs monthly reset at 2026-11-30 10:50Z (live balance 7,275 cr at 2026-11-26T07:30Z < 18,011 chars needed for NARRATION_v02.txt) plus Pilot 2 (qfc6EBStOfo) 48h/7d Rule-12 check in ww2-channel/studio/LEARNINGS.md. PR #100 (macbook/J3555) is already merged on ww2-channel main with verified NARRATION_v02.txt SHA-256 4277f27052f8e9fe8d8253e05dcfb67652c0cb0efaaf3c01862b983d30e125e1.",
       "history": [
         {
           "at": "2026-11-24T17:02Z",
@@ -329467,9 +329467,19 @@
           "at": "2026-11-26T07:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Early wake at 2026-11-26T07:47Z before 2026-11-30 10:50Z reset (live ElevenLabs balance 7,275 cr < 18,011 chars needed). Verified PR #100 merged on ww2-channel main with NARRATION_v02.txt SHA-256 4277f27052f8e9fe8d8253e05dcfb67652c0cb0efaaf3c01862b983d30e125e1. Spent GBP 0 / 0 credits; parking on structured credits wait."
+        },
+        {
+          "at": "2026-11-26T07:48Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: ElevenLabs monthly reset at 2026-11-30 10:50Z (live balance 7,275 cr at 2026-11-26T07:30Z < 18,011 chars needed for NARRATION_v02.txt) plus Pilot 2 (qfc6EBStOfo) 48h/7d Rule-12 check in ww2-channel/studio/LEARNINGS.md. PR #100 (macbook/J3555) is already merged on ww2-channel main with verified NARRATION_v02.txt SHA-256 4277f27052f8e9fe8d8253e05dcfb67652c0cb0efaaf3c01862b983d30e125e1."
+        },
+        {
+          "at": "2026-11-26T07:48Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-30T11:00:00Z"
         }
       ],
-      "remaining_action": "Wait until 2026-11-30T11:00:00Z after ElevenLabs reset (10:50Z), then verify Pilot 2 Rule-12 check and record NARRATION_v02.txt",
+      "remaining_action": "After 2026-11-30T10:50Z reset, verify live ElevenLabs balance >= 18,011 chars and Pilot 2 Rule-12 check in ww2-channel/studio/LEARNINGS.md, then record NARRATION_v02.txt",
       "due": "2026-12-13T18:00:00Z",
       "kind": "vo",
       "plain": "Record Ben's voice narration for WW2 film 014 (Dambusters) after the 30 Nov ElevenLabs reset and Pilot 2 check",
@@ -329489,7 +329499,12 @@
       },
       "taskKeys": [
         "WW2:014"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs monthly reset at 2026-11-30 10:50Z (live balance 7,275 cr at 2026-11-26T07:30Z < 18,011 chars needed for NARRATION_v02.txt) plus Pilot 2 (qfc6EBStOfo) 48h/7d Rule-12 check in ww2-channel/studio/LEARNINGS.md. PR #100 (macbook/J3555) is already merged on ww2-channel main with verified NARRATION_v02.txt SHA-256 4277f27052f8e9fe8d8253e05dcfb67652c0cb0efaaf3c01862b983d30e125e1.",
+        "check_at": "2026-11-30T11:00:00Z"
+      }
     },
     {
       "id": "J3587",
