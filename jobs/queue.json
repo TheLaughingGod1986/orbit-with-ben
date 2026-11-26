@@ -337606,20 +337606,33 @@
           "at": "2026-11-26T07:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:17Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3678; starting pre-flight checks"
         }
       ],
-      "remaining_action": "Check ElevenLabs balance and record 5 long VO parts for HOS 136 from locked v02 script",
+      "remaining_action": "Verifying locked script v02 SHA-256, live ElevenLabs balance, and HOS:128 credit priority",
       "due": "2026-12-04T18:00:00Z",
       "kind": "vo",
       "plain": "Record the 5-part long narration for HOS 136 (Trinity Test Explained) from the locked v02 script in Ben's voice",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T07:16Z",
+        "of": 4,
+        "at": "2026-11-26T07:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify script hash and ElevenLabs balance",
+          "Record 5 VO parts via API",
+          "Run vo_check_py312 on all parts",
+          "Commit VO evidence PR and park for review"
+        ],
+        "note": "Claimed J3678; starting pre-flight checks"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3679",
