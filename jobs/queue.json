@@ -1,5 +1,5 @@
 {
-  "next_id": 3768,
+  "next_id": 3769,
   "jobs": [
     {
       "id": "J0001",
@@ -345012,6 +345012,35 @@
         "HOS:009",
         "HOS:005"
       ]
+    },
+    {
+      "id": "J3768",
+      "title": "J3766 FIX: reconcile QA sweep top-level identity metadata and report Section 4 (OWB + HOS PR #795)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Reconcile the J3766 QA sweep audit metadata and report Section 4 across both channels. Acting Chief (gemini) ruling: FIX; see jobs/reviews/J3766/REVIEW.md, jobs/reviews/J3766/CHIEF_VALIDATION.json, and jobs/reviews/J3766/FOLLOWUP.md (commit 381ac5db85). This is £0 audit-record metadata repair only: do NOT re-render any media, do NOT re-run gates, do NOT alter any entry's verified sidecar/verdict/warning/fail fields, and do NOT touch YouTube, Buffer, or any film status or holds.\n\nFollow jobs/reviews/J3766/FOLLOWUP.md in full:\n1. Update the 16 stale top-level fields in 00_Brand/Channel-Setup/audits/qa_sweeps/J3766_QA_SWEEP_INVENTORY_2026-11-26.json (scope_and_limits, reconciles_review, identity_verification_summary, and flat directly_hashed_*/directly_readable_* counters) computed strictly from entries (280 total entries = 267 single-file + 13 visual packs with 218 members = 485 enumerated files; 443 unwrapped directly hashed files; 225 unwrapped single-file; 107 local + 105 hydrated NAS + 13 desk/staging-preserved; 238 unwrapped entries; 816/816 fresh sidecars).\n2. Update Section 4 of 00_Brand/Channel-Setup/audits/qa_sweeps/J3766_QA_SWEEP_REPORT_2026-11-26.md to list all 13 silent visual packs (218 member files), appending the 13th visual pack's 24 verified member entries directly from the inventory's pack_members array.\n3. Commit byte-identical updated inventory and report files to OWB main from a clean worktree, and push the exact byte-identical copies to HOS PR #795 (branch gemini/J3766-qa-sweep; do not self-merge; confirm 00_Brand/Channel-Setup/tools/check_all.sh ALL CHECKS PASS).\n4. Run python3 jobs/reviews/J3766/validate_j3766.py --strict against OWB main and HOS PR #795 head and confirm exit code 0 (metadata_issues_count: 0, 0 sidecar/entry mismatches, owb_hos_byte_identical: true).\n5. Park for Chief KEEP review and HOS PR #795 merge with exact new SHA-256s, OWB commit hash, and HOS PR #795 head OID. Ready now; £0 spend; grants no film-stage approval.",
+      "ref": "J3766",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T02:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T02:45Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reconcile the 17 J3766 metadata and Section 4 discrepancies in OWB main and HOS PR #795 until validate_j3766.py --strict exits 0",
+      "kind": "qa",
+      "plain": "Reconcile stale top-level identity counts and Section 4 in the J3766 QA sweep audit across OWB main and HOS PR #795"
     }
   ],
   "focus": [
