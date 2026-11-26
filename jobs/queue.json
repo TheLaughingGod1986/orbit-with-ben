@@ -344042,15 +344042,20 @@
           "at": "2026-11-26T00:22Z",
           "by": "gemini",
           "what": "step 2 of 5 done: All 10 shots rendered (max upscale 1.78x, 0 split words) and AAC calibrated (-14.10 LUFS / -2.20 dBTP); running final encode + gates."
+        },
+        {
+          "at": "2026-11-26T00:24Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Dry run passed 5/7 gates (gate_shorts_open, frame0, cover, sfx_level, music_gate); swapped S04/S05/S06/S08/S09 to polish_gate-clean 032 plates and tightened hook fade to 1.76s."
         }
       ],
-      "remaining_action": "Finalizing 9:16 overlay encode and running 7 automated Short/SFX/thumb/QA gates on 032 Short #1",
+      "remaining_action": "Rebuilding 032 Short #1 with 5 polish-gate-clean plates, re-running all 7 gates, and verifying NAS copies",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-26T00:22Z",
+        "at": "2026-11-26T00:24Z",
         "by": "gemini",
         "plan": [
           "Select OWB long with fewest Shorts",
@@ -344059,7 +344064,7 @@
           "Run Short, SFX and thumb gates",
           "Commit, post report on #99 and park for Chief"
         ],
-        "note": "All 10 shots rendered (max upscale 1.78x, 0 split words) and AAC calibrated (-14.10 LUFS / -2.20 dBTP); running final en"
+        "note": "Dry run passed 5/7 gates (gate_shorts_open, frame0, cover, sfx_level, music_gate); swapped S04/S05/S06/S08/S09 to polish"
       },
       "taskKeys": [
         "OWB:032"
