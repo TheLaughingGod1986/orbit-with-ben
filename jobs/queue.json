@@ -347947,10 +347947,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T12:40Z",
+      "eta": "2026-11-26T13:00Z",
       "created_by": "claude",
       "created_at": "2026-11-26T12:39Z",
       "result": "",
@@ -347959,13 +347959,26 @@
           "at": "2026-11-26T12:39Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T12:40Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reschedule the B-29 Short to the day after the film and link it",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 7
+      "urgent": 7,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T12:40Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
