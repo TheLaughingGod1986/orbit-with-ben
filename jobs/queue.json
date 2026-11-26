@@ -349721,9 +349721,14 @@
           "at": "2026-11-26T18:13Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T18:13Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review inputs, fresh PR and NAS checks, and parent reopening/routing all complete. Separate Chief review steps recorded."
         }
       ],
-      "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RE",
+      "remaining_action": "Verification complete; independent voiceover review continues in J3781",
       "kind": "review",
       "recheck_of": "J3781",
       "due": "2026-11-26T18:50:53+00:00",
@@ -349737,13 +349742,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-26T18:13Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check inputs and authority",
+          "Verify condition and evidence",
+          "Record ruling and follow-up"
+        ],
+        "note": "Chief review inputs, fresh PR and NAS checks, and parent reopening/routing all complete. Separate Chief review steps rec"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3806",
