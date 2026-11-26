@@ -344845,9 +344845,14 @@
           "at": "2026-11-26T01:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T01:40Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Add HOS 008 Shorts to library.json, refresh LIVE_VIDEOS.json on Mini, land 009 receipts + Shorts from PR #757 keeping main status.json, update 005 note, open PR",
+      "remaining_action": "Inspecting PR #757 branch, creating clean HOS worktree, and verifying 008 NAS SHA-256 hashes",
       "due": "2026-11-27T10:00:00Z",
       "kind": "listing",
       "plain": "Sync History of Science records with YouTube: add Franklin Shorts to the opening-frame library, refresh the live video list, and record Gravity upload receipts",
@@ -344862,12 +344867,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-26T01:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify 008 Shorts & update library.json",
+          "Port 009 PR #757 receipts & Shorts library",
+          "Refresh LIVE_VIDEOS.json & update 005 note",
+          "Run check_all.sh validation",
+          "Push PR, Chief merge, close #757 & report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:005"
+      ]
     }
   ],
   "focus": [
