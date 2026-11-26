@@ -341072,13 +341072,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
-      "result": "Waiting for: Start after pilot 2's retention read (J3704, Thu 26 Nov 17:05Z), so the Chief can fold in anything it shows; the trims are approved either way.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T14:02Z",
@@ -341094,18 +341094,17 @@
           "at": "2026-11-25T14:02Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-26T17:30:00Z"
+        },
+        {
+          "at": "2026-11-26T17:30Z",
+          "by": "relay",
+          "what": "reopened: its start time 2026-11-26T17:30:00Z has come (release-at-time hold)"
         }
       ],
       "remaining_action": "Make film 3's two pre-air trims",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
-      "mini_only": true,
-      "hold": {
-        "type": "date",
-        "condition": "Start after pilot 2's retention read (J3704, Thu 26 Nov 17:05Z), so the Chief can fold in anything it shows; the trims are approved either way.",
-        "check_at": "2026-11-26T17:30:00Z",
-        "release": "auto"
-      }
+      "mini_only": true
     },
     {
       "id": "J3715",
