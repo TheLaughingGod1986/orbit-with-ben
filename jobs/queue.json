@@ -337687,20 +337687,34 @@
           "at": "2026-11-26T07:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:22Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3679; SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 left (J3670 needs 9,062 & J3678 needs 7,761, both wait for 30 Nov reset)"
         }
       ],
-      "remaining_action": "Check ElevenLabs balance and record Shorts S01 & S02 VO for HOS 136 from locked v02 scripts",
+      "remaining_action": "Verify locked v02 Shorts scripts SHA-256, live ElevenLabs balance, and dry-run S01/S02 takes",
       "due": "2026-12-05T18:00:00Z",
       "kind": "vo",
       "plain": "Record the two 16-19 s Shorts narrations (S01 & S02) for HOS 136 from the locked v02 scripts in Ben's voice",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T07:21Z",
+        "of": 5,
+        "at": "2026-11-26T07:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify locked v02 scripts, live balance & dry-run",
+          "Record S01 & S02 VO takes via vo_take.py",
+          "Run vo_check_py312.sh, timing check & audio_input listen",
+          "Store verified media on NAS & open clean HOS PR",
+          "Run check_all.sh, log spend, queue Chief VO review & report"
+        ],
+        "note": "Claimed J3679; SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 left (J3670 need"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3680",
