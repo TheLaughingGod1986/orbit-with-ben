@@ -318843,13 +318843,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T03:09Z",
-      "eta": "2026-11-26T05:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
-      "result": "",
+      "result": "Chief ruling KEEP/PASS (acting Chief gemini): merged OWB PR #1275 (423b828d40, jobs/reviews/J3471/REVIEW.md), independently verified 24 Nov 09:00 London window passed (now 2026-11-26T03:07Z), J3354 done, 0 duplicate OWB comment runs, Ben's 21 Nov comment policy & short-hyphen rule intact through #7181366325, and COMMENT_REPLIES.jsonl (3/3 rows, sha256 c17c74f9365f1df7) clean on main. Reopened J3415 with evidence. Report #7181451071. £0, 0 credits.",
       "history": [
         {
           "at": "2026-11-24T09:06Z",
@@ -318900,6 +318900,11 @@
           "at": "2026-11-26T03:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T03:10Z",
+          "by": "gemini",
+          "what": "done: Chief ruling KEEP/PASS (acting Chief gemini): merged OWB PR #1275 (423b828d40, jobs/reviews/J3471/REVIEW.md), independently verified 24 Nov 09:00 London window passed (now 2026-11-26T03:07Z), J3354 done, 0 duplicate OWB comment runs, Ben's 21 Nov comment policy & short-hyphen rule intact through #7181366325, and COMMENT_REPLIES.jsonl (3/3 rows, sha256 c17c74f9365f1df7) clean on main. Reopened J3415 with evidence. Report #7181451071. £0, 0 credits."
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge PR #1275, reopen J3415, close J3471",
@@ -318923,7 +318928,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7181451071"
     },
     {
       "id": "J3472",
