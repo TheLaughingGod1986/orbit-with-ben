@@ -351201,10 +351201,10 @@
       "stage": "thumbs",
       "after": "J3719",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T23:51Z",
+      "eta": "2026-11-27T01:51Z",
       "created_by": "macbook",
       "created_at": "2026-11-26T23:45Z",
       "result": "",
@@ -351213,12 +351213,25 @@
           "at": "2026-11-26T23:45Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T23:51Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build J3719_v02 thumbnails A/B/C on studio-live, update THUMB_LEDGER T045 hashes, and write SHOT_LIST_v02.md opening and R09 fixes",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
-      "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s"
+      "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T23:51Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3818",
