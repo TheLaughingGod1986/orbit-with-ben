@@ -319761,10 +319761,10 @@
       "stage": "script",
       "after": "J3476",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-26T23:50Z",
+      "eta": "2026-11-27T01:20Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:24Z",
       "result": "",
@@ -319778,13 +319778,25 @@
           "at": "2026-11-24T09:37Z",
           "by": "macbook",
           "what": "deadline: 2026-11-29T18:00:00Z"
+        },
+        {
+          "at": "2026-11-26T23:50Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run Claude Rule 6 viewer test of first 300 words and lock WW2:008 script by 2026-12-03 18:00",
       "due": "2026-11-29T18:00:00Z",
       "kind": "review",
       "plain": "Run Claude's stranger test on film 008's opening, lock the script, and queue voice-over for after 30 Nov",
-      "cloud_only": true
+      "cloud_only": true,
+      "progress": {
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-26T23:50Z",
+        "by": "claude",
+        "note": "v02 with the 9 claims fixes, stranger read, air-date check, lock, queue VO"
+      }
     },
     {
       "id": "J3478",
