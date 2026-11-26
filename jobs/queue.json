@@ -344320,9 +344320,14 @@
           "at": "2026-11-26T00:33Z",
           "by": "claudecode",
           "what": "step 2 of 4 done: Condition met: ww2-channel PR #173 open and mergeable, branch macbook/J3487-bulge at 942aa5f, one commit on main; my own scan of the 264-line diff found no private data; status.json air 2026-12-31 matches main"
+        },
+        {
+          "at": "2026-11-26T00:34Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: jobs.py reopen and jobs.py wait --recheck both refused for a worker: only the elected Chief may release or update this hold"
         }
       ],
-      "remaining_action": "Reopening J3487 with the PR #173 evidence",
+      "remaining_action": "Elected Chief to reopen J3487 and review ww2-channel PR #173 (a worker may not release or update the hold)",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-26T01:31:40+00:00",
@@ -344338,7 +344343,7 @@
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-26T00:33Z",
+        "at": "2026-11-26T00:34Z",
         "by": "claudecode",
         "plan": [
           "Read J3487 and J3750 history",
@@ -344346,7 +344351,7 @@
           "Reopen or re-park J3487",
           "Report and finish"
         ],
-        "note": "Condition met: ww2-channel PR #173 open and mergeable, branch macbook/J3487-bulge at 942aa5f, one commit on main; my own"
+        "note": "jobs.py reopen and jobs.py wait --recheck both refused for a worker: only the elected Chief may release or update this h"
       },
       "taskKeys": [
         "WW2:016"
