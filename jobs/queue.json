@@ -344130,21 +344130,34 @@
           "at": "2026-11-26T00:01Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:01Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Read the long's Studio numbers 6 h after it went live, record them and give the verdict",
+      "remaining_action": "Open the Titan video in Studio and check nothing is broken",
       "due": "2026-11-26T02:00:00Z",
       "kind": "studio",
       "launch": "T3cBBss1F60@6",
       "plain": "Check how \"What Would Happen If You Landed on Titan? (Seas of Liquid Ga\" is doing 6 hours after it went live",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-26T00:01Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check the video for faults in Studio",
+          "Read the first-day numbers",
+          "Store the numbers",
+          "Get the verdict",
+          "Close or park the job"
+        ]
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [
