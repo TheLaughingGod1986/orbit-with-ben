@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442, J3559.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -39,7 +39,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3365 | mini | blocked | gemini | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3432 | mini | claimed | gemini | 2026-11-26T12:17Z | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3442 | mini | blocked | claudecode | – | studio · WW2 pilot 1: make Cut 1 (07:44-08:47, 63.6 s) in Studio Editor before the Short, then fix chapters, card and captions |  |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
 | J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
