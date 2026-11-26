@@ -344317,16 +344317,21 @@
           "at": "2026-11-26T02:01Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Built _mint_flow_v01_retake2.py and _build_retake2_receipt_v01.py; dry-run --floor 3000 PASS (0 cr, 0 Create clicks, both Chief-approved t3.png SHA-256s verified, projected headroom 21,750 >= 3,000)"
+        },
+        {
+          "at": "2026-11-26T02:15Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Reconciled row 49 (P4:12_lyell_hooker_bundle t3) after 02:06Z Mac mini reboot: archived to archive_v01_retake2 (sha256 b0b6c361..., 8.0s, 1280x720, technical ok, keep false), exported 100 cr to ai_spend, built 0.5s+0.25s sheets, next_batch=row 63 only. Chrome :9222/:9223/:9224 signed out after reboot; parking for Ben sign-in."
         }
       ],
-      "remaining_action": "Arm and submit single 2-row take-3 batch (rows 49 and 63, Veo 3.1 Quality, 200 cr max) on Flow :9222",
+      "remaining_action": "Wait for Ben sign-in on Chrome :9222 (Google Flow), then submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr)",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-11-26T02:01Z",
+        "at": "2026-11-26T02:15Z",
         "by": "gemini",
         "plan": [
           "Verify Stage-1 Chief still PASS and disk headroom",
@@ -344336,7 +344341,7 @@
           "Update HOS 013 status, run checks, open HOS PR",
           "Post desk report and park for Chief UAT"
         ],
-        "note": "Built _mint_flow_v01_retake2.py and _build_retake2_receipt_v01.py; dry-run --floor 3000 PASS (0 cr, 0 Create clicks, bot"
+        "note": "Reconciled row 49 (P4:12_lyell_hooker_bundle t3) after 02:06Z Mac mini reboot: archived to archive_v01_retake2 (sha256 b"
       },
       "taskKeys": [
         "HOS:013"
