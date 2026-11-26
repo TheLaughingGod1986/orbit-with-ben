@@ -347755,9 +347755,14 @@
           "at": "2026-11-26T09:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T09:54Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Reschedule the film 4 Short to the day after the film and link it",
+      "remaining_action": "Inspecting l7P2DdGCr-A state in YouTube Data API, Studio 9224, and ww2 repo records",
       "due": "2026-11-29T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -347771,12 +347776,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T09:53Z",
+        "of": 4,
+        "at": "2026-11-26T09:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect current state and API/Studio access",
+          "Move l7P2DdGCr-A publishAt to 2026-12-02T12:30:00Z and read back",
+          "Update ww2 status.json and UPLOADS.json via PR",
+          "Queue/park post-publish Related video step and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     }
   ],
   "focus": [
