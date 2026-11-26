@@ -299450,10 +299450,10 @@
       "stage": "thumbs",
       "after": "J3378",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T04:22Z",
+      "eta": "2026-11-26T06:22Z",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:37Z",
       "result": "",
@@ -299657,6 +299657,11 @@
           "at": "2026-11-26T03:30Z",
           "by": "gemini",
           "what": "released: Chief authority returned to Codex at 2026-11-26T03:28:15Z (verified via chief_relay.py status before protected call). Handing J3307 back to elected Chief without reruling or closing. All pre-close checks verified: PR #1312 (ecce03004a) published jobs/reviews/J3307/REVIEW.md + CHECKS.json; PR #1184 (431ab84b) published J3382 v03 PASS + conditional authorization; all 6 NAS v02/v03 SHA-256 hashes match; THUMB_LEDGER T041-T043 proposed with v01/v02 history intact; 006/024/005 states and J3308-J3310 guards intact. Ready for elected Chief close citing PR #1312."
+        },
+        {
+          "at": "2026-11-26T04:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Obtain required publication approval for the completed historical thumbnail review",
