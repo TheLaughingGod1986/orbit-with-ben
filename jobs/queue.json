@@ -341285,9 +341285,14 @@
           "at": "2026-11-26T19:38Z",
           "by": "gemini",
           "what": "step 0 of 7 done: Claimed J3714; starting step 1."
+        },
+        {
+          "at": "2026-11-26T19:39Z",
+          "by": "gemini",
+          "what": "step 4 of 7 done: Resumed after 19:35Z hold; steps 1-4 already done on branch gemini/J3714-b29-pre-air-trim (5859e21). Checking Studio 9223 and Data API processing state now."
         }
       ],
-      "remaining_action": "Recording before state via API/Studio and running ffmpeg silencedetect on NAS master",
+      "remaining_action": "Checking if YouTube Studio processing of RqYjADxvJy8 (confirmed 19:03:22Z) has finished",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -341296,20 +341301,20 @@
       ],
       "urgent": 8,
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 7,
-        "at": "2026-11-26T19:38Z",
+        "at": "2026-11-26T19:39Z",
         "by": "gemini",
         "plan": [
-          "Record before state and measure silences",
-          "Apply trims A and B in Studio editor",
-          "Rebuild trim package if points shift",
-          "Update description captions and end screen after processing",
+          "Verify master and record API before state",
+          "Record Studio before state screenshots",
+          "Submit trims A and B in Studio editor",
+          "Render join clips and regenerate v02 package",
+          "Apply description captions and end screen after processing",
           "Read back Studio and Data API state",
-          "Render local join clips on NAS",
-          "Commit receipt status and learnings for Chief PR"
+          "Write receipt status learnings and open PR"
         ],
-        "note": "Claimed J3714; starting step 1."
+        "note": "Resumed after 19:35Z hold; steps 1-4 already done on branch gemini/J3714-b29-pre-air-trim (5859e21). Checking Studio 922"
       }
     },
     {
