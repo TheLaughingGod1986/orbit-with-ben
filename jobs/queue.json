@@ -1,5 +1,5 @@
 {
-  "next_id": 3788,
+  "next_id": 3789,
   "jobs": [
     {
       "id": "J0001",
@@ -347693,6 +347693,36 @@
         "WW2:006",
         "WW2:005"
       ]
+    },
+    {
+      "id": "J3788",
+      "title": "WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, with the long as its Related video from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The 004-S1 Short `l7P2DdGCr-A` (J3753) was scheduled under the old plan for Mon 30 Nov 12:30, the day before film 004 airs on Tue 1 Dec.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** change `l7P2DdGCr-A`'s scheduled publish from Mon 30 Nov 12:30 to **Wed 2 Dec 2026 12:30 London** (`2026-12-02T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **After film 004's long is Public (Tue 1 Dec 17:00 London) and before 2 Dec 12:30:** set the Short's Related video to the 004 long and read it back. If the long slips its slot, move the Short to the day after the long's new air date instead.\n3. **Records:** ww2-channel 004 `status.json` (shorts `004-S1`: publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule change on this private Short only. No re-upload, no change to any public video, no visibility change. £0.",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T09:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T09:43Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reschedule the film 4 Short to the day after the film and link it",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true
     }
   ],
   "focus": [
