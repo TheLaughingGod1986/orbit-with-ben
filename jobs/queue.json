@@ -336954,13 +336954,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T06:56Z",
-      "eta": "2026-11-26T08:56Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T04:25Z",
-      "result": "",
+      "result": "Recorded HOS 128 Shorts S01 & S02 VO from locked SHORTS_SCRIPTS_v03.md (sha256 1132ad9f...): S01 hos_128_short_S01_v03_tight (18.54 s, -20.1 LUFS, atempo 1.00, vo_check PASS, WAV 931718a6...) & S02 hos_128_short_S02_v03b_tight (18.39 s, -20.3 LUFS, atempo 1.00, vo_check PASS 0 word diffs, WAV cc51cc86..., after Acting-Chief-cleared retake S02_v03b replaced slow 23.84 s S02_v03). Direct audio_input listen verified; all raw+tight WAV/MP3 SHA-256 verified on NAS; 373 ElevenLabs credits settled (8,003 -> 7,630 left, £0). Opened HOS PR #797 (zero media, check_all.sh ALL CHECKS PASS), queued non-producer Chief VO PASS & merge job J3780, posted HOS desk #694 & studio thread.",
       "history": [
         {
           "at": "2026-11-25T04:25Z",
@@ -337001,6 +337001,11 @@
           "at": "2026-11-26T07:09Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened HOS PR #797 (CI green, zero media in git), queued non-producer Chief review J3780, posted desk #694 & studio thread reports"
+        },
+        {
+          "at": "2026-11-26T07:09Z",
+          "by": "gemini",
+          "what": "done: Recorded HOS 128 Shorts S01 & S02 VO from locked SHORTS_SCRIPTS_v03.md (sha256 1132ad9f...): S01 hos_128_short_S01_v03_tight (18.54 s, -20.1 LUFS, atempo 1.00, vo_check PASS, WAV 931718a6...) & S02 hos_128_short_S02_v03b_tight (18.39 s, -20.3 LUFS, atempo 1.00, vo_check PASS 0 word diffs, WAV cc51cc86..., after Acting-Chief-cleared retake S02_v03b replaced slow 23.84 s S02_v03). Direct audio_input listen verified; all raw+tight WAV/MP3 SHA-256 verified on NAS; 373 ElevenLabs credits settled (8,003 -> 7,630 left, £0). Opened HOS PR #797 (zero media, check_all.sh ALL CHECKS PASS), queued non-producer Chief VO PASS & merge job J3780, posted HOS desk #694 & studio thread."
         }
       ],
       "remaining_action": "Complete — parked for non-producer Chief VO PASS (J3780, HOS PR #797)",
@@ -337023,7 +337028,8 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "done_ref": "HOS#797,J3780"
     },
     {
       "id": "J3672",
