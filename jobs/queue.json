@@ -346036,7 +346036,7 @@
     {
       "id": "J3774",
       "title": "WW2 film 015: Higgins boat (LCVP) topic/archive review and Rule-6 stranger viewer test (300 + 1,200 words)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Independent Claude `review`-lane topic/archive + Rule-6 stranger viewer test and script-lock review for **WW2:015** (*Higgins Boat: How 23,000 Plywood Hulls Made D-Day*, air Tue 29 Dec 2026 17:00 London, Ben watch Tue 22 Dec, script lock due **Sun 13 Dec 2026 18:00 London**).\n\n**Inputs:**\n- Stage PR **`TheLaughingGod1986/ww2-channel#180`** (`gemini/J3772-ww2-015-higgins-boat`, drafted in `J3772`): `TOPIC.md`, `TOPIC_REVIEW.md`, `PACKAGING.md`, `01_Script/SCRIPT.md`, `01_Script/NARRATION_v01.txt`, `01_Script/SOURCES.md`, `03_Picture/ARCHIVE_PROVENANCE.md`, `status.json`, `00_Brand/VIDEO_BACKLOG.json`.\n- Independent `facts`-lane audit `01_Script/CLAIMS_CHECK_v01.md` from the prerequisite job.\n- `studio/LEARNINGS.md` including **Pilot 2 (`qfc6EBStOfo`) 48-hour (26 Nov 17:00 UTC) and 7-day (2 Dec 10:50 UTC) Rule-12 readouts** (check before locking).\n\n**Do (zero spend, £0, no VO):**\n1. **Topic, Archive & Packaging review (Rules 1, 2, 5, 13):** Verify zero near-duplicate across `001`–`017`, verify the `36` official US Federal PD photographs support `>=50%` (aiming two-thirds) real archive coverage without padding or `<60 s` repeats, and verify Rule-2/13 packaging (`Higgins Boat: How 23,000 Plywood Hulls Made D-Day`, 49 chars, 3 close-crop thumbnails, zero Nazi insignia/bodies).\n2. **Rule-6 Stranger Viewer Test (25 Nov update):** Read **BOTH**:\n   - **First 300 words** (Rule 3: concrete moment `<=0:30`, promise `<=0:45`, main story moving `<=1:00`, never answers title in open, no intro / \"in this video\"); AND\n   - **First ~1,200 words (first ~8 minutes)** for any background turn before the main story or any figure cluster (`>=5` figures in 30 s, Rule 4).\n3. **Claims resolution & script lock:** Write `01_Script/VIEWER_TEST_v01.md`. Rule on every flag from `CLAIMS_CHECK_v01.md`; if GO/PASS, fold any required fixes into locked `SCRIPT.md` + `NARRATION_v02.txt` (preserving `NARRATION_v01.txt` untouched, keeping `<=21,000` stripped spoken chars and exact paragraph parity), update `status.json` (including Shorts `015-S1`/`S2`/`S3` check), open the lock PR, and queue post-reset VO + archive harvest only if PASS. If any Rule-6 bar fails, require rewrite before lock (Rule 6: if unready by Sun 13 Dec, skip Tue 29 Dec cleanly; never rush).\n",
       "ref": "ww2-channel#180",
@@ -346056,12 +346056,25 @@
           "at": "2026-11-26T05:06Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T05:08Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-26T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Review ww2-channel#180 + CLAIMS_CHECK_v01.md + Pilot 2 learnings, run Rule-6 viewer test, and lock script by Sun 13 Dec",
       "due": "2026-12-13T18:00:00Z",
       "kind": "review",
-      "plain": "Run topic, archive and stranger viewer test on the first 300 and 1,200 words of WW2 film 015 Higgins boat before script lock"
+      "plain": "Run topic, archive and stranger viewer test on the first 300 and 1,200 words of WW2 film 015 Higgins boat before script lock",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
