@@ -349147,17 +349147,22 @@
           "at": "2026-11-26T17:07Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Content & Details verified on FOH Studio (CDP 9223): Public, Notices dash, Not Made for Kids, no age restriction, 4K complete, title/description match approved package; 0 faults so far"
+        },
+        {
+          "at": "2026-11-26T17:09Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Read exact Since published 48h numbers on FOH Studio (CDP 9223): 30 views, 1,211 impressions, 1.0% CTR (raw 0.99%), 16.5% avg viewed (raw 16.54%, AVD 3:42), 0 likes, 0 subs, 15 unique viewers, retention not ready; no Studio rank or usual-views baseline"
         }
       ],
-      "remaining_action": "Read exact unrounded Analytics numbers in Studio Advanced Mode and check dashboard ranking/typical baseline",
+      "remaining_action": "Record 48h reading in launch_check.py, run judge, and finish or park J3800",
       "due": "2026-11-26T19:00:00Z",
       "kind": "studio",
       "launch": "qfc6EBStOfo@48",
       "plain": "Check how \"How the U-Boats Lost Their Safest Hunting Ground\" is doing 48 hours after it went live",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-26T17:07Z",
+        "at": "2026-11-26T17:09Z",
         "by": "gemini",
         "plan": [
           "Verify upload package and CDP 9224 channel",
@@ -349165,7 +349170,7 @@
           "Read Studio Analytics 48h numbers",
           "Record reading, judge verdict, and finish or park"
         ],
-        "note": "Content & Details verified on FOH Studio (CDP 9223): Public, Notices dash, Not Made for Kids, no age restriction, 4K com"
+        "note": "Read exact Since published 48h numbers on FOH Studio (CDP 9223): 30 views, 1,211 impressions, 1.0% CTR (raw 0.99%), 16.5"
       },
       "taskKeys": [
         "WW2:002"
