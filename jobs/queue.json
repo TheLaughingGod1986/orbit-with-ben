@@ -1,5 +1,5 @@
 {
-  "next_id": 3775,
+  "next_id": 3776,
   "jobs": [
     {
       "id": "J0001",
@@ -346163,6 +346163,36 @@
       "taskKeys": [
         "WW2:015"
       ]
+    },
+    {
+      "id": "J3775",
+      "title": "WW2 film 015: harvest 37 official US Federal PD archive photos & LoC TIFF masters (Higgins boat, £0)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Harvest all `37` active official US Federal Public Domain archive photographs and blueprints (plus up to `5` verified spares as needed) for Field Order History film **`WW2:015`** (*Higgins Boat: How 23,000 Plywood Hulls Made D-Day*, air Tue 29 Dec 2026 17:00 London, Ben watch Tue 22 Dec) from `02_Video-Projects/015_Higgins-Boat-LCVP-D-Day-Landing-Craft/03_Picture/ARCHIVE_PROVENANCE.md` (`v02`).\n\n**Guards (`£0` spend; zero voice spend; no YouTube writes; no media in git):**\n- Wait until elected Chief (`claude` or current Chief) has merged the `J3774` consolidated locked `v02` PR (`gemini/J3774-ww2-015-script-lock-v02`) to `ww2-channel` `main`.\n- Strictly **US Federal Public Domain** only (`NARA RG 80-G`, `RG 26-G`, `RG 111-SC`, `NHHC NH`, `USMC`, `Library of Congress FSA/OWI`, `NARA` blueprints/patents). Reject any AP, Getty, Acme, INP, Pathe, wire agency, CC-licensed, or private-donation file.\n- Zero swastikas, Nazi insignia, bodies, executions, or atrocity scenes (`studio/RULES.md` Rule 13).\n\n**Specific Harvest Actions Required (from `J3773` `CLAIMS_CHECK_v01.md` & `J3774` `VIEWER_TEST_v01.md`):**\n1. Download all `37` active items (including newly promoted `#37 LoC fsa.8b07676`, `10233×7687` TIFF) to the shared NAS working store (`/Volumes/data/studio-live/ww2/02_Video-Projects/015_Higgins-Boat-LCVP-D-Day-Landing-Craft/03_Picture/archive_raw/`) with `SHA256SUMS.txt`.\n2. Pull **full-resolution Library of Congress TIFF masters** for preview-sized LoC OWI items `#20–#26` and `#29` (`fsa.8b04647`, `8b04629`, `8b09526`, `8b04645` [critical for **Thumb B**], `8b04630`, `8b04646`, `8b07672`, `8d39925`).\n3. Prefer the official NARA scan for **`#1 26-G-2343`** (critical for **Thumb C**) over derivative `1944_NormandyLST_clean.jpg` unless confirmed unaltered.\n4. Visually verify and log exact captions for: **`#22 LoC fsa.8b09526`** (confirm 26-ft vs 36-ft craft), **`#28 NH 44482`** (Higgins PT boats — paired ONLY to Ch 4 *\"from landing craft to motor torpedo boats\"*), **`#30 80-G-10756`** (Guadalcanal early Higgins variant), and **`#12 USN All Hands Jul 1943`** (square `1075×1066` crop check for clean 16:9).\n5. Bounded NHHC check: see if high-res May 1941 Lake Pontchartrain prototype photos (`NH 73806` / `NH 73809` / `NH 73810` / `NH 73812`) are downloadable from NHHC search (bonus only — already at ~64.6% archive coverage with `37` verified files).\n6. Update `03_Picture/ARCHIVE_PROVENANCE.md` with local NAS paths, inspected pixel dimensions, verified 16:9 framing notes, and `status.json`, and open a clean `ww2-channel` PR (zero media committed to git).\n",
+      "ref": "",
+      "film": "015",
+      "stage": "picture",
+      "after": "J3774",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T05:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T05:26Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After Chief merges J3774 lock PR, harvest 37 US Federal PD files + LoC TIFF masters to NAS and update ARCHIVE_PROVENANCE.md",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR"
     }
   ],
   "focus": [
