@@ -344746,9 +344746,14 @@
           "at": "2026-11-26T01:07Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T01:10Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1/5 complete: Verified 277 J3340 baseline entries (0 missing sidecars, 0 modified baseline media) and identified post-J3340 candidates: OWB:032 032_short_strike_match_fire_v01, OWB:064 J3022_code_graphics_v01 + score bed v01, HOS:008 hos_008_s04_no_patent_v01, plus HOS:013 take-2 retake plates & HOS:009 phone proxy."
         }
       ],
-      "remaining_action": "Inventorying newest OWB and HOS packs and checking prior sweep scope",
+      "remaining_action": "Checking existing gate outputs and running missing/full-library QA gates on post-J3340 packs",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -344760,9 +344765,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T01:07Z",
+        "at": "2026-11-26T01:10Z",
         "by": "gemini",
         "plan": [
           "Inventory newest OWB and HOS packs",
@@ -344770,8 +344775,15 @@
           "Run missing OWB QA gates",
           "Run missing HOS QA gates",
           "Post sweep report and queue fix jobs"
-        ]
-      }
+        ],
+        "note": "Step 1/5 complete: Verified 277 J3340 baseline entries (0 missing sidecars, 0 modified baseline media) and identified po"
+      },
+      "taskKeys": [
+        "OWB:032",
+        "OWB:064",
+        "HOS:008",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
