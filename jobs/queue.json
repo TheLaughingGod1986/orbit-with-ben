@@ -1,5 +1,5 @@
 {
-  "next_id": 3811,
+  "next_id": 3813,
   "jobs": [
     {
       "id": "J0001",
@@ -345569,6 +345569,11 @@
           "at": "2026-11-26T03:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "no longer waits on Ben: OK'd, delivered by J3812"
         }
       ],
       "remaining_action": "Parked J3758 for Chief Short PASS",
@@ -345591,7 +345596,13 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "Chief PASS (5-part multimodal review, PR #1333 merged 88bf9ce54d, jobs/reviews/J3758/REVIEW.md eedef9bd25). Awaiting Ben UAT phone watch and board approval on OWB UAT/032_short_strike_match_fire_v01.mp4 (sha256 494f092b857df509e419b2b04967c337acde9af88d362725cd2e94e34acf2386) and cover (11410819204f). After Ben approves, queue upload package with complete en-GB SRT (all 73 words incl. 9-14s) for earliest open Mon/Wed/Fri/Sat 11:30Z slot (not 18 Dec, held for 033 Short 1).",
+        "check_at": "2026-12-18T18:00:00Z"
+      },
+      "escalated_at": "2026-11-26T03:20Z",
+      "awaits_was": {
         "what": "Watch 032 Titan Short #1 (Fire on Titan) v01 and its cover: How Would You Light a Fire on Titan?",
         "file": "OWB UAT/032_short_strike_match_fire_v01.mp4",
         "version": "v01",
@@ -345600,13 +345611,7 @@
         "title": "How Would You Light a Fire on Titan?",
         "number": "032 Short 1",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Chief PASS (5-part multimodal review, PR #1333 merged 88bf9ce54d, jobs/reviews/J3758/REVIEW.md eedef9bd25). Awaiting Ben UAT phone watch and board approval on OWB UAT/032_short_strike_match_fire_v01.mp4 (sha256 494f092b857df509e419b2b04967c337acde9af88d362725cd2e94e34acf2386) and cover (11410819204f). After Ben approves, queue upload package with complete en-GB SRT (all 73 words incl. 9-14s) for earliest open Mon/Wed/Fri/Sat 11:30Z slot (not 18 Dec, held for 033 Short 1).",
-        "check_at": "2026-12-18T18:00:00Z"
-      },
-      "escalated_at": "2026-11-26T03:20Z"
+      }
     },
     {
       "id": "J3759",
@@ -346031,6 +346036,11 @@
           "at": "2026-11-26T03:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "no longer waits on Ben: OK'd, delivered by J3811"
         }
       ],
       "remaining_action": "Await Ben phone UAT approval on HOS 008 Short s04 v01; on approval, package and schedule into earliest open Tue/Fri/Sat/Sun 11:30 London slot after YqCWYlv_LCY is public",
@@ -346053,7 +346063,13 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "Ben phone UAT approval on board for HOS 008 Short s04 v01 (hos_008_s04_no_patent_v01.mp4, sha256 e162a0fbe05e519ae822aededabf62172396594d4f564081d539db724f03809c; HOS PR #793 merged de690e9e; REVIEW.md 30e9b39dc0)",
+        "check_at": "2026-11-30T18:00:00Z"
+      },
+      "escalated_at": "2026-11-26T03:20Z",
+      "awaits_was": {
         "what": "Watch HOS 008 Short s04 (16.1 s): Why Did Franklin Never Patent the Lightning Rod?",
         "file": "HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_s04_no_patent_v01.mp4",
         "version": "v01",
@@ -346062,13 +346078,7 @@
         "title": "Why Did Franklin Never Patent the Lightning Rod?",
         "number": "008 Short s04",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben phone UAT approval on board for HOS 008 Short s04 v01 (hos_008_s04_no_patent_v01.mp4, sha256 e162a0fbe05e519ae822aededabf62172396594d4f564081d539db724f03809c; HOS PR #793 merged de690e9e; REVIEW.md 30e9b39dc0)",
-        "check_at": "2026-11-30T18:00:00Z"
-      },
-      "escalated_at": "2026-11-26T03:20Z"
+      }
     },
     {
       "id": "J3764",
@@ -350540,6 +350550,110 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J3811",
+      "title": "Package and upload HOS 008 Short s04 short v01 (Why Did Franklin Never Patent the Lightning Rod?) Private, 2026-12-01T11:30Z",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben OK'd this cut on the board, but it has no complete listing package yet (missing: title, thumbnail, description, tags).\n1. Build its own listing package in the channel's repo, in the layout its other Shorts' packages already use: PACKAGE_MANIFEST.json with title, thumbnail (the custom cover), description and tags, by that channel's studio/RULES.md. Keep the title Ben OK'd: \"Why Did Franklin Never Patent the Lightning Rod?\". The description's first line names and links its long, and its Related video is the long. Merge it through a pull request.\n2. Upload the file Ben OK'd to YouTube Studio as Private and set publishAt in the locked cadence. Use youtube:package on the Mini. Do not swap a file onto an existing id. Do not reuse TtgHNLXfDSs or k9pXeeJvLpc as destinations.\n3. Read back Private + scheduled and record it in the channel's UPLOADS register.\nApproved board card: HOS:ASK:J3763; cut: v01.\nApproval/watch job: J3763.\nWatch file: HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_s04_no_patent_v01.mp4.\nListing package: to build in step 1.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T21:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "approved by Ben: Passed cut — deliver listing package v01 (asked in J3763)"
+        }
+      ],
+      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Passed cut — deliver listing package",
+        "file": "HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_s04_no_patent_v01.mp4",
+        "version": "v01",
+        "title": "Package and upload HOS 008 Short s04 short v01 (Why Did Franklin Never Patent the Lightning Rod?) Private, 2026-12-01T11:30Z",
+        "number": "008 Short s04",
+        "type": "short",
+        "airs": "2026-12-01T11:30Z",
+        "channel": "HOS",
+        "card": "HOS:ASK:J3763",
+        "job": "J3763",
+        "okAt": "2026-11-26T09:17:43.295Z"
+      },
+      "board_ok": {
+        "id": "HOS-J3763",
+        "at": "2026-11-26T09:17:43.295Z",
+        "version": "v01",
+        "handled": true
+      }
+    },
+    {
+      "id": "J3812",
+      "title": "Package and upload OWB 032 Short 1 short v01 (How Would You Light a Fire on Titan?) Private, 2026-12-18T11:30Z",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd this cut on the board, but it has no complete listing package yet (missing: title, thumbnail, description, tags).\n1. Build its own listing package in the channel's repo, in the layout its other Shorts' packages already use: PACKAGE_MANIFEST.json with title, thumbnail (the custom cover), description and tags, by that channel's studio/RULES.md. Keep the title Ben OK'd: \"How Would You Light a Fire on Titan?\". The description's first line names and links its long, and its Related video is the long. Merge it through a pull request.\n2. Upload the file Ben OK'd to YouTube Studio as Private and set publishAt in the locked cadence. Use youtube:package on the Mini. Do not swap a file onto an existing id. Do not reuse TtgHNLXfDSs or k9pXeeJvLpc as destinations.\n3. Read back Private + scheduled and record it in the channel's UPLOADS register.\nApproved board card: OWB:ASK:J3758; cut: v01.\nApproval/watch job: J3758.\nWatch file: OWB UAT/032_short_strike_match_fire_v01.mp4.\nListing package: to build in step 1.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T21:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-26T21:42Z",
+          "by": "relay",
+          "what": "approved by Ben: Passed cut — deliver listing package v01 (asked in J3758)"
+        }
+      ],
+      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Passed cut — deliver listing package",
+        "file": "OWB UAT/032_short_strike_match_fire_v01.mp4",
+        "version": "v01",
+        "title": "Package and upload OWB 032 Short 1 short v01 (How Would You Light a Fire on Titan?) Private, 2026-12-18T11:30Z",
+        "number": "032 Short 1",
+        "type": "short",
+        "airs": "2026-12-18T11:30Z",
+        "channel": "OWB",
+        "card": "OWB:ASK:J3758",
+        "job": "J3758",
+        "okAt": "2026-11-26T09:13:06.456Z"
+      },
+      "board_ok": {
+        "id": "OWB-J3758",
+        "at": "2026-11-26T09:13:06.456Z",
+        "version": "v01",
+        "handled": true
       }
     }
   ],
