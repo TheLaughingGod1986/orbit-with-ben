@@ -344635,10 +344635,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T01:38Z",
+      "eta": "2026-11-26T02:38Z",
       "created_by": "refill",
       "created_at": "2026-11-26T00:58Z",
       "result": "",
@@ -344687,6 +344687,11 @@
           "at": "2026-11-26T01:38Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) claiming to record PASS ruling, PR #794 merge (ce278efd), and follow-up J3767"
+        },
+        {
+          "at": "2026-11-26T01:38Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Running check_all.sh, pushing branch, opening PR, and finishing job",
@@ -344699,7 +344704,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T01:38Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3766",
