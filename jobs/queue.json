@@ -348097,10 +348097,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-26T12:52Z",
+      "eta": "2026-11-26T14:52Z",
       "created_by": "relay",
       "created_at": "2026-11-26T12:50Z",
       "result": "",
@@ -348109,13 +348109,26 @@
           "at": "2026-11-26T12:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T12:52Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T12:50:00Z or codex) to review & merge HOS PR #799 and PR #798 and rule PASS/RETAKE on HOS:136 Shorts VO",
       "kind": "review",
       "recheck_of": "J3781",
       "due": "2026-11-26T13:50:46+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T12:52Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
