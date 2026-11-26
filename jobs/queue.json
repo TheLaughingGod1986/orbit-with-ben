@@ -345312,13 +345312,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:05Z",
-      "eta": "2026-11-26T04:50Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T02:45Z",
-      "result": "",
+      "result": "Acting Chief (gemini) ruling: KEEP (jobs/reviews/J3768/REVIEW.md, commit c7c8c01be7). Independently verified surgical 18-line metadata/Section-4 diff (OWB b75f73f8c5, HOS PR #795 head 3748d62c7e), 24/24 Sec 4.13 rows verbatim, all 4 HOS CI checks SUCCESS. Merged HOS PR #795 into HOS main (98abe4d938) and confirmed validate_j3766.py --strict --hos-ref origin/main exit 0 (owb_hos_byte_identical=true, inventory db9d85827380, report a37fea65a1b9, 280 entries, 816/816 fresh sidecars, 0 mismatches, 0 current_newest FAILs, metadata_issues_count=0, 3,528 warnings preserved unwaived). Closed parent J3766 KEEP as well. £0; grants no film-stage or publishing approval.",
       "history": [
         {
           "at": "2026-11-26T02:45Z",
@@ -345364,6 +345364,11 @@
           "at": "2026-11-26T04:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:05Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) ruling: KEEP (jobs/reviews/J3768/REVIEW.md, commit c7c8c01be7). Independently verified surgical 18-line metadata/Section-4 diff (OWB b75f73f8c5, HOS PR #795 head 3748d62c7e), 24/24 Sec 4.13 rows verbatim, all 4 HOS CI checks SUCCESS. Merged HOS PR #795 into HOS main (98abe4d938) and confirmed validate_j3766.py --strict --hos-ref origin/main exit 0 (owb_hos_byte_identical=true, inventory db9d85827380, report a37fea65a1b9, 280 entries, 816/816 fresh sidecars, 0 mismatches, 0 current_newest FAILs, metadata_issues_count=0, 3,528 warnings preserved unwaived). Closed parent J3766 KEEP as well. £0; grants no film-stage or publishing approval."
         }
       ],
       "remaining_action": "Parked for Chief KEEP review and HOS PR #795 merge",
@@ -345390,7 +345395,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "c7c8c01be7"
     },
     {
       "id": "J3769",
