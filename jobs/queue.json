@@ -344635,13 +344635,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-26T01:02Z",
-      "eta": "2026-11-26T02:02Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T00:58Z",
-      "result": "",
+      "result": "parked for Chief: live fixes — HOS PR #794 (macbook/J3765, 80556099, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-26_J3765.md, check_all.sh PASS). 0 live YouTube/Studio fixes needed (7/7 public longs, 36/36 public Shorts, 7/7 scheduled + 3 private verified LOGIN_REQUIRED; remaining 008/009 Studio work already in J3649/J3501). Parked for Chief £0 repo-record fixes & PR merges: (1) add HOS 008 scheduled Shorts __UtUYdEUwg & 4sYTV_rQcqs to shorts_open_library/library.json; (2) refresh stale LIVE_VIDEOS.json on Mini (channel:audit --write-live); (3) merge open HOS PR #757 (009 receipts + library.json) & PR #794 and dispose of older audit PRs (#720/#723/#730/#737/#742). Nothing changed in Studio. £0.",
       "history": [
         {
           "at": "2026-11-26T00:58Z",
@@ -344677,6 +344677,11 @@
           "at": "2026-11-26T01:10Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-26T01:10Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: live fixes — HOS PR #794 (macbook/J3765, 80556099, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-26_J3765.md, check_all.sh PASS). 0 live YouTube/Studio fixes needed (7/7 public longs, 36/36 public Shorts, 7/7 scheduled + 3 private verified LOGIN_REQUIRED; remaining 008/009 Studio work already in J3649/J3501). Parked for Chief £0 repo-record fixes & PR merges: (1) add HOS 008 scheduled Shorts __UtUYdEUwg & 4sYTV_rQcqs to shorts_open_library/library.json; (2) refresh stale LIVE_VIDEOS.json on Mini (channel:audit --write-live); (3) merge open HOS PR #757 (009 receipts + library.json) & PR #794 and dispose of older audit PRs (#720/#723/#730/#737/#742). Nothing changed in Studio. £0."
         }
       ],
       "remaining_action": "Running check_all.sh, pushing branch, opening PR, and finishing job",
