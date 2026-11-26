@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
-| J3745 | mini | open | – | – | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
+| J3745 | mini | claimed | gemini | 2026-11-26T06:17Z | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
 | J3748 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: targeted audiovisual check of v04 master (six J3746 changes) before Chief watch stage | 9562103 |
 | J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
 | J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
