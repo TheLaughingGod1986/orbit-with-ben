@@ -299749,19 +299749,33 @@
           "at": "2026-11-26T04:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:29Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: J3307 done, J3382 REVIEW.md published on main, NbW5G1BpPY0_B_v03.jpg sha256 verified aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f"
         }
       ],
-      "remaining_action": "Wait for the prior review to be published, then check Studio and test the approved thumbnail",
+      "remaining_action": "Check Orbit Studio CDP 9223 session and read-only NbW5G1BpPY0 state",
       "kind": "studio",
       "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T04:28Z",
+        "of": 5,
+        "at": "2026-11-26T04:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify dependencies, file hash & Studio sign-in",
+          "Fresh read-only check of NbW5G1BpPY0 & preserve T006 report",
+          "Arm thumbnail-only T041 (live A vs exact v03 B)",
+          "Reload & verify Test running, unchanged live A/title/privacy",
+          "Record T041 running in THUMB_LEDGER & report"
+        ],
+        "note": "J3307 done, J3382 REVIEW.md published on main, NbW5G1BpPY0_B_v03.jpg sha256 verified aaaaef79e7834fc28233b2b990473cbba7e"
+      },
+      "taskKeys": [
+        "OWB:006"
+      ]
     },
     {
       "id": "J3309",
