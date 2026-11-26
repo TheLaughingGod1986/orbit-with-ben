@@ -1,5 +1,5 @@
 {
-  "next_id": 3787,
+  "next_id": 3788,
   "jobs": [
     {
       "id": "J0001",
@@ -316488,7 +316488,7 @@
       "taskKeys": [
         "WW2:001"
       ],
-      "urgent": 6,
+      "urgent": 5,
       "progress": {
         "step": 6,
         "of": 6,
@@ -322079,7 +322079,7 @@
       "remaining_action": "Waiting for Ben’s login to finish Gravity’s Studio settings",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
-      "urgent": 4,
+      "urgent": 3,
       "mini_only": true,
       "delivers": [
         "HOS:009",
@@ -327571,7 +327571,7 @@
       "kind": "vo",
       "plain": "Record Ben's voice narration for WW2 film 017 (Pearl Harbor Salvage) after the 30 Nov ElevenLabs reset and Pilot 2 check",
       "mini_only": true,
-      "urgent": 8,
+      "urgent": 6,
       "progress": {
         "step": 0,
         "of": 3,
@@ -340104,7 +340104,7 @@
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 5,
+      "urgent": 4,
       "progress": {
         "step": 4,
         "of": 5,
@@ -347549,6 +347549,36 @@
           "Write report, PR & thread post"
         ]
       }
+    },
+    {
+      "id": "J3787",
+      "title": "Field Order History: add a real music bed from YouTube's free Audio Library, film 006 first, for Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben, Thu 26 Nov, in chat: \"I've noticed the new channel has no background music, is this deliberate?\"\n- It was not a creative choice. Film 003's \"score\" (`07_Edit/build_score_v01.py`) is soft sine tones generated in code at about 3% amplitude and mixed 3 dB down. The pilots used the same kind of bed.\n- It passed every loudness check, but no worker can hear audio, so nobody noticed it is effectively silent. Paid music was ruled out because the ElevenLabs credits go to narration.\n- The free route is YouTube's own Audio Library: royalty-free and cleared for YouTube, with no Content ID claims on our own channel.\n\n**Do (Mini, Field Order History Studio on 9224; £0).**\n1. **Pick the tracks.** In Studio's Audio Library, choose 3-4 calm instrumental tracks, in this order of preference:\n   - genre Ambient or Cinematic, mood Dark, Calm or Dramatic;\n   - no vocals and no drums in the first minute;\n   - attribution \"not required\" where possible.\n   Record each track's title, artist, licence line and whether it needs attribution in ww2-channel `00_Brand/MUSIC_LIBRARY.md`. Never use music from anywhere else: no stock sites, no other channels and no AI music.\n2. **Film 006 (Mosquito) v03 first** (J3723 built it; Ben's watch is due Wed 2 Dec 20:00Z).\n   - Remix it with one track per chapter under the narration, at about -24 LUFS short-term, 18-20 dB below the voice, ducked under speech and up slightly in the pauses.\n   - Use 3 s fades at chapter changes. No music under the first 3 seconds of the cold open's first line.\n   - Keep everything else identical. Call it v04, put it on Ben's watch card in place of v03, and note on the card that the only change is a music bed.\n   - Add any required attribution line to the description.\n3. **Film 005 (St Nazaire):** the same, only if it doesn't move Ben's watch past Mon 30 Nov 20:00Z. Otherwise leave 005 as it is.\n4. **Leave alone:** 004 (watch due Sat 28 Nov), 003 (airs Sat with its J3714 trims) and the live pilots, so music is the only difference we can measure.\n5. **New edits from Pearl Harbor (017) on** get a music bed from the same library at assembly. Make this the default in the edit recipe once Ben has heard 006.\n6. **Record the test in `studio/LEARNINGS.md`.** Prediction: films with a music bed hold strangers better from 1:00 to 5:00 than 003/004 without one. Compare at each film's 48-hour read.\n\n**Guards.**\n- Never put music on a published video.\n- No paid music or credits.\n- Nothing publishes before Ben's OK on the version with music.",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T09:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T09:15Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Pick free Audio Library music and remix film 6 with it for Ben's watch",
+      "due": "2026-12-01T12:00:00Z",
+      "kind": "assembly",
+      "urgent": 7
     }
   ],
   "focus": [
