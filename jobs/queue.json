@@ -1,5 +1,5 @@
 {
-  "next_id": 3793,
+  "next_id": 3794,
   "jobs": [
     {
       "id": "J0001",
@@ -346727,6 +346727,11 @@
           "at": "2026-11-26T08:20Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T13:15:00Z"
+        },
+        {
+          "at": "2026-11-26T13:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J3793"
         }
       ],
       "remaining_action": "After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
@@ -346752,10 +346757,11 @@
       "hold": {
         "type": "input",
         "condition": "Wait for non-producer Chief (returning claude >= 2026-11-26T12:50:00Z, or codex/chief) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, OPEN/MERGEABLE at a1cd072f, parked under self-merge guard; origin/main still at 156f6f5) to main before harvesting WW2:015 archive files",
-        "check_at": "2026-11-26T13:15:00Z",
+        "check_at": "2026-11-26T14:16:35+00:00",
         "last_recheck": "J3785",
         "checked_at": "2026-11-26T08:20:03+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3793"
       }
     },
     {
@@ -348228,6 +348234,37 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "J3781,HOS#798,HOS#799"
+    },
+    {
+      "id": "J3793",
+      "title": "Verify condition for J3775",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3775: Wait for non-producer Chief (returning claude >= 2026-11-26T12:50:00Z, or codex/chief) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, OPEN/MERGEABLE at a1cd072f, parked under self-merge guard; origin/main still at 156f6f5) to main before harvesting WW2:015 archive files. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3775 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T13:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T13:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
+      "kind": "review",
+      "recheck_of": "J3775",
+      "due": "2026-11-26T14:16:35+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
