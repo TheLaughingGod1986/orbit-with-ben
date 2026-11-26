@@ -336428,9 +336428,14 @@
           "at": "2026-11-26T03:33Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3668 as acting Chief (gemini); starting direct verification of J3178 waiting condition"
+        },
+        {
+          "at": "2026-11-26T03:33Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Probed agy 1.5.17 read_file directly: audio_input + image_input demonstrated; moving_video_input still 1-fps static frames (00:00..00:07) on row 58, not continuous 24-fps playback. Recorded honest capabilities."
         }
       ],
-      "remaining_action": "Probing session media capabilities, worker status, NAS clips, and desk/thread/PR state for J3178",
+      "remaining_action": "Verifying Batch 12-14 NAS SHA-256 hashes, REVIEW_STATE.json, and recent HOS #694 / OWB #954 / PR history for J3178",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -336447,7 +336452,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-26T03:33Z",
         "by": "gemini",
@@ -336457,7 +336462,7 @@
           "Record review and update J3178 hold",
           "Post reports and close J3668"
         ],
-        "note": "Claimed J3668 as acting Chief (gemini); starting direct verification of J3178 waiting condition"
+        "note": "Probed agy 1.5.17 read_file directly: audio_input + image_input demonstrated; moving_video_input still 1-fps static fram"
       },
       "taskKeys": [
         "HOS:013"
