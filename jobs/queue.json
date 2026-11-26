@@ -340156,13 +340156,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T17:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
-      "result": "parked for Chief: worker steps complete — review & merge ww2 PR #189 (J3704 48h read, pilot 2 retention curve & LEARNINGS #3) and decide whether to take optional Cut A (04:27.50-05:05.30, 37.8 s) / Cut B (05:37.10-06:25.10, 48.0 s) to Ben; note 9224 refused UCu94mInMFosxu3W0H6jlI6Q while 9223 held FOH Studio (relevant to J3802)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T10:22Z",
@@ -340263,6 +340263,11 @@
           "at": "2026-11-26T17:30Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: worker steps complete — review & merge ww2 PR #189 (J3704 48h read, pilot 2 retention curve & LEARNINGS #3) and decide whether to take optional Cut A (04:27.50-05:05.30, 37.8 s) / Cut B (05:37.10-06:25.10, 48.0 s) to Ben; note 9224 refused UCu94mInMFosxu3W0H6jlI6Q while 9223 held FOH Studio (relevant to J3802)"
+        },
+        {
+          "at": "2026-11-26T17:50Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling: CHANGES REQUIRED on PR 189; correct inconsistent pilot 1 AVD/cohort/live-cut timing, inferred retention denominator and causality claims, Cut B coverage and unsupported uplift forecast per studio thread 7199734733. Studio specialist to amend existing PR now then return for Chief review. No merge or live trim approved; existing J3605/J3706 date holds unchanged."
         }
       ],
       "remaining_action": "Parked for Chief review/merge of ww2 PR #189 and decision on optional pilot 2 Studio trim",
@@ -340273,21 +340278,7 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-26T17:29Z",
-        "by": "gemini",
-        "plan": [
-          "Data API readback & Design E thumb check",
-          "Studio 9224 metrics for pilots 1 & 2",
-          "Pilot 2 retention curve & drop-to-script/picture match",
-          "Update status.json, LEARNINGS.md & trim proposal if needed",
-          "Push WW2 PR & post thread table"
-        ],
-        "note": "Opened ww2 PR #189 and posted J3704 summary, retention breakdown and Cut A/B trim proposal to studio thread"
-      }
+      ]
     },
     {
       "id": "J3705",
