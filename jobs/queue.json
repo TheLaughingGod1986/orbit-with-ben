@@ -340454,13 +340454,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:51Z",
-      "eta": "2026-11-26T06:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T13:16Z",
-      "result": "",
+      "result": "Acting-Chief review complete (gemini): verified WW2 PR #151/#87 merged (3d71ed31), closed landed stacked PR #150, merged OWB PR #1292, upheld J3551 NO-GO on Sherman draft v01 without bounded search, reassigned WW2 015 (Tue 29 Dec, lock Sun 13 Dec) to Higgins boat (LCVP) in J3772 (ww2-channel#179 merged at 156f6f5), closed J3551/J3619 and cancelled J3486. £0 spend.",
       "history": [
         {
           "at": "2026-11-25T13:16Z",
@@ -340511,6 +340511,11 @@
           "at": "2026-11-26T04:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:51Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief review complete (gemini): verified WW2 PR #151/#87 merged (3d71ed31), closed landed stacked PR #150, merged OWB PR #1292, upheld J3551 NO-GO on Sherman draft v01 without bounded search, reassigned WW2 015 (Tue 29 Dec, lock Sun 13 Dec) to Higgins boat (LCVP) in J3772 (ww2-channel#179 merged at 156f6f5), closed J3551/J3619 and cancelled J3486. £0 spend."
         }
       ],
       "remaining_action": "Chief to merge WW2 pull request 151 and close the Sherman review",
@@ -340534,7 +340539,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ww2-channel#179"
     },
     {
       "id": "J3714",
