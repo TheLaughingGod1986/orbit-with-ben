@@ -325353,13 +325353,13 @@
       "stage": "vo",
       "after": "J3524",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T07:38Z",
-      "eta": "2026-11-26T09:38Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T13:14Z",
-      "result": "",
+      "result": "Waiting for: ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed, live balance covers 18,203 chars, and Pilot 2 48h/7d Rule-12 check reviewed (WW2:012 locked NARRATION_v02.txt already merged on ww2-channel main at SHA-256 de2b7565c47a19b4ee315ece77759765f96dee228244ba6720f5ee695b210ddb)",
       "history": [
         {
           "at": "2026-11-24T13:14Z",
@@ -325375,9 +325375,19 @@
           "at": "2026-11-26T07:40Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Verified NARRATION_v02.txt on ww2 main matches SHA-256 de2b7565c47a19b4ee315ece77759765f96dee228244ba6720f5ee695b210ddb; UTC 2026-11-26 07:39Z is before 2026-11-30 10:50Z hard guard; £0 / 0 credits spent"
+        },
+        {
+          "at": "2026-11-26T07:40Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed, live balance covers 18,203 chars, and Pilot 2 48h/7d Rule-12 check reviewed (WW2:012 locked NARRATION_v02.txt already merged on ww2-channel main at SHA-256 de2b7565c47a19b4ee315ece77759765f96dee228244ba6720f5ee695b210ddb)"
+        },
+        {
+          "at": "2026-11-26T07:40Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-30T11:00:00Z"
         }
       ],
-      "remaining_action": "Wait for 2026-11-30 10:50Z ElevenLabs reset and Pilot 2 Rule-12 check (NARRATION_v02.txt verified on main)",
+      "remaining_action": "Verify post-reset ElevenLabs balance and Pilot 2 Rule-12 check, then record WW2:012 narration (18,203 chars)",
       "due": "2026-12-10T18:00:00Z",
       "kind": "vo",
       "plain": "Record Ben's voice-over for WW2 film 012 (Liberty Ships) strictly after the 30 Nov ElevenLabs reset and Chief merge of locked v02",
@@ -325397,7 +325407,12 @@
       },
       "taskKeys": [
         "WW2:012"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed, live balance covers 18,203 chars, and Pilot 2 48h/7d Rule-12 check reviewed (WW2:012 locked NARRATION_v02.txt already merged on ww2-channel main at SHA-256 de2b7565c47a19b4ee315ece77759765f96dee228244ba6720f5ee695b210ddb)",
+        "check_at": "2026-11-30T11:00:00Z"
+      }
     },
     {
       "id": "J3537",
