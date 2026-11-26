@@ -346692,10 +346692,10 @@
       "stage": "picture",
       "after": "J3774",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-26T13:36Z",
+      "eta": "2026-11-26T15:36Z",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:26Z",
       "result": "",
@@ -346759,6 +346759,11 @@
           "at": "2026-11-26T13:35Z",
           "by": "gemini",
           "what": "remaining action: Harvest 37 US Federal PD photos + LoC TIFF masters for WW2:015 to NAS, verify captions/crops, update ARCHIVE_PROVENANCE.md + status.json, and open clean PR"
+        },
+        {
+          "at": "2026-11-26T13:36Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Harvest 37 US Federal PD photos + LoC TIFF masters for WW2:015 to NAS, verify captions/crops, update ARCHIVE_PROVENANCE.md + status.json, and open clean PR",
@@ -346767,7 +346772,15 @@
       "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR",
       "taskKeys": [
         "WW2:015"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T13:36Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3776",
