@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3805 | mini | blocked | macbook | – | review · Verify condition for J3781 |  |
-| J3806 | mini | claimed | claudecode | 2026-11-26T20:06Z | review · Verify condition for J3649 |  |
+| J3806 | mini | blocked | claudecode | – | review · Verify condition for J3649 |  |
 
 Recently finished:
 
