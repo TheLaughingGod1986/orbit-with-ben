@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3704 | mini | blocked | claudecode | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
-| J3713 | mini | open | – | – | review · Verify condition for J3551 |  |
+| J3713 | mini | claimed | gemini | 2026-11-26T06:51Z | review · Verify condition for J3551 |  |
 | J3714 | mini | blocked | claude | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
 | J3716 | mini | open | – | – | 064 thumbs · for codex · review · Packaging panel (codex): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
