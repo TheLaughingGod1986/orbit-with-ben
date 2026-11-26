@@ -75,11 +75,80 @@ class BoardOK(unittest.TestCase):
                    'approved_from': {'card': 'OWB:ASK:Jother', 'number': '032', 'version': 'v03', 'channel': 'OWB', 'type': 'short'}}
         self.assertFalse(ad.delivery_jobs_for(short, [sibling]))
 
-    def test_incomplete_listing_and_uploaded_cards_never_queue(self):
+    def test_incomplete_listing_waits_only_for_delivery_work_and_uploaded_cards_never_queue(self):
+        upload = {'id': 'J3507', 'kind': 'studio', 'repo': 'owb', 'status': 'open', 'title': 'Upload OWB 032 v03',
+                  'history': []}
         with tempfile.TemporaryDirectory() as d, mock.patch.object(ad.lp, 'for_video', return_value={'complete': False}):
-            self.assertEqual(ad.plan_actions([card()], [review()], now=NOW, root=Path(d))[0]['op'], 'wait')
+            self.assertEqual(ad.plan_actions([card()], [review(), upload], now=NOW, root=Path(d))[0]['op'], 'wait')
         for youtube in ({'state': 'live', 'privacy': 'public'}, {'state': 'scheduled', 'publishAt': NOW.isoformat()}):
             self.assertFalse(ad.waiting_approvals([card(youtube=youtube)], [], now=NOW))
+
+    def test_ok_with_no_package_queues_one_job_that_packages_then_uploads(self):
+        # 26 Nov 2026: Ben OK'd the Franklin and Titan Shorts at 09:15; neither had a listing package and nothing was asked
+        # to make one, so the relay waited and the board said "waiting for an upload job, 12 h" for both.
+        at = (NOW - dt.timedelta(hours=1)).isoformat()
+        short = card(key='HOS:ASK:J3763', checkId='HOS-J3763', channel='HOS', number='008 Short s04', type='short',
+                     title='Why Did Franklin Never Patent the Lightning Rod?', version='v01',
+                     check={'verdict': 'ok', 'at': at, 'version': 'v01', 'handled': False},
+                     approved={'job': 'J3763', 'askJob': 'J3763', 'version': 'v01', 'okAt': at},
+                     ask={'job': 'J3763', 'file': 'hos_008_s04_no_patent_v01.mp4'})
+        # Its long airs Thu 26 Nov 18:00, so the Short's slot comes after that, never before.
+        long = {'key': 'HOS:008', 'channel': 'HOS', 'number': '008', 'type': 'long', 'lane': 'done',
+                'youtube': {'state': 'scheduled', 'videoId': 'YqCWYlv_LCY', 'publishAt': '2026-11-26T18:00:00Z'}}
+        ask = {'id': 'J3763', 'status': 'blocked', 'kind': 'assembly', 'repo': 'hos', 'history': [],
+               'title': 'Backlog HOS: next search-titled Short cut from a locked long'}
+        J.do_awaits(ask, 'chief', NOW, what='Watch HOS 008 Short s04', file='hos_008_s04_no_patent_v01.mp4',
+                    version='v01', number='008 Short s04', vtype='short', title=short['title'])
+        data = {'next_id': 3820, 'jobs': [ask]}
+        missing = {'complete': False, 'missing': ['title', 'thumbnail', 'description', 'tags'], 'destination': 'youtube'}
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(ad.lp, 'for_video', return_value=missing), \
+                mock.patch.object(ad, 'taken_cadence_days', return_value=set()):
+            actions = ad.plan_actions([short, long], data['jobs'], now=NOW, root=Path(d))
+            self.assertEqual([a['op'] for a in actions], ['create'])
+            a = actions[0]
+            self.assertTrue(a['title'].startswith('Package and upload HOS 008 Short s04'), a['title'])
+            self.assertEqual(a['airs'], '2026-11-27T11:30Z')  # Fri, the first HOS Short slot after the long
+            self.assertIn('title, thumbnail, description, tags', a['body'])
+            self.assertIn('Keep the title Ben OK\'d: "Why Did Franklin Never Patent the Lightning Rod?"', a['body'])
+            self.assertIn('Related video is the long', a['body'])
+            ad.apply_actions(data, actions, agent='relay', at=NOW)
+            job = data['jobs'][-1]
+            self.assertEqual((job['repo'], job['needs'], job['approved_from']['card']), ('hos', 'mini', 'HOS:ASK:J3763'))
+            self.assertEqual(job['remaining_action'], 'Build the listing package, then upload to YouTube Studio as Private')
+            self.assertNotIn('awaits_ben', ask)  # Ben has answered
+            self.assertEqual(ad.delivery_jobs_for(short, data['jobs']), [job])
+            self.assertEqual(ad.approval_alerts([short], data['jobs'], now=NOW + dt.timedelta(hours=24)), [])
+            again = ad.plan_actions([short, long], data['jobs'], now=NOW, root=Path(d))
+            self.assertEqual(again[0]['op'], 'wait')  # the package job is the delivery work now; no second one
+            ad.apply_actions(data, again, agent='relay', at=NOW)
+            self.assertEqual(len(data['jobs']), 2)
+            # A long that is not on YouTube yet: the job is queued all the same and told to wait for it.
+            unscheduled = dict(long, youtube=None)
+            first = ad.plan_actions([short, unscheduled], [ask], now=NOW, root=Path(d))[0]
+            self.assertIn("Its long (HOS:008) is not on YouTube yet", first['body'])
+
+    def test_a_finished_delivery_job_never_gets_a_second_upload(self):
+        done = {'id': 'J3507', 'kind': 'studio', 'repo': 'owb', 'status': 'done', 'title': 'Upload OWB 032 v03',
+                'history': []}
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(ad.lp, 'for_video', return_value={'complete': True}):
+            actions = ad.plan_actions([card()], [review(), done], now=NOW, root=Path(d))
+        self.assertEqual(actions, [{'op': 'skip', 'key': 'OWB:ASK:J3400', 'job': 'J3507',
+                                    'reason': 'Delivered by J3507; waiting for YouTube to read it back'}])
+
+    def test_listing_and_booked_shorts_come_from_the_cards_own_channel(self):
+        with tempfile.TemporaryDirectory() as d:
+            root, hos = Path(d) / 'studio', Path(d) / 'hos'
+            release = hos / '02_Video-Projects/008_Lightning-Franklin/10_Shorts/SHORTS_RELEASE.json'
+            release.parent.mkdir(parents=True)
+            release.write_text(json.dumps({'shorts': [{'id': '__UtUYdEUwg', 'airDate': '2026-11-27T11:30:00Z'},
+                                                      {'id': '', 'airDate': '2026-11-30T11:30:00Z'}]}))
+            with mock.patch.object(ad.channels, 'checkout', side_effect=lambda s: hos if s == 'hos' else None):
+                self.assertEqual(ad.listing_root('owb', root), root)
+                self.assertEqual(ad.listing_root('hos', root), hos)  # never Orbit's own film 008
+                self.assertEqual(ad.listing_root('ww2', root), ad.NO_CHECKOUT)
+                # Franklin Short A was booked only in HOS's own release file (26 Nov 2026).
+                self.assertEqual(ad.taken_cadence_days([], 'HOS', 'short', NOW.date(), root=root), {'2026-11-27'})
+                self.assertEqual(ad.taken_cadence_days([], 'HOS', 'long', NOW.date(), root=root), set())
 
     def test_existing_upload_is_acknowledged_without_creating_a_second_job(self):
         v = card()
