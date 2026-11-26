@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3807 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
-| J3811 | mini | open | – | – | studio · Package and upload HOS 008 Short s04 short v01 (Why Did Franklin Never Patent the Lightning Rod?) Private, 2026-12-01T11:30Z |  |
+| J3811 | mini | claimed | gemini | 2026-11-26T23:43Z | studio · Package and upload HOS 008 Short s04 short v01 (Why Did Franklin Never Patent the Lightning Rod?) Private, 2026-12-01T11:30Z |  |
 | J3812 | mini | open | – | – | studio · Package and upload OWB 032 Short 1 short v01 (How Would You Light a Fire on Titan?) Private, 2026-12-18T11:30Z |  |
 
 Recently finished:
