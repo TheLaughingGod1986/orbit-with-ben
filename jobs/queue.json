@@ -344169,6 +344169,11 @@
           "at": "2026-11-26T02:39Z",
           "by": "gemini",
           "what": "waits on Ben: Watch 032 Titan Short #1 (Fire on Titan) v01 and its cover: How Would You Light a Fire on Titan? (by 2026-12-18 18:00 London)"
+        },
+        {
+          "at": "2026-11-26T02:39Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-18T18:00:00Z"
         }
       ],
       "remaining_action": "Parked J3758 for Chief Short PASS",
@@ -344200,6 +344205,11 @@
         "title": "How Would You Light a Fire on Titan?",
         "number": "032 Short 1",
         "type": "short"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Chief PASS (5-part multimodal review, PR #1333 merged 88bf9ce54d, jobs/reviews/J3758/REVIEW.md eedef9bd25). Awaiting Ben UAT phone watch and board approval on OWB UAT/032_short_strike_match_fire_v01.mp4 (sha256 494f092b857df509e419b2b04967c337acde9af88d362725cd2e94e34acf2386) and cover (11410819204f). After Ben approves, queue upload package with complete en-GB SRT (all 73 words incl. 9-14s) for earliest open Mon/Wed/Fri/Sat 11:30Z slot (not 18 Dec, held for 033 Short 1).",
+        "check_at": "2026-12-18T18:00:00Z"
       }
     },
     {
