@@ -348369,9 +348369,14 @@
           "at": "2026-11-26T13:23Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Verified NAS master SHA-256 cee68f66...08c2 and copied to iCloud WW2 UAT; publishing watch link to board"
+        },
+        {
+          "at": "2026-11-26T13:26Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Copied NAS master uboat_surface_short_v01.mp4 (17,186,020 B, SHA-256 cee68f668329146c54ab6836c898cfdda85c6ca8a2f1949b8be06eca2dfb08c2) to WW2 UAT; board_publish pushed 61003c9b (watch id ww2-j3566-v01-3e63bb65dc02b04e172d, HTTP 302 -> R2 200 video/mp4 17,186,020 B); board_check.py ok=true (expected 13, problems=[])"
         }
       ],
-      "remaining_action": "Copy 002-S1 master to WW2 UAT and publish live Play link on card WW2:002-S1",
+      "remaining_action": "Wait for Ben's watch OK on WW2:002-S1 (cutoff Fri 27 Nov 10:30 London), then upload Private for Fri 27 Nov 12:30 London linked to qfc6EBStOfo",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348380,16 +348385,16 @@
       ],
       "urgent": 8,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-26T13:23Z",
+        "at": "2026-11-26T13:26Z",
         "by": "gemini",
         "plan": [
           "Copy master to WW2 UAT & verify watch Play link",
           "Wait for Ben OK & upload Private for Fri 27 Nov 12:30",
           "Verify Studio/API readback & update 002 records"
         ],
-        "note": "Verified NAS master SHA-256 cee68f66...08c2 and copied to iCloud WW2 UAT; publishing watch link to board"
+        "note": "Copied NAS master uboat_surface_short_v01.mp4 (17,186,020 B, SHA-256 cee68f668329146c54ab6836c898cfdda85c6ca8a2f1949b8be"
       },
       "taskKeys": [
         "WW2:002"
