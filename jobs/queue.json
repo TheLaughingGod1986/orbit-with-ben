@@ -350369,10 +350369,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T20:42Z",
+      "eta": "2026-11-26T21:42Z",
       "created_by": "refill",
       "created_at": "2026-11-26T20:22Z",
       "result": "",
@@ -350426,6 +350426,11 @@
           "at": "2026-11-26T20:42Z",
           "by": "codex",
           "what": "reopened: Chief ruling KEEP: reviewed local audit a43a4f59 and whitelisted evidence; verified all 21 chapter-file hashes. No new public listing fixes. Gravity end screen missing, Short A Related None, Short B unverified. Existing J3501 reopened with scoped finish, unchanged schedules and public recheck 3 Dec 18:05Z. This completes read-only audit scope; publication rejection remains, no audit branch push or indirect publication authorized."
+        },
+        {
+          "at": "2026-11-26T20:42Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record accepted audit and existing Gravity follow-up; keep rejected audit publication local.",
@@ -350442,7 +350447,15 @@
         "HOS:008",
         "HOS:009",
         "HOS:099"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T20:42Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
