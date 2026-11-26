@@ -341153,10 +341153,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T19:38Z",
+      "eta": "2026-11-26T20:38Z",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
       "result": "",
@@ -341275,6 +341275,11 @@
           "at": "2026-11-26T19:37Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-26T19:35:00Z has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-26T19:38Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirm RqYjADxvJy8 finished processing (~23:48), apply DESCRIPTION_v02.txt, verify/replace en-GB captions, verify/set end screen in last 20s, read back Studio + API, commit TRIM_RECEIPT_v01.md + status.json + LEARNINGS.md PR for Chief, and restore Orbit on browser 9223",
@@ -341284,7 +341289,15 @@
       "taskKeys": [
         "WW2:003"
       ],
-      "urgent": 8
+      "urgent": 8,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T19:38Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3715",
