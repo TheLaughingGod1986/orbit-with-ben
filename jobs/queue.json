@@ -344647,9 +344647,14 @@
           "at": "2026-11-26T01:02Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T01:04Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Pulling HOS snapshot, public pages, and repo records",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -344662,11 +344667,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T01:02Z",
+        "of": 4,
+        "at": "2026-11-26T01:04Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect live pages, snapshot and repo records",
+          "Audit longs, Shorts, scheduled videos and parity",
+          "Write audit report and run HOS checks",
+          "Open PR, complete job and post report"
+        ]
       }
     },
     {
