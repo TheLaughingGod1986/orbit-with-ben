@@ -320604,10 +320604,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-26T23:38Z",
+      "eta": "2026-11-27T03:38Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
       "result": "",
@@ -320706,13 +320706,26 @@
           "at": "2026-11-26T23:37Z",
           "by": "claude",
           "what": "reopened: Condition MET (J3762): the Battle of the Bulge topic checkpoint is merged on ww2-channel main (PR #173, 0690ed3; folder 016_Battle-of-the-Bulge-Pattons-Turn). Continue from packaging-first and the script."
+        },
+        {
+          "at": "2026-11-26T23:38Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
       "due": "2026-12-16T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T23:38Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3488",
