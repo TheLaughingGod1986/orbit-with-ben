@@ -348080,17 +348080,22 @@
           "at": "2026-11-26T12:54Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected J3780/J3671/J3783 history, chief_relay state, and origin/claude-heartbeat (2026-11-26T12:52:25Z out=true until 2026-11-26T17:50:00Z)"
+        },
+        {
+          "at": "2026-11-26T12:55Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI SUCCESS, 0 media), locked SHORTS_SCRIPTS_v03.md (1132ad9f...), and all 4 NAS tight WAV/MP3 SHA-256 hashes intact; condition UNMET (live origin/claude-heartbeat 12:52:25Z sets out=true until 2026-11-26T17:50:00Z; codex down until Nov 27 16:26; grok down; gemini authored J3671)"
         }
       ],
-      "remaining_action": "Verify HOS PR #797 CI, NAS audio hashes, and latest Claude heartbeat/status",
+      "remaining_action": "Record updated typed input hold on J3780 (--recheck J3791, --check-at 2026-11-26T17:50:00Z) and complete J3791",
       "kind": "review",
       "recheck_of": "J3780",
       "due": "2026-11-26T13:50:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-26T12:54Z",
+        "at": "2026-11-26T12:55Z",
         "by": "gemini",
         "plan": [
           "Inspect J3780 history and Chief availability",
@@ -348098,7 +348103,7 @@
           "Evaluate waiting condition and update J3780",
           "Complete J3791 and post thread report"
         ],
-        "note": "Inspected J3780/J3671/J3783 history, chief_relay state, and origin/claude-heartbeat (2026-11-26T12:52:25Z out=true until"
+        "note": "Verified HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI SUCCESS, 0 media), locked SHORTS_SCRIPTS_v03.md (1132ad9f...), "
       },
       "taskKeys": [
         "HOS:128"
