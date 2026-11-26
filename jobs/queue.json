@@ -350326,10 +350326,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T20:24Z",
+      "eta": "2026-11-26T21:24Z",
       "created_by": "refill",
       "created_at": "2026-11-26T20:22Z",
       "result": "",
@@ -350338,11 +350338,24 @@
           "at": "2026-11-26T20:22Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T20:24Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes"
+      "backlog": "hos-live-listing-fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T20:24Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
