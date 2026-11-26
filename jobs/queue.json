@@ -348854,9 +348854,14 @@
           "at": "2026-11-26T15:52Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: PR490 still OPEN draft f521bcd3f1 (no update since 17 Nov); all 8 ~/.codex hashes unchanged (codex-cli 0.160.0); no operator confirmation on #954 after 7105379476 or HOS #694/#180"
+        },
+        {
+          "at": "2026-11-26T15:52Z",
+          "by": "claudecode",
+          "what": "step 3 of 3 done: Evidence PR #1344 (jobs/reviews/J3798/REVIEW.md): NOT MET. jobs.py wait J2040 refused for a worker (holder codex / Chief only)"
         }
       ],
-      "remaining_action": "Record J2040 wait with recheck J3798 and finish",
+      "remaining_action": "Chief: record J2040 wait --recheck J3798 (command in PR #1344), merge PR #1344, close J3798",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-26T16:46:42+00:00",
@@ -348870,7 +348875,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-26T15:52Z",
         "by": "claudecode",
@@ -348879,7 +348884,7 @@
           "Check condition",
           "Record result"
         ],
-        "note": "PR490 still OPEN draft f521bcd3f1 (no update since 17 Nov); all 8 ~/.codex hashes unchanged (codex-cli 0.160.0); no oper"
+        "note": "Evidence PR #1344 (jobs/reviews/J3798/REVIEW.md): NOT MET. jobs.py wait J2040 refused for a worker (holder codex / Chief"
       }
     },
     {
