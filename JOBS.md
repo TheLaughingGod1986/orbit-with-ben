@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3791 | any | blocked | gemini | – | review · Verify condition for J3780 |  |
-| J3792 | any | blocked | cursor | – | review · Verify condition for J3781 |  |
+| J3792 | any | open | – | – | review · Verify condition for J3781 |  |
 
 Recently finished:
 
