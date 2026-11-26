@@ -348452,13 +348452,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T16:27Z",
-      "eta": "2026-11-26T17:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
-      "result": "",
+      "result": "J3794 complete (never re-uploaded). On existing Ben-OK'd upload ZCnSldSJzME (Private, publishAt 2026-11-27T12:30:00Z, master SHA-256 cee68f66...08c2), set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) in Field Order History Studio, saved, hard-reloaded, and verified both Studio prefetch JSON (videoLinkageShortsAttribution targetExternalVideoId=qfc6EBStOfo, VIDEO_PRIVACY_PRIVATE, scheduledTimeSeconds=1795782600, VIDEO_HAS_ALTERED_CONTENT_YES, VIDEO_MADE_FOR_KIDS_NOT_MFK, SD+HD done, no claims, custom cover preserved) and Data API read-back (processed/private/2026-11-27T12:30:00Z/madeForKids=false/hasCustomThumbnail=true/description link to qfc6EBStOfo; public parent qfc6EBStOfo untouched). Recorded in ww2-channel PR #188 (commit 10bceb5 on top of PR #187, ready for Chief merge). Note: CDP 9223 currently holds FOH (UCu94mInMFosxu3W0H6jlI6Q) while CDP 9224 holds Orbit/HOS/OpptiAI; flagged on thread. £0 spend.",
       "history": [
         {
           "at": "2026-11-26T13:18Z",
@@ -348574,6 +348574,11 @@
           "at": "2026-11-26T16:47Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Opened ww2-channel PR #188 (supersedes #187) with Studio reload + Data API readback for ZCnSldSJzME; posted thread report"
+        },
+        {
+          "at": "2026-11-26T16:47Z",
+          "by": "gemini",
+          "what": "done: J3794 complete (never re-uploaded). On existing Ben-OK'd upload ZCnSldSJzME (Private, publishAt 2026-11-27T12:30:00Z, master SHA-256 cee68f66...08c2), set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) in Field Order History Studio, saved, hard-reloaded, and verified both Studio prefetch JSON (videoLinkageShortsAttribution targetExternalVideoId=qfc6EBStOfo, VIDEO_PRIVACY_PRIVATE, scheduledTimeSeconds=1795782600, VIDEO_HAS_ALTERED_CONTENT_YES, VIDEO_MADE_FOR_KIDS_NOT_MFK, SD+HD done, no claims, custom cover preserved) and Data API read-back (processed/private/2026-11-27T12:30:00Z/madeForKids=false/hasCustomThumbnail=true/description link to qfc6EBStOfo; public parent qfc6EBStOfo untouched). Recorded in ww2-channel PR #188 (commit 10bceb5 on top of PR #187, ready for Chief merge). Note: CDP 9223 currently holds FOH (UCu94mInMFosxu3W0H6jlI6Q) while CDP 9224 holds Orbit/HOS/OpptiAI; flagged on thread. £0 spend."
         }
       ],
       "remaining_action": "Complete; ww2-channel PR #188 open for Chief merge",
