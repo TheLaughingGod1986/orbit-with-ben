@@ -348295,9 +348295,14 @@
           "at": "2026-11-26T13:18Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: PR #182 MERGED 2026-11-26T09:42:50Z (merge dd01145, head a1cd072f), on ww2 origin/main (68b0a84); merged by channel_pr_sweep.py 'Chief sweep' alongside Claude-authored commits 09:40-09:43Z; producer was gemini, so not a self-merge"
+        },
+        {
+          "at": "2026-11-26T13:18Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Condition met: PR #182 merged 09:42:50Z by Chief sweep (dd01145 on ww2 main); jobs.py refuses worker reopen of a hold"
         }
       ],
-      "remaining_action": "Reopen J3775 with evidence and finish this check",
+      "remaining_action": "Elected Chief: reopen J3775 with the evidence, then close J3793",
       "kind": "review",
       "recheck_of": "J3775",
       "due": "2026-11-26T14:16:35+00:00",
@@ -348320,7 +348325,7 @@
           "Check PR #182 state",
           "Reopen or re-wait J3775, finish"
         ],
-        "note": "PR #182 MERGED 2026-11-26T09:42:50Z (merge dd01145, head a1cd072f), on ww2 origin/main (68b0a84); merged by channel_pr_s"
+        "note": "Condition met: PR #182 merged 09:42:50Z by Chief sweep (dd01145 on ww2 main); jobs.py refuses worker reopen of a hold"
       },
       "taskKeys": [
         "WW2:015"
