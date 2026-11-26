@@ -347974,15 +347974,20 @@
           "at": "2026-11-26T12:43Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified RtEMDrfeKR8 Private scheduled 2026-11-28T12:30:00Z and RqYjADxvJy8 Private scheduled 2026-11-28T17:00:00Z via Data API; Studio 9224 is signed out (accounts.google.com)"
+        },
+        {
+          "at": "2026-11-26T12:43Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Moved RtEMDrfeKR8 publishAt 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (containsSyntheticMedia=true, Private, all fields unchanged, RqYjADxvJy8 untouched). Studio 9224 still signed out."
         }
       ],
-      "remaining_action": "Moving RtEMDrfeKR8 publishAt from 2026-11-28T12:30:00Z to 2026-11-29T12:30:00Z via YouTube Data API",
+      "remaining_action": "Writing J3790 reschedule receipt, updating WW2 003 status.json and UPLOADS.json in clean PR",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 7,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-26T12:43Z",
         "by": "gemini",
@@ -347992,7 +347997,7 @@
           "Read back in API and Studio 9224",
           "Update status.json, UPLOADS.json PR and wait"
         ],
-        "note": "Verified RtEMDrfeKR8 Private scheduled 2026-11-28T12:30:00Z and RqYjADxvJy8 Private scheduled 2026-11-28T17:00:00Z via D"
+        "note": "Moved RtEMDrfeKR8 publishAt 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (containsSyntheticMedia=true, Priv"
       },
       "taskKeys": [
         "WW2:003"
