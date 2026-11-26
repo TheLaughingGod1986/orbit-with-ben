@@ -349527,13 +349527,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-26T17:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T17:50Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3804 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1346. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T17:50Z",
@@ -349554,6 +349554,11 @@
           "at": "2026-11-26T17:56Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3804 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1346. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-26T18:02Z",
+          "by": "codex",
+          "what": "reopened: Taking the requested Chief review of PR 1346; J3780 remains held pending recorded ruling."
         }
       ],
       "remaining_action": "Verify readiness: Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
@@ -349568,15 +349573,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T17:53Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "open_claim": true
     },
     {
       "id": "J3805",
