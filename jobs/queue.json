@@ -326643,10 +326643,10 @@
       "stage": "script",
       "after": "J3550",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T04:50Z",
+      "eta": "2026-11-26T06:50Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T15:07Z",
       "result": "",
@@ -326695,6 +326695,11 @@
           "at": "2026-11-26T04:50Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief J3713: J3550 done, WW2 PR #151 merged (3d71ed31), NO-GO upheld (ww2-channel#179); claiming to close done."
+        },
+        {
+          "at": "2026-11-26T04:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Resolve archive coverage and facts then test the opening before locking narration",
@@ -326708,7 +326713,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-25T15:20Z"
+      "escalated_at": "2026-11-25T15:20Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T04:50Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3552",
