@@ -323041,9 +323041,14 @@
           "at": "2026-11-26T23:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:41Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Reopened read-only verification; swap already merged in PR #1258/#1259"
         }
       ],
-      "remaining_action": "Chief review and merge of verified records PR #1258, then close J3510",
+      "remaining_action": "Run read-only verify-swap.ts and YouTube readback on k2kEaA7ICjc, emKN9xjDswI, and parent vP1BbqZ_dnM",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -323070,10 +323075,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T23:39Z",
+        "at": "2026-11-26T23:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read back YouTube state & verify-swap",
+          "Check records and save readback",
+          "Post report and close J3510"
+        ],
+        "note": "Reopened read-only verification; swap already merged in PR #1258/#1259"
       }
     },
     {
