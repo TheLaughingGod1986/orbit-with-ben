@@ -345936,9 +345936,14 @@
           "at": "2026-11-26T04:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:53Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3772; starting WW2:015 topic, archive and rules check"
         }
       ],
-      "remaining_action": "Run Rule-2 packaging-first topic and archive check for Higgins boat (fallback Red Ball Express), draft sourced script <=21,000 chars, and queue claims + Rule-6 viewer checks",
+      "remaining_action": "Verify Higgins boat topic fit and 15-25 official US/UK public-domain archive photo IDs",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 015 (Higgins boat / LCVP engineering, replacing Sherman draft v01)",
@@ -345952,12 +345957,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T04:52Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 5,
+        "at": "2026-11-26T04:53Z",
+        "by": "gemini",
+        "plan": [
+          "Topic check and archive photo verification",
+          "Lock title and thumbnail concepts",
+          "Draft script, narration, sources and provenance",
+          "Update backlog, status file and open PR",
+          "Queue facts check and review gate"
+        ],
+        "note": "Claimed J3772; starting WW2:015 topic, archive and rules check"
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     }
   ],
   "focus": [
