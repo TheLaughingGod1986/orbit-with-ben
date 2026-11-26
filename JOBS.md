@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3801 | mini | open (after J3800) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
+| J3803 | mini | open | – | – | studio · First-day check at 6 h: "Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) |  |
 
 Recently finished:
 
