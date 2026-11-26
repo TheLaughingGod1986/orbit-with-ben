@@ -344058,15 +344058,20 @@
           "at": "2026-11-26T00:29Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All 7 gates PASS (0/25 & 0/50 padded frames, 0 polish_gate/picture_qa fails, SFX/music/thumb PASS) and NAS SHA-256 verified: 494f092b857d."
+        },
+        {
+          "at": "2026-11-26T00:32Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: PR #1333 opened, #99 report posted, all 7 gates PASS on NAS 032_short_strike_match_fire_v01.mp4 (sha256 494f092b857d)."
         }
       ],
-      "remaining_action": "Writing handoff report, pushing PR, posting #99 report, and parking J3758 for Chief Short PASS",
+      "remaining_action": "Parked J3758 for Chief Short PASS",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-26T00:29Z",
+        "at": "2026-11-26T00:32Z",
         "by": "gemini",
         "plan": [
           "Select OWB long with fewest Shorts",
@@ -344075,7 +344080,7 @@
           "Run Short, SFX and thumb gates",
           "Commit, post report on #99 and park for Chief"
         ],
-        "note": "All 7 gates PASS (0/25 & 0/50 padded frames, 0 polish_gate/picture_qa fails, SFX/music/thumb PASS) and NAS SHA-256 verif"
+        "note": "PR #1333 opened, #99 report posted, all 7 gates PASS on NAS 032_short_strike_match_fire_v01.mp4 (sha256 494f092b857d)."
       },
       "taskKeys": [
         "OWB:032"
