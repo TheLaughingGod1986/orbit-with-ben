@@ -346850,19 +346850,30 @@
           "at": "2026-11-26T07:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:53Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3779 and checking CDP sessions"
         }
       ],
-      "remaining_action": "Read the latest Studio performance figures",
+      "remaining_action": "Checking Studio CDP browsers and existing reader script",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-26T07:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect Studio browsers & scripts",
+          "Read OWB Studio metrics",
+          "Read HOS Studio metrics",
+          "Run studio_reach morning & rebuild tracker",
+          "Commit, publish board & finish"
+        ],
+        "note": "Claimed J3779 and checking CDP sessions"
       }
     },
     {
