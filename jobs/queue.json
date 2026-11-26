@@ -348911,9 +348911,14 @@
           "at": "2026-11-26T16:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T16:25Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Chief review steps independently completed: eight local hashes and latest trusted messages checked; condition not met. Parent remains held."
         }
       ],
-      "remaining_action": "Chief: record J2040 wait --recheck J3798 (command in PR #1344), merge PR #1344, close J3798",
+      "remaining_action": "Record the continuing operator-evidence hold and its next check, then close this verification.",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-26T16:46:42+00:00",
@@ -348927,12 +348932,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
         "at": "2026-11-26T16:25Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs and authority",
+          "Review evidence and choose ruling",
+          "Record hold and follow-up"
+        ],
+        "note": "Chief review steps independently completed: eight local hashes and latest trusted messages checked; condition not met. P"
       }
     },
     {
