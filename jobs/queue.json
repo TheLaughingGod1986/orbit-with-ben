@@ -340156,13 +340156,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-26T17:51Z",
-      "eta": "2026-11-26T18:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.",
       "history": [
         {
           "at": "2026-11-25T10:22Z",
@@ -340288,6 +340288,11 @@
           "at": "2026-11-26T17:57Z",
           "by": "codex",
           "what": "step 2 of 3 done: Corrections committed locally as 9e4b053; JSON and diff checks pass. Automatic approval review rejected GitHub push; publication remains unfinished."
+        },
+        {
+          "at": "2026-11-26T17:57Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction."
         }
       ],
       "remaining_action": "Publishing the committed corrections after the data-export approval is resolved",
@@ -340310,6 +340315,11 @@
           "Record findings and report"
         ],
         "note": "Corrections committed locally as 9e4b053; JSON and diff checks pass. Automatic approval review rejected GitHub push; pub"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.",
+        "check_at": "2026-11-26T23:57:10+00:00"
       }
     },
     {

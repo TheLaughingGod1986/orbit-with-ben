@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3670 | mini | blocked | claudecode | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
 | J3678 | mini | blocked | gemini | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
-| J3704 | mini | claimed | codex | 2026-11-26T18:31Z | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
+| J3704 | mini | blocked | codex | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
 | J3714 | mini | open | – | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
