@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3772 | mini | claimed | gemini | 2026-11-26T06:52Z | WW2:015 script · script · WW2 film 015: Higgins boat (LCVP) topic check, packaging first, script and sources, to lock by 2026-12-13 | ww2-channel#151 |
 | J3773 | gemini | open | – | – | WW2:015 sources · facts · WW2 film 015: Higgins boat (LCVP) independent claims and archive provenance check (PR #180) | ww2-channel#180 |
+| J3774 | any | open (after J3773) | – | – | WW2:015 script · review · WW2 film 015: Higgins boat (LCVP) topic/archive review and Rule-6 stranger viewer test (300 + 1,200 words) | ww2-channel#180 |
 
 Recently finished:
 
