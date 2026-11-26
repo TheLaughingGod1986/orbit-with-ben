@@ -1,5 +1,5 @@
 {
-  "next_id": 3814,
+  "next_id": 3815,
   "jobs": [
     {
       "id": "J0001",
@@ -350810,6 +350810,36 @@
       "taskKeys": [
         "HOS:136"
       ]
+    },
+    {
+      "id": "J3814",
+      "title": "Archive the HOS 008 s04 uploaded cover and its provenance",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling on J3811 (Codex, 26 Nov 2026): upload records PASS; HOS PR 804 and OWB PR 1352 merged. Preserve the missing cover for HOS 008 Short s04 v01, video f_-BsKZf8X0. The uploaded manifest names cover.jpg but its /tmp/j3811-hos worktree no longer exists, and the film NAS Shorts folder has no cover asset. Recover the exact uploaded cover if available from a surviving local source or read-only thumbnail download; otherwise extract frame 0 from the hash-verified NAS master and label it reconstructed, not byte-identical. Store the image durably and write a separate archival receipt with path, SHA-256, provenance and phone-size still review. Do not rewrite the uploaded PACKAGE_MANIFEST.json or master. No YouTube, schedule, privacy, title, thumbnail or Buffer changes; no re-upload; no spend. Existing approved master SHA-256 e162a0fbe05e519ae822aededabf62172396594d4f564081d539db724f03809c. Deliver a HOS PR and desk report. This is archival follow-up, not a new publishing hold. Keep the current Dec 1 11:30Z schedule.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "thumbs",
+      "after": "J3811",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-26T22:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T22:05Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recover and archive the Franklin Short cover with its checksum",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Save a lasting copy of the cover for the Franklin lightning rod Short"
     }
   ],
   "focus": [
