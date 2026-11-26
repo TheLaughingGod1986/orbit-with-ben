@@ -344855,9 +344855,14 @@
           "at": "2026-11-26T01:42Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified 008 Short A v04 & Short C v07 NAS SHA-256 hashes and added __UtUYdEUwg and 4sYTV_rQcqs (scheduled) to library.json"
+        },
+        {
+          "at": "2026-11-26T01:42Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Ported all 12 HOS 009 receipt/caption/manifest files from PR #757 and merged OhdDVA9kWBk & 9ETHUOUH5-A into library.json; kept origin/main 009/status.json untouched"
         }
       ],
-      "remaining_action": "Porting 12 HOS 009 receipt/caption/manifest files and 2 Shorts library entries from PR #757 while keeping origin/main status.json",
+      "remaining_action": "Running read-only channel:audit --write-live to refresh LIVE_VIDEOS.json and updating 005 SHORTS_RELEASE.json note",
       "due": "2026-11-27T10:00:00Z",
       "kind": "listing",
       "plain": "Sync History of Science records with YouTube: add Franklin Shorts to the opening-frame library, refresh the live video list, and record Gravity upload receipts",
@@ -344871,7 +344876,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-11-26T01:42Z",
         "by": "gemini",
@@ -344882,7 +344887,7 @@
           "Run check_all.sh validation",
           "Push PR, Chief merge, close #757 & report"
         ],
-        "note": "Verified 008 Short A v04 & Short C v07 NAS SHA-256 hashes and added __UtUYdEUwg and 4sYTV_rQcqs (scheduled) to library.j"
+        "note": "Ported all 12 HOS 009 receipt/caption/manifest files from PR #757 and merged OhdDVA9kWBk & 9ETHUOUH5-A into library.json"
       },
       "taskKeys": [
         "HOS:008",
