@@ -341105,13 +341105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T17:58Z",
-      "eta": "2026-11-26T18:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
-      "result": "",
+      "result": "Waiting for: Ben to sign Mac mini Chrome CDP 9224 (~/.ww2-chrome-youtube-studio) into the Google account owning Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Currently 9224 is signed into the Google account owning OpptiAI/Orbit With Ben/History of Science only, so studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q returns permission error and RqYjADxvJy8/edit fails. Pre-work done: Data API before-state recorded and exact 20ms RMS audio measurements done (Cut A 93.70-183.00s, Cut B 411.90-444.60s because Every starts at 444.64s). Deadline Fri 27 Nov 12:00Z.",
       "history": [
         {
           "at": "2026-11-25T14:02Z",
@@ -341147,6 +341147,11 @@
           "at": "2026-11-26T18:05Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Data API before-state and exact zero-offset 20ms audio/video cut-point measurements complete (A: 93.70-183.00, B: 411.90-444.60 to avoid clipping Every at 444.64s); blocked on Studio 9224 wrong Google account"
+        },
+        {
+          "at": "2026-11-26T18:05Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben to sign Mac mini Chrome CDP 9224 (~/.ww2-chrome-youtube-studio) into the Google account owning Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Currently 9224 is signed into the Google account owning OpptiAI/Orbit With Ben/History of Science only, so studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q returns permission error and RqYjADxvJy8/edit fails. Pre-work done: Data API before-state recorded and exact 20ms RMS audio measurements done (Cut A 93.70-183.00s, Cut B 411.90-444.60s because Every starts at 444.64s). Deadline Fri 27 Nov 12:00Z."
         }
       ],
       "remaining_action": "Waiting for Ben to sign Chrome 9224 into Field Order History Google account (currently signed into wrong Google account)",
@@ -341170,7 +341175,12 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Waiting for: Ben to sign Mac mini Chrome CDP 9224 (~/.ww2-chrome-youtube-studio) into the Google account owning Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Currently 9224 is signed into the Google account owning OpptiAI/Orbit With Ben/History of Science only, so studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q returns permission error and RqYjADxvJy8/edit fails. Pre-work done: Data API before-state recorded and exact 20ms RMS audio measurements done (Cut A 93.70-183.00s, Cut B 411.90-444.60s because Every starts at 444.64s). Deadline Fri 27 Nov 12:00Z.",
+        "check_at": "2026-11-27T00:05:17+00:00"
+      }
     },
     {
       "id": "J3715",
