@@ -351405,24 +351405,28 @@
           "at": "2026-11-26T23:54Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:54Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Read WW2 rules, v04 and viewer test",
+      "remaining_action": "Reading v04 narration and viewer test",
       "due": "2026-11-29T18:00:00Z",
       "kind": "script",
       "plain": "Bring the Operation Pedestal story into action within the first minute",
       "progress": {
         "step": 0,
-        "of": 6,
-        "at": "2026-11-26T23:53Z",
-        "by": "macbook",
+        "of": 5,
+        "at": "2026-11-26T23:54Z",
+        "by": "claudecode",
         "plan": [
-          "Read rules and v04 test",
-          "Write NARRATION_v05",
-          "Write SCRIPT.md and delta claims",
-          "Validate parity and counts",
-          "Status note and Short text",
-          "PR and report"
+          "Read v04 + viewer test",
+          "Write v05 narration",
+          "Sync SCRIPT.md, Short, status",
+          "Validate parity/hash/counts",
+          "Commit, PR, report"
         ]
       },
       "rerouted_from": {
@@ -351432,7 +351436,10 @@
         "status": "claimed",
         "by": "macbook"
       },
-      "open_claim": true
+      "open_claim": true,
+      "taskKeys": [
+        "WW2:009"
+      ]
     },
     {
       "id": "J3821",
