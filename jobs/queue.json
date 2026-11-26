@@ -347964,21 +347964,33 @@
           "at": "2026-11-26T12:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T12:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Reschedule the B-29 Short to the day after the film and link it",
+      "remaining_action": "Checking RtEMDrfeKR8 state via YouTube Data API and Studio 9224",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T12:40Z",
+        "of": 4,
+        "at": "2026-11-26T12:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check Data API and Studio 9224",
+          "Move RtEMDrfeKR8 to Sun 29 Nov 12:30Z",
+          "Read back in API and Studio 9224",
+          "Update status.json, UPLOADS.json PR and wait"
+        ]
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     }
   ],
   "focus": [
