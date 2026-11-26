@@ -1,5 +1,5 @@
 {
-  "next_id": 3780,
+  "next_id": 3781,
   "jobs": [
     {
       "id": "J0001",
@@ -346563,6 +346563,36 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J3780",
+      "title": "HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independent non-producer Chief review, VO PASS ruling, and PR merge for **HOS 128** (*Why Do We Use AC Instead of DC? (Edison vs Tesla)*) Shorts `S01` and `S02` voiceover recorded by `gemini` under `J3671`.\n\n**Non-producer guard:** `gemini` produced `J3671` and opened HOS PR `#797` (`gemini/J3671-hos128-shorts-vo`), so `gemini` must NOT self-PASS or self-merge this VO. An independent Chief (`claude` or `codex`) owns the review, KEEP/RETAKE ruling, PR merge, and `shorts_vo` → `done` update.\n\n**Artifacts to review:**\n- HOS PR `#797`: `https://github.com/TheLaughingGod1986/history-of-science/pull/797`\n- Locked source script (`J3660`, PR `#762`): `02_Video-Projects/128_Edison-Tesla-Westinghouse-Why-Do-We-Use-AC-Instead-Of-DC/10_Shorts/SHORTS_SCRIPTS_v03.md` (`sha256: 1132ad9f8b44d4e545f699bf702b83894370effb34afe37ce12b25a2080694e7`)\n- Take record & pasted `vo_check_py312.sh` outputs: `10_Shorts/vo_v03/VO_STATUS.md`\n- NAS audio directory (SHA-256 verified): `/Volumes/data/studio-live/History Of Science/02_Video-Projects/128_Edison-Tesla-Westinghouse-Why-Do-We-Use-AC-Instead-Of-DC/10_Shorts/vo_v03/`\n\n**Candidate edit-ready masters (`16.0–19.0 s` house band, `atempo = 1.00`, inter-sentence pause trim only):**\n1. **`S01`** (*Why Couldn't Thomas Edison's DC Power Cross a City?*): `hos_128_short_S01_v03_tight` — `18.54 s`, `-20.1 LUFS` (mean `-22.6 dB`, peak `-4.0 dB`), `vo_check_py312.sh` PASS (1 sounds-alike warn `tenfold`/`fold` verified clean by direct listen), WAV `931718a6429c8559e77adf2bbd02d549d653f18d5dd6fba683b66e203eb98168` / MP3 `40606376678a64f1a05a38f65cf58d74c99885ae09253e4a6ad66da70146cec1`.\n2. **`S02`** (*How Did Nikola Tesla's AC Beat Edison's DC?*): `hos_128_short_S02_v03b_tight` — `18.39 s`, `-20.3 LUFS` (mean `-23.1 dB`, peak `-3.8 dB`), `vo_check_py312.sh` PASS (`0` word diffs), WAV `cc51cc86810edd72265848b403b90ae26b814058971aedee1a20929b2e4f9106` / MP3 `feb068bc83e18b91fdf1e60419a9b49ef4d09a8aa54e79e7d1af143759c6c8da` (derived from Acting-Chief-cleared retake `S02_v03b` after raw take `S02_v03` ran `23.84 s` / `101 wpm`).\n\n**Checklist:**\n1. Verify HOS PR `#797` CI is green and zero media is tracked in git.\n2. Review `VO_STATUS.md`, `*_TAKE.json`, `vo_check/*.json`, and word timings (`stt/*/words.json`) against `SHORTS_SCRIPTS_v03.md` and Ben's 19 Nov 16–19 s Shorts house rules (note `S02` measured `1888` at `8.53–9.51 s` for downstream edit overlay placement).\n3. If KEEP/PASS: merge HOS PR `#797`, flip `status.json` `shorts_vo` → `done` (locked stems `hos_128_short_S01_v03_tight` & `hos_128_short_S02_v03b_tight`), update `VO_STATUS.md` and `production-status.md`, and post the PASS ruling on HOS desk `#694`. Keep picture/thumbnail/scheduling blocked until long VO (`J3670`, post-30-Nov reset) also passes.\n4. Zero spend on this review job.\n",
+      "ref": "HOS PR #797, J3671, J3660",
+      "film": "HOS:128",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T07:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T07:09Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "chief",
+      "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR"
     }
   ],
   "focus": [
