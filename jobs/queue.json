@@ -343472,13 +343472,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:17Z",
-      "eta": "2026-11-26T06:17Z",
+      "eta": "",
       "created_by": "claudecode",
       "created_at": "2026-11-25T21:41Z",
-      "result": "",
+      "result": "Acting Chief (gemini, J3771): merged ww2-channel PR #168 (7dcce41) and PR #170 (07e6474, QA_REVIEW_v04.md KEEP); recorded PASS ruling in PR #178 (50ac67b) and staged WW2:005 v04 privately for Ben's watch on J3432.",
       "history": [
         {
           "at": "2026-11-25T21:41Z",
@@ -343539,6 +343539,11 @@
           "at": "2026-11-26T04:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:17Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, J3771): merged ww2-channel PR #168 (7dcce41) and PR #170 (07e6474, QA_REVIEW_v04.md KEEP); recorded PASS ruling in PR #178 (50ac67b) and staged WW2:005 v04 privately for Ben's watch on J3432."
         }
       ],
       "remaining_action": "Parked for Chief (Claude) to merge PR #168 + PR #170 and stage J3432",
@@ -343568,7 +343573,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "07e6474"
     },
     {
       "id": "J3749",
