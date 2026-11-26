@@ -350858,9 +350858,14 @@
           "at": "2026-11-26T22:07Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T22:07Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Recover and archive the Franklin Short cover with its checksum",
+      "remaining_action": "Recover the uploaded cover or reconstruct it from the verified master",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Save a lasting copy of the cover for the Franklin lightning rod Short",
@@ -350869,9 +350874,15 @@
         "of": 3,
         "at": "2026-11-26T22:07Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Find cover source",
+          "Archive and review still",
+          "Submit receipt and report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
