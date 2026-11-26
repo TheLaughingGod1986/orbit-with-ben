@@ -318628,13 +318628,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T00:41Z",
-      "eta": "2026-11-26T02:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
-      "result": "",
+      "result": "Verified live at 2026-11-26T00:42Z (read-only Vercel API + queue/HOS main docs/validation/J2704): condition UNMET. Vercel Hobby team team_UPErYpfb3ww71LYTIWUoKvcH still has softBlock FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) until 2026-12-12T18:13:01Z, history-of-science-content-ops still has 0 env vars and no Preview deploy, and J2708 remains blocked until 2026-12-12T18:30:00Z. Local Next 16.4.6 checks and home-500 root cause remain valid on HOS main (PR #641). Kept J2704 blocked at step 2 of 3 with --recheck J3469 and next check 2026-12-12T20:00:00Z. Production remains HELD. £0 spend.",
       "history": [
         {
           "at": "2026-11-24T09:06Z",
@@ -318670,6 +318670,11 @@
           "at": "2026-11-26T00:44Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded unmet J2708 dependency wait on J2704 until 2026-12-12T20:00:00Z with --recheck J3469"
+        },
+        {
+          "at": "2026-11-26T00:44Z",
+          "by": "gemini",
+          "what": "done: Verified live at 2026-11-26T00:42Z (read-only Vercel API + queue/HOS main docs/validation/J2704): condition UNMET. Vercel Hobby team team_UPErYpfb3ww71LYTIWUoKvcH still has softBlock FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) until 2026-12-12T18:13:01Z, history-of-science-content-ops still has 0 env vars and no Preview deploy, and J2708 remains blocked until 2026-12-12T18:30:00Z. Local Next 16.4.6 checks and home-500 root cause remain valid on HOS main (PR #641). Kept J2704 blocked at step 2 of 3 with --recheck J3469 and next check 2026-12-12T20:00:00Z. Production remains HELD. £0 spend."
         }
       ],
       "remaining_action": "Condition verification recorded on J2704; finishing J3469",
