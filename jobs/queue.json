@@ -344027,15 +344027,20 @@
           "at": "2026-11-26T00:11Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T00:12Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026) — fewest Shorts built (1: fri27_opening_testA vs 2+ on 031/033/034 and 3-9 on 021-029)."
         }
       ],
-      "remaining_action": "Inventorying locked/live OWB longs and existing Shorts to pick the long with fewest Shorts built",
+      "remaining_action": "Inspecting 032 Titan STT timings, harvest assets, and Shorts calendar to lock Short 1 design",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T00:11Z",
+        "at": "2026-11-26T00:12Z",
         "by": "gemini",
         "plan": [
           "Select OWB long with fewest Shorts",
@@ -344043,8 +344048,12 @@
           "Assemble 9:16 Short, SFX mix and cover",
           "Run Short, SFX and thumb gates",
           "Commit, post report on #99 and park for Chief"
-        ]
-      }
+        ],
+        "note": "Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026) — fewest Shorts built (1: fri27_opening_testA vs 2+ on 031/033/03"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3759",
