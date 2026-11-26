@@ -347383,13 +347383,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T08:17Z",
-      "eta": "2026-11-26T10:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T08:15Z",
-      "result": "",
+      "result": "Condition unmet: ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, a1cd072f) is still OPEN/MERGEABLE (mergedAt null; origin/main at 156f6f5) under self-merge guard while claude is down until 2026-11-26T12:50:00Z (codex and grok also down). Kept J3775 blocked and recorded wait --type input --recheck J3785 --check-at 2026-11-26T13:15:00Z. Posted studio thread report. £0 spend.",
       "history": [
         {
           "at": "2026-11-26T08:15Z",
@@ -347430,6 +347430,11 @@
           "at": "2026-11-26T08:21Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Posted studio thread report and completed J3785 condition verification."
+        },
+        {
+          "at": "2026-11-26T08:21Z",
+          "by": "gemini",
+          "what": "done: Condition unmet: ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, a1cd072f) is still OPEN/MERGEABLE (mergedAt null; origin/main at 156f6f5) under self-merge guard while claude is down until 2026-11-26T12:50:00Z (codex and grok also down). Kept J3775 blocked and recorded wait --type input --recheck J3785 --check-at 2026-11-26T13:15:00Z. Posted studio thread report. £0 spend."
         }
       ],
       "remaining_action": "Done: J3775 condition verified unmet and wait updated to 2026-11-26T13:15:00Z",
