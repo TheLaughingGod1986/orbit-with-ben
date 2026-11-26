@@ -345051,11 +345051,24 @@
           "at": "2026-11-26T02:45Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T02:46Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-26T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Reconcile the 17 J3766 metadata and Section 4 discrepancies in OWB main and HOS PR #795 until validate_j3766.py --strict exits 0",
       "kind": "qa",
-      "plain": "Reconcile stale top-level identity counts and Section 4 in the J3766 QA sweep audit across OWB main and HOS PR #795"
+      "plain": "Reconcile stale top-level identity counts and Section 4 in the J3766 QA sweep audit across OWB main and HOS PR #795",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
