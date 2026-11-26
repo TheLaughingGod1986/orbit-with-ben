@@ -299662,9 +299662,14 @@
           "at": "2026-11-26T04:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:25Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3307 after J3534 reopen; checking published PR #1312, PR #1184, NAS hashes and downstream guards before close."
         }
       ],
-      "remaining_action": "Obtain required publication approval for the completed historical thumbnail review",
+      "remaining_action": "Verify PR #1312, PR #1184, all 6 NAS v02/v03 JPEG hashes, ledger state and J3308-J3310 guards",
       "kind": "chief",
       "plain": "Review J3302 weekly OWB thumbnail audit PR #1118 and approve or revise T041-T043 before Studio testing",
       "taskKeys": [
@@ -299675,10 +299680,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T03:26Z",
+        "at": "2026-11-26T04:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify published J3307 and J3382 records, NAS hashes and guards",
+          "Confirm acting-Chief authority and close J3307 citing PR #1312",
+          "Post closeout report on studio thread"
+        ],
+        "note": "Claimed J3307 after J3534 reopen; checking published PR #1312, PR #1184, NAS hashes and downstream guards before close."
       }
     },
     {
