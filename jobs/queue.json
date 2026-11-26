@@ -321144,13 +321144,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-26T23:52Z",
-      "eta": "2026-11-27T01:52Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T10:00Z",
-      "result": "",
+      "result": "Acting Chief review complete: uphold v04 Rule-6 FAIL; script remains review/unlocked, topic GO only. Exact narration SHA 5ea74805...e7e9 matches clean 37/0/0 claims pass but S04-S14 background delays departure ~4:38 at 150 wpm. Merged owner PR193 (7b03c45). Concrete follow-up J3820 rewrite due 29 Nov 18:00 -> J3821 independent Gemini claims check -> J3822 Chief viewer/quality/lock due 30 Nov 18:00. Enforce promise <=0:45 and action <=1:00, not proposed 1:10. No VO before lock AND 30 Nov 10:50Z; no spend. Date/Short holds preserved. Review progress recorded on job because chief_relay review-progress rejected missing active review lease.",
       "history": [
         {
           "at": "2026-11-24T10:00Z",
@@ -321241,6 +321241,11 @@
           "at": "2026-11-26T23:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling recorded: v04 FAIL upheld, PR193 merged, topic GO only. Follow-up J3820 -> J3821 -> J3822; 1:00 story deadline enforced, no script lock or VO authorization. Existing date and Short holds unchanged."
+        },
+        {
+          "at": "2026-11-26T23:53Z",
+          "by": "codex",
+          "what": "done: Acting Chief review complete: uphold v04 Rule-6 FAIL; script remains review/unlocked, topic GO only. Exact narration SHA 5ea74805...e7e9 matches clean 37/0/0 claims pass but S04-S14 background delays departure ~4:38 at 150 wpm. Merged owner PR193 (7b03c45). Concrete follow-up J3820 rewrite due 29 Nov 18:00 -> J3821 independent Gemini claims check -> J3822 Chief viewer/quality/lock due 30 Nov 18:00. Enforce promise <=0:45 and action <=1:00, not proposed 1:10. No VO before lock AND 30 Nov 10:50Z; no spend. Date/Short holds preserved. Review progress recorded on job because chief_relay review-progress rejected missing active review lease."
         }
       ],
       "remaining_action": "Review complete; rewrite, independent claims check and fresh lock decision are delegated",
@@ -321269,7 +321274,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/193"
     },
     {
       "id": "J3493",
