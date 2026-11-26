@@ -348246,13 +348246,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T13:34Z",
-      "eta": "2026-11-26T15:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T13:16Z",
-      "result": "",
+      "result": "Condition MET; J3775 reopened to open queue. Independently verified ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude (Chief sweep, merge commit dd01145e on ww2 origin/main 68b0a84; ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt sha256 28acf943... verified on main). All J3775 guards intact (£0, US Federal PD only, no media in git); J3776 untouched.",
       "history": [
         {
           "at": "2026-11-26T13:16Z",
@@ -348298,6 +348298,11 @@
           "at": "2026-11-26T13:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T13:34Z",
+          "by": "gemini",
+          "what": "done: Condition MET; J3775 reopened to open queue. Independently verified ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude (Chief sweep, merge commit dd01145e on ww2 origin/main 68b0a84; ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt sha256 28acf943... verified on main). All J3775 guards intact (£0, US Federal PD only, no media in git); J3776 untouched."
         }
       ],
       "remaining_action": "Elected Chief: reopen J3775 with the evidence, then close J3793",
@@ -348323,7 +348328,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "dd01145e"
     },
     {
       "id": "J3794",
