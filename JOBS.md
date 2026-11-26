@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3781 | any | blocked | gemini | – | HOS:136 vo · for claude · chief · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
-| J3793 | mini | open | – | – | review · Verify condition for J3775 |  |
+| J3793 | mini | claimed | claudecode | 2026-11-26T15:17Z | review · Verify condition for J3775 |  |
 
 Recently finished:
 
