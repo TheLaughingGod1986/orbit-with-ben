@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790, J3794.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790, J3794, J3799.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3794 | mini | blocked | claudecode | – | WW2:002 upload · studio · WW2 002-S1 Short: put it on Ben's watch, then upload for Fri 27 Nov 12:30 linked to pilot 2 (after his OK only) |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3798 | mini | claimed | claudecode | 2026-11-26T17:49Z | review · Verify condition for J2040 |  |
+| J3799 | mini | open | – | – | studio · Mini check: are the Studio browsers up and signed in (Field Order History 9224, Orbit 9223, HOS)? Then release the U-boat Short's link |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3799,
+  "next_id": 3800,
   "jobs": [
     {
       "id": "J0001",
@@ -348875,6 +348875,37 @@
           "Record result"
         ]
       }
+    },
+    {
+      "id": "J3799",
+      "title": "Mini check: are the Studio browsers up and signed in (Field Order History 9224, Orbit 9223, HOS)? Then release the U-boat Short's link",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** At 14:34Z on 26 Nov the Field Order History Studio Chrome (port 9224) was on the Google sign-in page, which blocked J3794 (the U-boat Short's Related video). Tonight's Studio work depends on that window: J3704 (pilot 2's 48-hour read, 17:05Z) and J3714 (film 3's trims, 17:30Z, due Fri 12:00Z). Ben, 26 Nov ~15:50, in chat: \"can you check the mac mini is now fine and has the tabs open\". Read only: about 5 minutes.\n\n**Do (Mini, now):**\n1. Run `python3 scripts/cdp_tabs.py list --port 9224` (Field Order History Studio) and `--port 9223` (Orbit Studio). Also check History of Science's Studio port, given as `youtube.studio_port` in history-of-science `studio/channel.json`.\n2. For each browser, record: answering yes or no, the number of tabs, and each tab's site (host and path only; never account names, emails or tokens).\n3. Note whether any tab is on `accounts.google.com`.\n4. For 9224: load, or bring to the front, the existing `studio.youtube.com` tab (reuse it; never open a second one) and confirm it shows Field Order History's dashboard (channel `UCu94mInMFosxu3W0H6jlI6Q`), not a sign-in page.\n5. **If 9224 is signed in:** reopen J3794 so it sets Related video = `qfc6EBStOfo` on `ZCnSldSJzME` now.\n   **If it isn't:** block this job \"parked for Chief: Ben must sign 9224 back in\" with what the page shows.\n6. Put the one-line state of each browser in this job's result (for example \"9224 FOH Studio: up, 3 tabs, signed in\").\n\n**Guards.** Read-only except reusing the existing tab. No sign-in attempts (Ben's own login), no Studio edits, no closing a sign-in tab. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 10,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T15:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T15:51Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the Mini's Studio browsers are up and signed in",
+      "due": "2026-11-26T16:45:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 9
     }
   ],
   "focus": [
