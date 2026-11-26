@@ -1,5 +1,5 @@
 {
-  "next_id": 3817,
+  "next_id": 3818,
   "jobs": [
     {
       "id": "J0001",
@@ -351109,6 +351109,36 @@
       "remaining_action": "Prepare the next HOS Short from approved existing material",
       "kind": "assembly",
       "backlog": "hos-short-from-locked"
+    },
+    {
+      "id": "J3817",
+      "title": "OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rebuild OWB:064 (Every Planet Explained) thumbnails A/B/C as J3719_v02 and apply shot-list fixes per 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md (J3719 packaging panel decision; 2-of-2 consensus from codex.md J3716 and gemini.md J3717; cursor.md J3718 cancelled after 24 h cutoff).\n\nScope & rules: £0 cash, 0 Flow/Vertex credits, Pillow/Python only using verified NASA/JPL/ESA public-domain plates already on studio-live. Do not modify or overwrite v01 files or SHOT_LIST_v01.md. Do not change locked VO (every_planet_explained_vo_v01.wav, 4b478fcd, 683.86 s). No upload, no scheduling, no YouTube Studio test arming (film not yet assembled or watched by Ben; Ben watch deadline Fri 11 Dec 18:00 London; planned air Wed 16 Dec 18:00 London). No Orbit on any thumbnail.\n\n1. Output directory on NAS:\n   /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/\n\n2. Three distinct v02 thumbnails (1920x1080 or 1280x720 JPG, Bebas Neue / house heavy sans caps, one #FFE000 yellow hook word, white rest, clean dark-navy top band y=0..21% with zero letters touching planets or dividers, bottom-right duration zone x>75% y>78% completely clear, Apollo 17 Blue Marble Earth PIA18033 scale/story cue per §2.A.5, thumb_preview.py long --score PASS):\n   - Variant A (Lead Arm 1): 064_thumb_A_extreme_worlds_v02.jpg\n     Hook: \"8 EXTREME WORLDS\" (\"EXTREME\" in #FFE000, \"8\" and \"WORLDS\" in #FFFFFF).\n     Fixes: Remove flat periwinkle-blue background, speckled paint dots, and thick black cutout halos around planets; use a rich deep-navy cosmic backdrop (~15-22% near-black) with feathered planet limbs. Establish clear focal hierarchy: Jupiter (PIA22946) + clean illuminated Saturn with full rings (PIA11141, not colliding into neighbours) dominating lower-centre/left (>35% frame), crisp Apollo 17 Earth (PIA18033), and remaining worlds cleanly spaced along a depth arc. Replace simulated Magellan radar view PIA00271 with real Mariner 10 Venus clouds (harvest_J3022_v01/PIA23791.jpg right colour-enhanced globe only, cropped cleanly off the central white divider). Note in manifest that lineup is editorial, not to scale.\n   - Variant B (Test & Compare Challenger B): 064_thumb_B_venus_uranus_v02.jpg\n     Hook: \"464°C\" (#FFE000, left above Venus) and \"-224°C\" (#FFFFFF, right above Uranus, bold minus sign readable at 168x94; drop \"TO\" so zero letters cross the vertical seam).\n     Fixes: (a) Replace simulated PIA00271 on the left with real Mariner 10 Venus clouds (PIA23791.jpg right globe), graded warm golden-amber at moderate saturation (~150-165, never 242 lava-orange) so it reads clearly as Venus rather than the Sun; (b) replace Neptune (PIA01492) on the right with real Voyager 2 Uranus (PIA18182 from 033 shelf) so -224°C matches the actual coldest planetary atmosphere (Ch 7: -224.2 °C); (c) shift both globes downward below a clean dark-navy top band so the white divider stops below the text band and zero letters overlap planets; (d) place a crisp small Apollo 17 Earth (PIA18033) on the lower-centre seam for scale, clear of bottom-right.\n   - Variant C (Test & Compare Challenger C — Rule 19 single real spacecraft hero): 064_thumb_C_real_nasa_saturn_v02.jpg\n     Hook: \"REAL NASA PHOTOS\" (\"REAL\" in #FFE000, \"NASA PHOTOS\" in #FFFFFF).\n     Fixes: Scrap the 3-panel vertical triptych completely. Use one uncropped, aspect-preserved real NASA Cassini Saturn-and-rings hero frame (PIA11141.jpg primary for instant 168x94 recognition; full-width uncropped PIA17172.jpg allowed only if bright, artifact-free, and unmistakable at 168x94) filling >40% of frame over deep-navy graded space (zero top-bar leak), paired with a crisp Apollo 17 Earth (PIA18033) scale cue on lower-left (clear of bottom-right; accurate proportions or clearly noted scale inset with thin white pointer per §2.B.4), and top-band text completely off Saturn and its rings.\n\n3. Verification & ledger:\n   - Run thumb_preview.py long --score on all three (sat >= 120, Variant B <= 175, near_black <= 28%), generate 064_thumbs_ABC_v02_preview_sheet.jpg (168x94 + 360x202), record exact SHA-256s in 08_Thumbnail/THUMB_SCORES_v02.json and 08_Thumbnail/BUILD_REPORT_v02.md.\n   - Update 05_Analytics/tests/THUMB_LEDGER.json proposed row T045 with exact v02 paths and SHA-256 hashes (keep status: \"proposed\", video: null, Lead Title A: \"Every Planet Explained in 12 Minutes (Mercury to Neptune)\").\n\n4. Shot-list repair (write 02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/07_Edit-Project/SHOT_LIST_v02.md, keeping SHOT_LIST_v01.md untouched):\n   - Break 0:00-0:32.85 (R01-R04) into strict <= 4.0 s picture intervals per DECISION.md (alternating real Mercury plates PIA15162, PIA17386, PIA16523, PIA19411, PIA11364, PIA16853 with split animated temperature code graphics <= 4 s each; no consecutive full-screen graphics; sleek unobtrusive 8-planet progress strip \"01 / 08 · MERCURY\" at frame 0; no chapter card before 0:45).\n   - Replace PIA00271 (NASA Magellan \"Venus - Computer Simulated Global View of the Northern Hemisphere\", picture_qa KIND_FAIL) in Row R09 with real Mariner 10 Venus clouds (PIA23791.jpg right globe) and/or verified real 023 shelf Venus plates. Flag any other simulated global views if found.\n\n5. Open a PR to main (do not merge; Chief merges).\n",
+      "ref": "J3719",
+      "film": "064",
+      "stage": "thumbs",
+      "after": "J3719",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-26T23:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T23:45Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build J3719_v02 thumbnails A/B/C on studio-live, update THUMB_LEDGER T045 hashes, and write SHOT_LIST_v02.md opening and R09 fixes",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "thumb",
+      "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s"
     }
   ],
   "focus": [

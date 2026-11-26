@@ -88,6 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3815 | mini | claimed | codex | 2026-11-27T01:42Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3816 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J3817 | mini | open (after J3719) | – | – | 064 thumbs · thumb · OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts | J3719 |
 
 Recently finished:
 
