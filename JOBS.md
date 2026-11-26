@@ -110,6 +110,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3766 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J3768 | mini | blocked | gemini | – | qa · J3766 FIX: reconcile QA sweep top-level identity metadata and report Section 4 (OWB + HOS PR #795) | J3766 |
+| J3769 | mini | open (after J3415) | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 
 Recently finished:
 
