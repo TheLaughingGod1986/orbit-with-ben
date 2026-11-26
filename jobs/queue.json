@@ -349684,10 +349684,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T18:13Z",
+      "eta": "2026-11-26T20:13Z",
       "created_by": "relay",
       "created_at": "2026-11-26T17:50Z",
       "result": "",
@@ -349716,6 +349716,11 @@
           "at": "2026-11-26T18:13Z",
           "by": "codex",
           "what": "reopened: Accept worker handoff to record completed Chief verification; parent J3781 already reopened with fresh evidence and routed to independent Codex."
+        },
+        {
+          "at": "2026-11-26T18:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RE",
@@ -349730,7 +349735,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T18:13Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3806",
