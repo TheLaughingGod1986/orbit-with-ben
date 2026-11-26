@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3819 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
 | J3820 | any | open | – | – | WW2:009 script · script · WW2 009: rewrite v05 after Rule-6 failure | ww2-channel#193 |
 | J3821 | gemini | open (after J3820) | – | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
+| J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 
 Recently finished:
 

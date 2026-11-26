@@ -1,5 +1,5 @@
 {
-  "next_id": 3822,
+  "next_id": 3823,
   "jobs": [
     {
       "id": "J0001",
@@ -351405,6 +351405,36 @@
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the revised Operation Pedestal narration against its sources"
+    },
+    {
+      "id": "J3822",
+      "title": "WW2 009: v05 viewer test, quality pass and Chief script lock",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "After the rewrite and independent Gemini check are complete, review exact hashed v05 and CLAIMS_CHECK_v05. Re-run rule 6 on first 300 AND first 1200 words, plus full-script quality pass: concrete moment <=0:30, promise <=0:45, action <=1:00, no background detour, spaced figures, title payoff explained, no unexplained two halves. PR193 proposed 1:10 is NOT an exemption. Require zero unresolved flags, <=21000 spoken characters and SCRIPT/narration parity. Current title and HELD AFLOAT packaging govern; historical TOPIC_REVIEW wording does not. Only elected Chief may lock. If PASS, update status and create separate VO job with dependency on this lock and structured date hold until 2026-11-30T10:50:00Z (plus live credit/no-overage checks at execution). If FAIL, return exact fixes and linked successor immediately, not a generic Chief hold. Lock due 30 Nov 18:00 UTC; Ben watch 9 Dec; air 12 Dec 17:00 London. No VO or upload in this review. J3581/J3582 holds unchanged; one Short under current rule 1.\n",
+      "ref": "ww2-channel#193",
+      "film": "WW2:009",
+      "stage": "script",
+      "after": "J3821",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-26T23:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T23:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the corrected opening and source pass, then decide the script lock",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "chief",
+      "plain": "Review the revised Operation Pedestal film script before recording the voice"
     }
   ],
   "focus": [
