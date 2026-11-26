@@ -335218,13 +335218,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T00:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:26Z",
-      "result": "Waiting for: HOS 008 long YqCWYlv_LCY goes Public at Thu 26 Nov 2026 18:00 UTC (Studio Related video picker omits Private/Scheduled videos)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T00:26Z",
@@ -335250,27 +335250,18 @@
           "at": "2026-11-26T18:06Z",
           "by": "relay",
           "what": "condition verification queued: J3806"
+        },
+        {
+          "at": "2026-11-26T18:17Z",
+          "by": "codex",
+          "what": "reopened: J3806 Chief ruling: public condition MET. Fresh authenticated YouTube Data API read 2026-11-26T18:16:27Z, HOS channel UCXp7HkBIl1LgaznXuZHJyRg: YqCWYlv_LCY privacyStatus public, publishedAt 2026-11-26T18:00:35Z. __UtUYdEUwg and 4sYTV_rQcqs remain private, publishAt 27 Nov and 29 Nov 11:30Z respectively, madeForKids false. J3500 production records retain Ben approvals for long v05, Short A v04 and Short C v07; Studio finish 25 Nov recorded 75 videos and 0 audit errors. Release only this public hold. Immediate follow-up is existing J3649, kind studio (Gemini primary), due 27 Nov 10:00Z: lint package before metadata changes, set both Related links, recheck audience/disclosure, verify existing T&C running without replacing it, run channel audit and record results. No new upload, privacy or schedule change authorized. T&C active state remains unverified until that Studio read."
         }
       ],
       "remaining_action": "Set Related video -> YqCWYlv_LCY on __UtUYdEUwg and 4sYTV_rQcqs once YqCWYlv_LCY reads Public, and confirm T&C is running",
       "due": "2026-11-27T10:00:00Z",
       "kind": "studio",
       "plain": "Set Related video on Franklin Shorts A and C after the long goes public Thu 18:00 UK, and confirm Title+Thumb test is running",
-      "mini_only": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T00:29Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "public",
-        "condition": "HOS 008 long YqCWYlv_LCY goes Public at Thu 26 Nov 2026 18:00 UTC (Studio Related video picker omits Private/Scheduled videos)",
-        "check_at": "2026-11-26T19:06:08+00:00",
-        "recheck_task": "J3806"
-      }
+      "mini_only": true
     },
     {
       "id": "J3650",
