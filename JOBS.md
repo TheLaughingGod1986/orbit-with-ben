@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3807 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3812 | mini | open | – | – | studio · Package and upload OWB 032 Short 1 short v01 (How Would You Light a Fire on Titan?) Private, 2026-12-18T11:30Z |  |
 | J3813 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3814 | mini | open (after J3811) | – | – | 008 thumbs · assembly · Archive the HOS 008 s04 uploaded cover and its provenance |  |
+| J3814 | mini | claimed | codex | 2026-11-27T00:07Z | 008 thumbs · assembly · Archive the HOS 008 s04 uploaded cover and its provenance |  |
 
 Recently finished:
 
