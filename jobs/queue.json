@@ -348559,9 +348559,14 @@
           "at": "2026-11-26T16:33Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Data API confirms ZCnSldSJzME processed/private/2026-11-27T12:30:00Z with description link to qfc6EBStOfo; CDP 9224 has Orbit/HOS/OpptiAI while CDP 9223 has live Field Order History session and opens ZCnSldSJzME/edit (Related video currently None)"
+        },
+        {
+          "at": "2026-11-26T16:44Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) on ZCnSldSJzME in Studio (9223) and clicked Save (confirmed disabled/saved in 1s); hard-reloaded ZCnSldSJzME/edit to verify persistence"
         }
       ],
-      "remaining_action": "Set Related video = qfc6EBStOfo and verify Altered content / Not made for kids / cover in Studio (port 9223 holds live FOH session)",
+      "remaining_action": "Complete post-reload Studio & Data API readback, then update WW2 002 status.json and UPLOADS.json",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348587,9 +348592,9 @@
         "okRef": "board Review card WW2:002-S1 'You OK'd v01' (Ben's screenshot 26 Nov 14:22, \"This is done already\")"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-26T16:33Z",
+        "at": "2026-11-26T16:44Z",
         "by": "gemini",
         "plan": [
           "Check 9224 sign-in & API state",
@@ -348597,7 +348602,7 @@
           "Reload-verify Studio & Data API",
           "Update WW2 status/UPLOADS & report"
         ],
-        "note": "Data API confirms ZCnSldSJzME processed/private/2026-11-27T12:30:00Z with description link to qfc6EBStOfo; CDP 9224 has "
+        "note": "Set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) on ZCnSldSJzME in Studio (9223) and cli"
       }
     },
     {
