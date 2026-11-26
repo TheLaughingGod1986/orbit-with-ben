@@ -347969,24 +347969,30 @@
           "at": "2026-11-26T12:41Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-26T12:43Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified RtEMDrfeKR8 Private scheduled 2026-11-28T12:30:00Z and RqYjADxvJy8 Private scheduled 2026-11-28T17:00:00Z via Data API; Studio 9224 is signed out (accounts.google.com)"
         }
       ],
-      "remaining_action": "Checking RtEMDrfeKR8 state via YouTube Data API and Studio 9224",
+      "remaining_action": "Moving RtEMDrfeKR8 publishAt from 2026-11-28T12:30:00Z to 2026-11-29T12:30:00Z via YouTube Data API",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 7,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-26T12:41Z",
+        "at": "2026-11-26T12:43Z",
         "by": "gemini",
         "plan": [
           "Check Data API and Studio 9224",
           "Move RtEMDrfeKR8 to Sun 29 Nov 12:30Z",
           "Read back in API and Studio 9224",
           "Update status.json, UPLOADS.json PR and wait"
-        ]
+        ],
+        "note": "Verified RtEMDrfeKR8 Private scheduled 2026-11-28T12:30:00Z and RqYjADxvJy8 Private scheduled 2026-11-28T17:00:00Z via D"
       },
       "taskKeys": [
         "WW2:003"
