@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3762 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3772 | any | open | – | – | WW2:015 script · script · WW2 film 015: Higgins boat (LCVP) topic check, packaging first, script and sources, to lock by 2026-12-13 | ww2-channel#151 |
+| J3772 | mini | open | – | – | WW2:015 script · script · WW2 film 015: Higgins boat (LCVP) topic check, packaging first, script and sources, to lock by 2026-12-13 | ww2-channel#151 |
 
 Recently finished:
 
