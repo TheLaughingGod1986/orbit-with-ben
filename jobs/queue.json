@@ -345904,13 +345904,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:52Z",
-      "eta": "2026-11-26T06:52Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T04:48Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-26T04:48Z",
@@ -345966,6 +345966,11 @@
           "at": "2026-11-26T05:06Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Queued independent facts check J3773 and dependent Claude review/Rule-6 gate J3774 against ww2-channel#180"
+        },
+        {
+          "at": "2026-11-26T05:07Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "All J3772 steps complete",
