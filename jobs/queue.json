@@ -344614,6 +344614,11 @@
           "at": "2026-11-26T01:03Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short PASS — HOS 008 s04_no_patent_v01 ('Why Did Franklin Never Patent the Lightning Rod?', 16.10 s, HOS PR #793, NAS master sha256 e162a0fbe05e519ae822aededabf62172396594d4f564081d539db724f03809c, 5/5 gates PASS, check_all.sh ALL CHECKS PASS, £0, no upload)"
+        },
+        {
+          "at": "2026-11-26T02:55Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch HOS 008 Short s04 (16.1 s): Why Did Franklin Never Patent the Lightning Rod? (by 2026-11-30 18:00 London)"
         }
       ],
       "remaining_action": "Parked for independent Chief Short PASS on HOS PR #793 (no upload)",
@@ -344635,7 +344640,17 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch HOS 008 Short s04 (16.1 s): Why Did Franklin Never Patent the Lightning Rod?",
+        "file": "HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_s04_no_patent_v01.mp4",
+        "version": "v01",
+        "due": "2026-11-30T18:00Z",
+        "ifNot": "Hold unscheduled until Ben watches and approves; never upload without Ben's UAT OK; after approval, package and schedule into earliest open Tue/Fri/Sat/Sun 11:30 London slot (earliest: Tue 1 Dec 2026 11:30 London) after YqCWYlv_LCY is public",
+        "title": "Why Did Franklin Never Patent the Lightning Rod?",
+        "number": "008 Short s04",
+        "type": "short"
+      }
     },
     {
       "id": "J3764",
