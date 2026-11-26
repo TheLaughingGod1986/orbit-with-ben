@@ -347578,20 +347578,36 @@
           "at": "2026-11-26T09:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T09:20Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3787; verified audio_input via read_file probe; port 9224 signed out after reboot, checking YouTube Audio Library read-only on signed-in Studio port 9460"
         }
       ],
-      "remaining_action": "Pick free Audio Library music and remix film 6 with it for Ben's watch",
+      "remaining_action": "Inspect YouTube Audio Library on signed-in Studio browser and pick 3-4 calm instrumental tracks",
       "due": "2026-12-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T09:16Z",
+        "of": 6,
+        "at": "2026-11-26T09:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Pick & download YouTube Audio Library tracks",
+          "Audition tracks by ear & log MUSIC_LIBRARY.md",
+          "Mix & verify WW2:006 v04 with chapter music bed",
+          "Stage WW2:006 v04 to NAS, UAT, R2 & watch card",
+          "Mix & stage WW2:005 v05 ahead of 30 Nov watch",
+          "Update LEARNINGS, status files & merge PR"
+        ],
+        "note": "Claimed J3787; verified audio_input via read_file probe; port 9224 signed out after reboot, checking YouTube Audio Libra"
+      },
+      "taskKeys": [
+        "WW2:006",
+        "WW2:005"
+      ]
     }
   ],
   "focus": [
