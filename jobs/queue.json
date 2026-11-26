@@ -344310,9 +344310,14 @@
           "at": "2026-11-26T00:32Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:32Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
+      "remaining_action": "Reading J3750's result and checking ww2-channel for the Battle of the Bulge PR",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-26T01:31:40+00:00",
@@ -344327,12 +344332,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-26T00:32Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3487 and J3750 history",
+          "Check ww2-channel GitHub state",
+          "Reopen or re-park J3487",
+          "Report and finish"
+        ]
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     }
   ],
   "focus": [
