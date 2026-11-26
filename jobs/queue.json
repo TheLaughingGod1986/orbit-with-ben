@@ -347338,13 +347338,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-26T18:05Z",
-      "eta": "2026-11-26T20:05Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T07:09Z",
-      "result": "",
+      "result": "Waiting for: Independent non-producer reviewer must directly hear both tight masters, including S01 tenfold and sentence joins. This session inspected its tool inventory: shell and still-image viewing only, no demonstrated audio input. ASR reports and producer listening notes were read but do not replace independent hearing.",
       "history": [
         {
           "at": "2026-11-26T07:09Z",
@@ -347420,9 +347420,19 @@
           "at": "2026-11-26T18:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR checks green; no media in diff; locked script hash and four NAS audio hashes match; take records and word timings checked. No direct listening capability in this session."
+        },
+        {
+          "at": "2026-11-26T18:07Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Independent non-producer reviewer must directly hear both tight masters, including S01 tenfold and sentence joins. This session inspected its tool inventory: shell and still-image viewing only, no demonstrated audio input. ASR reports and producer listening notes were read but do not replace independent hearing."
+        },
+        {
+          "at": "2026-11-26T18:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T09:00:00Z"
         }
       ],
-      "remaining_action": "Independently listen to both Edison and Tesla Shorts takes before VO ruling",
+      "remaining_action": "Listen independently to both Shorts voiceovers, then rule and merge if passed",
       "due": "2026-12-03T18:00:00Z",
       "kind": "chief",
       "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR",
@@ -347440,7 +347450,18 @@
           "Record ruling and handoff"
         ],
         "note": "PR checks green; no media in diff; locked script hash and four NAS audio hashes match; take records and word timings che"
-      }
+      },
+      "hold": {
+        "type": "capability",
+        "condition": "Independent non-producer reviewer must directly hear both tight masters, including S01 tenfold and sentence joins. This session inspected its tool inventory: shell and still-image viewing only, no demonstrated audio input. ASR reports and producer listening notes were read but do not replace independent hearing.",
+        "check_at": "2026-11-27T09:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
+      ]
     },
     {
       "id": "J3781",
