@@ -557,6 +557,12 @@ def _detect_pulls(at: dt.datetime, state: dict, scheduled: dict, public_ids: set
         still_same_slot = bool(cur_pub and abs((cur_pub - prev_pub).total_seconds()) <= 300)
         if still_same_slot:
             continue
+        # A video that is simply missing from this run's register and board says nothing about YouTube: the register
+        # was unreadable or mid-change (26 Nov 2026: WW2 002-S1 was flagged "taken off tomorrow's slot" minutes after
+        # its record was merged, while it was still Private + scheduled). Keep it known and look again next run.
+        if cur is None and not ((uploads or {}).get(ch) or {}).get(vid) and not any(
+                str(((v or {}).get("youtube") or {}).get("videoId") or "") == vid for v in (videos or [])):
+            continue
         rem_s = (prev_pub - at).total_seconds()
         if 0 < rem_s <= PULL_WINDOW_S:
             meta = ((uploads or {}).get(ch) or {}).get(vid) or {}
@@ -804,6 +810,13 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
             vtype = "short" if str(pull.get("type") or "").lower() == "short" else "long"
             if (ch, vid) in public_ids:
                 pull["resolvedAt"] = iso(at)
+                continue
+            # Back (or still) in its own slot: the alert was wrong or the pull was undone.
+            back = scheduled.get((ch, vid))
+            back_dt = parse_iso(back.get("publishAt")) if back else None
+            if back_dt and abs((back_dt - slot_dt).total_seconds()) <= 300:
+                pull["resolvedAt"] = iso(at)
+                pull["resolution"] = "still scheduled in its slot"
                 continue
             other_in_slot = slots.get(_slot_key(ch, vtype, slot_dt), set()) - {vid}
             if other_in_slot:
