@@ -344481,19 +344481,33 @@
           "at": "2026-11-26T00:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:49Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Selected HOS 008 (Benjamin Franklin's Kite Experiment Explained, YqCWYlv_LCY): tied fewest built Shorts (2: Short A v04 & Short C v07) among locked longs 004-009, first in locked-long order, airing Thu 26 Nov 18:00 UK."
         }
       ],
-      "remaining_action": "Prepare the next HOS Short from approved existing material",
+      "remaining_action": "Select best 16-19s stretch from locked HOS 008 long VO and verify available approved 3D cartoon plates",
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T00:45Z",
+        "of": 5,
+        "at": "2026-11-26T00:49Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Select 008 stretch & verify sources",
+          "Verify search title & check plates",
+          "Build 9:16 16-19s Short cut",
+          "Run gates, QA & visual inspection",
+          "Commit PR, post desk #180 & park for Chief"
+        ],
+        "note": "Selected HOS 008 (Benjamin Franklin's Kite Experiment Explained, YqCWYlv_LCY): tied fewest built Shorts (2: Short A v04 "
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
