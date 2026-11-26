@@ -346411,23 +346411,29 @@
           "at": "2026-11-26T06:41Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-26T06:42Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Confirmed importer schema, channels/ww2/channel.json studio_port=9224, and J3682 precedent."
         }
       ],
-      "remaining_action": "Inspecting importer, previous reads, and Studio CDP port",
+      "remaining_action": "Reading Studio Lifetime subscribers and watch hours on CDP port 9224",
       "due": "2026-11-26T06:40:38Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-26T06:41Z",
+        "at": "2026-11-26T06:42Z",
         "by": "gemini",
         "plan": [
           "Inspect importer and CDP Studio config",
           "Read Studio Lifetime subscribers and watch hours",
           "Run importer and verify generated analytics",
           "Commit/push PR from clean worktree and report"
-        ]
+        ],
+        "note": "Confirmed importer schema, channels/ww2/channel.json studio_port=9224, and J3682 precedent."
       }
     }
   ],
