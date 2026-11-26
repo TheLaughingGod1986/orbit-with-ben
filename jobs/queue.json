@@ -272688,10 +272688,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T08:04Z",
+      "eta": "2026-11-26T12:04Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -273775,6 +273775,11 @@
           "at": "2026-11-26T08:03Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-26T08:00:00Z has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-26T08:04Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Post Thu 26 Nov day-before move notice on thread, then run Fri 27 Nov 10:00 London studio repo move (preserve 3/4)",
@@ -273794,7 +273799,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T08:04Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3013",
