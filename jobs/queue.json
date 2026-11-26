@@ -347952,13 +347952,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T12:40Z",
-      "eta": "2026-11-26T13:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T12:39Z",
-      "result": "",
+      "result": "Waiting for: Step 1 done: RtEMDrfeKR8 moved Private 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (verified 2026-11-26T12:43:16Z; ww2 PR #185 merged). Waiting for: (1) WW2:003 B-29 long RqYjADxvJy8 to go Public (Sat 28 Nov 2026 17:00Z) and (2) Ben to sign Field Order History Studio Chrome 9224 back into Google (signed out since 26 Nov 02:07Z reboot), so Step 2 can reload-verify RtEMDrfeKR8 in Studio 9224, link RqYjADxvJy8 as Related video before Sun 29 Nov 12:30Z (replacing deferred J3655 step), and update related_video in 003/status.json and UPLOADS.json",
       "history": [
         {
           "at": "2026-11-26T12:39Z",
@@ -347994,9 +347994,19 @@
           "at": "2026-11-26T12:45Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Merged ww2-channel PR #185 (003/status.json, UPLOADS.json, J3790_RESCHEDULE_READBACK_v01.json); channel_check clean"
+        },
+        {
+          "at": "2026-11-26T12:45Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Step 1 done: RtEMDrfeKR8 moved Private 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (verified 2026-11-26T12:43:16Z; ww2 PR #185 merged). Waiting for: (1) WW2:003 B-29 long RqYjADxvJy8 to go Public (Sat 28 Nov 2026 17:00Z) and (2) Ben to sign Field Order History Studio Chrome 9224 back into Google (signed out since 26 Nov 02:07Z reboot), so Step 2 can reload-verify RtEMDrfeKR8 in Studio 9224, link RqYjADxvJy8 as Related video before Sun 29 Nov 12:30Z (replacing deferred J3655 step), and update related_video in 003/status.json and UPLOADS.json"
+        },
+        {
+          "at": "2026-11-26T12:45Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T17:05:00Z"
         }
       ],
-      "remaining_action": "Wait for RqYjADxvJy8 Public (Sat 28 Nov 17:00Z) and Studio 9224 sign-in, then reload-verify RtEMDrfeKR8, link RqYjADxvJy8, and update status.json + UPLOADS.json",
+      "remaining_action": "Verify RtEMDrfeKR8 in Studio 9224 after reload, set Related video to Public RqYjADxvJy8 before Sun 29 Nov 12:30Z, and update 003/status.json + UPLOADS.json",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348016,7 +348026,12 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "Step 1 done: RtEMDrfeKR8 moved Private 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (verified 2026-11-26T12:43:16Z; ww2 PR #185 merged). Waiting for: (1) WW2:003 B-29 long RqYjADxvJy8 to go Public (Sat 28 Nov 2026 17:00Z) and (2) Ben to sign Field Order History Studio Chrome 9224 back into Google (signed out since 26 Nov 02:07Z reboot), so Step 2 can reload-verify RtEMDrfeKR8 in Studio 9224, link RqYjADxvJy8 as Related video before Sun 29 Nov 12:30Z (replacing deferred J3655 step), and update related_video in 003/status.json and UPLOADS.json",
+        "check_at": "2026-11-28T17:05:00Z"
+      }
     }
   ],
   "focus": [
