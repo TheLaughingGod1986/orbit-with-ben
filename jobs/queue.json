@@ -348390,13 +348390,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-26T14:27Z",
-      "eta": "2026-11-26T15:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
-      "result": "",
+      "result": "Waiting for: Field Order History Studio Chrome 9224 is signed into Google again (it was on accounts.google.com sign-in at 14:34Z on 26 Nov). Then: set Related video = qfc6EBStOfo on ZCnSldSJzME, reload-check altered content Yes, not for kids, cover and Related, and update 002 status.json/UPLOADS.json relatedVideo. Upload itself is DONE (ZCnSldSJzME, Private, publishAt 2026-11-27T12:30Z): never re-upload.",
       "history": [
         {
           "at": "2026-11-26T13:18Z",
@@ -348462,9 +348462,19 @@
           "at": "2026-11-26T14:34Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: API read-back OK; opening-frame cover set; records in ww2-channel PR #187"
+        },
+        {
+          "at": "2026-11-26T14:35Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: Field Order History Studio Chrome 9224 is signed into Google again (it was on accounts.google.com sign-in at 14:34Z on 26 Nov). Then: set Related video = qfc6EBStOfo on ZCnSldSJzME, reload-check altered content Yes, not for kids, cover and Related, and update 002 status.json/UPLOADS.json relatedVideo. Upload itself is DONE (ZCnSldSJzME, Private, publishAt 2026-11-27T12:30Z): never re-upload."
+        },
+        {
+          "at": "2026-11-26T14:35Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-27T08:00:00Z"
         }
       ],
-      "remaining_action": "Set Related video qfc6EBStOfo and check in Studio 9224 (signed out)",
+      "remaining_action": "Set Related video qfc6EBStOfo in Studio 9224 and reload-check",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348502,6 +348512,11 @@
           "Record in status.json and UPLOADS.json"
         ],
         "note": "API read-back OK; opening-frame cover set; records in ww2-channel PR #187"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Field Order History Studio Chrome 9224 is signed into Google again (it was on accounts.google.com sign-in at 14:34Z on 26 Nov). Then: set Related video = qfc6EBStOfo on ZCnSldSJzME, reload-check altered content Yes, not for kids, cover and Related, and update 002 status.json/UPLOADS.json relatedVideo. Upload itself is DONE (ZCnSldSJzME, Private, publishAt 2026-11-27T12:30Z): never re-upload.",
+        "check_at": "2026-11-27T08:00:00Z"
       }
     },
     {
