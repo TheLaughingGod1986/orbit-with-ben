@@ -562,7 +562,7 @@ Filesystem `mtime` alone is **never** used as proof of byte identity. Every entr
    - `025_MarsRobot_full_rough_v03f`, `027_EarthSpin_rough_v01m`, `028_Gliese710_full_master_v03`, `029_Betelgeuse_full_rough_v03b`, and `hos_007_master_v04`: bound from their render-time `/private/tmp/...` or pre-staging paths to their hydrated NAS staging `.mp4` files by each pack's committed `SHA256.txt` / `summary_v*.json` / `MANIFEST_*.sha256`.
    - `41` NAS tar-archived lift Shorts (`26` OWB + `15` HOS): bound from their pre-archive checkout `.mp4` paths recorded in `picture_qa`/`polish_gate` to their NAS `.tar` members by `/Volumes/data/mac-mini-archive/MOVES_2026-10-24.log` and each Short's `<id>_meta.json` / `SHORT_*.json` manifest.
 
-## 4. Per-Member Identities & SHA-256 Hashes for All `12` Silent Visual Packs (`194` Member Files)
+## 4. Per-Member Identities & SHA-256 Hashes for All `13` Silent Visual Packs (`218` Member Files)
 
 ### 4.1 `028_teaching_overlays_v01_pack` (`OWB:028` — `22` `png_teaching_overlays`)
 - **Pack Directory:** `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/teaching_overlays_v01_pack` (`exists: True`)
