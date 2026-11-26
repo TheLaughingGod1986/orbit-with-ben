@@ -340273,9 +340273,14 @@
           "at": "2026-11-26T17:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T17:52Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Parked for Chief review/merge of ww2 PR #189 and decision on optional pilot 2 Studio trim",
+      "remaining_action": "Checking both pilots and the second film’s retention graph",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -340287,10 +340292,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T17:51Z",
+        "at": "2026-11-26T17:52Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read current Studio and API data",
+          "Match retention drops to the film",
+          "Record findings and report"
+        ]
       }
     },
     {
