@@ -347102,18 +347102,28 @@
           "at": "2026-11-26T08:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T08:07Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Reading snapshot and prior live-fixes audit",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T08:04Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-26T08:07Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read snapshot & prior audit",
+          "Check chapters, sources & descriptions",
+          "Check end screens & Related in Studio",
+          "Write fix list & open PR",
+          "Finish job & post report"
+        ]
       }
     }
   ],
