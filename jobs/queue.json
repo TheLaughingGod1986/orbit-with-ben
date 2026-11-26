@@ -321073,10 +321073,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-26T23:38Z",
+      "eta": "2026-11-27T01:38Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T10:00Z",
       "result": "",
@@ -321140,6 +321140,11 @@
           "at": "2026-11-26T23:37Z",
           "by": "claude",
           "what": "reopened: Condition MET (J3709): WW2:009 NARRATION_v04.txt (sha256 5ea74805...e7e9) has a clean claims check, 37 PASS / 0 FLAG / 0 UNVERIFIABLE (ww2-channel PR #146 649af06; OWB PR #1319 review). Run the Rule-6 viewer test on v04, not v02."
+        },
+        {
+          "at": "2026-11-26T23:38Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await corrected narration J3626 and independent Gemini check J3627, then finish viewer review and script lock; retain 30 Nov voice hold",
@@ -321153,7 +321158,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T23:38Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3493",
