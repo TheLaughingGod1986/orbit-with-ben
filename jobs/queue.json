@@ -323626,13 +323626,13 @@
       "stage": "vo",
       "after": "J3494",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T06:53Z",
-      "eta": "2026-11-26T08:53Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T11:43Z",
-      "result": "",
+      "result": "Waiting for: ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed with live balance >= 18,465 chars (ww2-channel PR #69/#74/#75 and NARRATION_v02.txt SHA-256 a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32 already verified on main)",
       "history": [
         {
           "at": "2026-11-24T11:43Z",
@@ -323648,9 +323648,19 @@
           "at": "2026-11-26T06:55Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Pre-reset guard checked at 2026-11-26T06:55Z: ww2-channel main already has PR #69/#74/#75 merged and NARRATION_v02.txt SHA-256 verified (a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32); current ElevenLabs balance 8,003 credits < 18,465 chars required. Holding until post-reset (£0 / 0 credits spent)."
+        },
+        {
+          "at": "2026-11-26T06:55Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed with live balance >= 18,465 chars (ww2-channel PR #69/#74/#75 and NARRATION_v02.txt SHA-256 a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32 already verified on main)"
+        },
+        {
+          "at": "2026-11-26T06:55Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-30T11:00:00Z"
         }
       ],
-      "remaining_action": "Wait for ElevenLabs monthly credit reset at 2026-11-30 10:50Z, then record WW2:010 narration",
+      "remaining_action": "Record WW2:010 NARRATION_v02.txt after 2026-11-30 10:50Z ElevenLabs reset",
       "due": "2026-12-03T18:00:00Z",
       "kind": "vo",
       "plain": "Record Ben's narration for WW2 film 010 (Hobart's Funnies) after the 30 Nov ElevenLabs reset",
@@ -323670,7 +323680,12 @@
       },
       "taskKeys": [
         "WW2:010"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed with live balance >= 18,465 chars (ww2-channel PR #69/#74/#75 and NARRATION_v02.txt SHA-256 a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32 already verified on main)",
+        "check_at": "2026-11-30T11:00:00Z"
+      }
     },
     {
       "id": "J3518",
