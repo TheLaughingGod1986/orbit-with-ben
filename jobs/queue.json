@@ -349559,9 +349559,14 @@
           "at": "2026-11-26T18:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: Read both job histories and PR 1346; live Chief status proves availability, PR 797 remains open with six checks passing. Ruling recorded in isolated review commit ef474128d2."
+        },
+        {
+          "at": "2026-11-26T18:03Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded MET ruling on J3780 and reopened it for independent Chief review. VO and all production gates remain. Local evidence commit ef474128d2; branch push rejected by automatic review, no retry or indirect publication."
         }
       ],
-      "remaining_action": "Publish the ruling and reopen the independent voice review",
+      "remaining_action": "Independent Chief completes the reopened voice review",
       "kind": "review",
       "recheck_of": "J3780",
       "due": "2026-11-26T18:50:53+00:00",
@@ -349575,16 +349580,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-26T18:02Z",
+        "at": "2026-11-26T18:03Z",
         "by": "codex",
         "plan": [
           "Check the waiting condition",
           "Review current evidence",
           "Record ruling and next review"
         ],
-        "note": "Read both job histories and PR 1346; live Chief status proves availability, PR 797 remains open with six checks passing."
+        "note": "Recorded MET ruling on J3780 and reopened it for independent Chief review. VO and all production gates remain. Local evi"
       },
       "taskKeys": [
         "HOS:128"
