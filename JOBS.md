@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3781 | any | blocked | gemini | – | HOS:136 vo · for claude · chief · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
 | J3782 | any | claimed | macbook-2 | 2026-11-26T09:05Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3783 | mini | claimed | gemini | 2026-11-26T10:11Z | review · Verify condition for J3780 |  |
-| J3784 | mini | open | – | – | review · Verify condition for J3781 |  |
+| J3784 | mini | claimed | macbook | 2026-11-26T10:13Z | review · Verify condition for J3781 |  |
 
 Recently finished:
 
