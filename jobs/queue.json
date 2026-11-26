@@ -344860,9 +344860,14 @@
           "at": "2026-11-26T01:42Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Ported all 12 HOS 009 receipt/caption/manifest files from PR #757 and merged OhdDVA9kWBk & 9ETHUOUH5-A into library.json; kept origin/main 009/status.json untouched"
+        },
+        {
+          "at": "2026-11-26T01:42Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Refreshed LIVE_VIDEOS.json via read-only channel:audit (0 errors) and updated 005 SHORTS_RELEASE.json el30-mHiH-0 note"
         }
       ],
-      "remaining_action": "Running read-only channel:audit --write-live to refresh LIVE_VIDEOS.json and updating 005 SHORTS_RELEASE.json note",
+      "remaining_action": "Running 00_Brand/Channel-Setup/tools/check_all.sh and inspecting git status/diffs",
       "due": "2026-11-27T10:00:00Z",
       "kind": "listing",
       "plain": "Sync History of Science records with YouTube: add Franklin Shorts to the opening-frame library, refresh the live video list, and record Gravity upload receipts",
@@ -344876,7 +344881,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
         "at": "2026-11-26T01:42Z",
         "by": "gemini",
@@ -344887,7 +344892,7 @@
           "Run check_all.sh validation",
           "Push PR, Chief merge, close #757 & report"
         ],
-        "note": "Ported all 12 HOS 009 receipt/caption/manifest files from PR #757 and merged OhdDVA9kWBk & 9ETHUOUH5-A into library.json"
+        "note": "Refreshed LIVE_VIDEOS.json via read-only channel:audit (0 errors) and updated 005 SHORTS_RELEASE.json el30-mHiH-0 note"
       },
       "taskKeys": [
         "HOS:008",
