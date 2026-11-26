@@ -337611,16 +337611,21 @@
           "at": "2026-11-26T07:17Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3678; starting pre-flight checks"
+        },
+        {
+          "at": "2026-11-26T07:18Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Locked v02 script SHA-256 matches 85fb1286...; vo_take --dry-run needs 7,761 chars across 5 parts (1,240 words); live ElevenLabs balance is 7,630 / 121,114 left (resets 2026-11-30T10:50:31Z), short by 131 chars (and behind HOS:128 J3670 9,062 chars). Logged via ai_spend.py; £0 / 0 chars spent."
         }
       ],
-      "remaining_action": "Verifying locked script v02 SHA-256, live ElevenLabs balance, and HOS:128 credit priority",
+      "remaining_action": "Record the five narration parts once the ElevenLabs voice pool resets on 30 Nov (after higher-priority HOS:128 J3670)",
       "due": "2026-12-04T18:00:00Z",
       "kind": "vo",
       "plain": "Record the 5-part long narration for HOS 136 (Trinity Test Explained) from the locked v02 script in Ben's voice",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-26T07:17Z",
+        "at": "2026-11-26T07:18Z",
         "by": "gemini",
         "plan": [
           "Verify script hash and ElevenLabs balance",
@@ -337628,7 +337633,7 @@
           "Run vo_check_py312 on all parts",
           "Commit VO evidence PR and park for review"
         ],
-        "note": "Claimed J3678; starting pre-flight checks"
+        "note": "Locked v02 script SHA-256 matches 85fb1286...; vo_take --dry-run needs 7,761 chars across 5 parts (1,240 words); live El"
       },
       "taskKeys": [
         "HOS:136"
