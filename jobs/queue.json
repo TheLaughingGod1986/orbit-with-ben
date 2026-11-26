@@ -345312,13 +345312,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T02:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T02:45Z",
-      "result": "parked for Chief: J3768 reconciliation complete for parent J3766 (Acting Chief FIX 381ac5db85) across OWB main commit b75f73f8c52768e7ff82e177a5bec26fb162ee38 and HOS PR #795 head 3748d62c7ed37aba6beeba48e34a941e3622ee3a (branch gemini/J3766-qa-sweep, unmerged, check_all.sh ALL CHECKS PASS). Byte-identical J3766_QA_SWEEP_INVENTORY_2026-11-26.json (sha256 db9d85827380bda8b15cc318662f9b6c95c95495f73b6f460ece0ef96ff45b92) and J3766_QA_SWEEP_REPORT_2026-11-26.md (sha256 a37fea65a1b9f2564c3fdb6fa78423d9cd48b7a42cbef87236d4777fbe19722e) verified by python3 jobs/reviews/J3766/validate_j3766.py --strict (exit code 0: metadata_issues_count=0, 0 sidecar/entry/media/freshness mismatches across 280 entries and 816 sidecars, 0 current_newest FAILs, owb_hos_byte_identical=true, sec6_table_rows=280). Reconciled all 16 stale top-level inventory metadata fields strictly from untouched entries and updated report Section 4 heading to 13 silent visual packs (218 member files; all 24 rows in ### 4.13 verified against pack_members). Ready for Chief KEEP review, HOS PR #795 merge, and closing J3768 + parent J3766. Spend: £0; grants no film-stage or publishing approval.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T02:45Z",
@@ -345354,6 +345354,11 @@
           "at": "2026-11-26T03:04Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3768 reconciliation complete for parent J3766 (Acting Chief FIX 381ac5db85) across OWB main commit b75f73f8c52768e7ff82e177a5bec26fb162ee38 and HOS PR #795 head 3748d62c7ed37aba6beeba48e34a941e3622ee3a (branch gemini/J3766-qa-sweep, unmerged, check_all.sh ALL CHECKS PASS). Byte-identical J3766_QA_SWEEP_INVENTORY_2026-11-26.json (sha256 db9d85827380bda8b15cc318662f9b6c95c95495f73b6f460ece0ef96ff45b92) and J3766_QA_SWEEP_REPORT_2026-11-26.md (sha256 a37fea65a1b9f2564c3fdb6fa78423d9cd48b7a42cbef87236d4777fbe19722e) verified by python3 jobs/reviews/J3766/validate_j3766.py --strict (exit code 0: metadata_issues_count=0, 0 sidecar/entry/media/freshness mismatches across 280 entries and 816 sidecars, 0 current_newest FAILs, owb_hos_byte_identical=true, sec6_table_rows=280). Reconciled all 16 stale top-level inventory metadata fields strictly from untouched entries and updated report Section 4 heading to 13 silent visual packs (218 member files; all 24 rows in ### 4.13 verified against pack_members). Ready for Chief KEEP review, HOS PR #795 merge, and closing J3768 + parent J3766. Spend: £0; grants no film-stage or publishing approval."
+        },
+        {
+          "at": "2026-11-26T04:05Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) KEEP verified: HOS PR #795 merged (98abe4d938), validate_j3766.py --strict --hos-ref origin/main exit 0 (jobs/reviews/J3768/REVIEW.md, c7c8c01be7); closing J3768 done."
         }
       ],
       "remaining_action": "Parked for Chief KEEP review and HOS PR #795 merge",
@@ -345367,20 +345372,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-26T03:03Z",
-        "by": "gemini",
-        "plan": [
-          "Reconcile inventory metadata",
-          "Update report Section 4",
-          "Commit OWB main & push HOS PR #795",
-          "Run check_all.sh & strict validation",
-          "Park for Chief KEEP review"
-        ],
-        "note": "Step 5/5 complete: Committed byte-identical inventory (db9d85827380) and report (a37fea65a1b9) to OWB main (b75f73f8c5) "
-      },
       "taskKeys": [
         "OWB:032",
         "OWB:064",
