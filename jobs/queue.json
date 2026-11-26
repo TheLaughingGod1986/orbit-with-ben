@@ -341137,20 +341137,35 @@
           "at": "2026-11-26T17:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T17:59Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3714; checking Studio 9224 state and NAS master"
         }
       ],
-      "remaining_action": "Make film 3's two pre-air trims",
+      "remaining_action": "Record before state in Studio/API and measure silence/music levels on NAS master",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T17:58Z",
+        "of": 6,
+        "at": "2026-11-26T17:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Record before state & measure cut points",
+          "Apply cuts A & B in Studio editor",
+          "Wait for processing & render join clips",
+          "Update description, captions & end screen",
+          "Verify Studio & Data API readback",
+          "Write receipt, status, learnings & PR"
+        ],
+        "note": "Claimed J3714; checking Studio 9224 state and NAS master"
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3715",
