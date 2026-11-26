@@ -346855,16 +346855,21 @@
           "at": "2026-11-26T07:53Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3779 and checking CDP sessions"
+        },
+        {
+          "at": "2026-11-26T07:55Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified 9460 signed into HOS (UCXp7HkBIl1LgaznXuZHJyRg); 9223 OWB Studio (and 9222/9224) signed out at accounts.google.com after 02:06Z reboot"
         }
       ],
-      "remaining_action": "Checking Studio CDP browsers and existing reader script",
+      "remaining_action": "Reading HOS Studio lifetime metrics on port 9460 (OWB 9223 signed out)",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T07:53Z",
+        "at": "2026-11-26T07:55Z",
         "by": "gemini",
         "plan": [
           "Inspect Studio browsers & scripts",
@@ -346873,7 +346878,7 @@
           "Run studio_reach morning & rebuild tracker",
           "Commit, publish board & finish"
         ],
-        "note": "Claimed J3779 and checking CDP sessions"
+        "note": "Verified 9460 signed into HOS (UCXp7HkBIl1LgaznXuZHJyRg); 9223 OWB Studio (and 9222/9224) signed out at accounts.google."
       }
     },
     {
