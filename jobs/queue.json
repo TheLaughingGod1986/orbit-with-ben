@@ -350207,20 +350207,34 @@
           "at": "2026-11-26T19:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T19:59Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Make pilot 2's two approved cuts in Studio's editor and fix chapters and captions",
+      "remaining_action": "Measuring v06 master audio boundaries and capturing before state in Studio and Data API",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T19:58Z",
+        "of": 6,
+        "at": "2026-11-26T19:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Measure v06 audio and record before state",
+          "Apply Cut A and Cut B in Studio editor",
+          "Wait for Studio processing",
+          "Retime chapters, captions, and end screen",
+          "Verify live Studio and API readback",
+          "Write receipt, status, learnings, and open PR"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
