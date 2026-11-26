@@ -351360,7 +351360,7 @@
     {
       "id": "J3820",
       "title": "WW2 009: rewrite v05 after Rule-6 failure",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Acting Chief ruling on J3492: uphold NARRATION_v04 viewer-test FAIL; WW2 PR #193 is merged. Topic remains GO; script stays review and unlocked. Produce NARRATION_v05 and matching SCRIPT.md from exact v04 hash 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9. Follow 01_Script/VIEWER_TEST_v04.md with these binding refinements: promise by 0:45 and main story moving by 1:00 at a realistic reading pace; the proposed 1:10 is not a pass. Remove the S04-S14 background detour, keeping necessary context in single sentences within the action. Resolve S01/S27 stopped/restarted-engine consistency. Clarify the title payoff in S36-S41 without inventing towing mechanics; remove repetition and address unexplained two halves in S43. These are editorial fixes, not new verified facts: provide a delta claim list for independent Gemini verification. Keep one figure at a time throughout, including S15-S17 and casualty/convoy totals. Preserve historical versions. Update current status note to remove stale v01 PASS/next-v02 instructions, without marking script done. Keep current title Operation Pedestal: How SS Ohio Reached Malta and active thumbnail HELD AFLOAT. Align Short source text but do not reopen J3581/J3582 holds or authorize a second Short (current rule 1 applies). Validate script/narration parity, hash, spoken character count <=21000 and 300/1200-word boundaries. No voice generation, no spend, no lock. Deadline 29 Nov 18:00 UTC; final lock deadline 30 Nov 18:00. VO remains prohibited before BOTH lock and 2026-11-30T10:50:00Z. Ben watch 9 Dec; planned air 12 Dec 17:00 London. Follow-up is independent facts check, then Chief review.\n",
       "ref": "ww2-channel#193",
@@ -351368,10 +351368,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-26T23:53Z",
-      "eta": "2026-11-27T01:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T23:51Z",
       "result": "",
@@ -351385,6 +351385,11 @@
           "at": "2026-11-26T23:53Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:53Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Rewrite the slow opening and clarify the rescue before another review",
@@ -351398,7 +351403,15 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "macbook"
+      },
+      "open_claim": true
     },
     {
       "id": "J3821",
