@@ -346692,13 +346692,13 @@
       "stage": "picture",
       "after": "J3774",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T05:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:26Z",
-      "result": "Waiting for: Wait for returning Chief claude (>= 2026-11-26T07:50:00Z) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, parked under self-merge guard) to main before harvesting WW2:015 archive files",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T05:26Z",
@@ -346749,37 +346749,20 @@
           "at": "2026-11-26T13:16Z",
           "by": "relay",
           "what": "condition verification queued: J3793"
+        },
+        {
+          "at": "2026-11-26T13:34Z",
+          "by": "gemini",
+          "what": "reopened: Condition VERIFIED MET (J3793): ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude ('Chief sweep <noreply@anthropic.com>', merge commit dd01145e, ancestor of ww2 origin/main 68b0a84); ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt (sha256 28acf9437096dcd42d3a96a82ad5caf4b1f87886a6369c8033602a0a33730c7c) verified live on main. All J3775 guards intact (£0, no voice spend, no YouTube writes, US Federal PD only, no media in git)."
         }
       ],
       "remaining_action": "After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-26T05:34Z",
-        "by": "gemini",
-        "plan": [
-          "Verify PR #182 merged to main",
-          "Harvest 37 US PD photos & LoC TIFF masters to NAS",
-          "Visually verify key captions, crops & NHHC check",
-          "Update ARCHIVE_PROVENANCE.md, status.json & open PR"
-        ],
-        "note": "Checked ww2-channel main and PR #182: PR #182 is still open under self-merge guard awaiting returning Chief claude (>= 0"
-      },
       "taskKeys": [
         "WW2:015"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Wait for non-producer Chief (returning claude >= 2026-11-26T12:50:00Z, or codex/chief) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, OPEN/MERGEABLE at a1cd072f, parked under self-merge guard; origin/main still at 156f6f5) to main before harvesting WW2:015 archive files",
-        "check_at": "2026-11-26T14:16:35+00:00",
-        "last_recheck": "J3785",
-        "checked_at": "2026-11-26T08:20:03+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3793"
-      }
+      ]
     },
     {
       "id": "J3776",
