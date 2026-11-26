@@ -180373,9 +180373,14 @@
           "at": "2026-11-26T15:46Z",
           "by": "relay",
           "what": "condition verification queued: J3798"
+        },
+        {
+          "at": "2026-11-26T16:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T13:00:00Z"
         }
       ],
-      "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the Mini permission settings; verify on 24 November at 13:00 UTC, then resolve the documentation draft.",
+      "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the Mini permission settings; verify on 27 November at 13:00 UTC, then resolve the documentation draft.",
       "kind": "assembly",
       "urgent": 1,
       "rerouted_from": {
@@ -180396,12 +180401,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief ruling J3423: CONDITION NOT MET. Evidence PR1215 merged as 2fc033a172. Independent Mini check 23 Nov confirms all eight configuration/rule/gateway hashes unchanged; PR490 remains OPEN draft at f521bcd3f1. Thread through 7105379476 contains no new operator confirmation or fresh-session scoped acceptance evidence. Authorized operator must confirm Mini configuration and provide scoped acceptance/refusal evidence; then the verification worker resolves draft PR490. Retain existing approval controls and fallback routing. J2517/J2559 done; J2007 cancelled and must not be retried. Recheck 24 Nov 13:00 UTC.",
-        "check_at": "2026-11-26T16:46:42+00:00",
-        "last_recheck": "J3423",
-        "checked_at": "2026-11-23T15:24:38+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3798"
+        "condition": "Chief ruling J3798: CONDITION NOT MET. Evidence PR1344 merged; independent Codex read confirms all eight local configuration/rule/gateway hashes match J3423 unchanged, and PR490 remains OPEN draft f521bcd3f1. Trusted studio messages through 7197493120 add no operator confirmation or fresh-session scoped acceptance evidence. Authorized operator must confirm the Mini configuration and supply scoped acceptance/refusal evidence; verification worker then resolves draft PR490. Existing approval controls and fallback routing remain. J2517/J2559 done; J2007 cancelled, never retry. Next check 27 Nov 13:00 UTC.",
+        "check_at": "2026-11-27T13:00:00Z",
+        "last_recheck": "J3798",
+        "checked_at": "2026-11-26T16:25:51+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
