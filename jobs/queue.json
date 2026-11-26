@@ -350573,13 +350573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T21:43Z",
-      "eta": "2026-11-26T23:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T21:42Z",
-      "result": "",
+      "result": "parked for Chief: merge HOS PR #804 and OWB PR #1352 (f_-BsKZf8X0 uploaded Private, 2026-12-01T11:30Z, Studio Related->YqCWYlv_LCY + Altered=YES + Not Made for Kids reload-verified, channel:audit 76 videos 0 errors)",
       "history": [
         {
           "at": "2026-11-26T21:42Z",
@@ -350620,6 +350620,11 @@
           "at": "2026-11-26T21:58Z",
           "by": "gemini",
           "what": "step 4 of 5 done: f_-BsKZf8X0 processed (PT17S, 6 tags, en-GB captions serving, custom cover live), Studio CDP 9460 reload-verified (Related->YqCWYlv_LCY, Altered=YES, Not Made for Kids, Scheduled), channel:audit PASS (76 videos, 0 errors), OWB UPLOADS.json updated"
+        },
+        {
+          "at": "2026-11-26T21:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: merge HOS PR #804 and OWB PR #1352 (f_-BsKZf8X0 uploaded Private, 2026-12-01T11:30Z, Studio Related->YqCWYlv_LCY + Altered=YES + Not Made for Kids reload-verified, channel:audit 76 videos 0 errors)"
         }
       ],
       "remaining_action": "Running check_all.sh, pushing HOS & OWB PRs, posting desk report, and parking Chief merge",
