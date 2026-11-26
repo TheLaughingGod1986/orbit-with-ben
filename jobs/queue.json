@@ -345191,13 +345191,13 @@
       "stage": "",
       "after": "J3415",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-26T03:17Z",
-      "eta": "2026-11-26T05:17Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-26T03:17Z",
-      "result": "",
+      "result": "Waiting for: Next daily Orbit With Ben comment check window (27 Nov 2026 09:00 London)",
       "history": [
         {
           "at": "2026-11-26T03:17Z",
@@ -345208,9 +345208,19 @@
           "at": "2026-11-26T03:17Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T03:17Z",
+          "by": "macbook",
+          "what": "blocked: Waiting for: Next daily Orbit With Ben comment check window (27 Nov 2026 09:00 London)"
+        },
+        {
+          "at": "2026-11-26T03:17Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-11-27T09:00:00Z"
         }
       ],
-      "remaining_action": "Wait until 2026-11-27T09:00:00Z, then scan Orbit With Ben Studio comments from the last 14 days",
+      "remaining_action": "Scan Orbit With Ben Studio comments from the last 14 days, reply or draft per policy, log COMMENT_REPLIES.jsonl, and queue next day",
       "due": "2026-11-27T20:00:00Z",
       "kind": "studio",
       "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
@@ -345221,6 +345231,12 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Next daily Orbit With Ben comment check window (27 Nov 2026 09:00 London)",
+        "check_at": "2026-11-27T09:00:00Z",
+        "release": "auto"
       }
     }
   ],
