@@ -346315,9 +346315,14 @@
           "at": "2026-11-26T05:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T05:36Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3777; inspecting J3775 and ww2-channel PR #182."
         }
       ],
-      "remaining_action": "Verify readiness: After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
+      "remaining_action": "Inspect J3775, J3774, and ww2-channel PR #182 state",
       "kind": "review",
       "recheck_of": "J3775",
       "due": "2026-11-26T06:34:42+00:00",
@@ -346333,11 +346338,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T05:35Z",
+        "at": "2026-11-26T05:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3775 and PR 182 status",
+          "Update J3775 wait or reopen",
+          "Finish J3777 and post report"
+        ],
+        "note": "Claimed J3777; inspecting J3775 and ww2-channel PR #182."
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     }
   ],
   "focus": [
