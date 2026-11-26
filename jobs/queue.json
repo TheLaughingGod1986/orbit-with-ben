@@ -336991,14 +336991,19 @@
           "at": "2026-11-26T07:07Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Recorded S01_v03 (20.00s -> tight 18.54s, atempo 1.00, vo_check PASS) & S02_v03b retake (19.68s -> tight 18.39s, atempo 1.00, vo_check PASS, 0 word diffs); verified direct audio listen + NAS SHA-256 copies; settled 373 ElevenLabs credits (7,630 left)"
+        },
+        {
+          "at": "2026-11-26T07:07Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: check_all.sh ALL CHECKS PASS; opened HOS PR https://github.com/TheLaughingGod1986/history-of-science/pull/797 (zero media in git, status.json & production-status.md updated)"
         }
       ],
-      "remaining_action": "Run check_all.sh, commit metadata (no media), open HOS PR, and queue non-producer Chief VO review",
+      "remaining_action": "Queue non-producer Chief VO review job, post desk #180 and studio thread reports, and mark J3671 done",
       "due": "2026-12-03T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check Shorts S01 and S02 narration for HOS 128 from locked SHORTS_SCRIPTS_v03.md",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
         "at": "2026-11-26T07:07Z",
         "by": "gemini",
@@ -337009,7 +337014,7 @@
           "Copy verified audio to NAS and open HOS PR",
           "Queue non-producer Chief VO review and report"
         ],
-        "note": "Recorded S01_v03 (20.00s -> tight 18.54s, atempo 1.00, vo_check PASS) & S02_v03b retake (19.68s -> tight 18.39s, atempo "
+        "note": "check_all.sh ALL CHECKS PASS; opened HOS PR https://github.com/TheLaughingGod1986/history-of-science/pull/797 (zero medi"
       },
       "taskKeys": [
         "HOS:128"
