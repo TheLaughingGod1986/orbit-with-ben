@@ -101,11 +101,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
-| J3804 | mini | claimed | codex | 2026-11-26T20:02Z | review · Verify condition for J3780 |  |
 | J3805 | mini | blocked | macbook | – | review · Verify condition for J3781 |  |
 
 Recently finished:
 
+- J3804 done: Verify condition for J3780 (Chief availability condition verified MET and J3780 reopened with evidence and concrete independent-review follow-up. Live Codex is elected Chief; old Codex limit in PR 1346 is stale. HOS PR 797 remains open and unapproved; all original gates remain. Ruling evidence local commit ef474128d2, branch codex/J3804-chief-review, worktree /Volumes/MiniWork/scratch/J3804-chief-review. Automatic approval review rejected evidence-branch publication; no retry or delegated push. J3805 untouched.)
 - J3803 done: First-day check at 6 h: "Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) ("Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) · Orbit With Ben · Short · went live Thu 26 Nov 11:30 London
 At 6 h: views 528 · Studio rank 3 of 10 · shown in feed about 1599 (from 507 feed views) · stayed to watch 31.7% · average viewed 71.0%
 Usual for this channel: stayed to watch 33.8%, average viewed 67.0%
@@ -139,4 +139,3 @@ Done (2026-11-26T17:09Z, gemini): J3800 read-only Studio 48h check, 26 Nov 17:05
 - J3796 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J3795 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J3794 done: WW2 002-S1 Short: put it on Ben's watch, then upload for Fri 27 Nov 12:30 linked to pilot 2 (after his OK only) (J3794 complete (never re-uploaded). On existing Ben-OK'd upload ZCnSldSJzME (Private, publishAt 2026-11-27T12:30:00Z, master SHA-256 cee68f66...08c2), set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) in Field Order History Studio, saved, hard-reloaded, and verified both Studio prefetch JSON (videoLinkageShortsAttribution targetExternalVideoId=qfc6EBStOfo, VIDEO_PRIVACY_PRIVATE, scheduledTimeSeconds=1795782600, VIDEO_HAS_ALTERED_CONTENT_YES, VIDEO_MADE_FOR_KIDS_NOT_MFK, SD+HD done, no claims, custom cover preserved) and Data API read-back (processed/private/2026-11-27T12:30:00Z/madeForKids=false/hasCustomThumbnail=true/description link to qfc6EBStOfo; public parent qfc6EBStOfo untouched). Recorded in ww2-channel PR #188 (commit 10bceb5 on top of PR #187, ready for Chief merge). Note: CDP 9223 currently holds FOH (UCu94mInMFosxu3W0H6jlI6Q) while CDP 9224 holds Orbit/HOS/OpptiAI; flagged on thread. £0 spend.)
-- J3793 done: Verify condition for J3775 (Condition MET; J3775 reopened to open queue. Independently verified ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude (Chief sweep, merge commit dd01145e on ww2 origin/main 68b0a84; ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt sha256 28acf943... verified on main). All J3775 guards intact (£0, US Federal PD only, no media in git); J3776 untouched.)

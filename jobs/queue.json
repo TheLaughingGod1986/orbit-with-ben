@@ -349512,13 +349512,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-26T18:02Z",
-      "eta": "2026-11-26T20:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T17:50Z",
-      "result": "",
+      "result": "Chief availability condition verified MET and J3780 reopened with evidence and concrete independent-review follow-up. Live Codex is elected Chief; old Codex limit in PR 1346 is stale. HOS PR 797 remains open and unapproved; all original gates remain. Ruling evidence local commit ef474128d2, branch codex/J3804-chief-review, worktree /Volumes/MiniWork/scratch/J3804-chief-review. Automatic approval review rejected evidence-branch publication; no retry or delegated push. J3805 untouched.",
       "history": [
         {
           "at": "2026-11-26T17:50Z",
@@ -349564,6 +349564,11 @@
           "at": "2026-11-26T18:03Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded MET ruling on J3780 and reopened it for independent Chief review. VO and all production gates remain. Local evidence commit ef474128d2; branch push rejected by automatic review, no retry or indirect publication."
+        },
+        {
+          "at": "2026-11-26T18:03Z",
+          "by": "codex",
+          "what": "done: Chief availability condition verified MET and J3780 reopened with evidence and concrete independent-review follow-up. Live Codex is elected Chief; old Codex limit in PR 1346 is stale. HOS PR 797 remains open and unapproved; all original gates remain. Ruling evidence local commit ef474128d2, branch codex/J3804-chief-review, worktree /Volumes/MiniWork/scratch/J3804-chief-review. Automatic approval review rejected evidence-branch publication; no retry or delegated push. J3805 untouched."
         }
       ],
       "remaining_action": "Independent Chief completes the reopened voice review",
@@ -349593,7 +349598,8 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "done_ref": "ef474128d2"
     },
     {
       "id": "J3805",
