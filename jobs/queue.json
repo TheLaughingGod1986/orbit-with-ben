@@ -321144,13 +321144,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-26T23:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T10:00Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3492 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/193. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:00Z",
@@ -321221,6 +321221,11 @@
           "at": "2026-11-26T23:42Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3492 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/193. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-26T23:52Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded in J3820 and merged ww2 PR193: uphold v04 Rule-6 FAIL, script stays unlocked and VO prohibited. Reopen only to claim and close this completed review; rewrite delegated to J3820 with dependent facts and fresh Chief lock review."
         }
       ],
       "remaining_action": "Await corrected narration J3626 and independent Gemini check J3627, then finish viewer review and script lock; retain 30 Nov voice hold",
@@ -321234,15 +321239,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T23:38Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "open_claim": true
     },
     {
       "id": "J3493",
