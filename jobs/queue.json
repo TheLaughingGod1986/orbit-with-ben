@@ -350863,22 +350863,28 @@
           "at": "2026-11-26T22:07Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-26T22:08Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original worktree absent; no surviving cover in project/NAS search; public maxres and hq thumbnail endpoints returned 404. NAS master SHA-256 matches approved hash. Extracted frame 0 as explicitly reconstructed."
         }
       ],
-      "remaining_action": "Recover the uploaded cover or reconstruct it from the verified master",
+      "remaining_action": "Archive the reconstructed still and inspect phone-size previews",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Save a lasting copy of the cover for the Franklin lightning rod Short",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-26T22:07Z",
+        "at": "2026-11-26T22:08Z",
         "by": "codex",
         "plan": [
           "Find cover source",
           "Archive and review still",
           "Submit receipt and report"
-        ]
+        ],
+        "note": "Original worktree absent; no surviving cover in project/NAS search; public maxres and hq thumbnail endpoints returned 40"
       },
       "taskKeys": [
         "HOS:008"
