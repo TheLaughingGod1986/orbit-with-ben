@@ -347516,13 +347516,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-26T18:20Z",
-      "eta": "2026-11-26T20:20Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T07:33Z",
-      "result": "",
+      "result": "Waiting for: Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly.",
       "history": [
         {
           "at": "2026-11-26T07:33Z",
@@ -347618,9 +347618,19 @@
           "at": "2026-11-26T18:24Z",
           "by": "codex",
           "what": "step 3 of 4 done: Fresh main-branch S01 and S02 vo_check both PASS with zero word diffs; exact hashes and timings verified. Independent listening and final VO ruling remain unfinished."
+        },
+        {
+          "at": "2026-11-26T18:25Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly."
+        },
+        {
+          "at": "2026-11-26T18:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-26T22:00:00Z"
         }
       ],
-      "remaining_action": "Obtain an independent audio review of both Trinity Shorts, then rule and merge the take records",
+      "remaining_action": "Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
       "due": "2026-12-05T18:00:00Z",
       "for": "codex",
       "kind": "chief",
@@ -347648,7 +347658,18 @@
           "Record ruling and handoff"
         ],
         "note": "Fresh main-branch S01 and S02 vo_check both PASS with zero word diffs; exact hashes and timings verified. Independent li"
-      }
+      },
+      "hold": {
+        "type": "capability",
+        "condition": "Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly.",
+        "check_at": "2026-11-26T22:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
+      ]
     },
     {
       "id": "J3782",
