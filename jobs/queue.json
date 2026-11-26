@@ -345534,13 +345534,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:06Z",
-      "eta": "2026-11-26T06:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T04:05Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) verification & PASS ruling complete (ww2 PR #168 merged 7dcce41, PR #170 merged 07e6474, PR #178 merged 50ac67b 07_Edit/CHIEF_RULING_J3771.md, superseded PR #167 closed; OWB PR #1340 merged 32de513354): J3432 waiting condition satisfied via J3745 full v03 AV QA + J3746 £0 v04 fix pass + J3748 targeted v04 AV QA KEEP; NAS v04 SHA-256 55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c and Thumb A/B/C v02 verified; checksum-verified v04 + 3 thumbs staged in WW2 UAT, uploaded to private R2 watch (ww2-005-v04), J3432 reopened to arm awaits_ben (due 30 Nov 20:00Z, planned air Thu 3 Dec 17:00 London) and close J3745/J3748/J3432. £0; no YouTube upload/schedule.",
       "history": [
         {
           "at": "2026-11-26T04:05Z",
@@ -345576,6 +345576,11 @@
           "at": "2026-11-26T04:16Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Merged ww2 PR #168 (J3746 v04 + J3745 AV QA, 7dcce41), PR #170 (J3748 AV QA KEEP, 07e6474), PR #178 (Acting Chief PASS ruling + status.json, 50ac67b), closed superseded PR #167; staged checksum-verified WW2:005 v04 + 3 thumbs in WW2 UAT; uploaded private R2 watch ww2-005-v04 and merged OWB PR #1340 (32de513354); now closing J3745/J3748 and arming J3432 awaits_ben"
+        },
+        {
+          "at": "2026-11-26T04:17Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) verification & PASS ruling complete (ww2 PR #168 merged 7dcce41, PR #170 merged 07e6474, PR #178 merged 50ac67b 07_Edit/CHIEF_RULING_J3771.md, superseded PR #167 closed; OWB PR #1340 merged 32de513354): J3432 waiting condition satisfied via J3745 full v03 AV QA + J3746 £0 v04 fix pass + J3748 targeted v04 AV QA KEEP; NAS v04 SHA-256 55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c and Thumb A/B/C v02 verified; checksum-verified v04 + 3 thumbs staged in WW2 UAT, uploaded to private R2 watch (ww2-005-v04), J3432 reopened to arm awaits_ben (due 30 Nov 20:00Z, planned air Thu 3 Dec 17:00 London) and close J3745/J3748/J3432. £0; no YouTube upload/schedule."
         }
       ],
       "remaining_action": "Closing J3771 and completing J3745/J3748/J3432 queue transitions and board check",
@@ -345605,7 +345610,8 @@
       },
       "taskKeys": [
         "WW2:005"
-      ]
+      ],
+      "done_ref": "50ac67b"
     }
   ],
   "focus": [
