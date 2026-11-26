@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3762 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3773 | gemini | open | – | – | WW2:015 sources · facts · WW2 film 015: Higgins boat (LCVP) independent claims and archive provenance check (PR #180) | ww2-channel#180 |
+| J3773 | gemini | claimed | gemini | 2026-11-26T07:09Z | WW2:015 sources · facts · WW2 film 015: Higgins boat (LCVP) independent claims and archive provenance check (PR #180) | ww2-channel#180 |
 | J3774 | mini | open (after J3773) | – | – | WW2:015 script · review · WW2 film 015: Higgins boat (LCVP) topic/archive review and Rule-6 stranger viewer test (300 + 1,200 words) | ww2-channel#180 |
 
 Recently finished:

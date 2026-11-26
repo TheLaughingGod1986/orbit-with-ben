@@ -346014,10 +346014,10 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T05:09Z",
+      "eta": "2026-11-26T07:09Z",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:06Z",
       "result": "",
@@ -346026,12 +346026,25 @@
           "at": "2026-11-26T05:06Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T05:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audit C01-C21, F1-F5 and ARCHIVE_PROVENANCE.md on ww2-channel#180 and commit CLAIMS_CHECK_v01.md",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
-      "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat"
+      "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T05:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3774",
