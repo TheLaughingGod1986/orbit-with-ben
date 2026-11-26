@@ -320604,13 +320604,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-26T23:38Z",
-      "eta": "2026-11-27T03:38Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
-      "result": "",
+      "result": "parked for Chief: needs a worker with web. WebSearch refused on this MacBook run (26 Nov); the topic check needs 15 real NARA RG 111 / IWM archive IDs, vidIQ/neighbour evidence and a sourced script (SOURCES.md, every claim). Nothing started: no ww2-channel branch, no PR, no credits spent. Route to Claude (web) or Gemini; lock date Wed 16 Dec 18:00, air Thu 31 Dec.",
       "history": [
         {
           "at": "2026-11-24T09:37Z",
@@ -320711,6 +320711,11 @@
           "at": "2026-11-26T23:38Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:39Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: needs a worker with web. WebSearch refused on this MacBook run (26 Nov); the topic check needs 15 real NARA RG 111 / IWM archive IDs, vidIQ/neighbour evidence and a sourced script (SOURCES.md, every claim). Nothing started: no ww2-channel branch, no PR, no credits spent. Route to Claude (web) or Gemini; lock date Wed 16 Dec 18:00, air Thu 31 Dec."
         }
       ],
       "remaining_action": "Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
