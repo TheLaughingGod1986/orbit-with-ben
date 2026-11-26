@@ -336986,16 +336986,21 @@
           "at": "2026-11-26T07:00Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified SHORTS_SCRIPTS_v03.md sha256 1132ad9f..., logged live balance 8,003/121,114, dry-run S01 (277 chars) & S02 (263 chars) = 540 chars total"
+        },
+        {
+          "at": "2026-11-26T07:07Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Recorded S01_v03 (20.00s -> tight 18.54s, atempo 1.00, vo_check PASS) & S02_v03b retake (19.68s -> tight 18.39s, atempo 1.00, vo_check PASS, 0 word diffs); verified direct audio listen + NAS SHA-256 copies; settled 373 ElevenLabs credits (7,630 left)"
         }
       ],
-      "remaining_action": "Record Shorts S01 and S02 via vo_take.py (Ben Orbit Narrator, eleven_v3, speed 1.04)",
+      "remaining_action": "Run check_all.sh, commit metadata (no media), open HOS PR, and queue non-producer Chief VO review",
       "due": "2026-12-03T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check Shorts S01 and S02 narration for HOS 128 from locked SHORTS_SCRIPTS_v03.md",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-26T07:00Z",
+        "at": "2026-11-26T07:07Z",
         "by": "gemini",
         "plan": [
           "Verify locked script, live credits, and dry run",
@@ -337004,7 +337009,7 @@
           "Copy verified audio to NAS and open HOS PR",
           "Queue non-producer Chief VO review and report"
         ],
-        "note": "Verified SHORTS_SCRIPTS_v03.md sha256 1132ad9f..., logged live balance 8,003/121,114, dry-run S01 (277 chars) & S02 (263"
+        "note": "Recorded S01_v03 (20.00s -> tight 18.54s, atempo 1.00, vo_check PASS) & S02_v03b retake (19.68s -> tight 18.39s, atempo "
       },
       "taskKeys": [
         "HOS:128"
