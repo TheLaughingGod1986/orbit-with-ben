@@ -1,5 +1,5 @@
 {
-  "next_id": 3823,
+  "next_id": 3824,
   "jobs": [
     {
       "id": "J0001",
@@ -319772,13 +319772,13 @@
       "stage": "script",
       "after": "J3476",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-26T23:50Z",
-      "eta": "2026-11-27T01:20Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:24Z",
-      "result": "",
+      "result": "WW2:008 script locked v02 (ww2-channel PR #194, merged). All 9 J3476 claims fixes applied; Rule 6 300-word read PASS; the ~1,200-word read cut C09 (a third restatement of 'Sicily was obvious' at 1:42). 2,955 words, 18,511 spoken chars, SHA-256 d743c9119b79. Topic GO. Air confirmed Thu 10 Dec 17:00 London; 008-S1 Fri 11 Dec 12:30; 008-S2 reserve. VO queued as J3823, not before 30 Nov 10:55. £0.",
       "history": [
         {
           "at": "2026-11-24T09:24Z",
@@ -319794,6 +319794,11 @@
           "at": "2026-11-26T23:50Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "done: WW2:008 script locked v02 (ww2-channel PR #194, merged). All 9 J3476 claims fixes applied; Rule 6 300-word read PASS; the ~1,200-word read cut C09 (a third restatement of 'Sicily was obvious' at 1:42). 2,955 words, 18,511 spoken chars, SHA-256 d743c9119b79. Topic GO. Air confirmed Thu 10 Dec 17:00 London; 008-S1 Fri 11 Dec 12:30; 008-S2 reserve. VO queued as J3823, not before 30 Nov 10:55. £0."
         }
       ],
       "remaining_action": "Run Claude Rule 6 viewer test of first 300 words and lock WW2:008 script by 2026-12-03 18:00",
@@ -329424,7 +329429,7 @@
       "title": "WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch",
       "needs": "mini",
       "repo": "ww2",
-      "body": "Build Field Order History Short 008-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 008 airs Thu 10 Dec).\n\n- **Short title (50 chars, Rule 2):** Operation Mincemeat: Faking a Man's Pocket Clutter\n- **Links to long film:** WW2:008 (*Operation Mincemeat: One Briefcase Fooled Hitler*, airs Thu 10 Dec 17:00 London)\n- **Target air slot:** Wed 9 Dec 2026 12:30 London (day -1; Ben watch due Mon 7 Dec 18:00 UTC; link Related video once 008 is public)\n- **Narration excerpt (locked from post-reset 008 VO, £0 new voice):** Final sentence of `[S13]` + `[S14]` (125 words, ~51 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; claims C25-C28 all PASS): \"So they gave William Martin a fiancée named Pam...\" through \"...so the cardboard looked worn rather than freshly minted.\"\n- **First 2 s hook:** Full-bleed vertical crop of `TNA ADM 223/464` (Major William Martin Naval Identity Card 148228) with caption hook \"HOW BRITAIN FAKED A MAN'S POCKETS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `008/03_Picture/ARCHIVE_PROVENANCE.md`):** `TNA ADM 223/464` (ID card 148228), `IWM H 15636` (Whitehall War Office desk), plus `G06`/`G07` pocket-litter & ring-bill/overdraft code diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 008 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "body": "Build Field Order History Short 008-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 008 airs Thu 10 Dec).\n\n- **Short title (50 chars, Rule 2):** Operation Mincemeat: Faking a Man's Pocket Clutter\n- **Links to long film:** WW2:008 (*Operation Mincemeat: One Briefcase Fooled Hitler*, airs Thu 10 Dec 17:00 London)\n- **Target air slot:** Wed 9 Dec 2026 12:30 London (day -1; Ben watch due Mon 7 Dec 18:00 UTC; link Related video once 008 is public)\n- **Narration excerpt (locked from post-reset 008 VO, £0 new voice):** Final sentence of `[S13]` + `[S14]` (125 words, ~51 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; claims C25-C28 all PASS): \"So they gave William Martin a fiancée named Pam...\" through \"...so the cardboard looked worn rather than freshly minted.\"\n- **First 2 s hook:** Full-bleed vertical crop of `TNA ADM 223/464` (Major William Martin Naval Identity Card 148228) with caption hook \"HOW BRITAIN FAKED A MAN'S POCKETS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `008/03_Picture/ARCHIVE_PROVENANCE.md`):** `TNA ADM 223/464` (ID card 148228), `IWM H 15636` (Whitehall War Office desk), plus `G06`/`G07` pocket-litter & ring-bill/overdraft code diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 008 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.\n\n**Chief, 26 Nov (J3477):** rule 1 changed on 26 Nov, so 008-S1 now airs **Fri 11 Dec 12:30 London**, the day after 008 airs (Thu 10 Dec), not Wed 9 Dec. Ben's watch is due Wed 9 Dec 18:00. Set Related video to the 008 long at upload. Cut it from the v02 VO (J3823), not v01: the narration changed (NARRATION_v02.txt).",
       "ref": "J3563",
       "film": "WW2:008",
       "stage": "edit",
@@ -329447,6 +329452,11 @@
           "at": "2026-11-24T16:55Z",
           "by": "macbook-2",
           "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "air moved to Fri 11 Dec 12:30 (rule 1: the day after its long)"
         }
       ],
       "remaining_action": "Wait for 008 post-reset VO and archive harvest, then cut [S13]-[S14], assemble 1080x1920 vertical Short, and put on Ben watch",
@@ -329476,7 +329486,7 @@
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T16:55Z",
-      "result": "",
+      "result": "Waiting for: Reserve under rule 1 (26 Nov): build 008-S2 only if 008-S1 sends 10+ viewers to the 008 long within 7 days of airing (Fri 11 Dec); check the Short's 'viewers who went on to watch' figure on 18 Dec.",
       "history": [
         {
           "at": "2026-11-24T16:55Z",
@@ -329497,6 +329507,11 @@
           "at": "2026-11-26T09:40Z",
           "by": "claude",
           "what": "Chief: on hold. Ben, 26 Nov: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all.\" ww2 rule 1 (26 Nov): one Short per long, the day after it airs, linked as Related video; a second Short only after a Short sends 10+ viewers to its long within 7 days (LEARNINGS row 15)."
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "now a reserve: built only if 008-S1 passes the 7-day check (rule 1)"
         }
       ],
       "remaining_action": "Build this Short only if the 7-day Shorts check passes",
@@ -329505,8 +329520,8 @@
       "plain": "Build the second Operation Mincemeat Short about the single black eyelash placed inside the letter fold to prove Germany read it",
       "hold": {
         "type": "date",
-        "condition": "Second/third Short per long: only if the 7-day check shows a Short sending 10+ viewers to its long (first read J3648, Mulberry Short, Thu 3 Dec). The Chief releases it or closes it then.",
-        "check_at": "2026-12-03T13:00:00Z"
+        "condition": "Reserve under rule 1 (26 Nov): build 008-S2 only if 008-S1 sends 10+ viewers to the 008 long within 7 days of airing (Fri 11 Dec); check the Short's 'viewers who went on to watch' figure on 18 Dec.",
+        "check_at": "2026-12-18T13:00:00Z"
       }
     },
     {
@@ -351500,6 +351515,52 @@
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the revised Operation Pedestal film script before recording the voice"
+    },
+    {
+      "id": "J3823",
+      "title": "WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**HARD GUARD — DO NOT SPEND ELEVENLABS CREDITS BEFORE `2026-11-30 10:50Z`.** The job is not claimable before 10:55 London on 30 Nov. Never change or top up Ben's ElevenLabs plan (rule 9). API only (`vo_take.py` / `el_client.py`), never the website. Record **only the long-film narration**, never the Shorts.\n\n**Order after the reset:** 017 Pearl Harbor (J3559, airs Tue 8 Dec) goes first, then this one (airs Thu 10 Dec). Check the live credit balance before starting. If what's left can't cover ~18.5k characters plus a retake margin, park for Chief: don't voice half a film.\n\n**Task:** record the full narration in Ben's voice (`eleven_v3`, Ben Orbit Narrator, the same settings as the other WW2 films) for Field Order History **`WW2:008`**, *Operation Mincemeat: One Briefcase Fooled Hitler*. It airs **Thu 10 Dec 2026 17:00 London**, and Ben's watch is due **Mon 7 Dec**.\n\n**Locked source (`ww2-channel` main, PR #194, J3477):**\n- `02_Video-Projects/008_Operation-Mincemeat-Planted-Briefcase-Sicily/01_Script/NARRATION_v02.txt`: 2,955 words, 18,511 spoken characters, SHA-256 `d743c9119b79f17dff261be36719c8867c54888aa798586921b81596adc903d2`. Check the hash before spending.\n- Matches `01_Script/SCRIPT.md` v02 (38/38 paragraphs) with all nine J3476 claims fixes applied.\n\n**Then:** the word-level SRT (`words.srt`), take QA (no clipped words, no mispronunciations of Cholmondeley \"Chumley\", Glyndwr, Huelva, Kühlenthal, Roenne), files to the NAS, `status.json` vo stage, and one ww2-channel PR. Queue assembly next, so Ben can watch by Mon 7 Dec. The 008-S1 Short (J3579) is cut from this VO afterwards and airs Fri 11 Dec 12:30.\n\n£0 beyond the monthly plan's credits.",
+      "ref": "",
+      "film": "WW2:008",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-26T23:56Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T23:56Z",
+      "result": "Waiting for: ElevenLabs monthly credit reset at 2026-11-30 10:50Z (no voice credits until then)",
+      "history": [
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: ElevenLabs monthly credit reset at 2026-11-30 10:50Z (no voice credits until then)"
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-30T10:55:00Z"
+        }
+      ],
+      "remaining_action": "Record WW2 008's narration in Ben's voice after the 30 Nov ElevenLabs reset",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "vo",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "ElevenLabs monthly credit reset at 2026-11-30 10:50Z (no voice credits until then)",
+        "check_at": "2026-11-30T10:55:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
