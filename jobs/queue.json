@@ -299722,10 +299722,10 @@
       "stage": "",
       "after": "J3307",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T04:28Z",
+      "eta": "2026-11-26T06:28Z",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:38Z",
       "result": "",
@@ -299744,11 +299744,24 @@
           "at": "2026-11-22T17:59Z",
           "by": "codex",
           "what": "J3382 updated exact v03 candidate and conditional successor permission; J3307 dependency retained, no Studio action"
+        },
+        {
+          "at": "2026-11-26T04:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for the prior review to be published, then check Studio and test the approved thumbnail",
       "kind": "studio",
-      "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval"
+      "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T04:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3309",
