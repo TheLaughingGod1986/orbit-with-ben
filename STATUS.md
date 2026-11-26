@@ -88,6 +88,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
 | 064 | picture | gemini | 2026-11-25T14:17Z | 2026-11-25T16:16Z | J3022 OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film |
-| 064 | thumbs | codex | 2026-11-26T16:07Z | 2026-11-26T16:36Z | J3716 Packaging panel (codex): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |
+| 064 | thumbs | codex | 2026-11-26T16:07Z | 2026-11-26T16:27Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
