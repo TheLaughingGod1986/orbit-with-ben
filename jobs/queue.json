@@ -348442,9 +348442,14 @@
           "at": "2026-11-26T14:27Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T14:27Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: Ben's OK is on the job (approved_from, 14:20Z); history shows no upload yet"
         }
       ],
-      "remaining_action": "Upload WW2:002-S1 Private for Fri 27 Nov 12:30 London linked to qfc6EBStOfo after Ben's watch OK (or defer if no OK by Fri 27 Nov 10:30)",
+      "remaining_action": "Find the upload path used for 001-S1",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348471,11 +348476,17 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-26T14:27Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check 001-S1 upload method and metadata",
+          "Upload master Private scheduled Fri 27 Nov 12:30",
+          "Set Related video, description link, altered content",
+          "Read back Studio + Data API",
+          "Record in status.json and UPLOADS.json"
+        ],
+        "note": "Ben's OK is on the job (approved_from, 14:20Z); history shows no upload yet"
       }
     },
     {
