@@ -348754,9 +348754,14 @@
           "at": "2026-11-26T15:01Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: origin/main 05_Analytics/tests/panels/owb-064-every-planet/ holds only gemini.md; J3716, J3718 open, unclaimed; J3719 open, gated after J3718"
+        },
+        {
+          "at": "2026-11-26T15:02Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Verified condition unmet; jobs.py wait --recheck refused: only the elected Chief may record a condition check"
         }
       ],
-      "remaining_action": "Re-recording J3022's wait (panel still incomplete)",
+      "remaining_action": "Chief to record J3022's new wait (worker can't record a recheck)",
       "kind": "review",
       "recheck_of": "J3022",
       "due": "2026-11-26T16:00:06+00:00",
@@ -348772,14 +348777,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-26T15:01Z",
+        "at": "2026-11-26T15:02Z",
         "by": "claudecode",
         "plan": [
           "Read J3022 and panel jobs",
           "Check panel files on origin/main",
           "Reopen or re-wait J3022"
         ],
-        "note": "origin/main 05_Analytics/tests/panels/owb-064-every-planet/ holds only gemini.md; J3716, J3718 open, unclaimed; J3719 op"
+        "note": "Verified condition unmet; jobs.py wait --recheck refused: only the elected Chief may record a condition check"
       },
       "taskKeys": [
         "OWB:064"
