@@ -273780,9 +273780,14 @@
           "at": "2026-11-26T08:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T08:09Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Day-before move notice posted on #954 (#7186248983) for Fri 27 Nov 2026 from 10:00 London; split streak 13/13 (latest 26 Nov 07:54Z c70fcc1b73), live board healthy (/api/migration 404), Mini 18-service inventory re-checked read-only. Ready for 27 Nov 10:00Z cutover."
         }
       ],
-      "remaining_action": "Post Thu 26 Nov day-before move notice on thread, then run Fri 27 Nov 10:00 London studio repo move (preserve 3/4)",
+      "remaining_action": "Execute Fri 27 Nov 10:00 London studio repo move by docs/STUDIO_MOVE.md, prove relay/publish/tick/MacBook slots, then move tick store + thread to studio (preserve 3/4)",
       "due": "2026-11-26T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273801,12 +273806,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T08:04Z",
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-26T08:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect migration dependencies",
+          "Write and rehearse runbook",
+          "Publish preparation",
+          "Verify access and complete scheduled move"
+        ],
+        "note": "Day-before move notice posted on #954 (#7186248983) for Fri 27 Nov 2026 from 10:00 London; split streak 13/13 (latest 26"
       }
     },
     {
