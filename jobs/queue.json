@@ -341280,9 +341280,14 @@
           "at": "2026-11-26T19:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T19:38Z",
+          "by": "gemini",
+          "what": "step 0 of 7 done: Claimed J3714; starting step 1."
         }
       ],
-      "remaining_action": "Confirm RqYjADxvJy8 finished processing (~23:48), apply DESCRIPTION_v02.txt, verify/replace en-GB captions, verify/set end screen in last 20s, read back Studio + API, commit TRIM_RECEIPT_v01.md + status.json + LEARNINGS.md PR for Chief, and restore Orbit on browser 9223",
+      "remaining_action": "Recording before state via API/Studio and running ffmpeg silencedetect on NAS master",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -341292,11 +341297,19 @@
       "urgent": 8,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 7,
         "at": "2026-11-26T19:38Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Record before state and measure silences",
+          "Apply trims A and B in Studio editor",
+          "Rebuild trim package if points shift",
+          "Update description captions and end screen after processing",
+          "Read back Studio and Data API state",
+          "Render local join clips on NAS",
+          "Commit receipt status and learnings for Chief PR"
+        ],
+        "note": "Claimed J3714; starting step 1."
       }
     },
     {
