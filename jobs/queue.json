@@ -346046,16 +346046,21 @@
           "at": "2026-11-26T05:12Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified F1-F5 core chronology, mechanical parity (62/62, SHA-256 matched, 17,891 stripped chars), and first 17 archive files via Wikimedia Commons API"
+        },
+        {
+          "at": "2026-11-26T05:14Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Completed independent verification of C01-C21, F1-F5, and live Wikimedia API check of all 36 ARCHIVE_PROVENANCE.md items (2 material flags, 2 minor flags, 1 PT-boat archive pairing catch)"
         }
       ],
-      "remaining_action": "Finalize primary-source verification on LCVP weight/speed/D-Day counts and complete 36-item ARCHIVE_PROVENANCE.md spot-check",
+      "remaining_action": "Write 01_Script/CLAIMS_CHECK_v01.md, open PR against PR #180 branch, and post report",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-26T05:12Z",
+        "at": "2026-11-26T05:14Z",
         "by": "gemini",
         "plan": [
           "Check out PR #180 and read files",
@@ -346063,7 +346068,7 @@
           "Spot-check ARCHIVE_PROVENANCE.md and narration parity",
           "Write CLAIMS_CHECK_v01.md, open PR, and report"
         ],
-        "note": "Verified F1-F5 core chronology, mechanical parity (62/62, SHA-256 matched, 17,891 stripped chars), and first 17 archive "
+        "note": "Completed independent verification of C01-C21, F1-F5, and live Wikimedia API check of all 36 ARCHIVE_PROVENANCE.md items"
       },
       "taskKeys": [
         "WW2:015"
