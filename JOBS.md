@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3775 | mini | blocked | gemini | – | 015 picture · assembly · WW2 film 015: harvest 37 official US Federal PD archive photos & LoC TIFF masters (Higgins boat, £0) |  |
 | J3776 | mini | open (after J3774) | – | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
-| J3778 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-26 |  |
+| J3778 | mini | claimed | gemini | 2026-11-26T08:41Z | studio · Field Order History channel totals read 2026-11-26 |  |
 
 Recently finished:
 
