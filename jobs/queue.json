@@ -345096,13 +345096,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:05Z",
-      "eta": "2026-11-26T05:05Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T01:04Z",
-      "result": "",
+      "result": "Acting Chief (gemini) ruling: KEEP (follow-up J3768 passed and closed; jobs/reviews/J3768/REVIEW.md, commit c7c8c01be7). HOS PR #795 merged into HOS main (98abe4d938); byte-identical J3766_QA_SWEEP_INVENTORY_2026-11-26.json (sha256 db9d85827380bda8b15cc318662f9b6c95c95495f73b6f460ece0ef96ff45b92) and J3766_QA_SWEEP_REPORT_2026-11-26.md (sha256 a37fea65a1b9f2564c3fdb6fa78423d9cd48b7a42cbef87236d4777fbe19722e) verified across OWB main (b75f73f8c5) and HOS main (98abe4d938) via validate_j3766.py --strict --hos-ref origin/main (exit 0: 280 entries, 816/816 fresh sidecars, 0 mismatches, 0 current_newest FAILs, 0 repair jobs needed, metadata_issues_count=0, 3,528 warnings preserved unwaived). £0; grants no film-stage or publishing approval.",
       "history": [
         {
           "at": "2026-11-26T01:04Z",
@@ -345168,6 +345168,11 @@
           "at": "2026-11-26T04:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:05Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) ruling: KEEP (follow-up J3768 passed and closed; jobs/reviews/J3768/REVIEW.md, commit c7c8c01be7). HOS PR #795 merged into HOS main (98abe4d938); byte-identical J3766_QA_SWEEP_INVENTORY_2026-11-26.json (sha256 db9d85827380bda8b15cc318662f9b6c95c95495f73b6f460ece0ef96ff45b92) and J3766_QA_SWEEP_REPORT_2026-11-26.md (sha256 a37fea65a1b9f2564c3fdb6fa78423d9cd48b7a42cbef87236d4777fbe19722e) verified across OWB main (b75f73f8c5) and HOS main (98abe4d938) via validate_j3766.py --strict --hos-ref origin/main (exit 0: 280 entries, 816/816 fresh sidecars, 0 mismatches, 0 current_newest FAILs, 0 repair jobs needed, metadata_issues_count=0, 3,528 warnings preserved unwaived). £0; grants no film-stage or publishing approval."
         }
       ],
       "remaining_action": "Wait for J3768 to reconcile J3766 metadata and Section 4 across OWB and HOS PR #795 (validate_j3766.py --strict exit 0), then Chief merges #795 and closes J3766 KEEP",
@@ -345195,7 +345200,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "c7c8c01be7"
     },
     {
       "id": "J3767",
