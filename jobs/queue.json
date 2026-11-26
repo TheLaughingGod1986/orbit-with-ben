@@ -344635,13 +344635,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T01:38Z",
-      "eta": "2026-11-26T02:38Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T00:58Z",
-      "result": "",
+      "result": "Acting Chief (gemini) ruling PASS: 0 live YouTube/Studio fixes needed (7/7 public longs, 36/36 public Shorts clean; 008/009 remaining Studio steps already tracked in J3649/J3501). Squash-merged HOS PR #794 to main (ce278efd, 4/4 CI green); closed superseded listing-audit PRs #720, #723, #730, #737, #742. Queued £0 Mini-only repo-record sync job J3767 (due 2026-11-27 10:00 London) to register verified 008 Shorts (__UtUYdEUwg, 4sYTV_rQcqs) in library.json, refresh LIVE_VIDEOS.json via channel:audit --write-live, land 009 receipts + Shorts library entries from conflicting PR #757 while keeping main's newer 009 status.json (J3734), and update 005 el30-mHiH-0 note. Advisory uAomPaOBrM8 cap=false carried under J3279. Policy note (Ben 24 Nov): future listing audits must use YouTube Data API/snapshots and Studio read-backs only, never fetching public /watch or /shorts URLs. £0 cash, 0 credits.",
       "history": [
         {
           "at": "2026-11-26T00:58Z",
@@ -344692,6 +344692,11 @@
           "at": "2026-11-26T01:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T01:38Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) ruling PASS: 0 live YouTube/Studio fixes needed (7/7 public longs, 36/36 public Shorts clean; 008/009 remaining Studio steps already tracked in J3649/J3501). Squash-merged HOS PR #794 to main (ce278efd, 4/4 CI green); closed superseded listing-audit PRs #720, #723, #730, #737, #742. Queued £0 Mini-only repo-record sync job J3767 (due 2026-11-27 10:00 London) to register verified 008 Shorts (__UtUYdEUwg, 4sYTV_rQcqs) in library.json, refresh LIVE_VIDEOS.json via channel:audit --write-live, land 009 receipts + Shorts library entries from conflicting PR #757 while keeping main's newer 009 status.json (J3734), and update 005 el30-mHiH-0 note. Advisory uAomPaOBrM8 cap=false carried under J3279. Policy note (Ben 24 Nov): future listing audits must use YouTube Data API/snapshots and Studio read-backs only, never fetching public /watch or /shorts URLs. £0 cash, 0 credits."
         }
       ],
       "remaining_action": "Running check_all.sh, pushing branch, opening PR, and finishing job",
@@ -344712,7 +344717,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ce278efd"
     },
     {
       "id": "J3766",
