@@ -340248,9 +340248,14 @@
           "at": "2026-11-26T17:25Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Extracted exact 63-point pilot 2 retention curve (n=15; 0:27=60.0%, 0:41=46.7%, 1:00=46.7%, 2:03=40.0%, 2:16=33.3%, 4:46=26.7%, 5:00=26.7%, 5:40=13.3%) and matched every drop to SRT lines and v06 stills"
+        },
+        {
+          "at": "2026-11-26T17:28Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Updated pilot 1 & 2 status.json, LEARNINGS.md line 3, and wrote 12_Analytics/RETENTION_AND_48H_READ_2026-11-26.md with exact Cut A/B specs (no live cut made)"
         }
       ],
-      "remaining_action": "Drafting trim proposal, updating status.json for 001/002 and LEARNINGS.md line 3 in clean worktree",
+      "remaining_action": "Validating JSON, pushing WW2 PR, posting short table & trim proposal to thread, and completing J3704",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -340260,9 +340265,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-26T17:25Z",
+        "at": "2026-11-26T17:28Z",
         "by": "gemini",
         "plan": [
           "Data API readback & Design E thumb check",
@@ -340271,7 +340276,7 @@
           "Update status.json, LEARNINGS.md & trim proposal if needed",
           "Push WW2 PR & post thread table"
         ],
-        "note": "Extracted exact 63-point pilot 2 retention curve (n=15; 0:27=60.0%, 0:41=46.7%, 1:00=46.7%, 2:03=40.0%, 2:16=33.3%, 4:46"
+        "note": "Updated pilot 1 & 2 status.json, LEARNINGS.md line 3, and wrote 12_Analytics/RETENTION_AND_48H_READ_2026-11-26.md with e"
       }
     },
     {
