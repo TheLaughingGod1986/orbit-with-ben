@@ -350701,13 +350701,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T22:09Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-26T22:25Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T21:42Z",
-      "result": "parked for Chief: review and merge PR #1355 for OWB 032 Short 1 (McBNig_XScA, Private 2026-12-18T11:30Z, Related T3cBBss1F60, cover & en-GB captions verified)",
+      "result": "Chief PASS (Claude, acting Chief): PR #1355 merged 45eb335b. OWB 032 Short 1 v01 'How Would You Light a Fire on Titan?' uploaded as McBNig_XScA, Private, publishAt 2026-12-18T11:30Z. API read-back processed, not made for kids, en-GB captions serving, custom cover. Related video T3cBBss1F60 (public) and Altered=Yes reload-verified in Studio. Description line 1 links the long; facts sourced to NASA/ESA. Master sha256 494f092b matches Ben's OK (OWB:ASK:J3758). No re-upload, no spend.",
       "history": [
         {
           "at": "2026-11-26T21:42Z",
@@ -350758,6 +350758,21 @@
           "at": "2026-11-26T22:23Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1355 for OWB 032 Short 1 (McBNig_XScA, Private 2026-12-18T11:30Z, Related T3cBBss1F60, cover & en-GB captions verified)"
+        },
+        {
+          "at": "2026-11-26T22:25Z",
+          "by": "claude",
+          "what": "reopened: PR #1355 merged 45eb335b; McBNig_XScA read back Private 2026-12-18T11:30Z with Related T3cBBss1F60. Reopened only to record completion."
+        },
+        {
+          "at": "2026-11-26T22:25Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T22:25Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude, acting Chief): PR #1355 merged 45eb335b. OWB 032 Short 1 v01 'How Would You Light a Fire on Titan?' uploaded as McBNig_XScA, Private, publishAt 2026-12-18T11:30Z. API read-back processed, not made for kids, en-GB captions serving, custom cover. Related video T3cBBss1F60 (public) and Altered=Yes reload-verified in Studio. Description line 1 links the long; facts sourced to NASA/ESA. Master sha256 494f092b matches Ben's OK (OWB:ASK:J3758). No re-upload, no spend."
         }
       ],
       "remaining_action": "Waiting for Chief review and merge of PR #1355",
@@ -350780,20 +350795,6 @@
         "at": "2026-11-26T09:13:06.456Z",
         "version": "v01",
         "handled": true
-      },
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-26T22:23Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect 032 Short 1 cut and package layout",
-          "Build Short 1 listing package and cover",
-          "Run upload dry-run and upload Private scheduled",
-          "Verify YouTube Studio state and Related video",
-          "Update UPLOADS register, open PR, and report"
-        ],
-        "note": "Opened PR #1355 with listing package, UPLOADS.json, gate library, and API/Studio readback for McBNig_XScA; posted studio"
       },
       "taskKeys": [
         "OWB:032"
