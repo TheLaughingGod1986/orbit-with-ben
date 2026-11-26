@@ -1,5 +1,5 @@
 {
-  "next_id": 3790,
+  "next_id": 3791,
   "jobs": [
     {
       "id": "J0001",
@@ -344771,6 +344771,11 @@
           "at": "2026-11-25T23:16Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-05T12:35:00Z"
+        },
+        {
+          "at": "2026-11-26T12:39Z",
+          "by": "claude",
+          "what": "Chief: read moved to 2026-12-06T12:35:00Z because the Short now airs the day after its long (rule 1, 26 Nov)."
         }
       ],
       "remaining_action": "Read 7-day Studio 9224 stats for RtEMDrfeKR8 (views, stayed-to-watch, avg % viewed, subscribers, RqYjADxvJy8 Shorts/Related traffic) after Sat 5 Dec 2026 12:35Z",
@@ -344787,8 +344792,8 @@
       },
       "hold": {
         "type": "date",
-        "condition": "7 days after RtEMDrfeKR8 scheduled go-public (Sat 28 Nov 2026 12:30:00Z)",
-        "check_at": "2026-12-05T12:35:00Z",
+        "condition": "7 days after RtEMDrfeKR8 goes public (moved to Sun 29 Nov 2026 12:30:00Z, rule 1 of 26 Nov)",
+        "check_at": "2026-12-06T12:35:00Z",
         "release": "auto"
       }
     },
@@ -344830,6 +344835,11 @@
           "at": "2026-11-25T23:28Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-12-07T12:35:00Z"
+        },
+        {
+          "at": "2026-11-26T12:39Z",
+          "by": "claude",
+          "what": "Chief: read moved to 2026-12-09T12:35:00Z because the Short now airs the day after its long (rule 1, 26 Nov)."
         }
       ],
       "remaining_action": "Read 7-day Studio stats for l7P2DdGCr-A after Mon 7 Dec 2026 12:35Z",
@@ -344846,8 +344856,8 @@
       },
       "hold": {
         "type": "date",
-        "condition": "7 days after l7P2DdGCr-A scheduled go-public (Mon 30 Nov 2026 12:30:00Z)",
-        "check_at": "2026-12-07T12:35:00Z",
+        "condition": "7 days after l7P2DdGCr-A goes public (moved to Wed 2 Dec 2026 12:30:00Z, rule 1 of 26 Nov; J3788)",
+        "check_at": "2026-12-09T12:35:00Z",
         "release": "auto"
       }
     },
@@ -347925,6 +347935,37 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3790",
+      "title": "WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, linked to it from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The Ben-approved 003-S3 Short `RtEMDrfeKR8` (J3752; Ben's OK at 25 Nov 22:57Z) is scheduled under the old plan for Sat 28 Nov 12:30, 4.5 hours before the B-29 long `RqYjADxvJy8` goes public.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** move `RtEMDrfeKR8`'s scheduled publish to **Sun 29 Nov 2026 12:30 London** (`2026-11-29T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **Sat 28 Nov after 17:00 London, once `RqYjADxvJy8` is Public:** set the Short's Related video to `RqYjADxvJy8` before it goes out on Sunday, and read it back. This replaces the deferred step in J3655.\n3. **Records:** ww2-channel 003 `status.json` (shorts `003-S3`: videoId, publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule and Related-video change on this private Short only. No re-upload, no visibility change, no change to the long's schedule. £0.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T12:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T12:39Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reschedule the B-29 Short to the day after the film and link it",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 7
     }
   ],
   "focus": [
