@@ -348549,9 +348549,14 @@
           "at": "2026-11-26T16:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T16:29Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting Studio-only finish on existing upload ZCnSldSJzME (never re-upload)"
         }
       ],
-      "remaining_action": "Verify restored Field Order History access, then set the U-boat Related video and read back",
+      "remaining_action": "Verify Field Order History sign-in on CDP 9224, check ZCnSldSJzME via Data API, and inspect ww2 PR #187",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348578,11 +348583,16 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T16:27Z",
+        "of": 4,
+        "at": "2026-11-26T16:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check 9224 sign-in & API state",
+          "Set Related video & fields in Studio 9224",
+          "Reload-verify Studio & Data API",
+          "Update WW2 status/UPLOADS & report"
+        ],
+        "note": "Starting Studio-only finish on existing upload ZCnSldSJzME (never re-upload)"
       }
     },
     {
