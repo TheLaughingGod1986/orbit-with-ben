@@ -112,6 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3764 | mini | claimed | macbook-2 | 2026-11-26T01:58Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3765 | mini | claimed | macbook | 2026-11-26T02:02Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3766 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 
