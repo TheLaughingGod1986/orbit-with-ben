@@ -324889,9 +324889,14 @@
           "at": "2026-11-26T03:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3534; verifying J3307 publication condition against main and PR #1312"
+        },
+        {
+          "at": "2026-11-26T03:23Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J3307 waiting condition SATISFIED: PR #1312 merged ecce03004a (2026-11-25T10:11:07Z) byte-identical to commit 9d64d92a61; all 6 NAS hashes, J3382 PR #1184, THUMB_LEDGER T041-T043, and J3308-J3310 guards intact"
         }
       ],
-      "remaining_action": "Verify PR #1312 publication, ledger/film state, and J3308-J3310 guards",
+      "remaining_action": "Reopen J3307 with verified PR #1312 publication evidence, close J3534, and report on studio thread",
       "kind": "review",
       "recheck_of": "J3307",
       "due": "2026-11-24T14:05:57+00:00",
@@ -324905,16 +324910,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-26T03:22Z",
+        "at": "2026-11-26T03:23Z",
         "by": "gemini",
         "plan": [
           "Inspect J3307 publication evidence and downstream gates",
           "Reopen J3307 with verified evidence and close J3534",
           "Post studio thread report"
         ],
-        "note": "Claimed J3534; verifying J3307 publication condition against main and PR #1312"
+        "note": "Verified J3307 waiting condition SATISFIED: PR #1312 merged ecce03004a (2026-11-25T10:11:07Z) byte-identical to commit 9"
       },
       "taskKeys": [
         "OWB:006",
