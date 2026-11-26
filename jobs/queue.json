@@ -337707,16 +337707,21 @@
           "at": "2026-11-26T07:29Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 3 done: S02_v02_tight (18.74 s, -21.8 LUFS, atempo 1.00, vo_check PASS 0 diffs) & S01_v02_tight (18.70 s, -20.1 LUFS, atempo 1.00, Bethe pronounced accurately /beɪtə/, vo_check flags only faster-whisper bethe/beta homophone; retake S01_v02b kept on NAS); both verified by direct audio_input listen"
+        },
+        {
+          "at": "2026-11-26T07:31Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Step 4 done: 10/10 NAS WAV/MP3 SHA-256 verified; check_all.sh ALL CHECKS PASS; opened HOS PR #798 (J3679 Shorts VO) & separate vo_check Bethe alias PR; ElevenLabs 355 credits settled (7,630 -> 7,275 left)"
         }
       ],
-      "remaining_action": "Store verified media on NAS, write VO_STATUS/status updates & open clean HOS PR",
+      "remaining_action": "Queue non-producer Chief VO review job, post HOS desk & studio thread reports, and finish J3679",
       "due": "2026-12-05T18:00:00Z",
       "kind": "vo",
       "plain": "Record the two 16-19 s Shorts narrations (S01 & S02) for HOS 136 from the locked v02 scripts in Ben's voice",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-26T07:29Z",
+        "at": "2026-11-26T07:31Z",
         "by": "gemini",
         "plan": [
           "Verify locked v02 scripts, live balance & dry-run",
@@ -337725,7 +337730,7 @@
           "Store verified media on NAS & open clean HOS PR",
           "Run check_all.sh, log spend, queue Chief VO review & report"
         ],
-        "note": "Step 3 done: S02_v02_tight (18.74 s, -21.8 LUFS, atempo 1.00, vo_check PASS 0 diffs) & S01_v02_tight (18.70 s, -20.1 LUF"
+        "note": "Step 4 done: 10/10 NAS WAV/MP3 SHA-256 verified; check_all.sh ALL CHECKS PASS; opened HOS PR #798 (J3679 Shorts VO) & se"
       },
       "taskKeys": [
         "HOS:136"
