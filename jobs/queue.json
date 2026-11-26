@@ -347466,7 +347466,7 @@
     {
       "id": "J3781",
       "title": "HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Independent non-producer Chief review, VO PASS ruling, and PR merges for **HOS 136** (*Trinity Test Explained: Could It Ignite the Sky?*) Shorts `S01` and `S02` voiceover recorded by `gemini` under `J3679`.\n\n**Non-producer guard:** `gemini` produced `J3679` and opened HOS PRs `#798` (`gemini/J3679-hos136-shorts-vo`) and `#799` (`gemini/J3679-vo-check-bethe-alias`), so `gemini` must NOT self-PASS or self-merge either PR. An independent Chief (`claude`, or `codex` if rerouted) owns both PR reviews, the KEEP/RETAKE ruling, the merges, and the `shorts_vo` → `done` update.\n\n**Artifacts to review:**\n- HOS PR `#799` (dedicated check fix per `studio/RULES.md`, following `#392` `725a6e45`): `https://github.com/TheLaughingGod1986/history-of-science/pull/799` — adds `\"beta\": \"bethe\"` / `\"beta's\": \"bethe's\"` to `vo_check.py` `ALIASES` + unit test (Hans Bethe is pronounced `/ˈbeɪtə/`, identical to \"beta\"; also unblocks `J3678` HOS 136 long VO).\n- HOS PR `#798` (`J3679` Shorts VO metadata & timings, zero media in git): `https://github.com/TheLaughingGod1986/history-of-science/pull/798`\n- Locked source script (`J3677`, HOS PR `#767` merged `ab25f2de`): `02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained/10_Shorts/SHORTS_SCRIPTS_v02.md` (`sha256: e1df5d81baffca83c559b78a2a87df97df0fe8be15fb8de96a761445906941fe`)\n- Take record & pasted `vo_check_py312.sh` outputs: `10_Shorts/vo_v02/VO_STATUS.md`\n- NAS audio directory (`10/10` files SHA-256 verified): `/Volumes/data/studio-live/History Of Science/02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained/10_Shorts/vo_v02/`\n\n**Candidate edit-ready masters (`16.0–19.0 s` house band, `atempo = 1.00`, inter-sentence pause trim only):**\n1. **`S01`** (*Could the Trinity Test Have Ignited the Sky?*): `hos_136_short_S01_v02_tight` — `18.70 s`, `-20.1 LUFS` (mean `-22.9 dB`, peak `-4.0 dB`), `atempo = 1.00`, WAV `7a664025231b35f891267b43df32e9f2592041e83b04f2b6e612d983900c4853` / MP3 `a5c6d380b03412c658f0bba8998d791215db75960d4a47dc4ef8df94432adce4`.\n   - Accurate `/ˈbeɪtə/` (\"BAY-tuh\") pronunciation of Hans Bethe; Scribe v2 transcribes `\"Bethe\"` cleanly; on unmodified `main`, `vo_check_py312.sh` flags only `bethe`/`beta`, and with PR `#799` applied it prints **PASS (`0` word diffs)**.\n   - Transparent nuance for Chief listen: `\"proved radiation\"` has a soft `-d` coalesced into `r` (Whisper hears `\"proved\"`, Scribe hears `\"prove\"`). Acting-Chief-cleared bounded retake `hos_136_short_S01_v02b` (`262` chars) articulated `-d` more sharply (`Scribe 95.35%`) but pronounced `\"Bethe\"` as `\"BET-uh\"` (`betta`/`better`); kept raw on NAS for comparison.\n2. **`S02`** (*How Did Enrico Fermi Measure the Trinity Blast With Paper?*): `hos_136_short_S02_v02_tight` — `18.74 s`, `-21.8 LUFS` (mean `-24.6 dB`, peak `-4.1 dB`), `atempo = 1.00`, `vo_check_py312.sh` **PASS** (`0` word diffs on unmodified `main`), WAV `0ced4f75d68b2cf29320a6a7744b8f4eae8e34c51a251ce9d5e37d2d6db7087c` / MP3 `1a5b738b5082601a1adb7bd3d8c7932e2c049b965209371f45ca50b2390b08cd`.\n\n**Checklist:**\n1. Review & merge HOS PR `#799` (`vo_check.py` `beta`→`bethe` homophone alias) if approved, then re-run `vo_check_py312.sh` on NAS `hos_136_short_S01_v02_tight.wav` to verify PASS (`0` word diffs) on `main`.\n2. Review HOS PR `#798` CI green, zero media in git, `VO_STATUS.md`, `*_TAKE.json`, `vo_check/*.json`, word timings (`stt/*/words.json`), and listen to NAS audio (`hos_136_short_S01_v02_tight`, optional comparison with raw `S01_v02b`, and `hos_136_short_S02_v02_tight`).\n3. If KEEP/PASS: merge HOS PR `#798`, flip `status.json` `shorts_vo` → `done` (locked stems `hos_136_short_S01_v02_tight` & `hos_136_short_S02_v02_tight`), update `VO_STATUS.md` and `production-status.md`, and post the PASS ruling on HOS desk `#694`. Keep picture/thumbnail/scheduling blocked until long VO (`J3678`, post-30-Nov reset) also passes.\n4. Zero spend on this review job.\n",
       "ref": "HOS PR #798, HOS PR #799, J3679, J3677",
@@ -347541,16 +347541,29 @@
           "at": "2026-11-26T18:12Z",
           "by": "codex",
           "what": "reopened: J3805 Chief ruling: availability condition MET. Live chief_relay status elects Codex, ready and independent of Gemini-produced J3679; Claude explicitly out until 2026-11-26T21:50:00Z. PR 799 d678349009 and PR 798 17672ae226 unchanged, OPEN/MERGEABLE, base main, 4/4 and 6/6 CI successful. Locked script e1df5d81 and all four tight NAS WAV/MP3 SHA-256 values freshly match J3781. Reopen for independent substantive review only: review alias fix, rerun word check, rule KEEP/RETAKE, merge only if approved. No VO PASS, stage advancement, picture spend or schedule permission issued; J3678 long-VO gate and Ben final watch remain. No demonstrated audio/motion input in this session; follow standing tool-evidence plus Ben final-watch rule."
+        },
+        {
+          "at": "2026-11-26T18:12Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: J3805 follow-up: independent elected Chief Codex takes substantive PR 799/798 review next; remove stale claude-only eligibility. Existing review checklist and all gates remain."
         }
       ],
       "remaining_action": "Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RETAKE on HOS:136 Shorts VO",
       "due": "2026-12-05T18:00:00Z",
-      "for": "claude",
+      "for": "codex",
       "kind": "chief",
       "plain": "Non-producer Chief reviews vo_check Bethe alias PR #799 and HOS 136 Shorts VO PR #798, rules PASS/KEEP, and merges both PRs",
       "taskKeys": [
         "HOS:136"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "claude",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gpt-6-astra"
     },
     {
       "id": "J3782",
