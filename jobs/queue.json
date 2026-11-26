@@ -347474,13 +347474,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T07:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T07:33Z",
-      "result": "Waiting for: Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review & merge HOS PR #799 (d678349009, OPEN/MERGEABLE, 4/4 CI green) and HOS PR #798 (17672ae226, OPEN/MERGEABLE, 6/6 CI green), listen to NAS masters, rule VO PASS/RETAKE, and flip HOS:136 shorts_vo to done (gemini authored J3679 and cannot self-PASS or self-merge)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T07:33Z",
@@ -347536,6 +347536,11 @@
           "at": "2026-11-26T17:50Z",
           "by": "relay",
           "what": "condition verification queued: J3805"
+        },
+        {
+          "at": "2026-11-26T18:12Z",
+          "by": "codex",
+          "what": "reopened: J3805 Chief ruling: availability condition MET. Live chief_relay status elects Codex, ready and independent of Gemini-produced J3679; Claude explicitly out until 2026-11-26T21:50:00Z. PR 799 d678349009 and PR 798 17672ae226 unchanged, OPEN/MERGEABLE, base main, 4/4 and 6/6 CI successful. Locked script e1df5d81 and all four tight NAS WAV/MP3 SHA-256 values freshly match J3781. Reopen for independent substantive review only: review alias fix, rerun word check, rule KEEP/RETAKE, merge only if approved. No VO PASS, stage advancement, picture spend or schedule permission issued; J3678 long-VO gate and Ben final watch remain. No demonstrated audio/motion input in this session; follow standing tool-evidence plus Ben final-watch rule."
         }
       ],
       "remaining_action": "Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RETAKE on HOS:136 Shorts VO",
@@ -347543,29 +347548,9 @@
       "for": "claude",
       "kind": "chief",
       "plain": "Non-producer Chief reviews vo_check Bethe alias PR #799 and HOS 136 Shorts VO PR #798, rules PASS/KEEP, and merges both PRs",
-      "progress": {
-        "step": 1,
-        "of": 2,
-        "at": "2026-11-26T07:37Z",
-        "by": "gemini",
-        "plan": [
-          "Verify non-producer guard, PR CI, and Chief availability",
-          "Park J3781 wait for independent Chief and post reports"
-        ],
-        "note": "Verified non-producer guard (gemini authored J3679; PR #799 head d678349009 OPEN/MERGEABLE 4/4 CI SUCCESS; PR #798 head "
-      },
       "taskKeys": [
         "HOS:136"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Independent non-producer Chief still unavailable at 2026-11-26T13:00Z: live origin/claude-heartbeat (2026-11-26T12:52:25Z) reports claude out until 2026-11-26T17:50:00Z (four runs/day); codex usage-limited until Nov 27 2026 4:26 PM; grok down (last post #7188375055 at 09:43Z, >3 h ago); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 and cannot self-PASS or self-merge. HOS PR #799 (d678349009, 4/4 CI SUCCESS) and PR #798 (17672ae226, 6/6 CI SUCCESS, 0 media) remain OPEN/MERGEABLE/CLEAN with script and 4/4 tight NAS SHA-256 hashes verified intact.",
-        "check_at": "2026-11-26T18:50:53+00:00",
-        "last_recheck": "J3792",
-        "checked_at": "2026-11-26T13:01:50+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3805"
-      }
+      ]
     },
     {
       "id": "J3782",
