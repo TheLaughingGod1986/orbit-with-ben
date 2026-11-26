@@ -348491,9 +348491,14 @@
           "at": "2026-11-26T14:08Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-26T14:08Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Fetched 10 live public videos via YouTube Data API v3 (3 new: GbELka8Yu9U, T3cBBss1F60, _dVWVUnbDzA)"
         }
       ],
-      "remaining_action": "Querying YouTube Data API v3 for the last 10 live public OWB videos",
+      "remaining_action": "Verifying descriptions, manifests, external source URLs, and 032/027 chapter timestamps against cuts",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -348505,7 +348510,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-26T14:08Z",
         "by": "gemini",
@@ -348514,8 +348519,15 @@
           "Verify chapters, sources, and package manifests",
           "Inspect YouTube Studio read-only for end screens and Related",
           "Write audit report, commit, and update queue"
-        ]
-      }
+        ],
+        "note": "Fetched 10 live public videos via YouTube Data API v3 (3 new: GbELka8Yu9U, T3cBBss1F60, _dVWVUnbDzA)"
+      },
+      "taskKeys": [
+        "OWB:032",
+        "OWB:027",
+        "OWB:024",
+        "OWB:026"
+      ]
     }
   ],
   "focus": [
