@@ -314765,10 +314765,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T04:17Z",
+      "eta": "2026-11-26T12:17Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -315082,6 +315082,11 @@
           "at": "2026-11-26T04:17Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini, J3771): waiting condition verified satisfied — J3745 full AV QA (PR #168 7dcce41), J3746 zero-spend v04 fix pass (SHA-256 55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c), and J3748 targeted AV QA KEEP (PR #170 07e6474) all passed; Acting Chief PASS ruling recorded in PR #178 (50ac67b) and ww2-005-v04 registered in OWB PR #1340 (32de513354)."
+        },
+        {
+          "at": "2026-11-26T04:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete audiovisual QA (J3745) and Chief ruling, then stage WW2:005 for Ben's watch",
@@ -315091,7 +315096,15 @@
       "taskKeys": [
         "WW2:005"
       ],
-      "escalated_at": "2026-11-25T17:39Z"
+      "escalated_at": "2026-11-25T17:39Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T04:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3433",
