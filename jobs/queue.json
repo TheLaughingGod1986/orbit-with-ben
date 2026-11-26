@@ -348954,13 +348954,13 @@
       "stage": "",
       "after": "",
       "eta_min": 10,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-26T16:17Z",
-      "eta": "2026-11-26T16:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T15:51Z",
-      "result": "",
+      "result": "Chief review complete: J3794 remains held for restored Field Order History access; verification 2026-11-26T17:00Z. Fresh channel navigation denies permission on both 9224 and 9223, so cached dashboard is insufficient. 9224 up/1 tab/Orbit dashboard; 9223 up/1 tab/FOH permission error; 9222 up/1 tab/Flow; 9460 up/1 tab/HOS dashboard. Ben must restore FOH access on 9224. Then Studio worker sets Related qfc6EBStOfo on existing ZCnSldSJzME and reads back; never re-upload or alter schedule. Ruling and evidence: thread 7197493120. No spend or Studio edits.",
       "history": [
         {
           "at": "2026-11-26T15:51Z",
@@ -349011,6 +349011,11 @@
           "at": "2026-11-26T16:19Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling posted at thread comment 7197493120. J3794 remains held with a fresh-access condition and 26 Nov 17:00 UTC verification; existing approval, upload and schedule preserved."
+        },
+        {
+          "at": "2026-11-26T16:20Z",
+          "by": "codex",
+          "what": "done: Chief review complete: J3794 remains held for restored Field Order History access; verification 2026-11-26T17:00Z. Fresh channel navigation denies permission on both 9224 and 9223, so cached dashboard is insufficient. 9224 up/1 tab/Orbit dashboard; 9223 up/1 tab/FOH permission error; 9222 up/1 tab/Flow; 9460 up/1 tab/HOS dashboard. Ben must restore FOH access on 9224. Then Studio worker sets Related qfc6EBStOfo on existing ZCnSldSJzME and reads back; never re-upload or alter schedule. Ruling and evidence: thread 7197493120. No spend or Studio edits."
         }
       ],
       "remaining_action": "Review complete; J3794 owns access verification and Related-video finish",
@@ -349032,7 +349037,8 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "done_ref": "7197493120"
     }
   ],
   "focus": [
