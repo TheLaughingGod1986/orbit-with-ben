@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790, J3802.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -102,10 +102,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3801 | mini | open (after J3800) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
-| J3802 | mini | open | – | – | studio · Mini re-check: Field Order History Studio (9224) opens FOH's own dashboard after Ben's account switch |  |
 
 Recently finished:
 
+- J3802 cancelled: Mini re-check: Field Order History Studio (9224) opens FOH's own dashboard after Ben's account switch ()
 - J3800 done: First-day check at 48 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) ("How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) · Field Order History · long · went live Tue 24 Nov 17:00 London
 At 48 h: views 30 · impressions 1211 · click rate 1.0% · average viewed 16.5%
 
@@ -126,4 +126,3 @@ Done (2026-11-26T17:09Z, gemini): J3800 read-only Studio 48h check, 26 Nov 17:05
 - J3793 done: Verify condition for J3775 (Condition MET; J3775 reopened to open queue. Independently verified ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude (Chief sweep, merge commit dd01145e on ww2 origin/main 68b0a84; ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt sha256 28acf943... verified on main). All J3775 guards intact (£0, US Federal PD only, no media in git); J3776 untouched.)
 - J3792 done: Verify condition for J3781 (Verified J3781 condition UNMET at 2026-11-26T13:00Z: live origin/claude-heartbeat (12:52:25Z) says claude out until 2026-11-26T17:50:00Z (four runs/day), codex down on usage limit until Nov 27 2026 4:26 PM (retry 13:51:40Z), grok down (last Grok post #7188375055 at 09:43Z, >3 h ago; 12:51Z #7192544054 was relay duties notice); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 so cannot self-PASS or self-merge. Freshly verified HOS PR #799 (d678349009, OPEN/MERGEABLE/CLEAN, 4/4 CI SUCCESS, 2 files), HOS PR #798 (17672ae226, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 32 files, 0 media), locked SHORTS_SCRIPTS_v02.md (SHA-256 e1df5d81...) and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3781 blocked with typed input hold (--recheck J3792, --check-at 2026-11-26T17:50:00Z). Zero spend, no merge, no VO ruling.)
 - J3791 done: Verify condition for J3780 (Verified J3780 condition UNMET at 2026-11-26T13:10Z: live origin/claude-heartbeat (90c89a7e2e, 12:52:25Z) sets claude out=true until 2026-11-26T17:50:00Z (four runs/day), codex down on usage limit until Nov 27 2026 4:26 PM (retry 13:51:40Z), grok not elected (12:51:06Z #7192544054 was relay duties notice, not Grok Bot); gemini is acting Chief but authored J3671/HOS PR #797 and cannot self-PASS or self-merge. Freshly verified HOS PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 33 files, 0 media), locked SHORTS_SCRIPTS_v03.md (SHA-256 1132ad9f...) and all 4 NAS tight WAV/MP3 SHA-256 hashes (10/10 audio files in vo_v03/) intact. Kept J3780 blocked with typed input hold (--recheck J3791, --check-at 2026-11-26T17:50:00Z). Zero spend, no merge, no VO ruling.)
-- J3789 done: Verify condition for J3756 (Acting-Chief (gemini) ruling complete: condition UNMET for J3756 (HOS 013 take-2 rows 3, 10, 24, 28, 47, 54). Merged OWB PR #1343 (8264b0f3bf, jobs/reviews/J3789/REVIEW.md), updated J3756 typed capability hold (--type capability --requires moving_video_input --recheck J3789, next check 2026-11-26T18:30:00Z), recorded honest gemini capabilities (audio_input,image_input), verified 6/6 archive_v01_retake1 NAS SHA-256 hashes, and posted reports to HOS #694 and OWB #954. £0 / 0 credits spent.)
