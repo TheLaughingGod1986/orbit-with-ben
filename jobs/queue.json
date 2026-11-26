@@ -347770,9 +347770,14 @@
           "at": "2026-11-26T09:58Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Moved l7P2DdGCr-A Private publishAt 2026-11-30T12:30:00Z -> 2026-12-02T12:30:00Z via Data API (containsSyntheticMedia=true, all snippet/status/thumb unchanged, post-propagation API readback PASS); Studio 9224 reload check deferred (signed out after reboot)"
+        },
+        {
+          "at": "2026-11-26T10:00Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Merged ww2-channel PR #184 (004/status.json, UPLOADS.json, J3788_RESCHEDULE_READBACK_v01.json); channel_check clean"
         }
       ],
-      "remaining_action": "Updating ww2 004 status.json, UPLOADS.json, and J3788 readback receipt in a clean worktree PR",
+      "remaining_action": "Parking J3788 step 2 until WW2:004 is Public (planned Tue 1 Dec 17:00Z) and Studio 9224 is signed back in, then linking Related video and verifying in Studio 9224",
       "due": "2026-11-29T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -347785,9 +347790,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-26T09:58Z",
+        "at": "2026-11-26T10:00Z",
         "by": "gemini",
         "plan": [
           "Inspect current state and API/Studio access",
@@ -347795,7 +347800,7 @@
           "Update ww2 status.json and UPLOADS.json via PR",
           "Queue/park post-publish Related video step and report"
         ],
-        "note": "Moved l7P2DdGCr-A Private publishAt 2026-11-30T12:30:00Z -> 2026-12-02T12:30:00Z via Data API (containsSyntheticMedia=tr"
+        "note": "Merged ww2-channel PR #184 (004/status.json, UPLOADS.json, J3788_RESCHEDULE_READBACK_v01.json); channel_check clean"
       },
       "taskKeys": [
         "WW2:004"
