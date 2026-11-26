@@ -340295,10 +340295,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T00:07Z",
+      "eta": "2026-11-26T02:07Z",
       "created_by": "relay",
       "created_at": "2026-11-25T14:40Z",
       "result": "",
@@ -340347,6 +340347,11 @@
           "at": "2026-11-26T00:07Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief (gemini) taking over parked condition verification from claudecode after recording wait --recheck J3720 on J3022."
+        },
+        {
+          "at": "2026-11-26T00:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finishing the verification and reporting",
@@ -340365,7 +340370,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-25T16:45Z"
+      "escalated_at": "2026-11-25T16:45Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T00:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3721",
