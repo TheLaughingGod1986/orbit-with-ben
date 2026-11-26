@@ -346602,13 +346602,13 @@
       "stage": "vo",
       "after": "J3774",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T07:49Z",
-      "eta": "2026-11-26T09:49Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:26Z",
-      "result": "",
+      "result": "Waiting for: ElevenLabs monthly reset at 2026-11-30T10:50:00Z (logged balance 7,275 cr at 2026-11-26T07:30Z < 17,766 chars needed for NARRATION_v02.txt), Chief merge of ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02) to main, and Pilot 2 (qfc6EBStOfo) 48h (26 Nov 17:00Z) & 7d (2 Dec 10:50Z) Rule-12 checks in ww2-channel/studio/LEARNINGS.md and studio/RULES.md (may clear at 2026-11-30T11:00:00Z if Chief approves after 48h read)",
       "history": [
         {
           "at": "2026-11-26T05:26Z",
@@ -346624,9 +346624,19 @@
           "at": "2026-11-26T07:51Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Early wake at 2026-11-26T07:51Z before 2026-11-30T10:50Z ElevenLabs reset (logged balance 7,275 cr < 17,766 chars needed); ww2-channel PR #182 still OPEN/unmerged; Pilot 2 48h (26 Nov 17:00Z) & 7d (2 Dec 10:50Z) Rule-12 checks pending. Spent GBP 0 / 0 credits; parking on structured credits wait."
+        },
+        {
+          "at": "2026-11-26T07:51Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: ElevenLabs monthly reset at 2026-11-30T10:50:00Z (logged balance 7,275 cr at 2026-11-26T07:30Z < 17,766 chars needed for NARRATION_v02.txt), Chief merge of ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02) to main, and Pilot 2 (qfc6EBStOfo) 48h (26 Nov 17:00Z) & 7d (2 Dec 10:50Z) Rule-12 checks in ww2-channel/studio/LEARNINGS.md and studio/RULES.md (may clear at 2026-11-30T11:00:00Z if Chief approves after 48h read)"
+        },
+        {
+          "at": "2026-11-26T07:51Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-02T12:00:00Z"
         }
       ],
-      "remaining_action": "After 2026-11-30T10:50Z reset, PR #182 merge, and Pilot 2 48h/7d Rule-12 checks, verify NARRATION_v02.txt SHA-256 and live balance >= 17,766 chars, then record WW2:015 narration",
+      "remaining_action": "Verify reset balance >= 17,766 chars, PR #182 merged with NARRATION_v02.txt SHA-256 28acf9437096dcd42d3a96a82ad5caf4b1f87886a6369c8033602a0a33730c7c, and Pilot 2 Rule-12 clearance, then record WW2:015 narration",
       "due": "2026-12-15T18:00:00Z",
       "kind": "vo",
       "plain": "Record locked v02 narration in Ben's voice for WW2 film 015 Higgins boat strictly after 30 Nov reset, Pilot 2 48h/7d Rule-12 check, and Chief merge",
@@ -346646,7 +346656,12 @@
       },
       "taskKeys": [
         "WW2:015"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs monthly reset at 2026-11-30T10:50:00Z (logged balance 7,275 cr at 2026-11-26T07:30Z < 17,766 chars needed for NARRATION_v02.txt), Chief merge of ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02) to main, and Pilot 2 (qfc6EBStOfo) 48h (26 Nov 17:00Z) & 7d (2 Dec 10:50Z) Rule-12 checks in ww2-channel/studio/LEARNINGS.md and studio/RULES.md (may clear at 2026-11-30T11:00:00Z if Chief approves after 48h read)",
+        "check_at": "2026-12-02T12:00:00Z"
+      }
     },
     {
       "id": "J3777",
