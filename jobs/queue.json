@@ -350728,9 +350728,14 @@
           "at": "2026-11-26T22:10Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T22:13Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified 032 Short 1 v01 master/cover SHA-256 on NAS, parent T3cBBss1F60 Public, and 2026-12-18 slot clear across all 217 OWB channel videos."
         }
       ],
-      "remaining_action": "Inspecting 032 Short 1 approved cut, long video ID, and existing Short package layout",
+      "remaining_action": "Building 032 Short 1 listing package (PACKAGE_MANIFEST.json and en-GB captions) in clean worktree",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -350752,9 +350757,9 @@
         "handled": true
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T22:10Z",
+        "at": "2026-11-26T22:13Z",
         "by": "gemini",
         "plan": [
           "Inspect 032 Short 1 cut and package layout",
@@ -350762,7 +350767,8 @@
           "Run upload dry-run and upload Private scheduled",
           "Verify YouTube Studio state and Related video",
           "Update UPLOADS register, open PR, and report"
-        ]
+        ],
+        "note": "Verified 032 Short 1 v01 master/cover SHA-256 on NAS, parent T3cBBss1F60 Public, and 2026-12-18 slot clear across all 21"
       },
       "taskKeys": [
         "OWB:032"
