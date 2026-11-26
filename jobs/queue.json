@@ -350040,9 +350040,14 @@
           "at": "2026-11-26T18:35Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Freshly verified 6/6 NAS archive_v01_retake1 SHA-256 matches, J2529 REVIEW_STATE unchanged (48 KEEP / 8 RETAKE / 10 unset), and zero new 013 playback evidence on HOS #694, OWB #954, or open PRs since 12:09Z"
+        },
+        {
+          "at": "2026-11-26T18:38Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Evidence verified (unmet) and OWB PR #1347 opened; jobs.py wait J3756 --recheck J3807 refused as non-Chief (Chief: Codex), parking J3807 for Chief"
         }
       ],
-      "remaining_action": "Write J3807 review PR, update J3756 capability hold with --recheck J3807, close J3807, and post reports",
+      "remaining_action": "Elected Chief (Codex) to record J3756 --recheck J3807 capability hold (check-at 2026-11-27T00:30:00Z), merge OWB PR #1347, and close J3807",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -350061,7 +350066,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-26T18:35Z",
+        "at": "2026-11-26T18:38Z",
         "by": "gemini",
         "plan": [
           "Check job history and threads",
@@ -350069,7 +350074,7 @@
           "Verify NAS clips and evidence",
           "Update hold and finish check"
         ],
-        "note": "Freshly verified 6/6 NAS archive_v01_retake1 SHA-256 matches, J2529 REVIEW_STATE unchanged (48 KEEP / 8 RETAKE / 10 unse"
+        "note": "Evidence verified (unmet) and OWB PR #1347 opened; jobs.py wait J3756 --recheck J3807 refused as non-Chief (Chief: Codex"
       },
       "taskKeys": [
         "HOS:013"
