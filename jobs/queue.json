@@ -1,5 +1,5 @@
 {
-  "next_id": 3767,
+  "next_id": 3768,
   "jobs": [
     {
       "id": "J0001",
@@ -344799,6 +344799,37 @@
         "HOS:008",
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3767",
+      "title": "HOS repo-record sync (J3765): 008 Shorts library.json, LIVE_VIDEOS.json refresh, 009 PR #757 receipts & 005 note",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up from Acting Chief (gemini) ruling on J3765 (merged HOS PR #794, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-26_J3765.md). Repo records and read-only owner-API refresh only: change NOTHING in YouTube Studio, make NO YouTube write API calls, make NO Buffer changes. Spend: £0 cash, 0 credits.\n\nWork in a clean HOS worktree (`git worktree add -b <agent>/hos-record-sync-J3765 <dir> origin/main`) on the Mini (requires HOS `07_Content-Ops/.env` and `/Volumes/data/studio-live`).\n\n1. **Add HOS 008 scheduled Shorts to `00_Brand/Channel-Setup/audits/shorts_open_library/library.json`** (missed in J3500 PRs #755/#759; NAS files already verified byte-for-byte against `008/10_Shorts/SHORTS_RELEASE.json`):\n   - Verify SHA-256 first:\n     - `hos_008_short_A_v04.mp4`: `76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d`\n     - `hos_008_short_C_v07.mp4`: `a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8`\n   - Run:\n     ```bash\n     python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py add \\\n       \"/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/10_Shorts/hos_008_short_A_v04.mp4\" \\\n       --id __UtUYdEUwg --date 2026-11-27 \\\n       --title \"Why Was Franklin's Kite Experiment So Dangerous?\" \\\n       --source \"J3500 v04\" --status scheduled\n\n     python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py add \\\n       \"/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/10_Shorts/hos_008_short_C_v07.mp4\" \\\n       --id 4sYTV_rQcqs --date 2026-11-29 \\\n       --title \"How Does a Lightning Rod Work?\" \\\n       --source \"J3500 v07\" --status scheduled\n     ```\n\n2. **Land HOS 009 upload receipts + Shorts library entries from open conflicting PR #757 (`origin/codex/J3501-delivery`):**\n   - Pull all 12 009 receipt/caption/manifest/`SHORTS_RELEASE.json` files from `origin/codex/J3501-delivery` (`02_Video-Projects/009_The-Falling-Moon-Gravity/10_Shorts/...` and `11_Upload-Package/...`).\n   - Add the two 009 Shorts entries (`OhdDVA9kWBk` scheduled `2026-12-04`, `9ETHUOUH5-A` scheduled `2026-12-05`) into `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (preserving `sY0PSQFxjp8: retired` from merged PR #785 and the two new 008 entries from step 1).\n   - **CRITICAL:** Keep `origin/main`'s newer `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` intact (it already records `J3501` AND `J3734` WIP rotation — do NOT overwrite it with PR #757's older `status.json`).\n\n3. **Refresh stale `00_Brand/Channel-Setup/audits/LIVE_VIDEOS.json` on the Mini (read-only owner API):**\n   - Run `cd 07_Content-Ops && npm run channel:audit -- --write-live` (confirm 0 errors, `sY0PSQFxjp8` no longer scheduled, and 009's three uploads `wiyfRnsTfTY`, `OhdDVA9kWBk`, `9ETHUOUH5-A` present).\n\n4. **Cosmetic housekeeping (non-blocking, £0):**\n   - Update `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORTS_RELEASE.json` `shorts[2].note` (`el30-mHiH-0`) from pre-air wording to:\n     `J3216 / J3259. s07 v05, Ben approved. Public since Sun 22 Nov 2026 11:30 London (2026-11-22T11:30:33Z); frame-0 cover (YOUR PULSE), Related -> wwcjcFfC-5M, AI badge and en-GB captions verified live; mirrored in Buffer. Supersedes v04 fgsR8yAHr5s (Private, unscheduled).`\n\n5. **Validate and open PR:**\n   - Run `00_Brand/Channel-Setup/tools/check_all.sh` (must print `ALL CHECKS PASS`; link `07_Content-Ops/node_modules` from shared checkout if needed in worktree).\n   - Push branch and open ONE HOS PR against `main` noting that it supersedes PR #757; park for Chief merge (do not self-merge unless elected Chief).\n   - Reminder (Ben, 24 Nov 2026, AGENTS.md): never open, embed, fetch or play public YouTube `/watch` or `/shorts` pages — use YouTube Data API and Studio read-backs only.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T01:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T01:36Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add HOS 008 Shorts to library.json, refresh LIVE_VIDEOS.json on Mini, land 009 receipts + Shorts from PR #757 keeping main status.json, update 005 note, open PR",
+      "due": "2026-11-27T10:00:00Z",
+      "kind": "listing",
+      "plain": "Sync History of Science records with YouTube: add Franklin Shorts to the opening-frame library, refresh the live video list, and record Gravity upload receipts",
+      "mini_only": true
     }
   ],
   "focus": [
