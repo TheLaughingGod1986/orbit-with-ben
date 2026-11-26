@@ -320435,8 +320435,8 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T14:53Z",
       "eta": "",
       "created_by": "macbook",
@@ -320512,6 +320512,11 @@
           "at": "2026-11-24T21:11Z",
           "by": "relay",
           "what": "condition verification queued: J3619"
+        },
+        {
+          "at": "2026-11-26T04:50Z",
+          "by": "gemini",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Await Gemini facts and Claude archive/opening decisions on draft PR 87",
