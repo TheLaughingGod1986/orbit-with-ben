@@ -346036,14 +346036,19 @@
           "at": "2026-11-26T05:09Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3773 for WW2:015 Higgins boat claims and provenance audit (zero spend)"
+        },
+        {
+          "at": "2026-11-26T05:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Checked out PR #180 worktree and read SOURCES.md, SCRIPT.md, NARRATION_v01.txt, PACKAGING.md, and ARCHIVE_PROVENANCE.md"
         }
       ],
-      "remaining_action": "Check out PR #180 worktree and inspect SOURCES.md, SCRIPT.md, NARRATION_v01.txt, and ARCHIVE_PROVENANCE.md",
+      "remaining_action": "Independently verify claims C01-C21 and priority checkpoints F1-F5 against primary sources",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-26T05:09Z",
         "by": "gemini",
@@ -346053,7 +346058,7 @@
           "Spot-check ARCHIVE_PROVENANCE.md and narration parity",
           "Write CLAIMS_CHECK_v01.md, open PR, and report"
         ],
-        "note": "Claimed J3773 for WW2:015 Higgins boat claims and provenance audit (zero spend)"
+        "note": "Checked out PR #180 worktree and read SOURCES.md, SCRIPT.md, NARRATION_v01.txt, PACKAGING.md, and ARCHIVE_PROVENANCE.md"
       },
       "taskKeys": [
         "WW2:015"
