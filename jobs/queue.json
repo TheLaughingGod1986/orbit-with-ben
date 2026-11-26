@@ -282222,9 +282222,14 @@
           "at": "2026-11-26T23:49Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified PR #1311 (28dfe21fa6, J3530) already merged Codex commit a12100797f onto main with T044 renumber. All 12 NAS_VERIFY_J3114.json hashes, all 4 media hashes (long v02, trailer, Shorts J3066/J3065), and all 3 v01 hashes verified exact; description 4,602 chars / 4,626 bytes (<=5,000)."
+        },
+        {
+          "at": "2026-11-26T23:49Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Synced NAS REVIEW_J3105_v02.md to match merged main (T044 renumber, sha256 378f9c4551a2); verified T044 ledger row hashes match NAS v02 candidates."
         }
       ],
-      "remaining_action": "Sync NAS REVIEW_J3105_v02.md (T044 note), update 034 board status to review for J3115, and finish J3114",
+      "remaining_action": "Close J3114 with PR #1311 (28dfe21fa6) ref, refresh 034 board next note, and post thread report",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild Pluto 034 long thumbnails A/B/C v02 and apply the 3-model packaging panel title and <5,000-char description fixes before Chief ruling J3112",
@@ -282234,7 +282239,7 @@
       "escalated_at": "2026-11-19T11:45Z",
       "for": "gemini",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-26T23:49Z",
         "by": "gemini",
@@ -282243,7 +282248,7 @@
           "Sync any NAS/status discrepancies",
           "Close J3114 and post report for J3115"
         ],
-        "note": "Verified PR #1311 (28dfe21fa6, J3530) already merged Codex commit a12100797f onto main with T044 renumber. All 12 NAS_VE"
+        "note": "Synced NAS REVIEW_J3105_v02.md to match merged main (T044 renumber, sha256 378f9c4551a2); verified T044 ledger row hashe"
       }
     },
     {
