@@ -1,5 +1,5 @@
 {
-  "next_id": 3808,
+  "next_id": 3809,
   "jobs": [
     {
       "id": "J0001",
@@ -341147,19 +341147,19 @@
       "title": "WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, Wed 25 Nov 2026 ~13:45 London, in chat: \"Please make the changes\")**, in reply to the acting Chief's (Claude's) answer to \"Taking the learning from 1 and 2 what should we change in 3\". Ben had OK'd film 003 v01 in full (J3205). These two trims are the only change.\n- Pilot 1 lost its suggested viewers at about 2:06, where a background detour began.\n- Pilot 1 Cut 1 (J3442) removed a dense run of figures.\n- Film 003 has the same shape: background from 1:34, and the engine-fire story not until 7:46.\n\nThe plan, captions, chapters and description are in ww2-channel PR #152 (merged): `02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/TRIM_PLAN_v01.md`. Follow it exactly.\n\n**Do (Mini, Field Order History Studio on 9224, Studio editor; `RqYjADxvJy8` is Private, scheduled Sat 28 Nov 17:00 London):**\n1. **Record the before state:**\n   - length (25:50);\n   - the description's chapters;\n   - the end screen (pilot 2 `qfc6EBStOfo` + Subscribe, 25:30:08-25:50:09);\n   - the en-GB caption track;\n   - the saved three-way thumbnail Test & Compare;\n   - the schedule.\n2. **Find the exact points.** On the NAS master `07_Edit/v01/ww2_003_b29_superfortress_v01.mp4` (sha256 `876736a1...`), run `ffmpeg silencedetect` around each point. Put each point in the middle of the silence, moving it at most 0.3 s.\n   - Cut B's end is the latest silent frame at or before 07:24.71. Never clip \"Every\".\n   - Note the music level on each side of each join.\n3. **In one editor session, on the original timeline, cut:**\n   - **A: 01:33.70 to 03:03.00** (89.30 s). Joined: \"...and what it got for the money.\" then \"It had a long, thin wing...\".\n   - **B: 06:51.90 to 07:24.70** (32.80 s). Joined: \"...an industry from nothing to make them.\" then \"Every B-29 was made of more than forty thousand parts...\".\n   - If the editor shows a shifted timeline after cut A, B becomes 05:22.60 to 05:55.40.\n   - Save. New length is about 23:48.\n4. **If the points you cut differ from the plan,** run `python3 07_Edit/build_trim_package_003_v01.py <A start-end> <B start-end>` in the film folder. It rewrites `11_Upload-Package/ww2_003_en-GB_v02.srt` and prints the chapters to use. Then update `DESCRIPTION_v02.txt` to match.\n5. **After the edit finishes processing:**\n   - Paste `DESCRIPTION_v02.txt` as the description: new chapters, and the credits for the two dropped photos removed.\n   - If the en-GB captions no longer line up after 1:34, replace the track with v02.\n   - Put the end screen back in the last 20 s, pointing to pilot 2 and Subscribe.\n6. **Read everything back in Studio and the Data API:**\n   - duration;\n   - description chapters;\n   - captions;\n   - end screen;\n   - schedule still `2026-11-28T17:00:00Z` and Private;\n   - Test & Compare still saved;\n   - title and thumbnails unchanged.\n7. **Records** (ww2-channel, one PR for the Chief):\n   - `07_Edit/TRIM_RECEIPT_v01.md`: the points actually cut, silence measurements, music levels at each join, the edit's processed time, and the before and after state.\n   - `status.json`: release duration, captions and end screen.\n   - Add a `studio/LEARNINGS.md` line with the prediction from the plan: strangers' retention drops less from 1:00 to 5:00 than pilot 1's 11 points. Film 003's 48-hour read (30 Nov 17:05Z) checks it.\n   - Also make two 20-second clips around the joins (01:23-01:43 and 05:12-05:32 on the new timeline), rendered locally from the master with the same cuts. Save them as `07_Edit/v01_trim/join_A.mp4` and `join_B.mp4` on the NAS, so Ben can listen if he wants. No worker can hear audio.\n\n**Must be processed and read back by Fri 27 Nov 12:00 UTC.** If the editor is still processing at Fri 10:00, say so on this job.\n\n**Guards.**\n- Studio editor only. Never re-upload, Replace or delete the video. Never change the schedule, privacy, title, tags or thumbnails.\n- If Studio refuses to edit while the thumbnail test is saved, stop and block for the Chief. Never delete the test.\n- Never play a public video.\n- Commit records locally and publish once at the end. £0.",
+      "body": "**Why (Ben, Wed 25 Nov 2026 ~13:45 London, in chat: \"Please make the changes\")**, in reply to the acting Chief's (Claude's) answer to \"Taking the learning from 1 and 2 what should we change in 3\". Ben had OK'd film 003 v01 in full (J3205). These two trims are the only change.\n- Pilot 1 lost its suggested viewers at about 2:06, where a background detour began.\n- Pilot 1 Cut 1 (J3442) removed a dense run of figures.\n- Film 003 has the same shape: background from 1:34, and the engine-fire story not until 7:46.\n\nThe plan, captions, chapters and description are in ww2-channel PR #152 (merged): `02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/TRIM_PLAN_v01.md`. Follow it exactly.\n\n**Do (Mini, Field Order History Studio on 9224, Studio editor; `RqYjADxvJy8` is Private, scheduled Sat 28 Nov 17:00 London):**\n1. **Record the before state:**\n   - length (25:50);\n   - the description's chapters;\n   - the end screen (pilot 2 `qfc6EBStOfo` + Subscribe, 25:30:08-25:50:09);\n   - the en-GB caption track;\n   - the saved three-way thumbnail Test & Compare;\n   - the schedule.\n2. **Find the exact points.** On the NAS master `07_Edit/v01/ww2_003_b29_superfortress_v01.mp4` (sha256 `876736a1...`), run `ffmpeg silencedetect` around each point. Put each point in the middle of the silence, moving it at most 0.3 s.\n   - Cut B's end is the latest silent frame at or before 07:24.71. Never clip \"Every\".\n   - Note the music level on each side of each join.\n3. **In one editor session, on the original timeline, cut:**\n   - **A: 01:33.70 to 03:03.00** (89.30 s). Joined: \"...and what it got for the money.\" then \"It had a long, thin wing...\".\n   - **B: 06:51.90 to 07:24.70** (32.80 s). Joined: \"...an industry from nothing to make them.\" then \"Every B-29 was made of more than forty thousand parts...\".\n   - If the editor shows a shifted timeline after cut A, B becomes 05:22.60 to 05:55.40.\n   - Save. New length is about 23:48.\n4. **If the points you cut differ from the plan,** run `python3 07_Edit/build_trim_package_003_v01.py <A start-end> <B start-end>` in the film folder. It rewrites `11_Upload-Package/ww2_003_en-GB_v02.srt` and prints the chapters to use. Then update `DESCRIPTION_v02.txt` to match.\n5. **After the edit finishes processing:**\n   - Paste `DESCRIPTION_v02.txt` as the description: new chapters, and the credits for the two dropped photos removed.\n   - If the en-GB captions no longer line up after 1:34, replace the track with v02.\n   - Put the end screen back in the last 20 s, pointing to pilot 2 and Subscribe.\n6. **Read everything back in Studio and the Data API:**\n   - duration;\n   - description chapters;\n   - captions;\n   - end screen;\n   - schedule still `2026-11-28T17:00:00Z` and Private;\n   - Test & Compare still saved;\n   - title and thumbnails unchanged.\n7. **Records** (ww2-channel, one PR for the Chief):\n   - `07_Edit/TRIM_RECEIPT_v01.md`: the points actually cut, silence measurements, music levels at each join, the edit's processed time, and the before and after state.\n   - `status.json`: release duration, captions and end screen.\n   - Add a `studio/LEARNINGS.md` line with the prediction from the plan: strangers' retention drops less from 1:00 to 5:00 than pilot 1's 11 points. Film 003's 48-hour read (30 Nov 17:05Z) checks it.\n   - Also make two 20-second clips around the joins (01:23-01:43 and 05:12-05:32 on the new timeline), rendered locally from the master with the same cuts. Save them as `07_Edit/v01_trim/join_A.mp4` and `join_B.mp4` on the NAS, so Ben can listen if he wants. No worker can hear audio.\n\n**Must be processed and read back by Fri 27 Nov 12:00 UTC.** If the editor is still processing at Fri 10:00, say so on this job.\n\n**Guards.**\n- Studio editor only. Never re-upload, Replace or delete the video. Never change the schedule, privacy, title, tags or thumbnails.\n- If Studio refuses to edit while the thumbnail test is saved, stop and block for the Chief. Never delete the test.\n- Never play a public video.\n- Commit records locally and publish once at the end. £0.\n\n**Browser for Field Order History tonight: port 9223.** After Ben's sign-in on 26 Nov the Google account that owns Field Order History is live in browser 9223, and 9224 holds the Orbit/HOS account. J3794 set a Related video on FOH through 9223 at 16:44Z, so 9223 works. Reuse 9223's one `studio.youtube.com` tab: navigate it to `https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q` and never open a second Studio tab (the janitor keeps one per browser). Put Orbit back on that tab when done if it was showing Orbit. Claude, acting Chief, 26 Nov 18:40Z.",
       "ref": "",
       "film": "WW2:003",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T17:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
-      "result": "Waiting for: Ben to sign Mac mini Chrome CDP 9224 (~/.ww2-chrome-youtube-studio) into the Google account owning Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Currently 9224 is signed into the Google account owning OpptiAI/Orbit With Ben/History of Science only, so studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q returns permission error and RqYjADxvJy8/edit fails. Pre-work done: Data API before-state recorded and exact 20ms RMS audio measurements done (Cut A 93.70-183.00s, Cut B 411.90-444.60s because Every starts at 444.64s). Deadline Fri 27 Nov 12:00Z.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T14:02Z",
@@ -341205,35 +341205,21 @@
           "at": "2026-11-26T18:05Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T20:00:00Z"
+        },
+        {
+          "at": "2026-11-26T18:33Z",
+          "by": "claude",
+          "what": "reopened: FOH Studio is live in browser 9223 (J3794 used it at 16:44Z). Use 9223 for this trim tonight; see the note at the end of the body. Deadline Fri 27 Nov 12:00Z."
         }
       ],
       "remaining_action": "Resume J3714: capture Studio before-state, apply Cuts A (01:33:21-03:03:00) & B (06:51:27-07:24:18) in Studio editor, wait for processing, update description/captions/end screen, render join_A/join_B clips, read back and open ww2 PR before Fri 27 Nov 12:00Z",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "progress": {
-        "step": 0,
-        "of": 6,
-        "at": "2026-11-26T18:05Z",
-        "by": "gemini",
-        "plan": [
-          "Record before state & measure cut points",
-          "Apply cuts A & B in Studio editor",
-          "Wait for processing & render join clips",
-          "Update description, captions & end screen",
-          "Verify Studio & Data API readback",
-          "Write receipt, status, learnings & PR"
-        ],
-        "note": "Data API before-state and exact zero-offset 20ms audio/video cut-point measurements complete (A: 93.70-183.00, B: 411.90"
-      },
       "taskKeys": [
         "WW2:003"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben sign-in required on Mac mini Chrome CDP 9224 (~/.ww2-chrome-youtube-studio) into the Google account owning Field Order History (UCu94mInMFosxu3W0H6jlI6Q); currently signed into the account owning OpptiAI/Orbit With Ben/History of Science only, returning Studio permission error on RqYjADxvJy8/edit",
-        "check_at": "2026-11-26T20:00:00Z"
-      }
+      "urgent": 8
     },
     {
       "id": "J3715",
@@ -350056,6 +350042,36 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3808",
+      "title": "WW2 pilot 2: two Studio-editor cuts (04:27.50-05:05.30 and 05:37.10-06:25.10), then chapters, captions and end screen",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben, 26 Nov, in chat, agreed the plan: if pilot 2's retention graph shows a slow stretch that cuts cleanly, make the cut (\"Sounds good\"). J3704's 48-hour read (ww2-channel PR #189, `002_.../12_Analytics/RETENTION_AND_48H_READ_2026-11-26.md`) shows two such stretches:\n- Pilot 2 (`qfc6EBStOfo`, 22:28): 1,211 impressions, 1.0% CTR, 2:42 average (12.1%).\n- Still watching: 66.7% at 0:14, about 57% at 0:30, 46.7% at 1:00, 26.7% at 5:00, 13.3% at 5:40.\n- After 4:27, people leave on repeated, abstract passages: \"no single permanent fence\" and the duplicate OUTWARD/SEARCH/RETURN map at 4:32-4:46, then the abstract map comparison at 5:27-5:40.\n- The sample is small (n=15), but the cuts only remove repetition and abstraction (rules 3 and 4).\n- Pilot 1's analogous cut lifted average viewed from 7.8% to 19.5%.\n\nClaude, acting Chief, approves **Cut A + Cut B** (85.8 s).\n\n**Browser for Field Order History tonight: port 9223.** After Ben's sign-in on 26 Nov the Google account that owns Field Order History is live in browser 9223, and 9224 holds the Orbit/HOS account. J3794 set a Related video on FOH through 9223 at 16:44Z, so 9223 works. Reuse 9223's one `studio.youtube.com` tab: navigate it to `https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q` and never open a second Studio tab (the janitor keeps one per browser). Put Orbit back on that tab when done if it was showing Orbit. Claude, acting Chief, 26 Nov 18:40Z.\n\n**Do (Mini; Studio editor on `qfc6EBStOfo`; never play the public video), after J3714 (film 3's trims, due Fri 12:00Z) if both are waiting:**\n1. **Record the before state:** length 22:28; the description's chapters 00:00 / 02:08 / 06:25 / 10:50 / 14:51 / 19:23; the end screen (pilot 1 + Subscribe, 22:07-22:27); any card; the en-GB captions.\n2. **Measure the master's audio** (`002_Atlantic-Black-Pit_v06.mp4` on the NAS) around each point and put each cut in the silence between sentences, moving it at most 0.3 s. Never clip a word.\n3. **In one editor session, on the original timeline, cut:**\n   - **A: 04:27.50 to 05:05.30** (37.8 s). Joined: \"...where convoys could not count on the same protection.\" then \"Surface escorts traveled with the merchant ships.\"\n   - **B: 05:37.10 to 06:25.10** (48.0 s). Joined: \"...and bring aircraft to sea aboard carriers.\" then Chapter 3, \"The Liberator was central to that effort.\"\n   - Save. New length is about 21:02.\n4. **After processing:**\n   - Shift chapters to 00:00 / 02:08 / **05:00 A bomber becomes a patrol aircraft** / 09:24 / 13:25 / 17:57. Recompute them from the points actually cut.\n   - Retime the en-GB captions from v06, dropping the cues inside the cuts and shifting the rest; upload them if the live track drifts.\n   - Put the end screen back in the last 20 s.\n   - Read everything back in Studio and the Data API.\n   - The U-boat Short `ZCnSldSJzME` (out Fri 12:30, clips 02:08-02:53) is not affected.\n5. **Records:** `002_.../03_Picture/TRIM_RECEIPT_v01.md`, `status.json` (post-cut sample time, for J3706's 7-day read on 2 Dec), and a `studio/LEARNINGS.md` line.\n   - Prediction: strangers still watching at 6:00 rises from 13% to 20%+, and average viewed for post-cut viewers beats 12.1%.\n   - One ww2-channel PR.\n\n**Guards.** Studio editor only. Never re-upload or delete. No change to the title, thumbnail, schedule or privacy. £0.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "edit",
+      "after": "J3714",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T18:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T18:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make pilot 2's two approved cuts in Studio's editor and fix chapters and captions",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true
     }
   ],
   "focus": [
