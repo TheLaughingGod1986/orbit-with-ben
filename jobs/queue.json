@@ -349241,10 +349241,10 @@
       "stage": "",
       "after": "J3800",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T17:44Z",
+      "eta": "2026-11-26T18:09Z",
       "created_by": "refill",
       "created_at": "2026-11-26T17:00Z",
       "result": "",
@@ -349253,6 +349253,11 @@
           "at": "2026-11-26T17:00Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T17:44Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run 48h RSI retention autopsy on qfc6EBStOfo, watch 3 steepest drop windows with video+audio, write 05_Analytics/ww2/autopsy/qfc6EBStOfo_48h.md",
@@ -349264,7 +349269,15 @@
         "moving_video_input"
       ],
       "autopsy": "qfc6EBStOfo@48h",
-      "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes"
+      "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T17:44Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3802",
