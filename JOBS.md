@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3501, J3704, J3442, J3559, J3790, J3802.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3800 | mini | open | – | – | studio · First-day check at 48 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
 | J3801 | mini | open (after J3800) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
+| J3802 | mini | open | – | – | studio · Mini re-check: Field Order History Studio (9224) opens FOH's own dashboard after Ben's account switch |  |
 
 Recently finished:
 

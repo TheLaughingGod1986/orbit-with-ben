@@ -1,5 +1,5 @@
 {
-  "next_id": 3802,
+  "next_id": 3803,
   "jobs": [
     {
       "id": "J0001",
@@ -349170,6 +349170,37 @@
       ],
       "autopsy": "qfc6EBStOfo@48h",
       "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes"
+    },
+    {
+      "id": "J3802",
+      "title": "Mini re-check: Field Order History Studio (9224) opens FOH's own dashboard after Ben's account switch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** J3799 (16:20Z) found browser 9224 signed in but showing Orbit's Studio; a fresh visit to Field Order History's channel was refused. Ben, ~16:30Z, after switching account to Field Order History in that window: \"Done\". Read only: about 3 minutes.\n\n**Do (Mini, now):**\n1. In browser 9224, reuse the existing `studio.youtube.com` tab (never open a second) and load `https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q`. Confirm it shows Field Order History's dashboard, with no permission error and no sign-in page.\n2. **If it does:** reopen or let J3794 run (Related video `qfc6EBStOfo` on `ZCnSldSJzME`, description link), and confirm J3704 (17:05Z) and J3714 (17:30Z) can use 9224.\n3. **If it doesn't:** block \"parked for Chief\" and record exactly what the page shows (heading or title only).\n4. One-line result per browser, with no account names or emails.\n\n**Guards.** No sign-in attempts and no account switching (both are Ben's). No Studio edits. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 5,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T17:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T17:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Confirm Field Order History Studio opens in its own browser",
+      "due": "2026-11-26T17:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 8
     }
   ],
   "focus": [
