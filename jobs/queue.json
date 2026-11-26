@@ -344302,20 +344302,35 @@
           "at": "2026-11-26T01:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T01:56Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3760; checking Stage-1 Chief PASS receipts and disk headroom"
         }
       ],
-      "remaining_action": "Wait for Chief visual PASS on J3759 stills, then dry-run and mint 2 take-3 Veo 3.1 Quality clips (200 cr max, before 5 Dec)",
+      "remaining_action": "Verify Stage-1 Chief still PASS, approved t3.png SHA-256s, and Mac mini disk space",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-26T01:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify Stage-1 Chief still PASS and disk headroom",
+          "Build _mint_flow_v01_retake2.py and run dry-run",
+          "Submit 2 take-3 Veo 3.1 Quality clips on Flow",
+          "Verify SHA-256, archive to NAS, build contact sheets and receipts",
+          "Update HOS 013 status, run checks, open HOS PR",
+          "Post desk report and park for Chief UAT"
+        ],
+        "note": "Claimed J3760; checking Stage-1 Chief PASS receipts and disk headroom"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3761",
