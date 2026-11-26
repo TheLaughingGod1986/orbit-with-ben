@@ -282015,10 +282015,10 @@
       "stage": "thumbs",
       "after": "J3111",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T23:45Z",
+      "eta": "2026-11-27T01:45Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T05:12Z",
       "result": "",
@@ -282207,6 +282207,11 @@
           "at": "2026-11-26T23:37Z",
           "by": "claude",
           "what": "reopened: Export is authorised (Ben, 24 Nov rule, AGENTS.md PR #1250; J3470 ruling, PR #1256). Do NOT rebuild. Push the finished local commit a12100797f on branch codex/j3114-pluto-v02 from /Volumes/MiniWork/scratch/j3114-wt (re-check the 12 NAS hashes first), open the PR, and finish J3114 so J3115 and the Pluto upload (J3119, airs Sun 13 Dec) can run. Codex's sandbox refused the push twice, so this goes to Gemini."
+        },
+        {
+          "at": "2026-11-26T23:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await J3530 (Mini Claude Code after 2026-11-25T10:00:00Z reset) to privacy-check, reconcile THUMB_LEDGER T041->next unused ID (T044), push/merge codex/j3114-pluto-v02 (a12100797f), and close J3114 for J3115",
@@ -282217,7 +282222,15 @@
         "OWB:034"
       ],
       "escalated_at": "2026-11-19T11:45Z",
-      "for": "gemini"
+      "for": "gemini",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T23:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3115",
