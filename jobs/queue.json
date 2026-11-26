@@ -346406,19 +346406,28 @@
           "at": "2026-11-26T06:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T06:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read Field Order History’s subscribers and watch hours so the board stays current",
+      "remaining_action": "Inspecting importer, previous reads, and Studio CDP port",
       "due": "2026-11-26T06:40:38Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-26T06:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect importer and CDP Studio config",
+          "Read Studio Lifetime subscribers and watch hours",
+          "Run importer and verify generated analytics",
+          "Commit/push PR from clean worktree and report"
+        ]
       }
     }
   ],
