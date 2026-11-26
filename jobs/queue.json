@@ -340233,9 +340233,14 @@
           "at": "2026-11-26T17:12Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T17:14Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Data API readback complete: pilot 2 title and Design E (SSIM 0.9996/0.9814) confirmed live; viewCounts P1=39, P2=26, S1=49; Analytics API lagged at 23 Nov"
         }
       ],
-      "remaining_action": "Running Data API readback and checking WW2 status files and tools",
+      "remaining_action": "Reading live Studio 9224 metrics and pilot 2 retention curve",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -340245,9 +340250,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T17:12Z",
+        "at": "2026-11-26T17:14Z",
         "by": "gemini",
         "plan": [
           "Data API readback & Design E thumb check",
@@ -340255,7 +340260,8 @@
           "Pilot 2 retention curve & drop-to-script/picture match",
           "Update status.json, LEARNINGS.md & trim proposal if needed",
           "Push WW2 PR & post thread table"
-        ]
+        ],
+        "note": "Data API readback complete: pilot 2 title and Design E (SSIM 0.9996/0.9814) confirmed live; viewCounts P1=39, P2=26, S1="
       }
     },
     {
