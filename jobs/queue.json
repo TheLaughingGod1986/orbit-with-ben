@@ -344312,16 +344312,21 @@
           "at": "2026-11-26T01:58Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified J3759 done with Acting Chief visual still PASS (#694 comment 7180256469); both t3.png SHA-256s and RETAKE_BOARD_v02.json SHA-256 match bit-for-bit on NAS/repo"
+        },
+        {
+          "at": "2026-11-26T02:01Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Built _mint_flow_v01_retake2.py and _build_retake2_receipt_v01.py; dry-run --floor 3000 PASS (0 cr, 0 Create clicks, both Chief-approved t3.png SHA-256s verified, projected headroom 21,750 >= 3,000)"
         }
       ],
-      "remaining_action": "Build guarded _mint_flow_v01_retake2.py in clean worktree and run dry-run --floor 3000",
+      "remaining_action": "Arm and submit single 2-row take-3 batch (rows 49 and 63, Veo 3.1 Quality, 200 cr max) on Flow :9222",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-26T01:58Z",
+        "at": "2026-11-26T02:01Z",
         "by": "gemini",
         "plan": [
           "Verify Stage-1 Chief still PASS and disk headroom",
@@ -344331,7 +344336,7 @@
           "Update HOS 013 status, run checks, open HOS PR",
           "Post desk report and park for Chief UAT"
         ],
-        "note": "Verified J3759 done with Acting Chief visual still PASS (#694 comment 7180256469); both t3.png SHA-256s and RETAKE_BOARD"
+        "note": "Built _mint_flow_v01_retake2.py and _build_retake2_receipt_v01.py; dry-run --floor 3000 PASS (0 cr, 0 Create clicks, bot"
       },
       "taskKeys": [
         "HOS:013"
