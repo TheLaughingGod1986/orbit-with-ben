@@ -341714,9 +341714,14 @@
           "at": "2026-11-26T23:40Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:41Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters)",
+      "remaining_action": "Inspecting critiques, 064 packaging files, thumbnails, and active 064 jobs",
       "kind": "review",
       "rerouted_from": {
         "needs": "cloud",
@@ -341727,12 +341732,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T23:40Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-26T23:41Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect critiques and 064 package",
+          "Write DECISION.md and queue rebuild",
+          "Push branch and open PR",
+          "Finish J3719 and post #99 summary"
+        ]
       }
     },
     {
