@@ -350301,13 +350301,18 @@
           "at": "2026-11-26T20:24Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Identified current last-10 live OWB window and prior 14:15Z J3795 audit; running fresh 20:25Z API read-back and checking J3803"
+        },
+        {
+          "at": "2026-11-26T20:24Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Fetched fresh 20:24Z YouTube Data API v3 read-back for last 10 live public videos (same window as 14:15Z J3795)"
         }
       ],
-      "remaining_action": "Fetching live YouTube Data API metadata, checking J3803 6h check & Studio CDP 9223 status",
+      "remaining_action": "Auditing live API descriptions, chapters, sources, and checking J3803 / Studio 9223 state",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-11-26T20:24Z",
         "by": "gemini",
@@ -350318,8 +350323,14 @@
           "Verify chapters, sources, descriptions",
           "Write fix list & park for Chief"
         ],
-        "note": "Identified current last-10 live OWB window and prior 14:15Z J3795 audit; running fresh 20:25Z API read-back and checking"
-      }
+        "note": "Fetched fresh 20:24Z YouTube Data API v3 read-back for last 10 live public videos (same window as 14:15Z J3795)"
+      },
+      "taskKeys": [
+        "OWB:032",
+        "OWB:027",
+        "OWB:024",
+        "OWB:026"
+      ]
     },
     {
       "id": "J3810",
