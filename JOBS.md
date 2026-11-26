@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3762 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3771 | mini | open | – | – | review · Verify condition for J3432 |  |
+| J3771 | mini | claimed | gemini | 2026-11-26T06:06Z | review · Verify condition for J3432 |  |
 
 Recently finished:
 
