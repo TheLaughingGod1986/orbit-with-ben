@@ -351256,16 +351256,21 @@
           "at": "2026-11-26T23:52Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3817; checking panel decision and NAS plates"
+        },
+        {
+          "at": "2026-11-26T23:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Read J3719 DECISION.md (PR #1357), codex.md, gemini.md, SHOT_LIST_v01.md, and verified NASA plates on studio-live"
         }
       ],
-      "remaining_action": "Inspecting panel decision, existing v01 thumbnails, and verified NASA plates",
+      "remaining_action": "Building v02 thumbnails A/B/C and verifying scores and 168x94 visuals",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T23:52Z",
+        "at": "2026-11-26T23:54Z",
         "by": "gemini",
         "plan": [
           "Inspect panel decision and source plates",
@@ -351274,7 +351279,7 @@
           "Write SHOT_LIST_v02.md fixing opening cuts and R09 Venus",
           "Commit in clean worktree and open PR"
         ],
-        "note": "Claimed J3817; checking panel decision and NAS plates"
+        "note": "Read J3719 DECISION.md (PR #1357), codex.md, gemini.md, SHOT_LIST_v01.md, and verified NASA plates on studio-live"
       },
       "taskKeys": [
         "OWB:064"
