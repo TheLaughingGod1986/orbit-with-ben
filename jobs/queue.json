@@ -348448,13 +348448,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-26T14:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
-      "result": "Waiting for: Field Order History Studio Chrome 9224 is signed into Google again (it was on accounts.google.com sign-in at 14:34Z on 26 Nov). Then: set Related video = qfc6EBStOfo on ZCnSldSJzME, reload-check altered content Yes, not for kids, cover and Related, and update 002 status.json/UPLOADS.json relatedVideo. Upload itself is DONE (ZCnSldSJzME, Private, publishAt 2026-11-27T12:30Z): never re-upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T13:18Z",
@@ -348535,6 +348535,11 @@
           "at": "2026-11-26T16:19Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-26T17:00:00Z"
+        },
+        {
+          "at": "2026-11-26T16:23Z",
+          "by": "claude",
+          "what": "reopened: Ben, 26 Nov ~16:20Z, in chat: \"It's fine now. Should definitely be signed in for the new channel.\" (after J3799 found FOH signed in only as a tab in the Orbit browser 9223, with 9224 on the Google sign-in page). Finish the Studio-only steps on ZCnSldSJzME now in browser 9224: Related video = qfc6EBStOfo, description link, reload-check. Never re-upload."
         }
       ],
       "remaining_action": "Verify restored Field Order History access, then set the U-boat Related video and read back",
@@ -348561,25 +348566,6 @@
         "job": "J3566",
         "okAt": "2026-11-26T14:20Z",
         "okRef": "board Review card WW2:002-S1 'You OK'd v01' (Ben's screenshot 26 Nov 14:22, \"This is done already\")"
-      },
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-26T14:34Z",
-        "by": "claudecode",
-        "plan": [
-          "Check 001-S1 upload method and metadata",
-          "Upload master Private scheduled Fri 27 Nov 12:30",
-          "Set Related video, description link, altered content",
-          "Read back Studio + Data API",
-          "Record in status.json and UPLOADS.json"
-        ],
-        "note": "API read-back OK; opening-frame cover set; records in ww2-channel PR #187"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "J3799 Chief ruling 26 Nov 16:20Z: fresh Studio navigation to channel UCu94mInMFosxu3W0H6jlI6Q returns permission denied on both 9224 and 9223; the initial 9223 dashboard was cached. Ben must restore the channel session/access on 9224. Recheck at 17:00Z ahead of evening Studio work; only release after a fresh channel dashboard loads with matching channel ID. Then set Related=qfc6EBStOfo on ZCnSldSJzME, reload-check audience, altered content and cover, and record relatedVideo. Existing upload and Ben approval retained: never re-upload, change privacy or schedule. Earlier 27 Nov 08:00 check advanced because tonight also needs this session.",
-        "check_at": "2026-11-26T17:00:00Z"
       }
     },
     {
