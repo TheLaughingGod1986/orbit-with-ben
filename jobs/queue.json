@@ -349268,9 +349268,14 @@
           "at": "2026-11-26T17:47Z",
           "by": "gemini",
           "what": "step 2 of 5 done: 48h inspect done (1,211 impr, 1.0% CTR, 30 views, 16.5% avg viewed, retention curve suppressed) and 6 watch clips cut from v06 master"
+        },
+        {
+          "at": "2026-11-26T17:49Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Watched all 6 moving-video+audio clips (0:00-2:10, 2:30-3:10, 3:22-4:02, 21:47-22:27); verified v06 master SHA-256 1d8bc79a... and 1,347.00s duration; recorded audio_input+moving_video_input capability"
         }
       ],
-      "remaining_action": "Watching all six moving-video + audio proxy clips for qfc6EBStOfo",
+      "remaining_action": "Writing 48h retention autopsy report and Field Order History LEARNINGS entry in clean worktrees",
       "due": "2026-11-27T05:00:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -349281,9 +349286,9 @@
       "autopsy": "qfc6EBStOfo@48h",
       "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-26T17:47Z",
+        "at": "2026-11-26T17:49Z",
         "by": "gemini",
         "plan": [
           "Inspect 48h metrics",
@@ -349292,7 +349297,7 @@
           "Write autopsy & learnings",
           "Open PR & report"
         ],
-        "note": "48h inspect done (1,211 impr, 1.0% CTR, 30 views, 16.5% avg viewed, retention curve suppressed) and 6 watch clips cut fr"
+        "note": "Watched all 6 moving-video+audio clips (0:00-2:10, 2:30-3:10, 3:22-4:02, 21:47-22:27); verified v06 master SHA-256 1d8bc"
       },
       "taskKeys": [
         "WW2:002"
