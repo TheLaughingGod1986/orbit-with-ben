@@ -109,7 +109,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3759 | mini | blocked | gemini | – | 013 picture · image · HOS 013: mint 2 clean take-3 Flow start stills for rows 49 and 63 (0 cr, Nano Banana 2, before 5 Dec) | J3757 |
 | J3760 | mini | open (after J3759) | – | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
 | J3762 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
-| J3763 | mini | claimed | gemini | 2026-11-26T02:45Z | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3764 | mini | claimed | macbook-2 | 2026-11-26T01:58Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3765 | mini | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
