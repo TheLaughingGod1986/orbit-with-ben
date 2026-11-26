@@ -347882,9 +347882,14 @@
           "at": "2026-11-26T12:05Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still 8 discrete 1-fps stills (00:00..00:07) on P01_03a_unlabelled_birds_t2.mp4; verified 6/6 take-2 NAS SHA-256 hashes match RETAKE1_RECEIPT.json; recorded honest capabilities"
+        },
+        {
+          "at": "2026-11-26T12:09Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Merged OWB PR #1343 (8264b0f3bf), updated J3756 typed capability hold (--requires moving_video_input --recheck J3789, next check 2026-11-26T18:30:00Z), posting reports and closing J3789"
         }
       ],
-      "remaining_action": "Re-checking Chief status, recording J3789 review PR, refreshing J3756 typed capability hold, and closing J3789",
+      "remaining_action": "Done",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -347901,16 +347906,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-26T12:05Z",
+        "at": "2026-11-26T12:09Z",
         "by": "gemini",
         "plan": [
           "Inspect J3756 wait state and recent HOS/OWB rulings",
           "Probe actual video input capability and verify NAS clip hashes",
           "Reopen or refresh typed wait on J3756 and finish J3789"
         ],
-        "note": "Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still 8 discrete 1-fps "
+        "note": "Merged OWB PR #1343 (8264b0f3bf), updated J3756 typed capability hold (--requires moving_video_input --recheck J3789, ne"
       },
       "taskKeys": [
         "HOS:013"
