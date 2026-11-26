@@ -337702,16 +337702,21 @@
           "at": "2026-11-26T07:24Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 done: recorded raw S01 (21.28 s, -20.2 LUFS, 262 chars) & S02 (21.92 s, -21.7 LUFS, 239 chars) via vo_take.py (Ben Orbit Narrator eleven_v3 speed 1.04)"
+        },
+        {
+          "at": "2026-11-26T07:29Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3 done: S02_v02_tight (18.74 s, -21.8 LUFS, atempo 1.00, vo_check PASS 0 diffs) & S01_v02_tight (18.70 s, -20.1 LUFS, atempo 1.00, Bethe pronounced accurately /beɪtə/, vo_check flags only faster-whisper bethe/beta homophone; retake S01_v02b kept on NAS); both verified by direct audio_input listen"
         }
       ],
-      "remaining_action": "Run vo_check_py312.sh, inspect timing/gaps & listen directly via audio_input",
+      "remaining_action": "Store verified media on NAS, write VO_STATUS/status updates & open clean HOS PR",
       "due": "2026-12-05T18:00:00Z",
       "kind": "vo",
       "plain": "Record the two 16-19 s Shorts narrations (S01 & S02) for HOS 136 from the locked v02 scripts in Ben's voice",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-26T07:24Z",
+        "at": "2026-11-26T07:29Z",
         "by": "gemini",
         "plan": [
           "Verify locked v02 scripts, live balance & dry-run",
@@ -337720,7 +337725,7 @@
           "Store verified media on NAS & open clean HOS PR",
           "Run check_all.sh, log spend, queue Chief VO review & report"
         ],
-        "note": "Step 2 done: recorded raw S01 (21.28 s, -20.2 LUFS, 262 chars) & S02 (21.92 s, -21.7 LUFS, 239 chars) via vo_take.py (Be"
+        "note": "Step 3 done: S02_v02_tight (18.74 s, -21.8 LUFS, atempo 1.00, vo_check PASS 0 diffs) & S01_v02_tight (18.70 s, -20.1 LUF"
       },
       "taskKeys": [
         "HOS:136"
