@@ -347583,16 +347583,21 @@
           "at": "2026-11-26T09:20Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3787; verified audio_input via read_file probe; port 9224 signed out after reboot, checking YouTube Audio Library read-only on signed-in Studio port 9460"
+        },
+        {
+          "at": "2026-11-26T09:28Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Downloaded YouTube Audio Library attribution-free Ambient/Cinematic candidates (read-only via signed-in Studio port 9460 since 9224 is signed out); already confirmed Drifting Memories (Ambient/Dramatic) and Sleep Music No. 1 (Ambient/Calm) by ear (zero vocals, zero drums)"
         }
       ],
-      "remaining_action": "Inspect YouTube Audio Library on signed-in Studio browser and pick 3-4 calm instrumental tracks",
+      "remaining_action": "Audition Dark/Calm/Dramatic Audio Library candidates by ear and write 00_Brand/MUSIC_LIBRARY.md",
       "due": "2026-12-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 7,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-26T09:20Z",
+        "at": "2026-11-26T09:28Z",
         "by": "gemini",
         "plan": [
           "Pick & download YouTube Audio Library tracks",
@@ -347602,7 +347607,7 @@
           "Mix & stage WW2:005 v05 ahead of 30 Nov watch",
           "Update LEARNINGS, status files & merge PR"
         ],
-        "note": "Claimed J3787; verified audio_input via read_file probe; port 9224 signed out after reboot, checking YouTube Audio Libra"
+        "note": "Downloaded YouTube Audio Library attribution-free Ambient/Cinematic candidates (read-only via signed-in Studio port 9460"
       },
       "taskKeys": [
         "WW2:006",
