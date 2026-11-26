@@ -350641,9 +350641,14 @@
           "at": "2026-11-26T22:05Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T22:05Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review, separate from worker steps: both PRs merged; current audit passes; archival follow-up J3814 depends on J3811 and is due 27 Nov 18:00."
         }
       ],
-      "remaining_action": "Running check_all.sh, pushing HOS & OWB PRs, posting desk report, and parking Chief merge",
+      "remaining_action": "Chief review complete; cover archive follows in its linked task",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -350668,12 +350673,16 @@
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-26T22:05Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check approval and inputs",
+          "Review evidence and rule",
+          "Merge records and assign follow-up"
+        ],
+        "note": "Chief review, separate from worker steps: both PRs merged; current audit passes; archival follow-up J3814 depends on J38"
       }
     },
     {
