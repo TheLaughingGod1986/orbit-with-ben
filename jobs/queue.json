@@ -299450,13 +299450,13 @@
       "stage": "thumbs",
       "after": "J3378",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:22Z",
-      "eta": "2026-11-26T06:22Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:37Z",
-      "result": "",
+      "result": "Acting Chief (gemini) closed J3307 after verifying published PR #1312 (ecce03004a: historical v02 FIX review, no v02 authorization) and successor PR #1184 (J3382: v03 exact-file PASS + conditional one-test successor authorization). Verified all 9/9 NAS SHA-256 hashes (v02, v03, v03 badge sheets), THUMB_LEDGER T041-T043 proposed with full v01/v02 history, 006/024/005 film states, and J3308-J3310 exact-v03 + fresh-Studio guards. No reruling, £0 spend, zero YouTube writes. J3308-J3310 unblocked under J3382 conditions.",
       "history": [
         {
           "at": "2026-11-21T16:37Z",
@@ -299682,6 +299682,11 @@
           "at": "2026-11-26T04:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All pre-close checks verified and closeout report ready; marking J3307 done citing PR #1312."
+        },
+        {
+          "at": "2026-11-26T04:26Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) closed J3307 after verifying published PR #1312 (ecce03004a: historical v02 FIX review, no v02 authorization) and successor PR #1184 (J3382: v03 exact-file PASS + conditional one-test successor authorization). Verified all 9/9 NAS SHA-256 hashes (v02, v03, v03 badge sheets), THUMB_LEDGER T041-T043 proposed with full v01/v02 history, 006/024/005 film states, and J3308-J3310 exact-v03 + fresh-Studio guards. No reruling, £0 spend, zero YouTube writes. J3308-J3310 unblocked under J3382 conditions."
         }
       ],
       "remaining_action": "Complete J3307 closeout and post studio thread report",
@@ -299703,7 +299708,8 @@
           "Post closeout report on studio thread"
         ],
         "note": "All pre-close checks verified and closeout report ready; marking J3307 done citing PR #1312."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1312"
     },
     {
       "id": "J3308",
