@@ -1,5 +1,5 @@
 {
-  "next_id": 3772,
+  "next_id": 3773,
   "jobs": [
     {
       "id": "J0001",
@@ -345852,6 +345852,36 @@
         "WW2:005"
       ],
       "done_ref": "50ac67b"
+    },
+    {
+      "id": "J3772",
+      "title": "WW2 film 015: Higgins boat (LCVP) topic check, packaging first, script and sources, to lock by 2026-12-13",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Acting-Chief replacement (Gemini, 26 Nov 2026, J3713):** Sherman tank supply draft v01 (`015_M4-Sherman-Tank-Engineering-Logistics`, J3486) received a reviewer NO-GO on archive coverage (`J3551`, ww2-channel PR #151: 20–26% checked/unchecked archive vs 50% Rule 1 floor, plus Rule 2/3/4/6 failures), upheld in J3713 without a bounded depot-photo search. Sherman draft v01 returns to ideas on file (no lock, no VO, £0).\n\n**Slot & deadlines (`00_Brand/THREE_A_WEEK_2026-12.md` §0):**\n- **Film:** `WW2:015` (create a fresh folder `02_Video-Projects/015_Higgins-Boat-LCVP-D-Day-Landing-Craft/`, or the fallback topic's folder if Higgins boat fails archive check; leave `015_M4-Sherman-Tank-Engineering-Logistics/` untouched on file as ideas).\n- **Air date:** **Tue 29 Dec 2026 17:00 London** (`air: \"2026-12-29\"` in `status.json`).\n- **Ben's watch due:** **Tue 22 Dec 2026** (early with 014 so Ben has no watch 24–27 Dec).\n- **Script lock due:** **Sun 13 Dec 2026 18:00 London**. If unready, Rule 6 applies and the slot skips cleanly; never rush.\n\n**Topic pick (Rank #3 from `orbit-with-ben/05_Analytics/ww2/search_research/2026-11-24.md`):**\n- **Primary topic:** **Higgins boat (LCVP)** — the swamp-boat plywood landing-craft engineering problem that made D-Day and Pacific amphibious landings possible (Andrew Higgins, New Orleans swamp-boat hull, bow ramp, plywood construction, mass production).\n  - **Demand:** `higgins boat` = **7,840/mo** at **competition 40** (easiest competition on the 24 Nov research list).\n  - **Cluster:** D-Day engineering cluster — links directly with `001` Mulberry Harbours and `010` Hobart's Funnies.\n  - **Primary US/UK official public-domain archives:** US NARA `RG 80-G` (US Navy), `RG 26` (US Coast Guard), `RG 111-SC` (Signal Corps), NHHC official USN photos, Library of Congress FSA/OWI (where directly verifiable), and UK IWM Normandy landing-craft official photographs (Crown copyright expired).\n- **Fallback topic (if Higgins boat fails the ≥50% archive check at topic stage):** take **Rank #4 Red Ball Express** (`12,233/mo`, competition `53`, NARA `RG 111-SC` logistics) in the same topic pass rather than deferring twice.\n\n**Do, to `ww2-channel/studio/RULES.md` (rules 1–6, 9, 12, 13), `studio/LEARNINGS.md` and `00_Brand/PLAYBOOK.md`:**\n1. **Topic check & archive feasibility first (Rule 1, PLAYBOOK §7):** confirm no near-duplicate on the channel; record audience evidence from `2026-11-24.md` plus Pilot 1 & any available Pilot 2 48h/7d readouts (`studio/LEARNINGS.md`); verify **at least 15–25 real official US/UK public-domain photograph IDs** with source URLs/captions confirming real archive photos can carry **≥50% of screen time** (aiming for two-thirds) without padding, repeats <60 s, or unseen-photo narration.\n2. **Packaging first (Rule 2 & Rule 13):** lock title and thumbnail concepts **before** drafting the script. Score three titles ≤50 characters starting with the exact searched name (**Higgins Boat** / **Higgins Boats**), one concrete engineering hook, preferring a superlative or hard non-year number, never copying top-ranking video titles beyond the searched name, zero vague/shock words. Define three single-subject thumbnail concepts (one real archive photo filling the frame at 168 px, normal/bright grade, 0–3 words on a solid dark band, ≤1 arrow, zero Nazi insignia/bodies).\n3. **Script & sources (Rules 3, 4, 5, 6, 9):**\n   - A story, not a list (Rule 4): follow the engineering problem through real people (e.g. Andrew Higgins, Marine/Navy planners), concrete turning points, and one rounded figure at a time across the whole film (never ≥5 figures in 30 s).\n   - First two minutes (Rule 3) and first ~1,200 words (Rule 6): concrete moment by 0:30, promise by 0:45, main story moving by 1:00, **no background detour in the first 8 minutes** (~1,200 words), never answer the title in the opening, no channel intro, no \"in this video\".\n   - Length follows the story, **≤21,000 spoken characters** (Rule 9, Ben's current ElevenLabs plan). Write `01_Script/SCRIPT.md`, `01_Script/NARRATION_v01.txt` (exact paragraph parity), `01_Script/SOURCES.md` (every claim/number sourced with verifiable citations), and `03_Picture/ARCHIVE_PROVENANCE.md`. Never describe a specific photograph in narration unless its scan has been inspected.\n4. **Shorts (Rule 1):** name 2–3 engineering Shorts (<1 min, cut from the long's own narration/pictures, no new voice) in `status.json`, to link to the long and air around it.\n5. **Independent gates before lock (Rule 6):** open a stage PR on `ww2-channel` (update `00_Brand/VIDEO_BACKLOG.json` and the film's `status.json`), then queue:\n   - independent **Gemini `facts`-lane claims check** (`needs: gemini`, `kind: facts`);\n   - dependent **Claude `review`-lane topic/archive + Rule-6 stranger viewer test** (covering both the first 300 words AND the first ~1,200 words per 25 Nov Rule 6 update) before script lock and post-reset VO queue.\n\n**Guards.** £0 spent; no ElevenLabs voice spend in this script job; no YouTube/Studio/NAS changes; no ordinary-worker merge.\n",
+      "ref": "ww2-channel#151",
+      "film": "WW2:015",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T04:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T04:48Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run Rule-2 packaging-first topic and archive check for Higgins boat (fallback Red Ball Express), draft sourced script <=21,000 chars, and queue claims + Rule-6 viewer checks",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "script",
+      "plain": "Research, package and write the script for WW2 film 015 (Higgins boat / LCVP engineering, replacing Sherman draft v01)"
     }
   ],
   "focus": [
