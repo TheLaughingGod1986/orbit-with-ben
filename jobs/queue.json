@@ -350590,9 +350590,14 @@
           "at": "2026-11-26T21:46Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T21:48Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Built s04_no_patent_v01 PACKAGE_MANIFEST.json, frame-0 cover.jpg, en-GB SRT (5 cues), and added s04 to SHORTS_RELEASE.json"
         }
       ],
-      "remaining_action": "Building HOS 008 Short s04 v01 listing package, frame-0 cover and en-GB captions",
+      "remaining_action": "Running lint:package, youtube:package --dry-run, and live channel pre-check",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -350614,9 +350619,9 @@
         "handled": true
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T21:46Z",
+        "at": "2026-11-26T21:48Z",
         "by": "gemini",
         "plan": [
           "Build s04 package, cover & captions",
@@ -350624,7 +350629,8 @@
           "Upload Private 2026-12-01T11:30Z + captions",
           "Studio Related/Altered/audit + UPLOADS",
           "Open PRs, report & park Chief merge"
-        ]
+        ],
+        "note": "Built s04_no_patent_v01 PACKAGE_MANIFEST.json, frame-0 cover.jpg, en-GB SRT (5 cues), and added s04 to SHORTS_RELEASE.js"
       },
       "taskKeys": [
         "HOS:008"
