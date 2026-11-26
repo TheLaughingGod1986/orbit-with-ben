@@ -348053,10 +348053,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T12:51Z",
+      "eta": "2026-11-26T14:51Z",
       "created_by": "relay",
       "created_at": "2026-11-26T12:50Z",
       "result": "",
@@ -348065,13 +348065,26 @@
           "at": "2026-11-26T12:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T12:51Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
       "kind": "review",
       "recheck_of": "J3780",
       "due": "2026-11-26T13:50:46+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T12:51Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3792",
