@@ -345586,9 +345586,14 @@
           "at": "2026-11-26T04:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:07Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Complete audiovisual QA (J3745) and Chief ruling, then stage WW2:005 for Ben's watch",
+      "remaining_action": "Inspecting J3432, J3745, and WW2:005 QA/approval evidence",
       "kind": "review",
       "recheck_of": "J3432",
       "due": "2026-11-26T05:05:57+00:00",
@@ -345604,11 +345609,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T04:06Z",
+        "at": "2026-11-26T04:07Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3432, J3745, and WW2:005 status/evidence",
+          "Reconcile wait condition or reopen J3432",
+          "Post Acting Chief report and close J3771"
+        ]
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     }
   ],
   "focus": [
