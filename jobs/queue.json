@@ -350757,9 +350757,14 @@
           "at": "2026-11-26T22:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T22:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
+      "remaining_action": "Inspect J3781 history, PR #798/#799, HOS desk #694, and local codex review evidence",
       "kind": "review",
       "recheck_of": "J3781",
       "required_capabilities": [
@@ -350777,12 +350782,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-26T22:01Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3781 history, PRs, desk and local review",
+          "Probe tool input capabilities and record them",
+          "Verify whether J3781 condition is met",
+          "Update J3781 wait/recheck and finish J3813"
+        ]
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     }
   ],
   "focus": [
