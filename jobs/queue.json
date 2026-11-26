@@ -340238,9 +340238,14 @@
           "at": "2026-11-26T17:14Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Data API readback complete: pilot 2 title and Design E (SSIM 0.9996/0.9814) confirmed live; viewCounts P1=39, P2=26, S1=49; Analytics API lagged at 23 Nov"
+        },
+        {
+          "at": "2026-11-26T17:20Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Studio live read complete (note: 9224 refused UCu94mInMFosxu3W0H6jlI6Q while 9223 held FOH Studio; read-only via 9223): P1 1.9k impr/0.8% CTR/38 views/5:00 AVD; P2 1,211 impr/1.0% CTR/30 views/3:42 AVD & Advanced Audience Retention curve IS LIVE (2:42 / 12.1%)"
         }
       ],
-      "remaining_action": "Reading live Studio 9224 metrics and pilot 2 retention curve",
+      "remaining_action": "Extracting exact 100-point retention curve JSON and matching drops to script and picture",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -340250,9 +340255,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-26T17:14Z",
+        "at": "2026-11-26T17:20Z",
         "by": "gemini",
         "plan": [
           "Data API readback & Design E thumb check",
@@ -340261,7 +340266,7 @@
           "Update status.json, LEARNINGS.md & trim proposal if needed",
           "Push WW2 PR & post thread table"
         ],
-        "note": "Data API readback complete: pilot 2 title and Design E (SSIM 0.9996/0.9814) confirmed live; viewCounts P1=39, P2=26, S1="
+        "note": "Studio live read complete (note: 9224 refused UCu94mInMFosxu3W0H6jlI6Q while 9223 held FOH Studio; read-only via 9223): "
       }
     },
     {
