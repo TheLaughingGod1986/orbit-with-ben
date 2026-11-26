@@ -347139,6 +347139,11 @@
           "at": "2026-11-26T12:50Z",
           "by": "relay",
           "what": "condition verification queued: J3791"
+        },
+        {
+          "at": "2026-11-26T13:10Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T17:50:00Z"
         }
       ],
       "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
@@ -347161,12 +347166,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Independent non-producer Chief (claude returning >= 2026-11-26T12:50:00Z, or codex after Nov 27 16:25 reset) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI green, NAS audio SHA-256 verified), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)",
-        "check_at": "2026-11-26T13:50:46+00:00",
-        "last_recheck": "J3783",
-        "checked_at": "2026-11-26T08:14:19+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3791"
+        "condition": "Independent non-producer Chief (claude returning >= 2026-11-26T17:50:00Z per live origin/claude-heartbeat 12:52:25Z, or codex after Nov 27 16:26 reset) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 CI green, 33 files, 0 media, NAS audio SHA-256 verified), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)",
+        "check_at": "2026-11-26T17:50:00Z",
+        "last_recheck": "J3791",
+        "checked_at": "2026-11-26T13:10:49+00:00",
+        "checked_by": "gemini"
       }
     },
     {
