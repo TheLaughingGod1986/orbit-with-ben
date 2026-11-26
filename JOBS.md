@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3779 | mini | blocked | gemini | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3780 | any | blocked | gemini | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |
 | J3781 | any | blocked | gemini | – | HOS:136 vo · for claude · chief · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
-| J3787 | mini | open | – | – | WW2:006 edit · assembly · Field Order History: add a real music bed from YouTube's free Audio Library, film 006 first, for Ben's watch |  |
+| J3787 | mini | claimed | gemini | 2026-11-26T11:16Z | WW2:006 edit · assembly · Field Order History: add a real music bed from YouTube's free Audio Library, film 006 first, for Ben's watch |  |
 
 Recently finished:
 
