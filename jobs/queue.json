@@ -348722,13 +348722,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-26T15:00Z",
-      "eta": "2026-11-26T17:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T15:00Z",
-      "result": "",
+      "result": "parked for Chief: J3022 condition verified UNMET at 2026-11-26T15:01Z. origin/main 05_Analytics/tests/panels/owb-064-every-planet/ holds only gemini.md; codex.md (J3716, open, Codex out until 27 Nov 16:25), cursor.md (J3718, open and unclaimed though Cursor reset 26 Nov 11:00Z) and DECISION.md (J3719, open, gated after J3718; its 24 h missing-critic cutoff 26 Nov 14:39Z has passed) are absent. Keep J3022 blocked. Chief to run: jobs.py wait J3022 --type dependency --recheck J3797 --check-at 2026-11-26T21:00Z with this condition (claudecode's wait was refused: only the elected Chief may record a condition check). Chief call: J3719 says decide with what's there after 24 h, but its after:J3718 gate still blocks it.",
       "history": [
         {
           "at": "2026-11-26T15:00Z",
@@ -348759,6 +348759,11 @@
           "at": "2026-11-26T15:02Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Verified condition unmet; jobs.py wait --recheck refused: only the elected Chief may record a condition check"
+        },
+        {
+          "at": "2026-11-26T15:02Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3022 condition verified UNMET at 2026-11-26T15:01Z. origin/main 05_Analytics/tests/panels/owb-064-every-planet/ holds only gemini.md; codex.md (J3716, open, Codex out until 27 Nov 16:25), cursor.md (J3718, open and unclaimed though Cursor reset 26 Nov 11:00Z) and DECISION.md (J3719, open, gated after J3718; its 24 h missing-critic cutoff 26 Nov 14:39Z has passed) are absent. Keep J3022 blocked. Chief to run: jobs.py wait J3022 --type dependency --recheck J3797 --check-at 2026-11-26T21:00Z with this condition (claudecode's wait was refused: only the elected Chief may record a condition check). Chief call: J3719 says decide with what's there after 24 h, but its after:J3718 gate still blocks it."
         }
       ],
       "remaining_action": "Chief to record J3022's new wait (worker can't record a recheck)",
