@@ -299722,13 +299722,13 @@
       "stage": "",
       "after": "J3307",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T04:28Z",
-      "eta": "2026-11-26T06:28Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:38Z",
-      "result": "",
+      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3308 for fresh read-only T006 check + T041 arming.",
       "history": [
         {
           "at": "2026-11-21T16:38Z",
@@ -299759,9 +299759,19 @@
           "at": "2026-11-26T04:31Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Blocked: Orbit Studio CDP :9223 is signed out at accounts.google.com after 02:06Z reboot (0 auth cookies)."
+        },
+        {
+          "at": "2026-11-26T04:31Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3308 for fresh read-only T006 check + T041 arming."
+        },
+        {
+          "at": "2026-11-26T04:31Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
         }
       ],
-      "remaining_action": "Wait for Ben sign-in on Mac mini Orbit Studio CDP :9223",
+      "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T006 check on NbW5G1BpPY0 and arm T041",
       "kind": "studio",
       "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
       "progress": {
@@ -299780,7 +299790,12 @@
       },
       "taskKeys": [
         "OWB:006"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3308 for fresh read-only T006 check + T041 arming.",
+        "check_at": "2026-11-26T08:00:00Z"
+      }
     },
     {
       "id": "J3309",
