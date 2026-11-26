@@ -1,5 +1,5 @@
 {
-  "next_id": 3800,
+  "next_id": 3802,
   "jobs": [
     {
       "id": "J0001",
@@ -349103,6 +349103,73 @@
         "WW2:002"
       ],
       "done_ref": "7197493120"
+    },
+    {
+      "id": "J3800",
+      "title": "First-day check at 48 h: \"How the U-Boats Lost Their Safest Hunting Ground\" (qfc6EBStOfo)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "First-day check, 48 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"How the U-Boats Lost Their Safest Hunting Ground\" (`qfc6EBStOfo`), Field Order History, a long. It went live Tue 24 Nov 17:00 London. Use its signed-in Studio browser (CDP 9224).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\". Reach: Impressions and Impressions click-through rate. Engagement: Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record qfc6EBStOfo --hours 48 --views <n> --rank <N> --of 10 --typical <n> --impressions <n> --ctr <%> --avg-pct <%> --likes <n> --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge qfc6EBStOfo` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-26T17:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T17:00Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the long's Studio numbers 48 h after it went live, record them and give the verdict",
+      "due": "2026-11-26T19:00:00Z",
+      "kind": "studio",
+      "launch": "qfc6EBStOfo@48",
+      "plain": "Check how \"How the U-Boats Lost Their Safest Hunting Ground\" is doing 48 hours after it went live"
+    },
+    {
+      "id": "J3801",
+      "title": "Retention autopsy (48h): \"How the U-Boats Lost Their Safest Hunting Ground\" (qfc6EBStOfo)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Retention autopsy at 48h (48 h after publish; Ben, 20 Nov 2026; J3256). Read-only on YouTube except listing fixes our rules already allow (Test & Compare only where none is running). £0.\n\nVideo: \"How the U-Boats Lost Their Safest Hunting Ground\" (`qfc6EBStOfo`), Field Order History, long. Went live Tue 24 Nov 17:00 London.\n\n1. Run the RSI & funnel inspector:\n   `python3 scripts/retention_autopsy.py inspect qfc6EBStOfo --window 48h --channel ww2`\n   Verify all six metrics (showings, CTR, views, average % viewed, 0:30 retention, subscribers per 1,000 views) against both the channel's own same-age median and the niche's small-channel outliers from search research. Show the one-line RSI summary with arrows.\n\n2. Diagnose the funnel in strict order:\n   (1) Showings (topic/search) -> (2) Click-through (title & thumbnail) -> (3) First 30 seconds (hook) -> (4) Mid-film cliffs (pacing/picture) -> (5) End (end screen & next-video handoff).\n\n3. Watch the film at the three steepest retention drops (20 s either side of each drop):\n   Locate the uploaded master MP4 (from UPLOADS.json or NAS archive), cut the three 40 s watch clips with:\n   `python3 scripts/retention_autopsy.py clips qfc6EBStOfo --video <master.mp4> --out-dir <scratch> --window 48h --channel ww2`\n   Gemini 4 Neon (moving video + audio input demonstrated) watches every clip with audio on and records what happens on screen and in the voice at each drop. If YouTube suppressed the curve at low views, say so honestly and watch the three proxy windows (0:00-0:40, typical exit, final 40 s). Never claim to watch or hear from stills or text alone.\n\n4. Write `05_Analytics/ww2/autopsy/qfc6EBStOfo_48h.md` from a clean worktree: RSI one-liner + table, funnel diagnosis, watched drop-point findings, and at most three concrete fixes each marked `this video` (title/thumbnail Test & Compare only if none is running, description, end screen) or `next film` (hook, pacing, picture, length). Add any repeatable lesson with evidence to `05_Analytics/LEARNINGS.md` (or the channel's own LEARNINGS).\n\nGuards: Never replace a running Test & Compare, never edit privacy/schedule/video, never delete anything, £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3800",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-26T17:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T17:00Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run 48h RSI retention autopsy on qfc6EBStOfo, watch 3 steepest drop windows with video+audio, write 05_Analytics/ww2/autopsy/qfc6EBStOfo_48h.md",
+      "due": "2026-11-27T05:00:00Z",
+      "kind": "review",
+      "model": "gemini-argon",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "autopsy": "qfc6EBStOfo@48h",
+      "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes"
     }
   ],
   "focus": [
