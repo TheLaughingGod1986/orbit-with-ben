@@ -348496,9 +348496,14 @@
           "at": "2026-11-26T14:08Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Fetched 10 live public videos via YouTube Data API v3 (3 new: GbELka8Yu9U, T3cBBss1F60, _dVWVUnbDzA)"
+        },
+        {
+          "at": "2026-11-26T14:12Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified all 10 live API descriptions/manifests, all external source URLs (including Crossref Lorenz 1993 + GAO-26-107805), and 7/7 032 Titan chapter timestamps against shot_list_v08, SRT, and master_v02 frames"
         }
       ],
-      "remaining_action": "Verifying descriptions, manifests, external source URLs, and 032/027 chapter timestamps against cuts",
+      "remaining_action": "Checking Studio CDP 9223 state and reconciling with J3782/J2942 read-backs",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -348510,9 +348515,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-26T14:08Z",
+        "at": "2026-11-26T14:12Z",
         "by": "gemini",
         "plan": [
           "Fetch live metadata via YouTube Data API",
@@ -348520,7 +348525,7 @@
           "Inspect YouTube Studio read-only for end screens and Related",
           "Write audit report, commit, and update queue"
         ],
-        "note": "Fetched 10 live public videos via YouTube Data API v3 (3 new: GbELka8Yu9U, T3cBBss1F60, _dVWVUnbDzA)"
+        "note": "Verified all 10 live API descriptions/manifests, all external source URLs (including Crossref Lorenz 1993 + GAO-26-10780"
       },
       "taskKeys": [
         "OWB:032",
