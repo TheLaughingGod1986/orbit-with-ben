@@ -340156,10 +340156,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T17:11Z",
+      "eta": "2026-11-26T17:51Z",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
       "result": "",
@@ -340223,6 +340223,11 @@
           "at": "2026-11-26T17:11Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-26T17:05:00Z has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-26T17:11Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read pilot 2's retention curve, match drops to script and picture, propose any trim to the Chief, write LEARNINGS line 3",
@@ -340233,7 +340238,15 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T17:11Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3705",
