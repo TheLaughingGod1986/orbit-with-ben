@@ -346619,21 +346619,34 @@
           "at": "2026-11-26T07:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Early wake at 2026-11-26T07:51Z before 2026-11-30T10:50Z ElevenLabs reset (logged balance 7,275 cr < 17,766 chars needed); ww2-channel PR #182 still OPEN/unmerged; Pilot 2 48h (26 Nov 17:00Z) & 7d (2 Dec 10:50Z) Rule-12 checks pending. Spent GBP 0 / 0 credits; parking on structured credits wait."
         }
       ],
-      "remaining_action": "Hold until >= 2026-11-30 10:50Z reset, Pilot 2 48h/7d Rule-12 check, and Chief merge of J3774 lock PR, then record NARRATION_v02.txt via API",
+      "remaining_action": "After 2026-11-30T10:50Z reset, PR #182 merge, and Pilot 2 48h/7d Rule-12 checks, verify NARRATION_v02.txt SHA-256 and live balance >= 17,766 chars, then record WW2:015 narration",
       "due": "2026-12-15T18:00:00Z",
       "kind": "vo",
       "plain": "Record locked v02 narration in Ben's voice for WW2 film 015 Higgins boat strictly after 30 Nov reset, Pilot 2 48h/7d Rule-12 check, and Chief merge",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T07:49Z",
+        "of": 4,
+        "at": "2026-11-26T07:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify post-reset time, PR #182 merge, Pilot 2 Rule-12 check and balance",
+          "Generate chapter-split VO, run QA and log spend",
+          "Copy verified masters to NAS",
+          "Open WW2 PR with VO report and status"
+        ],
+        "note": "Early wake at 2026-11-26T07:51Z before 2026-11-30T10:50Z ElevenLabs reset (logged balance 7,275 cr < 17,766 chars needed"
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     },
     {
       "id": "J3777",
