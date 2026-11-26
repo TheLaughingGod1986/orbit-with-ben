@@ -102,10 +102,23 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3801 | mini | open (after J3800) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
-| J3803 | mini | claimed | gemini | 2026-11-26T17:51Z | studio · First-day check at 6 h: "Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) |  |
 
 Recently finished:
 
+- J3803 done: First-day check at 6 h: "Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) ("Why Is Jupiter Beside the Moon on November 30?" (GbELka8Yu9U) · Orbit With Ben · Short · went live Thu 26 Nov 11:30 London
+At 6 h: views 528 · Studio rank 3 of 10 · shown in feed about 1599 (from 507 feed views) · stayed to watch 31.7% · average viewed 71.0%
+Usual for this channel: stayed to watch 33.8%, average viewed 67.0%
+
+Verdict: AHEAD
+  - 528 views at 6 h; the last 10 checked at the same age had 186 (median).
+  - 528 views at 6 h; Studio says the usual for us at this age is 210.
+  - Studio ranks it 3 of 10 against our latest videos at the same age.
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.)
 - J3802 cancelled: Mini re-check: Field Order History Studio (9224) opens FOH's own dashboard after Ben's account switch ()
 - J3800 done: First-day check at 48 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) ("How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) · Field Order History · long · went live Tue 24 Nov 17:00 London
 At 48 h: views 30 · impressions 1211 · click rate 1.0% · average viewed 16.5%
@@ -126,4 +139,3 @@ Done (2026-11-26T17:09Z, gemini): J3800 read-only Studio 48h check, 26 Nov 17:05
 - J3794 done: WW2 002-S1 Short: put it on Ben's watch, then upload for Fri 27 Nov 12:30 linked to pilot 2 (after his OK only) (J3794 complete (never re-uploaded). On existing Ben-OK'd upload ZCnSldSJzME (Private, publishAt 2026-11-27T12:30:00Z, master SHA-256 cee68f66...08c2), set Related video = qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost) in Field Order History Studio, saved, hard-reloaded, and verified both Studio prefetch JSON (videoLinkageShortsAttribution targetExternalVideoId=qfc6EBStOfo, VIDEO_PRIVACY_PRIVATE, scheduledTimeSeconds=1795782600, VIDEO_HAS_ALTERED_CONTENT_YES, VIDEO_MADE_FOR_KIDS_NOT_MFK, SD+HD done, no claims, custom cover preserved) and Data API read-back (processed/private/2026-11-27T12:30:00Z/madeForKids=false/hasCustomThumbnail=true/description link to qfc6EBStOfo; public parent qfc6EBStOfo untouched). Recorded in ww2-channel PR #188 (commit 10bceb5 on top of PR #187, ready for Chief merge). Note: CDP 9223 currently holds FOH (UCu94mInMFosxu3W0H6jlI6Q) while CDP 9224 holds Orbit/HOS/OpptiAI; flagged on thread. £0 spend.)
 - J3793 done: Verify condition for J3775 (Condition MET; J3775 reopened to open queue. Independently verified ww2-channel PR #182 (J3774 locked v02, head a1cd072f) merged 2026-11-26T09:42:50Z by non-producer Chief Claude (Chief sweep, merge commit dd01145e on ww2 origin/main 68b0a84; ARCHIVE_PROVENANCE.md v02 and NARRATION_v02.txt sha256 28acf943... verified on main). All J3775 guards intact (£0, US Federal PD only, no media in git); J3776 untouched.)
 - J3792 done: Verify condition for J3781 (Verified J3781 condition UNMET at 2026-11-26T13:00Z: live origin/claude-heartbeat (12:52:25Z) says claude out until 2026-11-26T17:50:00Z (four runs/day), codex down on usage limit until Nov 27 2026 4:26 PM (retry 13:51:40Z), grok down (last Grok post #7188375055 at 09:43Z, >3 h ago; 12:51Z #7192544054 was relay duties notice); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 so cannot self-PASS or self-merge. Freshly verified HOS PR #799 (d678349009, OPEN/MERGEABLE/CLEAN, 4/4 CI SUCCESS, 2 files), HOS PR #798 (17672ae226, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 32 files, 0 media), locked SHORTS_SCRIPTS_v02.md (SHA-256 e1df5d81...) and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3781 blocked with typed input hold (--recheck J3792, --check-at 2026-11-26T17:50:00Z). Zero spend, no merge, no VO ruling.)
-- J3791 done: Verify condition for J3780 (Verified J3780 condition UNMET at 2026-11-26T13:10Z: live origin/claude-heartbeat (90c89a7e2e, 12:52:25Z) sets claude out=true until 2026-11-26T17:50:00Z (four runs/day), codex down on usage limit until Nov 27 2026 4:26 PM (retry 13:51:40Z), grok not elected (12:51:06Z #7192544054 was relay duties notice, not Grok Bot); gemini is acting Chief but authored J3671/HOS PR #797 and cannot self-PASS or self-merge. Freshly verified HOS PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 33 files, 0 media), locked SHORTS_SCRIPTS_v03.md (SHA-256 1132ad9f...) and all 4 NAS tight WAV/MP3 SHA-256 hashes (10/10 audio files in vo_v03/) intact. Kept J3780 blocked with typed input hold (--recheck J3791, --check-at 2026-11-26T17:50:00Z). Zero spend, no merge, no VO ruling.)
