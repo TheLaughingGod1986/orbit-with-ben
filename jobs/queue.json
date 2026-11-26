@@ -347668,16 +347668,21 @@
           "at": "2026-11-26T09:32Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Auditioned all candidates by ear; locked 4 zero-vocal, zero-drum, attribution-free YouTube Audio Library tracks on NAS (EBB, AETHER, Drifting Memories, Sleep Music No. 1); building 006 v04 and 005 v05 audio remixes (-c:v copy)"
+        },
+        {
+          "at": "2026-11-26T09:47Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Resumed J3787; confirmed J3787-stage.done=0 (006 v04 NAS/UAT/R2 ww2-006-v04 verified SHA-256 3aa60441...); independently auditioned 006 v04 and 005 v05 by ear via read_file (dry 3s open, clean ducking and 3s chapter crossfades, zero vocals/drums)."
         }
       ],
-      "remaining_action": "Mix and audition WW2:006 v04 and WW2:005 v05 with chapter-mapped YouTube Audio Library bed",
+      "remaining_action": "Verify 005 v05 staging, upload ww2-005-v05 to R2, update watch cards/status/LEARNINGS, and merge PRs",
       "due": "2026-12-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 7,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-26T09:32Z",
+        "at": "2026-11-26T09:47Z",
         "by": "gemini",
         "plan": [
           "Pick & download YouTube Audio Library tracks",
@@ -347687,7 +347692,7 @@
           "Mix & stage WW2:005 v05 ahead of 30 Nov watch",
           "Update LEARNINGS, status files & merge PR"
         ],
-        "note": "Auditioned all candidates by ear; locked 4 zero-vocal, zero-drum, attribution-free YouTube Audio Library tracks on NAS ("
+        "note": "Resumed J3787; confirmed J3787-stage.done=0 (006 v04 NAS/UAT/R2 ww2-006-v04 verified SHA-256 3aa60441...); independently"
       },
       "taskKeys": [
         "WW2:006",
