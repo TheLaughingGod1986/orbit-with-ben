@@ -344193,13 +344193,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T01:54Z",
-      "eta": "2026-11-26T03:54Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "",
+      "result": "Acting Chief (gemini) VISUAL STILL PASS on both HOS 013 take-3 start stills (0 cr spent, bal 22650->22650, all 4 pre-Create 0-cr proofs & untouched t1 hashes verified): Row 49 P04_12_lyell_hooker_bundle_t3.png (try 1) CLEAN PASS sha256=edb4234efac204a067fc2213e83eff3e1f09bf977c098c956498759f1a4b4059; Row 63 P06_06a_origin_fifth_edition_t3.png (try 2) PASS sha256=70d54069375bd809ca10125f016f1e3b292d3a83bcb524728f003235beeceba5 (Chief note: tiny ~12px correctly spelled cursive 'Dear' salutation on background letter accepted, zero garbled text; J3760 UAT to verify letter stays flat/static and no morphing). J3760 now UNBLOCKED to pin both approved t3.png SHA-256s and mint 2 Veo 3.1 Quality clips (200 cr max, before 5 Dec).",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -344250,6 +344250,11 @@
           "at": "2026-11-26T01:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T01:54Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) VISUAL STILL PASS on both HOS 013 take-3 start stills (0 cr spent, bal 22650->22650, all 4 pre-Create 0-cr proofs & untouched t1 hashes verified): Row 49 P04_12_lyell_hooker_bundle_t3.png (try 1) CLEAN PASS sha256=edb4234efac204a067fc2213e83eff3e1f09bf977c098c956498759f1a4b4059; Row 63 P06_06a_origin_fifth_edition_t3.png (try 2) PASS sha256=70d54069375bd809ca10125f016f1e3b292d3a83bcb524728f003235beeceba5 (Chief note: tiny ~12px correctly spelled cursive 'Dear' salutation on background letter accepted, zero garbled text; J3760 UAT to verify letter stays flat/static and no morphing). J3760 now UNBLOCKED to pin both approved t3.png SHA-256s and mint 2 Veo 3.1 Quality clips (200 cr max, before 5 Dec)."
         }
       ],
       "remaining_action": "Parked for Chief visual still PASS on rows 49 and 63",
@@ -344266,7 +344271,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/issues/694#issuecomment-7180256469"
     },
     {
       "id": "J3760",
