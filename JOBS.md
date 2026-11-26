@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3801 | mini | claimed | gemini | 2026-11-26T18:09Z | review · `gemini-argon` · Retention autopsy (48h): "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
 | J3804 | mini | open | – | – | review · Verify condition for J3780 |  |
-| J3805 | any | open | – | – | review · Verify condition for J3781 |  |
+| J3805 | mini | open | – | – | review · Verify condition for J3781 |  |
 
 Recently finished:
 

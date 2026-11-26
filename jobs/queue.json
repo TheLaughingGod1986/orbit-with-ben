@@ -349468,7 +349468,7 @@
     {
       "id": "J3805",
       "title": "Verify condition for J3781",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J3781: Independent non-producer Chief still unavailable at 2026-11-26T13:00Z: live origin/claude-heartbeat (2026-11-26T12:52:25Z) reports claude out until 2026-11-26T17:50:00Z (four runs/day); codex usage-limited until Nov 27 2026 4:26 PM; grok down (last post #7188375055 at 09:43Z, >3 h ago); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 and cannot self-PASS or self-merge. HOS PR #799 (d678349009, 4/4 CI SUCCESS) and PR #798 (17672ae226, 6/6 CI SUCCESS, 0 media) remain OPEN/MERGEABLE/CLEAN with script and 4/4 tight NAS SHA-256 hashes verified intact.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3781 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -349488,13 +349488,26 @@
           "at": "2026-11-26T17:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T17:51Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-26T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RE",
       "kind": "review",
       "recheck_of": "J3781",
       "due": "2026-11-26T18:50:53+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
