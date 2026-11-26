@@ -345961,9 +345961,14 @@
           "at": "2026-11-26T05:06Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Opened stage PR ww2-channel#180 (gemini/J3772-ww2-015-higgins-boat, commit b62a973) with 9 files including VIDEO_BACKLOG.json and status.json; channel_check.py PASS"
+        },
+        {
+          "at": "2026-11-26T05:06Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Queued independent facts check J3773 and dependent Claude review/Rule-6 gate J3774 against ww2-channel#180"
         }
       ],
-      "remaining_action": "Queue independent Gemini facts check and dependent Claude review gate",
+      "remaining_action": "All J3772 steps complete",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 015 (Higgins boat / LCVP engineering, replacing Sherman draft v01)",
@@ -345976,7 +345981,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
         "at": "2026-11-26T05:06Z",
         "by": "gemini",
@@ -345987,7 +345992,7 @@
           "Update backlog, status file and open PR",
           "Queue facts check and review gate"
         ],
-        "note": "Opened stage PR ww2-channel#180 (gemini/J3772-ww2-015-higgins-boat, commit b62a973) with 9 files including VIDEO_BACKLOG"
+        "note": "Queued independent facts check J3773 and dependent Claude review/Rule-6 gate J3774 against ww2-channel#180"
       },
       "taskKeys": [
         "WW2:015"
