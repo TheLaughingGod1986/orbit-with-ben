@@ -340454,13 +340454,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T13:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T13:16Z",
-      "result": "parked for Chief: verification done, condition for J3551 is met in part only. J3550 is done and the J3551 review is delivered in WW2 pull request 151 (macbook/J3551 b9e2bb1, base main, clean, mergeable, owner's account, stacked on 87 and 150): NO-GO for Sherman draft v01, no lock, no voice job, no spend. J3551 was not reopened because the work is finished; it stays blocked (jobs.py wait recorded, recheck J3713, next check 19:30Z). Chief: merge pull request 151, rule on the NO-GO and whether to scope the one bounded web photo search that lane could not run, then run jobs.py done J3551 and release or close parent J3486 (and its check J3619), then done J3713.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T13:16Z",
@@ -340501,6 +340501,11 @@
           "at": "2026-11-25T15:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-26T04:51Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief ruling recorded in ww2-channel#179 (merged) and J3772 queued; claiming to close done."
         }
       ],
       "remaining_action": "Chief to merge WW2 pull request 151 and close the Sherman review",
@@ -340516,18 +340521,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-25T13:20Z",
-        "by": "claudecode",
-        "plan": [
-          "Read the held job and its history",
-          "Check the predecessor and remaining gates",
-          "Reopen or re-hold, and report"
-        ],
-        "note": "Held job kept blocked with the real unmet condition: the Chief's merge and ruling on WW2 pull request 151"
-      },
       "escalated_at": "2026-11-25T15:20Z"
     },
     {
