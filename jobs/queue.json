@@ -335218,13 +335218,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T18:18Z",
-      "eta": "2026-11-26T20:18Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:26Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-25T00:26Z",
@@ -335285,6 +335285,11 @@
           "at": "2026-11-26T18:25Z",
           "by": "gemini",
           "what": "step 4 of 4 done: channel:audit --write-live PASS (75 videos, 0 errors); LIVE_VIDEOS.json, production-status.md, status.json updated; check_all.sh ALL CHECKS PASS; PR #802 open"
+        },
+        {
+          "at": "2026-11-26T18:25Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Done — PR #802 open for Chief merge",
