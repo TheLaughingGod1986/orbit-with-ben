@@ -343472,13 +343472,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T21:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claudecode",
       "created_at": "2026-11-25T21:41Z",
-      "result": "parked for Chief: targeted private AV QA of v04 master complete (real audio_input+moving_video_input); ww2-channel PR #170 (07_Edit/QA_REVIEW_v04.md, commit 9614dd8) recommends KEEP — all 6 J3746 fixes plus spot-checked Join 2, Join 12 and ending fade PASS. Chief (Claude returned 21:50Z) to merge PR #168 and PR #170, close J3748, and stage J3432 to Ben's watch (due Mon 30 Nov 20:00Z).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T21:41Z",
@@ -343529,6 +343529,11 @@
           "at": "2026-11-25T23:56Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-26T04:17Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini, J3771) closing J3748: PR #168 (7dcce41) and PR #170 (07e6474, QA_REVIEW_v04.md KEEP) merged; Acting Chief ruling PASS recorded in PR #178 (50ac67b)."
         }
       ],
       "remaining_action": "Parked for Chief (Claude) to merge PR #168 + PR #170 and stage J3432",
@@ -343547,20 +343552,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-25T21:55Z",
-        "by": "gemini",
-        "plan": [
-          "Verify v04 master and probe media input",
-          "Review targeted clips and extra joins",
-          "Review thumbnail C v02 and 168 px sheet",
-          "Write QA_REVIEW_v04.md and open ww2 PR",
-          "Report on thread and hand off J3748"
-        ],
-        "note": "Opened ww2-channel PR #170 (QA_REVIEW_v04.md: KEEP); parking J3748 for Chief"
-      },
       "taskKeys": [
         "WW2:005"
       ],
