@@ -348812,13 +348812,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-26T15:49Z",
-      "eta": "2026-11-26T17:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T15:46Z",
-      "result": "",
+      "result": "parked for Chief: J2040 condition NOT MET (evidence PR #1344). All 8 Mini ~/.codex hashes unchanged, PR490 still draft f521bcd3f1, no operator confirmation on #954 through 7196742962 or HOS #694/#180. jobs.py wait J2040 refused for a worker (only holder codex or Chief). Chief: run the wait command in jobs/reviews/J3798/REVIEW.md (recheck J3798, check-at 2026-11-27T13:00Z), merge #1344, close J3798.",
       "history": [
         {
           "at": "2026-11-26T15:46Z",
@@ -348859,6 +348859,11 @@
           "at": "2026-11-26T15:52Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: Evidence PR #1344 (jobs/reviews/J3798/REVIEW.md): NOT MET. jobs.py wait J2040 refused for a worker (holder codex / Chief only)"
+        },
+        {
+          "at": "2026-11-26T15:53Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J2040 condition NOT MET (evidence PR #1344). All 8 Mini ~/.codex hashes unchanged, PR490 still draft f521bcd3f1, no operator confirmation on #954 through 7196742962 or HOS #694/#180. jobs.py wait J2040 refused for a worker (only holder codex or Chief). Chief: run the wait command in jobs/reviews/J3798/REVIEW.md (recheck J3798, check-at 2026-11-27T13:00Z), merge #1344, close J3798."
         }
       ],
       "remaining_action": "Chief: record J2040 wait --recheck J3798 (command in PR #1344), merge PR #1344, close J3798",
