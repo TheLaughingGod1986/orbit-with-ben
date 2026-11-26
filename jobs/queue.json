@@ -347598,9 +347598,14 @@
           "at": "2026-11-26T18:22Z",
           "by": "codex",
           "what": "step 1 of 4 done: Both PRs are owner-authored, based on main, unchanged, and CI green; no prior VO ruling found. Review worktree ready."
+        },
+        {
+          "at": "2026-11-26T18:23Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: PR 799 reviewed and merged b6a9d05e; 10 word tests and full check_all PASS. Cornell pronunciation reference supports alias. All 10 NAS audio hashes match."
         }
       ],
-      "remaining_action": "Verify the word-check correction and exact NAS masters",
+      "remaining_action": "Rerun both master voice checks and document the unresolved listening check",
       "due": "2026-12-05T18:00:00Z",
       "for": "codex",
       "kind": "chief",
@@ -347617,9 +347622,9 @@
       },
       "model": "gpt-6-astra",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-26T18:22Z",
+        "at": "2026-11-26T18:23Z",
         "by": "codex",
         "plan": [
           "Read evidence and authority",
@@ -347627,7 +347632,7 @@
           "Verify voice masters",
           "Record ruling and handoff"
         ],
-        "note": "Both PRs are owner-authored, based on main, unchanged, and CI green; no prior VO ruling found. Review worktree ready."
+        "note": "PR 799 reviewed and merged b6a9d05e; 10 word tests and full check_all PASS. Cornell pronunciation reference supports ali"
       }
     },
     {
