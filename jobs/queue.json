@@ -348347,13 +348347,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T13:20Z",
-      "eta": "2026-11-26T14:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
-      "result": "",
+      "result": "Waiting for: Waiting on Ben's watch OK on board card WW2:002-S1 (J3566, uboat_surface_short_v01.mp4 v01, SHA-256 cee68f66...08c2, Play link live and verified). Card due Thu 26 Nov 21:00 London; upload cutoff Fri 27 Nov 10:30 London. Only after Ben's OK (approved_from set) upload Private for Fri 27 Nov 12:30 London with Related video qfc6EBStOfo; if no OK by Fri 27 Nov 10:30 London, do not upload and move to next free 12:30 slot. (Note: Studio CDP :9224 sign-in may also be needed before upload.)",
       "history": [
         {
           "at": "2026-11-26T13:18Z",
@@ -348374,9 +348374,19 @@
           "at": "2026-11-26T13:26Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Copied NAS master uboat_surface_short_v01.mp4 (17,186,020 B, SHA-256 cee68f668329146c54ab6836c898cfdda85c6ca8a2f1949b8be06eca2dfb08c2) to WW2 UAT; board_publish pushed 61003c9b (watch id ww2-j3566-v01-3e63bb65dc02b04e172d, HTTP 302 -> R2 200 video/mp4 17,186,020 B); board_check.py ok=true (expected 13, problems=[])"
+        },
+        {
+          "at": "2026-11-26T13:26Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Waiting on Ben's watch OK on board card WW2:002-S1 (J3566, uboat_surface_short_v01.mp4 v01, SHA-256 cee68f66...08c2, Play link live and verified). Card due Thu 26 Nov 21:00 London; upload cutoff Fri 27 Nov 10:30 London. Only after Ben's OK (approved_from set) upload Private for Fri 27 Nov 12:30 London with Related video qfc6EBStOfo; if no OK by Fri 27 Nov 10:30 London, do not upload and move to next free 12:30 slot. (Note: Studio CDP :9224 sign-in may also be needed before upload.)"
+        },
+        {
+          "at": "2026-11-26T13:26Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-27T10:30:00Z"
         }
       ],
-      "remaining_action": "Wait for Ben's watch OK on WW2:002-S1 (cutoff Fri 27 Nov 10:30 London), then upload Private for Fri 27 Nov 12:30 London linked to qfc6EBStOfo",
+      "remaining_action": "Upload WW2:002-S1 Private for Fri 27 Nov 12:30 London linked to qfc6EBStOfo after Ben's watch OK (or defer if no OK by Fri 27 Nov 10:30)",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348398,7 +348408,12 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Waiting on Ben's watch OK on board card WW2:002-S1 (J3566, uboat_surface_short_v01.mp4 v01, SHA-256 cee68f66...08c2, Play link live and verified). Card due Thu 26 Nov 21:00 London; upload cutoff Fri 27 Nov 10:30 London. Only after Ben's OK (approved_from set) upload Private for Fri 27 Nov 12:30 London with Related video qfc6EBStOfo; if no OK by Fri 27 Nov 10:30 London, do not upload and move to next free 12:30 slot. (Note: Studio CDP :9224 sign-in may also be needed before upload.)",
+        "check_at": "2026-11-27T10:30:00Z"
+      }
     }
   ],
   "focus": [
