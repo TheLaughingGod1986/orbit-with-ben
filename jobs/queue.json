@@ -351425,16 +351425,21 @@
           "at": "2026-11-26T23:54Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T23:56Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: v04 sha256 5ea74805 verified; viewer test + claims notes read"
         }
       ],
-      "remaining_action": "Reading v04 narration and viewer test",
+      "remaining_action": "Writing NARRATION_v05 from v04",
       "due": "2026-11-29T18:00:00Z",
       "kind": "script",
       "plain": "Bring the Operation Pedestal story into action within the first minute",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T23:54Z",
+        "at": "2026-11-26T23:56Z",
         "by": "claudecode",
         "plan": [
           "Read v04 + viewer test",
@@ -351442,7 +351447,8 @@
           "Sync SCRIPT.md, Short, status",
           "Validate parity/hash/counts",
           "Commit, PR, report"
-        ]
+        ],
+        "note": "v04 sha256 5ea74805 verified; viewer test + claims notes read"
       },
       "rerouted_from": {
         "needs": "any",
