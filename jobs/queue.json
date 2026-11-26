@@ -350369,13 +350369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-26T20:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T20:22Z",
-      "result": "parked for Chief: live fixes — completed local HOS audit a43a4f59 on codex/j3810-hos-listing-audit at /Volumes/MiniWork/scratch/j3810-hos-listing-audit; exact Gravity handoff belongs to J3501. Automatic approval review rejected branch push as potentially sensitive evidence to an unverified remote; no retry or indirect publication. Audit checks pass; no YouTube changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T20:22Z",
@@ -350421,23 +350421,16 @@
           "at": "2026-11-26T20:42Z",
           "by": "codex",
           "what": "remaining action: Record accepted audit and existing Gravity follow-up; keep rejected audit publication local."
+        },
+        {
+          "at": "2026-11-26T20:42Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling KEEP: reviewed local audit a43a4f59 and whitelisted evidence; verified all 21 chapter-file hashes. No new public listing fixes. Gravity end screen missing, Short A Related None, Short B unverified. Existing J3501 reopened with scoped finish, unchanged schedules and public recheck 3 Dec 18:05Z. This completes read-only audit scope; publication rejection remains, no audit branch push or indirect publication authorized."
         }
       ],
       "remaining_action": "Record accepted audit and existing Gravity follow-up; keep rejected audit publication local.",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-26T20:34Z",
-        "by": "codex",
-        "plan": [
-          "Read current listings",
-          "Check listing gaps",
-          "Record exact fixes and handoff"
-        ],
-        "note": "Audit complete in HOS worktree /Volumes/MiniWork/scratch/j3810-hos-listing-audit, branch codex/j3810-hos-listing-audit, "
-      },
       "taskKeys": [
         "HOS:001",
         "HOS:002",

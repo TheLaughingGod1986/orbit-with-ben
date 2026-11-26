@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3807 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3808 | mini | claimed | gemini | 2026-11-26T21:36Z | WW2:002 edit · studio · WW2 pilot 2: two Studio-editor cuts (04:27.50-05:05.30 and 05:37.10-06:25.10), then chapters, captions and end screen |  |
-| J3810 | any | blocked | codex | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3810 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
