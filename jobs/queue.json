@@ -344254,6 +344254,11 @@
           "at": "2026-11-26T02:39Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-18T18:00:00Z"
+        },
+        {
+          "at": "2026-11-26T03:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked J3758 for Chief Short PASS",
@@ -344290,7 +344295,8 @@
         "type": "ben",
         "condition": "Chief PASS (5-part multimodal review, PR #1333 merged 88bf9ce54d, jobs/reviews/J3758/REVIEW.md eedef9bd25). Awaiting Ben UAT phone watch and board approval on OWB UAT/032_short_strike_match_fire_v01.mp4 (sha256 494f092b857df509e419b2b04967c337acde9af88d362725cd2e94e34acf2386) and cover (11410819204f). After Ben approves, queue upload package with complete en-GB SRT (all 73 words incl. 9-14s) for earliest open Mon/Wed/Fri/Sat 11:30Z slot (not 18 Dec, held for 033 Short 1).",
         "check_at": "2026-12-18T18:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-26T03:20Z"
     },
     {
       "id": "J3759",
@@ -344599,6 +344605,11 @@
           "at": "2026-11-26T00:34Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3487's condition is verified MET, but jobs.py refuses a worker ('Only the elected Chief may release a verified hold'; wait --recheck also refused). Evidence: J3750 published the recovered Battle of the Bulge topic checkpoint as ww2-channel PR #173 (open, mergeable, no reviews; head macbook/J3487-bulge 942aa5f781aad96f05368040de6a6c3ed88be599, one commit on origin/main e923ac1). My own read and pattern scan of the full 264-line diff: no private data. New film folder status.json air is 2026-12-31, same as main (PR #95). Chief to do: (1) review and merge or reject PR #173; (2) jobs.py reopen J3487 with this evidence (or wait J3487 --recheck J3762), then finish J3762. Still owed inside J3487 before the Wed 16 Dec 18:00 lock: archive 50% screen-time coverage (unproven), topic reviewer verdict, script, sources, Gemini claims check, Claude first-300-words test. No spend, upload or schedule change made."
+        },
+        {
+          "at": "2026-11-26T03:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief to reopen J3487 and review ww2-channel PR #173 (a worker may not release or update the hold)",
@@ -344629,7 +344640,8 @@
       },
       "taskKeys": [
         "WW2:016"
-      ]
+      ],
+      "escalated_at": "2026-11-26T03:20Z"
     },
     {
       "id": "J3763",
@@ -344704,6 +344716,11 @@
           "at": "2026-11-26T02:55Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-30T18:00:00Z"
+        },
+        {
+          "at": "2026-11-26T03:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Await Ben phone UAT approval on HOS 008 Short s04 v01; on approval, package and schedule into earliest open Tue/Fri/Sat/Sun 11:30 London slot after YqCWYlv_LCY is public",
@@ -344740,7 +344757,8 @@
         "type": "ben",
         "condition": "Ben phone UAT approval on board for HOS 008 Short s04 v01 (hos_008_s04_no_patent_v01.mp4, sha256 e162a0fbe05e519ae822aededabf62172396594d4f564081d539db724f03809c; HOS PR #793 merged de690e9e; REVIEW.md 30e9b39dc0)",
         "check_at": "2026-11-30T18:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-26T03:20Z"
     },
     {
       "id": "J3764",
