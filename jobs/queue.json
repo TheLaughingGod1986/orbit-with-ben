@@ -343059,13 +343059,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:17Z",
-      "eta": "2026-11-26T06:17Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:23Z",
-      "result": "",
+      "result": "Acting Chief (gemini, J3771): J3745 full 14:46 private AV QA of v03 (QA_REVIEW_J3745.md) merged via ww2-channel PR #168 (7dcce41; auto-merged PR #166, superseded PR #167 closed). All 5 blockers + G10e polish resolved in J3746 v04 and verified KEEP in J3748 PR #170 (07e6474).",
       "history": [
         {
           "at": "2026-11-25T20:23Z",
@@ -343161,6 +343161,11 @@
           "at": "2026-11-26T04:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:17Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, J3771): J3745 full 14:46 private AV QA of v03 (QA_REVIEW_J3745.md) merged via ww2-channel PR #168 (7dcce41; auto-merged PR #166, superseded PR #167 closed). All 5 blockers + G10e polish resolved in J3746 v04 and verified KEEP in J3748 PR #170 (07e6474)."
         }
       ],
       "remaining_action": "Parked for Chief (Codex returned 21:08Z) to merge ww2-channel PR #167 and queue £0 v04 fix",
@@ -343190,7 +343195,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "7dcce41"
     },
     {
       "id": "J3746",
