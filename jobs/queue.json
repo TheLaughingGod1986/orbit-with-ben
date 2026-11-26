@@ -299921,19 +299921,31 @@
           "at": "2026-11-26T04:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:39Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Wait for the prior review to be published, then check Studio and test the approved thumbnail",
+      "remaining_action": "Verify J3307/J3382 preconditions, file hash, and read-only Studio state on CDP 9223",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T04:38Z",
+        "of": 4,
+        "at": "2026-11-26T04:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify preconditions and file hash",
+          "Fresh read-only Studio check on REXYxuLOBoI",
+          "Arm T043 and verify reload Test running",
+          "Update THUMB_LEDGER and publish"
+        ]
+      },
+      "taskKeys": [
+        "OWB:005"
+      ]
     },
     {
       "id": "J3311",
