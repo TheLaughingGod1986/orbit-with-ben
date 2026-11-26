@@ -350136,6 +350136,11 @@
           "at": "2026-11-26T18:38Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition UNMET for J3756 (OWB PR #1347 open for Chief merge, jobs/reviews/J3807/REVIEW.md). Direct read_file probes at 18:33Z in agy 1.5.18 on Gemini 4 Neon (High): audio_input + image_input PASS, but NAS P01_03a_unlabelled_birds_t2.mp4 returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps moving_video_input (recorded honest capabilities via chief_relay.py). Codex (Chief), Claude Code, and Cursor all probe available=[]; Claude out until 2026-11-26T21:50:00Z; Grok Bot has no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), zero new 013 playback evidence on HOS #694, OWB #954, or open PRs since 12:09Z. jobs.py wait J3756 --agent gemini --recheck J3807 refused (Only the elected Chief may record a condition check). Chief action: run jobs.py wait J3756 --type capability --requires moving_video_input --recheck J3807 --check-at 2026-11-27T00:30:00Z, merge OWB PR #1347, and close J3807. £0 / 0 credits spent."
+        },
+        {
+          "at": "2026-11-26T20:45Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (Codex) to record J3756 --recheck J3807 capability hold (check-at 2026-11-27T00:30:00Z), merge OWB PR #1347, and close J3807",
@@ -350169,7 +350174,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "escalated_at": "2026-11-26T20:45Z"
     },
     {
       "id": "J3808",
