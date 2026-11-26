@@ -347750,7 +347750,7 @@
       "title": "WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, with the long as its Related video from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The 004-S1 Short `l7P2DdGCr-A` (J3753) was scheduled under the old plan for Mon 30 Nov 12:30, the day before film 004 airs on Tue 1 Dec.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** change `l7P2DdGCr-A`'s scheduled publish from Mon 30 Nov 12:30 to **Wed 2 Dec 2026 12:30 London** (`2026-12-02T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **After film 004's long is Public (Tue 1 Dec 17:00 London) and before 2 Dec 12:30:** set the Short's Related video to the 004 long and read it back. If the long slips its slot, move the Short to the day after the long's new air date instead.\n3. **Records:** ww2-channel 004 `status.json` (shorts `004-S1`: publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule change on this private Short only. No re-upload, no change to any public video, no visibility change. £0.",
+      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, with the long as its Related video from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The 004-S1 Short `l7P2DdGCr-A` (J3753) was scheduled under the old plan for Mon 30 Nov 12:30, the day before film 004 airs on Tue 1 Dec.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** change `l7P2DdGCr-A`'s scheduled publish from Mon 30 Nov 12:30 to **Wed 2 Dec 2026 12:30 London** (`2026-12-02T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **After film 004's long is Public (Tue 1 Dec 17:00 London) and before 2 Dec 12:30:** set the Short's Related video to the 004 long and read it back. If the long slips its slot, move the Short to the day after the long's new air date instead.\n3. **Records:** ww2-channel 004 `status.json` (shorts `004-S1`: publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule change on this private Short only. No re-upload, no change to any public video, no visibility change. £0.\n\n**Also, in the same Studio pass as the Related video (Claude, 26 Nov; `SHORTS_PLAN_2026-12.md` section 0, \"three ways\"):** add the film's link to the Short's **description**. Edit its \"Watch the full ...\" line so it gives the title *Mark 14 Torpedo: Why Perfect Hits Failed* and ends with `https://www.youtube.com/watch?v=<the WW2:004 long's id>`. The 26 Nov audit found the link missing; the on-screen end prompt is already in the video. Read both back, and record the description link in the PR.",
       "ref": "",
       "film": "WW2:004",
       "stage": "upload",
@@ -347808,6 +347808,11 @@
           "at": "2026-11-26T10:00Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-01T17:05:00Z"
+        },
+        {
+          "at": "2026-11-26T12:45Z",
+          "by": "claude",
+          "what": "Chief: added the description link step (three ways to point to the film)."
         }
       ],
       "remaining_action": "Verify l7P2DdGCr-A in Studio 9224 after reload, set Related video to Public WW2:004 long (or reschedule if 004 slipped), and update 004/status.json + UPLOADS.json",
@@ -347941,7 +347946,7 @@
       "title": "WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, linked to it from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The Ben-approved 003-S3 Short `RtEMDrfeKR8` (J3752; Ben's OK at 25 Nov 22:57Z) is scheduled under the old plan for Sat 28 Nov 12:30, 4.5 hours before the B-29 long `RqYjADxvJy8` goes public.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** move `RtEMDrfeKR8`'s scheduled publish to **Sun 29 Nov 2026 12:30 London** (`2026-11-29T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **Sat 28 Nov after 17:00 London, once `RqYjADxvJy8` is Public:** set the Short's Related video to `RqYjADxvJy8` before it goes out on Sunday, and read it back. This replaces the deferred step in J3655.\n3. **Records:** ww2-channel 003 `status.json` (shorts `003-S3`: videoId, publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule and Related-video change on this private Short only. No re-upload, no visibility change, no change to the long's schedule. £0.",
+      "body": "**Why.** ww2 rule 1 changed on 26 Nov (Ben, in chat: \"I don't want the new channel to fall into that trap again where we just get views on shorts and hardly any views on longs at all\"). A long's one Short now airs at 12:30 London **the day after** the long, linked to it from the first minute (`00_Brand/SHORTS_PLAN_2026-12.md` section 0). The Ben-approved 003-S3 Short `RtEMDrfeKR8` (J3752; Ben's OK at 25 Nov 22:57Z) is scheduled under the old plan for Sat 28 Nov 12:30, 4.5 hours before the B-29 long `RqYjADxvJy8` goes public.\n\n**Do (Mini, Field Order History Studio on 9224; the video is Private, so never play it).**\n1. **Now:** move `RtEMDrfeKR8`'s scheduled publish to **Sun 29 Nov 2026 12:30 London** (`2026-11-29T12:30:00Z`). Keep it Private and scheduled. Change nothing else. Read it back in Studio and the Data API.\n2. **Sat 28 Nov after 17:00 London, once `RqYjADxvJy8` is Public:** set the Short's Related video to `RqYjADxvJy8` before it goes out on Sunday, and read it back. This replaces the deferred step in J3655.\n3. **Records:** ww2-channel 003 `status.json` (shorts `003-S3`: videoId, publishAt, related_video) and `UPLOADS.json`, in one PR.\n\n**Guards.** Schedule and Related-video change on this private Short only. No re-upload, no visibility change, no change to the long's schedule. £0.\n\n**Also, in the same Studio pass as the Related video (Claude, 26 Nov; `SHORTS_PLAN_2026-12.md` section 0, \"three ways\"):** add the film's link to the Short's **description**. Edit its \"Watch the full ...\" line so it gives the title *B-29: Why It Cost More Than the Atomic Bomb* and ends with `https://www.youtube.com/watch?v=<RqYjADxvJy8>`. The 26 Nov audit found the link missing; the on-screen end prompt is already in the video. Read both back, and record the description link in the PR.",
       "ref": "",
       "film": "WW2:003",
       "stage": "upload",
@@ -347979,6 +347984,11 @@
           "at": "2026-11-26T12:43Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Moved RtEMDrfeKR8 publishAt 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (containsSyntheticMedia=true, Private, all fields unchanged, RqYjADxvJy8 untouched). Studio 9224 still signed out."
+        },
+        {
+          "at": "2026-11-26T12:45Z",
+          "by": "claude",
+          "what": "Chief: added the description link step (three ways to point to the film)."
         }
       ],
       "remaining_action": "Writing J3790 reschedule receipt, updating WW2 003 status.json and UPLOADS.json in clean PR",
