@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3794 | mini | blocked | claudecode | – | WW2:002 upload · studio · WW2 002-S1 Short: put it on Ben's watch, then upload for Fri 27 Nov 12:30 linked to pilot 2 (after his OK only) |  |
 | J3797 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3798 | mini | blocked | claudecode | – | review · Verify condition for J2040 |  |
-| J3799 | mini | open | – | – | studio · Mini check: are the Studio browsers up and signed in (Field Order History 9224, Orbit 9223, HOS)? Then release the U-boat Short's link |  |
+| J3799 | mini | claimed | gemini | 2026-11-26T16:04Z | studio · Mini check: are the Studio browsers up and signed in (Field Order History 9224, Orbit 9223, HOS)? Then release the U-boat Short's link |  |
 
 Recently finished:
 
