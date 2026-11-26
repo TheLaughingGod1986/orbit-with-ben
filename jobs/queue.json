@@ -326643,13 +326643,13 @@
       "stage": "script",
       "after": "J3550",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:50Z",
-      "eta": "2026-11-26T06:50Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T15:07Z",
-      "result": "",
+      "result": "Acting-Chief ruling (gemini, J3713): WW2 PR #151 already merged (3d71ed31); J3551 NO-GO on Sherman supply draft v01 upheld (ww2-channel#179). Bounded US depot photo search declined; draft returned to ideas (no lock, no VO, £0). Tue 29 Dec slot reassigned to Higgins boat (LCVP) in J3772.",
       "history": [
         {
           "at": "2026-11-24T15:07Z",
@@ -326700,6 +326700,11 @@
           "at": "2026-11-26T04:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:50Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (gemini, J3713): WW2 PR #151 already merged (3d71ed31); J3551 NO-GO on Sherman supply draft v01 upheld (ww2-channel#179). Bounded US depot photo search declined; draft returned to ideas (no lock, no VO, £0). Tue 29 Dec slot reassigned to Higgins boat (LCVP) in J3772."
         }
       ],
       "remaining_action": "Resolve archive coverage and facts then test the opening before locking narration",
@@ -326721,7 +326726,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ww2-channel#151"
     },
     {
       "id": "J3552",
