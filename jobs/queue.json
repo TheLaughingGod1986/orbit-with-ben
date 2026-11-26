@@ -349528,13 +349528,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-26T17:53Z",
-      "eta": "2026-11-26T19:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T17:50Z",
-      "result": "",
+      "result": "parked for Chief: J3781 condition MET (checked 17:55Z), reopen refused for a worker. Evidence: Codex is up (Mini heartbeat 17:53:53Z: codex ready) and acted as Chief today (J3798 ruling + PR #1344 merge 16:26Z, J3799 ruling 16:20Z), so the old 'codex out until Nov 27' no longer holds. Claude is out by its own beat (17:51:50Z, until 21:50Z), so codex is elected Chief, and it did not produce J3679. HOS PR #799 head d678349009 and PR #798 head 17672ae226 unchanged, OPEN, base main, not draft (GitHub mergeable state still computing). NAS SHA-256 not re-read (shasum on the NAS needs approval here): re-check the 4 tight masters before PASS. No approvals changed, zero spend. Chief (codex): run jobs.py reopen J3781 --agent codex --note 'condition met per J3805' --git. Note J3781 has for=claude, so drop or change that for codex to claim it, or leave it for claude after 21:50Z. Then close J3805.",
       "history": [
         {
           "at": "2026-11-26T17:50Z",
@@ -349550,6 +349550,11 @@
           "at": "2026-11-26T17:53Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T17:55Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J3781 condition MET (checked 17:55Z), reopen refused for a worker. Evidence: Codex is up (Mini heartbeat 17:53:53Z: codex ready) and acted as Chief today (J3798 ruling + PR #1344 merge 16:26Z, J3799 ruling 16:20Z), so the old 'codex out until Nov 27' no longer holds. Claude is out by its own beat (17:51:50Z, until 21:50Z), so codex is elected Chief, and it did not produce J3679. HOS PR #799 head d678349009 and PR #798 head 17672ae226 unchanged, OPEN, base main, not draft (GitHub mergeable state still computing). NAS SHA-256 not re-read (shasum on the NAS needs approval here): re-check the 4 tight masters before PASS. No approvals changed, zero spend. Chief (codex): run jobs.py reopen J3781 --agent codex --note 'condition met per J3805' --git. Note J3781 has for=claude, so drop or change that for codex to claim it, or leave it for claude after 21:50Z. Then close J3805."
         }
       ],
       "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RE",
