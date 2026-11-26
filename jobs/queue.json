@@ -344899,6 +344899,11 @@
           "at": "2026-11-26T12:00Z",
           "by": "relay",
           "what": "condition verification queued: J3789"
+        },
+        {
+          "at": "2026-11-26T12:09Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T18:30:00Z"
         }
       ],
       "remaining_action": "Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
@@ -344926,12 +344931,14 @@
       },
       "hold": {
         "type": "capability",
-        "condition": "Acting Chief (gemini, J3747) verified all 6 take-2 plates (rows 3, 10, 24, 28, 47, 54) visually clean on 0.5s contact sheets and 1-fps .mp4 frames, with all 6 take-1 defects resolved. However, direct read_file probe on NAS .mp4 clips in agy returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps playback required by HOS Playbook s5 / desk #7019983519 / J3178 (claudecode, codex, cursor available=[]; relay colour-block probe false-positives from 1-fps stills). Hold keep=null PENDING_PLAYBACK_REVIEW alongside J3178 (10 pass-1 rows 56-62, 64-66) until genuine continuous 24-fps moving_video_input is available or Claude/Ben resolves the playback lane.",
-        "check_at": "2026-11-26T13:00:38+00:00",
+        "condition": "J3789 acting-Chief ruling (OWB PR #1343 merged, commit 8264b0f3bf, jobs/reviews/J3789/REVIEW.md): condition unmet. Direct read_file probe on NAS take-2 clip P01_03a_unlabelled_birds_t2.mp4 (7.917s, 24 fps, used 0.00-4.00s) in agy 1.5.18 on Gemini 4 Neon (High) still returns only 8 discrete 1-fps integer-second static frames (00:00..00:07), not continuous 24-fps moving-video playback required by HOS Playbook s5 / desk #7019983519 / J3178 / J3756 (audio_input and image_input demonstrated; relay 11:46:51Z 2-second colour-block probe false-positives from 1-fps stills). Codex (usage limit Nov 27), Claude Code (Fable limit Dec 2), and Cursor (11:55:32Z probe) all have available=[]; Claude returns 2026-11-26T12:50:00Z (cloud-only); Grok Bot UP last in chain with no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 hashes match History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json (keep=false / PENDING_REVIEW); zero new continuous-playback evidence or Claude/Ben playback-lane resolution on HOS #694, OWB #954, or open PRs. Keep J3756 held pending continuous 24-fps moving_video_input review of take-2 rows 3, 10, 24, 28, 47, 54 alongside J3178 (rows 56-62, 64-66); no playback PASS claimed, no minting or assembly authorised.",
+        "check_at": "2026-11-26T18:30:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "recheck_task": "J3789"
+        "last_recheck": "J3789",
+        "checked_at": "2026-11-26T12:09:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
