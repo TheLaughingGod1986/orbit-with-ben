@@ -347496,13 +347496,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-26T08:23Z",
-      "eta": "2026-11-26T09:23Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T08:21Z",
-      "result": "",
+      "result": "Read-only HOS live and scheduled listing audit complete (2026-11-26): 0 live Studio fixes needed, 0 blocking repo-record deltas. Verified via 2026-11-26 daily YouTube API snapshot (06:40:29Z), refreshed LIVE_VIDEOS.json (01:42:39Z, J3767/PR #796), merged delivery receipts, repo packages, 8/8 external non-YouTube source URLs (HTTP 200), and check_all.sh (ALL CHECKS PASS); zero public /watch or /shorts pages fetched (Ben 24 Nov rule). 50/50 active parity (7 public longs, 36 public Shorts 19-27 s, 7 active scheduled), 10/10 long chapter parity (001-009, 099), all J3765 repo deltas closed by J3767; scheduled Studio finish remains tracked in J3649 (008 Related after 18:00Z) and J3501 (009). Audit saved at 00_Brand/Channel-Setup/audits/live_fixes/2026-11-26_J3786.md on macbook/J3786 -> HOS PR #800 (open for Chief merge). Nothing changed in Studio; spend £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-26T08:21Z",
@@ -347528,6 +347528,11 @@
           "at": "2026-11-26T08:28Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-26T08:30Z",
+          "by": "macbook-2",
+          "what": "done: Read-only HOS live and scheduled listing audit complete (2026-11-26): 0 live Studio fixes needed, 0 blocking repo-record deltas. Verified via 2026-11-26 daily YouTube API snapshot (06:40:29Z), refreshed LIVE_VIDEOS.json (01:42:39Z, J3767/PR #796), merged delivery receipts, repo packages, 8/8 external non-YouTube source URLs (HTTP 200), and check_all.sh (ALL CHECKS PASS); zero public /watch or /shorts pages fetched (Ben 24 Nov rule). 50/50 active parity (7 public longs, 36 public Shorts 19-27 s, 7 active scheduled), 10/10 long chapter parity (001-009, 099), all J3765 repo deltas closed by J3767; scheduled Studio finish remains tracked in J3649 (008 Related after 18:00Z) and J3501 (009). Audit saved at 00_Brand/Channel-Setup/audits/live_fixes/2026-11-26_J3786.md on macbook/J3786 -> HOS PR #800 (open for Chief merge). Nothing changed in Studio; spend £0 / 0 credits."
         }
       ],
       "remaining_action": "Writing 2026-11-26_J3786.md audit report, opening HOS PR, finishing job, and posting thread report",
