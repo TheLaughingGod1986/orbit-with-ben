@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3815 | mini | claimed | codex | 2026-11-27T01:42Z | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3816 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3817 | mini | open (after J3719) | – | – | 064 thumbs · thumb · OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts | J3719 |
+| J3818 | mini | open (after J3817) | – | – | 064 thumbs · review · OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock | J3719 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3818,
+  "next_id": 3819,
   "jobs": [
     {
       "id": "J0001",
@@ -351139,6 +351139,36 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s"
+    },
+    {
+      "id": "J3818",
+      "title": "OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Independent exact-file review of OWB:064 rebuilt J3719_v02 thumbnails, THUMB_LEDGER.json row T045, and SHOT_LIST_v02.md against 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md.\n\nScope: Read-only QA review (£0 spend, no upload, no YouTube Studio changes, no merges).\n\nChecklist to verify and record in jobs/reviews/<this_job_id>/REVIEW.md (verdict: KEEP or FIX):\n1. Exact files & SHA-256 hashes on /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/ match THUMB_SCORES_v02.json and THUMB_LEDGER.json row T045 (status remains \"proposed\").\n2. Visual inspection at full size and 168x94 phone size (064_thumbs_ABC_v02_preview_sheet.jpg):\n   - Zero Orbit character; bottom-right duration zone clear; thumb_preview.py long --score PASS on all three;\n   - Variant A (\"8 EXTREME WORLDS\"): deep-navy backdrop (no periwinkle/dots/black halos), Jupiter+Saturn hierarchy, Apollo 17 Earth scale cue, real Mariner 10 Venus (PIA23791 right globe, not simulated PIA00271), top-band text off globes;\n   - Variant B (\"464°C\" | \"-224°C\"): real Mariner 10 Venus (PIA23791, sat ~150-165, does not read as Sun) vs real Voyager 2 Uranus (PIA18182, not Neptune PIA01492), text cleanly in top band off globes and clear of white seam, bold readable minus sign at 168x94, Apollo 17 Earth scale cue;\n   - Variant C (\"REAL NASA PHOTOS\"): single uncropped Cassini Saturn-and-rings hero frame (Rule 19, no 3-panel triptych, no black-disc artifact or top-bar leak), crisp Apollo 17 Earth scale cue, top-band text off Saturn and rings.\n3. Title/thumbnail pairing check: zero word repetition between Lead Title A (\"Every Planet Explained in 12 Minutes (Mercury to Neptune)\") and all three v02 thumbnail hooks; description first line and tightened chapters from DECISION.md preserved for J3023.\n4. SHOT_LIST_v02.md check: every interval in 0:00-0:32.85 is <= 4.0 s with real Mercury imagery separating graphics and no chapter card before 0:45; PIA00271 removed from Row R09 and replaced with verified real Venus imagery.\n5. On KEEP: confirm inputs are ready for Chief to clear J3022 hold and advance J3023 assembly ahead of Ben's Fri 11 Dec 18:00 London watch deadline (planned air Wed 16 Dec 18:00 London). On FIX: give exact file-level fix list.\n",
+      "ref": "J3719",
+      "film": "064",
+      "stage": "thumbs",
+      "after": "J3817",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-26T23:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T23:45Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect exact J3719_v02 thumbnail files at full size and 168x94, verify SHOT_LIST_v02 opening <=4s and R09 PIA00271 removal, and write KEEP/FIX review",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "review",
+      "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly"
     }
   ],
   "focus": [
