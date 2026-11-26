@@ -347404,9 +347404,14 @@
           "at": "2026-11-26T18:05Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T18:06Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
+      "remaining_action": "Check Edison and Tesla voiceover evidence before independent listening review",
       "due": "2026-12-03T18:00:00Z",
       "kind": "chief",
       "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR",
@@ -347416,10 +347421,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T18:05Z",
+        "at": "2026-11-26T18:06Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check review evidence",
+          "Listen and rule on both takes",
+          "Record ruling and handoff"
+        ]
       }
     },
     {
