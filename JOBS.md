@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3775 | mini | blocked | gemini | – | 015 picture · assembly · WW2 film 015: harvest 37 official US Federal PD archive photos & LoC TIFF masters (Higgins boat, £0) |  |
-| J3776 | mini | open (after J3774) | – | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
+| J3776 | mini | claimed | gemini | 2026-11-26T09:49Z | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
 | J3778 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-26 |  |
 | J3779 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3780 | any | blocked | gemini | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |

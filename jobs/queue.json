@@ -346602,10 +346602,10 @@
       "stage": "vo",
       "after": "J3774",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T07:49Z",
+      "eta": "2026-11-26T09:49Z",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:26Z",
       "result": "",
@@ -346614,13 +346614,26 @@
           "at": "2026-11-26T05:26Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T07:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Hold until >= 2026-11-30 10:50Z reset, Pilot 2 48h/7d Rule-12 check, and Chief merge of J3774 lock PR, then record NARRATION_v02.txt via API",
       "due": "2026-12-15T18:00:00Z",
       "kind": "vo",
       "plain": "Record locked v02 narration in Ben's voice for WW2 film 015 Higgins boat strictly after 30 Nov reset, Pilot 2 48h/7d Rule-12 check, and Chief merge",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T07:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3777",
