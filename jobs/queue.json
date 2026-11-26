@@ -346202,20 +346202,33 @@
           "at": "2026-11-26T05:30Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T05:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Checked ww2-channel main and PR #182: PR #182 is still open under self-merge guard awaiting returning Chief claude (>= 07:50Z); holding J3775 per Guard 1 at £0 spend"
         }
       ],
-      "remaining_action": "After Chief merges J3774 lock PR, harvest 37 US Federal PD files + LoC TIFF masters to NAS and update ARCHIVE_PROVENANCE.md",
+      "remaining_action": "Wait for Chief claude to merge ww2-channel PR #182 to main, then harvest 37 US PD files and LoC TIFF masters to NAS",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T05:30Z",
+        "of": 4,
+        "at": "2026-11-26T05:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify PR #182 merged to main",
+          "Harvest 37 US PD photos & LoC TIFF masters to NAS",
+          "Visually verify key captions, crops & NHHC check",
+          "Update ARCHIVE_PROVENANCE.md, status.json & open PR"
+        ],
+        "note": "Checked ww2-channel main and PR #182: PR #182 is still open under self-merge guard awaiting returning Chief claude (>= 0"
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     },
     {
       "id": "J3776",
