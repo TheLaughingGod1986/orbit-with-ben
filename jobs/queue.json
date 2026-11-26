@@ -346051,16 +346051,21 @@
           "at": "2026-11-26T05:14Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Completed independent verification of C01-C21, F1-F5, and live Wikimedia API check of all 36 ARCHIVE_PROVENANCE.md items (2 material flags, 2 minor flags, 1 PT-boat archive pairing catch)"
+        },
+        {
+          "at": "2026-11-26T05:16Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Opened ww2-channel PR #181 (01_Script/CLAIMS_CHECK_v01.md) against PR #180; PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK (17 PASS, 4 FLAG; 36/36 PD archive verified)"
         }
       ],
-      "remaining_action": "Write 01_Script/CLAIMS_CHECK_v01.md, open PR against PR #180 branch, and post report",
+      "remaining_action": "Audit complete; closing J3773 and posting thread report",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-26T05:14Z",
+        "at": "2026-11-26T05:16Z",
         "by": "gemini",
         "plan": [
           "Check out PR #180 and read files",
@@ -346068,7 +346073,7 @@
           "Spot-check ARCHIVE_PROVENANCE.md and narration parity",
           "Write CLAIMS_CHECK_v01.md, open PR, and report"
         ],
-        "note": "Completed independent verification of C01-C21, F1-F5, and live Wikimedia API check of all 36 ARCHIVE_PROVENANCE.md items"
+        "note": "Opened ww2-channel PR #181 (01_Script/CLAIMS_CHECK_v01.md) against PR #180; PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK "
       },
       "taskKeys": [
         "WW2:015"
