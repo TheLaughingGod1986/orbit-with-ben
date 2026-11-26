@@ -350234,9 +350234,14 @@
           "at": "2026-11-26T20:37Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-26T20:42Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Verified YouTube Studio processing finished: PT21M2S live, en-GB captions auto-retimed to 527 cues (20:25:37Z), ASR updated (20:34:26Z)"
         }
       ],
-      "remaining_action": "Inspecting NAS master, WW2 API tools, and recording before state",
+      "remaining_action": "Checking Studio 9223 end screen, updating chapters, verifying captions and readback",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -350244,9 +350249,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-26T20:37Z",
+        "at": "2026-11-26T20:42Z",
         "by": "gemini",
         "plan": [
           "Record before state",
@@ -350255,7 +350260,8 @@
           "Wait for processing",
           "Update chapters captions end screen",
           "Write receipt and open PR"
-        ]
+        ],
+        "note": "Verified YouTube Studio processing finished: PT21M2S live, en-GB captions auto-retimed to 527 cues (20:25:37Z), ASR upda"
       }
     },
     {
