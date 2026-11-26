@@ -332106,13 +332106,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T04:51Z",
-      "eta": "2026-11-26T06:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T21:11Z",
-      "result": "",
+      "result": "OWB PR #1292 merged (037a78f0be) for audit record; superseded by J3550 completion, J3551 NO-GO merged in ww2-channel#151 and upheld in J3713/ww2-channel#179. Parent J3486 cancelled and replaced by J3772.",
       "history": [
         {
           "at": "2026-11-24T21:11Z",
@@ -332163,6 +332163,11 @@
           "at": "2026-11-26T04:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T04:51Z",
+          "by": "gemini",
+          "what": "done: OWB PR #1292 merged (037a78f0be) for audit record; superseded by J3550 completion, J3551 NO-GO merged in ww2-channel#151 and upheld in J3713/ww2-channel#179. Parent J3486 cancelled and replaced by J3772."
         }
       ],
       "remaining_action": "Parked for elected Chief: merge OWB PR #1292, wait J3486 --recheck J3619, close J3619",
@@ -332186,7 +332191,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "orbit-with-ben#1292"
     },
     {
       "id": "J3620",
