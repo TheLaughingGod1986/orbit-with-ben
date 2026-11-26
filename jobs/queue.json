@@ -346132,9 +346132,14 @@
           "at": "2026-11-26T05:25Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Locked v02 verified: 62/62 parity, 2,852w, 17,766 stripped chars (3,234 under cap), Cold Open 113w (P01 24.4s<=0:30, promise 44.0s<=0:45, Ch1 51-53s<1:00), max 4 figs/30s across whole script, all 4+1 CLAIMS_CHECK fixes applied"
+        },
+        {
+          "at": "2026-11-26T05:29Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened ww2-channel#182 (a1cd072), posted studio thread report, queued J3775 (archive harvest £0) and J3776 (post-reset VO)"
         }
       ],
-      "remaining_action": "Write VIEWER_TEST_v01.md, update status.json & VIDEO_BACKLOG.json, open lock PR, and queue archive harvest + post-reset VO",
+      "remaining_action": "None; PR #182 open for Chief merge and J3775/J3776 queued",
       "due": "2026-12-13T18:00:00Z",
       "kind": "review",
       "plain": "Run topic, archive and stranger viewer test on the first 300 and 1,200 words of WW2 film 015 Higgins boat before script lock",
@@ -346147,9 +346152,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-26T05:25Z",
+        "at": "2026-11-26T05:29Z",
         "by": "gemini",
         "plan": [
           "Check independence, Pilot 2 learnings & PRs #180/#181",
@@ -346158,7 +346163,7 @@
           "Apply ruling & edits (lock PR or rewrite/park)",
           "Report & close or park J3774"
         ],
-        "note": "Locked v02 verified: 62/62 parity, 2,852w, 17,766 stripped chars (3,234 under cap), Cold Open 113w (P01 24.4s<=0:30, pro"
+        "note": "Opened ww2-channel#182 (a1cd072), posted studio thread report, queued J3775 (archive harvest £0) and J3776 (post-reset V"
       },
       "taskKeys": [
         "WW2:015"
