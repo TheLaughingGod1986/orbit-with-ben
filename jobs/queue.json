@@ -341250,9 +341250,14 @@
           "at": "2026-11-26T18:56Z",
           "by": "gemini",
           "what": "step 2 of 7 done: Recorded Studio 9223 before-state screenshots (Details 25:51, 7 original chapters, 3-way T&C mqdefault_custom_1/2/3 saved, End screen Subscribe + Pilot 2 at 25:30:08, Scheduled Private 2026-11-28T17:00:00Z)"
+        },
+        {
+          "at": "2026-11-26T19:04Z",
+          "by": "gemini",
+          "what": "step 3 of 7 done: Confirmed both cuts in Studio Editor at 2026-11-26T19:03:22Z (Cut A 01:33:22-03:03:01 = 93.749-183.064s, Cut B 06:51:28-07:24:17 = 411.952-444.579s, 121.942s removed, dialog 'Adjust video to new length: 23:48', zero thumbnail-test warning; post-save Details confirmed 3-way T&C mqdefault_custom_1/2/3 intact)"
         }
       ],
-      "remaining_action": "Opening Studio Editor Trim & cut on RqYjADxvJy8 to enter cuts A and B",
+      "remaining_action": "Rendering join clips and regenerating v02 captions/chapters for exact cut points",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -341261,9 +341266,9 @@
       ],
       "urgent": 8,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 7,
-        "at": "2026-11-26T18:56Z",
+        "at": "2026-11-26T19:04Z",
         "by": "gemini",
         "plan": [
           "Measure silence and music on master",
@@ -341274,7 +341279,7 @@
           "Read back processed video in Studio and API",
           "Commit receipt learnings and open PR"
         ],
-        "note": "Recorded Studio 9223 before-state screenshots (Details 25:51, 7 original chapters, 3-way T&C mqdefault_custom_1/2/3 save"
+        "note": "Confirmed both cuts in Studio Editor at 2026-11-26T19:03:22Z (Cut A 01:33:22-03:03:01 = 93.749-183.064s, Cut B 06:51:28-"
       }
     },
     {
