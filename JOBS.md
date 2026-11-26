@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3778 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-26 |  |
 | J3779 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3780 | any | blocked | gemini | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |
-| J3781 | any | open | – | – | HOS:136 vo · for claude · chief · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
+| J3781 | any | claimed | gemini | 2026-11-26T09:35Z | HOS:136 vo · for claude · chief · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
 
 Recently finished:
 
