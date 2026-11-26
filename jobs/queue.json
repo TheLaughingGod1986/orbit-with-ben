@@ -322969,13 +322969,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T23:39Z",
-      "eta": "2026-11-27T01:39Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "parked for Chief: merge fresh verify-swap readback PR #1356 (at 2026-11-26T23:43:24.928Z, valid 2h until 2026-11-27T01:43Z) and close J3510 done; swap already live and accepted in PR #1258/#1259/#1335 (k2kEaA7ICjc private/null, emKN9xjDswI private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM 2026-12-06T18:00:00Z)",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -323061,6 +323061,11 @@
           "at": "2026-11-26T23:44Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Opened PR #1356 (fresh 23:43:24Z verify-swap readback) and posted studio thread report; parking for Chief merge/close"
+        },
+        {
+          "at": "2026-11-26T23:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: merge fresh verify-swap readback PR #1356 (at 2026-11-26T23:43:24.928Z, valid 2h until 2026-11-27T01:43Z) and close J3510 done; swap already live and accepted in PR #1258/#1259/#1335 (k2kEaA7ICjc private/null, emKN9xjDswI private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM 2026-12-06T18:00:00Z)"
         }
       ],
       "remaining_action": "Chief merge of fresh readback PR #1356 and close J3510 done before 2026-11-27T01:43Z",
