@@ -341295,9 +341295,14 @@
           "at": "2026-11-26T19:53Z",
           "by": "gemini",
           "what": "step 5 of 7 done: Trim processed (PT23M49S / 23:48:10); updated description to DESCRIPTION_v02.txt (HTTP 200, 4170 chars), replaced en-GB captions with 368-cue v02 SRT (HTTP 200, restored cue 368 dropped by Studio auto-retime), verified end screen auto-shifted to 23:28:10-23:48:10 (Subscribe + qfc6EBStOfo)."
+        },
+        {
+          "at": "2026-11-26T19:53Z",
+          "by": "gemini",
+          "what": "step 6 of 7 done: Full Studio 9223 reload and Data API read-back PASS: PT23M49S / 23:49 / 23:48:10, 7 v02 chapters (38 photos), 368-cue en-GB captions serving, end screen 23:28:10-23:48:10, Private scheduled 2026-11-28T17:00:00Z, 3-way T&C mqdefault_custom_1/2/3 intact, title/tags unchanged."
         }
       ],
-      "remaining_action": "Verifying full Studio and Data API read-back, then writing receipt/status/learnings PR",
+      "remaining_action": "Writing TRIM_RECEIPT_v01.md, updating status.json and studio/LEARNINGS.md, and opening Chief PR in ww2-channel",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -341306,7 +341311,7 @@
       ],
       "urgent": 8,
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 7,
         "at": "2026-11-26T19:53Z",
         "by": "gemini",
@@ -341319,7 +341324,7 @@
           "Read back Studio and Data API state",
           "Write receipt status learnings and open PR"
         ],
-        "note": "Trim processed (PT23M49S / 23:48:10); updated description to DESCRIPTION_v02.txt (HTTP 200, 4170 chars), replaced en-GB "
+        "note": "Full Studio 9223 reload and Data API read-back PASS: PT23M49S / 23:49 / 23:48:10, 7 v02 chapters (38 photos), 368-cue en"
       }
     },
     {
