@@ -79,7 +79,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3655 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link |  |
 | J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
-| J3668 | mini | claimed | gemini | 2026-11-26T05:32Z | review · Verify condition for J3178 |  |
 | J3670 | mini | blocked | claudecode | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
 | J3671 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts | HOS PR #762 (84af0f7d), J3660, J3547, J3670 |
 | J3678 | mini | open | – | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
