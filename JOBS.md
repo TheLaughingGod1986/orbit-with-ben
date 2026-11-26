@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
 | J3670 | mini | blocked | claudecode | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
-| J3678 | mini | open | – | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
+| J3678 | mini | claimed | gemini | 2026-11-26T09:16Z | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
 | J3704 | mini | blocked | claudecode | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
