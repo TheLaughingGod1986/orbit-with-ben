@@ -350723,9 +350723,14 @@
           "at": "2026-11-26T22:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T22:10Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "remaining_action": "Inspecting 032 Short 1 approved cut, long video ID, and existing Short package layout",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -350748,12 +350753,20 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T22:09Z",
+        "of": 5,
+        "at": "2026-11-26T22:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect 032 Short 1 cut and package layout",
+          "Build Short 1 listing package and cover",
+          "Run upload dry-run and upload Private scheduled",
+          "Verify YouTube Studio state and Related video",
+          "Update UPLOADS register, open PR, and report"
+        ]
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3813",
