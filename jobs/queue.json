@@ -316378,13 +316378,13 @@
       "stage": "upload",
       "after": "J3439",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T18:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T17:59Z",
-      "result": "Waiting for: 24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T17:59Z",
@@ -316410,25 +316410,16 @@
           "at": "2026-11-24T11:30Z",
           "by": "relay",
           "what": "condition verification queued: J3514"
+        },
+        {
+          "at": "2026-11-26T03:17Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief gemini PASS via J3514 (PR #1278 merged 813eaa2338fcdb406eca3b012a7bedefc794829a): waiting condition proven satisfied. Dm4xsF1Ateg published 2026-11-23T11:30:10Z (~63.8h old at 2026-11-26T03:15Z, past 24h due mark 2026-11-24T11:30:00Z); prerequisite J3439 done and PR #1221 (b36198ea67) merged on main; live Public status and Related link 6bbbvfCx6zY independently verified via 24/25 Nov snapshots (28->31 views), J3462 live_fixes/2026-11-24.md, J3764 live listing check (PR #1336), and fresh 2026-11-26T03:15Z oEmbed HTTP 200 & /shorts/Dm4xsF1Ateg check; 05_Analytics/owb/launch/Dm4xsF1Ateg.json holds only the 6h reading with 0 duplicate PRs; 027/upload stage clear; CDP 9223 reachable; Acting Chief codex J3438 ruling and Learning Rule 31 remain valid through thread #7181451071. Execute read-only CDP 9223 reach read using --hours 24 per brief and note actual ~64h+ post-publication readAt age in the appended note; zero live edits or spend."
         }
       ],
       "remaining_action": "Read 24-hour reach and verify the repaired link after 24 November at 11:30 UTC",
       "kind": "studio",
-      "plain": "Check how the Earth equator Short is reaching viewers after its link was fixed",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-23T18:00Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
-        "check_at": "2026-11-24T12:30:49+00:00",
-        "recheck_task": "J3514"
-      }
+      "plain": "Check how the Earth equator Short is reaching viewers after its link was fixed"
     },
     {
       "id": "J3445",
