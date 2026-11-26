@@ -282015,13 +282015,13 @@
       "stage": "thumbs",
       "after": "J3111",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T23:45Z",
-      "eta": "2026-11-27T01:45Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T05:12Z",
-      "result": "",
+      "result": "PR #1311 (28dfe21fa6, published by J3530 from Codex commit a12100797f with proposed ledger row renumbered T044) already merged onto main; re-verified all 12 NAS_VERIFY_J3114.json hashes, 4 untouched media hashes (long v02 e5a886df..., trailer 01701660..., Shorts J3066/J3065), 3 untouched v01 hashes, and 4,602-char description; synced NAS REVIEW_J3105_v02.md to T044 note (378f9c4551a2). 034 thumbs stays in review for Chief J3115; no rebuild, £0 spend, no YouTube writes.",
       "history": [
         {
           "at": "2026-11-19T05:12Z",
@@ -282232,6 +282232,11 @@
           "at": "2026-11-26T23:50Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All 12 NAS hashes, 4 media hashes, PR #1311 (28dfe21fa6) merge parity, T044 ledger row, and NAS REVIEW_J3105_v02.md sync verified."
+        },
+        {
+          "at": "2026-11-26T23:50Z",
+          "by": "gemini",
+          "what": "done: PR #1311 (28dfe21fa6, published by J3530 from Codex commit a12100797f with proposed ledger row renumbered T044) already merged onto main; re-verified all 12 NAS_VERIFY_J3114.json hashes, 4 untouched media hashes (long v02 e5a886df..., trailer 01701660..., Shorts J3066/J3065), 3 untouched v01 hashes, and 4,602-char description; synced NAS REVIEW_J3105_v02.md to T044 note (378f9c4551a2). 034 thumbs stays in review for Chief J3115; no rebuild, £0 spend, no YouTube writes."
         }
       ],
       "remaining_action": "Done — hand off to Chief J3115",
@@ -282254,7 +282259,8 @@
           "Close J3114 and post report for J3115"
         ],
         "note": "All 12 NAS hashes, 4 media hashes, PR #1311 (28dfe21fa6) merge parity, T044 ledger row, and NAS REVIEW_J3105_v02.md sync"
-      }
+      },
+      "done_ref": "28dfe21fa6"
     },
     {
       "id": "J3115",
