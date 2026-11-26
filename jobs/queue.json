@@ -344881,9 +344881,14 @@
           "at": "2026-11-26T02:45Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T04:00:00Z"
+        },
+        {
+          "at": "2026-11-26T02:46Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T04:00:00Z"
         }
       ],
-      "remaining_action": "Wait for J3768\ntitle:\nkind:\nref:\n\nReconcile\n\nFollow\n1.\n2.\n3.\n4.\n5. to reconcile J3766 metadata and Section 4 across OWB and HOS PR #795 (validate_j3766.py --strict exit 0), then Chief merges #795 and closes J3766 KEEP",
+      "remaining_action": "Wait for J3768 to reconcile J3766 metadata and Section 4 across OWB and HOS PR #795 (validate_j3766.py --strict exit 0), then Chief merges #795 and closes J3766 KEEP",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -344916,7 +344921,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting Chief (gemini) ruling FIX (jobs/reviews/J3766/REVIEW.md, 381ac5db85): core QA sweep verified (280 entries, 816/816 sidecars, 0 current_newest FAILs, 0 repair jobs needed, HOS PR #795 CI green), held unmerged until follow-up J3768\ntitle:\nkind:\nref:\n\nReconcile\n\nFollow\n1.\n2.\n3.\n4.\n5. reconciles the 17 stale J3340 top-level metadata and Section 4 discrepancies byte-identically across OWB main and HOS PR #795 (gemini/J3766-qa-sweep) and python3 jobs/reviews/J3766/validate_j3766.py --strict exits 0. Then Chief verifies updated SHA-256s, merges HOS PR #795, and closes J3766 KEEP.",
+        "condition": "Acting Chief (gemini) ruling FIX (jobs/reviews/J3766/REVIEW.md, 381ac5db85): core QA sweep verified (280 entries, 816/816 sidecars, 0 current_newest FAILs, 0 repair jobs needed, HOS PR #795 CI green), held unmerged until follow-up J3768 reconciles the 17 stale J3340 top-level metadata and Section 4 discrepancies byte-identically across OWB main and HOS PR #795 (gemini/J3766-qa-sweep) and python3 jobs/reviews/J3766/validate_j3766.py --strict exits 0. Then Chief verifies updated SHA-256s, merges HOS PR #795, and closes J3766 KEEP.",
         "check_at": "2026-11-26T04:00:00Z"
       }
     },
