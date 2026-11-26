@@ -344823,10 +344823,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T01:40Z",
+      "eta": "2026-11-26T03:40Z",
       "created_by": "gemini",
       "created_at": "2026-11-26T01:36Z",
       "result": "",
@@ -344840,6 +344840,11 @@
           "at": "2026-11-26T01:36Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-26T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-26T01:40Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add HOS 008 Shorts to library.json, refresh LIVE_VIDEOS.json on Mini, land 009 receipts + Shorts from PR #757 keeping main status.json, update 005 note, open PR",
@@ -344854,7 +344859,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T01:40Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

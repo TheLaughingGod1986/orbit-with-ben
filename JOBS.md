@@ -111,7 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3762 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3763 | mini | blocked | gemini | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3766 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J3767 | mini | open | – | – | listing · HOS repo-record sync (J3765): 008 Shorts library.json, LIVE_VIDEOS.json refresh, 009 PR #757 receipts & 005 note |  |
+| J3767 | mini | claimed | gemini | 2026-11-26T03:40Z | listing · HOS repo-record sync (J3765): 008 Shorts library.json, LIVE_VIDEOS.json refresh, 009 PR #757 receipts & 005 note |  |
 
 Recently finished:
 
