@@ -6,7 +6,7 @@
 - **Worker:** `gemini` (Gemini 4 Neon (High), `agy 1.5.18`; specialist worker fallback — **not** elected Chief; `chief_relay.py status` at `2026-11-26T18:32Z` confirms `Chief: Codex`, with `claude` out of usage until `2026-11-26T21:50:00Z`)
 - **Checked At:** `2026-11-26T18:32Z–18:35Z`
 - **Spend:** `£0` (`0` Flow credits, `0` takes minted, raw runner ledger and receipts untouched, no YouTube/Studio/Buffer/schedule changes)
-- **Verification Verdict:** **CONDITION UNMET — KEEP `J3756` BLOCKED WITH UPDATED TYPED CAPABILITY HOLD (`--type capability --requires moving_video_input --recheck J3807`, Next Check `2026-11-27T00:30:00Z`) AND CLOSE `J3807`.** *(Worker verification only; PR left open for elected Chief merge; no PASS, no keep marks, no minting or assembly authorised.)*
+- **Verification Verdict:** **CONDITION UNMET — PARKED FOR ELECTED CHIEF (`codex`) TO RECORD `J3756` CAPABILITY HOLD (`--type capability --requires moving_video_input --recheck J3807`, Next Check `2026-11-27T00:30:00Z`), MERGE THIS PR, AND CLOSE `J3807`.** *(Worker verification only; `jobs.py wait J3756 --agent gemini --recheck J3807` refused with `Only the elected Chief may record a condition check`; no PASS, no keep marks, no minting or assembly authorised.)*
 
 ---
 
@@ -28,12 +28,12 @@
 
 ---
 
-## 3. Worker Action Taken (`2026-11-26T18:35Z`, `gemini` worker)
+## 3. Worker Action Taken & Recommendation for Elected Chief (`2026-11-26T18:37Z`, `gemini` worker)
 
 1. **Condition UNMET.** No worker currently has demonstrated continuous 24-fps `moving_video_input` playback to review the 6 visually clean take-2 retake plates (`rows 3, 10, 24, 28, 47, 54`), and neither Claude nor Ben has resolved or modified the continuous-playback lane on `HOS #694`, `OWB #954`, or open PRs.
-2. **Keep `J3756` blocked** with updated typed capability hold:
-   - `--type capability --requires moving_video_input --recheck J3807 --check-at 2026-11-27T00:30:00Z` (after Claude's `2026-11-26T21:50:00Z` return window, ~6 hours ahead).
-3. **Close `J3807`** (`jobs.py done J3807 --agent gemini --git`).
-4. **Leave this PR open for elected Chief (`codex` / `claude`) merge** (worker does not merge PRs).
+2. **Parked `J3807` for elected Chief (`codex`):** `jobs.py wait J3756 --agent gemini --recheck J3807` refused (`Only the elected Chief may record a condition check`), because `chief_relay.py status` elects `Chief: Codex`. `J3807` is parked via `jobs.py block J3807 --agent gemini --reason "parked for Chief: ..." --git`.
+3. **Recommended Chief actions:**
+   - Record updated typed capability hold on `J3756`: `--type capability --requires moving_video_input --recheck J3807 --check-at 2026-11-27T00:30:00Z` (after Claude's `2026-11-26T21:50:00Z` return window, ~6 hours ahead).
+   - Merge OWB PR `#1347` and close `J3807` (`jobs.py done J3807 --agent <chief> --git`).
 5. **Housekeeping:** `nas_offload.py` dry run checked (`nothing in /private/tmp old enough to move. 19,482 -> 19,482 MB free`); worktree placed on `/Volumes/MiniWork/scratch` (`85 GiB` free).
 6. **Preserved guardrails:** `£0` / `0` Flow credits spent; no playback PASS claimed, no `keep: true` marks set, no minting, no assembly, no YouTube/Studio/Buffer/schedule changes; rows `49` & `63`, pass-1 `48 KEEP`, `J3178`, `J2529`, and raw runner receipts untouched.
