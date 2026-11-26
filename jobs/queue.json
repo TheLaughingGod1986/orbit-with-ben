@@ -1,5 +1,5 @@
 {
-  "next_id": 3824,
+  "next_id": 3825,
   "jobs": [
     {
       "id": "J0001",
@@ -340516,6 +340516,11 @@
           "at": "2026-11-26T17:57Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction."
+        },
+        {
+          "at": "2026-11-26T23:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J3824"
         }
       ],
       "remaining_action": "Publishing the committed corrections after the data-export approval is resolved",
@@ -340542,7 +340547,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.",
-        "check_at": "2026-11-26T23:57:10+00:00"
+        "check_at": "2026-11-27T00:59:30+00:00",
+        "recheck_task": "J3824"
       }
     },
     {
@@ -351586,6 +351592,38 @@
         "check_at": "2026-11-30T10:55:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3824",
+      "title": "Verify condition for J3704",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3704: publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3704 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T23:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T23:59Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publishing the committed corrections after the data-export approval is resolved",
+      "kind": "review",
+      "recheck_of": "J3704",
+      "mini_only": true,
+      "due": "2026-11-25T14:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
