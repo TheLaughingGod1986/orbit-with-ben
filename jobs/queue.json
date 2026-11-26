@@ -351030,18 +351030,26 @@
           "at": "2026-11-26T23:42Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:43Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Prepare the next Orbit Short from approved existing material",
+      "remaining_action": "Find an unused passage in the locked long with the fewest Shorts",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T23:42Z",
+        "at": "2026-11-26T23:43Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Choose source passage",
+          "Build vertical cut",
+          "Verify and deliver review pack"
+        ]
       }
     },
     {
