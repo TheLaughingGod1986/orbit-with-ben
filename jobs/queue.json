@@ -347202,13 +347202,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T08:11Z",
-      "eta": "2026-11-26T10:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T08:10Z",
-      "result": "",
+      "result": "Verified J3780 condition UNMET at 2026-11-26T08:13Z: claude down until 2026-11-26T12:50:00Z (claude_beat.json 07:54:48Z, four runs/day), codex down on usage limit until Nov 27 4:25 PM (retry timer 08:42:02Z), grok down; gemini is acting Chief but authored J3671/HOS PR #797 and cannot self-PASS or self-merge. Confirmed HOS PR #797 (a855da7475) OPEN/MERGEABLE, 6/6 CI SUCCESS, 0 media in git, locked SHORTS_SCRIPTS_v03.md and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3780 blocked with typed input hold (--recheck J3783, --check-at 2026-11-26T12:50:00Z). Zero spend.",
       "history": [
         {
           "at": "2026-11-26T08:10Z",
@@ -347239,6 +347239,11 @@
           "at": "2026-11-26T08:14Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Updated J3780 typed input hold (--recheck J3783, --check-at 2026-11-26T12:50:00Z); completing J3783"
+        },
+        {
+          "at": "2026-11-26T08:15Z",
+          "by": "gemini",
+          "what": "done: Verified J3780 condition UNMET at 2026-11-26T08:13Z: claude down until 2026-11-26T12:50:00Z (claude_beat.json 07:54:48Z, four runs/day), codex down on usage limit until Nov 27 4:25 PM (retry timer 08:42:02Z), grok down; gemini is acting Chief but authored J3671/HOS PR #797 and cannot self-PASS or self-merge. Confirmed HOS PR #797 (a855da7475) OPEN/MERGEABLE, 6/6 CI SUCCESS, 0 media in git, locked SHORTS_SCRIPTS_v03.md and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3780 blocked with typed input hold (--recheck J3783, --check-at 2026-11-26T12:50:00Z). Zero spend."
         }
       ],
       "remaining_action": "Complete — J3780 hold updated for 2026-11-26T12:50:00Z recheck",
@@ -347268,7 +347273,8 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "done_ref": "J3780,HOS#797"
     },
     {
       "id": "J3784",
