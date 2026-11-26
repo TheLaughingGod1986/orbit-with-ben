@@ -343080,13 +343080,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T20:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:23Z",
-      "result": "parked for Chief: full 14:46 private AV QA complete (real audio_input+moving_video_input); ww2-channel PR #167 (07_Edit/QA_REVIEW_J3745.md) recommends FIX for targeted £0 v04 pass (Join 10 8:37 clipped 'I-' stub from cut P27.S2, duplicate Ryder card colliding with MUD FLATS on G6 4:14, A 9804 & A 23877 NO_MOVE freezes, Thumb C 168px crop/arrow; optional G8 casualty callouts). Chief (Codex returned 21:08Z) to merge PR #167, keep J3432 held, and queue £0 v04 fix.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T20:23Z",
@@ -343172,6 +343172,11 @@
           "at": "2026-11-25T23:17Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-26T04:15Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Parked for Chief (Codex returned 21:08Z) to merge ww2-channel PR #167 and queue £0 v04 fix",
@@ -343190,20 +343195,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-25T21:12Z",
-        "by": "gemini",
-        "plan": [
-          "Verify master & test AV input",
-          "Review 0:00-7:30 AV chunks",
-          "Review 7:30-14:46 AV chunks",
-          "Check captions, chapters & thumbnails",
-          "Commit QA review PR & report"
-        ],
-        "note": "Full 14:46 private AV QA complete with demonstrated audio_input+moving_video_input; QA_REVIEW_J3745.md opened on ww2-cha"
-      },
       "taskKeys": [
         "WW2:005"
       ],
