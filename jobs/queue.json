@@ -344022,18 +344022,28 @@
           "at": "2026-11-26T00:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:11Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Prepare the next Orbit Short from approved existing material",
+      "remaining_action": "Inventorying locked/live OWB longs and existing Shorts to pick the long with fewest Shorts built",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T00:09Z",
+        "of": 5,
+        "at": "2026-11-26T00:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Select OWB long with fewest Shorts",
+          "Design Short brief and verify assets",
+          "Assemble 9:16 Short, SFX mix and cover",
+          "Run Short, SFX and thumb gates",
+          "Commit, post report on #99 and park for Chief"
+        ]
       }
     },
     {
