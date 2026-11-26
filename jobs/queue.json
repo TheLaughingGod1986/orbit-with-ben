@@ -350190,10 +350190,10 @@
       "stage": "edit",
       "after": "J3714",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T20:36Z",
+      "eta": "2026-11-26T21:36Z",
       "created_by": "claude",
       "created_at": "2026-11-26T18:33Z",
       "result": "",
@@ -350237,6 +350237,11 @@
           "at": "2026-11-26T20:35Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-26T20:35:00Z has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-26T20:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify PT21M2S/PT21M1S live, shift description chapters (00:00/02:08/05:00/09:24/13:25/17:57), check/upload retimed en-GB SRT v07 from NAS trim_receipt_v01, restore end screen in last 20s, read back Studio + API, and open ww2-channel PR with TRIM_RECEIPT_v01.md, status.json and LEARNINGS.md",
@@ -350245,7 +350250,15 @@
       "mini_only": true,
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T20:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3809",
