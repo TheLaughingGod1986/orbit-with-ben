@@ -1,5 +1,5 @@
 {
-  "next_id": 3773,
+  "next_id": 3774,
   "jobs": [
     {
       "id": "J0001",
@@ -345992,6 +345992,36 @@
       "taskKeys": [
         "WW2:015"
       ]
+    },
+    {
+      "id": "J3773",
+      "title": "WW2 film 015: Higgins boat (LCVP) independent claims and archive provenance check (PR #180)",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Independent Gemini `facts`-lane claims and provenance audit for **WW2:015** (*Higgins Boat: How 23,000 Plywood Hulls Made D-Day*), stage PR **`TheLaughingGod1986/ww2-channel#180`** (branch `gemini/J3772-ww2-015-higgins-boat`, drafted in `J3772`).\n\n**Do (zero spend, £0, no VO, no merge):**\n1. Check out PR #180 (`gemini/J3772-ww2-015-higgins-boat`) in a clean worktree of `ww2-channel`.\n2. Independently verify all 21 claims (`C01`–`C21`) in `02_Video-Projects/015_Higgins-Boat-LCVP-D-Day-Landing-Craft/01_Script/SOURCES.md` against `SCRIPT.md` and `NARRATION_v01.txt` (SHA-256 `eeba69c2bbdb9319548168e432e4b859cd72e022045740236ff2b856539f303d`, `17,830` stripped chars, `62` paragraphs), paying special attention to the 5 priority checkpoints:\n   - **F1 (Ch 2):** Krulak 1937 Shanghai rank & *Daihatsu* report, spring 1941 New Orleans visit with Maj. Ernest Linsert, 21 May / 26 May 1941 Lake Pontchartrain trials, Cdr. Ross B. Daggett.\n   - **F2 (Ch 3):** `~18,000 lb` light weight / APA davit constraint, mahogany & Douglas fir phenolic-resin plywood, quarter-inch steel bow ramp + light side armour strips, Gray Marine diesel / Hall-Scott petrol, `~12 kt`, 4-man crew, 36 troops / jeep / nearly 4 tons cargo.\n   - **F3 (Ch 3 & Ch 4):** 25 May 1942 Norfolk 30-ton tank-lighter showdown & Truman Committee criticism; mid-1941 Polymnia Street canvas yard and 2-week delivery.\n   - **F4 (Ch 4):** `<75` to `>20,000` employees, integrated equal-pay workforce, licensees (Chris-Craft, Matthews, Owens), `20,094` Higgins all-types boats, `>23,000` (`23,358–23,398`) total LCVPs.\n   - **F5 (Ch 5 & Ch 6):** 20 Nov 1943 Tarawa Betio coral reef + neap tide + `3–4 ft` LCVP draft vs Lt. Col. David Shoup's LVT amtracs; `~1,500` D-Day LCVPs; Coast Guard-manned *USS Samuel Chase* (APA-26); 30 Aug 1945 Yokosuka Tokyo Bay landing; Stephen Ambrose 1964 Eisenhower quote.\n3. Spot-check `03_Picture/ARCHIVE_PROVENANCE.md` (`36` US Federal PD items) to confirm zero AP/Getty/Pathe/private donations and confirm zero unseen-photo descriptions in narration.\n4. Write `01_Script/CLAIMS_CHECK_v01.md` (listing every `PASS` and `FLAG` with exact fix wording for any `FLAG`), commit on a clean branch/PR against `gemini/J3772-ww2-015-higgins-boat` (or `main`), and do **not** rewrite `NARRATION_v01.txt` yourself (the dependent Claude review job folds approved fixes into locked `v02`).\n",
+      "ref": "ww2-channel#180",
+      "film": "WW2:015",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-26T05:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T05:06Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Audit C01-C21, F1-F5 and ARCHIVE_PROVENANCE.md on ww2-channel#180 and commit CLAIMS_CHECK_v01.md",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "facts",
+      "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat"
     }
   ],
   "focus": [
