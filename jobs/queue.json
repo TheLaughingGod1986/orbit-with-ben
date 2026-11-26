@@ -351215,20 +351215,34 @@
           "at": "2026-11-26T23:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T23:52Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3817; checking panel decision and NAS plates"
         }
       ],
-      "remaining_action": "Build J3719_v02 thumbnails A/B/C on studio-live, update THUMB_LEDGER T045 hashes, and write SHOT_LIST_v02.md opening and R09 fixes",
+      "remaining_action": "Inspecting panel decision, existing v01 thumbnails, and verified NASA plates",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild OWB 064 thumbnails A/B/C to v02 per packaging panel DECISION.md, replace simulated PIA00271 in R09, and split opening cuts under 4 s",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T23:51Z",
+        "of": 5,
+        "at": "2026-11-26T23:52Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect panel decision and source plates",
+          "Build v02 thumbnails A/B/C and verify scores/visuals",
+          "Update THUMB_LEDGER.json and v02 reports",
+          "Write SHOT_LIST_v02.md fixing opening cuts and R09 Venus",
+          "Commit in clean worktree and open PR"
+        ],
+        "note": "Claimed J3817; checking panel decision and NAS plates"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3818",
