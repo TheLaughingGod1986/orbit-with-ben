@@ -346586,13 +346586,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T07:13Z",
-      "eta": "2026-11-26T09:13Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T07:09Z",
-      "result": "",
+      "result": "Waiting for: Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI green), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)",
       "history": [
         {
           "at": "2026-11-26T07:09Z",
@@ -346613,9 +346613,19 @@
           "at": "2026-11-26T07:14Z",
           "by": "gemini",
           "what": "step 1 of 2 done: Verified non-producer guard (gemini authored J3671 / HOS PR #797 head a855da7475, OPEN/MERGEABLE, 6/6 CI SUCCESS) and chief_relay.py status (claude down until 07:50Z, codex out until Nov 27); holding J3780 without self-PASS/self-merge"
+        },
+        {
+          "at": "2026-11-26T07:15Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI green), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)"
+        },
+        {
+          "at": "2026-11-26T07:15Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:05:00Z"
         }
       ],
-      "remaining_action": "Record structured non-producer hold until returning Chief claude (>= 07:50Z) and post handoff reports",
+      "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
       "due": "2026-12-03T18:00:00Z",
       "kind": "chief",
       "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR",
@@ -346632,7 +346642,12 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE, 6/6 CI green), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)",
+        "check_at": "2026-11-26T08:05:00Z"
+      }
     }
   ],
   "focus": [
