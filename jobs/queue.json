@@ -329462,21 +329462,34 @@
           "at": "2026-11-26T07:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Early wake at 2026-11-26T07:47Z before 2026-11-30 10:50Z reset (live ElevenLabs balance 7,275 cr < 18,011 chars needed). Verified PR #100 merged on ww2-channel main with NARRATION_v02.txt SHA-256 4277f27052f8e9fe8d8253e05dcfb67652c0cb0efaaf3c01862b983d30e125e1. Spent GBP 0 / 0 credits; parking on structured credits wait."
         }
       ],
-      "remaining_action": "Wait until after 2026-11-30 10:50Z ElevenLabs reset, Pilot 2 Rule-12 check & Chief merge of macbook/J3555, then record NARRATION_v02.txt",
+      "remaining_action": "Wait until 2026-11-30T11:00:00Z after ElevenLabs reset (10:50Z), then verify Pilot 2 Rule-12 check and record NARRATION_v02.txt",
       "due": "2026-12-13T18:00:00Z",
       "kind": "vo",
       "plain": "Record Ben's voice narration for WW2 film 014 (Dambusters) after the 30 Nov ElevenLabs reset and Pilot 2 check",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T07:46Z",
+        "of": 4,
+        "at": "2026-11-26T07:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify post-reset time, balance and Pilot 2 Rule-12 check",
+          "Record chapter-split narration and run QA",
+          "Copy verified masters to NAS",
+          "Open WW2 PR with VO report and status"
+        ],
+        "note": "Early wake at 2026-11-26T07:47Z before 2026-11-30 10:50Z reset (live ElevenLabs balance 7,275 cr < 18,011 chars needed)."
+      },
+      "taskKeys": [
+        "WW2:014"
+      ]
     },
     {
       "id": "J3587",
