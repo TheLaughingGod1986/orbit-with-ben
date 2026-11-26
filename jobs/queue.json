@@ -328289,6 +328289,11 @@
           "at": "2026-11-26T13:18Z",
           "by": "claude",
           "what": "waits on Ben: Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change (by 2026-11-26 21:00 London)"
+        },
+        {
+          "at": "2026-11-26T14:25Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J3794"
         }
       ],
       "remaining_action": "Committing non-media Short records on macbook/J3566, opening PR to main, and posting report",
@@ -328309,7 +328314,7 @@
           "Copy to NAS, open PR & report"
         ]
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change",
         "file": "WW2 UAT/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4",
         "version": "v01",
@@ -348385,13 +348390,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T13:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
-      "result": "Waiting for: Waiting on Ben's watch OK on board card WW2:002-S1 (J3566, uboat_surface_short_v01.mp4 v01, SHA-256 cee68f66...08c2, Play link live and verified). Card due Thu 26 Nov 21:00 London; upload cutoff Fri 27 Nov 10:30 London. Only after Ben's OK (approved_from set) upload Private for Fri 27 Nov 12:30 London with Related video qfc6EBStOfo; if no OK by Fri 27 Nov 10:30 London, do not upload and move to next free 12:30 slot. (Note: Studio CDP :9224 sign-in may also be needed before upload.)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T13:18Z",
@@ -348422,6 +348427,16 @@
           "at": "2026-11-26T13:26Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-27T10:30:00Z"
+        },
+        {
+          "at": "2026-11-26T14:25Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change v01 (asked in J3566)"
+        },
+        {
+          "at": "2026-11-26T14:25Z",
+          "by": "claude",
+          "what": "reopened: Ben OK'd 002-S1 v01 on the board (26 Nov ~14:20 London). Upload it now, Private, scheduled Fri 27 Nov 12:30 London, Related video qfc6EBStOfo, and the description link; read it back."
         }
       ],
       "remaining_action": "Upload WW2:002-S1 Private for Fri 27 Nov 12:30 London linked to qfc6EBStOfo after Ben's watch OK (or defer if no OK by Fri 27 Nov 10:30)",
@@ -348432,25 +348447,22 @@
         "WW2:002-S1"
       ],
       "urgent": 8,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-26T13:26Z",
-        "by": "gemini",
-        "plan": [
-          "Copy master to WW2 UAT & verify watch Play link",
-          "Wait for Ben OK & upload Private for Fri 27 Nov 12:30",
-          "Verify Studio/API readback & update 002 records"
-        ],
-        "note": "Copied NAS master uboat_surface_short_v01.mp4 (17,186,020 B, SHA-256 cee68f668329146c54ab6836c898cfdda85c6ca8a2f1949b8be"
-      },
       "taskKeys": [
         "WW2:002"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "Waiting on Ben's watch OK on board card WW2:002-S1 (J3566, uboat_surface_short_v01.mp4 v01, SHA-256 cee68f66...08c2, Play link live and verified). Card due Thu 26 Nov 21:00 London; upload cutoff Fri 27 Nov 10:30 London. Only after Ben's OK (approved_from set) upload Private for Fri 27 Nov 12:30 London with Related video qfc6EBStOfo; if no OK by Fri 27 Nov 10:30 London, do not upload and move to next free 12:30 slot. (Note: Studio CDP :9224 sign-in may also be needed before upload.)",
-        "check_at": "2026-11-27T10:30:00Z"
+      "approved_from": {
+        "what": "Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change",
+        "file": "WW2 UAT/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4",
+        "version": "v01",
+        "airs": "2026-11-27T12:30Z",
+        "card": "WW2:002-S1",
+        "title": "WW2 U-Boats: Why They Could Not Stay Underwater",
+        "number": "002-S1",
+        "type": "short",
+        "channel": "WW2",
+        "job": "J3566",
+        "okAt": "2026-11-26T14:20Z",
+        "okRef": "board Review card WW2:002-S1 'You OK'd v01' (Ben's screenshot 26 Nov 14:22, \"This is done already\")"
       }
     },
     {
