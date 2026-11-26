@@ -347989,17 +347989,22 @@
           "at": "2026-11-26T12:45Z",
           "by": "claude",
           "what": "Chief: added the description link step (three ways to point to the film)."
+        },
+        {
+          "at": "2026-11-26T12:45Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Merged ww2-channel PR #185 (003/status.json, UPLOADS.json, J3790_RESCHEDULE_READBACK_v01.json); channel_check clean"
         }
       ],
-      "remaining_action": "Writing J3790 reschedule receipt, updating WW2 003 status.json and UPLOADS.json in clean PR",
+      "remaining_action": "Wait for RqYjADxvJy8 Public (Sat 28 Nov 17:00Z) and Studio 9224 sign-in, then reload-verify RtEMDrfeKR8, link RqYjADxvJy8, and update status.json + UPLOADS.json",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 7,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-26T12:43Z",
+        "at": "2026-11-26T12:45Z",
         "by": "gemini",
         "plan": [
           "Check Data API and Studio 9224",
@@ -348007,7 +348012,7 @@
           "Read back in API and Studio 9224",
           "Update status.json, UPLOADS.json PR and wait"
         ],
-        "note": "Moved RtEMDrfeKR8 publishAt 2026-11-28T12:30:00Z -> 2026-11-29T12:30:00Z via Data API (containsSyntheticMedia=true, Priv"
+        "note": "Merged ww2-channel PR #185 (003/status.json, UPLOADS.json, J3790_RESCHEDULE_READBACK_v01.json); channel_check clean"
       },
       "taskKeys": [
         "WW2:003"
