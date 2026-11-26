@@ -345956,9 +345956,14 @@
           "at": "2026-11-26T05:04Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Drafted SCRIPT.md, NARRATION_v01.txt (~17,840 stripped chars <=21,000, 62/62 exact parity, Cold Open <1:00, zero background detour in first 1,200 words, <=4 figures per 30s) and SOURCES.md (21 claims C01-C21 + 5 priority audit checkpoints F1-F5)"
+        },
+        {
+          "at": "2026-11-26T05:06Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened stage PR ww2-channel#180 (gemini/J3772-ww2-015-higgins-boat, commit b62a973) with 9 files including VIDEO_BACKLOG.json and status.json; channel_check.py PASS"
         }
       ],
-      "remaining_action": "Finalize NARRATION_v01.txt, status.json, run checks, and open ww2-channel PR",
+      "remaining_action": "Queue independent Gemini facts check and dependent Claude review gate",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 015 (Higgins boat / LCVP engineering, replacing Sherman draft v01)",
@@ -345971,9 +345976,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-26T05:04Z",
+        "at": "2026-11-26T05:06Z",
         "by": "gemini",
         "plan": [
           "Topic check and archive photo verification",
@@ -345982,7 +345987,7 @@
           "Update backlog, status file and open PR",
           "Queue facts check and review gate"
         ],
-        "note": "Drafted SCRIPT.md, NARRATION_v01.txt (~17,840 stripped chars <=21,000, 62/62 exact parity, Cold Open <1:00, zero backgro"
+        "note": "Opened stage PR ww2-channel#180 (gemini/J3772-ww2-015-higgins-boat, commit b62a973) with 9 files including VIDEO_BACKLOG"
       },
       "taskKeys": [
         "WW2:015"
