@@ -1,5 +1,5 @@
 {
-  "next_id": 3794,
+  "next_id": 3795,
   "jobs": [
     {
       "id": "J0001",
@@ -328284,6 +328284,11 @@
           "at": "2026-11-25T00:18Z",
           "by": "macbook",
           "what": "done: Built WW2:002-S1 Short v01 ('WW2 U-Boats: Why They Could Not Stay Underwater', 47 chars) at £0.00 spend. Master on NAS: /Volumes/data/studio-live/ww2/02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4 (17,186,020 B, SHA-256 cee68f668329146c54ab6836c898cfdda85c6ca8a2f1949b8be06eca2dfb08c2; all 11 NAS deliverables SHA-256 verified). 47.60s 1080x1920 25fps H.264 / 48kHz AAC, decode exit 0, -16.0 LUFS / -1.3 dBFS TP, 0 silence >0.5s; 71.01% verified PD archive across 6 unique high-res originals (max upscale 2.0164x <=2.35x, Rule 13 clean) + 2 FOH code schematics + 2.40s end card pointing to qfc6EBStOfo; 29 burned-in captions quantized at 25fps (0 overlaps, 0 cut crossings, MarginV>=530). Records on ww2-channel PR #124 (branch macbook/J3566, commit 4409f51). NOT uploaded; no audio/motion perception claimed; ready for Chief review and Ben watch (due Thu 26 Nov 18:00 UTC)."
+        },
+        {
+          "at": "2026-11-26T13:18Z",
+          "by": "claude",
+          "what": "waits on Ben: Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change (by 2026-11-26 21:00 London)"
         }
       ],
       "remaining_action": "Committing non-media Short records on macbook/J3566, opening PR to main, and posting report",
@@ -328303,6 +328308,18 @@
           "Verify decode/audio/captions/stills",
           "Copy to NAS, open PR & report"
         ]
+      },
+      "awaits_ben": {
+        "what": "Watch the U-boat Short (002-S1, 47.6 s) that points to pilot 2, and say OK or what to change",
+        "file": "WW2 UAT/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4",
+        "version": "v01",
+        "due": "2026-11-26T21:00Z",
+        "airs": "2026-11-27T12:30Z",
+        "ifNot": "Hold the Short; nothing uploads without your OK",
+        "card": "WW2:002-S1",
+        "title": "WW2 U-Boats: Why They Could Not Stay Underwater",
+        "number": "002-S1",
+        "type": "short"
       }
     },
     {
@@ -348299,6 +348316,40 @@
           "Reopen or re-wait J3775, finish"
         ]
       }
+    },
+    {
+      "id": "J3794",
+      "title": "WW2 002-S1 Short: put it on Ben's watch, then upload for Fri 27 Nov 12:30 linked to pilot 2 (after his OK only)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Pilot 2 (`qfc6EBStOfo`) stopped getting new impressions after about 1,000 (Ben, 26 Nov, with a Studio screenshot: \"Looks like it's losing traction\"). Its one Short, 002-S1 (built in J3566), is the planned feeder for Fri 27 Nov 12:30 London (`SHORTS_PLAN_2026-12.md` section 0). It was never put on Ben's watch card. Claude added it on 26 Nov ~13:20Z.\n\n**Do (Mini, Field Order History Studio on 9224), in order:**\n1. **Now:** if the Play copy at the UAT path `WW2 UAT/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4` is missing, copy the NAS master `/Volumes/data/studio-live/ww2/02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/Shorts/002_S1_v01/uboat_surface_short_v01.mp4` there (SHA-256 `cee68f66...`) so Ben's card plays.\n2. **Only after Ben's OK on card `WW2:002-S1`** (the job then carries `approved_from`; never before):\n   - upload the exact master Private, scheduled **Fri 27 Nov 2026 12:30 London**, with the title from `metadata.json`;\n   - set **Related video = `qfc6EBStOfo`**, which is public;\n   - make the description line \"Watch the full documentary:\" carry *Battle of the Atlantic: The Month U-Boats Lost* and `https://www.youtube.com/watch?v=qfc6EBStOfo`;\n   - set Altered content = Yes and Not made for kids, as for 001-S1;\n   - read everything back in Studio and the Data API, and record it in 002 `status.json` and `UPLOADS.json`.\n3. **If no OK by Fri 27 Nov 10:30 London,** don't upload. The Short moves to the next free 12:30 day; say so on this job.\n\n**Guards.** Nothing publishes before Ben's OK. No change to any public video. £0.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-26T13:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T13:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make the U-boat Short playable for Ben, then upload it after his OK",
+      "due": "2026-11-27T10:30:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "delivers": [
+        "WW2:002-S1"
+      ],
+      "urgent": 8
     }
   ],
   "focus": [
