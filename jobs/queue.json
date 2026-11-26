@@ -322117,9 +322117,14 @@
           "at": "2026-11-26T20:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T20:54Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3501 after J3810 reopen; preserving existing uploads/schedules (wiyfRnsTfTY, OhdDVA9kWBk, 9ETHUOUH5-A)"
         }
       ],
-      "remaining_action": "Finish Gravity end screen and Studio checks; retain existing uploads, then link both Shorts after the long is public on 3 December.",
+      "remaining_action": "Verify package lint and HOS Studio 9460 signed-in session and readbacks for wiyfRnsTfTY, OhdDVA9kWBk, 9ETHUOUH5-A",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 3,
@@ -322147,11 +322152,17 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T20:53Z",
+        "of": 5,
+        "at": "2026-11-26T20:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Pre-check lint and HOS Studio 9460",
+          "Finish Gravity long in Studio",
+          "Verify Gravity Shorts in Studio",
+          "Run channel audit and open PRs",
+          "Set 3 Dec public wait and report"
+        ],
+        "note": "Claimed J3501 after J3810 reopen; preserving existing uploads/schedules (wiyfRnsTfTY, OhdDVA9kWBk, 9ETHUOUH5-A)"
       }
     },
     {
