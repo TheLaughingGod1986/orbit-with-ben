@@ -325425,10 +325425,10 @@
       "stage": "vo",
       "after": "J3526",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T07:42Z",
+      "eta": "2026-11-26T09:42Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T13:23Z",
       "result": "",
@@ -325442,6 +325442,11 @@
           "at": "2026-11-26T07:42Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-26T07:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "WW2 film 013: narration in Ben's voice (Ghost Army, post-reset)",
@@ -325456,7 +325461,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T07:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3538",
