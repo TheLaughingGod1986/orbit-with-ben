@@ -19,13 +19,13 @@ const AUDIT_KEEP = 100;
 const BODY_MAX = 60000;          // GitHub caps an issue body at 65,536 characters
 const HANDLED_KEEP_DAYS = 30;    // handled ticks older than this are pruned
 // Ben's buttons go straight to the Chief (Ben, 10 Oct): every Approve / Request changes / Undo is also posted on the
-// Chief's thread, OWB on the month's studio thread on orbit-with-ben (#954 since 16 Nov 2026) and HOS on
+// Chief's thread, OWB on the month's studio thread on orbit-with-ben (#1353 since 26 Nov 2026) and HOS on
 // history-of-science #694 (since 20 Nov 2026; #180 full at 2,500 comments), with env BOARD_GH_TOKEN (a fine-grained GitHub token that can comment on those two repos;
 // never in the page or the repo). Prefix: "[Ben] " then OK / changes / undo, so the Chief's thread watch takes it as
 // Ben's word. The OWB number must equal scripts/thread.json's and HOS must equal channels/hos/channel.json's desk.number:
 // test_board_publish.py fails when either thread rolls over and this line is not changed with it.
 // WW2 posts to the Orbit studio thread until the channel has its own, so BOARD_GH_TOKEN needs no access to ww2-channel.
-const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 954], HOS: ["TheLaughingGod1986/history-of-science", 694], WW2: ["TheLaughingGod1986/orbit-with-ben", 954] };
+const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 1353], HOS: ["TheLaughingGod1986/history-of-science", 694], WW2: ["TheLaughingGod1986/orbit-with-ben", 1353] };
 
 function londonTime(iso) {
   try { return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
