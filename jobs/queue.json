@@ -346608,22 +346608,27 @@
           "at": "2026-11-26T07:13Z",
           "by": "gemini",
           "what": "step 0 of 2 done: Claimed J3780 under DISPATCH PRIORITY; checking non-producer guard (gemini authored J3671 / HOS PR #797) and Chief chain availability"
+        },
+        {
+          "at": "2026-11-26T07:14Z",
+          "by": "gemini",
+          "what": "step 1 of 2 done: Verified non-producer guard (gemini authored J3671 / HOS PR #797 head a855da7475, OPEN/MERGEABLE, 6/6 CI SUCCESS) and chief_relay.py status (claude down until 07:50Z, codex out until Nov 27); holding J3780 without self-PASS/self-merge"
         }
       ],
-      "remaining_action": "Verify non-producer guard and Chief availability before parking J3780 for independent Chief",
+      "remaining_action": "Record structured non-producer hold until returning Chief claude (>= 07:50Z) and post handoff reports",
       "due": "2026-12-03T18:00:00Z",
       "kind": "chief",
       "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 2,
-        "at": "2026-11-26T07:13Z",
+        "at": "2026-11-26T07:14Z",
         "by": "gemini",
         "plan": [
           "Verify non-producer guard, Chief availability, and HOS PR #797 state",
           "Record structured non-producer hold and post handoff reports"
         ],
-        "note": "Claimed J3780 under DISPATCH PRIORITY; checking non-producer guard (gemini authored J3671 / HOS PR #797) and Chief chain"
+        "note": "Verified non-producer guard (gemini authored J3671 / HOS PR #797 head a855da7475, OPEN/MERGEABLE, 6/6 CI SUCCESS) and ch"
       },
       "taskKeys": [
         "HOS:128"
