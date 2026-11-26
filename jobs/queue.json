@@ -351391,13 +351391,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-26T23:54Z",
-      "eta": "2026-11-27T01:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T23:51Z",
-      "result": "",
+      "result": "NARRATION_v05 sha256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce (37 blocks, 1708 words, 10322 chars, parity true). Promise ends ~0:38-0:41; Pedestal named and convoy sails ~0:53-0:59. Detour removed, S01/S20 engines consistent, tow payoff clarified from C31/C32 wording only, 'the wreck', figures split. DELTA_CLAIMS_v05.md D01-D20 ready for independent Gemini check, then Rule-6 re-read and Chief review. PR #196 open, not merged. No VO, no spend, no lock.",
       "history": [
         {
           "at": "2026-11-26T23:51Z",
@@ -351443,6 +351443,11 @@
           "at": "2026-11-26T23:58Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: ww2-channel PR #196 open (not merged); validation true"
+        },
+        {
+          "at": "2026-11-26T23:58Z",
+          "by": "claudecode",
+          "what": "done: NARRATION_v05 sha256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce (37 blocks, 1708 words, 10322 chars, parity true). Promise ends ~0:38-0:41; Pedestal named and convoy sails ~0:53-0:59. Detour removed, S01/S20 engines consistent, tow payoff clarified from C31/C32 wording only, 'the wreck', figures split. DELTA_CLAIMS_v05.md D01-D20 ready for independent Gemini check, then Rule-6 re-read and Chief review. PR #196 open, not merged. No VO, no spend, no lock."
         }
       ],
       "remaining_action": "Finished; awaiting Gemini delta check",
@@ -351473,7 +351478,8 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "ww2-channel#196"
     },
     {
       "id": "J3821",

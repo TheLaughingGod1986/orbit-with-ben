@@ -86,13 +86,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3817 | mini | claimed | gemini | 2026-11-27T01:51Z | 064 thumbs · thumb · OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts | J3719 |
 | J3818 | mini | open (after J3817) | – | – | 064 thumbs · review · OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock | J3719 |
 | J3819 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
-| J3820 | mini | claimed | claudecode | 2026-11-27T01:54Z | WW2:009 script · script · WW2 009: rewrite v05 after Rule-6 failure | ww2-channel#193 |
 | J3821 | gemini | open (after J3820) | – | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 
 Recently finished:
 
+- J3820 done: WW2 009: rewrite v05 after Rule-6 failure (NARRATION_v05 sha256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce (37 blocks, 1708 words, 10322 chars, parity true). Promise ends ~0:38-0:41; Pedestal named and convoy sails ~0:53-0:59. Detour removed, S01/S20 engines consistent, tow payoff clarified from C31/C32 wording only, 'the wreck', figures split. DELTA_CLAIMS_v05.md D01-D20 ready for independent Gemini check, then Rule-6 re-read and Chief review. PR #196 open, not merged. No VO, no spend, no lock.)
 - J3814 done: Archive the HOS 008 s04 uploaded cover and its provenance (Archived explicitly reconstructed frame-0 cover and phone/style previews durably on NAS. Separate provenance receipt, hashes and still review delivered in HOS PR 805; all repository checks PASS. Desk report 7204436959. No publishing changes or spend.)
 - J3813 done: Verify condition for J3781 (Verification complete; J3781 handled by the Chief on its evidence. Claude, acting Chief, 26 Nov 23:50Z.)
 - J3812 done: Package and upload OWB 032 Short 1 short v01 (How Would You Light a Fire on Titan?) Private, 2026-12-18T11:30Z (Chief PASS (Claude, acting Chief): PR #1355 merged 45eb335b. OWB 032 Short 1 v01 'How Would You Light a Fire on Titan?' uploaded as McBNig_XScA, Private, publishAt 2026-12-18T11:30Z. API read-back processed, not made for kids, en-GB captions serving, custom cover. Related video T3cBBss1F60 (public) and Altered=Yes reload-verified in Studio. Description line 1 links the long; facts sourced to NASA/ESA. Master sha256 494f092b matches Ben's OK (OWB:ASK:J3758). No re-upload, no spend.)
@@ -102,4 +102,3 @@ Recently finished:
 - J3808 done: WW2 pilot 2: two Studio-editor cuts (04:27.50-05:05.30 and 05:37.10-06:25.10), then chapters, captions and end screen (done)
 - J3807 done: Verify condition for J3756 (Verification complete; J3756 handled by the Chief on its evidence. Claude, acting Chief, 26 Nov 23:50Z.)
 - J3806 done: Verify condition for J3649 (Chief review complete: fresh HOS YouTube Data API read 2026-11-26T18:16:27Z proves YqCWYlv_LCY public since 18:00:35Z. Reopened J3649 with evidence and preserved approval/schedule gates. Existing Studio follow-up (Gemini primary), due 27 Nov 10:00Z, owns both Related links, audience/disclosure read-back, existing T&C active verification and channel audit. No YouTube mutation or spend in this review.)
-- J3805 done: Verify condition for J3781 (Condition MET: independently verified elected Codex availability, unchanged green PR heads 799/798, locked script and four NAS master hashes. Reopened J3781 with evidence and routed to Codex for substantive alias/VO review and conditional merges. No VO PASS, stage advancement, spend or public changes; J3678 and Ben final watch gates intact.)
