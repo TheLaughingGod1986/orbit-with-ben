@@ -346117,9 +346117,14 @@
           "at": "2026-11-26T05:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T05:18Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3774 as acting Chief (gemini)"
         }
       ],
-      "remaining_action": "Review ww2-channel#180 + CLAIMS_CHECK_v01.md + Pilot 2 learnings, run Rule-6 viewer test, and lock script by Sun 13 Dec",
+      "remaining_action": "Check PRs #180/#181, Pilot 2 learnings, and self-review/independence rules",
       "due": "2026-12-13T18:00:00Z",
       "kind": "review",
       "plain": "Run topic, archive and stranger viewer test on the first 300 and 1,200 words of WW2 film 015 Higgins boat before script lock",
@@ -346133,12 +346138,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-26T05:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check independence, Pilot 2 learnings & PRs #180/#181",
+          "Audit topic, archive provenance & packaging (Rules 1,2,5,13)",
+          "Run Rule-6 stranger viewer test (300 + 1,200 words) & claims check",
+          "Apply ruling & edits (lock PR or rewrite/park)",
+          "Report & close or park J3774"
+        ],
+        "note": "Claimed J3774 as acting Chief (gemini)"
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     }
   ],
   "focus": [
