@@ -349564,9 +349564,14 @@
           "at": "2026-11-26T18:02Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T18:02Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Chief review uses its own milestones; worker default plan replaced."
         }
       ],
-      "remaining_action": "Verify readiness: Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
+      "remaining_action": "Record the Chief ruling and restore the independent voice review",
       "kind": "review",
       "recheck_of": "J3780",
       "due": "2026-11-26T18:50:53+00:00",
@@ -349584,9 +349589,16 @@
         "of": 3,
         "at": "2026-11-26T18:02Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check the waiting condition",
+          "Review current evidence",
+          "Record ruling and next review"
+        ],
+        "note": "Chief review uses its own milestones; worker default plan replaced."
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3805",
