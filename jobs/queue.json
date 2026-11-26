@@ -349263,9 +349263,14 @@
           "at": "2026-11-26T17:45Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-26T17:47Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: 48h inspect done (1,211 impr, 1.0% CTR, 30 views, 16.5% avg viewed, retention curve suppressed) and 6 watch clips cut from v06 master"
         }
       ],
-      "remaining_action": "Inspecting 48h metrics, launch records, and retention data for qfc6EBStOfo",
+      "remaining_action": "Watching all six moving-video + audio proxy clips for qfc6EBStOfo",
       "due": "2026-11-27T05:00:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -349276,9 +349281,9 @@
       "autopsy": "qfc6EBStOfo@48h",
       "plain": "Analyse why viewers stayed or left on \"How the U-Boats Lost Their Safest Hunting Ground\" (48h) and write up to 3 fixes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-26T17:45Z",
+        "at": "2026-11-26T17:47Z",
         "by": "gemini",
         "plan": [
           "Inspect 48h metrics",
@@ -349286,7 +349291,8 @@
           "Watch clips with video & audio",
           "Write autopsy & learnings",
           "Open PR & report"
-        ]
+        ],
+        "note": "48h inspect done (1,211 impr, 1.0% CTR, 30 views, 16.5% avg viewed, retention curve suppressed) and 6 watch clips cut fr"
       },
       "taskKeys": [
         "WW2:002"
