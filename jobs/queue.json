@@ -350190,13 +350190,13 @@
       "stage": "edit",
       "after": "J3714",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T19:58Z",
-      "eta": "2026-11-26T20:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-26T18:33Z",
-      "result": "",
+      "result": "Waiting for: YouTube Studio editor processing of Cut A (04:27:14-05:05:07, 37.72s) and Cut B (05:37:04-06:25:03, 47.96s) on qfc6EBStOfo (confirmed 2026-11-26T20:15:18Z, new length 21:01) finishes",
       "history": [
         {
           "at": "2026-11-26T18:33Z",
@@ -350222,9 +350222,19 @@
           "at": "2026-11-26T20:15Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Confirmed Cut A (04:27:14-05:05:07, 37.72s) + Cut B (05:37:04-06:25:03, 47.96s; total 85.68s -> 21:01) in Studio Editor at 2026-11-26T20:15:18Z. Video is now processing on YouTube."
+        },
+        {
+          "at": "2026-11-26T20:20Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: YouTube Studio editor processing of Cut A (04:27:14-05:05:07, 37.72s) and Cut B (05:37:04-06:25:03, 47.96s) on qfc6EBStOfo (confirmed 2026-11-26T20:15:18Z, new length 21:01) finishes"
+        },
+        {
+          "at": "2026-11-26T20:20Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T20:35:00Z"
         }
       ],
-      "remaining_action": "Waiting for YouTube Studio editor processing of Cut A and Cut B (new length 21:01) to finish",
+      "remaining_action": "Verify PT21M2S/PT21M1S live, shift description chapters (00:00/02:08/05:00/09:24/13:25/17:57), check/upload retimed en-GB SRT v07 from NAS trim_receipt_v01, restore end screen in last 20s, read back Studio + API, and open ww2-channel PR with TRIM_RECEIPT_v01.md, status.json and LEARNINGS.md",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -350245,7 +350255,13 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "YouTube Studio editor processing of Cut A (04:27:14-05:05:07, 37.72s) and Cut B (05:37:04-06:25:03, 47.96s) on qfc6EBStOfo (confirmed 2026-11-26T20:15:18Z, new length 21:01) finishes",
+        "check_at": "2026-11-26T20:35:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
