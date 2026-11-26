@@ -348920,20 +348920,29 @@
           "at": "2026-11-26T15:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T15:55Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the Mini's Studio browsers are up and signed in",
+      "remaining_action": "Check CDP browser ports 9224, 9223, and HOS Studio port",
       "due": "2026-11-26T16:45:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 9,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T15:54Z",
+        "of": 4,
+        "at": "2026-11-26T15:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check CDP browser ports and tabs",
+          "Verify 9224 FOH Studio sign-in",
+          "Reopen J3794 or block if signed out",
+          "Post report and close job"
+        ]
       }
     }
   ],
