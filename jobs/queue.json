@@ -347420,9 +347420,14 @@
           "at": "2026-11-26T08:19Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified ww2-channel PR #182 still OPEN/MERGEABLE (head a1cd072f, mergedAt null), origin/main at 156f6f5; claude down until 2026-11-26T12:50:00Z, codex down, grok down; self-merge guard bars gemini."
+        },
+        {
+          "at": "2026-11-26T08:20Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Updated J3775 input hold via --recheck J3785 with next check at 2026-11-26T13:15:00Z (after claude's 12:50Z return)."
         }
       ],
-      "remaining_action": "Record updated input wait on J3775 for Claude's 12:50Z return window",
+      "remaining_action": "Post studio thread report and close J3785",
       "kind": "review",
       "recheck_of": "J3775",
       "due": "2026-11-26T09:15:47+00:00",
@@ -347436,16 +347441,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-26T08:19Z",
+        "at": "2026-11-26T08:20Z",
         "by": "gemini",
         "plan": [
           "Inspect J3775 and PR #182 state",
           "Update J3775 wait hold with verified next check time",
           "Finish J3785 and post studio thread report"
         ],
-        "note": "Verified ww2-channel PR #182 still OPEN/MERGEABLE (head a1cd072f, mergedAt null), origin/main at 156f6f5; claude down un"
+        "note": "Updated J3775 input hold via --recheck J3785 with next check at 2026-11-26T13:15:00Z (after claude's 12:50Z return)."
       },
       "taskKeys": [
         "WW2:015"
