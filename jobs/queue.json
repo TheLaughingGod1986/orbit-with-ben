@@ -346603,20 +346603,31 @@
           "at": "2026-11-26T07:13Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T07:13Z",
+          "by": "gemini",
+          "what": "step 0 of 2 done: Claimed J3780 under DISPATCH PRIORITY; checking non-producer guard (gemini authored J3671 / HOS PR #797) and Chief chain availability"
         }
       ],
-      "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
+      "remaining_action": "Verify non-producer guard and Chief availability before parking J3780 for independent Chief",
       "due": "2026-12-03T18:00:00Z",
       "kind": "chief",
       "plain": "Non-producer Chief reviews HOS 128 Shorts S01 & S02 VO takes (HOS PR #797), rules PASS/KEEP, and merges PR",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 2,
         "at": "2026-11-26T07:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify non-producer guard, Chief availability, and HOS PR #797 state",
+          "Record structured non-producer hold and post handoff reports"
+        ],
+        "note": "Claimed J3780 under DISPATCH PRIORITY; checking non-producer guard (gemini authored J3671 / HOS PR #797) and Chief chain"
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     }
   ],
   "focus": [
