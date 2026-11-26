@@ -321980,13 +321980,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T20:53Z",
-      "eta": "2026-11-26T21:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
-      "result": "",
+      "result": "Waiting for: HOS 009 Gravity long wiyfRnsTfTY is Public (scheduled Thu 3 Dec 2026 18:00 UK/UTC) and selectable in Studio Related video picker",
       "history": [
         {
           "at": "2026-11-24T10:31Z",
@@ -322142,9 +322142,19 @@
           "at": "2026-11-26T21:16Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Step 4 done: HOS check_all ALL CHECKS PASS; HOS PR #803 and OWB PR #1350 (T045) opened for Chief merge; post-Studio channel:audit PASS (75 videos, 0 errors)."
+        },
+        {
+          "at": "2026-11-26T21:16Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HOS 009 Gravity long wiyfRnsTfTY is Public (scheduled Thu 3 Dec 2026 18:00 UK/UTC) and selectable in Studio Related video picker"
+        },
+        {
+          "at": "2026-11-26T21:16Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-03T18:05:00Z"
         }
       ],
-      "remaining_action": "Wait for wiyfRnsTfTY Public at 2026-12-03T18:00Z to link Related on OhdDVA9kWBk and 9ETHUOUH5-A, verify T045 running, and pin comment",
+      "remaining_action": "Verify wiyfRnsTfTY is Public, set Related video -> wiyfRnsTfTY on OhdDVA9kWBk and 9ETHUOUH5-A before Fri 4 Dec 11:30 UK, verify T045 Title+Thumbnail T&C is Running, post and pin open question comment on wiyfRnsTfTY, and run final channel:audit",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 3,
@@ -322183,6 +322193,11 @@
           "Set 3 Dec public wait and report"
         ],
         "note": "Step 4 done: HOS check_all ALL CHECKS PASS; HOS PR #803 and OWB PR #1350 (T045) opened for Chief merge; post-Studio chan"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "HOS 009 Gravity long wiyfRnsTfTY is Public (scheduled Thu 3 Dec 2026 18:00 UK/UTC) and selectable in Studio Related video picker",
+        "check_at": "2026-12-03T18:05:00Z"
       }
     },
     {
