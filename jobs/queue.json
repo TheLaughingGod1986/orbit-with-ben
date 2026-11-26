@@ -348290,9 +348290,14 @@
           "at": "2026-11-26T13:17Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-26T13:18Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: PR #182 MERGED 2026-11-26T09:42:50Z (merge dd01145, head a1cd072f), on ww2 origin/main (68b0a84); merged by channel_pr_sweep.py 'Chief sweep' alongside Claude-authored commits 09:40-09:43Z; producer was gemini, so not a self-merge"
         }
       ],
-      "remaining_action": "Checking whether ww2 PR #182 is merged",
+      "remaining_action": "Reopen J3775 with evidence and finish this check",
       "kind": "review",
       "recheck_of": "J3775",
       "due": "2026-11-26T14:16:35+00:00",
@@ -348306,16 +348311,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-26T13:17Z",
+        "at": "2026-11-26T13:18Z",
         "by": "claudecode",
         "plan": [
           "Read J3775 and evidence",
           "Check PR #182 state",
           "Reopen or re-wait J3775, finish"
-        ]
-      }
+        ],
+        "note": "PR #182 MERGED 2026-11-26T09:42:50Z (merge dd01145, head a1cd072f), on ww2 origin/main (68b0a84); merged by channel_pr_s"
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     },
     {
       "id": "J3794",
