@@ -60,8 +60,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3581 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 1: build 'SS Ohio: Why a 27ft Torpedo Hole Didn't Sink Her' for Ben watch | J3563 |
 | J3582 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 2: build 'Operation Pedestal: The 4-Ship Splint Tow to Malta' for Ben watch | J3563 |
 | J3583 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 1: build 'Sherman DD: How Britain Made a 30-Ton Tank Swim' for Ben watch | J3563 |
-| J3584 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch | J3563 |
-| J3585 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
+| J3584 | mini | blocked | claude | – | WW2:010 edit · assembly · WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch | J3563 |
+| J3585 | mini | blocked | claude | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
 | J3586 | mini | blocked | gemini | – | WW2:014 vo · vo · WW2 film 014: narration in Ben's voice (Dambusters, post-reset) |  |
 | J3588 | mini | blocked | gemini | – | review · Verify condition for J3369 |  |
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
