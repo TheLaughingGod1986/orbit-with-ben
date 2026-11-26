@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3817 | mini | claimed | gemini | 2026-11-27T01:51Z | 064 thumbs · thumb · OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts | J3719 |
 | J3818 | mini | open (after J3817) | – | – | 064 thumbs · review · OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock | J3719 |
 | J3819 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
+| J3820 | any | open | – | – | WW2:009 script · script · WW2 009: rewrite v05 after Rule-6 failure | ww2-channel#193 |
 
 Recently finished:
 
