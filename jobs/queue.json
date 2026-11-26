@@ -346764,9 +346764,14 @@
           "at": "2026-11-26T13:36Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T13:37Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: J3774 lock pull request 182 is already merged. Film folder is not on the shared store yet."
         }
       ],
-      "remaining_action": "Harvest 37 US Federal PD photos + LoC TIFF masters for WW2:015 to NAS, verify captions/crops, update ARCHIVE_PROVENANCE.md + status.json, and open clean PR",
+      "remaining_action": "Download the 37 official Higgins boat archive photos onto the shared film store",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR",
@@ -346775,11 +346780,16 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T13:36Z",
+        "of": 4,
+        "at": "2026-11-26T13:37Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Confirm the locked script is on main",
+          "Download the 37 photos and the Library of Congress masters",
+          "Check the four captions and framing by eye",
+          "Write the provenance notes and open a pull request"
+        ],
+        "note": "J3774 lock pull request 182 is already merged. Film folder is not on the shared store yet."
       }
     },
     {
