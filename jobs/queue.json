@@ -350217,16 +350217,21 @@
           "at": "2026-11-26T20:02Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Before state captured (PT22M28S, Public, 6 chapters, en-GB 561 cues). v06 25fps audio+scene measurements locked: Cut A 04:27:14-05:05:07 (267.56-305.28s, 37.72s) and Cut B 05:37:04-06:25:03 (337.16-385.12s, 47.96s); total 85.68s."
+        },
+        {
+          "at": "2026-11-26T20:15Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Confirmed Cut A (04:27:14-05:05:07, 37.72s) + Cut B (05:37:04-06:25:03, 47.96s; total 85.68s -> 21:01) in Studio Editor at 2026-11-26T20:15:18Z. Video is now processing on YouTube."
         }
       ],
-      "remaining_action": "Inspecting End screen/Cards before state and entering Cut A and Cut B in Studio editor",
+      "remaining_action": "Waiting for YouTube Studio editor processing of Cut A and Cut B (new length 21:01) to finish",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-26T20:02Z",
+        "at": "2026-11-26T20:15Z",
         "by": "gemini",
         "plan": [
           "Measure v06 audio and record before state",
@@ -350236,7 +350241,7 @@
           "Verify live Studio and API readback",
           "Write receipt, status, learnings, and open PR"
         ],
-        "note": "Before state captured (PT22M28S, Public, 6 chapters, en-GB 561 cues). v06 25fps audio+scene measurements locked: Cut A 0"
+        "note": "Confirmed Cut A (04:27:14-05:05:07, 37.72s) + Cut B (05:37:04-06:25:03, 47.96s; total 85.68s -> 21:01) in Studio Editor "
       },
       "taskKeys": [
         "WW2:002"
