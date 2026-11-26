@@ -274431,9 +274431,14 @@
           "at": "2026-11-25T14:40Z",
           "by": "relay",
           "what": "condition verification queued: J3720"
+        },
+        {
+          "at": "2026-11-26T00:07Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T15:00:00Z"
         }
       ],
-      "remaining_action": "Retain 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md, apply any approved thumbnail/title tweaks, and close J3022 so J3023 assembly starts",
+      "remaining_action": "Wait for J3718 (Cursor reset 2026-11-26T11:00Z) and J3719 (DECISION.md, 24 h cutoff 2026-11-26T14:39Z), then retain DECISION.md, apply approved packaging/opening fixes, and close J3022 to release J3023.",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
@@ -274457,9 +274462,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md",
-        "check_at": "2026-11-25T15:40:58+00:00",
-        "recheck_task": "J3720"
+        "condition": "Independent packaging panel incomplete for OWB 064: J3717 (gemini.md, f1f7e46d59) is done, but J3716 (codex.md, Codex out of usage until 27 Nov 16:25), J3718 (cursor.md, Cursor weekly limit resets 2026-11-26T11:00:21Z) and J3719 (DECISION.md, after J3718, 24 h missing-critic cutoff 2026-11-26T14:39Z) remain open; 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md is absent on origin/main.",
+        "check_at": "2026-11-26T15:00:00Z",
+        "last_recheck": "J3720",
+        "checked_at": "2026-11-26T00:07:30+00:00",
+        "checked_by": "gemini"
       }
     },
     {
