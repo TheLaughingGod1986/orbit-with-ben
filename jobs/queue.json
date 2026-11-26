@@ -345312,10 +345312,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T04:05Z",
+      "eta": "2026-11-26T04:50Z",
       "created_by": "gemini",
       "created_at": "2026-11-26T02:45Z",
       "result": "",
@@ -345359,6 +345359,11 @@
           "at": "2026-11-26T04:05Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) KEEP verified: HOS PR #795 merged (98abe4d938), validate_j3766.py --strict --hos-ref origin/main exit 0 (jobs/reviews/J3768/REVIEW.md, c7c8c01be7); closing J3768 done."
+        },
+        {
+          "at": "2026-11-26T04:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief KEEP review and HOS PR #795 merge",
@@ -345377,7 +345382,15 @@
         "OWB:064",
         "HOS:008",
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T04:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3769",
