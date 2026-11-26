@@ -344557,9 +344557,14 @@
           "at": "2026-11-26T00:58Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T00:59Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Checking snapshot, RSS feed and live channel pages to list the last 10 public OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -344571,12 +344576,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-26T00:58Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-26T00:59Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Identify last 10 live videos",
+          "Audit live descriptions, URLs, end screens & Related",
+          "Verify long chapters against master cuts",
+          "Write 05_Analytics/live_fixes/2026-11-26.md",
+          "Open PR, report & finish/block"
+        ]
       }
     },
     {
