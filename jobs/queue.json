@@ -336442,9 +336442,14 @@
           "at": "2026-11-26T03:36Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE unchanged (48 KEEP / 8 RETAKE / 10 unset); zero new continuous-playback marks for rows 56-62, 64-66 on HOS #180/#694, OWB #954, or open PRs."
+        },
+        {
+          "at": "2026-11-26T03:37Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Merged OWB PR #1338 (10da27d1ab), updated J3178 typed capability hold (--requires moving_video_input, --recheck J3668, next check 2026-11-26T11:30:00Z), and removed temp worktree."
         }
       ],
-      "remaining_action": "Writing J3668 review record, re-checking Chief authority, and updating J3178 typed capability hold",
+      "remaining_action": "Posting J3668 acting-Chief ruling reports to HOS desk #694 and OWB thread #954 and closing J3668",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -336461,9 +336466,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-26T03:36Z",
+        "at": "2026-11-26T03:37Z",
         "by": "gemini",
         "plan": [
           "Probe session media capabilities and worker status",
@@ -336471,7 +336476,7 @@
           "Record review and update J3178 hold",
           "Post reports and close J3668"
         ],
-        "note": "Verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE unchanged ("
+        "note": "Merged OWB PR #1338 (10da27d1ab), updated J3178 typed capability hold (--requires moving_video_input, --recheck J3668, n"
       },
       "taskKeys": [
         "HOS:013"
