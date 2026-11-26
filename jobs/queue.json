@@ -350212,16 +350212,21 @@
           "at": "2026-11-26T19:59Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-26T20:02Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Before state captured (PT22M28S, Public, 6 chapters, en-GB 561 cues). v06 25fps audio+scene measurements locked: Cut A 04:27:14-05:05:07 (267.56-305.28s, 37.72s) and Cut B 05:37:04-06:25:03 (337.16-385.12s, 47.96s); total 85.68s."
         }
       ],
-      "remaining_action": "Measuring v06 master audio boundaries and capturing before state in Studio and Data API",
+      "remaining_action": "Inspecting End screen/Cards before state and entering Cut A and Cut B in Studio editor",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-26T19:59Z",
+        "at": "2026-11-26T20:02Z",
         "by": "gemini",
         "plan": [
           "Measure v06 audio and record before state",
@@ -350230,7 +350235,8 @@
           "Retime chapters, captions, and end screen",
           "Verify live Studio and API readback",
           "Write receipt, status, learnings, and open PR"
-        ]
+        ],
+        "note": "Before state captured (PT22M28S, Public, 6 chapters, en-GB 561 cues). v06 25fps audio+scene measurements locked: Cut A 0"
       },
       "taskKeys": [
         "WW2:002"
