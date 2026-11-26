@@ -318656,9 +318656,14 @@
           "at": "2026-11-26T00:42Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J2704/J2708 queue history, Chief ruling #6813294950, and HOS docs/validation/J2704 (carried in HOS PR #641). J2708 is blocked on Vercel Hobby team fair-use soft block until 2026-12-12T18:13Z (check_at 2026-12-12T18:30Z)."
+        },
+        {
+          "at": "2026-11-26T00:43Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified live via read-only Vercel API (2026-11-26T00:42Z): team_UPErYpfb3ww71LYTIWUoKvcH still has softBlock FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) until 2026-12-12T18:13:01Z; history-of-science-content-ops still has 0 env vars and no Preview deploy; J2708 remains blocked until 2026-12-12T18:30Z."
         }
       ],
-      "remaining_action": "Verify live Vercel Preview env/team status for J2708 prerequisite",
+      "remaining_action": "Record unmet condition wait on J2704 with --recheck J3469, finish J3469, and post thread report",
       "kind": "review",
       "recheck_of": "J2704",
       "mini_only": true,
@@ -318673,16 +318678,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-26T00:42Z",
+        "at": "2026-11-26T00:43Z",
         "by": "gemini",
         "plan": [
           "Inspect J2704/J2708 history & evidence",
           "Verify hosted Preview PostgreSQL condition",
           "Update J2704 state & complete J3469"
         ],
-        "note": "Read J2704/J2708 queue history, Chief ruling #6813294950, and HOS docs/validation/J2704 (carried in HOS PR #641). J2708 "
+        "note": "Verified live via read-only Vercel API (2026-11-26T00:42Z): team_UPErYpfb3ww71LYTIWUoKvcH still has softBlock FAIR_USE_L"
       }
     },
     {
