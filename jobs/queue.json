@@ -344876,9 +344876,14 @@
           "at": "2026-11-26T01:30Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3766 QA sweep complete across OWB (257880eab7) and HOS PR #795 (ca3a2fb52b, check_all.sh PASS, not self-merged) with byte-identical J3766_QA_SWEEP_INVENTORY_2026-11-26.json (sha256 c58fe575af71fc39f00f3d13b6bee2c959de5018e43d978f6fcb2e45e3d32e25) and J3766_QA_SWEEP_REPORT_2026-11-26.md (sha256 7aa339f5f478d5e67057e90987ba745c90da98af22dd548c1aeaceca781fa9e9). 280 entries inventoried (171 OWB + 109 HOS; 3 net new post-J3340: OWB:032 032_short_strike_match_fire_v01, OWB:064 064_code_graphics_j3022_v01 + standalone score bed v01 verified, HOS:008 hos_008_s04_no_patent_v01); all 816/816 applicable sidecars (789 JSON + 27 .txt) reconciled 1-to-1 against disk with 0 mismatches; 0 unaddressed current_newest FAILs across 165 newest candidates (27 fail indicators strictly on 8 historical_superseded cuts); 3,528 warnings preserved unwaived; 0 new repair jobs required. OWB thread and HOS desk reports posted. Spend: £0."
+        },
+        {
+          "at": "2026-11-26T02:45Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T04:00:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief review and HOS PR #795 merge",
+      "remaining_action": "Wait for J3768\ntitle:\nkind:\nref:\n\nReconcile\n\nFollow\n1.\n2.\n3.\n4.\n5. to reconcile J3766 metadata and Section 4 across OWB and HOS PR #795 (validate_j3766.py --strict exit 0), then Chief merges #795 and closes J3766 KEEP",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -344908,7 +344913,12 @@
         "OWB:064",
         "HOS:008",
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Acting Chief (gemini) ruling FIX (jobs/reviews/J3766/REVIEW.md, 381ac5db85): core QA sweep verified (280 entries, 816/816 sidecars, 0 current_newest FAILs, 0 repair jobs needed, HOS PR #795 CI green), held unmerged until follow-up J3768\ntitle:\nkind:\nref:\n\nReconcile\n\nFollow\n1.\n2.\n3.\n4.\n5. reconciles the 17 stale J3340 top-level metadata and Section 4 discrepancies byte-identically across OWB main and HOS PR #795 (gemini/J3766-qa-sweep) and python3 jobs/reviews/J3766/validate_j3766.py --strict exits 0. Then Chief verifies updated SHA-256s, merges HOS PR #795, and closes J3766 KEEP.",
+        "check_at": "2026-11-26T04:00:00Z"
+      }
     },
     {
       "id": "J3767",
