@@ -344285,13 +344285,13 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T01:56Z",
-      "eta": "2026-11-26T03:56Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "",
+      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9222 (Google Flow studio Ultra signed out at accounts.google.com after 2026-11-26T02:06Z reboot; :9223 Orbit Studio and :9224 WW2 Studio also signed out). Row 49 t3 already reconciled (100/200 cr); once :9222 is signed in, resume /Volumes/MiniWork/scratch/J3760-hos to mint ONLY remaining row 63 (100 cr).",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -344322,9 +344322,19 @@
           "at": "2026-11-26T02:15Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Reconciled row 49 (P4:12_lyell_hooker_bundle t3) after 02:06Z Mac mini reboot: archived to archive_v01_retake2 (sha256 b0b6c361..., 8.0s, 1280x720, technical ok, keep false), exported 100 cr to ai_spend, built 0.5s+0.25s sheets, next_batch=row 63 only. Chrome :9222/:9223/:9224 signed out after reboot; parking for Ben sign-in."
+        },
+        {
+          "at": "2026-11-26T02:15Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben sign-in required on Mac mini CDP Chrome :9222 (Google Flow studio Ultra signed out at accounts.google.com after 2026-11-26T02:06Z reboot; :9223 Orbit Studio and :9224 WW2 Studio also signed out). Row 49 t3 already reconciled (100/200 cr); once :9222 is signed in, resume /Volumes/MiniWork/scratch/J3760-hos to mint ONLY remaining row 63 (100 cr)."
+        },
+        {
+          "at": "2026-11-26T02:15Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
         }
       ],
-      "remaining_action": "Wait for Ben sign-in on Chrome :9222 (Google Flow), then submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr)",
+      "remaining_action": "After Ben signs back into Flow :9222, submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr), build 2/2 receipt + sheets, update status.json, run check_all.sh and open HOS PR",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
@@ -344345,7 +344355,12 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben sign-in required on Mac mini CDP Chrome :9222 (Google Flow studio Ultra signed out at accounts.google.com after 2026-11-26T02:06Z reboot; :9223 Orbit Studio and :9224 WW2 Studio also signed out). Row 49 t3 already reconciled (100/200 cr); once :9222 is signed in, resume /Volumes/MiniWork/scratch/J3760-hos to mint ONLY remaining row 63 (100 cr).",
+        "check_at": "2026-11-26T08:00:00Z"
+      }
     },
     {
       "id": "J3761",
