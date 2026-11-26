@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
 | J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
-| J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
+| J3719 | cloud | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
