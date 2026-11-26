@@ -346763,13 +346763,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T07:35Z",
-      "eta": "2026-11-26T09:35Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T07:33Z",
-      "result": "",
+      "result": "Waiting for: Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review & merge HOS PR #799 (d678349009, OPEN/MERGEABLE, 4/4 CI green) and HOS PR #798 (17672ae226, OPEN/MERGEABLE, 6/6 CI green), listen to NAS masters, rule VO PASS/RETAKE, and flip HOS:136 shorts_vo to done (gemini authored J3679 and cannot self-PASS or self-merge)",
       "history": [
         {
           "at": "2026-11-26T07:33Z",
@@ -346790,9 +346790,19 @@
           "at": "2026-11-26T07:37Z",
           "by": "gemini",
           "what": "step 1 of 2 done: Verified non-producer guard (gemini authored J3679; PR #799 head d678349009 OPEN/MERGEABLE 4/4 CI SUCCESS; PR #798 head 17672ae226 OPEN/MERGEABLE 6/6 CI SUCCESS; 4/4 tight NAS SHA-256 verified) and chief_relay.py status (claude down until 07:50Z, codex out until Nov 27, chief down); holding J3781 without self-PASS/self-merge"
+        },
+        {
+          "at": "2026-11-26T07:37Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review & merge HOS PR #799 (d678349009, OPEN/MERGEABLE, 4/4 CI green) and HOS PR #798 (17672ae226, OPEN/MERGEABLE, 6/6 CI green), listen to NAS masters, rule VO PASS/RETAKE, and flip HOS:136 shorts_vo to done (gemini authored J3679 and cannot self-PASS or self-merge)"
+        },
+        {
+          "at": "2026-11-26T07:37Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:05:00Z"
         }
       ],
-      "remaining_action": "Park J3781 on typed input wait for independent Chief (>= 07:50Z) and post reports",
+      "remaining_action": "Await independent non-producer Chief (claude >= 07:50Z or codex) to review & merge HOS PR #799 and PR #798 and rule PASS/RETAKE on HOS:136 Shorts VO",
       "due": "2026-12-05T18:00:00Z",
       "for": "claude",
       "kind": "chief",
@@ -346810,7 +346820,12 @@
       },
       "taskKeys": [
         "HOS:136"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Independent non-producer Chief (claude returning >= 2026-11-26T07:50:00Z, or codex) available to review & merge HOS PR #799 (d678349009, OPEN/MERGEABLE, 4/4 CI green) and HOS PR #798 (17672ae226, OPEN/MERGEABLE, 6/6 CI green), listen to NAS masters, rule VO PASS/RETAKE, and flip HOS:136 shorts_vo to done (gemini authored J3679 and cannot self-PASS or self-merge)",
+        "check_at": "2026-11-26T08:05:00Z"
+      }
     }
   ],
   "focus": [
