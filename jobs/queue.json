@@ -347309,13 +347309,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-26T08:26Z",
-      "eta": "2026-11-26T10:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T08:10Z",
-      "result": "",
+      "result": "Verified J3781 condition UNMET at 2026-11-26T08:25Z: claude down until 2026-11-26T12:50:00Z (claude_beat.json 07:54:48Z, four runs/day), codex down on usage limit until Nov 27 4:25 PM (retry timer 08:42:02Z), grok down; gemini is acting Chief but authored J3679 and HOS PRs #798 & #799 and cannot self-PASS or self-merge. Confirmed HOS PR #799 (d678349009, OPEN/MERGEABLE/CLEAN, 4/4 CI SUCCESS, 2 files), HOS PR #798 (17672ae226, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 32 files, 0 media), locked SHORTS_SCRIPTS_v02.md (SHA-256 e1df5d81...) and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3781 blocked with typed input hold (--recheck J3784, --check-at 2026-11-26T12:50:00Z). Zero spend.",
       "history": [
         {
           "at": "2026-11-26T08:10Z",
@@ -347361,6 +347361,11 @@
           "at": "2026-11-26T08:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T08:26Z",
+          "by": "gemini",
+          "what": "done: Verified J3781 condition UNMET at 2026-11-26T08:25Z: claude down until 2026-11-26T12:50:00Z (claude_beat.json 07:54:48Z, four runs/day), codex down on usage limit until Nov 27 4:25 PM (retry timer 08:42:02Z), grok down; gemini is acting Chief but authored J3679 and HOS PRs #798 & #799 and cannot self-PASS or self-merge. Confirmed HOS PR #799 (d678349009, OPEN/MERGEABLE/CLEAN, 4/4 CI SUCCESS, 2 files), HOS PR #798 (17672ae226, OPEN/MERGEABLE/CLEAN, 6/6 CI SUCCESS, 32 files, 0 media), locked SHORTS_SCRIPTS_v02.md (SHA-256 e1df5d81...) and all 4 NAS tight WAV/MP3 SHA-256 hashes intact. Kept J3781 blocked with typed input hold (--recheck J3784, --check-at 2026-11-26T12:50:00Z). Zero spend."
         }
       ],
       "remaining_action": "Parked for elected Chief to record wait J3781 --recheck J3784 --check-at 2026-11-26T12:50:00Z and close J3784",
@@ -347383,7 +347388,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "J3781,HOS#798,HOS#799"
     },
     {
       "id": "J3785",
