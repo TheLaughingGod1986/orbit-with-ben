@@ -299840,15 +299840,20 @@
           "at": "2026-11-26T04:35Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3309; verified J3307 done, J3382 published, and rVqgtkBV3jc_B_v03.jpg SHA-256 exact match."
+        },
+        {
+          "at": "2026-11-26T04:37Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, rVqgtkBV3jc_B_v03.jpg 198141 B 1280x720 sha256 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba; live_A verified). Blocked at step 2: Orbit Studio CDP :9223 is signed out at accounts.google.com (1 anonymous cookie __Secure-YNID, 0 auth cookies)."
         }
       ],
-      "remaining_action": "Verify preconditions, check T042 ledger row and inspect CDP 9223",
+      "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T004 check on rVqgtkBV3jc and arm T042",
       "kind": "studio",
       "plain": "Start T042 thumbnail A/B test on OWB 024 (rVqgtkBV3jc) after Chief approval",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T04:35Z",
+        "at": "2026-11-26T04:37Z",
         "by": "gemini",
         "plan": [
           "Verify J3307/J3382 preconditions & B asset",
@@ -299857,7 +299862,7 @@
           "Reload Studio & verify Test running + metadata unchanged",
           "Update THUMB_LEDGER.json, commit/merge & report"
         ],
-        "note": "Claimed J3309; verified J3307 done, J3382 published, and rVqgtkBV3jc_B_v03.jpg SHA-256 exact match."
+        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, rVqgtkBV3jc_B_v03.jpg 198141 B 1280x720 sha256 0e643ed499"
       },
       "taskKeys": [
         "OWB:024"
