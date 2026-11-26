@@ -335260,21 +335260,33 @@
           "at": "2026-11-26T18:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T18:19Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Set Related video -> YqCWYlv_LCY on __UtUYdEUwg and 4sYTV_rQcqs once YqCWYlv_LCY reads Public, and confirm T&C is running",
+      "remaining_action": "Checking HOS Studio Chrome CDP 9460 and existing Studio scripts",
       "due": "2026-11-27T10:00:00Z",
       "kind": "studio",
       "plain": "Set Related video on Franklin Shorts A and C after the long goes public Thu 18:00 UK, and confirm Title+Thumb test is running",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-26T18:18Z",
+        "of": 4,
+        "at": "2026-11-26T18:19Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify CDP 9460 and HOS 008 live",
+          "Link Related video on Short A and Short C",
+          "Confirm Test & Compare active on long",
+          "Run channel:audit and update 008 status"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J3650",
