@@ -242743,9 +242743,14 @@
           "at": "2026-11-24T09:06Z",
           "by": "relay",
           "what": "condition verification queued: J3469"
+        },
+        {
+          "at": "2026-11-26T00:44Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-12T20:00:00Z"
         }
       ],
-      "remaining_action": "Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
+      "remaining_action": "Run hosted Preview build and auth/home smoke checks once J2708 provisions isolated Neon free_v3 Preview DB after 2026-12-12T18:13:01Z unpause",
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true,
@@ -242758,12 +242763,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Waiting on J2708 (isolated hosted PostgreSQL for HOS Preview validation) before running hosted Preview smoke checks; local Next 16.4.6 checks pass on HOS PR #569.",
-        "check_at": "2026-11-24T10:06:30+00:00",
-        "last_recheck": "J2709",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3469"
+        "condition": "Waiting on J2708 (blocked until 2026-12-12T18:30:00Z): Vercel Hobby team team_UPErYpfb3ww71LYTIWUoKvcH still has active softBlock FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) until 2026-12-12T18:13:01Z, and history-of-science-content-ops has 0 env vars (verified live via read-only Vercel API 2026-11-26T00:42Z). Local Next 16.4.6 validation and home-500 root cause are preserved on HOS main (PR #641, docs/validation/J2704). Production remains HELD.",
+        "check_at": "2026-12-12T20:00:00Z",
+        "last_recheck": "J3469",
+        "checked_at": "2026-11-26T00:44:03+00:00",
+        "checked_by": "gemini"
       }
     },
     {
