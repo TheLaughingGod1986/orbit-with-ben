@@ -348347,10 +348347,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T13:20Z",
+      "eta": "2026-11-26T14:00Z",
       "created_by": "claude",
       "created_at": "2026-11-26T13:18Z",
       "result": "",
@@ -348359,6 +348359,11 @@
           "at": "2026-11-26T13:18Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T13:20Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make the U-boat Short playable for Ben, then upload it after his OK",
@@ -348368,7 +348373,15 @@
       "delivers": [
         "WW2:002-S1"
       ],
-      "urgent": 8
+      "urgent": 8,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T13:20Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
