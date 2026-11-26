@@ -344288,13 +344288,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-26T00:32Z",
-      "eta": "2026-11-26T02:32Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T00:31Z",
-      "result": "",
+      "result": "parked for Chief: J3487's condition is verified MET, but jobs.py refuses a worker ('Only the elected Chief may release a verified hold'; wait --recheck also refused). Evidence: J3750 published the recovered Battle of the Bulge topic checkpoint as ww2-channel PR #173 (open, mergeable, no reviews; head macbook/J3487-bulge 942aa5f781aad96f05368040de6a6c3ed88be599, one commit on origin/main e923ac1). My own read and pattern scan of the full 264-line diff: no private data. New film folder status.json air is 2026-12-31, same as main (PR #95). Chief to do: (1) review and merge or reject PR #173; (2) jobs.py reopen J3487 with this evidence (or wait J3487 --recheck J3762), then finish J3762. Still owed inside J3487 before the Wed 16 Dec 18:00 lock: archive 50% screen-time coverage (unproven), topic reviewer verdict, script, sources, Gemini claims check, Claude first-300-words test. No spend, upload or schedule change made.",
       "history": [
         {
           "at": "2026-11-26T00:31Z",
@@ -344325,6 +344325,11 @@
           "at": "2026-11-26T00:34Z",
           "by": "claudecode",
           "what": "step 2 of 4 done: jobs.py reopen and jobs.py wait --recheck both refused for a worker: only the elected Chief may release or update this hold"
+        },
+        {
+          "at": "2026-11-26T00:34Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3487's condition is verified MET, but jobs.py refuses a worker ('Only the elected Chief may release a verified hold'; wait --recheck also refused). Evidence: J3750 published the recovered Battle of the Bulge topic checkpoint as ww2-channel PR #173 (open, mergeable, no reviews; head macbook/J3487-bulge 942aa5f781aad96f05368040de6a6c3ed88be599, one commit on origin/main e923ac1). My own read and pattern scan of the full 264-line diff: no private data. New film folder status.json air is 2026-12-31, same as main (PR #95). Chief to do: (1) review and merge or reject PR #173; (2) jobs.py reopen J3487 with this evidence (or wait J3487 --recheck J3762), then finish J3762. Still owed inside J3487 before the Wed 16 Dec 18:00 lock: archive 50% screen-time coverage (unproven), topic reviewer verdict, script, sources, Gemini claims check, Claude first-300-words test. No spend, upload or schedule change made."
         }
       ],
       "remaining_action": "Elected Chief to reopen J3487 and review ww2-channel PR #173 (a worker may not release or update the hold)",
