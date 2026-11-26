@@ -322966,10 +322966,10 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T23:39Z",
+      "eta": "2026-11-27T01:39Z",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
       "result": "",
@@ -323038,6 +323038,11 @@
           "at": "2026-11-26T23:37Z",
           "by": "claude",
           "what": "reopened: J3535 verified the swap live on 24 Nov (emKN9xjDswI Private 2026-12-11T11:30Z; k2kEaA7ICjc retired). Read only: read both copies back again now (verify-swap), record it, and close J3510. No edits."
+        },
+        {
+          "at": "2026-11-26T23:39Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review and merge of verified records PR #1258, then close J3510",
@@ -323063,7 +323068,15 @@
       "taskKeys": [
         "OWB:029"
       ],
-      "escalated_at": "2026-11-24T16:56Z"
+      "escalated_at": "2026-11-24T16:56Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T23:39Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3511",
