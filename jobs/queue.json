@@ -349743,9 +349743,14 @@
           "at": "2026-11-26T18:06Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T18:07Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Set Related video -> YqCWYlv_LCY on __UtUYdEUwg and 4sYTV_rQcqs once YqCWYlv_LCY reads Public, and confirm T&C is running",
+      "remaining_action": "Check whether HOS 008 long is Public on YouTube",
       "kind": "review",
       "recheck_of": "J3649",
       "mini_only": true,
@@ -349762,11 +349767,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T18:06Z",
+        "at": "2026-11-26T18:07Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3649 history",
+          "Check YouTube public status",
+          "Reopen or re-wait J3649"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
