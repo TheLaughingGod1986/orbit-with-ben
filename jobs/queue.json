@@ -344005,10 +344005,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T00:09Z",
+      "eta": "2026-11-26T02:09Z",
       "created_by": "refill",
       "created_at": "2026-11-25T23:43Z",
       "result": "",
@@ -344017,11 +344017,24 @@
           "at": "2026-11-25T23:43Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-26T00:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Prepare the next Orbit Short from approved existing material",
       "kind": "assembly",
-      "backlog": "owb-short-from-locked"
+      "backlog": "owb-short-from-locked",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T00:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3759",
