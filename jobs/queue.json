@@ -341255,9 +341255,14 @@
           "at": "2026-11-26T19:04Z",
           "by": "gemini",
           "what": "step 3 of 7 done: Confirmed both cuts in Studio Editor at 2026-11-26T19:03:22Z (Cut A 01:33:22-03:03:01 = 93.749-183.064s, Cut B 06:51:28-07:24:17 = 411.952-444.579s, 121.942s removed, dialog 'Adjust video to new length: 23:48', zero thumbnail-test warning; post-save Details confirmed 3-way T&C mqdefault_custom_1/2/3 intact)"
+        },
+        {
+          "at": "2026-11-26T19:05Z",
+          "by": "gemini",
+          "what": "step 4 of 7 done: Rendered 20s join_A.mp4 (sha256 7dedb584...) and join_B.mp4 (sha256 61723322...) on NAS 07_Edit/v01_trim/; regenerated ww2_003_en-GB_v02.srt (368 cues, sha256 ae52fb2b...) and updated DESCRIPTION_v02.txt chapters (05:44, 09:56) on local branch gemini/J3714-b29-pre-air-trim in /Volumes/MiniWork/scratch/J3714-gemini-ww2"
         }
       ],
-      "remaining_action": "Rendering join clips and regenerating v02 captions/chapters for exact cut points",
+      "remaining_action": "Waiting for YouTube Studio editor processing of RqYjADxvJy8 to finish (~23:48 / PT23M49S) before updating description, captions and end screen",
       "due": "2026-11-27T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -341266,9 +341271,9 @@
       ],
       "urgent": 8,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 7,
-        "at": "2026-11-26T19:04Z",
+        "at": "2026-11-26T19:05Z",
         "by": "gemini",
         "plan": [
           "Measure silence and music on master",
@@ -341279,7 +341284,7 @@
           "Read back processed video in Studio and API",
           "Commit receipt learnings and open PR"
         ],
-        "note": "Confirmed both cuts in Studio Editor at 2026-11-26T19:03:22Z (Cut A 01:33:22-03:03:01 = 93.749-183.064s, Cut B 06:51:28-"
+        "note": "Rendered 20s join_A.mp4 (sha256 7dedb584...) and join_B.mp4 (sha256 61723322...) on NAS 07_Edit/v01_trim/; regenerated w"
       }
     },
     {
