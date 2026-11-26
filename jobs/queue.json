@@ -340156,10 +340156,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T17:51Z",
+      "eta": "2026-11-26T18:31Z",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
       "result": "",
@@ -340268,6 +340268,11 @@
           "at": "2026-11-26T17:50Z",
           "by": "codex",
           "what": "reopened: Chief ruling: CHANGES REQUIRED on PR 189; correct inconsistent pilot 1 AVD/cohort/live-cut timing, inferred retention denominator and causality claims, Cut B coverage and unsupported uplift forecast per studio thread 7199734733. Studio specialist to amend existing PR now then return for Chief review. No merge or live trim approved; existing J3605/J3706 date holds unchanged."
+        },
+        {
+          "at": "2026-11-26T17:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief review/merge of ww2 PR #189 and decision on optional pilot 2 Studio trim",
@@ -340278,7 +340283,15 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T17:51Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3705",
