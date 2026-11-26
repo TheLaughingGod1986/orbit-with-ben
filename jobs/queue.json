@@ -337692,16 +337692,21 @@
           "at": "2026-11-26T07:22Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3679; SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 left (J3670 needs 9,062 & J3678 needs 7,761, both wait for 30 Nov reset)"
+        },
+        {
+          "at": "2026-11-26T07:23Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 logged; dry-run PASS (S01 262 chars / 42w, S02 239 chars / 42w = 501 chars total)"
         }
       ],
-      "remaining_action": "Verify locked v02 Shorts scripts SHA-256, live ElevenLabs balance, and dry-run S01/S02 takes",
+      "remaining_action": "Record S01 & S02 VO takes via vo_take.py (Ben Orbit Narrator, eleven_v3, 1.04)",
       "due": "2026-12-05T18:00:00Z",
       "kind": "vo",
       "plain": "Record the two 16-19 s Shorts narrations (S01 & S02) for HOS 136 from the locked v02 scripts in Ben's voice",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-26T07:22Z",
+        "at": "2026-11-26T07:23Z",
         "by": "gemini",
         "plan": [
           "Verify locked v02 scripts, live balance & dry-run",
@@ -337710,7 +337715,7 @@
           "Store verified media on NAS & open clean HOS PR",
           "Run check_all.sh, log spend, queue Chief VO review & report"
         ],
-        "note": "Claimed J3679; SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 left (J3670 need"
+        "note": "Step 1 done: SHORTS_SCRIPTS_v02.md sha256 e1df5d81... verified; live ElevenLabs balance 7,630/121,114 logged; dry-run PA"
       },
       "taskKeys": [
         "HOS:136"
