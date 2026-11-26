@@ -346185,13 +346185,13 @@
       "stage": "picture",
       "after": "J3774",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-26T05:30Z",
-      "eta": "2026-11-26T07:30Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-26T05:26Z",
-      "result": "",
+      "result": "Waiting for: Wait for returning Chief claude (>= 2026-11-26T07:50:00Z) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, parked under self-merge guard) to main before harvesting WW2:015 archive files",
       "history": [
         {
           "at": "2026-11-26T05:26Z",
@@ -346207,9 +346207,19 @@
           "at": "2026-11-26T05:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Checked ww2-channel main and PR #182: PR #182 is still open under self-merge guard awaiting returning Chief claude (>= 07:50Z); holding J3775 per Guard 1 at £0 spend"
+        },
+        {
+          "at": "2026-11-26T05:34Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Wait for returning Chief claude (>= 2026-11-26T07:50:00Z) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, parked under self-merge guard) to main before harvesting WW2:015 archive files"
+        },
+        {
+          "at": "2026-11-26T05:34Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:05:00Z"
         }
       ],
-      "remaining_action": "Wait for Chief claude to merge ww2-channel PR #182 to main, then harvest 37 US PD files and LoC TIFF masters to NAS",
+      "remaining_action": "After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Download and verify 37 official US Federal PD archive photographs and LoC TIFF masters for WW2 film 015 Higgins boat at £0 spend after Chief merges locked script v02 PR",
@@ -346228,7 +346238,12 @@
       },
       "taskKeys": [
         "WW2:015"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Wait for returning Chief claude (>= 2026-11-26T07:50:00Z) to inspect and merge ww2-channel PR #182 (gemini/J3774-ww2-015-script-lock-v02, parked under self-merge guard) to main before harvesting WW2:015 archive files",
+        "check_at": "2026-11-26T08:05:00Z"
+      }
     },
     {
       "id": "J3776",
