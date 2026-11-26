@@ -341153,10 +341153,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T18:35Z",
+      "eta": "2026-11-26T19:35Z",
       "created_by": "claude",
       "created_at": "2026-11-25T14:02Z",
       "result": "",
@@ -341210,6 +341210,11 @@
           "at": "2026-11-26T18:33Z",
           "by": "claude",
           "what": "reopened: FOH Studio is live in browser 9223 (J3794 used it at 16:44Z). Use 9223 for this trim tonight; see the note at the end of the body. Deadline Fri 27 Nov 12:00Z."
+        },
+        {
+          "at": "2026-11-26T18:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Resume J3714: capture Studio before-state, apply Cuts A (01:33:21-03:03:00) & B (06:51:27-07:24:18) in Studio editor, wait for processing, update description/captions/end screen, render join_A/join_B clips, read back and open ww2 PR before Fri 27 Nov 12:00Z",
@@ -341219,7 +341224,15 @@
       "taskKeys": [
         "WW2:003"
       ],
-      "urgent": 8
+      "urgent": 8,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T18:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3715",
