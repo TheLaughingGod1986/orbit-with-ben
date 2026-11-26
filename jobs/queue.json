@@ -318646,9 +318646,14 @@
           "at": "2026-11-26T00:41Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3469; starting condition verification for J2704"
+        },
+        {
+          "at": "2026-11-26T00:42Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2704/J2708 queue history, Chief ruling #6813294950, and HOS docs/validation/J2704 (carried in HOS PR #641). J2708 is blocked on Vercel Hobby team fair-use soft block until 2026-12-12T18:13Z (check_at 2026-12-12T18:30Z)."
         }
       ],
-      "remaining_action": "Inspect J2704, J2708, related jobs, and HOS validation evidence",
+      "remaining_action": "Verify live Vercel Preview env/team status for J2708 prerequisite",
       "kind": "review",
       "recheck_of": "J2704",
       "mini_only": true,
@@ -318663,16 +318668,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-26T00:41Z",
+        "at": "2026-11-26T00:42Z",
         "by": "gemini",
         "plan": [
           "Inspect J2704/J2708 history & evidence",
           "Verify hosted Preview PostgreSQL condition",
           "Update J2704 state & complete J3469"
         ],
-        "note": "Claimed J3469; starting condition verification for J2704"
+        "note": "Read J2704/J2708 queue history, Chief ruling #6813294950, and HOS docs/validation/J2704 (carried in HOS PR #641). J2708 "
       }
     },
     {
