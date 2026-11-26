@@ -348268,9 +348268,14 @@
           "at": "2026-11-26T13:17Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T13:17Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: After ww2-channel PR #182 merges to main, harvest 37 official US PD files + LoC TIFF masters to NAS and open PR",
+      "remaining_action": "Checking whether ww2 PR #182 is merged",
       "kind": "review",
       "recheck_of": "J3775",
       "due": "2026-11-26T14:16:35+00:00",
@@ -348288,8 +348293,11 @@
         "of": 3,
         "at": "2026-11-26T13:17Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3775 and evidence",
+          "Check PR #182 state",
+          "Reopen or re-wait J3775, finish"
+        ]
       }
     }
   ],
