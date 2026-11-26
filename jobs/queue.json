@@ -346041,16 +346041,21 @@
           "at": "2026-11-26T05:09Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Checked out PR #180 worktree and read SOURCES.md, SCRIPT.md, NARRATION_v01.txt, PACKAGING.md, and ARCHIVE_PROVENANCE.md"
+        },
+        {
+          "at": "2026-11-26T05:12Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified F1-F5 core chronology, mechanical parity (62/62, SHA-256 matched, 17,891 stripped chars), and first 17 archive files via Wikimedia Commons API"
         }
       ],
-      "remaining_action": "Independently verify claims C01-C21 and priority checkpoints F1-F5 against primary sources",
+      "remaining_action": "Finalize primary-source verification on LCVP weight/speed/D-Day counts and complete 36-item ARCHIVE_PROVENANCE.md spot-check",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Verify all 21 claims, 5 priority checkpoints, and 36 official archive photo IDs for WW2 film 015 Higgins boat",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-26T05:09Z",
+        "at": "2026-11-26T05:12Z",
         "by": "gemini",
         "plan": [
           "Check out PR #180 and read files",
@@ -346058,7 +346063,7 @@
           "Spot-check ARCHIVE_PROVENANCE.md and narration parity",
           "Write CLAIMS_CHECK_v01.md, open PR, and report"
         ],
-        "note": "Checked out PR #180 worktree and read SOURCES.md, SCRIPT.md, NARRATION_v01.txt, PACKAGING.md, and ARCHIVE_PROVENANCE.md"
+        "note": "Verified F1-F5 core chronology, mechanical parity (62/62, SHA-256 matched, 17,891 stripped chars), and first 17 archive "
       },
       "taskKeys": [
         "WW2:015"
