@@ -350867,13 +350867,13 @@
       "stage": "thumbs",
       "after": "J3811",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-26T22:07Z",
-      "eta": "2026-11-27T00:07Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T22:05Z",
-      "result": "",
+      "result": "Archived explicitly reconstructed frame-0 cover and phone/style previews durably on NAS. Separate provenance receipt, hashes and still review delivered in HOS PR 805; all repository checks PASS. Desk report 7204436959. No publishing changes or spend.",
       "history": [
         {
           "at": "2026-11-26T22:05Z",
@@ -350904,6 +350904,11 @@
           "at": "2026-11-26T22:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS PR 805 delivered with provenance receipt and production-status validation; archive hashes verified and repository checks all pass."
+        },
+        {
+          "at": "2026-11-26T22:11Z",
+          "by": "codex",
+          "what": "done: Archived explicitly reconstructed frame-0 cover and phone/style previews durably on NAS. Separate provenance receipt, hashes and still review delivered in HOS PR 805; all repository checks PASS. Desk report 7204436959. No publishing changes or spend."
         }
       ],
       "remaining_action": "Archival work complete; HOS PR 805 ready for review and merge",
@@ -350924,7 +350929,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/805"
     }
   ],
   "focus": [
