@@ -1,5 +1,5 @@
 {
-  "next_id": 3821,
+  "next_id": 3822,
   "jobs": [
     {
       "id": "J0001",
@@ -351339,6 +351339,36 @@
       "due": "2026-11-29T18:00:00Z",
       "kind": "script",
       "plain": "Bring the Operation Pedestal story into action within the first minute"
+    },
+    {
+      "id": "J3821",
+      "title": "WW2 009: independent v05 claims recheck after opening rewrite",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "After the linked rewrite is merged, independently check NARRATION_v05 against primary sources through Gemini/agy, following WW2 rule 5. Review every changed claim and all changed joins/implications, especially S01/S27 restart, tow mechanics and S43 disposal wording. Verify unchanged claims remain identical to clean v04 claims check (37 PASS), and record exact narration SHA-256, script parity and <=21000 characters. Never rewrite spoken lines. Return PASS/FLAG/UNVERIFIABLE with exact source quotations and URLs in CLAIMS_CHECK_v05.md. Any FLAG blocks lock. No spend or VO. Final Chief review follows this check; preserve 30 Nov 10:50Z voice date hold and 30 Nov 18:00 lock deadline.\n",
+      "ref": "ww2-channel#193",
+      "film": "WW2:009",
+      "stage": "sources",
+      "after": "J3820",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-26T23:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T23:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the rewritten narration and rescue details independently",
+      "due": "2026-11-30T12:00:00Z",
+      "kind": "facts",
+      "plain": "Check the revised Operation Pedestal narration against its sources"
     }
   ],
   "focus": [
