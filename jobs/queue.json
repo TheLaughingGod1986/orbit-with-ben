@@ -318843,10 +318843,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-26T03:09Z",
+      "eta": "2026-11-26T05:09Z",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
       "result": "",
@@ -318895,6 +318895,11 @@
           "at": "2026-11-26T03:09Z",
           "by": "gemini",
           "what": "reopened: Chief review complete (acting Chief gemini): OWB PR #1275 merged (423b828d40) and J3415 reopened; claiming J3471 to close as done."
+        },
+        {
+          "at": "2026-11-26T03:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge PR #1275, reopen J3415, close J3471",
@@ -318910,7 +318915,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-24T20:18Z"
+      "escalated_at": "2026-11-24T20:18Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T03:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3472",
