@@ -348849,10 +348849,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-26T16:25Z",
+      "eta": "2026-11-26T18:25Z",
       "created_by": "relay",
       "created_at": "2026-11-26T15:46Z",
       "result": "",
@@ -348906,6 +348906,11 @@
           "at": "2026-11-26T16:24Z",
           "by": "codex",
           "what": "reopened: Acting-Chief review of evidence PR1344; parent J2040 remains held throughout. Independent verification supports CONDITION NOT MET."
+        },
+        {
+          "at": "2026-11-26T16:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief: record J2040 wait --recheck J3798 (command in PR #1344), merge PR #1344, close J3798",
@@ -348920,7 +348925,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-26T16:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3799",
