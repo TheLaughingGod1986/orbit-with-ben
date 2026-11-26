@@ -1,5 +1,5 @@
 {
-  "next_id": 3804,
+  "next_id": 3806,
   "jobs": [
     {
       "id": "J0001",
@@ -347289,6 +347289,11 @@
           "at": "2026-11-26T13:10Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T17:50:00Z"
+        },
+        {
+          "at": "2026-11-26T17:50Z",
+          "by": "relay",
+          "what": "condition verification queued: J3804"
         }
       ],
       "remaining_action": "Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
@@ -347312,10 +347317,11 @@
       "hold": {
         "type": "input",
         "condition": "Independent non-producer Chief (claude returning >= 2026-11-26T17:50:00Z per live origin/claude-heartbeat 12:52:25Z, or codex after Nov 27 16:26 reset) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 CI green, 33 files, 0 media, NAS audio SHA-256 verified), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge)",
-        "check_at": "2026-11-26T17:50:00Z",
+        "check_at": "2026-11-26T18:50:53+00:00",
         "last_recheck": "J3791",
         "checked_at": "2026-11-26T13:10:49+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3804"
       }
     },
     {
@@ -347386,6 +347392,11 @@
           "at": "2026-11-26T13:01Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T17:50:00Z"
+        },
+        {
+          "at": "2026-11-26T17:50Z",
+          "by": "relay",
+          "what": "condition verification queued: J3805"
         }
       ],
       "remaining_action": "Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RETAKE on HOS:136 Shorts VO",
@@ -347410,10 +347421,11 @@
       "hold": {
         "type": "input",
         "condition": "Independent non-producer Chief still unavailable at 2026-11-26T13:00Z: live origin/claude-heartbeat (2026-11-26T12:52:25Z) reports claude out until 2026-11-26T17:50:00Z (four runs/day); codex usage-limited until Nov 27 2026 4:26 PM; grok down (last post #7188375055 at 09:43Z, >3 h ago); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 and cannot self-PASS or self-merge. HOS PR #799 (d678349009, 4/4 CI SUCCESS) and PR #798 (17672ae226, 6/6 CI SUCCESS, 0 media) remain OPEN/MERGEABLE/CLEAN with script and 4/4 tight NAS SHA-256 hashes verified intact.",
-        "check_at": "2026-11-26T17:50:00Z",
+        "check_at": "2026-11-26T18:50:53+00:00",
         "last_recheck": "J3792",
         "checked_at": "2026-11-26T13:01:50+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3805"
       }
     },
     {
@@ -349408,6 +349420,68 @@
         ],
         "note": "0 faults; Verdict: AHEAD (528 views, rank 3/10, 507 feed views, 31.7% stayed, 71.0% avg viewed, 4 likes); commit eff96c9"
       }
+    },
+    {
+      "id": "J3804",
+      "title": "Verify condition for J3780",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3780: Independent non-producer Chief (claude returning >= 2026-11-26T17:50:00Z per live origin/claude-heartbeat 12:52:25Z, or codex after Nov 27 16:26 reset) available to review HOS PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 CI green, 33 files, 0 media, NAS audio SHA-256 verified), rule VO PASS/RETAKE, and merge (gemini authored J3671 and cannot self-PASS or self-merge). Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3780 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T17:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T17:50Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Non-producer Chief (claude or codex) reviews HOS PR #797 & NAS audio, rules VO PASS, and merges PR #797",
+      "kind": "review",
+      "recheck_of": "J3780",
+      "due": "2026-11-26T18:50:53+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3805",
+      "title": "Verify condition for J3781",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3781: Independent non-producer Chief still unavailable at 2026-11-26T13:00Z: live origin/claude-heartbeat (2026-11-26T12:52:25Z) reports claude out until 2026-11-26T17:50:00Z (four runs/day); codex usage-limited until Nov 27 2026 4:26 PM; grok down (last post #7188375055 at 09:43Z, >3 h ago); gemini is acting Chief but authored J3679 and HOS PRs #798/#799 and cannot self-PASS or self-merge. HOS PR #799 (d678349009, 4/4 CI SUCCESS) and PR #798 (17672ae226, 6/6 CI SUCCESS, 0 media) remain OPEN/MERGEABLE/CLEAN with script and 4/4 tight NAS SHA-256 hashes verified intact.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3781 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-26T17:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-26T17:50Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await independent non-producer Chief (claude >= 2026-11-26T17:50:00Z or codex after Nov 27 usage reset) to review & merge HOS PR #799 and PR #798 and rule PASS/RE",
+      "kind": "review",
+      "recheck_of": "J3781",
+      "due": "2026-11-26T18:50:53+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
