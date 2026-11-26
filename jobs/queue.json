@@ -348364,9 +348364,14 @@
           "at": "2026-11-26T13:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-26T13:23Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Verified NAS master SHA-256 cee68f66...08c2 and copied to iCloud WW2 UAT; publishing watch link to board"
         }
       ],
-      "remaining_action": "Make the U-boat Short playable for Ben, then upload it after his OK",
+      "remaining_action": "Copy 002-S1 master to WW2 UAT and publish live Play link on card WW2:002-S1",
       "due": "2026-11-27T10:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -348377,11 +348382,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-26T13:20Z",
+        "at": "2026-11-26T13:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Copy master to WW2 UAT & verify watch Play link",
+          "Wait for Ben OK & upload Private for Fri 27 Nov 12:30",
+          "Verify Studio/API readback & update 002 records"
+        ],
+        "note": "Verified NAS master SHA-256 cee68f66...08c2 and copied to iCloud WW2 UAT; publishing watch link to board"
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
