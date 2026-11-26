@@ -299754,15 +299754,20 @@
           "at": "2026-11-26T04:29Z",
           "by": "gemini",
           "what": "step 0 of 5 done: J3307 done, J3382 REVIEW.md published on main, NbW5G1BpPY0_B_v03.jpg sha256 verified aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f"
+        },
+        {
+          "at": "2026-11-26T04:31Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Blocked: Orbit Studio CDP :9223 is signed out at accounts.google.com after 02:06Z reboot (0 auth cookies)."
         }
       ],
-      "remaining_action": "Check Orbit Studio CDP 9223 session and read-only NbW5G1BpPY0 state",
+      "remaining_action": "Wait for Ben sign-in on Mac mini Orbit Studio CDP :9223",
       "kind": "studio",
       "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-26T04:29Z",
+        "at": "2026-11-26T04:31Z",
         "by": "gemini",
         "plan": [
           "Verify dependencies, file hash & Studio sign-in",
@@ -299771,7 +299776,7 @@
           "Reload & verify Test running, unchanged live A/title/privacy",
           "Record T041 running in THUMB_LEDGER & report"
         ],
-        "note": "J3307 done, J3382 REVIEW.md published on main, NbW5G1BpPY0_B_v03.jpg sha256 verified aaaaef79e7834fc28233b2b990473cbba7e"
+        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d"
       },
       "taskKeys": [
         "OWB:006"
