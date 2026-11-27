@@ -363353,13 +363353,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T18:29Z",
-      "eta": "2026-11-27T20:29Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T18:29Z",
-      "result": "",
+      "result": "Condition not met: PR #1411 OPEN, unmerged, 0 reviews (checked ~18:35Z). J3940 done. J3941 kept blocked; wait recorded (input) for Chief merge, next check 2026-11-27T22:30Z, --recheck J3944.",
       "history": [
         {
           "at": "2026-11-27T18:29Z",
@@ -363385,6 +363385,11 @@
           "at": "2026-11-27T18:30Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: PR #1411 still OPEN/unmerged; J3941 kept blocked, re-waited to 22:30Z"
+        },
+        {
+          "at": "2026-11-27T18:31Z",
+          "by": "claudecode",
+          "what": "done: Condition not met: PR #1411 OPEN, unmerged, 0 reviews (checked ~18:35Z). J3940 done. J3941 kept blocked; wait recorded (input) for Chief merge, next check 2026-11-27T22:30Z, --recheck J3944."
         }
       ],
       "remaining_action": "None; J3941 waits on Chief merge of PR #1411",
