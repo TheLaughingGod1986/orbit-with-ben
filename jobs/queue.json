@@ -355156,13 +355156,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T07:37Z",
-      "eta": "2026-11-27T09:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:41Z",
-      "result": "",
+      "result": "Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which at 2026-11-27T07:38Z holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q/analytics/tab-overview/period-lifetime (same condition as J3858; account switching and sign-in are forbidden by J3860).",
       "history": [
         {
           "at": "2026-11-27T06:41Z",
@@ -355188,9 +355188,19 @@
           "at": "2026-11-27T07:40Z",
           "by": "gemini",
           "what": "step 1 of 4 done: CDP 9224 Studio tab returned 'Oops, you don't have permission to view this page' at 2026-11-27T07:38Z; read-only account tab check shows Orbit/HOS/OpptiAI account active instead of FOH; no account switch or sign-in attempted"
+        },
+        {
+          "at": "2026-11-27T07:40Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which at 2026-11-27T07:38Z holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q/analytics/tab-overview/period-lifetime (same condition as J3858; account switching and sign-in are forbidden by J3860)."
+        },
+        {
+          "at": "2026-11-27T07:40Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-27T11:30:00Z"
         }
       ],
-      "remaining_action": "Waiting for Ben to restore Field Order History (UCu94mInMFosxu3W0H6jlI6Q) session on CDP 9224",
+      "remaining_action": "Verify UCu94mInMFosxu3W0H6jlI6Q on CDP 9224, read Overview Lifetime total subscribers and watch hours, import via 07_Content-Ops/scripts/field-order-studio-import.ts, commit from clean worktree and report",
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
@@ -355206,6 +355216,11 @@
           "Report numbers & finish J3860"
         ],
         "note": "CDP 9224 Studio tab returned 'Oops, you don't have permission to view this page' at 2026-11-27T07:38Z; read-only account"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which at 2026-11-27T07:38Z holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q/analytics/tab-overview/period-lifetime (same condition as J3858; account switching and sign-in are forbidden by J3860).",
+        "check_at": "2026-11-27T11:30:00Z"
       }
     },
     {
