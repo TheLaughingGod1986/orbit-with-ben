@@ -359459,9 +359459,14 @@
           "at": "2026-11-27T14:38Z",
           "by": "relay",
           "what": "condition verification queued: J3912"
+        },
+        {
+          "at": "2026-11-27T14:57Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T14:45:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief ruling on PR #1394 (merge + ~277-char ElevenLabs VO authorization for Option A, or Option B1 zero-VO fallback directive)",
+      "remaining_action": "Await revised Short evidence and script review from J3913 then J3914 before voice production",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend",
@@ -359490,10 +359495,12 @@
         "OWB:064"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T15:38:38+00:00",
-        "recheck_task": "J3912"
+        "type": "input",
+        "condition": "J3912 Chief FIX: J3913 must revise PR1394 surface/atmosphere wording, claims/quotes, predicted PASS labels, asset provenance and duration evidence; dependent J3914 must record accepted script lock and separate bounded VO ruling. PR1394 unmerged; no new spend or production approval.",
+        "check_at": "2026-11-28T14:45:00Z",
+        "last_recheck": "J3912",
+        "checked_at": "2026-11-27T14:57:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
