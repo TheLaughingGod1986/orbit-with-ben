@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3951 | mini | open | – | – | WW2:002 upload · for gemini · studio · Publish J3704 corrections: push 9e4b053 (codex/J3704-corrections) to ww2-channel; PR to replace #189 |  |
 | J3952 | mini | open | – | – | for gemini · studio · Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e) |  |
 | J3953 | mini | open | – | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
+| J3955 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
