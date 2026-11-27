@@ -1,5 +1,5 @@
 {
-  "next_id": 3876,
+  "next_id": 3877,
   "jobs": [
     {
       "id": "J0001",
@@ -356389,6 +356389,36 @@
           "Finish job and post studio thread report"
         ]
       }
+    },
+    {
+      "id": "J3876",
+      "title": "WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Review and rule on ww2-channel PR #207 (commit 41c6ab4, branch j3869-ww2-016-picture) from J3869 for WW2:016 (Battle of the Bulge: Patton's 133,000-Vehicle Turn).\n\nInspect actual rendered pixels on the Mac mini NAS (/Volumes/data/studio-live/ww2/02_Video-Projects/016_Battle-of-the-Bulge-Pattons-Turn/03_Picture/):\n- Thumbnails (thumbnails/): ww2_016_thumb_A_v01.jpg, ww2_016_thumb_B_v01.jpg, ww2_016_thumb_C_v01.jpg, ww2_016_thumbs_phone_168x94_v01.png, ww2_016_thumbs_review_sheet_v01.jpg (manifest: THUMBNAILS_016.json).\n- 10 bespoke 1920x1080 code maps & schematics (maps/): MAPS_CONTACT_SHEET_016.jpg and individual PNGs (manifest: MAPS_MANIFEST_016.json).\n- 44 full-res official US Federal PD archive masters (archive_raw/, 44/44 SHA256SUMS.txt verified) and contact sheets (contact_sheets/sheet_01.jpg..sheet_03.jpg, sheet_cmh_crops.jpg).\n- Shot list & coverage: PICTURE_PLAN_016.md & SHOT_LIST_016.json (76.0% archive screen time, 41 unique plates, min repeat gap 71s, 0 repeats <60s, verified Dec 1944 Cold Open replacing Jan #35 and Jan #26).\n\nSpecific Chief decisions needed:\n1. Approve or request tweaks on final pixels of Thumbnails A (NARA 12010181, 0 words), B (DVIDS 8187147, '133,000 VEHICLES' — note wartime 111-SC negative ID is absent from DVIDS metadata; NARA 12010181 or SC 198294-A available as fallback if preferred), and C (US Army Signal Corps Sgt Bill Augustine, 'TURN NORTH' + 1 red 90-deg turn arrow — note 1024x819 master dated 19 Jan 1945 Sourbrodt).\n2. Confirm picture plan, chronology guards, spare S1 Balkenkreuz guard (Ch 6 P52 only), and merge ww2-channel PR #207.\n3. Preserve air 31 Dec, Ben watch 28 Dec, primary Short 016-S1 only (016-S2/S3 gated), zero spend, and hold final film render until VO (post-30 Nov reset + Pilot 2 7d Rule-12 review) and picture approval.\n",
+      "ref": "ww2-channel#207",
+      "film": "WW2:016",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T08:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect WW2:016 NAS thumbnail pixels/maps and rule on ww2-channel PR #207",
+      "due": "2026-12-20T18:00:00Z",
+      "kind": "chief",
+      "plain": "Chief inspects WW2:016 rendered thumbnail pixels, code maps & shot list and merges PR #207"
     }
   ],
   "focus": [
