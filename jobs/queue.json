@@ -360918,9 +360918,14 @@
           "at": "2026-11-27T17:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "OWB 064 Short 2: lock v03 script and bounded VO decision",
+      "remaining_action": "Inspecting J3916 PR #1394, v03 vs v02b diff, and related jobs",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -360932,12 +360937,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T17:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3916 PR #1394 and diff v03 vs v02b",
+          "Verify quotes, timing and assembly plan constraints",
+          "Read live ElevenLabs balance and credit holds",
+          "Write advisory review and park Chief lock/VO ruling"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3918",
