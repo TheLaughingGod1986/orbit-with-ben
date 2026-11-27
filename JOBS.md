@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3902.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -101,7 +101,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3901 | mini | blocked | macbook | – | review · Verify condition for J3834 |  |
-| J3902 | mini | claimed | codex | 2026-11-27T16:17Z | 064 edit · qa · OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) | J3023 |
 | J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 | J3904 | mini | open (after J3902) | – | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
 | J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
@@ -113,6 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3902 done: OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) (Chief ruling: KEEP master v03 d59057ae unchanged; package FIX, no PASS or merge of PR1390. Confirmed trailer clipping and provenance/portrait-credit defects. J3909 owns package repair; J3910 independently rechecks after J3909. J3023 remains held until recheck KEEP and elected-Chief merge, next check 2026-11-28T14:30Z. No UAT release, spend or upload. Ruling local commit 8f98ad1311; automatic review rejected document push as internal-workflow data egress. User explicit review priority recorded to resolve plan-pacing claim filter; review now complete.)
 - J3900 done: J3012: preserve cancellation and descendant drain in recovery (Implemented cancellation and persisted-descendant recovery safety fixes in 5631f820b; PR #1389 includes unmerged #1387 plus the scoped correction. All 62 mocked cutover/control tests and diff check pass. No live activation or merge; J3012 remains held for Chief re-review and a separate live coordination child. Checkout returned to main.)
 - J3899 done: Verify condition for J3012 (Chief FIX: PR1387 comment 7219162024; 55 existing tests pass but three mocked probes fail cancellation and persisted-descendant drain. J3900 queued for correction/regression tests; J3012 stays held 3/4 with 15:00Z recheck. Local evidence commit 673850aaa4; automatic review refused evidence-branch publication, retained locally. No live change.)
 - J3898 done: OWB 064: Publish accepted integration records from J3883 (Published J3883 integration: PR #1388 merged a09c483f3e (re-applied 034d41fbc5 end state onto current main; newer history kept). Read-back: J3022/J3818 done (done_ref J3883 REVIEW.md), J3023 open after=J3022 with full v02 handoff, 064 picture/thumbs PASS, REVIEW.md sha256 matches. J3883 left for elected-Chief closure. Report: issues/1353#issuecomment-7218599463)
@@ -122,4 +122,3 @@ Recently finished:
 - J3893 done: Verify condition for J2537 (Chief review complete: NOT MET. Evidence PR1383 merged 2c340d7f30; 13 privacy tests and channel check pass. J2537 remains blocked via wait --recheck J3893 until 2026-11-30T12:00:00Z verification. Fresh comments through OWB7217873683/HOS7217874281 establish no named protected-history exception. After authorization: resolve ordinary PRs, refresh backup/rehearsal, day-before notice, writer hold. J3532/J3894 untouched. No live rewrite or duplicate ask. Chief review progress recorded in active slot 1 because stock review-progress reads only slot 0.)
 - J3892 done: J3012: implement the external MacBook cutover handoff (Implemented external two-phase MacBook cutover helper and runbook on macbook/J3892; PR #1385 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1385 head 1e08d9754. 34 focused mocked tests plus 13 privacy checks passed; exact private dry-run receipt/source hashes in jobs/reviews/J3892/DRY_RUN.json. All touched checkouts returned to main; temporary worktree removed. No real supervisor, service, pause, marker, staged/production Git operation or rehearsal queue ran. Chief review and separately recorded exact fresh production activation remain; J3012 stays 3/4.)
 - J3891 done: J3012: Claude Code review and publish completed migration checkpoint (done)
-- J3890 done: J3012: reconcile MacBook readiness and explain the early rehearsal heartbeat (PR #1379 open: sanitized readiness reconciliation and drain/install handoff. J3885 local timing disproves attribution of 10:22 heartbeat to its 10:50 suite; earlier emitter remains unverified. Both staged queues unchanged, no staged worker observed, installed/loaded settings match, proposal unchanged. 13 privacy tests and plist lint pass. No live switch; J3012 remains 3/4. Checkout returned to main.)
