@@ -353589,9 +353589,14 @@
           "at": "2026-11-27T01:51Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:52Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Reconcile the corrected script with its sources and picture plans, then verify the final narration",
+      "remaining_action": "Reading J3831, J3837 and PR #202",
       "due": "2026-11-27T07:00:00Z",
       "kind": "review",
       "plain": "Finish the historical corrections and check the final Battle of the Bulge script",
@@ -353605,12 +353610,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:51Z",
+        "of": 5,
+        "at": "2026-11-27T01:52Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3831/J3837/PR202",
+          "Fix SOURCES/PACKAGING/status",
+          "Reconcile tally",
+          "Rule 6 narration evidence",
+          "Push PR, record head"
+        ]
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     }
   ],
   "focus": [
