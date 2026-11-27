@@ -346488,6 +346488,11 @@
           "at": "2026-11-27T17:01Z",
           "by": "relay",
           "what": "condition verification queued: J3931"
+        },
+        {
+          "at": "2026-11-27T17:20Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-27T23:25:00Z"
         }
       ],
       "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
@@ -346514,9 +346519,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.",
-        "check_at": "2026-11-27T18:01:33+00:00",
-        "recheck_task": "J3931"
+        "condition": "Flow tab 998B0717 on CDP 9222 renderer unresponsive: 27 Nov 17:20Z browser endpoint and Target.getTargetInfo answer (attached:false, flow.google.com/?pli=1) but page websocket opens and Page.getFrameTree and Runtime.evaluate both time out (12-15 s); account hash, balance and Quality price unverifiable. No Create clicked; only row 63 remains.",
+        "check_at": "2026-11-27T23:25:00Z",
+        "last_recheck": "J3931",
+        "checked_at": "2026-11-27T17:20:21+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
