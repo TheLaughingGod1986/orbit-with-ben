@@ -353616,13 +353616,13 @@
       "stage": "script",
       "after": "J3833",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T18:27Z",
-      "eta": "2026-11-27T20:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T00:54Z",
-      "result": "",
+      "result": "WW2 PR213 merged to main as 76d9d2a3b6748e96b6515a1d1d618c09cc082e21 after fresh Codex Chief status and full diff review. Exact v06 narration, SCRIPT and claims hashes verified against SCRIPT_LOCK_v06.json on main; 37/37 spoken-block parity, 10050 chars, channel_check PASS. Existing J3838 retains 30 Nov 10:50 UTC date hold and live balance/no-overage checks. J3581/J3582 unchanged; one Short only. No VO, spend or upload.",
       "history": [
         {
           "at": "2026-11-27T00:54Z",
@@ -353708,6 +353708,11 @@
           "at": "2026-11-27T18:28Z",
           "by": "codex",
           "what": "step 3 of 3 done: Merged WW2 PR213 as 76d9d2a. On main all three lock hashes match, 37/37 spoken blocks match, 10050 characters, channel_check PASS. Existing J3838 remains dependency/date/live-credit gated; Short holds unchanged."
+        },
+        {
+          "at": "2026-11-27T18:28Z",
+          "by": "codex",
+          "what": "done: WW2 PR213 merged to main as 76d9d2a3b6748e96b6515a1d1d618c09cc082e21 after fresh Codex Chief status and full diff review. Exact v06 narration, SCRIPT and claims hashes verified against SCRIPT_LOCK_v06.json on main; 37/37 spoken-block parity, 10050 chars, channel_check PASS. Existing J3838 retains 30 Nov 10:50 UTC date hold and live balance/no-overage checks. J3581/J3582 unchanged; one Short only. No VO, spend or upload."
         }
       ],
       "remaining_action": "Script review complete; recording waits for its date and live credit check",
@@ -353728,7 +353733,8 @@
           "Publish decision and next job"
         ],
         "note": "Merged WW2 PR213 as 76d9d2a. On main all three lock hashes match, 37/37 spoken blocks match, 10050 characters, channel_c"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/213"
     },
     {
       "id": "J3835",
