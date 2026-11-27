@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3847 | mini | blocked | gemini | – | assembly · J3844 follow-up: investigate missing public id in audit |  |
-| J3848 | mini | open | – | – | 008 upload · studio · J3845 correction: complete Franklin paid-promotion settings and info cards |  |
+| J3848 | mini | claimed | gemini | 2026-11-27T05:02Z | 008 upload · studio · J3845 correction: complete Franklin paid-promotion settings and info cards |  |
 
 Recently finished:
 

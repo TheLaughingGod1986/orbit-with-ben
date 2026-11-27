@@ -354051,10 +354051,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T03:02Z",
+      "eta": "2026-11-27T05:02Z",
       "created_by": "codex",
       "created_at": "2026-11-27T02:55Z",
       "result": "",
@@ -354063,11 +354063,24 @@
           "at": "2026-11-27T02:55Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T03:02Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Set explicit paid-promotion answers and add the two required cards safely",
       "kind": "studio",
-      "plain": "Finish the required settings and links on the Franklin videos"
+      "plain": "Finish the required settings and links on the Franklin videos",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T03:02Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
