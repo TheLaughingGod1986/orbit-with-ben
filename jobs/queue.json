@@ -351349,13 +351349,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T01:18Z",
-      "eta": "2026-11-27T03:18Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T23:39Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload.",
       "history": [
         {
           "at": "2026-11-26T23:39Z",
@@ -351396,6 +351396,11 @@
           "at": "2026-11-27T01:33Z",
           "by": "codex",
           "what": "step 4 of 4 done: Repair draft v02 and 33 evidence files NAS hash-verified; text-only commit 2922143e on codex/J3816. Required HOS desk handoff posted. Finished this run with failed media gates; no Short PASS. GitHub push refused by automatic review; designated Claude Code publisher must inspect and publish local branch."
+        },
+        {
+          "at": "2026-11-27T01:33Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload."
         }
       ],
       "remaining_action": "Repair the opener and loop gates, then obtain Short review",
@@ -351416,7 +351421,12 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload.",
+        "check_at": "2026-11-27T07:33:32+00:00"
+      }
     },
     {
       "id": "J3817",
