@@ -359419,9 +359419,14 @@
           "at": "2026-11-27T15:36Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #1399 (1faedeab31) open for OWB 064 Short 1 Test A v02 (8b7a218c73b1c790f722f4410e67e4fe04d7e06276e3d4a4bbcbceed38c38968); independent QA queued as J3918; awaiting QA KEEP + elected-Chief PASS and PR #1399 merge before Ben UAT watch registration (jobs.py awaits). Do NOT upload/air before 064 long is public Wed 16 Dec 18:00 London."
+        },
+        {
+          "at": "2026-11-27T15:57Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T16:00:00Z"
         }
       ],
-      "remaining_action": "Awaiting independent QA KEEP, elected-Chief PASS and PR #1399 merge before Ben UAT watch registration",
+      "remaining_action": "Await restored narration and independent playback review before phone watch",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
@@ -359442,7 +359447,12 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3918 Chief FIX: v02 missing narration. J3922 must deliver immutable v03; dependent J3923 must hear/watch and recommend KEEP, followed by elected-Chief PASS and PR1399 merge before UAT. No upload or scheduling.",
+        "check_at": "2026-11-28T16:00:00Z"
+      }
     },
     {
       "id": "J3904",
