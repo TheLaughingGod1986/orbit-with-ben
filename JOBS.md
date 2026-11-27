@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3941 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 | J3942 | mini | open | – | – | review · Verify condition for J3780 |  |
 | J3944 | mini | claimed | claudecode | 2026-11-27T20:29Z | review · Verify condition for J3941 |  |
+| J3945 | mini | open | – | – | studio · First-day check at 6 h: "WW2 U-Boats: Why They Could Not Stay Underwater" (ZCnSldSJzME) |  |
 
 Recently finished:
 
