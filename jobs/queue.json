@@ -360539,7 +360539,7 @@
     {
       "id": "J3917",
       "title": "OWB 064 Short 2: lock v03 script and bounded VO decision",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Dependent review after J3916 for OWB 064 Short 2 (PR #1394). Check that the J3916 v03 text differs from v02b only by the restored \"true\" qualifier. If so, the sources are already verified (064_short02_QUOTECHECK_v02.md, J3914), so no new Gemini run is needed; if any other word changed, run the Gemini + direct quote check on it. Confirm mid estimate at or below 19.0 s. If ready, lock the exact script. The elected Chief then decides a bounded separate VO allowance from the existing subscription only, after reading the live balance and existing credit holds (approved voice; no cash, top-up, overage or Flow/Vertex; no assumption from a date alone), and queues vo, then assembly, then QA/UAT. Assembly must first find or replace verified native moving frame-0 footage (R01 not found) and re-plan the Uranus beats without presenting the Veo clips as real (see plan v02 section 4). Record the ruling on J3904 and keep its hold until it is satisfied. No upload, schedule or privacy change.\n",
       "ref": "J3914",
@@ -360559,10 +360559,23 @@
           "at": "2026-11-27T15:13Z",
           "by": "claudecode",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T15:14Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "OWB 064 Short 2: lock v03 script and bounded VO decision",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
