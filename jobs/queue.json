@@ -357886,9 +357886,14 @@
           "at": "2026-11-27T11:37Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Pre-upload checks PASS: gate_shorts_open PASS (26.9s, dhash 00f0e91745418580, visor 0.0), thumb_preview PASS (sat 170.9, near_black 2%), 0 title dups / 0 Dec 21 collisions across 218 videos, parent T3cBBss1F60 Public, CDP 9223 up"
+        },
+        {
+          "at": "2026-11-27T11:38Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Short #2 listing package built and youtube:package dry-run PASSED (2026-12-21T11:30:00Z, private, madeForKids=false, containsSyntheticMedia=true, 8 tags)"
         }
       ],
-      "remaining_action": "Build Short #2 listing package and run youtube:package dry-run",
+      "remaining_action": "Upload approved v03 Short Private for 2026-12-21T11:30Z and finish Studio cover/Related",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -357910,9 +357915,9 @@
         "handled": true
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T11:37Z",
+        "at": "2026-11-27T11:38Z",
         "by": "gemini",
         "plan": [
           "Verify v03 files, gates, and Dec 21 slot",
@@ -357921,7 +357926,7 @@
           "Read back API/Studio state and update UPLOADS/library",
           "Open PR for Chief merge and report"
         ],
-        "note": "Pre-upload checks PASS: gate_shorts_open PASS (26.9s, dhash 00f0e91745418580, visor 0.0), thumb_preview PASS (sat 170.9,"
+        "note": "Short #2 listing package built and youtube:package dry-run PASSED (2026-12-21T11:30:00Z, private, madeForKids=false, con"
       },
       "taskKeys": [
         "OWB:032"
