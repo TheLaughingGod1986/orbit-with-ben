@@ -365153,10 +365153,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-27T22:05Z",
+      "eta": "2026-11-28T00:05Z",
       "created_by": "relay",
       "created_at": "2026-11-27T21:56Z",
       "result": "",
@@ -365185,6 +365185,11 @@
           "at": "2026-11-27T22:04Z",
           "by": "codex",
           "what": "reopened: Acting Chief reviewing corrected control code; parent remains held."
+        },
+        {
+          "at": "2026-11-27T22:05Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Review corrected recovery controls after J3900, then coordinate the studio move",
@@ -365199,7 +365204,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T22:05Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
