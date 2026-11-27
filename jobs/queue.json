@@ -1,5 +1,5 @@
 {
-  "next_id": 3965,
+  "next_id": 3966,
   "jobs": [
     {
       "id": "J0001",
@@ -282614,13 +282614,13 @@
       "stage": "upload",
       "after": "J3114",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T23:59Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T05:33Z",
-      "result": "",
+      "result": "Packaging PASS stands (jobs/reviews/J3115/REVIEW.md, published through PR #1367, merged 63265be; candidate 40c6ca5114 on main; 8/8 NAS hashes match HASH_CHECK.json; J3863 verified). Title: 'Why Does Pluto Have a Heart? (And Why It Has Zero Craters)', the same on all three arms: a thumbnail-only Test & Compare with A NITROGEN GLACIER 8f567360, B ICE MOUNTAINS 3b17f4c7, C FLOWING ICE c23a7420. Ben OK'd master v02 on 18 Nov 22:16Z (J2868). Under AGENTS.md the thumbnail decision is the Chief's (J3855), so this supplies it. J3119 may now deliver v02 as a Private upload scheduled for Sun 13 Dec 18:00 London, and J3828 reconciles the thumbs stage. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z).",
       "history": [
         {
           "at": "2026-11-19T05:33Z",
@@ -282686,6 +282686,16 @@
           "at": "2026-11-27T08:11Z",
           "by": "codex",
           "what": "remaining action: Close the published packaging review using J3863 verification; then J3119 delivers and J3828 reconciles thumbnails"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "done: Packaging PASS stands (jobs/reviews/J3115/REVIEW.md, published through PR #1367, merged 63265be; candidate 40c6ca5114 on main; 8/8 NAS hashes match HASH_CHECK.json; J3863 verified). Title: 'Why Does Pluto Have a Heart? (And Why It Has Zero Craters)', the same on all three arms: a thumbnail-only Test & Compare with A NITROGEN GLACIER 8f567360, B ICE MOUNTAINS 3b17f4c7, C FLOWING ICE c23a7420. Ben OK'd master v02 on 18 Nov 22:16Z (J2868). Under AGENTS.md the thumbnail decision is the Chief's (J3855), so this supplies it. J3119 may now deliver v02 as a Private upload scheduled for Sun 13 Dec 18:00 London, and J3828 reconciles the thumbs stage. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z)."
         }
       ],
       "remaining_action": "Close the published packaging review using J3863 verification; then J3119 delivers and J3828 reconciles thumbnails",
@@ -352438,13 +352448,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T23:59Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T23:51Z",
-      "result": "",
+      "result": "Resolved: the 034 thumbs gap is the J3115 packaging PASS (exact A/B/C hashes, PR #1367 on main). J3828 is the linked successor that records the thumbs stage; J3119 delivers. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z).",
       "history": [
         {
           "at": "2026-11-26T23:51Z",
@@ -352495,6 +352505,16 @@
           "at": "2026-11-27T09:56Z",
           "by": "claude",
           "what": "reopened: Condition MET (J3868, PR #1369 merged fc312d38): J3861 published the authorised 034 thumbs via PR #1367 (merged 06:49Z, 9 files unchanged, 8/8 NAS hashes match J3115/HASH_CHECK.json); codex closed J3863 and reopened J3115 at 08:10Z. Resolve the orphan review alongside J3115/J3828. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "done: Resolved: the 034 thumbs gap is the J3115 packaging PASS (exact A/B/C hashes, PR #1367 on main). J3828 is the linked successor that records the thumbs stage; J3119 delivers. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z)."
         }
       ],
       "remaining_action": "Wait for authorized publication and completion of the existing Pluto packaging review",
@@ -357419,6 +357439,11 @@
           "at": "2026-11-27T17:58Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-28T06:00:00Z"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "hold updated: waits on J3965. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z)."
         }
       ],
       "remaining_action": "Resolve the terminal-loop gate conflict before approval review",
@@ -357441,7 +357466,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Draft HOS PR 814 published (codex/J3871 c8c3372e, verified open draft 27 Nov 17:5xZ; PR 811 draft). Await J3874 loop-gate ruling (picture_qa terminal reuse / terminal_loop 22-27s vs HOS 16-19s Short); reopen only with a conforming unmodified edit or authorised tested contract",
+        "condition": "J3965 merges the J3874-authorised gate changes (channel Shorts band in terminal_loop.py; declared loop return exempt from SAME_STRETCH), then v04 re-runs both gates unmodified.",
         "check_at": "2026-11-28T06:00:00Z",
         "last_recheck": "J3934",
         "checked_at": "2026-11-27T17:58:08+00:00",
@@ -357609,18 +357634,28 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T23:59Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:36Z",
-      "result": "",
+      "result": "Chief decision: both gates disagree with channel rules, not with the cut. (1) terminal_loop.py's hard 22-27 s band predates Ben's 19 Nov Shorts rule (16-19 s for new Shorts, studio/RULES.md); the validator must take the channel's own Shorts band. (2) picture_qa's SAME_STRETCH (10 s) rule exists to catch repeated footage; the declared terminal-loop return is meant to replay the opening's source, so it should pass only for the one final row declared 'prescribed_terminal_loop', and only when its window does not overlap the opening's. Every other repeat still fails. Authorised as a tested contract change in the new job below; J3871 reopens only once that is merged and v04 passes the gates unmodified. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z).",
       "history": [
         {
           "at": "2026-11-27T08:36Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "done: Chief decision: both gates disagree with channel rules, not with the cut. (1) terminal_loop.py's hard 22-27 s band predates Ben's 19 Nov Shorts rule (16-19 s for new Shorts, studio/RULES.md); the validator must take the channel's own Shorts band. (2) picture_qa's SAME_STRETCH (10 s) rule exists to catch repeated footage; the declared terminal-loop return is meant to replay the opening's source, so it should pass only for the one final row declared 'prescribed_terminal_loop', and only when its window does not overlap the opening's. Every other repeat still fails. Authorised as a tested contract change in the new job below; J3871 reopens only once that is merged and v04 passes the gates unmodified. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z)."
         }
       ],
       "remaining_action": "Review the 17-second loop contract conflict before further editing",
@@ -365495,6 +365530,35 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3965",
+      "title": "Gates: Shorts loop contract follows the channel's Shorts band; picture_qa allows only the declared loop return (J3874)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why.** J3874 (Chief decision, 28 Nov): the repaired History of Science apple Short v04 (J3871) fails two gates that contradict the channel rules, not the cut.\n\n**Do (orbit-with-ben, then core sync to history-of-science):**\n1. `scripts/terminal_loop.py` validate: replace the hard `22 <= duration <= 27` with the channel's own Shorts band (HOS and new OWB Shorts 16-19 s per studio/RULES.md and gate_shorts_open.py DUR_BAND; keep any older band only where a channel's rules still say so). One source of truth: read the band, don't copy the numbers.\n2. `scripts/picture_qa.py`: exempt from SAME_STRETCH only the one final row declared `prescribed_terminal_loop` by the terminal-loop contract, and only when its source window does not overlap the opening's window. Nothing else is loosened.\n3. Tests both ways: a 16-19 s HOS loop passes and 15 s / 20 s fail; the declared non-overlapping return passes; an overlapping return, an undeclared repeat, a second declared row, and a repeat inside the body all still fail. Run the full suite with HOME set to a temp dir.\n4. These are core files: change them in orbit-with-ben, run `python3 scripts/core_sync.py lock` and `core_sync.py push --to <history-of-science checkout>`, and open one PR in each repo. The Chief merges.\n5. Once merged, reopen J3871 to re-run the unmodified v04 through both gates. No media changes, no spend, no upload.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T23:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Change terminal_loop.py band + picture_qa loop-return exception with tests; core sync",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [

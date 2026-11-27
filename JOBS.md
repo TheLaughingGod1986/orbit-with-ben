@@ -26,7 +26,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3023 | mini | blocked | gemini | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
-| J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
@@ -73,7 +72,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3816 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J3819 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
@@ -82,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
-| J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
@@ -97,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
 | J3962 | mini | open | – | – | chief · J3012: coordinate the reviewed studio engine move and prove live operation | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274 |
 | J3964 | mini | claimed | gemini | 2026-11-28T01:55Z | studio · Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z |  |
+| J3965 | mini | open | – | – | assembly · Gates: Shorts loop contract follows the channel's Shorts band; picture_qa allows only the declared loop return (J3874) |  |
 
 Recently finished:
 
