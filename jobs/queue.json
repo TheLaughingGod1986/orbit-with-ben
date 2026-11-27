@@ -354853,6 +354853,11 @@
           "at": "2026-11-27T10:13Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Copied exact v03 master (SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13) and cover (SHA-256 8acb817fa135a0c3a37b6205458674b9c4da49093a859ca6f1d08e4b162c1127) to OWB UAT and re-verified both hashes"
+        },
+        {
+          "at": "2026-11-27T10:13Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch 032 Titan Short #2 (two oceans) v03 and its cover (by 2026-11-30 18:00 London)"
         }
       ],
       "remaining_action": "Register Ben's watch on J3853 via jobs.py awaits",
@@ -354875,6 +354880,16 @@
           "Block J3853 awaiting Ben and post report"
         ],
         "note": "Copied exact v03 master (SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13) and cover (SHA-256 8a"
+      },
+      "awaits_ben": {
+        "what": "Watch 032 Titan Short #2 (two oceans) v03 and its cover",
+        "file": "OWB UAT/032_short_dry_desert_two_oceans_v03.mp4",
+        "version": "v03",
+        "due": "2026-11-30T18:00Z",
+        "ifNot": "Hold the Short; nothing uploads or schedules without your OK",
+        "title": "Is Titan Just a Dry Desert?",
+        "number": "032 Short 2",
+        "type": "short"
       }
     },
     {
