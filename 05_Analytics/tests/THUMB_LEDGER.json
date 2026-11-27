@@ -1691,14 +1691,14 @@
     },
     {
       "id": "T043",
-      "status": "proposed",
-      "started": null,
+      "status": "running",
+      "started": "2026-11-27",
       "channel": "owb",
       "film": "005",
       "video": "REXYxuLOBoI",
       "title": "The Last Star: What Happens When a Red Dwarf Dies?",
       "title_b": "What Happens When the Last Red Dwarf Finally Dies?",
-      "job": "J3381",
+      "job": "J3310",
       "a": {
         "maker": "house",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3302_v01/REXYxuLOBoI_live_A.jpg",
@@ -1712,7 +1712,7 @@
         "text": "OUTLIVES OUR SUN"
       },
       "result": null,
-      "note": "J3382 exact v03 PASS and conditional one-test successor permission. Still proposed, not running. J3307 publication/completion remains required. Round 2 titles parked.",
+      "note": "Armed 27 Nov 2026 at 19:28:19Z (J3310, after J3307 done and J3382 exact-file PASS + one-test successor authorization over finished inconclusive T016). Thumbnail-only A vs B on REXYxuLOBoI (Orbit With Ben UC_esArsDKd3GJvOkeO0DUog; accessed via reused Studio tab on CDP 9224 after 26 Nov port swap, as 9223 holds FOH). Prior finished T016 report (28 Oct 21:33 to 11 Nov 21:47, inconclusive, A visible to all) verified and preserved before New test/Continue. Slot 1: unchanged live A (LAST LIGHT, sha256 bd150e73...8a4f0); Slot 2: exact approved codex v03 B (OUTLIVES OUR SUN, sha256 445cbfd3...df5c3c); Slot 3 empty. Saved, reloaded and verified at 2026-11-27T19:28:33Z: 'Thumbnail only / A/B test report / Test running… Estimated time remaining: 13 days 23 hours…'. Title ('The Last Star: What Happens When a Red Dwarf Dies?'), description, Public visibility and audience unchanged. Round 2 titles remain parked. Evidence: jobs/reviews/J3310/REPORT.md. Read back 2026-12-11; do not replace the running test.",
       "history": [
         {
           "recorded": "2026-11-22",
@@ -1798,6 +1798,16 @@
         "prior_test": "T016",
         "evidence": "jobs/reviews/J3382/REVIEW.md",
         "conditions": "J3307 completed; fresh matching finished report and no running test; unchanged live A and title"
+      },
+      "readBack": "2026-12-11",
+      "studio_arm": {
+        "armed_utc": "2026-11-27T19:28:19Z",
+        "verified_utc": "2026-11-27T19:28:33Z",
+        "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+        "test_type": "thumbnail_only",
+        "prior_report_preserved": "jobs/reviews/J3310/REXYxuLOBoI_T016_preserved_report.txt",
+        "armed_report": "jobs/reviews/J3310/REXYxuLOBoI_T043_armed_report.txt",
+        "evidence": "jobs/reviews/J3310/REPORT.md"
       }
     },
     {
