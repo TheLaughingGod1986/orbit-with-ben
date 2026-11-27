@@ -363177,13 +363177,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T18:22Z",
-      "eta": "2026-11-27T20:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T18:10Z",
-      "result": "",
+      "result": "KEEP publication finding with timestamp/authorization qualifications in merged OWB PR1409. Independently verified ww2 PR213 OPEN at exact d734610. Reopened J3834 only for elected-Chief merge and main hash verification; updated remaining action. J3838 dependency, 30 Nov 10:50 UTC date and live-credit checks unchanged; J3581/J3582 unchanged. No second job taken, no VO/upload/spend. Relay review-progress unavailable without active.json; own review milestones recorded on queue.",
       "history": [
         {
           "at": "2026-11-27T18:10Z",
@@ -363234,6 +363234,11 @@
           "at": "2026-11-27T18:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: Merged PR1409 ruling; reopened J3834 with concrete merge/hash action. J3838 remains blocked after J3834 until 30 Nov 10:50 UTC with live credits checks. Relay review-progress still unavailable; queue milestones complete."
+        },
+        {
+          "at": "2026-11-27T18:25Z",
+          "by": "codex",
+          "what": "done: KEEP publication finding with timestamp/authorization qualifications in merged OWB PR1409. Independently verified ww2 PR213 OPEN at exact d734610. Reopened J3834 only for elected-Chief merge and main hash verification; updated remaining action. J3838 dependency, 30 Nov 10:50 UTC date and live-credit checks unchanged; J3581/J3582 unchanged. No second job taken, no VO/upload/spend. Relay review-progress unavailable without active.json; own review milestones recorded on queue."
         }
       ],
       "remaining_action": "Verification complete; original job owns the remaining merge and hash checks",
@@ -363263,7 +363268,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "orbit-with-ben#1409"
     }
   ],
   "focus": [
