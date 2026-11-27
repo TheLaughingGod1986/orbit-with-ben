@@ -351636,9 +351636,14 @@
           "at": "2026-11-27T00:02Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T00:03Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Local correction commit exists; PR 189 remains OPEN at d5d842d; later PR comment acknowledges pending publication but does not resolve export restriction."
         }
       ],
-      "remaining_action": "Checking whether publication of the pilot analytics corrections is approved and complete",
+      "remaining_action": "Recording the unresolved publication hold and verification evidence",
       "kind": "review",
       "recheck_of": "J3704",
       "mini_only": true,
@@ -351653,15 +351658,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T00:02Z",
+        "at": "2026-11-27T00:03Z",
         "by": "codex",
         "plan": [
           "Read the hold and approvals",
           "Verify publication evidence",
           "Record the condition and report"
-        ]
+        ],
+        "note": "Local correction commit exists; PR 189 remains OPEN at d5d842d; later PR comment acknowledges pending publication but do"
       },
       "taskKeys": [
         "WW2:001",
