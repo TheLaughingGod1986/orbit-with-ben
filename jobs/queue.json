@@ -320856,18 +320856,23 @@
           "at": "2026-11-27T00:42Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Drafted SCRIPT.md v01, NARRATION_v01.txt, SOURCES.md v01 (C01-C23, F1-F5), and updated status.json & VIDEO_BACKLOG.json"
+        },
+        {
+          "at": "2026-11-27T00:43Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Verified 54/54 parity, 18,275 chars (SHA-256 6b0df813...), max 4 figs/30s, 0 privacy hits; pushing branch & opening ww2-channel PR"
         }
       ],
-      "remaining_action": "Running final parity, char/word, JSON & privacy checks, then opening WW2 stage PR",
+      "remaining_action": "Queueing independent Gemini facts-lane claims check and dependent Claude Rule-6 viewer test, finishing J3487 and posting studio report",
       "due": "2026-12-16T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
       "open_claim": true,
       "for": "gemini",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T00:42Z",
+        "at": "2026-11-27T00:43Z",
         "by": "gemini",
         "plan": [
           "Verify 35+ official archive photos & topic evidence",
@@ -320876,7 +320881,7 @@
           "Verify char/word/figure pacing & SCRIPT/NARRATION parity",
           "Open WW2 PR, queue claims/viewer review & post report"
         ],
-        "note": "Drafted SCRIPT.md v01, NARRATION_v01.txt, SOURCES.md v01 (C01-C23, F1-F5), and updated status.json & VIDEO_BACKLOG.json"
+        "note": "Verified 54/54 parity, 18,275 chars (SHA-256 6b0df813...), max 4 figs/30s, 0 privacy hits; pushing branch & opening ww2-"
       },
       "taskKeys": [
         "WW2:016"
