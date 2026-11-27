@@ -361660,10 +361660,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T19:03Z",
+      "eta": "2026-11-27T21:03Z",
       "created_by": "claude",
       "created_at": "2026-11-27T15:43Z",
       "result": "",
@@ -361757,6 +361757,11 @@
           "at": "2026-11-27T19:03Z",
           "by": "codex",
           "what": "reopened: Chief KEEP/PASS recorded in PR212 comment 7226116227; exact-file verification and fresh API passed; PR212 merged. Reopen solely to record completion. Follow-ups J3946 and J3947."
+        },
+        {
+          "at": "2026-11-27T19:03Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: review and merge ww2-channel PR #212",
@@ -361793,7 +361798,15 @@
         "status": "claimed",
         "by": "codex"
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T19:03Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3922",
