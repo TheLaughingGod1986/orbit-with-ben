@@ -1,5 +1,5 @@
 {
-  "next_id": 3847,
+  "next_id": 3848,
   "jobs": [
     {
       "id": "J0001",
@@ -353866,6 +353866,36 @@
       "remaining_action": "Review and merge the verified Franklin records",
       "kind": "chief",
       "plain": "Finish reviewing the Franklin videos published settings records"
+    },
+    {
+      "id": "J3847",
+      "title": "J3844 follow-up: investigate missing public id in audit",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up to J3844: investigate HOS channel-audit uploads coverage without YouTube writes. On 27 Nov 02:34Z the full authenticated audit returned 76 rows/zero contract errors but omitted qOZgess30h0; direct authenticated videos.list returned that id Public and processed. The draft incorrectly inferred Private from absence. Reproduce with bounded read-only API requests, check pagination/deduplication and source-id membership, distinguish API omissions from code defects, and propose or implement a targeted regression-tested fix if warranted. Preserve safe evidence only (no tokens/account details/raw credential data); do not fabricate a cause or force listing totals. Missing known IDs must be directly checked before inferring visibility. Use isolated worktree. No YouTube, schedule, privacy, Buffer or test changes. Record findings and any code PR for review.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T02:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T02:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the audit coverage against a direct video lookup",
+      "kind": "assembly",
+      "plain": "Find why a public Germs video is missing from the channel audit",
+      "mini_only": true
     }
   ],
   "focus": [
