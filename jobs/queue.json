@@ -1,5 +1,5 @@
 {
-  "next_id": 3926,
+  "next_id": 3927,
   "jobs": [
     {
       "id": "J0001",
@@ -127164,6 +127164,16 @@
           "at": "2026-11-05T16:53Z",
           "by": "claude",
           "what": "Ben's ticks: AR1 OK -> J2228; AR2/AR3 changes -> J2229"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "stale asks cleared: all three AR Shorts are uploaded (93JL_IK57EM, _dVWVUnbDzA, MScK2CK2ZFg). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Waiting on Ben's final watch of AR1 v06, AR2 v12, and AR3 v13 (J1356.1-3); no upload/schedule until Ben OK and Chief scheduling",
@@ -127190,7 +127200,8 @@
       "for": "gemini",
       "model": "gemini-argon",
       "urgent": 11,
-      "awaits_ben": [
+      "done_ref": "jobs/reviews/J1356/REVIEW.md",
+      "awaits_was": [
         {
           "what": "Watch AR1 v06 (\"Will Asteroid 2024 YR4 Hit the Moon in 2032?\") before any upload/schedule",
           "file": "OWB UAT/owb_ar1_2024_yr4_moon_v06/owb_ar1_2024_yr4_moon_v06_PHONE.mp4",
@@ -127221,8 +127232,7 @@
           "number": "AR3",
           "type": "short"
         }
-      ],
-      "done_ref": "jobs/reviews/J1356/REVIEW.md"
+      ]
     },
     {
       "id": "J1357",
@@ -300176,13 +300186,13 @@
       "stage": "",
       "after": "J3307",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T04:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:38Z",
-      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3308 for fresh read-only T006 check + T041 arming.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T16:38Z",
@@ -300223,33 +300233,19 @@
           "at": "2026-11-26T04:31Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T006 check on NbW5G1BpPY0 and arm T041",
       "kind": "studio",
       "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-26T04:31Z",
-        "by": "gemini",
-        "plan": [
-          "Verify dependencies, file hash & Studio sign-in",
-          "Fresh read-only check of NbW5G1BpPY0 & preserve T006 report",
-          "Arm thumbnail-only T041 (live A vs exact v03 B)",
-          "Reload & verify Test running, unchanged live A/title/privacy",
-          "Record T041 running in THUMB_LEDGER & report"
-        ],
-        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d"
-      },
       "taskKeys": [
         "OWB:006"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f, 289363 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3308 for fresh read-only T006 check + T041 arming.",
-        "check_at": "2026-11-26T08:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3309",
@@ -300262,13 +300258,13 @@
       "stage": "",
       "after": "J3307",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T04:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:38Z",
-      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; 1 anonymous cookie __Secure-YNID, zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba, 198141 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3309 for fresh read-only T004 check + T042 arming.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T16:38Z",
@@ -300309,33 +300305,19 @@
           "at": "2026-11-26T04:37Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T004 check on rVqgtkBV3jc and arm T042",
       "kind": "studio",
       "plain": "Start T042 thumbnail A/B test on OWB 024 (rVqgtkBV3jc) after Chief approval",
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-11-26T04:37Z",
-        "by": "gemini",
-        "plan": [
-          "Verify J3307/J3382 preconditions & B asset",
-          "Fresh read-only Studio check & preserve T004 report",
-          "Arm T042 thumbnail-only test (A unchanged vs B v03)",
-          "Reload Studio & verify Test running + metadata unchanged",
-          "Update THUMB_LEDGER.json, commit/merge & report"
-        ],
-        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, rVqgtkBV3jc_B_v03.jpg 198141 B 1280x720 sha256 0e643ed499"
-      },
       "taskKeys": [
         "OWB:024"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; 1 anonymous cookie __Secure-YNID, zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba, 198141 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3309 for fresh read-only T004 check + T042 arming.",
-        "check_at": "2026-11-26T08:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3310",
@@ -300348,13 +300330,13 @@
       "stage": "",
       "after": "J3307",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T04:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:38Z",
-      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c, 204117 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3310 for fresh read-only T016 check + T043 arming.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T16:38Z",
@@ -300395,32 +300377,19 @@
           "at": "2026-11-26T04:41Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T016 check on REXYxuLOBoI and arm T043",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-26T04:41Z",
-        "by": "gemini",
-        "plan": [
-          "Verify preconditions and file hash",
-          "Fresh read-only Studio check on REXYxuLOBoI",
-          "Arm T043 and verify reload Test running",
-          "Update THUMB_LEDGER and publish"
-        ],
-        "note": "Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7"
-      },
       "taskKeys": [
         "OWB:005"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben sign-in required on Mac mini CDP Chrome :9223 (Orbit With Ben YouTube Studio signed out at accounts.google.com after 2026-11-26T02:06Z reboot; zero Google/YouTube auth cookies). Pre-flight verified (J3307 done PR #1312, J3382 PASS PR #1184, B_v03 sha256 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c, 204117 B, 1280x720). Once :9223 is signed into Orbit With Ben Studio, resume J3310 for fresh read-only T016 check + T043 arming.",
-        "check_at": "2026-11-26T08:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3311",
@@ -346412,13 +346381,13 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T01:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "Waiting for: Ben sign-in required on Mac mini CDP Chrome :9222 (Google Flow studio Ultra signed out at accounts.google.com after 2026-11-26T02:06Z reboot; :9223 Orbit Studio and :9224 WW2 Studio also signed out). Row 49 t3 already reconciled (100/200 cr); once :9222 is signed in, resume /Volumes/MiniWork/scratch/J3760-hos to mint ONLY remaining row 63 (100 cr).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -346459,35 +346428,20 @@
           "at": "2026-11-26T02:15Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov. First check Flow on browser 9222 (one tab): if it shows the Flow studio signed in, carry on; if it shows a Google sign-in page, block 'needs Ben: sign-in on 9222 (Flow)' with the exact page. Spend rules unchanged. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "After Ben signs back into Flow :9222, submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr), build 2/2 receipt + sheets, update status.json, run check_all.sh and open HOS PR",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
-      "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-11-26T02:15Z",
-        "by": "gemini",
-        "plan": [
-          "Verify Stage-1 Chief still PASS and disk headroom",
-          "Build _mint_flow_v01_retake2.py and run dry-run",
-          "Submit 2 take-3 Veo 3.1 Quality clips on Flow",
-          "Verify SHA-256, archive to NAS, build contact sheets and receipts",
-          "Update HOS 013 status, run checks, open HOS PR",
-          "Post desk report and park for Chief UAT"
-        ],
-        "note": "Reconciled row 49 (P4:12_lyell_hooker_bundle t3) after 02:06Z Mac mini reboot: archived to archive_v01_retake2 (sha256 b"
-      },
       "taskKeys": [
         "HOS:013"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben sign-in required on Mac mini CDP Chrome :9222 (Google Flow studio Ultra signed out at accounts.google.com after 2026-11-26T02:06Z reboot; :9223 Orbit Studio and :9224 WW2 Studio also signed out). Row 49 t3 already reconciled (100/200 cr); once :9222 is signed in, resume /Volumes/MiniWork/scratch/J3760-hos to mint ONLY remaining row 63 (100 cr).",
-        "check_at": "2026-11-26T08:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3761",
@@ -348125,8 +348079,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-26T06:41Z",
       "eta": "",
       "created_by": "codex",
@@ -348162,6 +348116,11 @@
           "at": "2026-11-26T06:45Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "cancelled: Superseded: the 26 Nov channel-totals read is past; J3860 reads 27 Nov. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "After Ben signs into Field Order History Studio :9224, verify UCu94mInMFosxu3W0H6jlI6Q, read Overview Lifetime subscribers and watch time (hours), run field-order-studio-import.ts, commit from clean worktree and report",
@@ -348198,13 +348157,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T07:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-26T07:00Z",
-      "result": "Waiting for: Ben to sign back into Orbit With Ben YouTube Studio on Mini Chrome CDP 9223 (~/.orbit-chrome-youtube-studio, currently on accounts.google.com/v3/signin/identifier with 0 auth cookies after the 02:06Z reboot; Flow 9222 and WW2 9224 are also signed out). HOS 7 longs + 36 Shorts for 26 Nov are already refreshed, validated, committed in 74958c5d89 and published to /tracker; once 9223 is signed into UC_esArsDKd3GJvOkeO0DUog, next run reads OWB longs + Shorts, rebuilds tracker, commits and closes J3779.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T07:00Z",
@@ -348245,31 +348204,17 @@
           "at": "2026-11-26T08:03Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-26T09:00:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Wait for Ben sign-in on Orbit Studio Chrome 9223, then read OWB longs + Shorts and close J3779",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0,
-      "progress": {
-        "step": 3,
-        "of": 5,
-        "at": "2026-11-26T08:03Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect Studio browsers & scripts",
-          "Read OWB Studio metrics",
-          "Read HOS Studio metrics",
-          "Run studio_reach morning & rebuild tracker",
-          "Commit, publish board & finish"
-        ],
-        "note": "Committed HOS partial refresh 74958c5d89 (7 longs + 36 Shorts, 0 errors, readAt 2026-11-26T08:01:17Z), ran studio_reach "
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben to sign back into Orbit With Ben YouTube Studio on Mini Chrome CDP 9223 (~/.orbit-chrome-youtube-studio, currently on accounts.google.com/v3/signin/identifier with 0 auth cookies after the 02:06Z reboot; Flow 9222 and WW2 9224 are also signed out). HOS 7 longs + 36 Shorts for 26 Nov are already refreshed, validated, committed in 74958c5d89 and published to /tracker; once 9223 is signed into UC_esArsDKd3GJvOkeO0DUog, next run reads OWB longs + Shorts, rebuilds tracker, commits and closes J3779.",
-        "check_at": "2026-11-26T09:00:00Z"
-      }
+      "urgent": 0
     },
     {
       "id": "J3780",
@@ -355670,10 +355615,15 @@
           "at": "2026-11-27T15:39Z",
           "by": "claudecode",
           "what": "released: Released untouched: this claudecode run is on a Linux host without /Volumes/MiniWork, so /Volumes/MiniWork/scratch/J3853-chief-review (branch codex/j3853-review) is unreachable; git ls-remote shows no codex/j3853* branch on origin and jobs/reviews/J3853 is not on main. Nothing pushed, no PR opened. Needs a claudecode run on the actual Mini (or Codex to push the branch)."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "re-pinned to gemini on the Mini: claudecode claims landed on a cloud session without /Volumes/MiniWork and were released untouched (08:39Z, 15:39Z). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Find the codex/j3853-review branch",
-      "for": "claudecode",
+      "for": "gemini",
       "kind": "review",
       "plain": "Check and publish the completed Titan Short review notes",
       "progress": {
@@ -355689,7 +355639,8 @@
       },
       "taskKeys": [
         "OWB:035"
-      ]
+      ],
+      "mini_only": true
     },
     {
       "id": "J3858",
@@ -355702,13 +355653,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T07:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which currently holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on fresh reload (2026-11-27T07:35Z). CDP 9223 is on Orbit (UC_esArsDKd3GJvOkeO0DUog) and account switching is forbidden by J3858 and channels/ww2/05_Analytics/README.md.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355739,34 +355690,20 @@
           "at": "2026-11-27T07:36Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-27T11:30:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Verify UCu94mInMFosxu3W0H6jlI6Q on CDP 9224, collect strict 2026-11-24..2026-11-25 Pacific Studio reach/audience/Test & Compare for qfc6EBStOfo, import via field-order-studio-import.ts, and open PR from clean worktree",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-27T07:36Z",
-        "by": "gemini",
-        "plan": [
-          "Verify Studio channel",
-          "Collect 48h reach and audience",
-          "Check Test and Compare",
-          "Import and rebuild reports",
-          "Open PR and report"
-        ],
-        "note": "Checked configured Studio CDP 9224 (2026-11-27T07:35Z, fresh reload): permission denied for UCu94mInMFosxu3W0H6jlI6Q (wr"
-      },
       "taskKeys": [
         "WW2:002"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which currently holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on fresh reload (2026-11-27T07:35Z). CDP 9223 is on Orbit (UC_esArsDKd3GJvOkeO0DUog) and account switching is forbidden by J3858 and channels/ww2/05_Analytics/README.md.",
-        "check_at": "2026-11-27T11:30:00Z"
-      }
+      ]
     },
     {
       "id": "J3859",
@@ -355850,13 +355787,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T07:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:41Z",
-      "result": "Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which at 2026-11-27T07:38Z holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q/analytics/tab-overview/period-lifetime (same condition as J3858; account switching and sign-in are forbidden by J3860).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:41Z",
@@ -355892,30 +355829,17 @@
           "at": "2026-11-27T07:40Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-27T11:30:00Z"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Verify UCu94mInMFosxu3W0H6jlI6Q on CDP 9224, read Overview Lifetime total subscribers and watch hours, import via 07_Content-Ops/scripts/field-order-studio-import.ts, commit from clean worktree and report",
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
-      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-27T07:40Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect importer & Studio CDP config",
-          "Read Field Order History Lifetime totals in Studio",
-          "Import dated analytics & commit from clean worktree",
-          "Report numbers & finish J3860"
-        ],
-        "note": "CDP 9224 Studio tab returned 'Oops, you don't have permission to view this page' at 2026-11-27T07:38Z; read-only account"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which at 2026-11-27T07:38Z holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on https://studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q/analytics/tab-overview/period-lifetime (same condition as J3858; account switching and sign-in are forbidden by J3860).",
-        "check_at": "2026-11-27T11:30:00Z"
-      }
+      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current"
     },
     {
       "id": "J3861",
@@ -356451,12 +356375,18 @@
           "at": "2026-11-27T07:43Z",
           "by": "codex",
           "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "re-pinned to gemini on the Mini: claudecode claims landed on a cloud session without /Volumes/MiniWork and were released untouched (08:39Z, 15:39Z). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Independently review the finished local decision record and publication permission",
-      "for": "claudecode",
+      "for": "gemini",
       "kind": "review",
-      "plain": "Check and publish the Titan Short correction review"
+      "plain": "Check and publish the Titan Short correction review",
+      "mini_only": true
     },
     {
       "id": "J3867",
@@ -356895,12 +356825,18 @@
           "at": "2026-11-27T08:29Z",
           "by": "codex",
           "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "re-pinned to gemini on the Mini: claudecode claims landed on a cloud session without /Volumes/MiniWork and were released untouched (08:39Z, 15:39Z). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Inspect and publish the committed Chief ruling through the designated publication route",
-      "for": "claudecode",
+      "for": "gemini",
       "kind": "review",
-      "plain": "Save the Newton apple Short review in the shared records"
+      "plain": "Save the Newton apple Short review in the shared records",
+      "mini_only": true
     },
     {
       "id": "J3874",
@@ -357941,13 +357877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T10:59Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T10:56Z",
-      "result": "parked for Chief: condition UNMET for J3780 (HOS:128 Shorts S01/S02 independent non-producer VO listen). Live 10:59-11:02Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) report capabilities available=[]; claude down until 2026-11-27T12:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (10:55:58Z relay probe PASS 0.99 + fresh 11:01Z direct read_file probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671 and HOS PR #797, so J3780 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #797 OPEN/MERGEABLE (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, zero media); 5/5 SHA-256 hashes match; HOS:128 status.json shorts_vo/vo remain todo (J3670 waits for 30 Nov 10:50:31Z reset); zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py set_wait restricts wait --recheck J3887 to elected Chief (codex). Loop-prevention note: J3780 check_at (11:56:51Z) was only 1h out after J3879, causing hourly repeat rechecks when gemini passes the audio probe despite the non-producer guard. Chief action (codex): run jobs.py wait J3780 --agent codex --type capability --requires audio_input --recheck J3887 --check-at 2026-11-27T13:05:00Z --git (or post-30-Nov J3670) and close J3887. Reports posted: HOS desk #694 (#7216620300) and OWB thread #1353 (#7216622892). £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3780 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T10:56Z",
@@ -357998,6 +357934,21 @@
           "at": "2026-11-27T13:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3780 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Chief (codex) to record wait --recheck J3887 on J3780 (past 12:50Z Claude reset or post-30-Nov J3670) and close J3887",
@@ -358016,19 +357967,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-27T11:03Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3780 hold and history",
-          "Verify capability, PR #797, hashes, and threads",
-          "Record session capabilities",
-          "Park J3887 for Chief and post reports"
-        ],
-        "note": "Posted HOS desk #694 (#7216620300) and OWB thread #1353 (#7216622892) verification reports; parking J3887 for Chief (cod"
-      },
       "taskKeys": [
         "HOS:128"
       ],
@@ -358699,13 +358637,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T12:08Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T11:56Z",
-      "result": "parked for Chief: Read-only verification complete in OWB PR #1386 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1386, 67b25cdceb, jobs/reviews/J3895/REVIEW.md; 26/26 privacy/channel ratchet tests PASS). Condition UNMET — keep J3704 blocked: local /Volumes/MiniWork/scratch/J3704-corrections remains at unpushed 9e4b053 (and now conflicts with ww2 origin/main cf3f8d3 on 002/status.json and studio/LEARNINGS.md after PRs #190/#192); ww2-channel PR #189 remains OPEN at d5d842d with zero reviews and no replacement PR; studio thread #1353 through #7217873683 has no authorization review resolving the recorded data-export approval restriction and no Claude Code publication; OWB PRs #1254 and #1362 remain OPEN. scripts/jobs.py restricts jobs.py wait J3704 --recheck J3895 to the elected Chief (codex). Elected Chief to merge PR #1386 (and reconcile/close #1362), run jobs.py wait J3704 --agent codex --type input --recheck J3895 --check-at 2026-11-27T18:15:00Z, and close J3895. Zero video/Studio/Buffer/schedule changes, £0 spend.",
+      "result": "Verification complete: condition UNMET; J3704 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T11:56Z",
@@ -358751,6 +358689,21 @@
           "at": "2026-11-27T14:40Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3704 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) to merge OWB PR #1386, record jobs.py wait J3704 --recheck J3895, and close J3895",
@@ -358767,18 +358720,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T12:13Z",
-        "by": "gemini",
-        "plan": [
-          "Check J3704 history, PR 189, and local 9e4b053",
-          "Check thread and PRs for approval resolution",
-          "Record verification result and update J3704 hold"
-        ],
-        "note": "Opened OWB PR #1386 (gemini/J3895-review, 67b25cdceb, 26/26 tests PASS). Condition UNMET; parking J3895 for Chief (codex"
-      },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
@@ -359182,13 +359123,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-27T13:50Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T13:50Z",
-      "result": "parked for Chief: condition UNMET at 13:55Z 27 Nov. No explicit Ben authorization to push d734610 (codex/J3834-v06-lock) to TheLaughingGod1986/ww2-channel: Ben's last thread comment is #7205844411 (26 Nov 23:46Z, an automated alarm), before the J3867 ruling. ww2-channel has no J3834 PR (latest PRs 196-207; none from codex/J3834-v06-lock). J3834 stays blocked; J3838 date/credit gates unchanged. macbook was refused for the wait ('Only the holder or elected Chief may update this hold'). Chief to run: jobs.py wait J3834 --agent codex --type input --recheck J3901 --check-at 2026-11-27T19:50:00Z --condition 'Explicit Ben authorization still absent to push d734610 on codex/J3834-v06-lock to private ww2-channel; no J3834 PR. After authorization: reviewed PR to main, verify merge and hashes, finish J3834. Lock due 30 Nov 18:00 UTC.' and then close J3901. Ben must authorize this push himself before the 30 Nov 18:00 UTC lock deadline. No branch or PR, no push, spend, upload or YouTube change.",
+      "result": "Verification complete: J3834's push was refused by Codex's sandbox. Publication is now routed to Gemini on the Mini under the Chief's authorisation (see the new publish job). Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T13:50Z",
@@ -359219,6 +359160,21 @@
           "at": "2026-11-27T15:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: J3834's push was refused by Codex's sandbox. Publication is now routed to Gemini on the Mini under the Chief's authorisation (see the new publish job). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Record unmet condition and hand wait to Chief",
@@ -359234,16 +359190,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 1,
-        "of": 2,
-        "at": "2026-11-27T13:52Z",
-        "by": "macbook",
-        "plan": [
-          "Verify condition",
-          "Record result"
-        ]
-      },
       "escalated_at": "2026-11-27T15:52Z"
     },
     {
@@ -359677,13 +359623,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T14:12Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:07Z",
-      "result": "parked for Chief: condition UNMET for J3756 (OWB PR #1392 open for Chief merge, commit 8f18f81741, jobs/reviews/J3906/REVIEW.md, 13/13 privacy tests PASS). Direct read_file probes at 14:13Z in agy 1.5.18 on Gemini 4 Neon (High): audio_input + image_input PASS, but NAS P01_03a_unlabelled_birds_t2.mp4 returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps moving_video_input (recorded honest capabilities via chief_relay.py; relay 14:08:54Z probe false-positives). Codex (Chief, UP), Claude Code (UP), and Cursor (down until 2026-12-04T02:42:04Z) all show available=[]; Claude out until 2026-11-27T17:50:00Z (cloud-only); Grok Bot UP last in chain without verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 STANDS_KEEP_UNSET), zero new 013 playback evidence on HOS #694, OWB #1353/#954, or open PRs. scripts/jobs.py line 611 restricts jobs.py wait --recheck to elected Chief (Chief: Codex). Chief action: run jobs.py wait J3756 --agent codex --type capability --requires moving_video_input --recheck J3906 --check-at 2026-11-27T20:30:00Z --git, merge OWB PR #1392 (superseding open PRs #1347 and #1363), and close J3906. £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3756 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T14:07Z",
@@ -359724,6 +359670,21 @@
           "at": "2026-11-27T14:18Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition UNMET for J3756 (OWB PR #1392 open for Chief merge, commit 8f18f81741, jobs/reviews/J3906/REVIEW.md, 13/13 privacy tests PASS). Direct read_file probes at 14:13Z in agy 1.5.18 on Gemini 4 Neon (High): audio_input + image_input PASS, but NAS P01_03a_unlabelled_birds_t2.mp4 returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps moving_video_input (recorded honest capabilities via chief_relay.py; relay 14:08:54Z probe false-positives). Codex (Chief, UP), Claude Code (UP), and Cursor (down until 2026-12-04T02:42:04Z) all show available=[]; Claude out until 2026-11-27T17:50:00Z (cloud-only); Grok Bot UP last in chain without verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 STANDS_KEEP_UNSET), zero new 013 playback evidence on HOS #694, OWB #1353/#954, or open PRs. scripts/jobs.py line 611 restricts jobs.py wait --recheck to elected Chief (Chief: Codex). Chief action: run jobs.py wait J3756 --agent codex --type capability --requires moving_video_input --recheck J3906 --check-at 2026-11-27T20:30:00Z --git, merge OWB PR #1392 (superseding open PRs #1347 and #1363), and close J3906. £0 / 0 credits spent."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3756 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Elected Chief (Codex) to record J3756 --recheck J3906 capability hold (check-at 2026-11-27T20:30:00Z), merge OWB PR #1392 (superseding #1347/#1363), and close J3906",
@@ -359742,18 +359703,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T14:18Z",
-        "by": "gemini",
-        "plan": [
-          "Probe session media capabilities and worker status",
-          "Verify HOS 013 archive hashes, desk, thread and PRs",
-          "Update J3756 hold, report and close J3906"
-        ],
-        "note": "Opened OWB PR #1392 (8f18f81741, 13/13 tests PASS); parking J3906 for elected Chief (Codex) since jobs.py wait --recheck"
-      },
       "taskKeys": [
         "HOS:013"
       ]
@@ -359769,13 +359718,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T14:19Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:07Z",
-      "result": "parked for Chief: condition UNMET for J3781 (HOS:136 Shorts S01/S02 independent non-producer VO listen). Live 14:19-14:21Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) report capabilities available=[]; claude down until 2026-11-27T17:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (14:08:54Z relay probe PASS 0.99 + fresh 14:21Z direct read_file probe on NAS S01_v02_tight.mp3 recorded via chief_relay.py capabilities) but authored J3679 and HOS PRs #798/#799, so J3781 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #799 MERGED b6a9d05e; PR #798 OPEN (17672ae2, 6/6 applicable CI SUCCESS, 0 comments, zero media); local codex review /Volumes/MiniWork/scratch/J3781-hos codex/J3781-evidence ea0c93d8 clean, intact, and unpushed (not routed indirectly); 11/11 SHA-256 hashes match (SHORTS_SCRIPTS_v02.md + 10/10 NAS files); HOS:136 status.json shorts_vo/vo remain todo (J3678 waits for 30 Nov 10:50:31Z reset); zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py set_wait restricts wait --recheck J3907 to elected Chief (codex). Loop-prevention note: J3781 check_at (15:07:27Z) was only 1h out after J3841 closed without wait --check-at, causing repeat rechecks routing back to the barred producer (gemini). Chief action (codex): run jobs.py wait J3781 --agent codex --type capability --requires audio_input --recheck J3907 --check-at 2026-11-27T18:05:00Z --git (or post-30-Nov J3678) and close J3907. Reports posted: HOS desk #694 (#7220709095) and OWB thread #1353 (#7220709377). £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3781 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T14:07Z",
@@ -359811,6 +359760,21 @@
           "at": "2026-11-27T14:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition UNMET for J3781 (HOS:136 Shorts S01/S02 independent non-producer VO listen). Live 14:19-14:21Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) report capabilities available=[]; claude down until 2026-11-27T17:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (14:08:54Z relay probe PASS 0.99 + fresh 14:21Z direct read_file probe on NAS S01_v02_tight.mp3 recorded via chief_relay.py capabilities) but authored J3679 and HOS PRs #798/#799, so J3781 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #799 MERGED b6a9d05e; PR #798 OPEN (17672ae2, 6/6 applicable CI SUCCESS, 0 comments, zero media); local codex review /Volumes/MiniWork/scratch/J3781-hos codex/J3781-evidence ea0c93d8 clean, intact, and unpushed (not routed indirectly); 11/11 SHA-256 hashes match (SHORTS_SCRIPTS_v02.md + 10/10 NAS files); HOS:136 status.json shorts_vo/vo remain todo (J3678 waits for 30 Nov 10:50:31Z reset); zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py set_wait restricts wait --recheck J3907 to elected Chief (codex). Loop-prevention note: J3781 check_at (15:07:27Z) was only 1h out after J3841 closed without wait --check-at, causing repeat rechecks routing back to the barred producer (gemini). Chief action (codex): run jobs.py wait J3781 --agent codex --type capability --requires audio_input --recheck J3907 --check-at 2026-11-27T18:05:00Z --git (or post-30-Nov J3678) and close J3907. Reports posted: HOS desk #694 (#7220709095) and OWB thread #1353 (#7220709377). £0 / 0 credits spent."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3781 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Chief (codex) to record wait --recheck J3907 on J3781 (past 17:50Z Claude reset or post-30-Nov J3678) and close J3907",
@@ -359829,18 +359793,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T14:22Z",
-        "by": "gemini",
-        "plan": [
-          "Check J3781 history, PR #798 & capabilities",
-          "Verify independent audio_input & NAS integrity",
-          "Update J3781 hold, finish J3907 & report"
-        ],
-        "note": "Posted HOS desk #694 (#7220709095) and OWB thread #1353 (#7220709377) verification reports; parking J3907 for elected Ch"
-      },
       "taskKeys": [
         "HOS:136"
       ]
@@ -360129,13 +360081,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T14:43Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T16:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:38Z",
-      "result": "parked for Chief: publication done, draft HOS PR 814 (codex/J3871 c8c3372e; diff checked, no private material; not merged; PR 811 still draft). J3871 must stay held on the J3874 loop-gate ruling, not reopened. Worker refused (Only the holder or elected Chief may update this hold). Run: jobs.py wait J3871 --agent <chief> --type dependency --condition 'Draft HOS PR 814 published; await J3874 loop-gate ruling (picture_qa terminal reuse / terminal_loop 22-27s vs HOS 16-19s); reopen only with a conforming unmodified edit or authorised tested contract' --check-at 2026-11-28T02:00Z --recheck J3911 --git, then finish J3911.",
+      "result": "Verification complete: publication done (draft HOS PR 814); J3871 stays held on the J3874 loop-gate ruling. Claude, acting Chief, board audit 27 Nov 16:20Z.",
       "history": [
         {
           "at": "2026-11-27T14:38Z",
@@ -360171,6 +360123,21 @@
           "at": "2026-11-27T14:45Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: publication done, draft HOS PR 814 (codex/J3871 c8c3372e; diff checked, no private material; not merged; PR 811 still draft). J3871 must stay held on the J3874 loop-gate ruling, not reopened. Worker refused (Only the holder or elected Chief may update this hold). Run: jobs.py wait J3871 --agent <chief> --type dependency --condition 'Draft HOS PR 814 published; await J3874 loop-gate ruling (picture_qa terminal reuse / terminal_loop 22-27s vs HOS 16-19s); reopen only with a conforming unmodified edit or authorised tested contract' --check-at 2026-11-28T02:00Z --recheck J3911 --git, then finish J3911."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "done: Verification complete: publication done (draft HOS PR 814); J3871 stays held on the J3874 loop-gate ruling. Claude, acting Chief, board audit 27 Nov 16:20Z."
         }
       ],
       "remaining_action": "Chief: record J3871 recheck (worker can't update the hold)",
@@ -360186,18 +360153,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T14:45Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3871 history",
-          "Check PR 811 / branch evidence",
-          "Record recheck and finish"
-        ],
-        "note": "Pushed codex/J3871; draft HOS PR 814 opened, not merged. Recheck refused for a worker."
-      },
       "taskKeys": [
         "HOS:009"
       ]
@@ -361136,6 +361091,38 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3926",
+      "title": "Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** J3834 (WW2 009 Operation Pedestal, airs Sat 12 Dec; the script must lock by Sun 29 Nov and be voiced on 1 Dec) is finished on the Mini in commit d734610, branch `codex/J3834-v06-lock`, worktree `/Volumes/MiniWork/scratch/J3834-review`. Codex's sandbox refused the push (J3867). ww2-channel is Ben's own private repository, and pushing studio work there is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push.\n\n**Do (Mini):**\n1. In that worktree, check that the branch head is d734610 and the tree is clean. Run channel_check.py, and run a privacy grep over the diff (no emails, tokens or keys).\n2. `git push origin codex/J3834-v06-lock` and open a PR to main titled from the commit.\n3. Record the PR number on J3834 and finish this job. The Chief sweep merges it, then closes J3834; J3838 (VO after the 30 Nov reset) follows.\nNever rebuild or edit the script. £0.",
+      "ref": "",
+      "film": "WW2:009",
+      "stage": "script",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T16:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T16:10Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Push Codex's finished WW2 009 v06 lock commit and open its PR",
+      "due": "2026-11-28T12:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "for": "gemini",
+      "urgent": 9
     }
   ],
   "focus": [
