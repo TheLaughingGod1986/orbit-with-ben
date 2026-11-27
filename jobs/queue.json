@@ -352826,9 +352826,14 @@
           "at": "2026-11-27T08:21Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:21Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review complete: PR206 merged 2b79228; exact v02 locked; J3869 archive work after J3831; J3870 voice after J3706 and verified reset/live balance plus Rule-12 review. No spend."
         }
       ],
-      "remaining_action": "Parked for elected Chief (codex) lock and merge of ww2-channel PR #205 (a77f306)",
+      "remaining_action": "Close completed review and post the handoff",
       "due": "2026-12-16T18:00:00Z",
       "kind": "review",
       "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02",
@@ -352843,13 +352848,20 @@
       "escalated_at": "2026-11-27T03:28Z",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-27T08:21Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check inputs and authority",
+          "Review final evidence and rule",
+          "Record lock and queue follow-ups"
+        ],
+        "note": "Chief review complete: PR206 merged 2b79228; exact v02 locked; J3869 archive work after J3831; J3870 voice after J3706 a"
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     },
     {
       "id": "J3832",
