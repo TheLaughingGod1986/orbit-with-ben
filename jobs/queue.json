@@ -346963,19 +346963,28 @@
           "at": "2026-11-27T09:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:05Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Scan Orbit With Ben Studio comments from the last 14 days, reply or draft per policy, log COMMENT_REPLIES.jsonl, and queue next day",
+      "remaining_action": "Inspecting existing comment log and opening OWB Studio Comments on CDP 9223",
       "due": "2026-11-27T20:00:00Z",
       "kind": "studio",
       "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T09:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect Studio comments on CDP 9223",
+          "Classify and post allowed replies",
+          "Record log and commit changes",
+          "Queue tomorrow's run and report"
+        ]
       }
     },
     {
