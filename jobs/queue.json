@@ -355805,9 +355805,14 @@
           "at": "2026-11-27T16:40Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Imported strict dated Studio read via field-order-studio-import.ts in clean worktree; READS.md and board.json rebuilt; 22/22 field-order vitest checks passed"
+        },
+        {
+          "at": "2026-11-27T16:41Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened PR #1402 (commit a4195dfb23) and posted collection evidence to studio thread; parking merge for Chief"
         }
       ],
-      "remaining_action": "Push branch, open PR for Chief merge, post studio thread report, and park J3858 for Chief",
+      "remaining_action": "Await Chief review and merge of PR #1402 to close J3858 and unblock J3859",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
@@ -355815,9 +355820,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T16:40Z",
+        "at": "2026-11-27T16:41Z",
         "by": "gemini",
         "plan": [
           "Verify Studio browser & channel",
@@ -355826,7 +355831,7 @@
           "Commit & push PR from clean worktree",
           "Report evidence & close job"
         ],
-        "note": "Imported strict dated Studio read via field-order-studio-import.ts in clean worktree; READS.md and board.json rebuilt; 2"
+        "note": "Opened PR #1402 (commit a4195dfb23) and posted collection evidence to studio thread; parking merge for Chief"
       }
     },
     {
