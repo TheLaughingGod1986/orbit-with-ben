@@ -351515,13 +351515,13 @@
       "stage": "sources",
       "after": "J3820",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T00:06Z",
-      "eta": "2026-11-27T02:06Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T23:52Z",
-      "result": "",
+      "result": "parked for Chief: precondition unmet. Brief says check v05 after the linked rewrite is merged; ww2 main has no NARRATION_v05. Two competing J3820 v05 PRs are open with different narration: #196 (claudecode, sha256 81ddf978...a66ce, the one J3820's done note names) and #195 (macbook, sha256 9f177355...cd7). Chief: merge one, close the other, then reopen J3821. No check run, nothing committed.",
       "history": [
         {
           "at": "2026-11-26T23:52Z",
@@ -351532,6 +351532,11 @@
           "at": "2026-11-27T00:06Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:07Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: precondition unmet. Brief says check v05 after the linked rewrite is merged; ww2 main has no NARRATION_v05. Two competing J3820 v05 PRs are open with different narration: #196 (claudecode, sha256 81ddf978...a66ce, the one J3820's done note names) and #195 (macbook, sha256 9f177355...cd7). Chief: merge one, close the other, then reopen J3821. No check run, nothing committed."
         }
       ],
       "remaining_action": "Verify the rewritten narration and rescue details independently",
