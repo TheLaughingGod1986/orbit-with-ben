@@ -346463,9 +346463,14 @@
           "at": "2026-11-27T16:28Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:28Z",
+          "by": "codex",
+          "what": "step 2 of 6 done: Resuming earlier six-step plan: prior run completed guarded runner and row 49; checking existing state before any spend. Started guarded scratch offload due to 16 GiB free."
         }
       ],
-      "remaining_action": "After Ben signs back into Flow :9222, submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr), build 2/2 receipt + sheets, update status.json, run check_all.sh and open HOS PR",
+      "remaining_action": "Check Flow sign-in and resume only the remaining book shot",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
@@ -346473,12 +346478,19 @@
         "HOS:013"
       ],
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 2,
+        "of": 6,
         "at": "2026-11-27T16:28Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify still approvals",
+          "Build and dry-run guarded runner",
+          "Finish remaining video take",
+          "Archive clips and sheets",
+          "Validate film records",
+          "Submit evidence for review"
+        ],
+        "note": "Resuming earlier six-step plan: prior run completed guarded runner and row 49; checking existing state before any spend."
       }
     },
     {
