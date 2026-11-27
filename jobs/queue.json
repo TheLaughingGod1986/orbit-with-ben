@@ -351767,6 +351767,11 @@
           "at": "2026-11-27T00:36Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: v05 sha256 81ddf978...a66ce read back; 37 blocks, 10322 chars; SCRIPT.md 37/37 parity; 18 unchanged blocks byte-identical to v04 (S11-19,S21-28,S37). Gemini/agy run started (tmux j3821-agy)."
+        },
+        {
+          "at": "2026-11-27T00:37Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: agy (gemini-4-neon-high) still fetching sources; tmux j3821-agy, output /tmp/j3821/agy_out.md"
         }
       ],
       "remaining_action": "Gemini is checking the 20 changed lines against sources",
@@ -351776,7 +351781,7 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-27T00:36Z",
+        "at": "2026-11-27T00:37Z",
         "by": "claudecode",
         "plan": [
           "Read v05 and v04 check",
@@ -351784,7 +351789,7 @@
           "Write CLAIMS_CHECK_v05.md",
           "PR and report"
         ],
-        "note": "v05 sha256 81ddf978...a66ce read back; 37 blocks, 10322 chars; SCRIPT.md 37/37 parity; 18 unchanged blocks byte-identica"
+        "note": "agy (gemini-4-neon-high) still fetching sources; tmux j3821-agy, output /tmp/j3821/agy_out.md"
       },
       "taskKeys": [
         "WW2:009"
