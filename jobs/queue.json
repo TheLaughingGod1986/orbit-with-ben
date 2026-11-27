@@ -359361,20 +359361,35 @@
           "at": "2026-11-27T14:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:54Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3903; checking 064 master v03 and existing Short build patterns"
         }
       ],
-      "remaining_action": "Reframe locked OWB:064 master v03 opening (0:00-0:32.85) to full-bleed 9:16 Test A Short, run gate_shorts_open.py, prepare upload package",
+      "remaining_action": "Inspecting OWB 064 locked master v03, assets, and house Test A Short specs",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-27T14:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect master v03 and Short rules",
+          "Design 9:16 crop and caption timeline",
+          "Render full-bleed 9:16 CFR 24fps Short",
+          "Run gate_shorts_open and audio/QA checks",
+          "Inspect frames and verify packaging",
+          "Commit artifacts and submit for QA"
+        ],
+        "note": "Claimed J3903; checking 064 master v03 and existing Short build patterns"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3904",
