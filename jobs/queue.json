@@ -361906,13 +361906,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-27T17:55Z",
-      "eta": "2026-11-27T18:10Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T16:10Z",
-      "result": "",
+      "result": "Pushed d734610 (codex/J3834-v06-lock) from clean worktree /Volumes/MiniWork/scratch/J3834-review to private TheLaughingGod1986/ww2-channel after verifying channel_check.py PASS and full 5-file diff privacy grep clean (zero emails/tokens/keys/secrets; only benign 'chapter-card' match). Opened PR #213 (https://github.com/TheLaughingGod1986/ww2-channel/pull/213, state OPEN, MERGEABLE, head d734610b506d06f3fde9c5109a3a5ce01d1592ac, titled 'WW2 009: lock exact v06 after Chief viewer review (J3834)'). Note on step 3: jobs.py restricts direct updates to blocked Chief job J3834 to holder/elected Chief, so ww2-channel#213 is recorded here and on the studio thread for the Chief sweep to merge PR #213 and close J3834. No edits/rebuilds/spend (£0).",
       "history": [
         {
           "at": "2026-11-27T16:10Z",
@@ -361943,6 +361943,11 @@
           "at": "2026-11-27T17:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified d734610, channel_check PASS, privacy clean, pushed codex/J3834-v06-lock, opened private ww2-channel PR #213 (MERGEABLE). Worker cannot directly edit Chief-held J3834 via jobs.py; PR #213 recorded on J3926 and studio thread for Chief sweep."
+        },
+        {
+          "at": "2026-11-27T17:58Z",
+          "by": "gemini",
+          "what": "done: Pushed d734610 (codex/J3834-v06-lock) from clean worktree /Volumes/MiniWork/scratch/J3834-review to private TheLaughingGod1986/ww2-channel after verifying channel_check.py PASS and full 5-file diff privacy grep clean (zero emails/tokens/keys/secrets; only benign 'chapter-card' match). Opened PR #213 (https://github.com/TheLaughingGod1986/ww2-channel/pull/213, state OPEN, MERGEABLE, head d734610b506d06f3fde9c5109a3a5ce01d1592ac, titled 'WW2 009: lock exact v06 after Chief viewer review (J3834)'). Note on step 3: jobs.py restricts direct updates to blocked Chief job J3834 to holder/elected Chief, so ww2-channel#213 is recorded here and on the studio thread for the Chief sweep to merge PR #213 and close J3834. No edits/rebuilds/spend (£0)."
         }
       ],
       "remaining_action": "Complete J3926 and post studio thread report",
@@ -361965,7 +361970,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "ww2-channel#213"
     },
     {
       "id": "J3927",
