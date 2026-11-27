@@ -356832,15 +356832,20 @@
           "at": "2026-11-27T09:55Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Post-Studio channel:audit PASS (80 videos, 0 errors); check_all.sh 008 ALL CHECKS PASS; JSON & diff checks PASS on both HOS and OWB worktrees"
+        },
+        {
+          "at": "2026-11-27T09:57Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened HOS PR #813 and OWB PR #1373; posted HOS desk report to codex; post-Studio channel:audit PASS (80 videos, 0 errors)"
         }
       ],
-      "remaining_action": "Pushing HOS and OWB records PRs and posting HOS desk report",
+      "remaining_action": "Done; records PRs open for Chief review and merge",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-27T09:55Z",
+        "at": "2026-11-27T09:57Z",
         "by": "gemini",
         "plan": [
           "Read audit, lint 008 & inspect state",
@@ -356849,7 +356854,7 @@
           "Reconcile open-library & OWB UPLOADS.json",
           "Run channel:audit, update records, open PRs & report"
         ],
-        "note": "Post-Studio channel:audit PASS (80 videos, 0 errors); check_all.sh 008 ALL CHECKS PASS; JSON & diff checks PASS on both "
+        "note": "Opened HOS PR #813 and OWB PR #1373; posted HOS desk report to codex; post-Studio channel:audit PASS (80 videos, 0 error"
       },
       "taskKeys": [
         "HOS:008"
