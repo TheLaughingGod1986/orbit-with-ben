@@ -273841,9 +273841,14 @@
           "at": "2026-11-27T10:44Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming the existing checkpoint and detached verification; preserving 3 of 4 completed steps."
+        },
+        {
+          "at": "2026-11-27T10:48Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Both detached checks passed: 1606 future-identity tests, 6 skips. Published verified private root rehearsal eda81876 and staged clean Mini runtime clone; MacBook staging is J3885 because existing SSH is unavailable. No live switch."
         }
       ],
-      "remaining_action": "Read the detached verification results and complete the remaining cutover checks",
+      "remaining_action": "Finish MacBook staging, then coordinate the two-machine drain and live switch",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273864,7 +273869,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T10:44Z",
+        "at": "2026-11-27T10:48Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273872,7 +273877,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Resuming the existing checkpoint and detached verification; preserving 3 of 4 completed steps."
+        "note": "Both detached checks passed: 1606 future-identity tests, 6 skips. Published verified private root rehearsal eda81876 and"
       }
     },
     {
