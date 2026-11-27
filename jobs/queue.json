@@ -353703,9 +353703,14 @@
           "at": "2026-11-27T18:27Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resumed existing finished review: PR213 is owner-authored, non-fork, main-based, exact d734610; complete diff reviewed. Existing J3838 dependency and date hold verified; no duplicate job needed."
+        },
+        {
+          "at": "2026-11-27T18:28Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Merged WW2 PR213 as 76d9d2a. On main all three lock hashes match, 37/37 spoken blocks match, 10050 characters, channel_check PASS. Existing J3838 remains dependency/date/live-credit gated; Short holds unchanged."
         }
       ],
-      "remaining_action": "Merge the reviewed script lock and verify its published hashes",
+      "remaining_action": "Script review complete; recording waits for its date and live credit check",
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the corrected Operation Pedestal script before recording",
@@ -353713,16 +353718,16 @@
         "WW2:009"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T18:27Z",
+        "at": "2026-11-27T18:28Z",
         "by": "codex",
         "plan": [
           "Verify exact script and claims",
           "Review opening and full story",
           "Publish decision and next job"
         ],
-        "note": "Resumed existing finished review: PR213 is owner-authored, non-fork, main-based, exact d734610; complete diff reviewed. "
+        "note": "Merged WW2 PR213 as 76d9d2a. On main all three lock hashes match, 37/37 spoken blocks match, 10050 characters, channel_c"
       }
     },
     {
