@@ -360787,9 +360787,14 @@
           "at": "2026-11-27T16:07Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Set en-GB captions (AUieDabzBmxxADHyScAQ7qYIOjfhsaIyLigEnu11EXZ7NkS8, serving, 337 cues), playlist PLPPi-oWEDYtA pos 3, 3-way Thumbnail-only Test & Compare (A/B/C), Altered content=Yes, Not made for kids, and End Screen (PLPPi-oWEDYtA + Subscribe) on 54sAav3iMQw."
+        },
+        {
+          "at": "2026-11-27T16:09Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Full Studio 9223 reload + Data API readback verified for 54sAav3iMQw; opened ww2-channel PR #208 (commit 8b276e9) and posted report on studio thread."
         }
       ],
-      "remaining_action": "Completing Studio reload readback and writing J3919_UPLOAD_READBACK_v04.json, status.json, and UPLOADS.json",
+      "remaining_action": "Waiting for Chief (Codex) to review and merge ww2-channel PR #208",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360814,9 +360819,9 @@
       "due": "2026-11-28T18:00:00Z",
       "urgent": 6,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-27T16:07Z",
+        "at": "2026-11-27T16:09Z",
         "by": "gemini",
         "plan": [
           "Inspect J3653 and verify NAS master + thumbnails SHA-256",
@@ -360826,7 +360831,7 @@
           "Read back Private+scheduled and update status.json + UPLOADS",
           "Push PR, report on thread, and hand off for Chief merge"
         ],
-        "note": "Set en-GB captions (AUieDabzBmxxADHyScAQ7qYIOjfhsaIyLigEnu11EXZ7NkS8, serving, 337 cues), playlist PLPPi-oWEDYtA pos 3, "
+        "note": "Full Studio 9223 reload + Data API readback verified for 54sAav3iMQw; opened ww2-channel PR #208 (commit 8b276e9) and po"
       },
       "taskKeys": [
         "WW2:004"
