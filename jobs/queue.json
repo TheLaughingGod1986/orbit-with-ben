@@ -357901,10 +357901,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T12:03Z",
+      "eta": "2026-11-27T14:03Z",
       "created_by": "relay",
       "created_at": "2026-11-27T11:29Z",
       "result": "",
@@ -357958,6 +357958,11 @@
           "at": "2026-11-27T12:01Z",
           "by": "codex",
           "what": "reopened: Chief review KEEP: PR 1381 merged after full eight-file review, 13 safety tests PASS, exact master/cover hashes match Ben-approved v03, fresh API confirms yDwDH-MV2wc Private for 2026-12-21T11:30:00Z with captions/custom cover; parent T3cBBss1F60 Public. Reopening solely to record completion; never upload again. Review milestones 1 and 2 completed; relay progress rejected because active review record absent."
+        },
+        {
+          "at": "2026-11-27T12:03Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Push PR branch, open PR for Chief merge, post studio thread report, and park J3889 for Chief",
@@ -357984,7 +357989,15 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T12:03Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3890",
