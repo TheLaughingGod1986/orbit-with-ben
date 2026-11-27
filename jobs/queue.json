@@ -351391,15 +351391,20 @@
           "at": "2026-11-27T01:30Z",
           "by": "codex",
           "what": "step 3 of 4 done: v02 rebuilt from clean archive plates and NAS hash-verified. VO, polish and music PASS; opener FAIL 1.14 below 1.50; picture FAIL terminal reuse. No failed gate waived. Repair evidence saved; no UAT, upload or spend."
+        },
+        {
+          "at": "2026-11-27T01:33Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Repair draft v02 and 33 evidence files NAS hash-verified; text-only commit 2922143e on codex/J3816. Required HOS desk handoff posted. Finished this run with failed media gates; no Short PASS. GitHub push refused by automatic review; designated Claude Code publisher must inspect and publish local branch."
         }
       ],
-      "remaining_action": "Publish the failed-gate draft and precise repair handoff",
+      "remaining_action": "Repair the opener and loop gates, then obtain Short review",
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-27T01:30Z",
+        "at": "2026-11-27T01:33Z",
         "by": "codex",
         "plan": [
           "Check existing Shorts and source files",
@@ -351407,7 +351412,7 @@
           "Run gates and review evidence",
           "Post the handoff"
         ],
-        "note": "v02 rebuilt from clean archive plates and NAS hash-verified. VO, polish and music PASS; opener FAIL 1.14 below 1.50; pic"
+        "note": "Repair draft v02 and 33 evidence files NAS hash-verified; text-only commit 2922143e on codex/J3816. Required HOS desk ha"
       },
       "taskKeys": [
         "HOS:009"
