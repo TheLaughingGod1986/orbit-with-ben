@@ -352056,9 +352056,14 @@
           "at": "2026-11-27T00:23Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T00:25Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Confirmed local review a4c9c8f534 exists but is unpublished; J3115 owns upload, and no active job owns thumbs. Preserve its publication restriction."
         }
       ],
-      "remaining_action": "Trace why the Pluto thumbnail review cannot advance",
+      "remaining_action": "Link thumbnail reconciliation to the existing packaging review",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -352067,15 +352072,16 @@
         "signature": "73aafa7c4fccb49695c8"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T00:23Z",
+        "at": "2026-11-27T00:25Z",
         "by": "codex",
         "plan": [
           "Trace the blocked review",
           "Link the missing next action",
           "Verify the handoff and report"
-        ]
+        ],
+        "note": "Confirmed local review a4c9c8f534 exists but is unpublished; J3115 owns upload, and no active job owns thumbs. Preserve "
       },
       "taskKeys": [
         "OWB:034"
