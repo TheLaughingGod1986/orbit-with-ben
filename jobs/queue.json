@@ -355738,13 +355738,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T16:26Z",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-27T16:53Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "parked for Chief: review and merge PR #1402 (gemini/J3858-foh-48h-qfc6EBStOfo, commit a4195dfb23) importing Field Order History 48h Studio read for qfc6EBStOfo (2026-11-24..2026-11-25 Pacific: 1044 impr, 1.2% CTR, returningViewers=0, newViewers=null, testCompare=unavailable), then close J3858 and unblock J3859",
+      "result": "Chief ACCEPT: PR 1402 merged b94f99c48fd5b9aa1254e027a9e37c6fd1d48bf8. Full diff reviewed; 22/22 analytics tests passed; strict importer reproduced committed reports exactly. Dated 24-25 Nov read: 1044 impressions, 1.2% CTR; suppressed new viewers null and observed returning viewers zero; API metrics preserved. J3859 released after verifying merged data, with immediate current-packaging/rules assessment and separate fix proposal if justified. Mixed pre/post swap window does not prove Design E failed. J3706 remains held until 2026-12-02T10:50Z. No YouTube changes. Review-progress CLI refused because active record named J3925; independent review steps recorded in this job.",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355815,34 +355815,53 @@
           "at": "2026-11-27T16:41Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1402 (gemini/J3858-foh-48h-qfc6EBStOfo, commit a4195dfb23) importing Field Order History 48h Studio read for qfc6EBStOfo (2026-11-24..2026-11-25 Pacific: 1044 impr, 1.2% CTR, returningViewers=0, newViewers=null, testCompare=unavailable), then close J3858 and unblock J3859"
+        },
+        {
+          "at": "2026-11-27T16:51Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded: ACCEPT PR 1402 merged b94f99c48f; full diff reviewed, 22/22 tests passed, importer regenerated identically. Reopen solely to record review completion; J3859 is the concrete follow-up. Data window straddles 25 Nov packaging change; not proof current design failed."
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review only: PR 1402 merged b94f99c48f; 22/22 tests; exact importer reproduction; J3859 dependency satisfied and released with current-package assessment instruction. J3706 date hold preserved."
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "codex",
+          "what": "done: Chief ACCEPT: PR 1402 merged b94f99c48fd5b9aa1254e027a9e37c6fd1d48bf8. Full diff reviewed; 22/22 analytics tests passed; strict importer reproduced committed reports exactly. Dated 24-25 Nov read: 1044 impressions, 1.2% CTR; suppressed new viewers null and observed returning viewers zero; API metrics preserved. J3859 released after verifying merged data, with immediate current-packaging/rules assessment and separate fix proposal if justified. Mixed pre/post swap window does not prove Design E failed. J3706 remains held until 2026-12-02T10:50Z. No YouTube changes. Review-progress CLI refused because active record named J3925; independent review steps recorded in this job."
         }
       ],
-      "remaining_action": "Await Chief review and merge of PR #1402 to close J3858 and unblock J3859",
+      "remaining_action": "Record completed Chief review in the queue and report",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
       "taskKeys": [
         "WW2:002"
       ],
+      "urgent": 9,
       "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-27T16:41Z",
-        "by": "gemini",
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-27T16:53Z",
+        "by": "codex",
         "plan": [
-          "Verify Studio browser & channel",
-          "Collect 48h metrics & Test & Compare",
-          "Import strict dated Studio read",
-          "Commit & push PR from clean worktree",
-          "Report evidence & close job"
+          "Check approval and inputs",
+          "Review evidence and validate import",
+          "Record ruling and release follow-up"
         ],
-        "note": "Opened PR #1402 (commit a4195dfb23) and posted collection evidence to studio thread; parking merge for Chief"
+        "note": "Chief review only: PR 1402 merged b94f99c48f; 22/22 tests; exact importer reproduction; J3859 dependency satisfied and r"
       }
     },
     {
       "id": "J3859",
       "title": "Field Order History rules review qfc6EBStOfo 48h",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Rules review after the 48h read of qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost). Read-only on YouTube, £0. If the 48h read job (\"Field Order History analytics read qfc6EBStOfo 48h\") has not imported its numbers yet, wait for it rather than guessing.\n1. Read ww2-channel studio/RULES.md and studio/LEARNINGS.md, then this film's 48h numbers in channels/ww2/05_Analytics/READS.md and board.json (strangers only: suggested, browse and search; never our own checks), its retention curve and traffic sources, and any running Test & Compare.\n2. For every open prediction in LEARNINGS.md that this read can test, write the result: held, failed, or not yet testable, with the numbers.\n3. Change RULES.md where the data says so: sharpen a rule, add one, or delete one that did not help, always with the data beside it. A rule whose prediction has failed twice is rewritten or deleted. Keep RULES.md under one page; history belongs in LEARNINGS.md.\n4. Add one LEARNINGS.md line per change: date, film, data, change, and what the next film should show if the change is right.\n5. If nothing changes, say why in one LEARNINGS.md line; a read never passes silently.\nOne ww2-channel PR (the Chief merges), one line on the thread. Never change a live film's title, thumbnail or schedule in this job: propose it as a separate job.\n",
       "ref": "",
@@ -355850,13 +355869,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-27T06:43Z",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-27T16:54Z",
+      "eta": "2026-11-27T18:54Z",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "Waiting for: J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355887,27 +355906,42 @@
           "at": "2026-11-27T14:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T20:15:00Z"
+        },
+        {
+          "at": "2026-11-27T16:52Z",
+          "by": "codex",
+          "what": "reopened: Chief J3858 review: dependency satisfied by merged PR 1402 b94f99c48f. Dated Studio data now on main, 1044 impressions/1.2% CTR; API/Studio lag discrepancy explicit. Proceed now with rules review and concrete current-packaging follow-up: the 24-25 Nov window straddles the 25 Nov 10:48Z title/thumbnail swap and cannot establish Design E failure. Do not adopt a blanket wait-until-day-7 recommendation: assess fresh post-change stranger evidence under rule 8 and queue any justified single packaging fix separately, preserving any live test. J3706 remains date-held until 2 Dec 10:50Z. No YouTube writes in this rules job."
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-27T16:54Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After J3858 imports the matching Studio numbers, verify them and release the Atlantic rules review",
       "due": "2026-11-27T05:00:12Z",
       "kind": "review",
       "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true,
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T06:43Z",
-        "by": "macbook",
+        "at": "2026-11-27T16:54Z",
+        "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3858 must import the dated qfc6EBStOfo 48h Studio read for 2026-11-24 through 2026-11-25 Pacific. Chief verification J3908 found impressions/CTR pending, no video entry in studio_read.json and no matching dated Studio read; J3858 remains held for its recorded Field Order History sign-in requirement.",
-        "check_at": "2026-11-27T20:15:00Z",
-        "last_recheck": "J3908",
-        "checked_at": "2026-11-27T14:22:38+00:00",
-        "checked_by": "codex"
       }
     },
     {
@@ -355921,13 +355955,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T16:42Z",
-      "eta": "2026-11-27T18:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:41Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #1403 (gemini/J3860-foh-channel-totals-2026-11-27, commit eb3bfd38c0) recording Field Order History Lifetime channel totals on 2026-11-27 (subscribers=1, watchHours=5.0, readAt=2026-11-27T16:45:40Z; 22/22 field-order tests passed), then close J3860",
       "history": [
         {
           "at": "2026-11-27T06:41Z",
@@ -355988,16 +356022,26 @@
           "at": "2026-11-27T16:46Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Read Lifetime (18 Nov 2026 - 26 Nov 2026, aria-selected=true) on UCu94mInMFosxu3W0H6jlI6Q at 2026-11-27T16:45:40Z: subscribers=1 (Total subscribers=1, Lifetime Subscribers=+1), watchHours=5.0 (Views=129)."
+        },
+        {
+          "at": "2026-11-27T16:47Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed (eb3bfd38c0), pushed gemini/J3860-foh-channel-totals-2026-11-27, opened PR #1403 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1403); 22/22 field-order vitest tests passed. Parking merge for Chief."
+        },
+        {
+          "at": "2026-11-27T16:47Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #1403 (gemini/J3860-foh-channel-totals-2026-11-27, commit eb3bfd38c0) recording Field Order History Lifetime channel totals on 2026-11-27 (subscribers=1, watchHours=5.0, readAt=2026-11-27T16:45:40Z; 22/22 field-order tests passed), then close J3860"
         }
       ],
-      "remaining_action": "Import dated Studio channel totals read in a clean worktree and run checks",
+      "remaining_action": "Wait for Chief review and merge of PR #1403",
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-27T16:46Z",
+        "at": "2026-11-27T16:47Z",
         "by": "gemini",
         "plan": [
           "Verify Studio channel on CDP 9223",
@@ -356005,7 +356049,7 @@
           "Import dated read and rebuild analytics",
           "Commit clean worktree and report"
         ],
-        "note": "Read Lifetime (18 Nov 2026 - 26 Nov 2026, aria-selected=true) on UCu94mInMFosxu3W0H6jlI6Q at 2026-11-27T16:45:40Z: subsc"
+        "note": "Committed (eb3bfd38c0), pushed gemini/J3860-foh-channel-totals-2026-11-27, opened PR #1403 (https://github.com/TheLaughi"
       }
     },
     {
@@ -361081,7 +361125,7 @@
       },
       "mini_only": true,
       "due": "2026-11-30T18:00:00Z",
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 5,
         "of": 6,
@@ -361154,7 +361198,7 @@
       },
       "mini_only": true,
       "due": "2026-12-02T18:00:00Z",
-      "urgent": 8
+      "urgent": 7
     },
     {
       "id": "J3922",
@@ -361167,10 +361211,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T16:55Z",
+      "eta": "2026-11-27T18:55Z",
       "created_by": "codex",
       "created_at": "2026-11-27T15:56Z",
       "result": "",
@@ -361179,12 +361223,40 @@
           "at": "2026-11-27T15:56Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T16:55Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:56Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
         }
       ],
-      "remaining_action": "Repair all four narration segments and prove complete speech in the new cut",
+      "remaining_action": "Inspecting PR 1400 review, v02 builder, and NAS locked inputs",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
-      "plain": "Restore the missing narration in the first planets Short"
+      "plain": "Restore the missing narration in the first planets Short",
+      "progress": {
+        "step": 0,
+        "of": 6,
+        "at": "2026-11-27T16:56Z",
+        "by": "gemini",
+        "plan": [
+          "Inspect PR 1400 review, v02 builder, and NAS assets",
+          "Build v03 builder with audio seek/fade fix and regression check",
+          "Generate immutable v03 master/stems reusing v02 video and verify speech",
+          "Checksum-copy v03 master/stems to NAS preserving v01/v02",
+          "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
+          "Commit v03 artifacts on PR 1399 branch, push, and report"
+        ],
+        "note": "Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3923",
@@ -361401,7 +361473,7 @@
       "kind": "studio",
       "mini_only": true,
       "for": "gemini",
-      "urgent": 9
+      "urgent": 8
     },
     {
       "id": "J3927",
@@ -361504,13 +361576,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "gemini",
+      "since": "2026-11-27T16:48Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T16:31Z",
-      "result": "",
+      "result": "parked for Chief: J3883 waiting condition PROVEN SATISFIED (verified 2026-11-27T16:52Z). Claude Code completed J3898 and merged PR #1388 (a09c483f3e, 2026-11-27T12:43:05Z), publishing codex/J3883-integration (034d41fbc5) onto main without clobbering newer history. Verified on origin/main: jobs/reviews/J3883/REVIEW.md identical SHA-256 c92dfd94abe9270bb72af89c06fd124f6a18197199744e9e39d8b4311d2951d8; PR #1359 merged (9b3ca6cb52) incl. #1361 (9ff96bd97b), #1358 closed unmerged, formal KEEP #7215924852 present; J3818 and J3022 done (done_ref jobs/reviews/J3883/REVIEW.md, holds cleared); J3023 preserves after=J3022 and full mandatory v02 opening/R09/graphics/gates handoff; T045 remains proposed/video null; NAS locked VO SHA-256 4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa intact; Ben watch 11 Dec 18:00 / air 16 Dec 18:00 / £0 spend unchanged. Note: bd088753ce (done J3898) auto-set 064 thumbs.state to review (ruling PASS retained). Releasing J3883 hold / closing kind=chief J3883 is elected-Chief-only (codex). No upload, schedule, spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-27T16:31Z",
@@ -361521,9 +361593,39 @@
           "at": "2026-11-27T16:31Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-27T16:48Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:49Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3929; beginning verification of J3883 waiting condition"
+        },
+        {
+          "at": "2026-11-27T16:49Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected J3883, local worktree codex/J3883-integration (034d41fbc5), and merged PR #1388 (a09c483f3e) from J3898; REVIEW.md matches verbatim"
+        },
+        {
+          "at": "2026-11-27T16:51Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified J3883 waiting condition SATISFIED: J3898/PR #1388 merged a09c483f3e; REVIEW.md SHA-256 identical; J3818/J3022 done, J3023 v02 handoff & after=J3022 present, T045 proposed/video null"
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Posted studio thread verification report; parking J3929 for elected Chief (codex)"
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3883 waiting condition PROVEN SATISFIED (verified 2026-11-27T16:52Z). Claude Code completed J3898 and merged PR #1388 (a09c483f3e, 2026-11-27T12:43:05Z), publishing codex/J3883-integration (034d41fbc5) onto main without clobbering newer history. Verified on origin/main: jobs/reviews/J3883/REVIEW.md identical SHA-256 c92dfd94abe9270bb72af89c06fd124f6a18197199744e9e39d8b4311d2951d8; PR #1359 merged (9b3ca6cb52) incl. #1361 (9ff96bd97b), #1358 closed unmerged, formal KEEP #7215924852 present; J3818 and J3022 done (done_ref jobs/reviews/J3883/REVIEW.md, holds cleared); J3023 preserves after=J3022 and full mandatory v02 opening/R09/graphics/gates handoff; T045 remains proposed/video null; NAS locked VO SHA-256 4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa intact; Ben watch 11 Dec 18:00 / air 16 Dec 18:00 / £0 spend unchanged. Note: bd088753ce (done J3898) auto-set 064 thumbs.state to review (ruling PASS retained). Releasing J3883 hold / closing kind=chief J3883 is elected-Chief-only (codex). No upload, schedule, spend or YouTube changes."
         }
       ],
-      "remaining_action": "Verify readiness: Publishing verified completion records and the assembly handoff",
+      "remaining_action": "Elected Chief (codex) to release J3883 verified hold and close J3883 (and restore 064 thumbs.state=done)",
       "kind": "review",
       "recheck_of": "J3883",
       "due": "2026-11-27T16:10:00+00:00",
@@ -361535,7 +361637,23 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-27T16:53Z",
+        "by": "gemini",
+        "plan": [
+          "Inspect J3883 state and git branch",
+          "Verify publish/merge and downstream jobs",
+          "Update J3883 wait or reopen state and finish J3929",
+          "Post verification report to studio thread"
+        ],
+        "note": "Posted studio thread verification report; parking J3929 for elected Chief (codex)"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3930",

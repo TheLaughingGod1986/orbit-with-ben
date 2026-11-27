@@ -85,9 +85,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3857 | mini | open | – | – | for gemini · review · Publish completed Chief review record for J3853 |  |
-| J3858 | mini | blocked | gemini | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
-| J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
-| J3860 | mini | claimed | gemini | 2026-11-27T18:42Z | studio · Field Order History channel totals read 2026-11-27 |  |
+| J3859 | mini | claimed | macbook-2 | 2026-11-27T18:54Z | review · Field Order History rules review qfc6EBStOfo 48h |  |
+| J3860 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-27 |  |
 | J3866 | any | open | – | – | for gemini · review · Publish completed Chief review record for J3856 |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
@@ -105,13 +104,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3917 | mini | open (after J3916) | – | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
 | J3920 | mini | blocked | gemini | – | WW2:005 upload · studio · Package and upload WW2 005 long v05 (St Nazaire Raid: The Ship Turned Into a Bomb) Private, 2026-12-03T17:00Z |  |
 | J3921 | mini | open | – | – | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
-| J3922 | mini | open | – | – | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
+| J3922 | mini | claimed | gemini | 2026-11-27T18:55Z | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
 | J3923 | mini | open (after J3922) | – | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
 | J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3926 | mini | open | – | – | WW2:009 script · for gemini · studio · Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR |  |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
-| J3929 | mini | open | – | – | review · Verify condition for J3883 |  |
+| J3929 | mini | blocked | gemini | – | review · Verify condition for J3883 |  |
 | J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
 
 Recently finished:
