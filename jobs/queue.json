@@ -351735,13 +351735,13 @@
       "stage": "sources",
       "after": "J3820",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T00:49Z",
-      "eta": "2026-11-27T02:49Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T23:52Z",
-      "result": "",
+      "result": "FLAG: Gemini/agy recheck of v05 (sha256 81ddf978...a66ce) = 19 PASS, 1 FLAG, 0 UNVERIFIABLE. FLAG D15: S31 'Ledbury was one of them.' Gemini says the IWM A 11260 caption supports 'needed a destroyer on either side', but naming Ledbury as one of the two side destroyers is contradicted by the Mason ship histories (Penn and Bramham alongside); full quotes in CLAIMS_CHECK_v05.md. Parity: 37 blocks, 10322 chars, SCRIPT.md 37/37, 18 unchanged blocks byte-identical to v04. This FLAG blocks the lock; S31 goes back to the script lane, then a recheck. PR ww2-channel#198 (not merged). No spend, no VO; 30 Nov 10:50Z/18:00Z holds unchanged.",
       "history": [
         {
           "at": "2026-11-26T23:52Z",
@@ -351812,6 +351812,11 @@
           "at": "2026-11-27T00:49Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:49Z",
+          "by": "claudecode",
+          "what": "done: FLAG: Gemini/agy recheck of v05 (sha256 81ddf978...a66ce) = 19 PASS, 1 FLAG, 0 UNVERIFIABLE. FLAG D15: S31 'Ledbury was one of them.' Gemini says the IWM A 11260 caption supports 'needed a destroyer on either side', but naming Ledbury as one of the two side destroyers is contradicted by the Mason ship histories (Penn and Bramham alongside); full quotes in CLAIMS_CHECK_v05.md. Parity: 37 blocks, 10322 chars, SCRIPT.md 37/37, 18 unchanged blocks byte-identical to v04. This FLAG blocks the lock; S31 goes back to the script lane, then a recheck. PR ww2-channel#198 (not merged). No spend, no VO; 30 Nov 10:50Z/18:00Z holds unchanged."
         }
       ],
       "remaining_action": "Gemini is checking the 20 changed lines against sources",
@@ -351833,7 +351838,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "ww2-channel#198"
     },
     {
       "id": "J3822",
