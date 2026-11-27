@@ -355978,14 +355978,19 @@
           "at": "2026-11-27T16:44Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Confirmed 9224 has Oops (Orbit/HOS account) and 9223 holds FOH account since 26 Nov (per J3919); verifying CHANNEL_ID on 9223 Studio tab."
+        },
+        {
+          "at": "2026-11-27T16:44Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified CHANNEL_ID=UCu94mInMFosxu3W0H6jlI6Q (loggedIn=true) on reused Studio tab F9A00B70676F11B46A78B3EC5CC2BF34 (CDP 9223)."
         }
       ],
-      "remaining_action": "Verify Field Order History channel identity on CDP 9223 Studio tab",
+      "remaining_action": "Read Lifetime subscribers and watch time hours on Field Order History Studio Analytics Overview",
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-27T16:44Z",
         "by": "gemini",
@@ -355995,7 +356000,7 @@
           "Import dated read and rebuild analytics",
           "Commit clean worktree and report"
         ],
-        "note": "Confirmed 9224 has Oops (Orbit/HOS account) and 9223 holds FOH account since 26 Nov (per J3919); verifying CHANNEL_ID on"
+        "note": "Verified CHANNEL_ID=UCu94mInMFosxu3W0H6jlI6Q (loggedIn=true) on reused Studio tab F9A00B70676F11B46A78B3EC5CC2BF34 (CDP "
       }
     },
     {
