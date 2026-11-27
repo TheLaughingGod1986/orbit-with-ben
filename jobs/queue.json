@@ -352569,13 +352569,13 @@
       "stage": "script",
       "after": "J3822",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T00:57Z",
-      "eta": "2026-11-27T02:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T00:53Z",
-      "result": "",
+      "result": "v06 written for review, NOT LOCKED: NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66; 7 blocks changed (S04,S05,S10,S31,S32,S35,S36); 37 blocks exact SCRIPT parity; 10050 chars; Strait crossing done at 56.9 s @140 wpm with pauses; promise 42.8 s. DELTA_v06.md + VALIDATION_v06.json. Ready for J3833 Gemini check once PR #200 lands.",
       "history": [
         {
           "at": "2026-11-27T00:53Z",
@@ -352606,6 +352606,11 @@
           "at": "2026-11-27T01:00Z",
           "by": "claudecode",
           "what": "step 4 of 4 done: Committed v06 + DELTA_v06.md + VALIDATION_v06.json + SCRIPT/status (review, not locked) on ww2-channel PR #200"
+        },
+        {
+          "at": "2026-11-27T01:01Z",
+          "by": "claudecode",
+          "what": "done: v06 written for review, NOT LOCKED: NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66; 7 blocks changed (S04,S05,S10,S31,S32,S35,S36); 37 blocks exact SCRIPT parity; 10050 chars; Strait crossing done at 56.9 s @140 wpm with pauses; promise 42.8 s. DELTA_v06.md + VALIDATION_v06.json. Ready for J3833 Gemini check once PR #200 lands."
         }
       ],
       "remaining_action": "Done; PR #200 waits for J3833 Gemini check and J3834 Chief",
@@ -352635,7 +352640,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "ww2-channel PR #200"
     },
     {
       "id": "J3833",
