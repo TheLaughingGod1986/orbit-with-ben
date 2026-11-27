@@ -354708,9 +354708,14 @@
           "at": "2026-11-27T06:28Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T06:29Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief independently checked inputs and evidence: decision unpublished. Recorded J3115 wait to 08:30Z and delegated safe-publication follow-up J3855. review-progress steps 1/2 rejected because active review lease absent; worker steps were not used as Chief evidence."
         }
       ],
-      "remaining_action": "Record J3115 still waiting: decision a4c9c8f534 unpublished",
+      "remaining_action": "Close the completed condition review",
       "kind": "review",
       "recheck_of": "J3115",
       "due": "2026-11-27T07:22:35+00:00",
@@ -354727,12 +354732,16 @@
         "OWB:034"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T06:28Z",
+        "at": "2026-11-27T06:29Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3115 history",
+          "Check decision a4c9c8f534 published",
+          "Record wait or reopen"
+        ],
+        "note": "Chief independently checked inputs and evidence: decision unpublished. Recorded J3115 wait to 08:30Z and delegated safe-"
       }
     },
     {
