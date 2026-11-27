@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3956 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
 | J3962 | mini | open | – | – | chief · J3012: coordinate the reviewed studio engine move and prove live operation | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274 |
+| J3963 | mini | open | – | – | review · Verify condition for J3760 |  |
 
 Recently finished:
 

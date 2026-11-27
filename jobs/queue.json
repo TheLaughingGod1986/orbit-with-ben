@@ -1,5 +1,5 @@
 {
-  "next_id": 3963,
+  "next_id": 3964,
   "jobs": [
     {
       "id": "J0001",
@@ -346663,6 +346663,11 @@
           "at": "2026-11-27T17:20Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-27T23:25:00Z"
+        },
+        {
+          "at": "2026-11-27T23:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J3963"
         }
       ],
       "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
@@ -346690,10 +346695,11 @@
       "hold": {
         "type": "input",
         "condition": "Flow tab 998B0717 on CDP 9222 renderer unresponsive: 27 Nov 17:20Z browser endpoint and Target.getTargetInfo answer (attached:false, flow.google.com/?pli=1) but page websocket opens and Page.getFrameTree and Runtime.evaluate both time out (12-15 s); account hash, balance and Quality price unverifiable. No Create clicked; only row 63 remains.",
-        "check_at": "2026-11-27T23:25:00Z",
+        "check_at": "2026-11-28T00:27:01+00:00",
         "last_recheck": "J3931",
         "checked_at": "2026-11-27T17:20:21+00:00",
-        "checked_by": "claudecode"
+        "checked_by": "claudecode",
+        "recheck_task": "J3963"
       }
     },
     {
@@ -365324,6 +365330,37 @@
       "kind": "chief",
       "plain": "Move the studio machinery safely and check that both computers and the board work",
       "mini_only": true
+    },
+    {
+      "id": "J3963",
+      "title": "Verify condition for J3760",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3760: Flow tab 998B0717 on CDP 9222 renderer unresponsive: 27 Nov 17:20Z browser endpoint and Target.getTargetInfo answer (attached:false, flow.google.com/?pli=1) but page websocket opens and Page.getFrameTree and Runtime.evaluate both time out (12-15 s); account hash, balance and Quality price unverifiable. No Create clicked; only row 63 remains.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3760 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T23:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T23:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
+      "kind": "review",
+      "recheck_of": "J3760",
+      "due": "2026-11-28T00:27:01+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
