@@ -352003,10 +352003,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T00:31Z",
+      "eta": "2026-11-27T02:31Z",
       "created_by": "relay",
       "created_at": "2026-11-27T00:07Z",
       "result": "",
@@ -352045,6 +352045,11 @@
           "at": "2026-11-27T00:31Z",
           "by": "codex",
           "what": "reopened: Acting Chief taking the requested J3826 ruling; J3821 stays held while competing rewrite PRs are reviewed."
+        },
+        {
+          "at": "2026-11-27T00:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief records J3821 wait (worker may not record --recheck)",
@@ -352062,7 +352067,15 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T00:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3827",

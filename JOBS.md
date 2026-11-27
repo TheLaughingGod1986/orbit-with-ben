@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3821 | gemini | blocked | claudecode | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
-| J3826 | mini | open | – | – | review · Verify condition for J3821 |  |
+| J3826 | mini | claimed | codex | 2026-11-27T02:31Z | review · Verify condition for J3821 |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
 | J3829 | mini | blocked | claudecode | – | review · Verify condition for J3818 |  |
 
