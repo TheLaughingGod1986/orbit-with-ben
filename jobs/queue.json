@@ -358619,19 +358619,28 @@
           "at": "2026-11-27T12:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T12:31Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Complete the MacBook result, resume and recovery handoff before the studio move",
+      "remaining_action": "Implementing authenticated result and recovery controls",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the MacBook report the studio move and resume safely when instructed",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T12:30Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T12:31Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read handoff boundaries",
+          "Build remote controls",
+          "Prove mocked recovery",
+          "Open review and record result"
+        ]
       }
     },
     {
