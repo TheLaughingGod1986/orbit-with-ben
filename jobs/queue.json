@@ -351884,23 +351884,28 @@
           "at": "2026-11-27T00:53Z",
           "by": "codex",
           "what": "step 2 of 3 done: Reviewed all 1708 words and 300/1200 boundaries. FAIL: D15 unresolved, opening timing lacks margin, ending totals remain crowded. Exact fixes being recorded."
+        },
+        {
+          "at": "2026-11-27T00:56Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR198 claims evidence and PR199 Chief FAIL ruling merged. J3832 correction -> J3833 Gemini check -> J3834 Chief decision queued. No lock or VO."
         }
       ],
-      "remaining_action": "Recording the failed review and queuing correction and independent recheck",
+      "remaining_action": "Review complete; linked correction and recheck jobs are queued",
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the revised Operation Pedestal film script before recording the voice",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T00:53Z",
+        "at": "2026-11-27T00:56Z",
         "by": "codex",
         "plan": [
           "Verify exact inputs",
           "Review opening and full script",
           "Record decision and next work"
         ],
-        "note": "Reviewed all 1708 words and 300/1200 boundaries. FAIL: D15 unresolved, opening timing lacks margin, ending totals remain"
+        "note": "PR198 claims evidence and PR199 Chief FAIL ruling merged. J3832 correction -> J3833 Gemini check -> J3834 Chief decision"
       },
       "taskKeys": [
         "WW2:009"
