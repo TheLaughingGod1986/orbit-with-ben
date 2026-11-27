@@ -363188,13 +363188,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-27T18:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T18:10Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3943 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1409. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T18:10Z",
@@ -363220,6 +363220,11 @@
           "at": "2026-11-27T18:12Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3943 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1409. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-27T18:22Z",
+          "by": "codex",
+          "what": "reopened: Taking assigned Chief review of PR1409 verification evidence; original J3834 remains held pending ruling."
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit authorization for the blocked private-repository push, then publish the script lock",
@@ -363227,14 +363232,6 @@
       "recheck_of": "J3834",
       "due": "2026-11-27T19:10:28+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T18:10Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
       "rerouted_from": {
         "needs": "any",
         "for": "",
