@@ -112,7 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
-| J3938 | mini | claimed | codex | 2026-11-27T17:50Z | studio · First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) |  |
+| J3938 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) |  |
 | J3939 | mini | claimed | macbook-2 | 2026-11-27T17:49Z | studio · First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) |  |
 
 Recently finished:
