@@ -363449,21 +363449,33 @@
           "at": "2026-11-27T18:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:31Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "remaining_action": "Check Field Order History Studio CDP browser and inspect ZCnSldSJzME content/details",
       "due": "2026-11-27T20:30:00Z",
       "kind": "studio",
       "launch": "ZCnSldSJzME@6",
       "plain": "Check how \"WW2 U-Boats: Why They Could Not Stay Underwater\" is doing 6 hours after it went live",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T18:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check Studio video status and package match",
+          "Read 6h Studio Analytics figures",
+          "Record figures and run launch_check judge",
+          "Close or park J3945 and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
