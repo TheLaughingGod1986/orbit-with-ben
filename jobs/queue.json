@@ -1,5 +1,5 @@
 {
-  "next_id": 3954,
+  "next_id": 3955,
   "jobs": [
     {
       "id": "J0001",
@@ -352105,6 +352105,11 @@
           "at": "2026-11-27T08:27Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T20:00:00Z"
+        },
+        {
+          "at": "2026-11-27T20:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J3954"
         }
       ],
       "remaining_action": "Await the queued apple Short repair and capable review",
@@ -352129,10 +352134,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J3864 FIX: publication satisfied by draft HOS PR 811 at 2922143e. Repair J3871 and its dependent capable Short review must finish with an exact-version PASS; v02 remains failed (opener 1.14<1.50 and terminal reuse). No UAT, upload or spend authorised. PR 811 stays draft pending repair.",
-        "check_at": "2026-11-27T20:00:00Z",
+        "check_at": "2026-11-27T21:00:00+00:00",
         "last_recheck": "J3864",
         "checked_at": "2026-11-27T08:27:58+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3954"
       }
     },
     {
@@ -364160,6 +364166,37 @@
       "kind": "studio",
       "mini_only": true,
       "for": "gemini"
+    },
+    {
+      "id": "J3954",
+      "title": "Verify condition for J3816",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3816: J3864 FIX: publication satisfied by draft HOS PR 811 at 2922143e. Repair J3871 and its dependent capable Short review must finish with an exact-version PASS; v02 remains failed (opener 1.14<1.50 and terminal reuse). No UAT, upload or spend authorised. PR 811 stays draft pending repair.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3816 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T20:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T20:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await the queued apple Short repair and capable review",
+      "kind": "review",
+      "recheck_of": "J3816",
+      "due": "2026-11-27T21:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
