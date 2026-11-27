@@ -1,5 +1,5 @@
 {
-  "next_id": 3899,
+  "next_id": 3900,
   "jobs": [
     {
       "id": "J0001",
@@ -273961,6 +273961,11 @@
           "at": "2026-11-27T12:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T13:00:00Z"
+        },
+        {
+          "at": "2026-11-27T13:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J3899"
         }
       ],
       "remaining_action": "Review the remote handoff controls and complete the studio move",
@@ -273997,7 +274002,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved.",
-        "check_at": "2026-11-27T13:00:00Z"
+        "check_at": "2026-11-27T14:03:33+00:00",
+        "recheck_task": "J3899"
       }
     },
     {
@@ -358876,6 +358882,37 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3899",
+      "title": "Verify condition for J3012",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3012: J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3012 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T13:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T13:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review the remote handoff controls and complete the studio move",
+      "kind": "review",
+      "recheck_of": "J3012",
+      "due": "2026-11-27T14:03:33+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
