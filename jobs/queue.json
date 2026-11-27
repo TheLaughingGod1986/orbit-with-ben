@@ -1,5 +1,5 @@
 {
-  "next_id": 3909,
+  "next_id": 3910,
   "jobs": [
     {
       "id": "J0001",
@@ -359640,6 +359640,36 @@
       "taskKeys": [
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3909",
+      "title": "OWB 064: Repair vertical trailer and package after J3902 FIX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J3902: package FIX; retain master v03 d59057aed1590e7f6ef097513256a0548c4f9b1d7e544c4bade28aa83fef647a unchanged. Read PR1391 jobs/reviews/J3902/REVIEW.md and the Chief ruling. On PR1390 branch gemini/J3023-owb064-assembly, repair only the trailer and package, using a clean worktree. Preserve original trailer 771d1f2a; build a versioned vertical replacement with unchanged locked opening audio and end card, full-bleed safe framing, no clipped text/globes/bars/progress strip, exact 24/1 CFR and zero video start PTS. Inspect every trailer cut and boundaries, especially 0-3.5,15-18.8,22.1-25.7s. All number callouts must match the locked spoken line and source, not the animated intermediate values or unverified examples in the review. Sync provenance: add active plate_031_r21_earth_limb_v01, plate_031_r25_iss_orbit_cuts_v01, plate_031_r26_iss_clouds_v01; move retired plate_031_r42a_iss_blue_limb_v01 to rejected. Add verified source/author/PD credits for Le Verrier, Galle and Lassell portraits. Normalize shot_list_v02.csv to LF; make manifest category agree with uploader resolved category 28. Update exact trailer path/hash/size and rerun package dry-run and diff check. Keep locked script/VO, master and thumbnail hashes, R11 PIA00215, PIA18033 credit and forbidden-source exclusions intact. Keep T045 proposed/video null. No spend, upload, scheduling, privacy change, or UAT release. Finish with updated PR1390 and evidence for the dependent independent recheck. Do not merge or mark package PASS. This repair does not depend on held parent J3023.\n",
+      "ref": "J3902",
+      "film": "064",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T14:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T14:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair trailer framing and package records for independent recheck",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix the every-planet trailer framing and complete its picture credits"
     }
   ],
   "focus": [

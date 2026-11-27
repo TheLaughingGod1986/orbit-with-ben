@@ -108,6 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3906 | mini | claimed | gemini | 2026-11-27T16:12Z | review · Verify condition for J3756 |  |
 | J3907 | mini | open | – | – | review · Verify condition for J3781 |  |
 | J3908 | mini | blocked | gemini | – | review · Verify condition for J3859 |  |
+| J3909 | mini | open | – | – | 064 edit · assembly · OWB 064: Repair vertical trailer and package after J3902 FIX | J3902 |
 
 Recently finished:
 
