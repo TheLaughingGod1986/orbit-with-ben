@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3871 | mini | claimed | codex | 2026-11-27T10:31Z | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
 | J3873 | mini | open | – | – | for claudecode · review · Publish completed J3864 Chief ruling through designated route |  |
+| J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 
 Recently finished:
 

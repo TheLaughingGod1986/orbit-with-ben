@@ -1,5 +1,5 @@
 {
-  "next_id": 3874,
+  "next_id": 3875,
   "jobs": [
     {
       "id": "J0001",
@@ -356254,6 +356254,35 @@
       "for": "claudecode",
       "kind": "review",
       "plain": "Save the Newton apple Short review in the shared records"
+    },
+    {
+      "id": "J3874",
+      "title": "HOS 009: resolve short-loop gate incompatibility",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3871 repaired HOS 009 apple Short opener and SFX in v04, but the unmodified picture gate still fails its natural terminal pre-roll. Review the exact incompatibility before any implementation: HOS new Shorts require 16–19 s; scripts/terminal_loop.py validate rejects any duration outside 22–27 s at lines 71–73. picture_qa.py SAME_STRETCH=10.0 rejects return source offset 0 versus opening 0.9 even though windows 0–0.9 and 0.9–1.7 do not overlap. Existing terminal contract also prescribes an identical opening-offset replay, whereas this cut uses pre-roll that ends at opening source time. Do not forge offsets, alias sources, waive a failed gate, or silently broaden it.\nEvidence: /Volumes/MiniWork/scratch/J3871-hos branch codex/J3871; film 009 10_Shorts/J3871/REPORT.md and v04 receipts. NAS internal v04 SHA256 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac. J3871 remains incomplete, J3816 held, J3872 dependent review cannot proceed yet. Decide an evidence-checked gate-review/implementation path under channel rules (including required authorisation for check changes); do not implement a gate change as part of this review. No spend, publishing, UAT or Ben-watch handoff. Reopen J3871 only when a conforming unmodified edit or separately authorised and tested contract is available. This is a system decision for elected Chief; no new media approval.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T08:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the 17-second loop contract conflict before further editing",
+      "kind": "chief",
+      "plain": "Resolve the checks blocking the Newton apple ending"
     }
   ],
   "focus": [
