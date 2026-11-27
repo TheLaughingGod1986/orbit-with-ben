@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
 | J3911 | mini | blocked | claudecode | – | review · Verify condition for J3871 |  |
 | J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
-| J3916 | any | open | – | – | 064 script · script · OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX) | J3914 |
+| J3916 | mini | open | – | – | 064 script · script · OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX) | J3914 |
 | J3917 | any | open (after J3916) | – | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
 
 Recently finished:
