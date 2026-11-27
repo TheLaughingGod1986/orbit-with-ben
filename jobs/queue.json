@@ -274681,9 +274681,14 @@
           "at": "2026-11-27T12:30Z",
           "by": "relay",
           "what": "condition verification queued: J3897"
+        },
+        {
+          "at": "2026-11-27T12:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T16:31:06Z"
         }
       ],
-      "remaining_action": "Await independent review and merge of the corrected Venus picture and Earth credits, then finish the picture package",
+      "remaining_action": "Publish the approved integration records through Claude Code, then verify the assembly handoff",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
@@ -274707,12 +274712,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3818 must independently review J3835 corrections in PR 1361 (9ff96bd97), issue a fresh KEEP/FIX, and obtain elected-Chief acceptance with corrected records merged to main. Reconcile overlapping PRs 1358 and 1359 without restoring their superseded unconditional KEEP or PIA00233 option. DECISION.md is already on main fbdfbada07; J3718 was cancelled at the approved cutoff. J3818 check remains 2026-11-27T12:15:00Z; J3023 stays dependent on J3022.",
-        "check_at": "2026-11-27T13:30:35+00:00",
-        "last_recheck": "J3839",
-        "checked_at": "2026-11-27T02:00:48+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3897"
+        "condition": "J3898: Claude Code must privacy-review and publish the completed J3883 integration branch codex/J3883-integration (034d41fbc5), merge with current main and verify J3818/J3022 completion records plus mandatory J3023 v02 handoff. PRs 1359/1361 already merged 9b3ca6cb52 and 1358 closed unmerged; creative acceptance is complete, publication/read-back is not. J3023.after remains J3022. Preserve all existing gates and dates.",
+        "check_at": "2026-11-27T16:31:06Z",
+        "last_recheck": "J3897",
+        "checked_at": "2026-11-27T12:38:51+00:00",
+        "checked_by": "codex"
       }
     },
     {
