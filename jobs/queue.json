@@ -361936,9 +361936,14 @@
           "at": "2026-11-27T19:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:01Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Independently hear and watch the repaired cut and recommend KEEP or FIX",
+      "remaining_action": "Probing audio_input and moving_video_input on canonical v03 and reading PR #1399/#1400",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
@@ -361955,12 +361960,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-27T19:01Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Probe audio/video inputs & read prior PRs",
+          "Verify canonical hashes, v01/v02 & locked sources",
+          "Hear v03 VO stem & final mix",
+          "Watch v03 moving video & inspect frames",
+          "Re-run gates, 13-bed music, dry-run & regression",
+          "Write exact-hash KEEP/FIX review & route to Chief"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3924",
