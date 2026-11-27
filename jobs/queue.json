@@ -352691,16 +352691,21 @@
           "at": "2026-11-27T01:02Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Parity OK: v06 sha 8e670990…cb66, 37/37 SCRIPT blocks exact, 7 changed (S04 S05 S10 S31 S32 S35 S36), 30 identical to v05, 10,050 chars"
+        },
+        {
+          "at": "2026-11-27T01:03Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Gemini (agy, gemini-4-neon-high) started 01:03Z in tmux j3833-gemini; log ~/_desk/logs/j3833-gemini.md, .done file marks finish"
         }
       ],
-      "remaining_action": "Run Gemini check of the 7 changed v06 blocks and joins",
+      "remaining_action": "Gemini check running; then verify and publish",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected Operation Pedestal narration against its sources",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-27T01:02Z",
+        "at": "2026-11-27T01:03Z",
         "by": "claudecode",
         "plan": [
           "Read v06 and brief",
@@ -352708,7 +352713,7 @@
           "Verify output and parity",
           "Publish and record"
         ],
-        "note": "Parity OK: v06 sha 8e670990…cb66, 37/37 SCRIPT blocks exact, 7 changed (S04 S05 S10 S31 S32 S35 S36), 30 identical to v0"
+        "note": "Gemini (agy, gemini-4-neon-high) started 01:03Z in tmux j3833-gemini; log ~/_desk/logs/j3833-gemini.md, .done file marks"
       },
       "taskKeys": [
         "WW2:009"
