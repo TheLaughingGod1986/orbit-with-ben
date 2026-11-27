@@ -351462,13 +351462,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T00:18Z",
-      "eta": "2026-11-27T02:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T23:51Z",
-      "result": "",
+      "result": "Waiting for: J3115 must have its completed review publication authorized and completed before this repair can close. The thumbnail stage is corrected to blocked/ref J3115; J3119 remains dependent on J3115. Prior automatic approval review rejected the external branch push; do not bypass that restriction or infer approval from the local review.",
       "history": [
         {
           "at": "2026-11-26T23:51Z",
@@ -351499,9 +351499,19 @@
           "at": "2026-11-27T00:21Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified corrected blocked stage, released claim, J3115 blocker, J3119 dependency and original Ben master approval. Report posted; no approval or delivery bypass."
+        },
+        {
+          "at": "2026-11-27T00:21Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3115 must have its completed review publication authorized and completed before this repair can close. The thumbnail stage is corrected to blocked/ref J3115; J3119 remains dependent on J3115. Prior automatic approval review rejected the external branch push; do not bypass that restriction or infer approval from the local review."
+        },
+        {
+          "at": "2026-11-27T00:21Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T08:00:00Z"
         }
       ],
-      "remaining_action": "Repair complete; existing J3115 publication blocker remains before delivery",
+      "remaining_action": "Wait for authorized publication and completion of the existing Pluto packaging review",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -351523,7 +351533,12 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3115 must have its completed review publication authorized and completed before this repair can close. The thumbnail stage is corrected to blocked/ref J3115; J3119 remains dependent on J3115. Prior automatic approval review rejected the external branch push; do not bypass that restriction or infer approval from the local review.",
+        "check_at": "2026-11-27T08:00:00Z"
+      }
     },
     {
       "id": "J3820",
