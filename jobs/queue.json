@@ -359809,13 +359809,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-27T14:18Z",
-      "eta": "2026-11-27T16:18Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T14:14Z",
-      "result": "",
+      "result": "Repair delivered: PR #1393 open; PR #1390 updated to cea1494ff604cb5a07ed10b5368ab87398faea7e. Trailer v05 e57cd79a668d558e2ee451f31b85bb81b515d3169150484112b73bd2b57646ce, 8800139 bytes; exact 24/1 CFR/start PTS 0; 44 stills inspected; original AAC identical; full decode clean. Immutable hashes verified, provenance/credits/LF/category repaired. Final package dry run ok; 13 privacy checks pass; diff clean. Temporary worktree returned to main and removed; original checkout on main. J3910 independent recheck and Chief approval required; no PASS/merge/UAT/platform changes.",
       "history": [
         {
           "at": "2026-11-27T14:14Z",
@@ -359846,6 +359846,11 @@
           "at": "2026-11-27T14:29Z",
           "by": "macbook-2",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-27T14:33Z",
+          "by": "macbook-2",
+          "what": "done: Repair delivered: PR #1393 open; PR #1390 updated to cea1494ff604cb5a07ed10b5368ab87398faea7e. Trailer v05 e57cd79a668d558e2ee451f31b85bb81b515d3169150484112b73bd2b57646ce, 8800139 bytes; exact 24/1 CFR/start PTS 0; 44 stills inspected; original AAC identical; full decode clean. Immutable hashes verified, provenance/credits/LF/category repaired. Final package dry run ok; 13 privacy checks pass; diff clean. Temporary worktree returned to main and removed; original checkout on main. J3910 independent recheck and Chief approval required; no PASS/merge/UAT/platform changes."
         }
       ],
       "remaining_action": "Publishing repaired package and evidence for independent review",
