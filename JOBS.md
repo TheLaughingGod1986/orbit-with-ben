@@ -112,7 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3929 | mini | blocked | gemini | – | review · Verify condition for J3883 |  |
 | J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
 | J3931 | mini | open | – | – | review · Verify condition for J3760 |  |
-| J3932 | mini | open | – | – | review · J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
+| J3932 | mini | claimed | macbook-2 | 2026-11-27T19:07Z | review · J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3933 | mini | open | – | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 
 Recently finished:
