@@ -4,7 +4,29 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, complete-source rehearsal)
+## Current handoff — 27 November 2026
+
+The move is due now. Preserve J3012 at **3/4**. PR #1011 and the earlier preparation fixes are merged;
+the historical sections below are not outstanding approval requests. The production credential probe passed
+on 25 November (thread #7159250002), and the preceding-day notice was posted on 26 November (#7186248983).
+The official split streak is now 14 days. Do not repeat the credential probe or ask Ben for another move approval.
+
+Current execution checkpoint: `jobs/reviews/J3012/CUTOVER_CHECKPOINT_2026-11-27.md`.
+The current-source and conditional future-identity suites run detached on the Mini; read their `.done` files and
+logs before starting another copy. A failed or missing result is not a pass. The eight local service proposals
+are validated preparation only and point at the isolated layout, **not** the final runtime checkout.
+
+Next: finish those checks, reconcile the loaded-service settings and both MacBook slots, then drain all writers
+and export a **new frozen queue** through the cutover order below. The current rehearsal queue is already stale.
+No service, activation marker, board deployment or production repository has switched in this checkpoint.
+
+After the engine passes relay/publish/tick/both-slot acceptance, the latest J3012 brief additionally requires
+moving the tick store and studio thread into private Studio, including HOS watch ticks. The older instruction
+below to retain the public stores applies only during the first engine cutover. Preserve existing approvals,
+test an explicitly migration-only tick on every channel, and only then tell Ben he can remove the two public
+repositories from the board token. Do not narrow that access before the private-store round trips work.
+
+## Historical preparation (20 November, complete-source rehearsal)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
