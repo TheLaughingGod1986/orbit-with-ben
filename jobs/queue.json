@@ -356847,19 +356847,33 @@
           "at": "2026-11-27T09:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:35Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3880; starting pre-write inspection"
         }
       ],
-      "remaining_action": "Fix the Franklin comment and Short settings, then verify and reconcile records",
+      "remaining_action": "Reading J3877 audit, running lint:package for film 008, and inspecting Studio CDP 9460 & files",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T09:34Z",
+        "of": 5,
+        "at": "2026-11-27T09:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read audit, lint 008 & inspect state",
+          "Post & pin YqCWYlv_LCY comment",
+          "Fix f_-BsKZf8X0 paid promotion in Studio",
+          "Reconcile open-library & OWB UPLOADS.json",
+          "Run channel:audit, update records, open PRs & report"
+        ],
+        "note": "Claimed J3880; starting pre-write inspection"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J3881",
