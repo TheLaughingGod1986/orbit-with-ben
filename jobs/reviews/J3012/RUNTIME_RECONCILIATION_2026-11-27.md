@@ -26,6 +26,8 @@ Both remote Cursor source wrappers still match the reviewed 20 November SHA-256 
 
 Required scratch offload exited 0 with no eligible folders. Internal free space was about 11.7 GB; preparation stayed on MiniWork. No media moved or was deleted.
 
+The inactive Mini runtime now has ignored symlinks for Content Ops node_modules and its local .env to the existing Orbit resources. Both targets existed and both destination paths passed git check-ignore before linking; target equality was verified. No credential contents were read or copied, and no runtime command or service was started. These local links must survive the fresh-source checkout; they are never part of the export or commit.
+
 ## Resume
 
 Review J3890 and merge this test-isolation fix before another MacBook rehearsal. Preserve original 3/4 progress and prior token/notice/streak evidence. Reconcile any changed effective policies, drain all writers on both machines through the runbook, export a NEW frozen queue, and perform cutover with rollback. Then prove relay, board publish, harmless tick and both slots before private thread/tick-store migration and three-channel round trips. Nothing needs Ben now; no production acceptance is claimed.
