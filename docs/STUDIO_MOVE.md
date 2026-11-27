@@ -11,14 +11,25 @@ the historical sections below are not outstanding approval requests. The product
 on 25 November (thread #7159250002), and the preceding-day notice was posted on 26 November (#7186248983).
 The official split streak is now 14 days. Do not repeat the credential probe or ask Ben for another move approval.
 
-Current execution checkpoint: `jobs/reviews/J3012/CUTOVER_CHECKPOINT_2026-11-27.md`.
-The current-source and conditional future-identity suites run detached on the Mini; read their `.done` files and
-logs before starting another copy. A failed or missing result is not a pass. The eight local service proposals
-are validated preparation only and point at the isolated layout, **not** the final runtime checkout.
+Current execution evidence: `jobs/reviews/J3012/RUNTIME_STAGING_2026-11-27.md`.
+Both detached checks finished with exit 0: split zero blockers; future identity core/rules checks plus
+1,606 Python tests (six skips). Do not rerun these unchanged checks or wait on their already-complete processes.
 
-Next: finish those checks, reconcile the loaded-service settings and both MacBook slots, then drain all writers
-and export a **new frozen queue** through the cutover order below. The current rehearsal queue is already stale.
-No service, activation marker, board deployment or production repository has switched in this checkpoint.
+The verified private rehearsal is `rehearsal/j3012-20261127` at
+`eda81876dc28c11b6a0d7b6cb0281b801bfd00c9`, a parentless 2,669-file tree with zero address/key findings and
+no active workflow YAML. Source is Orbit `f5a2bd4fa734c73be9c681484cb21105ab0696d5`. The Mini runtime clone
+`~/YouTube/studio` is clean at this rehearsal; **never run its stale rehearsal queue as production**.
+Eight linted proposals now use that final runtime path and are stored privately at
+`/Volumes/MiniWork/scratch/J3012-runtime-proposals-1127/`. Reconcile current source hashes before installation.
+
+The MacBook is online but existing SSH is unavailable. J3885 stages both independent engine clones and verifies
+the launcher through the installed worker, without service changes. Read its evidence and coordinate the
+MacBook drain/install through that worker; do not enable remote login as a shortcut. The earlier inventory
+alone does not prove clone or launcher readiness.
+
+Next: finish J3885, reconcile loaded settings and remaining wrappers on both machines, then coordinate the
+drain and export a **new frozen queue** through the cutover order below. No service, active-engine marker,
+pause file, board deployment, production branch, default branch or live store has switched.
 
 After the engine passes relay/publish/tick/both-slot acceptance, the latest J3012 brief additionally requires
 moving the tick store and studio thread into private Studio, including HOS watch ticks. The older instruction
