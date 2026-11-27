@@ -351342,9 +351342,14 @@
           "at": "2026-11-27T05:48Z",
           "by": "relay",
           "what": "condition verification queued: J3852"
+        },
+        {
+          "at": "2026-11-27T05:57Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
         }
       ],
-      "remaining_action": "Correct the source brief with an unused compliant spoken opener before building",
+      "remaining_action": "Record cancellation of the unsupported extra Short brief",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
@@ -351364,9 +351369,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Source brief FIX: no unused compliant spoken opener established in screened locked sources; exact passage or separately scoped revised opener required. No cut or gate PASS. Local evidence in MiniWork J3815-source-audit branch codex/J3815-source-audit; public audit push rejected by automatic approval review.",
-        "check_at": "2026-11-27T06:48:20+00:00",
-        "recheck_task": "J3852"
+        "condition": "J3852 Chief review: condition unmet; no exact unused compliant locked passage or approved revised opener. Terminal cancellation follows in this review; no media PASS.",
+        "check_at": "2026-11-28T12:00:00Z",
+        "last_recheck": "J3852",
+        "checked_at": "2026-11-27T05:57:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
