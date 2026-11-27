@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3826 | mini | blocked | claudecode | – | review · Verify condition for J3821 |  |
+| J3827 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-blocked |  |
 
 Recently finished:
 
