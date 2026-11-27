@@ -19,8 +19,9 @@ import subprocess
 import sys
 import time
 import uuid
+from macbook import render_worker_plist
 
-LABEL = "com.owb.macbook-worker"
+LABEL = render_worker_plist.SERVICE_LABEL
 TERMINAL = {"done", "cancelled"}
 DIGEST = re.compile(r"[0-9a-f]{64}")
 
@@ -193,6 +194,7 @@ class System:
         branch = self.api(f"repos/{plan['production_repo']}/git/ref/heads/main")
         require(branch["object"]["sha"] == activation["commit"], "production main changed")
         commit = self.api(f"repos/{plan['production_repo']}/git/commits/{activation['commit']}")
+        require(commit.get("parents") == [], "production export must be a root commit")
         # Freeze/export must be fresh, not the parentless rehearsal root.
         require(plan["created"] <= timestamp(commit["committer"]["date"]) <= time.time(), "stale production export")
 
@@ -398,6 +400,7 @@ def prepare(config_path, out, io):
     require(digest(canonical(loaded_settings(loaded.decode()))) == plan["loaded_hash"], "loaded hash mismatch")
     require(digest(proposal(installed, plan["engines"], plan["production_url"])) == plan["proposal_hash"], "proposal hash mismatch")
     mandatory = {str(Path(__file__).resolve()), str(Path(__file__).resolve().with_name("engine_guard.py")), plan["installed"]}
+    mandatory.update({str(Path(render_worker_plist.__file__).resolve()), str(render_worker_plist.TEMPLATE.resolve())})
     mandatory.update(str(Path(root) / "scripts" / name) for root in plan["old_engines"]
                      for name in ("macbook_worker.py", "engine_guard.py"))
     require(mandatory <= set(plan["sources"]), "helper, guards, old workers and installed service must be source-pinned")

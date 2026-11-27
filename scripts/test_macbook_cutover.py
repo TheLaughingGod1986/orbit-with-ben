@@ -181,7 +181,7 @@ class ProductionBoundaries(FixtureBase):
         io=m.System()
         def api(path):
             if '/git/ref/' in path: return {'object':{'sha':self.activation['commit']}}
-            if '/git/commits/' in path: return {'committer':{'date':dt.datetime.now(dt.timezone.utc).isoformat()}}
+            if '/git/commits/' in path: return {'parents': [], 'committer':{'date':dt.datetime.now(dt.timezone.utc).isoformat()}}
             return {'private': True}
         io.api=api
         io.production(self.plan,self.activation)
@@ -190,6 +190,17 @@ class ProductionBoundaries(FixtureBase):
         self.plan['created']=0
         io.api=lambda p: {'private':False}
         with self.assertRaisesRegex(m.Refused,'private'): io.production(self.plan,self.activation)
+
+    def test_production_rejects_history_bearing_commit(self):
+        io=m.System()
+        def api(path):
+            if '/git/ref/' in path: return {'object':{'sha':self.activation['commit']}}
+            if '/git/commits/' in path: return {'parents': [{'sha': 'd'*40}],
+                'committer': {'date': dt.datetime.now(dt.timezone.utc).isoformat()}}
+            return {'private': True}
+        io.api=api
+        with self.assertRaisesRegex(m.Refused, 'root commit'):
+            io.production(self.plan, self.activation)
 
     def test_git_preserves_rehearsal_ref_without_reset(self):
         io=m.System(); commands=[]
@@ -300,6 +311,7 @@ class PreparationBoundaries(FixtureBase):
         self.io.loaded=lambda: loaded.encode()
         self.io.git=lambda root,*args: '' if args[0]=='status' else 'd'*40
         paths=[installed,Path(m.__file__).resolve(),Path(m.__file__).resolve().with_name('engine_guard.py')]
+        paths.extend([Path(m.render_worker_plist.__file__).resolve(), m.render_worker_plist.TEMPLATE.resolve()])
         for root in plan['old_engines']:
             for name in ['macbook_worker.py','engine_guard.py']:
                 path=Path(root)/'scripts'/name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(b'old source'); paths.append(path)

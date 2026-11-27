@@ -4,10 +4,12 @@ import argparse
 import pathlib
 import plistlib
 
+TEMPLATE = pathlib.Path(__file__).with_name("com.owb.macbook-worker.plist")
+SERVICE_LABEL = plistlib.loads(TEMPLATE.read_bytes())["Label"]
+
 
 def render(home, engine, engine_url, owb, hos, model):
-    template = pathlib.Path(__file__).with_name("com.owb.macbook-worker.plist")
-    doc = plistlib.loads(template.read_bytes())
+    doc = plistlib.loads(TEMPLATE.read_bytes())
     replacements = {"__HOME__": home, "__ENGINE__": engine, "__ENGINE_URL__": engine_url,
                     "__OWB__": owb, "__HOS__": hos, "__MODEL__": model}
 
