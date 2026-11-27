@@ -360635,9 +360635,14 @@
           "at": "2026-11-27T15:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T15:39Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3918 and inspected brief and PR #1399"
         }
       ],
-      "remaining_action": "Inspect canonical NAS v02 frames, gates, and PR #1399 package and write REVIEW.md",
+      "remaining_action": "Independently verifying OWB 064 Short 1 v02 master, gates, frames, and PR #1399 package",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "plain": "Independently QA OWB 064 Short 1 Test A v02 (PR #1399) before Chief PASS and Ben UAT",
@@ -360651,12 +360656,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T15:38Z",
+        "of": 6,
+        "at": "2026-11-27T15:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify NAS master hashes and specs",
+          "Re-run all 7 gates and 13-bed music check",
+          "Inspect frames, overlays, timing, and audio",
+          "Audit PR #1399 files, SRT, and privacy",
+          "Commit REVIEW.md on clean PR branch",
+          "Post report and route to elected Chief"
+        ],
+        "note": "Claimed J3918 and inspected brief and PR #1399"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
