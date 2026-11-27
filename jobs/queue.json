@@ -355638,19 +355638,34 @@
           "at": "2026-11-27T07:44Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:45Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3865; located J3856 REVIEW.md and PR #1366 v02 assembler"
         }
       ],
-      "remaining_action": "Find accurate Cassini footage and build the corrected Titan Short",
+      "remaining_action": "Reading J3856 review and v02 assembler before starting official NASA/JPL Cassini S03 search",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T07:44Z",
+        "of": 6,
+        "at": "2026-11-27T07:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3856 review and v02 build",
+          "Search official NASA/JPL Cassini moving footage for S03 (max 3 deep candidates)",
+          "Verify S03 candidate rights/motion/crop or prepare sourced fallback",
+          "Redesign S08 graphic with locked spoken words at 67-73px and check S04",
+          "Assemble v03 master beside v01/v02 on NAS and run all 7 gates",
+          "Inspect stills/warnings, update PR #1366, post report and park for Chief"
+        ],
+        "note": "Claimed J3865; located J3856 REVIEW.md and PR #1366 v02 assembler"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3866",
