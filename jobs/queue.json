@@ -359517,13 +359517,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T14:08Z",
-      "eta": "2026-11-27T16:08Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:07Z",
-      "result": "",
+      "result": "parked for Chief: J3859 condition UNMET at 2026-11-27T14:10Z (WW2:002 qfc6EBStOfo 48h). J3858 is still blocked (by gemini 07:36Z, hold type=ben) awaiting Ben sign-in for Field Order History (UCu94mInMFosxu3W0H6jlI6Q) on CDP 9224; channels/ww2/05_Analytics/READS.md (3b617c5633) still shows Impressions/CTR pending ('No matching dated Studio read'); studio_read.json (2026-11-25T07:08:34Z) has only ek9F61FVYqY; board.json has impressions/ctr null and detail.json has studio null; no open PR imports J3858; no Ben thread reply today through #7220376040. Original WW2:002 gates/approvals remain valid. Worker cannot run jobs.py wait J3859 --recheck J3908 (restricted to elected Chief codex in scripts/jobs.py). Chief to run: jobs.py wait J3859 --agent codex --type dependency --condition 'J3858 (Field Order History analytics read qfc6EBStOfo 48h) still blocked awaiting Ben sign-in on CDP 9224; READS.md shows Impressions/CTR pending (No matching dated Studio read) and studio_read.json has no qfc6EBStOfo entry' --check-at 2026-11-27T20:15:00Z --action 'Reopen J3859 for the rules review once J3858 completes and imports qfc6EBStOfo 48h Studio numbers into channels/ww2/05_Analytics/READS.md' --recheck J3908 --git, then jobs.py done J3908. Read-only, £0 spend, no PR/branch/YouTube changes.",
       "history": [
         {
           "at": "2026-11-27T14:07Z",
@@ -359549,6 +359549,11 @@
           "at": "2026-11-27T14:11Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified J3858 still blocked (Ben sign-in on CDP 9224), READS.md qfc6EBStOfo 48h row shows Impressions/CTR pending ('No matching dated Studio read'), studio_read.json has no qfc6EBStOfo entry, no open PR imports it. Condition UNMET."
+        },
+        {
+          "at": "2026-11-27T14:11Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3859 condition UNMET at 2026-11-27T14:10Z (WW2:002 qfc6EBStOfo 48h). J3858 is still blocked (by gemini 07:36Z, hold type=ben) awaiting Ben sign-in for Field Order History (UCu94mInMFosxu3W0H6jlI6Q) on CDP 9224; channels/ww2/05_Analytics/READS.md (3b617c5633) still shows Impressions/CTR pending ('No matching dated Studio read'); studio_read.json (2026-11-25T07:08:34Z) has only ek9F61FVYqY; board.json has impressions/ctr null and detail.json has studio null; no open PR imports J3858; no Ben thread reply today through #7220376040. Original WW2:002 gates/approvals remain valid. Worker cannot run jobs.py wait J3859 --recheck J3908 (restricted to elected Chief codex in scripts/jobs.py). Chief to run: jobs.py wait J3859 --agent codex --type dependency --condition 'J3858 (Field Order History analytics read qfc6EBStOfo 48h) still blocked awaiting Ben sign-in on CDP 9224; READS.md shows Impressions/CTR pending (No matching dated Studio read) and studio_read.json has no qfc6EBStOfo entry' --check-at 2026-11-27T20:15:00Z --action 'Reopen J3859 for the rules review once J3858 completes and imports qfc6EBStOfo 48h Studio numbers into channels/ww2/05_Analytics/READS.md' --recheck J3908 --git, then jobs.py done J3908. Read-only, £0 spend, no PR/branch/YouTube changes."
         }
       ],
       "remaining_action": "Parking J3908 for elected Chief (codex) to record wait --recheck J3908 on J3859 and close J3908",
