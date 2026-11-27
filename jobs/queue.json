@@ -308158,13 +308158,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T13:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T12:47Z",
-      "result": "parked for Chief: revised HOS weekly thumbnail audit PR #1170 (head d44ed0d4ac, merged cleanly with main) incorporates J3372 PR #1197 exact 25 Oct-21 Nov Studio reach (41/45 displayed, 4 em-dash unknown, 45/45 views_from_impressions unknown; medians long 6.1% / Short 1.9%; 0/8 longs >=1000 impr, 1/37 Short xzKoHg0E0_U 2337/1.7%), Willow VbPubYd6Fbs finished test as T045 (NOT_ENOUGH_DATA / draw, renumbered from PR #1197 T044 after OWB 034 took T044), 001/002/003 live titles & preserved reports (J1130 closed), J3374 frame-0/el30 fixes, and compilation_thumb_v02.jpg 168px check. 0 new Bs built, 0 Studio writes, £0. Ready for independent Chief review and merge (supersedes PR #1197 and PR #1175).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T12:47Z",
@@ -308285,6 +308285,11 @@
           "at": "2026-11-25T15:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Not merged: PR #1170's Willow finished-test row is numbered T045, but main's THUMB_LEDGER.json gave T045 to OWB 064 (PR #1357, 26 Nov). Renumber Willow to the next free T-id in the ledger and the audit text, merge main in, re-run the ledger check, then park for Chief merge. No other changes. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Independent Chief review and merge of PR #1170 (d44ed0d4ac)",
@@ -308300,20 +308305,6 @@
         "HOS:007",
         "HOS:099"
       ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-25T13:46Z",
-        "by": "gemini",
-        "plan": [
-          "Verify inventory and visual assets",
-          "Incorporate J3372 Studio reach and Willow readback",
-          "Reconcile titles, ledger, and PATTERNS",
-          "Finalize audit report and evidence JSONs",
-          "Validate, push PR, and report"
-        ],
-        "note": "Pushed revised PR #1170 at d44ed0d4ac (merged cleanly with main; incorporates J3372 PR #1197 evidence, Willow T045, J337"
-      },
       "escalated_at": "2026-11-25T15:52Z"
     },
     {
@@ -351625,13 +351616,13 @@
       "stage": "thumbs",
       "after": "J3817",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T00:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-26T23:45Z",
-      "result": "parked for Chief: advisory KEEP recorded in PR #1359 (jobs/reviews/J3818/REVIEW.md). All 3 J3719_v02 NAS thumbnails match THUMB_SCORES_v02.json and PR #1358 T045 (proposed), PASS thumb_preview --score and 168x94/full-size inspection; 0 title/hook overlap; DECISION.md description/chapters preserved; SHOT_LIST_v02.md opening 0:00-0:32.85 <=4.0s and R09 PIA00271 removed. Chief (codex): issue PASS, merge PR #1358 (resolve single T045 conflict in THUMB_LEDGER.json in favour of PR #1358) + PR #1359, clear J3022 hold, advance J3023 ahead of Ben's Fri 11 Dec watch.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T23:45Z",
@@ -351687,6 +351678,11 @@
           "at": "2026-11-27T02:25Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: J3022's hold needs a fresh KEEP/FIX on J3835's corrections in PR #1361 (9ff96bd97). Your KEEP in PR #1359 predates them. Review the exact corrected files, write the new verdict in jobs/reviews/J3818/REVIEW.md, and reconcile PRs #1358/#1359 without restoring their superseded unconditional KEEP or the PIA00233 option. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Wait for the Venus-picture and Earth-credit corrections, then independently review the corrected package",
@@ -351701,31 +351697,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T00:25Z",
-        "by": "gemini",
-        "plan": [
-          "Verify v02 hashes and ledger",
-          "Visually inspect v02 thumbs",
-          "Check title and description lock",
-          "Verify SHOT_LIST_v02 fixes",
-          "Write REVIEW.md and commit"
-        ],
-        "note": "Advisory verdict KEEP recorded in PR #1359 (jobs/reviews/J3818/REVIEW.md); all J3719_v02 hashes/scores/visuals, T045, an"
-      },
       "taskKeys": [
         "OWB:064"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3829 Chief FIX: J3835 must replace PIA00233 reconstruction in R11 with verified real nadir radar, correct PIA18033 attribution, and publish corrected exact-file evidence; independent review and required PR merges must confirm readiness before J3022/J3023 release.",
-        "check_at": "2026-11-27T12:15:00Z",
-        "last_recheck": "J3829",
-        "checked_at": "2026-11-27T01:08:22+00:00",
-        "checked_by": "codex"
-      },
       "escalated_at": "2026-11-27T02:25Z"
     },
     {
@@ -351739,13 +351713,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-27T00:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-26T23:51Z",
-      "result": "Waiting for: J3115 must have its completed review publication authorized and completed before this repair can close. The thumbnail stage is corrected to blocked/ref J3115; J3119 remains dependent on J3115. Prior automatic approval review rejected the external branch push; do not bypass that restriction or infer approval from the local review.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-26T23:51Z",
@@ -351791,6 +351765,11 @@
           "at": "2026-11-27T08:05Z",
           "by": "relay",
           "what": "condition verification queued: J3868"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Condition MET (J3868, PR #1369 merged fc312d38): J3861 published the authorised 034 thumbs via PR #1367 (merged 06:49Z, 9 files unchanged, 8/8 NAS hashes match J3115/HASH_CHECK.json); codex closed J3863 and reopened J3115 at 08:10Z. Resolve the orphan review alongside J3115/J3828. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Wait for authorized publication and completion of the existing Pluto packaging review",
@@ -351801,27 +351780,9 @@
         "kind": "orphan-review",
         "signature": "962d0944519f4ecb90be"
       },
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T00:21Z",
-        "by": "codex",
-        "plan": [
-          "Check thumbnail evidence",
-          "Resolve review state",
-          "Record the outcome"
-        ],
-        "note": "Verified corrected blocked stage, released claim, J3115 blocker, J3119 dependency and original Ben master approval. Repo"
-      },
       "taskKeys": [
         "OWB:034"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3115 must have its completed review publication authorized and completed before this repair can close. The thumbnail stage is corrected to blocked/ref J3115; J3119 remains dependent on J3115. Prior automatic approval review rejected the external branch push; do not bypass that restriction or infer approval from the local review.",
-        "check_at": "2026-11-27T09:05:00+00:00",
-        "recheck_task": "J3868"
-      }
+      ]
     },
     {
       "id": "J3820",
@@ -353287,13 +353248,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T01:11Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T01:09Z",
-      "result": "parked for Chief: Read-only verification complete in OWB PR #1362 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1362, d67daa2710, jobs/reviews/J3836/REVIEW.md; test_email_ratchet + test_no_private_network 13/13 PASS). Condition UNMET — keep J3704 blocked: local /Volumes/MiniWork/scratch/J3704-corrections remains at unpushed 9e4b053; ww2-channel PR #189 remains OPEN at d5d842d with zero reviews and no replacement PR; studio thread #1353 through #7207071007 has no authorization review resolving the data-export approval restriction and no Claude Code publication; OWB PR #1254 remains OPEN. scripts/jobs.py restricts jobs.py wait J3704 --recheck J3836 to the holder or elected Chief (codex). Elected Chief to merge PR #1362, run jobs.py wait J3704 --agent codex --type input --recheck J3836 --check-at 2026-11-27T07:55:00Z (after Claude's 07:50:00Z reset), and close J3836. Zero video/Studio/schedule changes, £0 spend.",
+      "result": "Verification complete: condition UNMET; J3704 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T01:09Z",
@@ -353334,6 +353295,21 @@
           "at": "2026-11-27T03:28Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3704 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) to merge OWB PR #1362, record jobs.py wait J3704 --recheck J3836, and close J3836",
@@ -353350,18 +353326,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T01:15Z",
-        "by": "gemini",
-        "plan": [
-          "Read J3704 hold and approval history",
-          "Check PR 189, local branch, and thread for resolution",
-          "Update J3704 wait or reopen and report"
-        ],
-        "note": "Opened OWB PR #1362 (gemini/J3836-review, d67daa2710, 13/13 privacy tests PASS). Condition UNMET; jobs.py wait --recheck"
-      },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
@@ -353619,13 +353583,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T01:41Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T01:40Z",
-      "result": "parked for Chief: condition UNMET for J3756 (OWB PR #1363 open for Chief merge, commit c688ecaf78, jobs/reviews/J3840/REVIEW.md). Direct read_file probes at 01:42Z in agy 1.5.18 on Gemini 4 Neon (High): audio_input + image_input PASS, but NAS P01_03a_unlabelled_birds_t2.mp4 returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps moving_video_input (recorded honest capabilities via chief_relay.py). Codex (Chief), Claude Code, and Cursor all record available=[]; Claude out until 2026-11-27T07:50:00Z; Grok Bot has no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 STANDS_KEEP_UNSET), zero new 013 playback evidence on HOS #694, OWB #1353, OWB #954, or open PRs. scripts/jobs.py restricts wait --recheck to the elected Chief (Chief: Codex). Chief action: run jobs.py wait J3756 --agent codex --type capability --requires moving_video_input --recheck J3840 --check-at 2026-11-27T08:00:00Z --git, merge OWB PR #1363 (superseding #1347), and close J3840. £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3756 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T01:40Z",
@@ -353671,6 +353635,21 @@
           "at": "2026-11-27T03:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3756 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Elected Chief (Codex) to record J3756 --recheck J3840 capability hold (check-at 2026-11-27T08:00:00Z), merge OWB PR #1363 (superseding #1347), and close J3840",
@@ -353689,19 +353668,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-27T01:46Z",
-        "by": "gemini",
-        "plan": [
-          "Probe media capabilities and check agy video input",
-          "Check HOS #694, OWB #954, PRs and agent capabilities",
-          "Verify 6/6 NAS archive hashes and preserved state",
-          "Update J3756 hold, write review evidence, post report and close J3840"
-        ],
-        "note": "Opened OWB PR #1363 (c688ecaf78, jobs/reviews/J3840/REVIEW.md; 13/13 privacy tests PASS); parking J3840 for Chief (codex"
-      },
       "taskKeys": [
         "HOS:013"
       ],
@@ -353718,13 +353684,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T01:47Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T01:40Z",
-      "result": "parked for Chief: condition UNMET for J3781 (HOS:136 Shorts S01/S02 independent non-producer VO listen). Live 01:47-01:50Z checks: codex (elected Chief), claudecode, and cursor all report capabilities available=[]; claude down until 2026-11-27T07:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (01:42Z relay probe PASS 0.99 + fresh 01:49Z direct read_file audio probe on NAS S01_v02_tight.mp3 recorded via chief_relay.py capabilities) but authored J3679 and HOS PRs #798/#799, so J3781 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #799 MERGED b6a9d05e; PR #798 OPEN/MERGEABLE (17672ae2, 6/6 applicable CI SUCCESS, 0 comments); local codex review /Volumes/MiniWork/scratch/J3781-hos codex/J3781-evidence ea0c93d8 clean, intact, and unpushed (not routed indirectly); 5/5 SHA-256 hashes match; HOS:136 status.json shorts_vo/vo remain todo; zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py restricts wait --recheck to the elected Chief (Chief: Codex). Chief action (codex): run jobs.py wait J3781 --agent codex --type capability --requires audio_input --recheck J3841 --check-at 2026-11-27T09:00:00Z --git (matching J3780, post-Claude 07:50Z reset) and close J3841. HOS desk #694 and OWB thread #1353 reports posted. £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3781 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T01:40Z",
@@ -353760,6 +353726,21 @@
           "at": "2026-11-27T03:51Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3781 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Park J3841 for Chief (codex) with verified UNMET evidence and post HOS desk + OWB thread reports",
@@ -353778,18 +353759,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T01:50Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3781 history, capabilities, and evidence",
-          "Verify audio_input and non-producer condition",
-          "Record hold or reopen J3781 and report"
-        ],
-        "note": "Step 1-2 done: verified J3781 condition UNMET. codex (Chief), claudecode, cursor all have capabilities available=[]; cla"
-      },
       "taskKeys": [
         "HOS:136"
       ],
@@ -354538,13 +354507,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T03:40Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T03:38Z",
-      "result": "parked for Chief: condition UNMET for J3178 (OWB PR #1365 open for Chief merge, commit 74bde76243, jobs/reviews/J3851/REVIEW.md). Direct read_file probes at 03:41Z in agy 1.5.18 on Gemini 4 Neon (High): audio_input + image_input PASS, but NAS row 58 P05_10_darwin_worried_shelf_t1.mp4 still returns only 8 discrete 1-fps integer-second static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving_video_input (recorded honest capabilities via chief_relay.py; relay 03:35:38Z probe false-positives from 1-fps stills). Codex (Chief), Claude Code, and Cursor all record available=[]; Claude out until 2026-11-27T07:50:00Z; Grok Bot has no verified 24-fps moving_video_input. Freshly verified 11/11 Batch 12-14 archive_v01_pass1 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 STANDS_KEEP_UNSET); J2529 closed by claude 2026-11-26T23:37Z without setting rows 56-62, 64-66; zero new 013 playback evidence on HOS #180/#694, OWB #1353, or open PRs. scripts/jobs.py line 611 restricts wait --recheck to the elected Chief (Chief: Codex). Chief action: run jobs.py wait J3178 --agent codex --type capability --requires moving_video_input --recheck J3851 --check-at 2026-11-27T08:00:00Z --git, merge OWB PR #1365, and close J3851. £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3178 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T03:38Z",
@@ -354590,6 +354559,21 @@
           "at": "2026-11-27T05:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3178 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Elected Chief (Codex) to record J3178 --recheck J3851 capability hold (check-at 2026-11-27T08:00:00Z), merge OWB PR #1365, and close J3851",
@@ -354608,19 +354592,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-27T03:46Z",
-        "by": "gemini",
-        "plan": [
-          "Probe session capabilities",
-          "Verify worker capabilities and threads/PRs",
-          "Verify NAS hashes and REVIEW_STATE",
-          "Update J3178 hold and close J3851"
-        ],
-        "note": "Opened OWB PR #1365 (74bde76243, jobs/reviews/J3851/REVIEW.md; safety tests 8/8 and 5/5 PASS); parking for elected Chief"
-      },
       "taskKeys": [
         "HOS:013"
       ],
@@ -354727,13 +354698,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T05:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-27T05:58Z",
-      "result": "parked for Chief: Short PASS (032 Short #2 dry_desert_two_oceans v01, 26.90s, 7/7 gates PASS, NAS sha256 07ef33e02198, PR #1366, #99 posted)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T05:58Z",
@@ -354794,34 +354765,21 @@
           "at": "2026-11-27T09:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Chief PASS on v03 (J3878). Next, for Ben's watch: (1) copy the exact v03 master (SHA-256 5b5703855c18) and its cover into OWB UAT as `032_short_dry_desert_two_oceans_v03.mp4`, re-checking the hash; (2) register Ben's watch on THIS job: `jobs.py awaits J3853 --what \"Watch 032 Titan Short #2 (two oceans) v03 and its cover\" --file \"OWB UAT/032_short_dry_desert_two_oceans_v03.mp4\" --version v03 --title \"<the Short's title from metadata>\" --number \"032 Short 2\" --vtype short --due <3 days out, 18:00Z>`; (3) update PR #1366's title and description to v03, reconcile it with main, and leave it for the Chief to merge; (4) block 'awaiting Ben'. Never upload or schedule: after Ben's OK the relay queues the package-and-upload job itself. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Waiting for the corrected Titan Short playback review in J3878",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T06:21Z",
-        "by": "gemini",
-        "plan": [
-          "Select film & locked passage",
-          "Design 9:16 EDL & Teach graphic",
-          "Assemble 9:16 Short & cover",
-          "Run all ship & QA gates",
-          "Commit, PR & post #99 report"
-        ],
-        "note": "PR #1366 opened, #99 report posted, 7/7 gates PASS on NAS 032_short_dry_desert_two_oceans_v01.mp4 (sha256 07ef33e02198)"
-      },
       "taskKeys": [
         "OWB:032"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3865 correction review accepts v03 picture and graphic corrections only, exact hash 5b5703855c18. J3878 must complete demonstrated audio/moving-video QA, followed by exact-file Chief decision before UAT. No publishing approval.",
-        "check_at": "2026-11-28T06:45:00Z"
-      },
-      "escalated_at": "2026-11-27T08:48Z"
+      "escalated_at": "2026-11-27T08:48Z",
+      "for": "gemini"
     },
     {
       "id": "J3854",
@@ -355032,13 +354990,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T06:41Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:36Z",
-      "result": "parked for Chief: Short v02 review (032 dry_desert_two_oceans v02, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 34c800a4a9bf, PR #1366 commit 1a50bad01d, #99 posted; v01 preserved, J3853 held)",
+      "result": "Superseded: the v02 correction became v03, which has the Chief PASS (J3878). v01 and v02 kept on the NAS. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T06:36Z",
@@ -355114,33 +355072,29 @@
           "at": "2026-11-27T09:34Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: v02 superseded by v03 (J3865, J3878)."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Superseded: the v02 correction became v03, which has the Chief PASS (J3878). v01 and v02 kept on the NAS. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Waiting for the corrected Titan Short playback review in J3878",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T07:26Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect review, PR #1366 and 032 assets",
-          "Build v02 graphic and motion/reframing edits",
-          "Render v02 master and run all seven gates",
-          "Verify NAS copy, stills, contact sheet and captions",
-          "Update PR #1366 and post review handback"
-        ],
-        "note": "Pushed commit 1a50bad01d to PR #1366, posted #99 report, verified NAS v02 master sha256 34c800a4a9bf beside untouched v0"
-      },
       "taskKeys": [
         "OWB:032"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3865 correction review accepts v03 Cassini identity, readable teaching labels and preserved crop only. J3878 exact-file audio/moving-video QA and subsequent Chief ruling must finish before UAT. PR 1366 remains unmerged.",
-        "check_at": "2026-11-28T06:45:00Z"
-      },
       "escalated_at": "2026-11-27T09:34Z"
     },
     {
@@ -356057,13 +356011,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-27T08:06Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T08:05Z",
-      "result": "parked for Chief: J3819 condition VERIFIED SATISFIED (OWB PR #1369, branch macbook/J3868, commit 104eab1d3, jobs/reviews/J3868/REVIEW.md; 26/26 ratchet/privacy tests + channel_check PASS). J3855 Chief ruling authorized candidate 40c6ca5114 (Codex <>, no trailers; a4c9c8f534/6b85fc0248 not ancestors); J3861 published via PR #1367 merged 2026-11-27T06:49:22Z (merge 63265bea07 on origin/main, all 9 files unchanged); acting Chief codex closed J3863 and reopened J3115 at 08:10Z; 8/8 NAS SHA-256 hashes match HASH_CHECK.json. 034 status.json (thumbs blocked ref J3115,J3828), linked successor J3828 (after J3115), J3119 (Ben v02 approval 18 Nov 22:16Z), T044 (proposed) and Shorts J3065/J3066 holds remain intact. jobs.py reopen J3819 is Chief-only (Chief: Codex). Chief action: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868. No upload, schedule, Buffer change or spend.",
+      "result": "Verification complete: J3819 condition SATISFIED (PR #1369 merged); J3819 reopened. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T08:05Z",
@@ -356104,6 +356058,21 @@
           "at": "2026-11-27T08:13Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J3819 condition VERIFIED SATISFIED (OWB PR #1369, branch macbook/J3868, commit 104eab1d3, jobs/reviews/J3868/REVIEW.md; 26/26 ratchet/privacy tests + channel_check PASS). J3855 Chief ruling authorized candidate 40c6ca5114 (Codex <>, no trailers; a4c9c8f534/6b85fc0248 not ancestors); J3861 published via PR #1367 merged 2026-11-27T06:49:22Z (merge 63265bea07 on origin/main, all 9 files unchanged); acting Chief codex closed J3863 and reopened J3115 at 08:10Z; 8/8 NAS SHA-256 hashes match HASH_CHECK.json. 034 status.json (thumbs blocked ref J3115,J3828), linked successor J3828 (after J3115), J3119 (Ben v02 approval 18 Nov 22:16Z), T044 (proposed) and Shorts J3065/J3066 holds remain intact. jobs.py reopen J3819 is Chief-only (Chief: Codex). Chief action: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868. No upload, schedule, Buffer change or spend."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read; PR #1369 merged."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: J3819 condition SATISFIED (PR #1369 merged); J3819 reopened. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Elected Chief: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868",
@@ -356118,20 +356087,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-27T08:13Z",
-        "by": "macbook",
-        "plan": [
-          "Inspect J3819, J3115, J3855, J3861 and PRs",
-          "Check 034 status, git branches and approval evidence",
-          "Reopen J3819 or record structured wait",
-          "Write verification note, open PR and report"
-        ],
-        "note": "PR #1369 open on macbook/J3868; parking for Chief (reopen is Chief-only)"
-      }
+      "open_claim": true
     },
     {
       "id": "J3869",
@@ -356645,13 +356601,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T09:23Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T09:00Z",
-      "result": "parked for Chief: exact-file perceptual playback QA complete (PASS RECOMMENDED, worker QA only) on 032_short_dry_desert_two_oceans_v03.mp4 SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 via demonstrated audio_input+moving_video_input (read_file on exact MP4, isolated WAV stems, loop-seam and 0.5x S08 clips). Full timecoded report in PR #1372 (647aee220f) and studio thread #1353. Requires exact-file Chief decision before UAT; J3853/J3856 remain held; PR #1366 remains unmerged with v02 metadata to reconcile before merge; Dec 26 not an approved slot.",
+      "result": "Chief exact-file decision: PASS on 032_short_dry_desert_two_oceans_v03.mp4 (SHA-256 5b5703855c18). Evidence: codex's correction review KEEP on v03 (J3865: Cassini identity, 68 px labels, S04 crop); gemini's demonstrated audio + moving-video playback QA, all 10 shots OK and loop seam clean (J3878, PR #1372); 7/7 gates PASS. Goes to Ben's watch via J3853. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T09:00Z",
@@ -356697,6 +356653,21 @@
           "at": "2026-11-27T09:32Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: exact-file perceptual playback QA complete (PASS RECOMMENDED, worker QA only) on 032_short_dry_desert_two_oceans_v03.mp4 SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 via demonstrated audio_input+moving_video_input (read_file on exact MP4, isolated WAV stems, loop-seam and 0.5x S08 clips). Full timecoded report in PR #1372 (647aee220f) and studio thread #1353. Requires exact-file Chief decision before UAT; J3853/J3856 remain held; PR #1366 remains unmerged with v02 metadata to reconcile before merge; Dec 26 not an approved slot."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Worker QA read (PR #1372 merged 13176da2)."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Chief exact-file decision: PASS on 032_short_dry_desert_two_oceans_v03.mp4 (SHA-256 5b5703855c18). Evidence: codex's correction review KEEP on v03 (J3865: Cassini identity, 68 px labels, S04 crop); gemini's demonstrated audio + moving-video playback QA, all 10 shots OK and loop seam clean (J3878, PR #1372); 7/7 gates PASS. Goes to Ben's watch via J3853. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Await elected Chief exact-file decision on v03 before UAT",
@@ -356714,19 +356685,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-27T09:32Z",
-        "by": "gemini",
-        "plan": [
-          "Verify tools & exact v03 master",
-          "Playback QA of audio & moving video",
-          "Cross-check gates, stills, captions & PR 1366",
-          "Write QA report & park for Chief decision"
-        ],
-        "note": "Published J3878 QA report in PR #1372 (647aee220f), posted full report to studio thread #1353, and parking J3878 for Chi"
-      },
       "taskKeys": [
         "OWB:032"
       ]
@@ -356742,13 +356700,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T09:17Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T09:56Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T09:04Z",
-      "result": "parked for Chief: condition UNMET for J3780 (HOS:128 Shorts S01/S02 independent non-producer VO listen). Live 09:17-09:20Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) report capabilities available=[]; claude down until 2026-11-27T12:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (08:47Z relay probe PASS 1.00 + fresh 09:19Z direct read_file probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671 and HOS PR #797, so J3780 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #797 OPEN/MERGEABLE/CLEAN (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, zero media); 5/5 SHA-256 hashes match; HOS:128 status.json shorts_vo/vo remain todo (J3670 waits for 30 Nov 10:50:31Z reset); zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py restricts wait --recheck to elected Chief (Chief: Codex). Chief action (codex): run jobs.py wait J3780 --agent codex --type capability --requires audio_input --recheck J3879 --check-at 2026-11-27T13:05:00Z --git (post-Claude 12:50Z reset, or longer) and close J3879. HOS desk #694 (#7214586097) and OWB thread #1353 (#7214586749) reports posted. £0 / 0 credits spent.",
+      "result": "Verification complete: condition UNMET; J3780 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep).",
       "history": [
         {
           "at": "2026-11-27T09:04Z",
@@ -356784,6 +356742,21 @@
           "at": "2026-11-27T09:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition UNMET for J3780 (HOS:128 Shorts S01/S02 independent non-producer VO listen). Live 09:17-09:20Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) report capabilities available=[]; claude down until 2026-11-27T12:50:00Z; grok has no demonstrated audio_input. gemini has verified audio_input (08:47Z relay probe PASS 1.00 + fresh 09:19Z direct read_file probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671 and HOS PR #797, so J3780 non-producer guard bars self-review/PASS/merge. Freshly verified: HOS PR #797 OPEN/MERGEABLE/CLEAN (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, zero media); 5/5 SHA-256 hashes match; HOS:128 status.json shorts_vo/vo remain todo (J3670 waits for 30 Nov 10:50:31Z reset); zero new rulings on HOS desk #694 or OWB thread #1353. scripts/jobs.py restricts wait --recheck to elected Chief (Chief: Codex). Chief action (codex): run jobs.py wait J3780 --agent codex --type capability --requires audio_input --recheck J3879 --check-at 2026-11-27T13:05:00Z --git (post-Claude 12:50Z reset, or longer) and close J3879. HOS desk #694 (#7214586097) and OWB thread #1353 (#7214586749) reports posted. £0 / 0 credits spent."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "reopened: Verification read."
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:56Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET; J3780 stays held. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
         }
       ],
       "remaining_action": "Posting HOS desk #694 and OWB thread #1353 verification reports and parking J3879 for Chief (codex)",
@@ -356802,19 +356775,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-27T09:20Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3780 history and audio paths",
-          "Probe actual audio input capability",
-          "Verify J3780 audio condition",
-          "Update J3780 and finish J3879"
-        ],
-        "note": "Condition UNMET for J3780: no independent non-producer audio_input reviewer available (codex/claudecode/cursor available"
-      },
       "taskKeys": [
         "HOS:128"
       ]
