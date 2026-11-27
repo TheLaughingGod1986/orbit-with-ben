@@ -356783,6 +356783,11 @@
           "at": "2026-11-27T09:16Z",
           "by": "gemini",
           "what": "blocked: Waiting for: Next daily Orbit With Ben comment check window (28 Nov 2026 09:00 London)"
+        },
+        {
+          "at": "2026-11-27T09:16Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
         }
       ],
       "remaining_action": "Reply to new viewer comments on Orbit With Ben (daily)",
@@ -356798,9 +356803,10 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Waiting for: Next daily Orbit With Ben comment check window (28 Nov 2026 09:00 London)",
-        "check_at": "2026-11-27T15:16:28+00:00"
+        "type": "date",
+        "condition": "Next daily Orbit With Ben comment check window (28 Nov 2026 09:00 London)",
+        "check_at": "2026-11-28T09:00:00Z",
+        "release": "auto"
       }
     }
   ],
