@@ -360071,10 +360071,10 @@
       "stage": "edit",
       "after": "J3902",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T21:31Z",
+      "eta": "2026-11-27T23:31Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
       "result": "",
@@ -360158,6 +360158,11 @@
           "at": "2026-11-27T19:55Z",
           "by": "claude",
           "what": "reopened: Condition met: J3922 delivered immutable v03 (538464b9); J3923 KEEP merged (#1412, 920d601); Chief PASS on v03 and PR #1399 merged (df709ca). Do now: register Ben's phone UAT watch for v03 with `jobs.py awaits` (the NAS v03 file, version v03) and finish. No upload or scheduling; never air before the 064 long is public on Wed 16 Dec 18:00 London. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T21:31Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Restore narration, complete independent review, then obtain Chief approval before phone watch",
@@ -360167,7 +360172,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-27T17:55Z"
+      "escalated_at": "2026-11-27T17:55Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T21:31Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3904",
