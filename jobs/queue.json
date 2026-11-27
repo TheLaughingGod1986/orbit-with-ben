@@ -352921,9 +352921,14 @@
           "at": "2026-11-27T01:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:11Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publishing the committed corrections after the data-export approval is resolved",
+      "remaining_action": "Reading J3704 hold history, PR 189 status, and thread for any authorization/publication update",
       "kind": "review",
       "recheck_of": "J3704",
       "mini_only": true,
@@ -352942,9 +352947,16 @@
         "of": 3,
         "at": "2026-11-27T01:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3704 hold and approval history",
+          "Check PR 189, local branch, and thread for resolution",
+          "Update J3704 wait or reopen and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     },
     {
       "id": "J3837",
