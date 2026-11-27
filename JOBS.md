@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3816 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3818 | mini | blocked | gemini | – | 064 thumbs · review · OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock | J3719 |
 | J3819 | mini | blocked | codex | – | chief · Chief: resolve 034 thumbs orphan-review |  |
-| J3821 | gemini | claimed | claudecode | 2026-11-27T02:35Z | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
+| J3821 | gemini | open (after J3820) | – | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |

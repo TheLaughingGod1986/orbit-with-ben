@@ -351735,10 +351735,10 @@
       "stage": "sources",
       "after": "J3820",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-27T00:35Z",
-      "eta": "2026-11-27T02:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-26T23:52Z",
       "result": "",
@@ -351802,6 +351802,11 @@
           "at": "2026-11-27T00:46Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Step 1 done: v05 sha256 81ddf978...a66ce, 37 blocks, 10322 chars (<=21000), SCRIPT.md 37/37 parity, 18 unchanged blocks byte-identical to v04. Step 2 running detached."
+        },
+        {
+          "at": "2026-11-27T00:46Z",
+          "by": "claudecode",
+          "what": "released: Gemini/agy claims check running detached: tmux session j3821-agy (agy -p, gemini-4-neon-high, --print-timeout 1200s, started 00:36Z). Prompt+inputs /tmp/j3821/work (PROMPT.md, changed_blocks.md = 19 changed v05 blocks with v04 originals). Output /tmp/j3821/agy_out.md, stderr /tmp/j3821/agy_err.log, exit code in /tmp/j3821/agy.done. Missing .done = still running, do not start a second copy. When done: check Gemini covers D01-D20 with verbatim quotes+URLs (do not rewrite its findings), write 02_Video-Projects/009_.../01_Script/CLAIMS_CHECK_v05.md from a clean worktree with the parity block (already verified: sha256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce, 37 blocks, 10322 spoken chars, SCRIPT.md 37/37 exact, v05 S11-S19/S21-S28/S37 byte-identical to v04 S18-S26/S28-S35/S46; check with python3 -I /tmp/j3821/parity.py <01_Script dir>), open the ww2 PR, then done. If agy exits non-zero or empty, rerun once. Step 1 of 4 done."
         }
       ],
       "remaining_action": "Gemini is checking the 20 changed lines against sources",
