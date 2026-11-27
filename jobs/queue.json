@@ -360000,13 +360000,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T14:43Z",
-      "eta": "2026-11-27T16:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:38Z",
-      "result": "",
+      "result": "parked for Chief: publication done, draft HOS PR 814 (codex/J3871 c8c3372e; diff checked, no private material; not merged; PR 811 still draft). J3871 must stay held on the J3874 loop-gate ruling, not reopened. Worker refused (Only the holder or elected Chief may update this hold). Run: jobs.py wait J3871 --agent <chief> --type dependency --condition 'Draft HOS PR 814 published; await J3874 loop-gate ruling (picture_qa terminal reuse / terminal_loop 22-27s vs HOS 16-19s); reopen only with a conforming unmodified edit or authorised tested contract' --check-at 2026-11-28T02:00Z --recheck J3911 --git, then finish J3911.",
       "history": [
         {
           "at": "2026-11-27T14:38Z",
@@ -360037,6 +360037,11 @@
           "at": "2026-11-27T14:45Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Pushed codex/J3871; draft HOS PR 814 opened, not merged. Recheck refused for a worker."
+        },
+        {
+          "at": "2026-11-27T14:45Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: publication done, draft HOS PR 814 (codex/J3871 c8c3372e; diff checked, no private material; not merged; PR 811 still draft). J3871 must stay held on the J3874 loop-gate ruling, not reopened. Worker refused (Only the holder or elected Chief may update this hold). Run: jobs.py wait J3871 --agent <chief> --type dependency --condition 'Draft HOS PR 814 published; await J3874 loop-gate ruling (picture_qa terminal reuse / terminal_loop 22-27s vs HOS 16-19s); reopen only with a conforming unmodified edit or authorised tested contract' --check-at 2026-11-28T02:00Z --recheck J3911 --git, then finish J3911."
         }
       ],
       "remaining_action": "Chief: record J3871 recheck (worker can't update the hold)",
