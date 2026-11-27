@@ -354004,16 +354004,21 @@
           "at": "2026-11-27T02:55Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Confirmed 4 exact cross-page duplicates at pos 41/43/44/46->50/51/52/53 displace 4 real HOS videos in the Oct 2–14 gap (public qOZgess30h0 + 3 private Shorts). All 4 confirmed on HOS via direct videos.list (76+4=80 total matching totalResults=80; 43+1=44 public matching channel statistics.videoCount=44). Root cause: upstream playlistItems.list boundary omission compounded by channel-audit.ts not cross-checking known repo IDs via direct videos.list."
+        },
+        {
+          "at": "2026-11-27T02:59Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Implemented audit-coverage.ts reconciliation in channel-audit.ts + 3 regression tests (31/31 vitest pass, tsc pass, eslint pass); verified live read-only audit now recovers all 4 omitted HOS IDs -> 80 videos (44 public = statistics.videoCount), 0 errors."
         }
       ],
-      "remaining_action": "Implementing targeted channel-audit known-ID direct-lookup reconciliation and regression tests in isolated worktree",
+      "remaining_action": "Running full check_all.sh, pushing branch, opening PR, and posting report",
       "kind": "assembly",
       "plain": "Find why a public Germs video is missing from the channel audit",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T02:55Z",
+        "at": "2026-11-27T02:59Z",
         "by": "gemini",
         "plan": [
           "Inspect J3844 context and channel-audit code",
@@ -354022,7 +354027,7 @@
           "Implement and test targeted fix in isolated worktree",
           "Publish PR, evidence, and thread report"
         ],
-        "note": "Confirmed 4 exact cross-page duplicates at pos 41/43/44/46->50/51/52/53 displace 4 real HOS videos in the Oct 2–14 gap ("
+        "note": "Implemented audit-coverage.ts reconciliation in channel-audit.ts + 3 regression tests (31/31 vitest pass, tsc pass, esli"
       }
     },
     {
