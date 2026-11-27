@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3941 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 | J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
 | J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
-| J3949 | mini | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3949 | mini | claimed | macbook-2 | 2026-11-27T20:54Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
