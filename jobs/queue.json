@@ -360641,9 +360641,14 @@
           "at": "2026-11-27T15:41Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified NAS v02 SHA-256 8b7a218c, v01 preserved b805c51d, 738 frames 24/1 CFR 1080x1920, -14.1 LUFS / -2.1 dBTP"
+        },
+        {
+          "at": "2026-11-27T15:46Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: CRITICAL DEFECT FOUND: VO stem & final MP4 are dead silent (-180 dBFS) at 7-10s and 12-30.75s (~22s missing VO) despite 7/7 automated gates passing; all 24 frames & 13-bed music gate verified"
         }
       ],
-      "remaining_action": "Re-running all 7 automated gates and canonical 13-bed MP3 music gate on NAS v02 master",
+      "remaining_action": "Auditing exact VO-slicing root cause and PR #1399 package before writing FIX REVIEW.md",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "plain": "Independently QA OWB 064 Short 1 Test A v02 (PR #1399) before Chief PASS and Ben UAT",
@@ -360656,9 +360661,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-27T15:41Z",
+        "at": "2026-11-27T15:46Z",
         "by": "gemini",
         "plan": [
           "Verify NAS master hashes and specs",
@@ -360668,7 +360673,7 @@
           "Commit REVIEW.md on clean PR branch",
           "Post report and route to elected Chief"
         ],
-        "note": "Verified NAS v02 SHA-256 8b7a218c, v01 preserved b805c51d, 738 frames 24/1 CFR 1080x1920, -14.1 LUFS / -2.1 dBTP"
+        "note": "CRITICAL DEFECT FOUND: VO stem & final MP4 are dead silent (-180 dBFS) at 7-10s and 12-30.75s (~22s missing VO) despite "
       },
       "taskKeys": [
         "OWB:064"
