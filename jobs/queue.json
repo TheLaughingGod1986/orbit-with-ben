@@ -363071,9 +363071,14 @@
           "at": "2026-11-27T17:22Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched."
+        },
+        {
+          "at": "2026-11-27T21:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T18:00:00Z"
         }
       ],
-      "remaining_action": "Publish the finished evidence through the prescribed review handoff",
+      "remaining_action": "Await the private records receipt from J3960",
       "due": "2026-11-27T23:00:00Z",
       "kind": "studio",
       "plain": "Check whether the Atlantic film needs another title or thumbnail change",
@@ -363093,9 +363098,9 @@
         "WW2:002"
       ],
       "hold": {
-        "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched.",
-        "check_at": "2026-11-27T23:22:32+00:00"
+        "type": "dependency",
+        "condition": "J3953 ruling: public publication not authorised. Await J3960 independent private-repository preservation and recorded receipt; evidence remains unchanged locally. Existing J3935 ruling and J3706 date hold stay in force.",
+        "check_at": "2026-11-28T18:00:00Z"
       }
     },
     {
