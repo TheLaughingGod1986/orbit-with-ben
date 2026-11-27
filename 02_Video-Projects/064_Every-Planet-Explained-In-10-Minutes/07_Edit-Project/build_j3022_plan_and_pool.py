@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """J3022 Build Package 3 of 4: Shot List, Cut Inputs, Provenance Pool & Gate Verification for OWB:064.
 
+Historical v01 generator: do not run for current assembly. SHOT_LIST_v02.md supersedes
+the opening/R09 recipe; J3835 corrects only R11/source attribution here.
+
 Reads exact locked Scribe timestamps (every_planet_explained_vo_v01/stt_raw.json), verified shelf media
 from 020/021/023/025/027/031/033/034, and official NASA Images API / Wikimedia PD plates in harvest_J3022_v01.
 Writes:
@@ -44,12 +47,12 @@ ASSETS = {
     # Venus (023/033 shelf + NASA API + Wikimedia CC BY 2.0)
     "PIA00271": (SL / "033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00271.jpg", "NASA/JPL", "Public Domain (NASA/JPL)", "Venus Global Sulfuric-Acid Cloud View (Mariner 10)", False, 1.0),
     "PIA23791": (HARV / "PIA23791.jpg", "NASA/JPL-Caltech", "Public Domain (NASA/JPL)", "Venus from Mariner 10", False, 1.0),
-    "PIA00233": (HARV / "PIA00233.jpg", "NASA/JPL", "Public Domain (NASA/JPL)", "Venus Magellan Radar 3-D Perspective View of Eistla Regio", False, 1.54),
+    "PIA00215": (Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/03_Reference-Material/J3835_radar_v01/PIA00215.jpg'), "NASA/JPL", "Public Domain (NASA/JPL)", "Venus Alpha Regio real overhead SAR", False, 1.0),
     "Venera13_surface": (HARV / "Venera13_surface.jpg", "Soviet Venera 13 / Wikimedia (CC BY 2.0)", "CC BY 2.0", "Surface of Venus panorama from Soviet Venera 13 (1982)", False, 1.95),
     "orbit_looks_back_earth_omni_v01_t0-5s": (ARC24 / "023_What-Happened-To-Venus/04_Generated-Clips/01_Raw/omni_v01/orbit_looks_back_earth_omni_v01_t0-5s.mp4", "OWB 023 approved shelf Omni clip", "Studio owned (023 shelf)", "Orbit near cloud-white Venus looking back toward Earth (023 verified Omni)", True, 1.50),
     # Earth (027 & 031 shelf)
     "svs_12312_epic_earth_timelapse": (SL / "031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/svs_moving_v01/originals/svs_12312_epic_earth_timelapse.mp4", "NASA/GSFC SVS 12312 / DSCOVR EPIC", "Public Domain (NASA)", "NASA DSCOVR EPIC rotating full-disk Earth timelapse (031 shelf)", True, 1.0),
-    "PIA18033": (SL / "033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18033.jpg", "NASA/Apollo 17", "Public Domain (NASA)", "Earth Blue Marble from Apollo 17 (033 shelf)", False, 1.0),
+    "PIA18033": (SL / "033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18033.jpg", "NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring", "Public Domain (NASA)", "Earth Suomi NPP Blue Marble 2012 (033 shelf)", False, 1.0),
     "Five_Minutes_in_Orbit": (SL / "027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Five_Minutes_in_Orbit.webm", "NASA/ISS", "Public Domain (NASA)", "ISS orbital sunset and Earth limb timelapse (027 shelf)", True, 1.0),
     "orbit_northpole_omni_v01": (SL / "027_What-If-Earth-Stopped-Spinning/04_Generated-Clips/01_Raw/omni_v01/orbit_northpole_omni_v01.mp4", "OWB 027 approved shelf Omni clip", "Studio owned (027 shelf)", "Orbit hovering over Arctic sea ice (027 verified Omni)", True, 1.50),
     "plate_031_r02a_iss_aurora_v01": (SL / "031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/nas_plates_v01/plate_031_r02a_iss_aurora_v01.mp4", "NASA/ISS", "Public Domain (NASA)", "ISS Earth aurora moving horizon plate (031 shelf)", True, 1.0),
@@ -206,13 +209,13 @@ def main() -> int:
         ("C02", None, None, "CARD", [("code_graphic_064_ch02_card_venus.mp4", True, 0.0)], "CHAPTER CARD 02 / 08 · VENUS — The Backwards Furnace (breath 0.60 s after S09)", 81.90, 82.20),
         ("R09", 10, 11, "NASA", [("PIA00271", False, None), ("PIA23791", False, None)], "Real Mariner 10 Venus sulfuric-acid clouds (023/033 shelf + API)", 82.20, 93.80),
         ("R10", 12, 14, "CODE", [("code_graphic_064_r12_venus_greenhouse.mp4", True, 0.0)], "DATA #2 + SCALE: 464 °C, 92 bars (930 m underwater), 96.5% CO2 · FACT #2: Hottest planetary surface · NUMBER OBJECT (Ch 2)", 93.80, 118.05),
-        ("R11", 15, 15, "NASA+CODE", [("PIA00233", False, None), ("code_graphic_064_r14_venus_spin.mp4", True, 0.0)], "Real Magellan Venus radar surface -> DATA #2b: 243-day backwards spin vs 225-day orbit (Sun rises west)", 118.05, 130.75),
+        ("R11", 15, 15, "NASA+CODE", [("PIA00215", False, None), ("code_graphic_064_r14_venus_spin.mp4", True, 0.0)], "Real Magellan Venus radar surface -> DATA #2b: 243-day backwards spin vs 225-day orbit (Sun rises west)", 118.05, 130.75),
         ("R13", 16, 17, "NASA", [("PIA23791", False, None), ("Venera13_surface", False, None)], "WHEN: 1978 (Pioneer Venus 100× D/H) & 1 Mar 1982 (Venera 13, 127 min vs 32 min, ~4× design) on timeline", 130.75, 154.80),
         ("R14", 18, 18, "OMNI", [("orbit_looks_back_earth_omni_v01_t0-5s", True, 0.0)], "ORBIT ACTS: Verified 023 shelf Omni clip (Orbit at Venus looking back at Earth)", 154.80, 157.90),
 
         # === CHAPTER 3: EARTH (158.36 - 251.24 s) ===
         ("C03", None, None, "CARD", [("code_graphic_064_ch03_card_earth.mp4", True, 0.0)], "CHAPTER CARD 03 / 08 · EARTH — The Shielded Ocean World (breath 0.60 s after S18)", 158.36, 158.72),
-        ("R15", 19, 21, "NASA", [("svs_12312_epic_earth_timelapse", True, 10.0), ("PIA18033", False, None)], "Real DSCOVR EPIC rotating Earth + Apollo 17 Blue Marble (031/033 shelf)", 158.72, 176.45),
+        ("R15", 19, 21, "NASA", [("svs_12312_epic_earth_timelapse", True, 10.0), ("PIA18033", False, None)], "Real DSCOVR EPIC rotating Earth + NASA/NOAA Suomi NPP Blue Marble 2012 (031/033 shelf)", 158.72, 176.45),
         ("R16", 22, 23, "CODE", [("code_graphic_064_r20_earth_spin_bulge.mp4", True, 0.0)], "DATA #3a + SCALE: 1,670 km/h equatorial spin (>4× Cyclone Olivia 408 km/h), 43 km bulge · NUMBER OBJECT (Ch 3)", 176.45, 199.35),
         ("R17", 24, 24, "OMNI+CODE", [("orbit_northpole_omni_v01", True, 0.0), ("code_graphic_064_r22_earth_core_flips.mp4", True, 0.0)], "ORBIT ACTS (027 shelf Omni) -> DATA #3b + WHEN: 3,000 km liquid-iron outer core · 183 reversals in 83 million years", 199.35, 217.50),
         ("R19", 25, 25, "NASA", [("Carl_Friedrich_Gauss_1840_by_Jensen", False, None), ("plate_031_r02a_iss_aurora_v01", True, 0.0)], "WHO #2: Carl Friedrich Gauss (1777–1855) — German mathematician (PD 1840 portrait) · WHEN: 1830s", 217.50, 226.85),

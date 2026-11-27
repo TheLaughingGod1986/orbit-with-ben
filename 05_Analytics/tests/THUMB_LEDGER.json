@@ -1816,23 +1816,23 @@
         "rule26"
       ],
       "result": null,
-      "note": "Proposed 3-way thumbnail-only Test & Compare for OWB:064 (pre-assembly; planned air Wed 16 Dec 2026 18:00 London, Ben UAT deadline Fri 11 Dec). Logged by J3719 packaging panel DECISION.md (2-of-2 consensus from codex.md J3716 + gemini.md J3717; cursor.md J3718 missing/cancelled after 24 h cutoff). All three v01 drafts (8b70c458, 898576f0, f9349d8f) failed panel review (PIA00271 simulated Magellan radar view mislabelled as Mariner 10 clouds, Neptune mispaired with Uranus -224°C on B, Rule 19 violated by 3-strip triptych on C, top-band violations on B/C). Codex rebuild J3817 populates exact J3719_v02 SHA-256 hashes; J3818 reviews before Chief PASS. Not armed; no Studio changes until after Ben UAT and upload.",
+      "note": "Proposed 3-way thumbnail-only Test & Compare for OWB:064 (pre-assembly; planned air Wed 16 Dec 2026 18:00 London, Ben UAT deadline Fri 11 Dec). Logged by J3719 packaging panel DECISION.md (2-of-2 consensus from codex.md J3716 + gemini.md J3717; cursor.md J3718 missing/cancelled after 24 h cutoff). Rebuilt as J3719_v02 under J3817 by gemini (fallback lane 2 on --kind thumb, £0 Pillow/verified NASA plates): replaced simulated PIA00271 with Mariner 10 PIA23791 right globe, replaced Neptune with Voyager 2 Uranus PIA18182 on B (sat 161.5), replaced 3-panel triptych on C with single uncropped Cassini Saturn PIA11141 + NASA/NOAA Suomi NPP Blue Marble 2012 Earth scale inset & pointer. All three PASS thumb_preview.py --score (sat 172.3 / 161.5 / 180.6; near-black 18.1% / 19.5% / 18.1%). Awaits J3818 exact-file QA and Chief PASS; not armed until after Ben UAT and upload. J3835 preserves exact pixels/hashes and corrects attribution; independent J3818 re-review required after J3829 FIX.",
       "a": {
-        "maker": "codex",
+        "maker": "gemini",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_A_extreme_worlds_v02.jpg",
-        "sha256": null,
+        "sha256": "bc1b60dbacf405e9ef2c2bf169f5442cea1e5312dd56ceade96560c73fb2e393",
         "text": "8 EXTREME WORLDS"
       },
       "b": {
-        "maker": "codex",
+        "maker": "gemini",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_B_venus_uranus_v02.jpg",
-        "sha256": null,
+        "sha256": "29ea71dab31ab13efa723d5257856324be02a91e96f1aaa47783f3a395b34c75",
         "text": "464°C / -224°C"
       },
       "c": {
-        "maker": "codex",
+        "maker": "gemini",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_C_real_nasa_saturn_v02.jpg",
-        "sha256": null,
+        "sha256": "4ec5544c4fd9a7e9338bb207be936c90ec2d0683eb307e45d3224aa7458903f1",
         "text": "REAL NASA PHOTOS"
       }
     }
