@@ -359350,13 +359350,13 @@
       "stage": "edit",
       "after": "J3902",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T14:54Z",
-      "eta": "2026-11-27T16:54Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "",
+      "result": "parked for Chief: PR #1399 (1faedeab31) open for OWB 064 Short 1 Test A v02 (8b7a218c73b1c790f722f4410e67e4fe04d7e06276e3d4a4bbcbceed38c38968); independent QA queued as J3918; awaiting QA KEEP + elected-Chief PASS and PR #1399 merge before Ben UAT watch registration (jobs.py awaits). Do NOT upload/air before 064 long is public Wed 16 Dec 18:00 London.",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -359407,6 +359407,11 @@
           "at": "2026-11-27T15:36Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Built v02 (8b7a218c...), verified 7/7 gates + canonical 13-bed MP3 music gate + CFR health + transition frames, pushed PR #1399 (1faedeab31)"
+        },
+        {
+          "at": "2026-11-27T15:36Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #1399 (1faedeab31) open for OWB 064 Short 1 Test A v02 (8b7a218c73b1c790f722f4410e67e4fe04d7e06276e3d4a4bbcbceed38c38968); independent QA queued as J3918; awaiting QA KEEP + elected-Chief PASS and PR #1399 merge before Ben UAT watch registration (jobs.py awaits). Do NOT upload/air before 064 long is public Wed 16 Dec 18:00 London."
         }
       ],
       "remaining_action": "Awaiting independent QA KEEP, elected-Chief PASS and PR #1399 merge before Ben UAT watch registration",
