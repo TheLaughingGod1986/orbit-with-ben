@@ -361633,13 +361633,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T17:10Z",
-      "eta": "2026-11-27T19:10Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T16:31Z",
-      "result": "",
+      "result": "KEEP: J3883 publication condition proven satisfied by merged PR1388 and matching approved REVIEW hash. Reopened parent with evidence; existing 064 thumbnail PASS restored. J3023 newer package FIX remains held for J3910 resolution and elected-Chief revised PR1390 merge; 2026-11-28T14:30Z retry unchanged. Review document local commit 57d23c33d1; automatic review rejected its push. Relay review-progress rejected unrelated active J3860 record; own queue steps recorded instead. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-27T16:31Z",
@@ -361700,6 +361700,11 @@
           "at": "2026-11-27T17:12Z",
           "by": "codex",
           "what": "step 3 of 3 done: KEEP ruling recorded on parent reopening; publication verified, thumbs restored done. J3023 newer package FIX retained with J3910/PR1390 dependency and 28 Nov 14:30Z retry. Closing verification then completed parent to respect one-claim limit. Review document retained locally at 57d23c33d1 after push rejection."
+        },
+        {
+          "at": "2026-11-27T17:12Z",
+          "by": "codex",
+          "what": "done: KEEP: J3883 publication condition proven satisfied by merged PR1388 and matching approved REVIEW hash. Reopened parent with evidence; existing 064 thumbnail PASS restored. J3023 newer package FIX remains held for J3910 resolution and elected-Chief revised PR1390 merge; 2026-11-28T14:30Z retry unchanged. Review document local commit 57d23c33d1; automatic review rejected its push. Relay review-progress rejected unrelated active J3860 record; own queue steps recorded instead. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Verification complete; record parent completion",
@@ -361730,7 +361735,8 @@
           "Record ruling and follow-up"
         ],
         "note": "KEEP ruling recorded on parent reopening; publication verified, thumbs restored done. J3023 newer package FIX retained w"
-      }
+      },
+      "done_ref": "a09c483f3e6b12732c9cb47e917bc84d955772d8"
     },
     {
       "id": "J3930",

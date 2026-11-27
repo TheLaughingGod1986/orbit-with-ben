@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926, J3929, J3883.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926, J3883.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -109,7 +109,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3926 | mini | open | – | – | WW2:009 script · for gemini · studio · Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR |  |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
-| J3929 | mini | claimed | codex | 2026-11-27T19:10Z | review · Verify condition for J3883 |  |
 | J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
 | J3931 | mini | open | – | – | review · Verify condition for J3760 |  |
 | J3932 | mini | claimed | macbook-2 | 2026-11-27T19:07Z | review · J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
@@ -117,6 +116,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3929 done: Verify condition for J3883 (KEEP: J3883 publication condition proven satisfied by merged PR1388 and matching approved REVIEW hash. Reopened parent with evidence; existing 064 thumbnail PASS restored. J3023 newer package FIX remains held for J3910 resolution and elected-Chief revised PR1390 merge; 2026-11-28T14:30Z retry unchanged. Review document local commit 57d23c33d1; automatic review rejected its push. Relay review-progress rejected unrelated active J3860 record; own queue steps recorded instead. No spend or YouTube changes.)
 - J3925 done: Verify condition for J3903 (Chief HOLD ruling recorded: J3903 condition unmet. Fresh NAS read has v01/v02 only; J3922 repair open, J3923 QA open after J3922, no KEEP or repaired-cut PASS; PR1399 OPEN/unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8. Original J3918 FIX stands. J3903 remains blocked with last_recheck J3925 and original 2026-11-28T16:00Z backstop restored. Follow-up is existing zero-spend J3922 immutable v03 repair then J3923 exact-file independent review, Chief ruling and merge before phone UAT. No media, upload, schedule, privacy, Buffer or spend changes.)
 - J3919 done: Package and upload WW2 004 long v04 (Mark 14 Torpedo: Why Perfect Hits Failed) Private, 2026-12-01T17:00Z (WW2:004 v04 uploaded Private as 54sAav3iMQw, publishAt 2026-12-01T17:00Z; en-GB captions serving; 3-way thumbnail Test & Compare A/B/C saved; end screen and playlist set; Studio and Data API read back. Records merged in ww2-channel PR #208. Claude, acting Chief.)
 - J3918 done: OWB 064 Short 1 (Test A opening v02): Independent QA review (PR #1399) (Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes.)
@@ -126,4 +126,3 @@ Recently finished:
 - J3911 done: Verify condition for J3871 (Verification complete: publication done (draft HOS PR 814); J3871 stays held on the J3874 loop-gate ruling. Claude, acting Chief, board audit 27 Nov 16:20Z.)
 - J3909 done: OWB 064: Repair vertical trailer and package after J3902 FIX (Repair delivered: PR #1393 open; PR #1390 updated to cea1494ff604cb5a07ed10b5368ab87398faea7e. Trailer v05 e57cd79a668d558e2ee451f31b85bb81b515d3169150484112b73bd2b57646ce, 8800139 bytes; exact 24/1 CFR/start PTS 0; 44 stills inspected; original AAC identical; full decode clean. Immutable hashes verified, provenance/credits/LF/category repaired. Final package dry run ok; 13 privacy checks pass; diff clean. Temporary worktree returned to main and removed; original checkout on main. J3910 independent recheck and Chief approval required; no PASS/merge/UAT/platform changes.)
 - J3908 done: Verify condition for J3859 (Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved.)
-- J3907 done: Verify condition for J3781 (Verification complete: condition UNMET; J3781 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.)
