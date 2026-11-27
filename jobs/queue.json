@@ -357606,9 +357606,14 @@
           "at": "2026-11-27T11:01Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3887 (Verify condition for J3780, HOS:128 Shorts S01/S02 VO non-producer listen); inspecting prior J3879 handling and live state"
+        },
+        {
+          "at": "2026-11-27T11:01Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected J3780/J3879 history, capabilities.json, HOS PR #797 (OPEN/MERGEABLE, 6/6 CI green, 0 comments), 5/5 SHA-256 hashes (all match), and HOS:128 status.json (unchanged)"
         }
       ],
-      "remaining_action": "Inspecting J3780 hold history, live Chief/worker capabilities, PR #797, NAS hashes, and desk threads",
+      "remaining_action": "Checking jobs.py wait permissions, recording session audio capability probe, and verifying HOS PR #797 and threads",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -357625,7 +357630,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-27T11:01Z",
         "by": "gemini",
@@ -357635,7 +357640,7 @@
           "Record session capabilities",
           "Park J3887 for Chief and post reports"
         ],
-        "note": "Claimed J3887 (Verify condition for J3780, HOS:128 Shorts S01/S02 VO non-producer listen); inspecting prior J3879 handli"
+        "note": "Inspected J3780/J3879 history, capabilities.json, HOS PR #797 (OPEN/MERGEABLE, 6/6 CI green, 0 comments), 5/5 SHA-256 ha"
       },
       "taskKeys": [
         "HOS:128"
