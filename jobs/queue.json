@@ -354914,24 +354914,28 @@
           "at": "2026-11-27T07:03Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Heartbeat: v02 dry build & gate run still executing; checking stage progress"
+        },
+        {
+          "at": "2026-11-27T07:08Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Running v02 dry build and seven gates",
+      "remaining_action": "Reading J3853 review, PR #1366, OWB rules, and inventorying existing 032 Titan moving footage and build scripts",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-27T07:03Z",
+        "at": "2026-11-27T07:08Z",
         "by": "gemini",
         "plan": [
-          "Inspect v01 and moving footage",
-          "Build v02 assembler fixes",
-          "Render v02 and run 7 gates",
-          "Copy verified pack to NAS and push PR",
-          "Post #99 report and park for Chief"
-        ],
-        "note": "Heartbeat: v02 dry build & gate run still executing; checking stage progress"
+          "Inspect review, PR #1366 and 032 assets",
+          "Build v02 graphic and motion/reframing edits",
+          "Render v02 master and run all seven gates",
+          "Verify NAS copy, stills, contact sheet and captions",
+          "Update PR #1366 and post review handback"
+        ]
       },
       "taskKeys": [
         "OWB:032"
