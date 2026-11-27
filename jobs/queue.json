@@ -363112,13 +363112,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-27T18:11Z",
-      "eta": "2026-11-27T20:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T18:10Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3943 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1409. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-27T18:10Z",
@@ -363139,6 +363139,11 @@
           "at": "2026-11-27T18:11Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:12Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3943 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1409. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit authorization for the blocked private-repository push, then publish the script lock",
