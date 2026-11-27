@@ -355087,10 +355087,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-27T08:38Z",
-      "eta": "2026-11-27T10:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:37Z",
       "result": "",
@@ -355109,6 +355109,11 @@
           "at": "2026-11-27T08:39Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T08:39Z",
+          "by": "claudecode",
+          "what": "released: Not done: this claudecode run is a cloud Linux session, not the Mini. /Volumes/MiniWork/scratch/J3853-chief-review does not exist here, no NAS mount, and codex/j3853-review is not on origin (git ls-remote). Nothing inspected, pushed or opened. Needs a run on the Mini itself (or Codex pushes the branch to origin as-is so any worker can inspect it). Merge stays with Chief either way."
         }
       ],
       "remaining_action": "Find the codex/j3853-review branch",
