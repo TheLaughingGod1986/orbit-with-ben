@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3882 | mini | blocked | macbook-2 | – | review · Verify condition for J3818 |  |
+| J3883 | mini | open | – | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
 
 Recently finished:
 

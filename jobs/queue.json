@@ -1,5 +1,5 @@
 {
-  "next_id": 3883,
+  "next_id": 3884,
   "jobs": [
     {
       "id": "J0001",
@@ -357139,6 +357139,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3883",
+      "title": "OWB 064: Integrate corrected packaging and release assembly only after formal review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3882 acting-Chief ruling: resolve the concrete OWB:064 integration gate; do not repeat an absent-Chief hold. Re-read chief_relay.py status before protected calls. Review the complete trusted-owner PR #1361 at 9ff96bd97b0d018d8a5825858a0d2ebc382fcce9 and fresh independent J3818 review in PR #1359 at b597831b6825d37f3202bd334ad0f097e35bcdfe, including exact NAS evidence and J3829 FIX. Record formal KEEP/FIX for the corrected package. If accepted, merge corrected records and the fresh review (PR #1359 includes #1361; avoid restoring the superseded pre-correction KEEP), reconcile/close superseded #1358 unmerged, and verify final main contents. Preserve T045 proposed/video null and locked VO. Explicitly carry into J3023: generate new v02 executable cut/pool inputs matching SHOT_LIST_v02 opening and R09 (remove PIA00271), render split Mercury graphics/progress strip, never run historical v01 generator, preserve PIA00215 R11 and corrected Suomi NPP attribution. Require all assembly gates before UAT. Reconcile J3818/J3022 completion only once their deliverables are verified; J3023 must remain dependent on completed J3022. If FIX, queue exact corrections with dependency; no generic six-hour Chief wait. Ben watch 11 Dec 18:00 and air 16 Dec 18:00 unchanged. No upload, schedule, test arming, paid generation or spend authorized. This integration task is the dependency named by J3882; do not wait on J3818 completion as that would create a cycle.",
+      "ref": "J3882",
+      "film": "064",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T10:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T10:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review corrected package and record the merge and assembly decision",
+      "due": "2026-11-27T16:10:00Z",
+      "kind": "chief",
+      "plain": "Review and integrate the corrected planet-film package so assembly can continue"
     }
   ],
   "focus": [
