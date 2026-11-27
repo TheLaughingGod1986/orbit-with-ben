@@ -355362,9 +355362,14 @@
           "at": "2026-11-27T07:34Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:35Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done: Claimed; reading J3115/J3855/J3861 history"
         }
       ],
-      "remaining_action": "Verify readiness: Await publication of the reviewed Pluto decision through J3861",
+      "remaining_action": "Verify J3861 publication of Pluto packaging ruling on origin/main",
       "kind": "review",
       "recheck_of": "J3115",
       "due": "2026-11-27T08:34:00+00:00",
@@ -355380,11 +355385,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T07:34Z",
+        "at": "2026-11-27T07:35Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify merge on origin/main",
+          "Check gates still valid",
+          "Record outcome on J3115"
+        ],
+        "note": "Claimed; reading J3115/J3855/J3861 history"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J3864",
