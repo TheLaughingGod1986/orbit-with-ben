@@ -360933,9 +360933,14 @@
           "at": "2026-11-27T17:29Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Programmatic diff confirms v03 differs from v02b solely by 'true' in Line 2; C1-C9 already verified in QUOTECHECK_v02; metrics verified (205 raw / 253 expanded chars, 17.30/18.55/19.62 s, mid 18.55 s <= 19.0 s, payoff 15.31 s / 82.5%); PR #1394 checks green."
+        },
+        {
+          "at": "2026-11-27T17:30Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Read live ElevenLabs balance via GET /v1/user/subscription (2026-11-27T17:30Z): 7,275 of 121,114 chars left, overage disabled, next reset 2026-11-30T10:50:31Z, TTS_PAUSE=False, lock=False; audited all 13 active/held VO jobs (every held long needs >=7,761 chars > 7,275)."
         }
       ],
-      "remaining_action": "Reading live ElevenLabs subscription balance and auditing existing credit holds across queue and repos",
+      "remaining_action": "Preparing final advisory review report and parking J3917 protected Chief lock/VO ruling",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -360946,9 +360951,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-27T17:29Z",
+        "at": "2026-11-27T17:30Z",
         "by": "gemini",
         "plan": [
           "Inspect J3916 PR #1394 and diff v03 vs v02b",
@@ -360956,7 +360961,7 @@
           "Read live ElevenLabs balance and credit holds",
           "Write advisory review and park Chief lock/VO ruling"
         ],
-        "note": "Programmatic diff confirms v03 differs from v02b solely by 'true' in Line 2; C1-C9 already verified in QUOTECHECK_v02; m"
+        "note": "Read live ElevenLabs balance via GET /v1/user/subscription (2026-11-27T17:30Z): 7,275 of 121,114 chars left, overage dis"
       },
       "taskKeys": [
         "OWB:064"
