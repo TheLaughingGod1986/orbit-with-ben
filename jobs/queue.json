@@ -363147,6 +363147,11 @@
           "at": "2026-11-27T18:29Z",
           "by": "relay",
           "what": "condition verification queued: J3944"
+        },
+        {
+          "at": "2026-11-27T18:30Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-27T22:30:00Z"
         }
       ],
       "remaining_action": "Awaiting Chief review and merge of PR #1411",
@@ -363177,10 +363182,12 @@
         "OWB:032"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T19:29:16+00:00",
-        "recheck_task": "J3944"
+        "type": "input",
+        "condition": "Chief review and merge of PR #1411 (head 1c65c383, autopsy T3cBBss1F60_48h.md + LEARNINGS Rule 38). Checked 2026-11-27 ~18:35Z: PR OPEN, mergedAt null, 0 reviews, 0 comments, no Chief note on thread. Predecessor J3940 is done.",
+        "check_at": "2026-11-27T22:30:00Z",
+        "last_recheck": "J3944",
+        "checked_at": "2026-11-27T18:30:40+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
