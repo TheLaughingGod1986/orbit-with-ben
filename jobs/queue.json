@@ -346926,10 +346926,10 @@
       "stage": "",
       "after": "J3415",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T09:05Z",
+      "eta": "2026-11-27T11:05Z",
       "created_by": "macbook",
       "created_at": "2026-11-26T03:17Z",
       "result": "",
@@ -346958,12 +346958,25 @@
           "at": "2026-11-27T09:04Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-27T09:00:00Z has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-27T09:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Scan Orbit With Ben Studio comments from the last 14 days, reply or draft per policy, log COMMENT_REPLIES.jsonl, and queue next day",
       "due": "2026-11-27T20:00:00Z",
       "kind": "studio",
-      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks"
+      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T09:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3770",
