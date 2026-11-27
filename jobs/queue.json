@@ -352050,9 +352050,14 @@
           "at": "2026-11-27T00:31Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:31Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inputs, approval history and current Chief authority checked; parent J3821 remains held."
         }
       ],
-      "remaining_action": "Chief records J3821 wait (worker may not record --recheck)",
+      "remaining_action": "Resolve the competing Operation Pedestal drafts and release its claims check",
       "kind": "review",
       "recheck_of": "J3821",
       "due": "2026-11-27T01:07:47+00:00",
@@ -352069,12 +352074,16 @@
         "WW2:009"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-27T00:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs and authority",
+          "Compare rewrites and rule",
+          "Record decision and release facts check"
+        ],
+        "note": "Inputs, approval history and current Chief authority checked; parent J3821 remains held."
       }
     },
     {
