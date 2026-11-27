@@ -300431,9 +300431,14 @@
           "at": "2026-11-27T19:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:17Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3310; verified B_v03 SHA-256 matches 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c; checking CDP 9223/9224 and J3308 PR #1410."
         }
       ],
-      "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T016 check on REXYxuLOBoI and arm T043",
+      "remaining_action": "Verify J3307/J3382, REXYxuLOBoI_B_v03.jpg hash, and fresh read-only Orbit With Ben Studio state",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval",
       "taskKeys": [
@@ -300441,11 +300446,17 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T19:16Z",
+        "of": 5,
+        "at": "2026-11-27T19:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify review, file hash and Studio state",
+          "Preserve finished T016 report",
+          "Arm T043 Test & Compare in Studio",
+          "Reload and verify Test running",
+          "Update THUMB_LEDGER.json and open PR"
+        ],
+        "note": "Claimed J3310; verified B_v03 SHA-256 matches 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c; checking"
       }
     },
     {
