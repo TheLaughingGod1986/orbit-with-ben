@@ -360733,9 +360733,14 @@
           "at": "2026-11-27T15:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T15:53Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "remaining_action": "Inspecting J3653/J3430 and verifying NAS master and thumbnail hashes",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360761,12 +360766,21 @@
       "urgent": 6,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T15:52Z",
+        "of": 6,
+        "at": "2026-11-27T15:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3653 and verify NAS master + thumbnails SHA-256",
+          "Build WW2 004 listing package (PACKAGE_MANIFEST.json)",
+          "Upload Private scheduled 2026-12-01T17:00Z via Studio 9223",
+          "Set captions, altered content, thumb A, and 3-way Test & Compare",
+          "Read back Private+scheduled and update status.json + UPLOADS",
+          "Push PR, report on thread, and hand off for Chief merge"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3920",
