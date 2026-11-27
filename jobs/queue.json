@@ -354599,15 +354599,20 @@
           "at": "2026-11-27T06:15Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Dry run passed 4/7 gates (cover/frame0/SFX/music PASS, 0/27 & 0/54 padded frames, AAC -14.1 LUFS / -2.1 dBTP); swapped S02 to contrasting PIA20016 equatorial-dunes orb (fixes cut1 scdet), swapped S04 from radar-seamed PIA17031 to PIA21434, moved PIA14922 to S08, aligned Teach graphic text verbatim to 'TENS OF KM DOWN', and made en-GB.srt cover all 65 words"
+        },
+        {
+          "at": "2026-11-27T06:20Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: All 7 gates PASS (rc=0; gate_shorts_open cut1=1.9s, 0/27 & 0/54 padded frames, AAC -14.10 LUFS / -2.10 dBTP, frame0/cover/SFX/music/polish/picture_qa PASS) and NAS SHA-256 verified: 07ef33e02198"
         }
       ],
-      "remaining_action": "Running final production assembly, all 7 automated gates, and SHA-256 verified NAS export",
+      "remaining_action": "Committing assembler script PR, posting #99 report with cut/contact-sheet/gate evidence, and blocking for Chief Short PASS",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T06:15Z",
+        "at": "2026-11-27T06:20Z",
         "by": "gemini",
         "plan": [
           "Select film & locked passage",
@@ -354616,7 +354621,7 @@
           "Run all ship & QA gates",
           "Commit, PR & post #99 report"
         ],
-        "note": "Dry run passed 4/7 gates (cover/frame0/SFX/music PASS, 0/27 & 0/54 padded frames, AAC -14.1 LUFS / -2.1 dBTP); swapped S"
+        "note": "All 7 gates PASS (rc=0; gate_shorts_open cut1=1.9s, 0/27 & 0/54 padded frames, AAC -14.10 LUFS / -2.10 dBTP, frame0/cove"
       },
       "taskKeys": [
         "OWB:032"
