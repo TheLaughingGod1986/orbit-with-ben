@@ -4,7 +4,40 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, complete-source rehearsal)
+## Current handoff — 27 November 2026
+
+The move is due now. Preserve J3012 at **3/4**. PR #1011 and the earlier preparation fixes are merged;
+the historical sections below are not outstanding approval requests. The production credential probe passed
+on 25 November (thread #7159250002), and the preceding-day notice was posted on 26 November (#7186248983).
+The official split streak is now 14 days. Do not repeat the credential probe or ask Ben for another move approval.
+
+Current execution evidence: `jobs/reviews/J3012/RUNTIME_STAGING_2026-11-27.md`.
+Both detached checks finished with exit 0: split zero blockers; future identity core/rules checks plus
+1,606 Python tests (six skips). Do not rerun these unchanged checks or wait on their already-complete processes.
+
+The verified private rehearsal is `rehearsal/j3012-20261127` at
+`eda81876dc28c11b6a0d7b6cb0281b801bfd00c9`, a parentless 2,669-file tree with zero address/key findings and
+no active workflow YAML. Source is Orbit `f5a2bd4fa734c73be9c681484cb21105ab0696d5`. The Mini runtime clone
+`~/YouTube/studio` is clean at this rehearsal; **never run its stale rehearsal queue as production**.
+Eight linted proposals now use that final runtime path and are stored privately at
+`/Volumes/MiniWork/scratch/J3012-runtime-proposals-1127/`. Reconcile current source hashes before installation.
+
+The MacBook is online but existing SSH is unavailable. J3885 stages both independent engine clones and verifies
+the launcher through the installed worker, without service changes. Read its evidence and coordinate the
+MacBook drain/install through that worker; do not enable remote login as a shortcut. The earlier inventory
+alone does not prove clone or launcher readiness.
+
+Next: finish J3885, reconcile loaded settings and remaining wrappers on both machines, then coordinate the
+drain and export a **new frozen queue** through the cutover order below. No service, active-engine marker,
+pause file, board deployment, production branch, default branch or live store has switched.
+
+After the engine passes relay/publish/tick/both-slot acceptance, the latest J3012 brief additionally requires
+moving the tick store and studio thread into private Studio, including HOS watch ticks. The older instruction
+below to retain the public stores applies only during the first engine cutover. Preserve existing approvals,
+test an explicitly migration-only tick on every channel, and only then tell Ben he can remove the two public
+repositories from the board token. Do not narrow that access before the private-store round trips work.
+
+## Historical preparation (20 November, complete-source rehearsal)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
