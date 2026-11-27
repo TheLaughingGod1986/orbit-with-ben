@@ -1,5 +1,5 @@
 {
-  "next_id": 3832,
+  "next_id": 3833,
   "jobs": [
     {
       "id": "J0001",
@@ -352525,6 +352525,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3832",
+      "title": "WW2 009: correct v06 after Chief v05 review",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "J3822 acting-Chief review: v05 is NOT LOCKED. Follow 01_Script/VIEWER_TEST_v05.md on main once its review PR lands. Create NARRATION_v06 and matching SCRIPT.md from exact v05 SHA256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce, preserving older versions. Required fixes: (1) remove S31 sentence Ledbury was one of them; do not substitute another flank assignment; preserve supported general two-destroyer arrangement and broad rescue credit. (2) Cut S04 June relief sentence (13 words) to move the actual convoy action comfortably before 1:00 at 140 wpm, including pauses; do not count the word Under as action. Preserve promise <=0:45. (3) S10 retain either survivor or fatality total, not adjacent tallies; S35 remove the numeric warship-loss inventory and retain separated merchant-loss comparison and human cost; S36 retain fuel total as the key figure, omit the additional cargo tonnage, preserve convoy-wide attribution and aviation-fuel caveat. (4) Separate S32 another-night passage from RAF cover so it does not imply night fighter protection. No new historical claims. Produce delta list, exact hash, SCRIPT parity, <=21000 spoken chars and 300/1200-word boundary/timing validation. Update status as review, not locked. Keep current title and HELD AFLOAT packaging. No VO, spend or upload. Independent Gemini check follows, then Chief lock; deadline 30 Nov 18:00 UTC. Ben watch 9 Dec; air 12 Dec 17:00 London. J3581/J3582 holds unchanged, only one Short under rule 1; do not authorize the legacy second Short. VO prohibited before BOTH lock and 2026-11-30T10:50:00Z.\n",
+      "ref": "ww2-channel#198",
+      "film": "WW2:009",
+      "stage": "script",
+      "after": "J3822",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T00:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T00:53Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correcting the towing claim, opening timing and crowded totals",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "script",
+      "plain": "Fix the remaining towing claim and crowded numbers in the Operation Pedestal script"
     }
   ],
   "focus": [
