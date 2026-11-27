@@ -317,4 +317,35 @@ class PreparationBoundaries(FixtureBase):
         self.assertFalse(Path(plan['marker']).exists())
         self.assertEqual((output/'plan.json').stat().st_mode & 0o777,0o600)
 
+class DescendantBoundaries(FixtureBase):
+    def test_detached_descendant_identity_is_retained(self):
+        rows=[{'pid':987003,'ppid':987001,'pgid':987003,'start':'child','command':'sleep 10'},
+              {'pid':987004,'ppid':987003,'pgid':987004,'start':'grandchild','command':'sleep 10'}]
+        found=m.descendants(self.plan['owners'],rows)
+        self.assertEqual({p['pid'] for p in found},{987003,987004})
+        self.plan['owners'].extend(found)
+        self.io.rows=[dict(rows[1],ppid=1)]
+        with self.assertRaisesRegex(m.Refused,'PID'): self.execute()
+
+    def test_unobserved_job_path_process_blocks(self):
+        self.io.rows=[{'pid':1234,'ppid':1,'pgid':1234,'start':'orphan',
+                      'command':'ffmpeg -i /Volumes/data/studio-live/film/input.mp4 output.mp4'}]
+        with self.assertRaisesRegex(m.Refused,'child'): self.execute()
+
+class SupervisorBoundaries(FixtureBase):
+    def test_supervisor_excludes_itself_and_records_bounded_timeout(self):
+        self.io.rows=[{'pid':123,'ppid':987001,'pgid':123,'start':'supervisor','command':'python helper'},
+                      {'pid':987001,'ppid':1,'pgid':987001,'start':'owner','command':'codex'}]
+        self.io.comments=lambda p: []
+        plan_path=self.root/'plan.json'; plan_path.write_bytes(m.canonical(self.plan))
+        now=[time.time()]
+        def sleep(seconds): now[0]=self.plan['deadline']+1
+        with patch.object(m,'System',return_value=self.io),patch.object(m.os,'getpid',return_value=123),patch.object(m.os,'getpgrp',return_value=123),patch.object(m.os,'getsid',return_value=123),patch.object(m.time,'time',side_effect=lambda:now[0]),patch.object(m.time,'sleep',side_effect=sleep):
+            with self.assertRaisesRegex(m.Refused,'deadline expired'): m.supervise(plan_path,m.digest(plan_path.read_bytes()))
+        result=json.loads((self.root/'result.json').read_bytes())
+        self.assertEqual(result['status'],'stopped-paused')
+        self.assertEqual(result['reason'],'deadline expired')
+        self.assertFalse(list(self.root.glob('descendants-*')))
+        self.assertNotIn('replace',self.io.calls)
+
 if __name__=='__main__': unittest.main()

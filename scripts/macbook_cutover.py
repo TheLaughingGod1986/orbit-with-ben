@@ -109,6 +109,18 @@ def validate_activation(c, plan, plan_hash, now):
 def process_identity(row):
     return {key: row[key] for key in ("pid", "pgid", "start")}
 
+def descendants(owners, processes):
+    """Conservatively retain every observed descendant identity, even if detached."""
+    known = {o["pid"] for o in owners}
+    found = []
+    while True:
+        batch = [p for p in processes if p["pid"] not in known and p.get("ppid") in known]
+        if not batch:
+            return found
+        found.extend(process_identity(p) for p in batch)
+        known.update(p["pid"] for p in batch)
+
+
 def drained(plan, jobs, processes, supervisor):
     coord = next((j for j in jobs if j.get("id") == plan["job"]), {})
     require(coord.get("status") in TERMINAL, "coordinator is not terminal")
@@ -118,12 +130,14 @@ def drained(plan, jobs, processes, supervisor):
         # A reused PID is ambiguous, never interpreted as proof of exit.
         require(not any(p["pid"] == owner["pid"] for p in processes), "owner PID remains or reused")
         require(not any(p["pgid"] == owner["pgid"] for p in processes), "owner process group remains")
+    require(not descendants(plan["owners"], processes), "owner descendant remains")
     for p in processes:
         if p["pid"] == supervisor:
             continue
         command = p["command"]
         binary = Path(command.split()[0]).name if command.split() else ""
-        require("macbook_worker.py" not in command and binary not in
+        require("macbook_worker.py" not in command
+                and "/_desk/worker/" not in command and "/studio-live/" not in command and binary not in
                 {"codex", "claude", "agy", "agent", "caffeinate"}
                 and not re.search(r"(?:^|[/\s])(?:codex|claude|agy|agent)(?:[/\s]|$)", command), "worker or agent child remains")
 
@@ -144,11 +158,11 @@ class System:
 
     def processes(self):
         rows = []
-        for line in self.run(["ps", "-axo", "pid=,pgid=,lstart=,command="]).decode().splitlines():
-            parts = line.split(None, 7)
-            require(len(parts) == 8, "incomplete process table")
-            rows.append({"pid": int(parts[0]), "pgid": int(parts[1]),
-                         "start": " ".join(parts[2:7]), "command": parts[7]})
+        for line in self.run(["ps", "-axo", "pid=,ppid=,pgid=,lstart=,command="]).decode().splitlines():
+            parts = line.split(None, 8)
+            require(len(parts) == 9, "incomplete process table")
+            rows.append({"pid": int(parts[0]), "ppid": int(parts[1]), "pgid": int(parts[2]),
+                         "start": " ".join(parts[3:8]), "command": parts[8]})
         require(bool(rows), "empty process table")
         return rows
 
@@ -302,6 +316,15 @@ def supervise(plan_path, expected):
         activation = None
         while time.time() < plan["deadline"]:
             require(not (directory / "cancel").exists(), "cancelled locally")
+            # Keep identities of detached descendants observed while owners are
+            # still alive; group exit alone must not lose a child that called setsid.
+            census = io.processes()
+            own = next(p for p in census if p["pid"] == os.getpid())
+            ignored = {os.getpid()} | {p["pid"] for p in descendants([process_identity(own)], census)}
+            observed = descendants(plan["owners"], [p for p in census if p["pid"] not in ignored])
+            if observed:
+                plan["owners"].extend(observed)
+                private_write(directory / ("descendants-" + uuid.uuid4().hex + ".json"), canonical(observed))
             comments = io.comments(plan)
             prefix = f"[Chief] MACBOOK-CUTOVER J3892 coordinator={plan['job']} {plan['nonce']} "
             cancels = [c for c in comments if c.get("body") == f"[Chief] MACBOOK-CANCEL J3892 coordinator={plan['job']} {plan['nonce']}"
@@ -320,7 +343,7 @@ def supervise(plan_path, expected):
                         preflight(plan, io, activation)
                 except Refused as e:
                     if str(e) not in {"slot lock held", "coordinator is not terminal", "MacBook claim remains",
-                                      "owner PID remains or reused", "owner process group remains", "worker or agent child remains"}:
+                                      "owner PID remains or reused", "owner process group remains", "worker or agent child remains", "owner descendant remains"}:
                         raise
                 else:
                     attempt = directory / ("attempt-" + uuid.uuid4().hex)
@@ -365,6 +388,7 @@ def prepare(config_path, out, io):
     processes = io.processes()
     plan["owners"] = [process_identity(next(p for p in processes if p["pid"] == pid)) for pid in plan.pop("owner_pids")]
     require(len({o["pid"] for o in plan["owners"]}) >= 2, "record agent and owning worker identities")
+    plan["owners"].extend(descendants(plan["owners"], processes))
     installed = Path(plan["installed"]).read_bytes()
     loaded = io.loaded()
     loaded_matches(loaded.decode(), installed)
