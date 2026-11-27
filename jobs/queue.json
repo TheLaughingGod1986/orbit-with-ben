@@ -361275,16 +361275,21 @@
           "at": "2026-11-27T17:01Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Created _build_064_short01_testA_v03.py with atrim+asetpts audio fix, v02 video stream-copy equivalence check, speech-coverage regression check, and local faster-whisper 71-word verification"
+        },
+        {
+          "at": "2026-11-27T17:07Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Audio rebuild, v02-FAIL/v03-PASS speech-coverage regression, v02 video stream-copy equivalence, and playback health all succeeded; passing 16 kHz numpy WAV to faster-whisper to complete fresh ASR + NAS gates"
         }
       ],
-      "remaining_action": "Running _build_064_short01_testA_v03.py to generate immutable v03, verify regression & fresh ASR, and run NAS gates",
+      "remaining_action": "Re-running v03 builder after fixing faster-whisper float32 numpy input bypass for PyAV",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-11-27T17:01Z",
+        "at": "2026-11-27T17:07Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361294,7 +361299,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Created _build_064_short01_testA_v03.py with atrim+asetpts audio fix, v02 video stream-copy equivalence check, speech-co"
+        "note": "Audio rebuild, v02-FAIL/v03-PASS speech-coverage regression, v02 video stream-copy equivalence, and playback health all "
       },
       "taskKeys": [
         "OWB:064"
