@@ -355796,9 +355796,14 @@
           "at": "2026-11-27T14:07Z",
           "by": "relay",
           "what": "condition verification queued: J3908"
+        },
+        {
+          "at": "2026-11-27T14:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T20:15:00Z"
         }
       ],
-      "remaining_action": "Reopen J3859 for the rules review once J3858 is done and the 48h row is in READS.md",
+      "remaining_action": "After J3858 imports the matching Studio numbers, verify them and release the Atlantic rules review",
       "due": "2026-11-27T05:00:12Z",
       "kind": "review",
       "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
@@ -355812,9 +355817,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md",
-        "check_at": "2026-11-27T15:07:27+00:00",
-        "recheck_task": "J3908"
+        "condition": "J3858 must import the dated qfc6EBStOfo 48h Studio read for 2026-11-24 through 2026-11-25 Pacific. Chief verification J3908 found impressions/CTR pending, no video entry in studio_read.json and no matching dated Studio read; J3858 remains held for its recorded Field Order History sign-in requirement.",
+        "check_at": "2026-11-27T20:15:00Z",
+        "last_recheck": "J3908",
+        "checked_at": "2026-11-27T14:22:38+00:00",
+        "checked_by": "codex"
       }
     },
     {
