@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3901 | mini | blocked | macbook | – | review · Verify condition for J3834 |  |
 | J3902 | mini | open | – | – | 064 edit · qa · OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) | J3023 |
+| J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 
 Recently finished:
 

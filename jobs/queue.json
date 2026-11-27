@@ -1,5 +1,5 @@
 {
-  "next_id": 3903,
+  "next_id": 3904,
   "jobs": [
     {
       "id": "J0001",
@@ -359202,6 +359202,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3903",
+      "title": "OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Linked companion Short 1 of 2 for OWB:064 (Every Planet Explained in 12 Minutes (Mercury to Neptune), planned air Wed 16 Dec 2026 18:00 London). Test A Opening Short per studio/RULES.md Lesson 5 (reframed full-bleed 9:16 CFR 24 fps from locked master v03 0:00-0:32.85 Mercury 430°C polar water ice opening through Colombo 1965; £0 cash, 0 ElevenLabs chars — do not expand the 8,000-char long-VO scope, 0 Flow/Vertex credits). Follow 10_Shorts/README.md and studio/RULES.md: full-bleed 9:16 cover crop (zero blurred bars/padding), frame-0 moving Mercury + 2-4 word hook caption (white + #FFE000), exact promoted long title 'Every Planet Explained in 12 Minutes (Mercury to Neptune)' at 9-14 s, music full runtime, loop ending, gate_shorts_open.py check PASS, Related video = 064 long once public. Must NOT upload or air before 064 long is public on Wed 16 Dec 18:00 London. Submit for QA and Ben UAT before scheduling.",
+      "ref": "J3023",
+      "film": "064",
+      "stage": "edit",
+      "after": "J3902",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T13:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T13:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reframe locked OWB:064 master v03 opening (0:00-0:32.85) to full-bleed 9:16 Test A Short, run gate_shorts_open.py, prepare upload package",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open"
     }
   ],
   "focus": [
