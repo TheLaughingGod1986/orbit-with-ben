@@ -356867,15 +356867,20 @@
           "at": "2026-11-27T09:48Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Studio fixes executed: f_-BsKZf8X0 Paid promotion=No saved & reload-verified; YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg pinned (perform_comment_action HTTP 200 STATUS_SUCCEEDED / RENDERING_PRIORITY_PINNED_COMMENT; Studio get_comments reload quirk verified identical on ETynHpIYLeY & _C92tIJCk8A)"
+        },
+        {
+          "at": "2026-11-27T09:55Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Post-Studio channel:audit PASS (80 videos, 0 errors); check_all.sh 008 ALL CHECKS PASS; JSON & diff checks PASS on both HOS and OWB worktrees"
         }
       ],
-      "remaining_action": "Running post-Studio channel:audit and API read-back",
+      "remaining_action": "Pushing HOS and OWB records PRs and posting HOS desk report",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T09:48Z",
+        "at": "2026-11-27T09:55Z",
         "by": "gemini",
         "plan": [
           "Read audit, lint 008 & inspect state",
@@ -356884,7 +356889,7 @@
           "Reconcile open-library & OWB UPLOADS.json",
           "Run channel:audit, update records, open PRs & report"
         ],
-        "note": "Studio fixes executed: f_-BsKZf8X0 Paid promotion=No saved & reload-verified; YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4Aa"
+        "note": "Post-Studio channel:audit PASS (80 videos, 0 errors); check_all.sh 008 ALL CHECKS PASS; JSON & diff checks PASS on both "
       },
       "taskKeys": [
         "HOS:008"
