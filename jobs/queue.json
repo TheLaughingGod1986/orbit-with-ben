@@ -357809,16 +357809,33 @@
           "at": "2026-11-27T17:11Z",
           "by": "codex",
           "what": "reopened: J3929 Chief ruling: publication condition satisfied. Trusted-owner PR1388 merged a09c483f3e; J3898 complete; main REVIEW SHA256 c92dfd94 matches approved 034d41fbc5; J3022/J3818 done and J3023 after J3022/full handoff preserved. Closing historical integration only; newer J3023 package FIX hold and J3910 review unchanged."
+        },
+        {
+          "at": "2026-11-27T17:12Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J3929 verified PR1388 publication and main reconciliation; J3022/J3818 done, J3023 full handoff retained. Newer package FIX hold remains untouched."
         }
       ],
-      "remaining_action": "Publishing verified completion records and the assembly handoff",
+      "remaining_action": "Record completed integration",
       "due": "2026-11-27T16:10:00Z",
       "kind": "chief",
       "plain": "Review and integrate the corrected planet-film package so assembly can continue",
       "taskKeys": [
         "OWB:064"
       ],
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-27T17:12Z",
+        "by": "codex",
+        "plan": [
+          "Review corrected package and evidence",
+          "Record ruling and integrate accepted records",
+          "Verify main and reconcile assembly handoff"
+        ],
+        "note": "J3929 verified PR1388 publication and main reconciliation; J3022/J3818 done, J3023 full handoff retained. Newer package "
+      }
     },
     {
       "id": "J3884",
