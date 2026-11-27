@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926, J3929.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926, J3929, J3883.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
