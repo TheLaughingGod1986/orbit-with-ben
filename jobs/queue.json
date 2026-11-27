@@ -360831,9 +360831,14 @@
           "at": "2026-11-27T17:22Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T17:24Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J3914 REVIEW.md, v02 script/plan/quotecheck on PR #1394 (ca9429fd55), and verified exact metric formula (v03: 205 raw chars, 35 written / 41 expanded words, 253 expanded chars, 17.30 / 18.55 / 19.62 s)."
         }
       ],
-      "remaining_action": "Inspect PR #1394 branch and read v02 script, plan, and quote check",
+      "remaining_action": "Write 064_short02_venus_vs_uranus_script_v03.md with restored 'true' qualifier and recomputed metrics",
       "kind": "script",
       "rerouted_from": {
         "needs": "any",
@@ -360844,16 +360849,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T17:22Z",
+        "at": "2026-11-27T17:24Z",
         "by": "gemini",
         "plan": [
           "Inspect PR branch & v02 files",
           "Write script v03 with 'true' qualifier & recomputed timings",
           "Verify diff, counts & constraints",
           "Commit, push PR #1394 & post report"
-        ]
+        ],
+        "note": "Read J3914 REVIEW.md, v02 script/plan/quotecheck on PR #1394 (ca9429fd55), and verified exact metric formula (v03: 205 r"
       },
       "taskKeys": [
         "OWB:064"
