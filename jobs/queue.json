@@ -360246,13 +360246,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T14:59Z",
-      "eta": "2026-11-27T16:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T14:56Z",
-      "result": "",
+      "result": "PR #1394 head 567850e9aa: script v02 (Venus surface vs Uranus atmospheric minimum; winter and 'Closer in' cause wording removed) plus a 16-19 s variant v02b; CLAIMS_v02 with 9 direct-URL quote rows (Gemini not run yet); plan v02 withdraws every PASS/retention claim and cites the duration rule (gate_shorts_open.py:113 16-19 s warn vs J3904 22-27 s). Provenance: R03/R06 are Veo 3.1 Fast CGI (J2332 generation.json), NOT Keck; R05 is a graded PIA01488 still push-in; R01/R02/R08 files not found at their v01 paths; weic2332a is CC BY, PIA23791 is JAXA-credited. Nothing locked, no spend, no YouTube changes. Next: J3914 review.",
       "history": [
         {
           "at": "2026-11-27T14:56Z",
@@ -360278,6 +360278,11 @@
           "at": "2026-11-27T15:01Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Read PR #1394 (c089fb3ffa), J3912 review 42e48a4d90 and rules: gate_shorts_open.py:113 + RULES.md:189 say new Short masters target 16.0-19.0 s (Ben 19 Nov); J3904 brief says 22-27 s"
+        },
+        {
+          "at": "2026-11-27T15:04Z",
+          "by": "claudecode",
+          "what": "done: PR #1394 head 567850e9aa: script v02 (Venus surface vs Uranus atmospheric minimum; winter and 'Closer in' cause wording removed) plus a 16-19 s variant v02b; CLAIMS_v02 with 9 direct-URL quote rows (Gemini not run yet); plan v02 withdraws every PASS/retention claim and cites the duration rule (gate_shorts_open.py:113 16-19 s warn vs J3904 22-27 s). Provenance: R03/R06 are Veo 3.1 Fast CGI (J2332 generation.json), NOT Keck; R05 is a graded PIA01488 still push-in; R01/R02/R08 files not found at their v01 paths; weic2332a is CC BY, PIA23791 is JAXA-credited. Nothing locked, no spend, no YouTube changes. Next: J3914 review."
         }
       ],
       "remaining_action": "Writing v02 narration that separates Venus's surface from Uranus's atmospheric minimum",
@@ -360309,7 +360314,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "567850e9aa"
     },
     {
       "id": "J3914",
