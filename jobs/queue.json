@@ -363432,10 +363432,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T18:31Z",
+      "eta": "2026-11-27T18:51Z",
       "created_by": "refill",
       "created_at": "2026-11-27T18:30Z",
       "result": "",
@@ -363444,13 +363444,26 @@
           "at": "2026-11-27T18:30Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T18:31Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
       "due": "2026-11-27T20:30:00Z",
       "kind": "studio",
       "launch": "ZCnSldSJzME@6",
-      "plain": "Check how \"WW2 U-Boats: Why They Could Not Stay Underwater\" is doing 6 hours after it went live"
+      "plain": "Check how \"WW2 U-Boats: Why They Could Not Stay Underwater\" is doing 6 hours after it went live",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T18:31Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
