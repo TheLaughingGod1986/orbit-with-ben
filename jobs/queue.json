@@ -355109,6 +355109,11 @@
           "at": "2026-11-27T09:01Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
+        },
+        {
+          "at": "2026-11-27T09:34Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Waiting for the corrected Titan Short playback review in J3878",
@@ -355135,7 +355140,8 @@
         "type": "dependency",
         "condition": "J3865 correction review accepts v03 Cassini identity, readable teaching labels and preserved crop only. J3878 exact-file audio/moving-video QA and subsequent Chief ruling must finish before UAT. PR 1366 remains unmerged.",
         "check_at": "2026-11-28T06:45:00Z"
-      }
+      },
+      "escalated_at": "2026-11-27T09:34Z"
     },
     {
       "id": "J3857",
