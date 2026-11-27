@@ -359946,9 +359946,14 @@
           "at": "2026-11-27T14:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:41Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3910 and starting independent recheck of OWB:064 trailer and package corrections"
         }
       ],
-      "remaining_action": "Verify repaired trailer and package, then return exact evidence for Chief approval",
+      "remaining_action": "Inspecting PR 1390 diff, PR 1391 J3902 review, and J3909 repair evidence",
       "due": "2026-12-09T18:00:00Z",
       "kind": "qa",
       "plain": "Check the repaired every-planet trailer and credits before approval",
@@ -359962,12 +359967,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T14:40Z",
+        "of": 6,
+        "at": "2026-11-27T14:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR 1390, PR 1391, and J3909 repair evidence",
+          "Verify NAS hashes, master v03, and trailer technicals",
+          "Inspect all vertical trailer cut and boundary stills",
+          "Verify callouts, provenance, credits, LF, and category 28",
+          "Run independent package dry-run and diff checks",
+          "Write J3910 REVIEW.md, open PR, and hand off to Chief"
+        ],
+        "note": "Claimed J3910 and starting independent recheck of OWB:064 trailer and package corrections"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3911",
