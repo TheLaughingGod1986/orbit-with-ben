@@ -360356,9 +360356,14 @@
           "at": "2026-11-27T15:07Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T15:07Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Verify revised claims and picture evidence, then decide script lock and voice allowance",
+      "remaining_action": "Publishing J3912 ruling commit",
       "due": "2026-11-28T14:00:00Z",
       "kind": "review",
       "plain": "Check the revised Venus and Uranus Short before approving its narration",
@@ -360372,12 +360377,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-27T15:07Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Publish J3912 ruling",
+          "Read revised script",
+          "Gemini claim check",
+          "Direct quote check",
+          "Record ruling"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3915",
