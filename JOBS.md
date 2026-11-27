@@ -106,13 +106,24 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
-| J3940 | mini | claimed | macbook-2 | 2026-11-27T18:25Z | studio · First-day check at 48 h: "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 | J3941 | mini | open (after J3940) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 | J3942 | any | open | – | – | review · Verify condition for J3780 |  |
 | J3943 | any | open | – | – | review · Verify condition for J3834 |  |
 
 Recently finished:
 
+- J3940 done: First-day check at 48 h: "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) (PR #1408 (branch macbook/J3940; read-only Studio check via CDP 9223, no faults, £0).
+
+"What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) · Orbit With Ben · long · went live Wed 25 Nov 18:00 London
+At 48 h: views 5 · impressions 15 · click rate 0.0% · average viewed 4.0%
+Usual for this channel: click rate 2.2%, average viewed 14.5%
+
+Verdict: USUAL
+  - 5 views at 48 h; the last 3 checked at the same age had 8 (median).
+  - By the next morning it had 4 views; the 8 before it had 2 (median).
+
+Do now
+  - Nothing to fix.)
 - J3939 done: First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) (PR #1405 (macbook/J3939, commit c415dfe73; 0 faults: Public, Shorts tab, Restrictions empty, not Made for Kids, no age restriction, HD done, Related c5AdqQsnnys, title+description exact manifest match; Studio typical range 20-210 so --typical omitted; no Shown in feed card so --shown omitted; 48 engaged views, 1 like; read-only, £0).
 
 "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) · Orbit With Ben · Short · went live Fri 27 Nov 11:30 London
@@ -158,4 +169,3 @@ Acting Chief codex resolved the BEHIND escalation: no faults found, HD processin
 - J3926 done: Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR (Pushed d734610 (codex/J3834-v06-lock) from clean worktree /Volumes/MiniWork/scratch/J3834-review to private TheLaughingGod1986/ww2-channel after verifying channel_check.py PASS and full 5-file diff privacy grep clean (zero emails/tokens/keys/secrets; only benign 'chapter-card' match). Opened PR #213 (https://github.com/TheLaughingGod1986/ww2-channel/pull/213, state OPEN, MERGEABLE, head d734610b506d06f3fde9c5109a3a5ce01d1592ac, titled 'WW2 009: lock exact v06 after Chief viewer review (J3834)'). Note on step 3: jobs.py restricts direct updates to blocked Chief job J3834 to holder/elected Chief, so ww2-channel#213 is recorded here and on the studio thread for the Chief sweep to merge PR #213 and close J3834. No edits/rebuilds/spend (£0).)
 - J3925 done: Verify condition for J3903 (Chief HOLD ruling recorded: J3903 condition unmet. Fresh NAS read has v01/v02 only; J3922 repair open, J3923 QA open after J3922, no KEEP or repaired-cut PASS; PR1399 OPEN/unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8. Original J3918 FIX stands. J3903 remains blocked with last_recheck J3925 and original 2026-11-28T16:00Z backstop restored. Follow-up is existing zero-spend J3922 immutable v03 repair then J3923 exact-file independent review, Chief ruling and merge before phone UAT. No media, upload, schedule, privacy, Buffer or spend changes.)
 - J3922 done: OWB 064 Short 1: restore missing narration in immutable v03 (done)
-- J3920 done: Package and upload WW2 005 long v05 (St Nazaire Raid: The Ship Turned Into a Bomb) Private, 2026-12-03T17:00Z (Chief ACCEPT: PR210 merged 4815be16c362c66f99fe767e443d846d5e4b20a2. NAS master, thumbnails and captions hash-verified; fresh API confirms approved listing, Private 2026-12-03T17:00Z, HD processed, en-GB serving. Existing QA and Ben v05 watch approval retained. Follow-ups J3936 publication/pin 3 Dec 17:05Z and J3937 48-hour read 5 Dec 17:05Z. No further upload or schedule change.)
