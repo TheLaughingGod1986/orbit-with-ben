@@ -356508,13 +356508,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T09:11Z",
-      "eta": "2026-11-27T10:11Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-27T08:43Z",
-      "result": "",
+      "result": "Chief review complete. Step 1: inputs, approval and history checked while held. Step 2: bounded audit evidence accepted; required Franklin fixes authorized. Step 3: HOS PR812 merged c8787ce6 (all checks green); desk ruling 7214371460; follow-up J3880 after J3877 owns pinned comment, paid promotion No and record reconciliation. Gravity J3501 Public hold/check 2026-12-03T18:05Z unchanged. Review-progress CLI has no active lease; three separate review milestones recorded here and on desk, worker 4/4 unchanged. No YouTube or Buffer edits or spend.",
       "history": [
         {
           "at": "2026-11-27T08:43Z",
@@ -356575,6 +356575,11 @@
           "at": "2026-11-27T09:11Z",
           "by": "codex",
           "what": "remaining action: Review complete; required Franklin fixes and record corrections continue in J3880 (desk ruling 7214371460)."
+        },
+        {
+          "at": "2026-11-27T09:11Z",
+          "by": "codex",
+          "what": "done: Chief review complete. Step 1: inputs, approval and history checked while held. Step 2: bounded audit evidence accepted; required Franklin fixes authorized. Step 3: HOS PR812 merged c8787ce6 (all checks green); desk ruling 7214371460; follow-up J3880 after J3877 owns pinned comment, paid promotion No and record reconciliation. Gravity J3501 Public hold/check 2026-12-03T18:05Z unchanged. Review-progress CLI has no active lease; three separate review milestones recorded here and on desk, worker 4/4 unchanged. No YouTube or Buffer edits or spend."
         }
       ],
       "remaining_action": "Review complete; required Franklin fixes and record corrections continue in J3880 (desk ruling 7214371460).",
@@ -356600,7 +356605,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/issues/694#issuecomment-7214371460"
     },
     {
       "id": "J3878",
