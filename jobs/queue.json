@@ -1,5 +1,5 @@
 {
-  "next_id": 3858,
+  "next_id": 3859,
   "jobs": [
     {
       "id": "J0001",
@@ -354885,6 +354885,36 @@
       "for": "claudecode",
       "kind": "review",
       "plain": "Check and publish the completed Titan Short review notes"
+    },
+    {
+      "id": "J3858",
+      "title": "Field Order History analytics read qfc6EBStOfo 48h",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3006 automatic read-only learning loop. Channel UCu94mInMFosxu3W0H6jlI6Q; video qfc6EBStOfo; 48h read due after 48 elapsed hours. This is the first daily dispatch after the deadline, not a claim of an exact live 48-hour capture.\nRead this channel's own channels/ww2/studio/RULES.md and 00_Brand/PLAYBOOK.md. Use the configured Studio browser and reuse_page; verify CHANNEL_ID before reading. No saves, account switching, publishing, title or thumbnail changes, spend or sign-in.\nCollect impressions, CTR percent, new and returning viewers and Test & Compare status/variant watch-time shares. Analytics period must be 2026-11-24 through 2026-11-25, inclusive (Pacific dates matching the API); wait for reporting lag rather than substituting lifetime. Keep API views, hours, average seconds/percentage, subscribers, sources and retention/checkpoints.\nImport a strict dated read using 07_Content-Ops/scripts/field-order-studio-import.ts, merging with earlier windows. For suppressed or unavailable fields, use null and a missing reason, never zero. Record the video/window as attempted. Do not persist raw browser responses, credentials or account identity. Commit generated analytics from a clean worktree and report collection evidence. READS.md and board.json rebuild automatically. If there are triggers, recommend thumbnail first, then title, or tightening the next opening; never change packaging in this read job.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:40Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
+      "due": "2026-11-26T17:00:12Z",
+      "kind": "studio",
+      "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days"
     }
   ],
   "focus": [

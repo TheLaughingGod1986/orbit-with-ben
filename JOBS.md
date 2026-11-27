@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3855 | mini | blocked | claudecode | – | 034 upload · for claudecode · review · 034 Pluto: resolve rejected packaging publication safely | J3854,J3115 |
 | J3856 | mini | open | – | – | assembly · Backlog correction: J3853 Titan Short picture and teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 | J3857 | mini | open | – | – | for claudecode · review · Publish completed Chief review record for J3853 |  |
+| J3858 | mini | open | – | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 
 Recently finished:
 
