@@ -1,5 +1,5 @@
 {
-  "next_id": 3889,
+  "next_id": 3890,
   "jobs": [
     {
       "id": "J0001",
@@ -354990,6 +354990,11 @@
           "at": "2026-11-27T10:15Z",
           "by": "gemini",
           "what": "blocked: awaiting Ben"
+        },
+        {
+          "at": "2026-11-27T11:29Z",
+          "by": "relay",
+          "what": "no longer waits on Ben: OK'd, delivered by J3889"
         }
       ],
       "remaining_action": "Awaiting Ben's watch of 032 Titan Short #2 (two oceans) v03",
@@ -355013,7 +355018,12 @@
         ],
         "note": "Posted studio thread #1353 report; UAT files verified (5b5703855c18 / 8acb817fa135), Ben's watch registered (due 2026-11"
       },
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "awaiting Ben",
+        "check_at": "2026-11-27T16:15:20+00:00"
+      },
+      "awaits_was": {
         "what": "Watch 032 Titan Short #2 (two oceans) v03 and its cover",
         "file": "OWB UAT/032_short_dry_desert_two_oceans_v03.mp4",
         "version": "v03",
@@ -355022,11 +355032,6 @@
         "title": "Is Titan Just a Dry Desert?",
         "number": "032 Short 2",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "awaiting Ben",
-        "check_at": "2026-11-27T16:15:20+00:00"
       }
     },
     {
@@ -357821,6 +357826,58 @@
           "Record ruling and follow-up"
         ],
         "note": "Ruling recorded on J3012, staging evidence merged, parent reopened at 3/4 with heartbeat and settings reconciliation req"
+      }
+    },
+    {
+      "id": "J3889",
+      "title": "Package and upload OWB 032 Short 2 short v03 (Is Titan Just a Dry Desert?) Private, 2026-12-21T11:30Z",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd this cut on the board, but it has no complete listing package yet (missing: title, thumbnail, description, tags).\n1. Build its own listing package in the channel's repo, in the layout its other Shorts' packages already use: PACKAGE_MANIFEST.json with title, thumbnail (the custom cover), description and tags, by that channel's studio/RULES.md. Keep the title Ben OK'd: \"Is Titan Just a Dry Desert?\". The description's first line names and links its long, and its Related video is the long. Merge it through a pull request.\n2. Upload the file Ben OK'd to YouTube Studio as Private and set publishAt in the locked cadence. Use youtube:package on the Mini. Do not swap a file onto an existing id. Do not reuse TtgHNLXfDSs or k9pXeeJvLpc as destinations.\n3. Read back Private + scheduled and record it in the channel's UPLOADS register.\nApproved board card: OWB:ASK:J3853; cut: v03.\nApproval/watch job: J3853.\nWatch file: OWB UAT/032_short_dry_desert_two_oceans_v03.mp4.\nListing package: to build in step 1.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T11:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T11:29Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-27T11:29Z",
+          "by": "relay",
+          "what": "approved by Ben: Passed cut — deliver listing package v03 (asked in J3853)"
+        }
+      ],
+      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Passed cut — deliver listing package",
+        "file": "OWB UAT/032_short_dry_desert_two_oceans_v03.mp4",
+        "version": "v03",
+        "title": "Package and upload OWB 032 Short 2 short v03 (Is Titan Just a Dry Desert?) Private, 2026-12-21T11:30Z",
+        "number": "032 Short 2",
+        "type": "short",
+        "airs": "2026-12-21T11:30Z",
+        "channel": "OWB",
+        "card": "OWB:ASK:J3853",
+        "job": "J3853",
+        "okAt": "2026-11-27T11:29:02.692Z"
+      },
+      "board_ok": {
+        "id": "OWB-J3853",
+        "at": "2026-11-27T11:29:02.692Z",
+        "version": "v03",
+        "handled": true
       }
     }
   ],
