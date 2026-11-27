@@ -362356,10 +362356,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T17:35Z",
+      "eta": "2026-11-27T17:55Z",
       "created_by": "refill",
       "created_at": "2026-11-27T17:30Z",
       "result": "",
@@ -362403,6 +362403,11 @@
           "at": "2026-11-27T17:35Z",
           "by": "codex",
           "what": "reopened"
+        },
+        {
+          "at": "2026-11-27T17:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Launch check recorded; retaining the video unchanged",
@@ -362412,7 +362417,15 @@
       "plain": "Check how \"Why Was Franklin's Kite Experiment So Dangerous?\" is doing 6 hours after it went live",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T17:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3939",
