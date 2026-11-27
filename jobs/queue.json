@@ -354178,18 +354178,28 @@
           "at": "2026-11-27T03:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T03:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3849; pulled repos and read PR808 changes."
         }
       ],
-      "remaining_action": "Refresh and verify the recorded channel inventory",
+      "remaining_action": "Create isolated HOS worktree and run channel-audit --write-live",
       "kind": "assembly",
       "plain": "Refresh the History of Science video list so the public Germs Short is included",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T03:27Z",
+        "of": 4,
+        "at": "2026-11-27T03:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Create isolated HOS worktree and run channel-audit --write-live",
+          "Verify qOZgess30h0, coverage notices, unresolved IDs, and persisted rows",
+          "Run HOS tests and checks and write concise result note",
+          "Push branch, open PR, and post desk report"
+        ],
+        "note": "Claimed J3849; pulled repos and read PR808 changes."
       }
     }
   ],
