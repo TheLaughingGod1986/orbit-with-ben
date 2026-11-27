@@ -361214,13 +361214,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T16:34Z",
-      "eta": "2026-11-27T18:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T16:03Z",
-      "result": "",
+      "result": "Chief HOLD ruling recorded: J3903 condition unmet. Fresh NAS read has v01/v02 only; J3922 repair open, J3923 QA open after J3922, no KEEP or repaired-cut PASS; PR1399 OPEN/unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8. Original J3918 FIX stands. J3903 remains blocked with last_recheck J3925 and original 2026-11-28T16:00Z backstop restored. Follow-up is existing zero-spend J3922 immutable v03 repair then J3923 exact-file independent review, Chief ruling and merge before phone UAT. No media, upload, schedule, privacy, Buffer or spend changes.",
       "history": [
         {
           "at": "2026-11-27T16:03Z",
@@ -361276,6 +361276,11 @@
           "at": "2026-11-27T16:35Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J3903 dependency hold with last_recheck J3925, original 28 Nov 16:00Z backstop and J3922 then J3923 follow-up. No production approval."
+        },
+        {
+          "at": "2026-11-27T16:36Z",
+          "by": "codex",
+          "what": "done: Chief HOLD ruling recorded: J3903 condition unmet. Fresh NAS read has v01/v02 only; J3922 repair open, J3923 QA open after J3922, no KEEP or repaired-cut PASS; PR1399 OPEN/unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8. Original J3918 FIX stands. J3903 remains blocked with last_recheck J3925 and original 2026-11-28T16:00Z backstop restored. Follow-up is existing zero-spend J3922 immutable v03 repair then J3923 exact-file independent review, Chief ruling and merge before phone UAT. No media, upload, schedule, privacy, Buffer or spend changes."
         }
       ],
       "remaining_action": "Condition review complete; narration repair and independent QA remain queued",
