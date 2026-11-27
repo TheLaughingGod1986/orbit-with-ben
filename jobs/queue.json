@@ -355694,15 +355694,20 @@
           "at": "2026-11-27T07:57Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Saved SVS12709 Cassini-Titan 1080p clip + provenance to NAS harvest_J3865_v01; verified native motion (fixed-crop median diff 5.31) and 1.78x upscale"
+        },
+        {
+          "at": "2026-11-27T08:08Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Fixed S08 bars trigger with curved planetary crust at 68px (11.2% of 608px); launched detached full build in tmux J3865-v03-render"
         }
       ],
-      "remaining_action": "Finalizing S08 68-70px locked-word graphic and writing v03 assembler",
+      "remaining_action": "Detached tmux J3865-v03-render building v03 master, running 7 gates, and copying to NAS if all pass",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T07:57Z",
+        "at": "2026-11-27T08:08Z",
         "by": "gemini",
         "plan": [
           "Read J3856 review and v02 build",
@@ -355712,7 +355717,7 @@
           "Assemble v03 master beside v01/v02 on NAS and run all 7 gates",
           "Inspect stills/warnings, update PR #1366, post report and park for Chief"
         ],
-        "note": "Saved SVS12709 Cassini-Titan 1080p clip + provenance to NAS harvest_J3865_v01; verified native motion (fixed-crop median"
+        "note": "Fixed S08 bars trigger with curved planetary crust at 68px (11.2% of 608px); launched detached full build in tmux J3865-"
       },
       "taskKeys": [
         "OWB:032"
