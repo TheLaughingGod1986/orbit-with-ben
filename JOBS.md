@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3924 | mini | open | – | – | for claudecode · assembly · `mini-claude-opus-5-5` · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
-| J3933 | mini | open | – | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
+| J3933 | mini | claimed | codex | 2026-11-28T00:13Z | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
 | J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
