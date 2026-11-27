@@ -361720,9 +361720,14 @@
           "at": "2026-11-27T18:42Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-27T18:45Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Verified NAS SHA-256 for v04 master (3aa60441...) and thumbs A/B/C; confirmed claudecode already uploaded 9YeKm3e2xto Private scheduled 2026-12-05T17:00Z in PR #212 — continuing without re-upload"
         }
       ],
-      "remaining_action": "Inspecting WW2 006 files, hashes, and J3653 upload pattern",
+      "remaining_action": "Studio 9223 finish for 9YeKm3e2xto: HD API readback, 3-way Thumb T&C A/B/C, altered content=Yes, end screen",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -361747,9 +361752,9 @@
       "due": "2026-12-02T18:00:00Z",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-27T18:42Z",
+        "at": "2026-11-27T18:45Z",
         "by": "gemini",
         "plan": [
           "Inspect assets and J3653 pattern",
@@ -361758,7 +361763,8 @@
           "Set thumb A and arm 3-way Test & Compare",
           "Read back Studio state",
           "Open ww2 PR with status and UPLOADS"
-        ]
+        ],
+        "note": "Verified NAS SHA-256 for v04 master (3aa60441...) and thumbs A/B/C; confirmed claudecode already uploaded 9YeKm3e2xto Pr"
       },
       "taskKeys": [
         "WW2:006"
