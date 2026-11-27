@@ -351750,9 +351750,14 @@
           "at": "2026-11-27T10:07Z",
           "by": "relay",
           "what": "condition verification queued: J3882"
+        },
+        {
+          "at": "2026-11-27T10:20Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T16:10:00Z"
         }
       ],
-      "remaining_action": "Await elected Chief PASS, merge of PR #1361 and PR #1359, closure of Draft PR #1358, and J3022 hold release",
+      "remaining_action": "Complete J3883 integration decision before releasing planet-film assembly",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351783,9 +351788,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T11:07:06+00:00",
-        "recheck_task": "J3882"
+        "condition": "J3883 records formal corrected-package ruling, integrates accepted PRs #1361/#1359, reconciles superseded #1358 and verifies J3022 completion with J3023 opening/R09 and graphics requirements preserved",
+        "check_at": "2026-11-27T16:10:00Z",
+        "last_recheck": "J3882",
+        "checked_at": "2026-11-27T10:20:47+00:00",
+        "checked_by": "codex"
       }
     },
     {
