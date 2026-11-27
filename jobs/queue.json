@@ -352692,9 +352692,14 @@
           "at": "2026-11-27T01:09Z",
           "by": "relay",
           "what": "condition verification queued: J3837"
+        },
+        {
+          "at": "2026-11-27T01:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T07:00:00Z"
         }
       ],
-      "remaining_action": "read topic, packaging, provenance, claims check; then review, viewer test, v02, PR",
+      "remaining_action": "Await J3842 corrected source records and final script checks, then review for lock",
       "due": "2026-12-16T18:00:00Z",
       "kind": "review",
       "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02",
@@ -352721,9 +352726,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T02:09:59+00:00",
-        "recheck_task": "J3837"
+        "condition": "J3837 ruling FIX: complete correction follow-up J3842, then verify revised PR source reconciliation and final-file Rule-6 evidence before script lock or merge. J3830 completion alone is insufficient.",
+        "check_at": "2026-11-27T07:00:00Z",
+        "last_recheck": "J3837",
+        "checked_at": "2026-11-27T01:51:09+00:00",
+        "checked_by": "codex"
       }
     },
     {
