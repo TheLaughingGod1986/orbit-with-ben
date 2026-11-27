@@ -355183,16 +355183,21 @@
           "at": "2026-11-27T07:38Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Confirmed importer target channels/ww2/05_Analytics and Studio tab on port 9224 for UCu94mInMFosxu3W0H6jlI6Q"
+        },
+        {
+          "at": "2026-11-27T07:40Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: CDP 9224 Studio tab returned 'Oops, you don't have permission to view this page' at 2026-11-27T07:38Z; read-only account tab check shows Orbit/HOS/OpptiAI account active instead of FOH; no account switch or sign-in attempted"
         }
       ],
-      "remaining_action": "Reading Field Order History Lifetime total subscribers and watch hours in Studio on CDP 9224",
+      "remaining_action": "Waiting for Ben to restore Field Order History (UCu94mInMFosxu3W0H6jlI6Q) session on CDP 9224",
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-27T07:38Z",
+        "at": "2026-11-27T07:40Z",
         "by": "gemini",
         "plan": [
           "Inspect importer & Studio CDP config",
@@ -355200,7 +355205,7 @@
           "Import dated analytics & commit from clean worktree",
           "Report numbers & finish J3860"
         ],
-        "note": "Confirmed importer target channels/ww2/05_Analytics and Studio tab on port 9224 for UCu94mInMFosxu3W0H6jlI6Q"
+        "note": "CDP 9224 Studio tab returned 'Oops, you don't have permission to view this page' at 2026-11-27T07:38Z; read-only account"
       }
     },
     {
