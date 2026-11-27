@@ -355841,13 +355841,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-27T06:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "Waiting for: J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355878,28 +355878,17 @@
           "at": "2026-11-27T14:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T20:15:00Z"
+        },
+        {
+          "at": "2026-11-27T16:52Z",
+          "by": "codex",
+          "what": "reopened: Chief J3858 review: dependency satisfied by merged PR 1402 b94f99c48f. Dated Studio data now on main, 1044 impressions/1.2% CTR; API/Studio lag discrepancy explicit. Proceed now with rules review and concrete current-packaging follow-up: the 24-25 Nov window straddles the 25 Nov 10:48Z title/thumbnail swap and cannot establish Design E failure. Do not adopt a blanket wait-until-day-7 recommendation: assess fresh post-change stranger evidence under rule 8 and queue any justified single packaging fix separately, preserving any live test. J3706 remains date-held until 2 Dec 10:50Z. No YouTube writes in this rules job."
         }
       ],
       "remaining_action": "After J3858 imports the matching Studio numbers, verify them and release the Atlantic rules review",
       "due": "2026-11-27T05:00:12Z",
       "kind": "review",
-      "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T06:43Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3858 must import the dated qfc6EBStOfo 48h Studio read for 2026-11-24 through 2026-11-25 Pacific. Chief verification J3908 found impressions/CTR pending, no video entry in studio_read.json and no matching dated Studio read; J3858 remains held for its recorded Field Order History sign-in requirement.",
-        "check_at": "2026-11-27T20:15:00Z",
-        "last_recheck": "J3908",
-        "checked_at": "2026-11-27T14:22:38+00:00",
-        "checked_by": "codex"
-      }
+      "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us"
     },
     {
       "id": "J3860",
