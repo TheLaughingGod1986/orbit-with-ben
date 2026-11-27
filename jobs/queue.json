@@ -360168,9 +360168,14 @@
           "at": "2026-11-27T21:34Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Confirmed Claude acting-Chief reopen (19:55Z): J3922 v03 (538464b9), J3923 KEEP (#1412), and PR #1399 (df709ca) merged; verifying watch-registration details"
+        },
+        {
+          "at": "2026-11-27T21:35Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified canonical NAS v03 MP4 (75,099,108 B, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402), cover (0e5b9937...), frame0 (0e05827a...), merged PR #1399 (df709ca) and PR #1412 (920d601)"
         }
       ],
-      "remaining_action": "Verify canonical NAS v03 deliverables and register Ben phone UAT watch via jobs.py awaits",
+      "remaining_action": "Register Ben phone UAT watch for canonical NAS v03 via jobs.py awaits",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
@@ -360179,16 +360184,16 @@
       ],
       "escalated_at": "2026-11-27T17:55Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T21:34Z",
+        "at": "2026-11-27T21:35Z",
         "by": "gemini",
         "plan": [
           "Verify canonical NAS v03 file and hash",
           "Register Ben phone UAT watch via jobs.py awaits and finish J3903",
           "Verify board publish, board check, and post studio thread report"
         ],
-        "note": "Confirmed Claude acting-Chief reopen (19:55Z): J3922 v03 (538464b9), J3923 KEEP (#1412), and PR #1399 (df709ca) merged; "
+        "note": "Verified canonical NAS v03 MP4 (75,099,108 B, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402), "
       }
     },
     {
