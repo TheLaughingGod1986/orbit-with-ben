@@ -32,6 +32,8 @@ import video_tracker as vt  # noqa: E402
 LONDON = ZoneInfo("Europe/London")
 BANNED_REUSE_IDS = frozenset({"TtgHNLXfDSs", "k9pXeeJvLpc"})
 SWAP_RE = re.compile(r"\bswap\b", re.I)
+# A job that uploads, posts or swaps. "Upload package" is the listing a cut carries to Ben's watch, not an upload.
+UPLOAD_WORD_RE = re.compile(r"\b(?:upload(?!\s+packages?\b)|buffer|swap)", re.I)
 LISTING_HOLD_RE = re.compile(r"listing|title|thumbnail|description|tags|package incomplete|needs title", re.I)
 # Locked cadence (Ben, 7 Nov 2026): each channel's own slots, in its studio/channel.json (`cadence`, read by
 # channels.cadence). Until 11 Nov 2026 the table was here, keyed by the two channels' labels.
@@ -372,11 +374,17 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
         listed = bool(names & set(j.get("delivers") or []))
         delivery = j.get("stage") == "upload" or listed or (
             j.get("kind") not in ("review", "qa", "chief", "script", "facts")
-            and bool(re.search(r"\b(?:upload|buffer|swap)", text, re.I)))
+            and bool(UPLOAD_WORD_RE.search(text)))
         if listed:
             out.append(j)
             continue
-        if job_id and j.get("id") == job_id and delivery:
+        # The job that asked Ben is delivery only while it can still deliver (a held job that reopens to upload, J0940),
+        # when Ben's OK was linked onto it (approved_from) or it is a swap, or when it finished by reading an upload back. 27 Nov 2026: FOH 004-006's watch jobs ("edit, captions, three
+        # thumbnails and upload package, to Ben's watch") were done before his OK and counted as their own uploads, so
+        # nothing queued the uploads and no alert fired, four days before 004 airs.
+        if job_id and j.get("id") == job_id and delivery and (
+                j.get("status") != "done" or j.get("approved_from") or is_swap(j)
+                or vt.READBACK_RE.search(str(j.get("result") or ""))):
             out.append(j)
             continue
         if is_swap(j):
@@ -388,12 +396,16 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
                 and af.get("version") == (appr.get("version") or video.get("version")))):
             out.append(j)
             continue
+        if af.get("card") and af.get("card") not in names:
+            continue  # Ben's OK on another card (27 Nov 2026: Short 004-S1's upload) is that card's delivery, not this one's.
         title = (j.get("title") or "") + " " + (j.get("body") or "")
         kind = j.get("kind") or ""
         if video.get("type") == "short" or channels.label_of_repo(j.get("repo")) != video.get("channel"):
             continue  # A film number alone never identifies a Short or a channel.
-        if delivery and film and re.search(rf"\b{re.escape(film)}\b", title) and (
-                kind in ("studio",) or re.search(r"\bupload\b|\bbuffer-mirror\b|\bbuffer\b", title, re.I)):
+        # The film number must be in the job's own title, not just somewhere in a long brief (27 Nov 2026: J3254, the
+        # channel's upload-path setup, mentions "005" and "v05" in its body and hid FOH 005's missing upload).
+        if delivery and film and re.search(rf"\b{re.escape(film)}\b(?!-S)", j.get("title") or "") and (
+                kind in ("studio",) or UPLOAD_WORD_RE.search(title)):
             # Prefer jobs that name this cut's version when known.
             ver = appr.get("version") or video.get("version") or ""
             if ver and ver not in title and j.get("id") != job_id:

@@ -1,0 +1,213 @@
+{
+  "stem": "064_short01_testA_opening_v03",
+  "mp4_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03.mp4",
+  "mp4_sha256": "538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402",
+  "vo_stem_sha256": "8483ba3e5448c5506598149ad9f2b4fe33a80ce66ae05b9d30f0f2f4aa8d7393",
+  "bed_stem_sha256": "7bb8302b7fbd219aecfcb50d84a13298169ab5c4c0ac64eb1f4830460dbd02dd",
+  "sfx_stem_sha256": "f4f13e907d76b5f6d7781396e770c3d4e809312a60976edf1ce710908135891c",
+  "srt_sha256": "a61a737048188667682e566a9f7ec78e08ca704dd836db231d86c6d2207fa603",
+  "frame0_jpg_sha256": "0e05827a32f3097658a33ce1d57c6edc0a26035dbf7715d738ba4dd9d6c41a2c",
+  "cover_jpg_sha256": "0e5b993776582f461091268acec11f8c4a34c8a320428605898ae7b884a3054e",
+  "open_sheet_sha256": "31d3d0aa906af24b160c2f2acd091987797691d9d5295fdceef8547a9c590e67",
+  "review_12shots_sha256": "20b04821d77e93a814b436b93379e2d99a9d7667268f1cb52adaa38bdc658cfd",
+  "master_v03_sha256": "d59057aed1590e7f6ef097513256a0548c4f9b1d7e544c4bade28aa83fef647a",
+  "locked_vo_sha256": "4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa",
+  "locked_bed_sha256": "3e47e9d6da9aca6836a00c27a1fa58e53801190ae06ed445966ed51f5c0d75c6",
+  "preserved_v01_mp4_sha256": "b805c51d02acd0e43adf9c9645c993c91d148641e068e918d93136e20b25a4b6",
+  "preserved_v02_mp4_sha256": "8b7a218c73b1c790f722f4410e67e4fe04d7e06276e3d4a4bbcbceed38c38968",
+  "video_stream_equivalence": {
+    "stream_copy_verified": true,
+    "encoded_streamhash": "0,v,SHA256=d7d5e684a9672dff62f5e0cfce669685549df86f6094b1eb817c495716fd40a0",
+    "decoded_frames_count": 738,
+    "decoded_framemd5_sha256": "a4965b6044acedc4716847498b373e3b936d03fd4f16bd58193d60c895d14723",
+    "note": "Video stream reused unchanged from v02 strictly for audio repair per Chief ruling on J3918; NOT a visual/motion PASS."
+  },
+  "duration_s": 30.75,
+  "fps": 24,
+  "frames": 738,
+  "words_count": 71,
+  "vo_onset_s": 0.1,
+  "s01_s02_breath_s": 0.24,
+  "last_word_end_s": 29.639,
+  "tail_gap_s": 1.111,
+  "cut1_s": 2.5,
+  "cut2_s": 4.458,
+  "max_shot_s": 3.958,
+  "audio": {
+    "vo_lufs": -16.1,
+    "bed_lufs": -34.1,
+    "sfx_lufs": -40.6,
+    "mix_lufs": -14.8,
+    "aac_lufs": -14.1,
+    "aac_tp_dbtp": -2.1
+  },
+  "vo_coverage_regression": {
+    "v02_broken_passed": false,
+    "v03_repaired_passed": true,
+    "v03_segments": [
+      {
+        "segment": "S1",
+        "src_start_s": 0.06,
+        "out_rms_dbfs": -18.81,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "missing_word_count": 0,
+        "envelope_corr": 0.9983
+      },
+      {
+        "segment": "S2",
+        "src_start_s": 7.56,
+        "out_rms_dbfs": -19.18,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "missing_word_count": 0,
+        "envelope_corr": 0.9997
+      },
+      {
+        "segment": "S3",
+        "src_start_s": 11.89,
+        "out_rms_dbfs": -19.36,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "missing_word_count": 0,
+        "envelope_corr": 0.9993
+      },
+      {
+        "segment": "S4",
+        "src_start_s": 26.28,
+        "out_rms_dbfs": -18.37,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "missing_word_count": 0,
+        "envelope_corr": 0.9999
+      }
+    ]
+  },
+  "asr_verify": {
+    "model": "faster-whisper small.en (local_files_only=True, int8 CPU)",
+    "v03_mp4_token_recall": 1.0,
+    "v03_mp4_matched": "75/75",
+    "v03_vo_token_recall": 1.0,
+    "v02_contrast_token_recall": 0.28
+  },
+  "hook": {
+    "text": "ICE AT / 430\u00b0C?",
+    "font_px": 134,
+    "bboxes": [
+      [
+        287,
+        262,
+        793,
+        378
+      ],
+      [
+        278,
+        454,
+        802,
+        570
+      ]
+    ]
+  },
+  "title": {
+    "font_px": 56,
+    "rows": [
+      {
+        "text": "Every Planet Explained",
+        "bbox": [
+          178,
+          842,
+          902,
+          910
+        ]
+      },
+      {
+        "text": "in 12 Minutes",
+        "bbox": [
+          326,
+          929,
+          753,
+          987
+        ]
+      },
+      {
+        "text": "(Mercury to Neptune)",
+        "bbox": [
+          204,
+          1017,
+          875,
+          1086
+        ]
+      }
+    ],
+    "joined": "Every Planet Explained in 12 Minutes (Mercury to Neptune)"
+  },
+  "teach": {
+    "text": "1965 \u00b7 GIUSEPPE COLOMBO",
+    "in": 23.75,
+    "out": 27.7,
+    "bbox": [
+      112,
+      1186,
+      968,
+      1241
+    ]
+  },
+  "end_card": {
+    "start_s": 29.75,
+    "len_s": 1.0
+  },
+  "cover": {
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03_cover.jpg",
+    "rows": [
+      "ICE AT",
+      "430\u00b0C?"
+    ],
+    "font_px": 134,
+    "bboxes": [
+      [
+        287,
+        810,
+        793,
+        926
+      ],
+      [
+        278,
+        1002,
+        802,
+        1118
+      ]
+    ]
+  },
+  "gates": {
+    "gate_shorts_open_rc": 0,
+    "thumb_preview_frame0_rc": 0,
+    "thumb_preview_cover_rc": 0,
+    "sfx_level_rc": 0,
+    "music_gate_rc": 0,
+    "music_gate_canonical_13mp3_rc": 0,
+    "polish_gate_rc": 0,
+    "picture_qa_rc": 0,
+    "playback_health_ok": true
+  },
+  "playback_health": {
+    "ok": true,
+    "variable_frame_rate": false,
+    "videotoolbox": false,
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "pix_fmt": "yuv420p",
+    "encoder": "Lavc63.1.101 libx264",
+    "width": 1080,
+    "height": 1920,
+    "vertical": true,
+    "delivery_fps": "30",
+    "has_audio": true,
+    "audio_codec": "aac",
+    "audio_rate": 48000,
+    "audio_channels": 2,
+    "video_duration": 30.75,
+    "audio_duration": 30.7,
+    "errors": [],
+    "warnings": []
+  }
+}

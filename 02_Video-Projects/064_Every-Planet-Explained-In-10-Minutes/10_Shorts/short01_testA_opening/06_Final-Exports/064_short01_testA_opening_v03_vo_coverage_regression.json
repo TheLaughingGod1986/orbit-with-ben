@@ -1,0 +1,818 @@
+{
+  "v02_broken": {
+    "label": "v02_broken",
+    "out_vo_wav": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v02_vo.wav",
+    "src_vo_wav": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.wav",
+    "pcm16_1lsb_dither_dbfs": -90.31,
+    "passed": false,
+    "failures": [
+      "S2 (src 7.560-11.050s -> local 6.600-10.090s): coverage=0.0%, dropouts=16, missing_words=10/10, corr=0.0000, out_rms=-90.31 dBFS",
+      "S3 (src 11.890-25.140s -> local 10.170-23.420s): coverage=11.9%, dropouts=49, missing_words=31/34, corr=0.1717, out_rms=-27.47 dBFS",
+      "S4 (src 26.280-32.600s -> local 23.440-29.760s): coverage=0.0%, dropouts=30, missing_words=10/10, corr=0.0000, out_rms=-90.31 dBFS"
+    ],
+    "segments": [
+      {
+        "segment": "S1",
+        "nonzero_source_offset": true,
+        "src_start_s": 0.06,
+        "src_end_s": 6.6,
+        "local_start_s": 0.0,
+        "local_end_s": 6.54,
+        "src_rms_dbfs": -22.83,
+        "out_rms_dbfs": -18.8,
+        "out_peak": 0.84137,
+        "windows_total": 32,
+        "src_active_windows": 29,
+        "src_genuine_pause_windows": 3,
+        "out_active_on_src_active": 29,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "unexpected_dropouts_sample": [],
+        "active_source_words": 16,
+        "missing_word_count": 0,
+        "missing_words_sample": [],
+        "envelope_corr": 0.9983,
+        "passed": true
+      },
+      {
+        "segment": "S2",
+        "nonzero_source_offset": true,
+        "src_start_s": 7.56,
+        "src_end_s": 11.05,
+        "local_start_s": 6.6,
+        "local_end_s": 10.09,
+        "src_rms_dbfs": -22.98,
+        "out_rms_dbfs": -90.31,
+        "out_peak": 3.1e-05,
+        "windows_total": 17,
+        "src_active_windows": 17,
+        "src_genuine_pause_windows": 0,
+        "out_active_on_src_active": 0,
+        "speech_coverage_ratio": 0.0,
+        "unexpected_dropout_count": 16,
+        "unexpected_dropouts_sample": [
+          {
+            "t_local_s": 6.62,
+            "src_db": -23.04,
+            "out_db": -90.31,
+            "rel_drop_db": -67.27
+          },
+          {
+            "t_local_s": 6.82,
+            "src_db": -16.18,
+            "out_db": -90.31,
+            "rel_drop_db": -74.13
+          },
+          {
+            "t_local_s": 7.02,
+            "src_db": -32.04,
+            "out_db": -90.31,
+            "rel_drop_db": -58.27
+          },
+          {
+            "t_local_s": 7.22,
+            "src_db": -19.73,
+            "out_db": -90.31,
+            "rel_drop_db": -70.58
+          },
+          {
+            "t_local_s": 7.42,
+            "src_db": -25.61,
+            "out_db": -90.31,
+            "rel_drop_db": -64.7
+          },
+          {
+            "t_local_s": 7.62,
+            "src_db": -27.77,
+            "out_db": -90.31,
+            "rel_drop_db": -62.54
+          }
+        ],
+        "active_source_words": 10,
+        "missing_word_count": 10,
+        "missing_words_sample": [
+          {
+            "word": "The",
+            "t_local_s": 6.7,
+            "src_db": -20.6,
+            "out_db": -90.31
+          },
+          {
+            "word": "ice",
+            "t_local_s": 6.9,
+            "src_db": -20.52,
+            "out_db": -90.31
+          },
+          {
+            "word": "hides",
+            "t_local_s": 7.28,
+            "src_db": -20.31,
+            "out_db": -90.31
+          },
+          {
+            "word": "in",
+            "t_local_s": 7.62,
+            "src_db": -25.65,
+            "out_db": -90.31
+          },
+          {
+            "word": "polar",
+            "t_local_s": 7.8,
+            "src_db": -19.39,
+            "out_db": -90.31
+          },
+          {
+            "word": "craters",
+            "t_local_s": 8.16,
+            "src_db": -22.66,
+            "out_db": -90.31
+          },
+          {
+            "word": "that",
+            "t_local_s": 8.72,
+            "src_db": -32.16,
+            "out_db": -90.31
+          },
+          {
+            "word": "never",
+            "t_local_s": 8.94,
+            "src_db": -22.04,
+            "out_db": -90.31
+          },
+          {
+            "word": "see",
+            "t_local_s": 9.22,
+            "src_db": -30.83,
+            "out_db": -90.31
+          },
+          {
+            "word": "sunlight.",
+            "t_local_s": 9.46,
+            "src_db": -27.6,
+            "out_db": -90.31
+          }
+        ],
+        "envelope_corr": 0.0,
+        "passed": false
+      },
+      {
+        "segment": "S3",
+        "nonzero_source_offset": true,
+        "src_start_s": 11.89,
+        "src_end_s": 25.14,
+        "local_start_s": 10.17,
+        "local_end_s": 23.42,
+        "src_rms_dbfs": -23.47,
+        "out_rms_dbfs": -27.47,
+        "out_peak": 0.832733,
+        "windows_total": 66,
+        "src_active_windows": 59,
+        "src_genuine_pause_windows": 7,
+        "out_active_on_src_active": 7,
+        "speech_coverage_ratio": 0.1186,
+        "unexpected_dropout_count": 49,
+        "unexpected_dropouts_sample": [
+          {
+            "t_local_s": 11.59,
+            "src_db": -22.2,
+            "out_db": -90.31,
+            "rel_drop_db": -72.09
+          },
+          {
+            "t_local_s": 11.79,
+            "src_db": -24.7,
+            "out_db": -90.31,
+            "rel_drop_db": -69.59
+          },
+          {
+            "t_local_s": 11.99,
+            "src_db": -21.08,
+            "out_db": -90.31,
+            "rel_drop_db": -73.21
+          },
+          {
+            "t_local_s": 12.19,
+            "src_db": -25.12,
+            "out_db": -90.31,
+            "rel_drop_db": -69.17
+          },
+          {
+            "t_local_s": 12.99,
+            "src_db": -19.47,
+            "out_db": -90.31,
+            "rel_drop_db": -74.82
+          },
+          {
+            "t_local_s": 13.19,
+            "src_db": -19.44,
+            "out_db": -90.31,
+            "rel_drop_db": -74.85
+          }
+        ],
+        "active_source_words": 34,
+        "missing_word_count": 31,
+        "missing_words_sample": [
+          {
+            "word": "kilometres",
+            "t_local_s": 11.6,
+            "src_db": -23.78,
+            "out_db": -90.31
+          },
+          {
+            "word": "out,",
+            "t_local_s": 12.22,
+            "src_db": -28.62,
+            "out_db": -90.31
+          },
+          {
+            "word": "sunlight",
+            "t_local_s": 13.04,
+            "src_db": -19.26,
+            "out_db": -90.31
+          },
+          {
+            "word": "shines",
+            "t_local_s": 13.48,
+            "src_db": -23.27,
+            "out_db": -90.31
+          },
+          {
+            "word": "up",
+            "t_local_s": 13.82,
+            "src_db": -41.98,
+            "out_db": -90.31
+          },
+          {
+            "word": "to",
+            "t_local_s": 13.92,
+            "src_db": -30.39,
+            "out_db": -90.31
+          },
+          {
+            "word": "seven",
+            "t_local_s": 14.12,
+            "src_db": -20.39,
+            "out_db": -90.31
+          },
+          {
+            "word": "times",
+            "t_local_s": 14.48,
+            "src_db": -23.65,
+            "out_db": -90.31
+          },
+          {
+            "word": "brighter",
+            "t_local_s": 14.86,
+            "src_db": -19.52,
+            "out_db": -90.31
+          },
+          {
+            "word": "than",
+            "t_local_s": 15.3,
+            "src_db": -26.87,
+            "out_db": -90.31
+          }
+        ],
+        "envelope_corr": 0.1717,
+        "passed": false
+      },
+      {
+        "segment": "S4",
+        "nonzero_source_offset": true,
+        "src_start_s": 26.28,
+        "src_end_s": 32.6,
+        "local_start_s": 23.44,
+        "local_end_s": 29.76,
+        "src_rms_dbfs": -22.46,
+        "out_rms_dbfs": -90.31,
+        "out_peak": 3.1e-05,
+        "windows_total": 31,
+        "src_active_windows": 31,
+        "src_genuine_pause_windows": 0,
+        "out_active_on_src_active": 0,
+        "speech_coverage_ratio": 0.0,
+        "unexpected_dropout_count": 30,
+        "unexpected_dropouts_sample": [
+          {
+            "t_local_s": 23.46,
+            "src_db": -20.52,
+            "out_db": -90.31,
+            "rel_drop_db": -69.79
+          },
+          {
+            "t_local_s": 23.66,
+            "src_db": -16.49,
+            "out_db": -90.31,
+            "rel_drop_db": -73.82
+          },
+          {
+            "t_local_s": 23.86,
+            "src_db": -23.96,
+            "out_db": -90.31,
+            "rel_drop_db": -66.35
+          },
+          {
+            "t_local_s": 24.06,
+            "src_db": -24.26,
+            "out_db": -90.31,
+            "rel_drop_db": -66.05
+          },
+          {
+            "t_local_s": 24.26,
+            "src_db": -24.31,
+            "out_db": -90.31,
+            "rel_drop_db": -66.0
+          },
+          {
+            "t_local_s": 24.46,
+            "src_db": -17.79,
+            "out_db": -90.31,
+            "rel_drop_db": -72.52
+          }
+        ],
+        "active_source_words": 10,
+        "missing_word_count": 10,
+        "missing_words_sample": [
+          {
+            "word": "In",
+            "t_local_s": 23.56,
+            "src_db": -18.21,
+            "out_db": -90.31
+          },
+          {
+            "word": "1965,",
+            "t_local_s": 23.7,
+            "src_db": -20.56,
+            "out_db": -90.31
+          },
+          {
+            "word": "Italian",
+            "t_local_s": 25.24,
+            "src_db": -19.23,
+            "out_db": -90.31
+          },
+          {
+            "word": "mathematician",
+            "t_local_s": 25.74,
+            "src_db": -25.3,
+            "out_db": -90.31
+          },
+          {
+            "word": "Giuseppe",
+            "t_local_s": 26.52,
+            "src_db": -22.8,
+            "out_db": -90.31
+          },
+          {
+            "word": "Colombo",
+            "t_local_s": 27.06,
+            "src_db": -23.16,
+            "out_db": -90.31
+          },
+          {
+            "word": "solved",
+            "t_local_s": 28.08,
+            "src_db": -17.66,
+            "out_db": -90.31
+          },
+          {
+            "word": "its",
+            "t_local_s": 28.52,
+            "src_db": -29.46,
+            "out_db": -90.31
+          },
+          {
+            "word": "spin",
+            "t_local_s": 28.84,
+            "src_db": -20.02,
+            "out_db": -90.31
+          },
+          {
+            "word": "mystery.",
+            "t_local_s": 29.14,
+            "src_db": -31.24,
+            "out_db": -90.31
+          }
+        ],
+        "envelope_corr": 0.0,
+        "passed": false
+      }
+    ],
+    "per_second_rms": [
+      {
+        "sec": 0,
+        "rms_dbfs": -17.21,
+        "peak": 0.838043
+      },
+      {
+        "sec": 1,
+        "rms_dbfs": -16.97,
+        "peak": 0.84137
+      },
+      {
+        "sec": 2,
+        "rms_dbfs": -27.16,
+        "peak": 0.654633
+      },
+      {
+        "sec": 3,
+        "rms_dbfs": -16.63,
+        "peak": 0.840607
+      },
+      {
+        "sec": 4,
+        "rms_dbfs": -19.64,
+        "peak": 0.539246
+      },
+      {
+        "sec": 5,
+        "rms_dbfs": -19.49,
+        "peak": 0.610199
+      },
+      {
+        "sec": 6,
+        "rms_dbfs": -28.95,
+        "peak": 0.358093
+      },
+      {
+        "sec": 7,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 8,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 9,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 10,
+        "rms_dbfs": -17.73,
+        "peak": 0.832733
+      },
+      {
+        "sec": 11,
+        "rms_dbfs": -21.63,
+        "peak": 0.477875
+      },
+      {
+        "sec": 12,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 13,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 14,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 15,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 16,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 17,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 18,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 19,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 20,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 21,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 22,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 23,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 24,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 25,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 26,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 27,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 28,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 29,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      },
+      {
+        "sec": 30,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      }
+    ]
+  },
+  "v03_repaired": {
+    "label": "v03_repaired",
+    "out_vo_wav": "/Volumes/MiniWork/scratch/J3922_064_short01_v03/stem_vo.wav",
+    "src_vo_wav": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.wav",
+    "pcm16_1lsb_dither_dbfs": -90.31,
+    "passed": true,
+    "failures": [],
+    "segments": [
+      {
+        "segment": "S1",
+        "nonzero_source_offset": true,
+        "src_start_s": 0.06,
+        "src_end_s": 6.6,
+        "local_start_s": 0.0,
+        "local_end_s": 6.54,
+        "src_rms_dbfs": -22.83,
+        "out_rms_dbfs": -18.81,
+        "out_peak": 0.84137,
+        "windows_total": 32,
+        "src_active_windows": 29,
+        "src_genuine_pause_windows": 3,
+        "out_active_on_src_active": 29,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "unexpected_dropouts_sample": [],
+        "active_source_words": 16,
+        "missing_word_count": 0,
+        "missing_words_sample": [],
+        "envelope_corr": 0.9983,
+        "passed": true
+      },
+      {
+        "segment": "S2",
+        "nonzero_source_offset": true,
+        "src_start_s": 7.56,
+        "src_end_s": 11.05,
+        "local_start_s": 6.6,
+        "local_end_s": 10.09,
+        "src_rms_dbfs": -22.98,
+        "out_rms_dbfs": -19.18,
+        "out_peak": 0.80835,
+        "windows_total": 17,
+        "src_active_windows": 17,
+        "src_genuine_pause_windows": 0,
+        "out_active_on_src_active": 17,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "unexpected_dropouts_sample": [],
+        "active_source_words": 10,
+        "missing_word_count": 0,
+        "missing_words_sample": [],
+        "envelope_corr": 0.9997,
+        "passed": true
+      },
+      {
+        "segment": "S3",
+        "nonzero_source_offset": true,
+        "src_start_s": 11.89,
+        "src_end_s": 25.14,
+        "local_start_s": 10.17,
+        "local_end_s": 23.42,
+        "src_rms_dbfs": -23.47,
+        "out_rms_dbfs": -19.36,
+        "out_peak": 0.840881,
+        "windows_total": 66,
+        "src_active_windows": 59,
+        "src_genuine_pause_windows": 7,
+        "out_active_on_src_active": 59,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "unexpected_dropouts_sample": [],
+        "active_source_words": 34,
+        "missing_word_count": 0,
+        "missing_words_sample": [],
+        "envelope_corr": 0.9993,
+        "passed": true
+      },
+      {
+        "segment": "S4",
+        "nonzero_source_offset": true,
+        "src_start_s": 26.28,
+        "src_end_s": 32.6,
+        "local_start_s": 23.44,
+        "local_end_s": 29.76,
+        "src_rms_dbfs": -22.46,
+        "out_rms_dbfs": -18.37,
+        "out_peak": 0.84137,
+        "windows_total": 31,
+        "src_active_windows": 31,
+        "src_genuine_pause_windows": 0,
+        "out_active_on_src_active": 31,
+        "speech_coverage_ratio": 1.0,
+        "unexpected_dropout_count": 0,
+        "unexpected_dropouts_sample": [],
+        "active_source_words": 10,
+        "missing_word_count": 0,
+        "missing_words_sample": [],
+        "envelope_corr": 0.9999,
+        "passed": true
+      }
+    ],
+    "per_second_rms": [
+      {
+        "sec": 0,
+        "rms_dbfs": -17.21,
+        "peak": 0.838043
+      },
+      {
+        "sec": 1,
+        "rms_dbfs": -16.97,
+        "peak": 0.84137
+      },
+      {
+        "sec": 2,
+        "rms_dbfs": -27.16,
+        "peak": 0.654633
+      },
+      {
+        "sec": 3,
+        "rms_dbfs": -16.63,
+        "peak": 0.840607
+      },
+      {
+        "sec": 4,
+        "rms_dbfs": -19.64,
+        "peak": 0.539246
+      },
+      {
+        "sec": 5,
+        "rms_dbfs": -19.5,
+        "peak": 0.610077
+      },
+      {
+        "sec": 6,
+        "rms_dbfs": -18.34,
+        "peak": 0.80835
+      },
+      {
+        "sec": 7,
+        "rms_dbfs": -18.76,
+        "peak": 0.703918
+      },
+      {
+        "sec": 8,
+        "rms_dbfs": -19.43,
+        "peak": 0.643433
+      },
+      {
+        "sec": 9,
+        "rms_dbfs": -23.96,
+        "peak": 0.436584
+      },
+      {
+        "sec": 10,
+        "rms_dbfs": -17.71,
+        "peak": 0.809479
+      },
+      {
+        "sec": 11,
+        "rms_dbfs": -19.18,
+        "peak": 0.492188
+      },
+      {
+        "sec": 12,
+        "rms_dbfs": -22.47,
+        "peak": 0.633942
+      },
+      {
+        "sec": 13,
+        "rms_dbfs": -17.74,
+        "peak": 0.751648
+      },
+      {
+        "sec": 14,
+        "rms_dbfs": -17.26,
+        "peak": 0.792755
+      },
+      {
+        "sec": 15,
+        "rms_dbfs": -22.0,
+        "peak": 0.573578
+      },
+      {
+        "sec": 16,
+        "rms_dbfs": -21.76,
+        "peak": 0.829956
+      },
+      {
+        "sec": 17,
+        "rms_dbfs": -17.4,
+        "peak": 0.840881
+      },
+      {
+        "sec": 18,
+        "rms_dbfs": -23.56,
+        "peak": 0.502563
+      },
+      {
+        "sec": 19,
+        "rms_dbfs": -16.83,
+        "peak": 0.81842
+      },
+      {
+        "sec": 20,
+        "rms_dbfs": -19.67,
+        "peak": 0.571564
+      },
+      {
+        "sec": 21,
+        "rms_dbfs": -20.03,
+        "peak": 0.452423
+      },
+      {
+        "sec": 22,
+        "rms_dbfs": -22.11,
+        "peak": 0.498352
+      },
+      {
+        "sec": 23,
+        "rms_dbfs": -17.42,
+        "peak": 0.77005
+      },
+      {
+        "sec": 24,
+        "rms_dbfs": -18.39,
+        "peak": 0.766541
+      },
+      {
+        "sec": 25,
+        "rms_dbfs": -17.81,
+        "peak": 0.827576
+      },
+      {
+        "sec": 26,
+        "rms_dbfs": -20.14,
+        "peak": 0.600494
+      },
+      {
+        "sec": 27,
+        "rms_dbfs": -21.23,
+        "peak": 0.656342
+      },
+      {
+        "sec": 28,
+        "rms_dbfs": -16.3,
+        "peak": 0.84137
+      },
+      {
+        "sec": 29,
+        "rms_dbfs": -26.37,
+        "peak": 0.236816
+      },
+      {
+        "sec": 30,
+        "rms_dbfs": -90.31,
+        "peak": 3.1e-05
+      }
+    ]
+  }
+}
