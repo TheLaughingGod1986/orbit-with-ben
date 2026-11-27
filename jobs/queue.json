@@ -363281,9 +363281,14 @@
           "at": "2026-11-27T18:59Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Confirmed 5/5 SHA-256 hashes, PR #797 OPEN/6-of-6 CI green, status.json unchanged, zero new desk/thread rulings; no independent non-producer reviewer has audio_input"
+        },
+        {
+          "at": "2026-11-27T18:59Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded J3780 wait (--type capability --requires audio_input --recheck J3942 --check-at 2026-11-28T09:00:00Z); posted HOS #694 (#7226081113) & OWB #1353 (#7226081527)"
         }
       ],
-      "remaining_action": "Record unmet capability wait on J3780 (--recheck J3942), post reports, and close J3942",
+      "remaining_action": "Close J3942 after recording unmet J3780 capability wait and posting reports",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -363300,7 +363305,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-27T18:59Z",
         "by": "gemini",
@@ -363309,7 +363314,7 @@
           "Check non-producer audio_input readiness",
           "Record J3780 wait or reopen and finish J3942"
         ],
-        "note": "Confirmed 5/5 SHA-256 hashes, PR #797 OPEN/6-of-6 CI green, status.json unchanged, zero new desk/thread rulings; no inde"
+        "note": "Recorded J3780 wait (--type capability --requires audio_input --recheck J3942 --check-at 2026-11-28T09:00:00Z); posted H"
       },
       "taskKeys": [
         "HOS:128"
