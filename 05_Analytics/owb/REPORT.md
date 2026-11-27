@@ -221,15 +221,15 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Is Jupiter Beside the Moon on November 30?](https://youtu.be/GbELka8Yu9U) | 33 h (early) | 1000 | 33.2% | MISS | 69.0% | WATCH |
-| [Where Will the International Space Station Crash?](https://youtu.be/_dVWVUnbDzA) | 2 d | 1200 | 44.7% | MISS | 86.0% | PASS |
+| [Why Is Jupiter Beside the Moon on November 30?](https://youtu.be/GbELka8Yu9U) | 34 h (early) | 1015 | 33.3% | MISS | 69.0% | WATCH |
+| [Where Will the International Space Station Crash?](https://youtu.be/_dVWVUnbDzA) | 2 d | 1219 | 44.6% | MISS | 86.0% | PASS |
 | [Why Do You Weigh Less at Earth's Equator?](https://youtu.be/Dm4xsF1Ateg) | 4 d | 35 | 40.6% | too few to judge | 59.0% | too few to judge |
 | [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/2YiV_zDgLJg) | 6 d | 283 | 46.1% | WATCH | 74.0% | PASS |
-| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 7 d | 1000 | 42.6% | MISS | 81.0% | PASS |
+| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 7 d | 1025 | 42.6% | MISS | 81.0% | PASS |
 | [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 8 d | 98 | 40.9% | too few to judge | 70.0% | too few to judge |
 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 9 d | 27 | 92.3% | too few to judge | 79.0% | too few to judge |
 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 10 d | 281 | 27.7% | MISS | 104.0% | LOOP |
 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 11 d | 481 | 37.4% | MISS | 150.0% | LOOP |
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 13 d | 1200 | 50.7% | WATCH | 100.0% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 13 d | 1270 | 50.7% | WATCH | 100.0% | LOOP |
 
 Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 6 of 7 at 70%+.
