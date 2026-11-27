@@ -361690,9 +361690,14 @@
           "at": "2026-11-27T17:11Z",
           "by": "codex",
           "what": "step 2 of 3 done: Chief review steps 1 and 2 complete: PR1388 merged a09c483f3e; approved REVIEW SHA256 c92dfd94 matches main; locked VO hash matches; J3022/J3818 done; J3023 after J3022 and newer package FIX hold retained. Shared active record belongs to J3860, so relay review-progress rejects; using separate queue progress."
+        },
+        {
+          "at": "2026-11-27T17:12Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: KEEP ruling recorded on parent reopening; publication verified, thumbs restored done. J3023 newer package FIX retained with J3910/PR1390 dependency and 28 Nov 14:30Z retry. Closing verification then completed parent to respect one-claim limit. Review document retained locally at 57d23c33d1 after push rejection."
         }
       ],
-      "remaining_action": "Record the verified publication ruling and preserve the newer package hold",
+      "remaining_action": "Verification complete; record parent completion",
       "kind": "review",
       "recheck_of": "J3883",
       "due": "2026-11-27T16:10:00+00:00",
@@ -361710,16 +361715,16 @@
       ],
       "urgent": 9,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T17:11Z",
+        "at": "2026-11-27T17:12Z",
         "by": "codex",
         "plan": [
           "Check scope and approval",
           "Verify published evidence",
           "Record ruling and follow-up"
         ],
-        "note": "Chief review steps 1 and 2 complete: PR1388 merged a09c483f3e; approved REVIEW SHA256 c92dfd94 matches main; locked VO h"
+        "note": "KEEP ruling recorded on parent reopening; publication verified, thumbs restored done. J3023 newer package FIX retained w"
       }
     },
     {
