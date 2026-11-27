@@ -1,5 +1,5 @@
 {
-  "next_id": 3916,
+  "next_id": 3917,
   "jobs": [
     {
       "id": "J0001",
@@ -360488,6 +360488,34 @@
         ],
         "note": "Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0"
       }
+    },
+    {
+      "id": "J3916",
+      "title": "OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3914 reviewer FIX for PR #1394 (OWB 064 Short 2), ruling in jobs/reviews/J3914/REVIEW.md. Duration is resolved to 16.0-19.0 s: variant v02b is the line, and v02 is retired. One spoken fix only: in v02b line 2, restore NASA's qualifier \"true\" (\"Uranus has no true surface; that's its coldest air.\" or the writer's equivalent). Change no other words. Recompute raw/expanded character counts and the fast/mid/slow estimate; mid must be at or below 19.0 s. Write it as script v03 on the same PR branch, with the quote check already done (064_short02_QUOTECHECK_v02.md). No VO take, spend, Flow/Vertex, upload or schedule change. Finish with the exact head commit.\n",
+      "ref": "J3914",
+      "film": "064",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-27T15:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T15:12Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX)",
+      "kind": "script"
     }
   ],
   "focus": [
