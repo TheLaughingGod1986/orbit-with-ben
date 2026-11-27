@@ -355738,13 +355738,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T16:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "parked for Chief: review and merge PR #1402 (gemini/J3858-foh-48h-qfc6EBStOfo, commit a4195dfb23) importing Field Order History 48h Studio read for qfc6EBStOfo (2026-11-24..2026-11-25 Pacific: 1044 impr, 1.2% CTR, returningViewers=0, newViewers=null, testCompare=unavailable), then close J3858 and unblock J3859",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355815,6 +355815,11 @@
           "at": "2026-11-27T16:41Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1402 (gemini/J3858-foh-48h-qfc6EBStOfo, commit a4195dfb23) importing Field Order History 48h Studio read for qfc6EBStOfo (2026-11-24..2026-11-25 Pacific: 1044 impr, 1.2% CTR, returningViewers=0, newViewers=null, testCompare=unavailable), then close J3858 and unblock J3859"
+        },
+        {
+          "at": "2026-11-27T16:51Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded: ACCEPT PR 1402 merged b94f99c48f; full diff reviewed, 22/22 tests passed, importer regenerated identically. Reopen solely to record review completion; J3859 is the concrete follow-up. Data window straddles 25 Nov packaging change; not proof current design failed."
         }
       ],
       "remaining_action": "Await Chief review and merge of PR #1402 to close J3858 and unblock J3859",
@@ -355823,21 +355828,7 @@
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
       "taskKeys": [
         "WW2:002"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-27T16:41Z",
-        "by": "gemini",
-        "plan": [
-          "Verify Studio browser & channel",
-          "Collect 48h metrics & Test & Compare",
-          "Import strict dated Studio read",
-          "Commit & push PR from clean worktree",
-          "Report evidence & close job"
-        ],
-        "note": "Opened PR #1402 (commit a4195dfb23) and posted collection evidence to studio thread; parking merge for Chief"
-      }
+      ]
     },
     {
       "id": "J3859",
