@@ -1,5 +1,5 @@
 {
-  "next_id": 3930,
+  "next_id": 3931,
   "jobs": [
     {
       "id": "J0001",
@@ -361477,6 +361477,52 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3930",
+      "title": "FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 27 Nov: \"So any changes to be made yet or just keeping a eye\").** Each film should hand its viewers to the next one. Right now pilot 1 (ek9F61FVYqY) sends viewers to pilot 2 (end screen, plus a card at 17:58), and B-29 (RqYjADxvJy8) will send them to pilot 2 (end screen). But pilot 2 (qfc6EBStOfo) only points back to pilot 1 and has no card, so the chain stops there. B-29 goes public **Sat 28 Nov 17:00 London**.\n\n**Do, after B-29 is public (Mini, Studio on 9223, Field Order History; never play a public video):**\n1. First check that B-29 RqYjADxvJy8 is Public, through the Data API or the Studio content list. If it isn't public yet, put this back on hold and say why.\n2. **Pilot 2's end screen** (the last 20 s, now 20:41:08 to 21:01:07): change the Video element from pilot 1 to **B-29 RqYjADxvJy8** and keep Subscribe. If Studio allows a second Video element without covering the picture, keep pilot 1 as the second one.\n3. **One info card on pilot 2 at 17:50**, just before the last chapter \"What closing the gap meant\" (17:57), pointing to B-29, with a short teaser in the series voice, e.g. \"Next: the bomber that cost more than the atomic bomb\". No clickbait.\n4. Read each change back after a reload. Then write one thread line and record it in `02_Video-Projects/002_*/03_Picture/LINKS_v01.md` (times, elements, screenshot hashes) in one ww2-channel PR.\n\n**Guards.** Pilot 2's thumbnail test is still running: never touch the title, the thumbnail, Test & Compare or the description. Don't change B-29 or pilot 1. £0.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 20,
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-27T16:37Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T16:37Z",
+      "result": "Waiting for: B-29 RqYjADxvJy8 goes public (Sat 28 Nov 17:00 London)",
+      "history": [
+        {
+          "at": "2026-11-27T16:37Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-27T16:37Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: B-29 RqYjADxvJy8 goes public (Sat 28 Nov 17:00 London)"
+        },
+        {
+          "at": "2026-11-27T16:37Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-28T17:20:00Z"
+        }
+      ],
+      "remaining_action": "Pilot 2 end screen + card -> B-29 RqYjADxvJy8, read back",
+      "due": "2026-11-28T19:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "B-29 RqYjADxvJy8 goes public (Sat 28 Nov 17:00 London)",
+        "check_at": "2026-11-28T17:20:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
