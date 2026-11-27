@@ -360273,9 +360273,14 @@
           "at": "2026-11-27T14:59Z",
           "by": "claudecode",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-27T15:01Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Read PR #1394 (c089fb3ffa), J3912 review 42e48a4d90 and rules: gate_shorts_open.py:113 + RULES.md:189 say new Short masters target 16.0-19.0 s (Ben 19 Nov); J3904 brief says 22-27 s"
         }
       ],
-      "remaining_action": "Reading PR #1394 files, J3912 review and Shorts duration rules",
+      "remaining_action": "Writing v02 narration that separates Venus's surface from Uranus's atmospheric minimum",
       "due": "2026-11-28T12:00:00Z",
       "kind": "script",
       "plain": "Revise the Venus and Uranus Short script and check its picture sources",
@@ -360288,9 +360293,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T14:59Z",
+        "at": "2026-11-27T15:01Z",
         "by": "claudecode",
         "plan": [
           "Read PR 1394 and rules",
@@ -360299,7 +360304,8 @@
           "Shot provenance and licence audit",
           "Duration rule and metrics",
           "Push PR and report"
-        ]
+        ],
+        "note": "Read PR #1394 (c089fb3ffa), J3912 review 42e48a4d90 and rules: gate_shorts_open.py:113 + RULES.md:189 say new Short mast"
       },
       "taskKeys": [
         "OWB:064"
