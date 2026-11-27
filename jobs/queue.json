@@ -354668,9 +354668,14 @@
           "at": "2026-11-27T06:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
+        },
+        {
+          "at": "2026-11-27T07:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
         }
       ],
-      "remaining_action": "Waiting for the Titan Short picture corrections in J3856, then review the new cut",
+      "remaining_action": "Waiting for J3865 Titan Short corrections and exact-file review",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
@@ -354692,7 +354697,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief FIX: v01 is not approved. J3856 must repair the still-zoom bridge, Earth/unsourced depth bars and early payoff, and S04 image boundary, then deliver v02 with fresh gates for exact-file review. PR 1366 remains unmerged.",
+        "condition": "Chief FIX remains: v01 and v02 are not approved. J3865 must deliver corrected v03 and exact-file review must pass before UAT. J3856 review found Dragonfly depicted as Cassini and undersized, non-spoken depth labeling. No upload or scheduling.",
         "check_at": "2026-11-28T06:45:00Z"
       }
     },
