@@ -1,5 +1,5 @@
 {
-  "next_id": 3865,
+  "next_id": 3866,
   "jobs": [
     {
       "id": "J0001",
@@ -355553,6 +355553,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3865",
+      "title": "Titan Short v03: correct Cassini picture and readable teaching graphic",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief FIX follow-up to J3856 / J3853, OWB:032 dry_desert_two_oceans. Read jobs/reviews/J3856/REVIEW.md on branch codex/J3856-review and PR #1366 head 1a50bad01d. v02 hash 34c800a4a9bf034cbc9f498903621998d407355f845e8c5f437d71246025c906 is NOT approved. S03 shows Dragonfly under Cassini radar narration; replace with correctly identified moving Cassini/Titan north-polar observation imagery. Chief selects handoff option A: new official NASA/JPL/Cassini external-source search, maximum 20 active minutes and three deep candidates total across retries (prior search was local/NAS). Verify source identity, rights, native-motion evidence, interval and crop/upscale. No spend, generation, VO changes or E1 waiver. If exhausted, return candidate failures plus an exact sourced fallback composition for Chief; do not repeat the cache search or substitute another mission. Simplify S08: replace unspoken 55-80 KM BELOW with exact locked spoken words at their word timestamps; teaching labels about 67-73 px (11-12 percent of 608px safe band), one overlay, no early ocean payoff, retain Titan and no invented proportions. Preserve S04 clean full-frame crop and check softness. Build v03 beside v01/v02; NAS checksum, corrected full-size stills, phone graphic preview, captions, provenance, E1 measurements and seven fresh gates with warning review. Update PR #1366 or link replacement; return for exact-file review before UAT. Keep J3853/J3856 held. No upload, scheduling, Buffer, UPLOADS or existing Short changes. Gate-check date December 26 is not an approved slot.",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366",
+      "film": "032",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T07:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T07:42Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find accurate Cassini footage and build the corrected Titan Short",
+      "kind": "assembly",
+      "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short"
     }
   ],
   "focus": [

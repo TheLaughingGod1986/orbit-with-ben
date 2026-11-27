@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3860 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-27 |  |
 | J3863 | mini | blocked | claudecode | – | review · Verify condition for J3115 |  |
 | J3864 | mini | open | – | – | review · Verify condition for J3816 |  |
+| J3865 | mini | open | – | – | 032 edit · assembly · Titan Short v03: correct Cassini picture and readable teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 
 Recently finished:
 
