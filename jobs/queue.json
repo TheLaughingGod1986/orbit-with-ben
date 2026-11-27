@@ -360022,9 +360022,14 @@
           "at": "2026-11-27T14:43Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:43Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Resolve the terminal-loop gate conflict before approval review",
+      "remaining_action": "Read J3871 history and evidence",
       "kind": "review",
       "recheck_of": "J3871",
       "due": "2026-11-27T15:38:38+00:00",
@@ -360042,8 +360047,11 @@
         "of": 3,
         "at": "2026-11-27T14:43Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3871 history",
+          "Check PR 811 / branch evidence",
+          "Record recheck and finish"
+        ]
       }
     },
     {
