@@ -355871,9 +355871,14 @@
           "at": "2026-11-27T08:06Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:08Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for authorized publication and completion of the existing Pluto packaging review",
+      "remaining_action": "Inspect J3819, J3115, J3855, J3861, J3863 and PR #1367 evidence",
       "kind": "review",
       "recheck_of": "J3819",
       "due": "2026-11-27T09:05:00+00:00",
@@ -355887,12 +355892,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T08:06Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T08:08Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3819, J3115, J3855, J3861 and PRs",
+          "Check 034 status, git branches and approval evidence",
+          "Reopen J3819 or record structured wait",
+          "Write verification note, open PR and report"
+        ]
       }
     }
   ],
