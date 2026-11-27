@@ -300248,18 +300248,23 @@
           "at": "2026-11-27T18:00Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3308; verified J3307 and J3382 done on main and B_v03 SHA-256 matches aaaaef79e7834fc28233b2b990473cbba7e993b3ba3d79865ebc295d297be91f"
+        },
+        {
+          "at": "2026-11-27T18:10Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Fresh Studio check verified Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog, on CDP 9224 after 26 Nov port swap; 9223 holds FOH), matching finished inconclusive T006 report (15 Oct 10:49 to 29 Oct 10:07), no running test. T006 report preserved to _desk/jobs/J3308/."
         }
       ],
-      "remaining_action": "Verify J3382/J3307 review state, B file bytes, and inspect Studio CDP 9223 read-only",
+      "remaining_action": "Arm thumbnail-only T041 Test & Compare (live A unchanged vs exact approved B_v03) in Orbit Studio",
       "kind": "studio",
       "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval",
       "taskKeys": [
         "OWB:006"
       ],
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T18:00Z",
+        "at": "2026-11-27T18:10Z",
         "by": "gemini",
         "plan": [
           "Verify review, file hash and Studio state",
@@ -300268,7 +300273,7 @@
           "Reload and verify Test running",
           "Update THUMB_LEDGER.json and open PR"
         ],
-        "note": "Claimed J3308; verified J3307 and J3382 done on main and B_v03 SHA-256 matches aaaaef79e7834fc28233b2b990473cbba7e993b3b"
+        "note": "Fresh Studio check verified Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog, on CDP 9224 after 26 Nov port swap; 9223 holds FOH"
       }
     },
     {
