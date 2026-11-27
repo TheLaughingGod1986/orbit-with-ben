@@ -359325,13 +359325,26 @@
           "at": "2026-11-27T13:53Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T13:54Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: After J3902 KEEP and Chief PR #1390 merge, set jobs.py awaits on Ben's watch board and queue approved-delivery handoff",
       "kind": "review",
       "recheck_of": "J3023",
       "due": "2026-11-27T14:53:55+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
