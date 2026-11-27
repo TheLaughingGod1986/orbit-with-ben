@@ -364390,9 +364390,14 @@
           "at": "2026-11-27T20:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T20:12Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J3956 verification of J3704 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Publishing the committed corrections after the data-export approval is resolved",
+      "remaining_action": "Verify J3704 condition against J3951 and ww2-channel PR #214",
       "kind": "review",
       "recheck_of": "J3704",
       "mini_only": true,
@@ -364409,11 +364414,19 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T20:11Z",
+        "at": "2026-11-27T20:12Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3704, J3951, PR 214 and PR 189",
+          "Check authorization, gates and jobs.py state",
+          "Update J3704 wait/reopen, report and finish J3956"
+        ],
+        "note": "Starting J3956 verification of J3704 waiting condition"
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
