@@ -357520,9 +357520,14 @@
           "at": "2026-11-27T10:53Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: J3365 done (Chief KEEP, PR1170 merged). J3884 worker steps 5/5 done; PR #1377 open at 4a1105fc38, no review or comments"
+        },
+        {
+          "at": "2026-11-27T10:53Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: PR #1377 evidence checked: 10/10 screenshot SHA-256 match in ~/_desk/J3884/2026-11-27; condition unmet (PR #1377 open, unreviewed); jobs.py wait refused for worker"
         }
       ],
-      "remaining_action": "Check PR #1377 evidence and record the unmet Chief-review gate",
+      "remaining_action": "Park for Chief with the exact wait command",
       "kind": "review",
       "recheck_of": "J3884",
       "due": "2026-11-27T11:50:39+00:00",
@@ -357536,7 +357541,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-27T10:53Z",
         "by": "claudecode",
@@ -357545,7 +357550,7 @@
           "Check gates and approvals",
           "Park for Chief with exact command"
         ],
-        "note": "J3365 done (Chief KEEP, PR1170 merged). J3884 worker steps 5/5 done; PR #1377 open at 4a1105fc38, no review or comments"
+        "note": "PR #1377 evidence checked: 10/10 screenshot SHA-256 match in ~/_desk/J3884/2026-11-27; condition unmet (PR #1377 open, u"
       },
       "taskKeys": [
         "HOS:004",
