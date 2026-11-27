@@ -357344,15 +357344,20 @@
           "at": "2026-11-27T10:46Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Read Studio CDP 9460 for 004 (no attached test; deleted exp 3; Test B title live), 007 (T029 exp 2 finished 12-26 Nov NOT_ENOUGH_DATA / draw, null shares, A visible), 099 (title & selected cover match compilation_thumb_v02.jpg visually); HOS channel:audit PASSED (80 videos, 0 errors)"
+        },
+        {
+          "at": "2026-11-27T10:50Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened readback PR #1377 (gemini/J3884-hos-readback, 4a1105fc38): T029 updated to done/draw (null shares), 004 no attached test, 099 cover visually matches compilation_thumb_v02.jpg, HOS channel:audit PASS (80 videos, 0 errors), 21/21 OWB tests PASS"
         }
       ],
-      "remaining_action": "Updating T029 ledger row, PATTERNS.md, and opening readback PR from clean worktree",
+      "remaining_action": "Parked for elected Chief (codex) review and merge of PR #1377",
       "kind": "studio",
       "plain": "Check the atom and vaccine thumbnail test results and the compilation cover",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-27T10:46Z",
+        "at": "2026-11-27T10:50Z",
         "by": "gemini",
         "plan": [
           "Check ledger, package hash & Studio session",
@@ -357361,7 +357366,7 @@
           "Run HOS channel:audit & record result",
           "Update ledger/patterns & open readback PR"
         ],
-        "note": "Read Studio CDP 9460 for 004 (no attached test; deleted exp 3; Test B title live), 007 (T029 exp 2 finished 12-26 Nov NO"
+        "note": "Opened readback PR #1377 (gemini/J3884-hos-readback, 4a1105fc38): T029 updated to done/draw (null shares), 004 no attach"
       },
       "taskKeys": [
         "HOS:004",
