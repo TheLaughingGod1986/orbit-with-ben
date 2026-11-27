@@ -360071,13 +360071,13 @@
       "stage": "edit",
       "after": "J3902",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-27T21:31Z",
-      "eta": "2026-11-27T23:31Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "",
+      "result": "Registered Ben phone UAT watch on J3903 via jobs.py awaits for Chief-PASSed canonical NAS v03 (064_short01_testA_opening_v03.mp4, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402, version v03, due 2026-12-13 18:00 London). Verified live on board-data (1ba75490) via board_check.py: ok=true, OWB:ASK:J3903 in lane=ready (readyFor=Ben, play=302). £0 spend; zero upload/scheduling; never upload or air before 064 long is public Wed 16 Dec 2026 18:00 London.",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -360188,6 +360188,11 @@
           "at": "2026-11-27T21:38Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified published board-data (1ba75490) via board_check.py --no-post: ok=true, 0 problems, OWB:ASK:J3903 in Ready for OK (readyFor=Ben, play=302)"
+        },
+        {
+          "at": "2026-11-27T21:38Z",
+          "by": "gemini",
+          "what": "done: Registered Ben phone UAT watch on J3903 via jobs.py awaits for Chief-PASSed canonical NAS v03 (064_short01_testA_opening_v03.mp4, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402, version v03, due 2026-12-13 18:00 London). Verified live on board-data (1ba75490) via board_check.py: ok=true, OWB:ASK:J3903 in lane=ready (readyFor=Ben, play=302). £0 spend; zero upload/scheduling; never upload or air before 064 long is public Wed 16 Dec 2026 18:00 London."
         }
       ],
       "remaining_action": "Close J3903 and post studio thread report",
@@ -360219,7 +360224,8 @@
         "title": "Why Does Water Ice Survive 430°C Heat on Mercury?",
         "number": "064 Short 1",
         "type": "short"
-      }
+      },
+      "done_ref": "df709ca909"
     },
     {
       "id": "J3904",
