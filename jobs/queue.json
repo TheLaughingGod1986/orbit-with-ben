@@ -1,5 +1,5 @@
 {
-  "next_id": 3869,
+  "next_id": 3870,
   "jobs": [
     {
       "id": "J0001",
@@ -355960,6 +355960,36 @@
         ],
         "note": "PR #1369 open on macbook/J3868; parking for Chief (reopen is Chief-only)"
       }
+    },
+    {
+      "id": "J3869",
+      "title": "WW2 016: harvest archive, prepare shot list and three thumbnails",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3831 Chief follow-up, authorized no-spend work after merged ww2-channel PR206 (2b79228). Read CHIEF_RULING_J3831.md in film 016 and current WW2 rules. Locked narration v02 SHA256 0f8afe812b5c259a3c8f0a386438c9247c74dd6dc1920476f9fdb49d35e13d62; do not rewrite it.\n\nHarvest the 38 active archive candidates plus needed spares at full resolution, record source IDs/rights/date/hash and inspect actual pixels. Resolve #26 full-resolution source and #29 original identity; compare duplicates. Replace the January #35 cold-open cue with a verified December plate; keep January imagery in honest January/context use, never literal December relief. Keep the excluded reel excluded and spare insignia guards. Build the shot list with >=50 percent measured projected archive screen time, aim two-thirds, full-bleed 16:9 and no repeat within 60s. Prepare clean per-shot code maps, no empty/text-only filler or job IDs. Build three archive thumbnail designs per PACKAGING at 168px, return actual pixels for Chief review. Concepts are approved, final pixels are not.\n\nNo generation or credit spend; do not render the final film before VO/picture review. Keep verified durable NAS assets and sha256 manifest, stage records and clean PR. Queue the appropriate review when ready. Preserve air 31 Dec and Ben watch 28 Dec; primary Short only, extras remain gated. Follow existing voiced-film priorities; do not interrupt active work.\n",
+      "ref": "ww2-channel#206",
+      "film": "WW2:016",
+      "stage": "picture",
+      "after": "J3831",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T08:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Gather full-resolution archive pictures and verify their dates and contents",
+      "due": "2026-12-18T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals"
     }
   ],
   "focus": [
