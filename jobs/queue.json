@@ -353225,9 +353225,14 @@
           "at": "2026-11-27T01:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: FIX: required source reconciliation remains unfinished. Narration parity and character cap verified. Detailed ruling committed locally at cdf868d0a6."
+        },
+        {
+          "at": "2026-11-27T01:51Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: FIX recorded on J3831 with last_recheck J3837; J3842 open immediately; next condition check 27 Nov 07:00Z. Local review 937ed6cafe; push rejected."
         }
       ],
-      "remaining_action": "Record the correction task and maintain the script hold",
+      "remaining_action": "Review complete; J3842 owns the corrections before J3831 can proceed",
       "kind": "review",
       "recheck_of": "J3831",
       "due": "2026-11-27T02:09:59+00:00",
@@ -353241,11 +353246,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T01:50Z",
+        "at": "2026-11-27T01:51Z",
         "by": "codex",
-        "note": "FIX: required source reconciliation remains unfinished. Narration parity and character cap verified. Detailed ruling com"
+        "note": "FIX recorded on J3831 with last_recheck J3837; J3842 open immediately; next condition check 27 Nov 07:00Z. Local review "
       },
       "taskKeys": [
         "WW2:016"
