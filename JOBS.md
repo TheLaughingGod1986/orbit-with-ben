@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3844.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -92,13 +92,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3844 | any | claimed | codex | 2026-11-27T03:38Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3845 | mini | open | – | – | studio · J3844 follow-up: verify HOS Studio listing fields |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3847 | mini | open | – | – | assembly · J3844 follow-up: investigate missing public id in audit |  |
 
 Recently finished:
 
+- J3844 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief review complete: corrected bounded audit accepted; PR806 merged (c202e850, CI green); desk ruling 7208289747. Direct videos.list confirms qOZgess30h0 PUBLIC at 02:34:19Z; Private inference and restore withdrawn. Follow-ups J3845 Studio, J3846 PR802, J3847 coverage investigation ready. No YouTube changes. Priority set solely to close this explicitly assigned completed review.)
 - J3843 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only OWB live listing check (2026-11-27, GBP 0, zero Studio/API/Buffer changes, no public watch/Shorts page fetches): 10/10 last live public videos pass with 0 live fixes needed and 0 Studio read-backs owed. Paginated Data API v3 (218 uploads/133 public), manifest diffs, 19 external source URL/Crossref/DOI checks, 032 (7/7) & 027 (6/6) master/SRT chapter checks, and direct read-only Studio CDP 9223 inspection (single reused tab) all verified. Closed yesterday's owed GbELka8Yu9U post-publish Studio Related read-back (-jmMROGoZCM confirmed live); verified all 7 linked Shorts Related pills, 9q_OvQ1Rd8Y standalone None (pending J3326 PR #1130), and both longs' 2-element end screens in /editor (T3cBBss1F60: Subscribe + Best for viewer, 033 Uranus oASsmqZfWU4 hand-off Private until 9 Dec; 6bbbvfCx6zY: Subscribe + VBaYRPp85Sw). Report: 05_Analytics/live_fixes/2026-11-27.md on PR #1364 (gemini/J3843-live-fixes, bf91226c5b, parked for Chief merge).)
 - J3842 done: WW2 016: finish source reconciliation and final-file viewer evidence for J3831 (J3831 revised PR: ww2-channel #204 head adea65975040928a2cc70fc7f97a74d6fa19d2e6 (on #202). SOURCES v02 reconciled to J3830 s4 (inherited checks, not re-run); #30->#33 + corridor fixed; PACKAGING/TOPIC/status Shorts on corrected chronology; ledger line J3830 exact 19-23 Dec. Final-file Rule 6: 53=53 parity, 18,488 stripped chars, sha256 7bcda278694fa818b427c553b6bca823c8f1d33efd66ebecff32fd5d7027db0c, 300w/1,200w PASS, max 4 figures/30s. Not locked; Chief fresh review.)
 - J3839 done: Verify condition for J3022 (Chief ruling: old panel condition satisfied by DECISION.md fbdfbada07, but J3022 remains held for fresh independent J3818 review of J3835 corrections (OPEN PR 1361, 9ff96bd97), elected-Chief acceptance and corrected records merged while reconciling overlapping OPEN PRs 1358/1359. Recorded wait --recheck J3839; next check 2026-11-27T12:30:00Z, after existing J3818 12:15 check. J3023 remains after J3022; no production PASS, spend or publishing change.)
@@ -108,4 +108,3 @@ Recently finished:
 - J3832 done: WW2 009: correct v06 after Chief v05 review (v06 written for review, NOT LOCKED: NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66; 7 blocks changed (S04,S05,S10,S31,S32,S35,S36); 37 blocks exact SCRIPT parity; 10050 chars; Strait crossing done at 56.9 s @140 wpm with pauses; promise 42.8 s. DELTA_v06.md + VALIDATION_v06.json. Ready for J3833 Gemini check once PR #200 lands.)
 - J3830 done: WW2 film 016: Battle of the Bulge independent claims & archive provenance check (PR #197) (done)
 - J3829 done: Verify condition for J3818 (Chief FIX: J3818 condition not satisfied. PIA00233 reconstruction must be replaced in R11; correct PIA18033 credit. J3835 owns exact corrections and evidence, due 27 Nov 12:00 London. Parent hold updated with --recheck J3829, dependency J3835 and next check 2026-11-27T12:15:00Z. J3022/J3023 remain unreleased. Ruling commit 7bd7345ae8, codex/J3829-condition-review. No spend or publishing changes.)
-- J3827 done: Chief: resolve 034 thumbs orphan-blocked (Workflow repair complete: created linked review successor J3828 (OWB:034 thumbs, after J3115) and recorded it on blocked thumbnail stage. Verified dependency and released claim. J3115 publication restriction, J3119 delivery dependency, Ben master approval and Shorts holds preserved. No media PASS or platform action.)
