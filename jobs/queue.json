@@ -353694,18 +353694,28 @@
           "at": "2026-11-27T02:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T02:22Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Reading prior live_fixes report and identifying the last 10 live OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-27T02:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Fetch last 10 live OWB videos",
+          "Audit chapters and sources",
+          "Check end screens and Related pills",
+          "Write live_fixes report",
+          "Commit and hand off"
+        ]
       }
     }
   ],
