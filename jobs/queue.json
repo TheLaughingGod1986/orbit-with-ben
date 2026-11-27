@@ -320714,10 +320714,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T00:28Z",
+      "eta": "2026-11-27T04:28Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
       "result": "",
@@ -320831,6 +320831,11 @@
           "at": "2026-11-26T23:40Z",
           "by": "claude",
           "what": "reopened: Routed to Gemini on the Mini, which has web search (the MacBook run had none). Topic checkpoint is merged (ww2-channel PR #173). Lock by Wed 16 Dec 18:00, air Thu 31 Dec."
+        },
+        {
+          "at": "2026-11-27T00:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
@@ -320838,7 +320843,15 @@
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
       "open_claim": true,
-      "for": "gemini"
+      "for": "gemini",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T00:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3488",
