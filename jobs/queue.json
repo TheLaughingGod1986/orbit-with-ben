@@ -273911,9 +273911,14 @@
           "at": "2026-11-27T11:49Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming the existing 3/4 checkpoint; no repeat of completed probe or rehearsal."
+        },
+        {
+          "at": "2026-11-27T11:53Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Merged readiness PR 1379; fix PR 1380 already merged. Traced early heartbeat to Mini test spawn, verified unchanged rehearsal queue and no remaining worker. J3892 implements the external installer."
         }
       ],
-      "remaining_action": "Verify both machines are ready, then coordinate the studio move and its live checks",
+      "remaining_action": "Review the external MacBook installer, then coordinate the frozen queue and live cutover",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273934,7 +273939,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T11:49Z",
+        "at": "2026-11-27T11:53Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273942,7 +273947,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Resuming the existing 3/4 checkpoint; no repeat of completed probe or rehearsal."
+        "note": "Merged readiness PR 1379; fix PR 1380 already merged. Traced early heartbeat to Mini test spawn, verified unchanged rehe"
       }
     },
     {
