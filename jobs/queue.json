@@ -351626,9 +351626,14 @@
           "at": "2026-11-27T00:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:02Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publishing the committed corrections after the data-export approval is resolved",
+      "remaining_action": "Checking whether publication of the pilot analytics corrections is approved and complete",
       "kind": "review",
       "recheck_of": "J3704",
       "mini_only": true,
@@ -351645,11 +351650,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T00:00Z",
+        "at": "2026-11-27T00:02Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read the hold and approvals",
+          "Verify publication evidence",
+          "Record the condition and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
