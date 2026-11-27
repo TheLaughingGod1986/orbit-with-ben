@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3833 | gemini | claimed | claudecode | 2026-11-27T03:01Z | WW2:009 sources · facts · WW2 009: independent v06 claims check | ww2-channel#198 |
 | J3834 | any | open (after J3833) | – | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3835 | any | claimed | macbook | 2026-11-27T03:08Z | 064 thumbs · assembly · OWB 064: correct R11 reconstruction and Earth attribution after J3829 FIX | J3829 |
-| J3836 | mini | open | – | – | review · Verify condition for J3704 |  |
+| J3836 | mini | claimed | gemini | 2026-11-27T03:11Z | review · Verify condition for J3704 |  |
 | J3837 | mini | open | – | – | review · Verify condition for J3831 |  |
 
 Recently finished:
