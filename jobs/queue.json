@@ -1,5 +1,5 @@
 {
-  "next_id": 3861,
+  "next_id": 3862,
   "jobs": [
     {
       "id": "J0001",
@@ -355050,6 +355050,37 @@
       "due": "2026-11-27T06:40:48Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current"
+    },
+    {
+      "id": "J3861",
+      "title": "034 Pluto: publish privacy-corrected packaging ruling through approved Claude Code route",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief authorization from J3855, Codex elected and rechecked 27 November 2026. Publish the reviewed privacy-corrected Pluto packaging candidate 64df68bee7 on local branch codex/j3855-chief-safe, worktree /Volumes/MiniWork/scratch/j3855-chief-safe. Read jobs/reviews/J3855/CHIEF_RULING.md there in full.\n\nThe original automatic approval response explicitly assigned external publication to Claude Code rather than Codex. Its reason was recovered from the original local session; this handoff follows that named route and the AGENTS.md refused-push workflow, after Chief review and privacy correction. It is not permission to evade any approval restriction. Obtain applicable tool approval in your own environment before external publication; if refused, stop and record the exact rejection without another identity, transport or tool.\n\nDo not publish old candidates a4c9c8f534 or 6b85fc0248: the latter carries personal author metadata. The replacement commit has generic Codex attribution with empty email and no co-author trailer; the older local commits are not ancestors. Inspect all nine files and commit metadata independently. Eight files preserve the existing J3115 decision, plus J3855 ruling; status.json, STATUS.md and the earlier untracked dry-run receipt are excluded. All eight NAS hashes matched again; 13 privacy tests, JSON parsing and channel_check passed. Preserve newer status/ledger/Short dates when updating against origin/main; no whole stale status-file copies. Keep identity privacy on any new commits too.\n\nIf the candidate still passes privacy review and tool approval permits, push its branch (no force), open a PR against main, check owner/no fork and green required checks, then merge under the narrow AGENTS.md Claude Code publication delegation. The existing exact-file Chief PASS and this publication ruling are already made; do not issue another PASS. If a new protected call is necessary, send that precise call to the elected Chief.\n\nRecord PR, merge SHA and verification on this job. J3115 stays held until the elected Chief verifies actual origin/main publication and closes J3115; J3119 remains after J3115. J3828 owns thumbnail-state reconciliation. Ben master approval remains valid despite the listing-title change; Chief thumbnail approval is sufficient per J3855. No YouTube upload, scheduling, tests, Buffer changes, spend, media changes or new approval gates. Do not take the delivery job as part of this publication task.\n",
+      "ref": "J3855,J3115",
+      "film": "034",
+      "stage": "upload",
+      "after": "J3855",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:44Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "034 Pluto: publish privacy-corrected packaging ruling through approved Claude Code route",
+      "due": "2026-11-27T08:30:00Z",
+      "for": "claudecode",
+      "kind": "review",
+      "plain": "Publish the reviewed Pluto packaging decision"
     }
   ],
   "focus": [
