@@ -1,5 +1,5 @@
 {
-  "next_id": 3871,
+  "next_id": 3872,
   "jobs": [
     {
       "id": "J0001",
@@ -356095,6 +356095,35 @@
       "kind": "vo",
       "plain": "Record the Battle of the Bulge narration after credits and the earlier film review are ready",
       "mini_only": true
+    },
+    {
+      "id": "J3871",
+      "title": "HOS 009: repair Newton apple Short opening, loop and sound cue",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3864 acting-Chief FIX ruling: repair the additional HOS 009 Newton apple Short; parent J3816 stays held. This job is authorised no-spend internal assembly, not a Short PASS or UAT/upload approval.\n\nStart from draft HOS PR #811, codex/J3816 at 2922143e2bc116edd800c63e8bfb42c20abb3c82, and 02_Video-Projects/009_The-Falling-Moon-Gravity/10_Shorts/J3816/REPORT.md. Existing worktree /Volumes/MiniWork/scratch/J3816-hos is clean. Use your own worktree and a new version. Existing v02 is on studio-live under the same film/10_Shorts/J3816 path; SHA256 fe38f08f178fe09f5bef6ceaa2ee357e8956fed01c569b933ad10d050bc75d8a.\n\n1. Repair opening using existing approved native moving 3D cartoon picture, retain apple/Newton subject and locked whole-sentence narration. Current 0-1.5 s difference is 1.14 versus required 1.50. Never fake motion with a still push or change the gate.\n2. Make a conforming terminal return. Current apple_6 at 16.5 s repeats apple_1 source stretch; terminal_loop contract only supports 22-27 s, not this 17.1 s Short. No forged source identities/offsets or undocumented gate exception. If a valid 16-19 s edit cannot satisfy unmodified checks, record the exact incompatibility for a separate authorised gate review; do not silently change tests.\n3. Add the house person-card sound cue, level its stem, retain full-frame captions and correct phone-readable labels. Re-run opening, picture, polish, music, VO checks and sound-level check on the exact new version. Save hashes, source windows and full receipts. Preserve v02 and failed evidence.\n4. Finish the repair job only when the new cut and gates are ready for the dependent review. A capable reviewer must actually hear sound and perceive motion before Short PASS; technical checks/stills are not evidence of those capabilities. Nothing to Ben until Short review passes. No credits, paid APIs, new voice, upload, scheduling, privacy or Buffer change. Existing approved Shorts unchanged.\n\nCommit text evidence, publish via designated Claude Code route if Codex push is refused. Keep PR #811 draft; the repaired PR must identify its failed-draft ancestry and supersession. Link all progress to HOS:009. Report to HOS desk.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T08:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:27Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recut the opener and ending, add the sound cue and verify the new cut",
+      "kind": "assembly",
+      "plain": "Repair the opening and ending of the Newton apple Short"
     }
   ],
   "focus": [
