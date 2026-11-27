@@ -362352,9 +362352,14 @@
           "at": "2026-11-27T17:30Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "remaining_action": "Checking the Franklin kite Short in Studio",
       "due": "2026-11-27T19:30:00Z",
       "kind": "studio",
       "launch": "__UtUYdEUwg@6",
@@ -362362,11 +362367,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T17:30Z",
+        "at": "2026-11-27T17:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check publication and package",
+          "Read launch analytics",
+          "Record verdict and report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     },
     {
       "id": "J3939",
