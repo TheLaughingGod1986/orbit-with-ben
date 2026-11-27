@@ -356494,9 +356494,14 @@
           "at": "2026-11-27T08:47Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Pulled repos, reviewed OWB J3795 & HOS J3796/J3844/J3845/J3847/J3849 baselines, ran channel:audit (80 videos, 0 errors, 44 public + 7 scheduled)."
+        },
+        {
+          "at": "2026-11-27T08:52Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Live API (80/80, 0 errors, 10/10 chapters exact, 39/39 YT links valid, 8/8 S1-S4 HTTP 200) and read-only Studio CDP 9460 check complete. Found 2 live fixes: YqCWYlv_LCY missing pinned comment; f_-BsKZf8X0 Paid promotion radio blank."
         }
       ],
-      "remaining_action": "Auditing all 51 live/scheduled HOS videos via API, repo files, URL checks, and read-only Studio CDP 9460",
+      "remaining_action": "Writing 2026-11-27_J3877.md audit report and exact fix list in HOS worktree",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -356508,9 +356513,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-27T08:47Z",
+        "at": "2026-11-27T08:52Z",
         "by": "gemini",
         "plan": [
           "Inspect precedent and pull live HOS listings",
@@ -356518,8 +356523,13 @@
           "Write audit report and exact fix list in HOS",
           "File PR, update queue, and post report"
         ],
-        "note": "Pulled repos, reviewed OWB J3795 & HOS J3796/J3844/J3845/J3847/J3849 baselines, ran channel:audit (80 videos, 0 errors, "
-      }
+        "note": "Live API (80/80, 0 errors, 10/10 chapters exact, 39/39 YT links valid, 8/8 S1-S4 HTTP 200) and read-only Studio CDP 9460"
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [
