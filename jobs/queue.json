@@ -357210,13 +357210,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T17:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:29Z",
-      "result": "parked for Chief: review and merge PR #1407 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1407, codex/J3864-review head 54fd3acb20, jobs/reviews/J3864/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; HOS PR #811 untouched)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T08:29Z",
@@ -357252,10 +357252,15 @@
           "at": "2026-11-27T17:45Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1407 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1407, codex/J3864-review head 54fd3acb20, jobs/reviews/J3864/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; HOS PR #811 untouched)"
+        },
+        {
+          "at": "2026-11-27T18:02Z",
+          "by": "codex",
+          "what": "rerouted to codex: Elected Chief taking publication review closure; PR1407 reviewed and merged at da8a6b7f20. Parent work remains held."
         }
       ],
       "remaining_action": "Chief review and merge of PR #1407 (codex/J3864-review)",
-      "for": "gemini",
+      "for": "codex",
       "kind": "review",
       "plain": "Save the Newton apple Short review in the shared records",
       "mini_only": true,
@@ -357273,7 +357278,14 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "gemini",
+        "model": "",
+        "status": "blocked",
+        "by": "gemini"
+      }
     },
     {
       "id": "J3874",
