@@ -364421,8 +364421,8 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-27T21:24Z",
       "eta": "",
       "created_by": "claude",
@@ -364453,6 +364453,11 @@
           "at": "2026-11-27T21:28Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: history-of-science is PUBLIC (isPrivate=false, triggering J3952 brief stop-and-park guard), and both branches/draft PRs are already published on origin: codex/J3816 @ 2922143e -> open draft PR 811 (J3864), codex/J3871 @ c8c3372e -> open draft PR 814 (J3911), both already recorded in J3816/J3871 holds. Worktrees clean, privacy grep clean (0 emails/tokens/keys/IPs). Zero pushes or PR edits made; Chief to close/cancel J3952."
+        },
+        {
+          "at": "2026-11-27T21:36Z",
+          "by": "codex",
+          "what": "cancelled: Chief ruling: redundant publication task already satisfied. Verified PUBLIC repository; open draft PR 811 codex/J3816 at 2922143e2bc116edd800c63e8bfb42c20abb3c82; open draft PR 814 codex/J3871 at c8c3372ef2313ec04cd0baa2312c60a9e6038e2f; both base main. Preserve drafts and parent holds. Next: J3874 loop-gate ruling, then J3871 conforming repair/rechecks, then J3872 exact-version review. Preserve J3816 verification Nov 28 08:00Z and J3871 Nov 28 06:00Z. No push retry, merge, Short PASS, UAT, upload or spend. Independent review steps 1 and 2 completed; review-progress CLI rejected due to missing relay active.json despite elected Codex status. Ruling and follow-up recorded here; worker progress not reused."
         }
       ],
       "remaining_action": "Park J3952 for Chief and post reports",
