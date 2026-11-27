@@ -357105,10 +357105,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T10:22Z",
+      "eta": "2026-11-27T12:22Z",
       "created_by": "relay",
       "created_at": "2026-11-27T10:07Z",
       "result": "",
@@ -357137,6 +357137,11 @@
           "at": "2026-11-27T10:22Z",
           "by": "codex",
           "what": "reopened: Chief ruling merged in #1376; taking exact verification claim to record completion. Parent J3818 remains held on J3883."
+        },
+        {
+          "at": "2026-11-27T10:22Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await elected Chief PASS, merge of PR #1361 and PR #1359, closure of Draft PR #1358, and J3022 hold release",
@@ -357151,7 +357156,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T10:22Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3883",
