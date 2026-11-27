@@ -107,7 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
 | J3906 | mini | open | – | – | review · Verify condition for J3756 |  |
 | J3907 | mini | open | – | – | review · Verify condition for J3781 |  |
-| J3908 | mini | open | – | – | review · Verify condition for J3859 |  |
+| J3908 | mini | claimed | gemini | 2026-11-27T16:08Z | review · Verify condition for J3859 |  |
 
 Recently finished:
 
