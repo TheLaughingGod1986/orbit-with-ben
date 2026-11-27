@@ -1,5 +1,5 @@
 {
-  "next_id": 3931,
+  "next_id": 3932,
   "jobs": [
     {
       "id": "J0001",
@@ -346483,6 +346483,11 @@
           "at": "2026-11-27T16:31Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T17:00:00Z"
+        },
+        {
+          "at": "2026-11-27T17:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3931"
         }
       ],
       "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
@@ -346510,7 +346515,8 @@
       "hold": {
         "type": "input",
         "condition": "Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.",
-        "check_at": "2026-11-27T17:00:00Z"
+        "check_at": "2026-11-27T18:01:33+00:00",
+        "recheck_task": "J3931"
       }
     },
     {
@@ -361721,6 +361727,37 @@
         "check_at": "2026-11-28T17:20:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3931",
+      "title": "Verify condition for J3760",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3760: Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3760 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T17:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T17:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
+      "kind": "review",
+      "recheck_of": "J3760",
+      "due": "2026-11-27T18:01:33+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
