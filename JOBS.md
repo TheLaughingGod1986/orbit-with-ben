@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3883 | mini | blocked | codex | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
-| J3888 | mini | open | – | – | review · Verify condition for J3012 |  |
+| J3888 | mini | claimed | codex | 2026-11-27T13:28Z | review · Verify condition for J3012 |  |
 
 Recently finished:
 
