@@ -59,6 +59,123 @@ class Protocol(FixtureBase):
 
     def tick(self): c.tick(self.path,self.sha,self.io)
 
+    def cancel(self, kind):
+        if kind == 'local':
+            Path(self.plan['cancel']).touch()
+        else:
+            self.rows.append(dict(self.comment, id=90,
+                body=f"[Chief] MACBOOK-CANCEL J3892 coordinator={self.plan['job']} {self.plan['nonce']}"))
+
+    def test_cancellation_blocks_recover_resume_but_preserves_status(self):
+        for kind in ('local', 'thread'):
+            for action in ('RECOVER', 'RESUME'):
+                with self.subTest(kind=kind, action=action):
+                    Path(self.plan['cancel']).unlink(missing_ok=True)
+                    self.rows=[self.comment]
+                    self.cancel(kind)
+                    row=self.control(action, id=100+len(self.sent))
+                    self.rows.append(row); self.tick()
+                    self.assertTrue(self.pause.exists())
+                    self.assertIn('stopped-paused',self.sent[-1])
+                    self.assertFalse((self.root/'verified-install.json').exists())
+                    self.assertEqual(self.commands,[])
+                    self.rows.append(self.control('STATUS',id=200+len(self.sent)))
+                    self.tick()
+                    self.assertIn('MACBOOK-RESULT',self.sent[-1])
+                    self.assertTrue(self.pause.exists())
+
+    def test_cancellation_arriving_during_verification_blocks_effects(self):
+        for kind in ('local','thread'):
+            for action in ('RECOVER','RESUME'):
+                with self.subTest(kind=kind,action=action):
+                    Path(self.plan['cancel']).unlink(missing_ok=True)
+                    self.rows=[self.comment,self.control(action,id=300+len(self.sent))]
+                    original=c.verify_install
+                    def verify(*args,**kwargs):
+                        original(*args,**kwargs)
+                        self.cancel(kind)
+                    with patch.object(c,'verify_install',side_effect=verify): self.tick()
+                    self.assertTrue(self.pause.exists())
+                    self.assertFalse((self.root/'verified-install.json').exists())
+                    self.assertIn('stopped-paused',self.sent[-1])
+
+    def test_recorded_reparented_child_blocks_until_exit(self):
+        identity={'pid':99901,'pgid':99901,'start':'recorded-child'}
+        m.private_write(self.root/'descendants-abcd.json',m.canonical([identity]))
+        for action in ('RECOVER','RESUME'):
+            with self.subTest(action=action):
+                self.io.rows=[dict(identity,ppid=1,command='/usr/bin/python3 detached_task.py')]
+                self.rows.append(self.control(action,id=400+len(self.sent)))
+                self.tick()
+                self.assertTrue(self.pause.exists())
+                self.assertIn('stopped-paused',self.sent[-1])
+                self.assertFalse((self.root/'verified-install.json').exists())
+        self.io.rows=[]
+        self.rows.append(self.control('RECOVER',id=500)); self.tick()
+        self.assertTrue((self.root/'verified-install.json').exists())
+        self.assertTrue(self.pause.exists())
+        self.rows.append(self.control(id=501)); self.tick()
+        self.assertFalse(self.pause.exists())
+
+    def test_final_unlink_boundary_checks_cancellation_again(self):
+        self.rows.append(self.control())
+        original=c.owned_pause
+        # Cancellation arrives after the final authorization, during the last
+        # pause ownership read. The unlink boundary must independently stop it.
+        after_verify=[]
+        def owned(plan,directory):
+            result=original(plan,directory)
+            if (self.root/'verified-install.json').exists():
+                after_verify.append(True)
+                if len(after_verify)==2: self.cancel('local')
+            return result
+        original_verify=c.verify_install
+        def verified(*args,**kwargs):
+            original_verify(*args,**kwargs)
+            m.private_write(self.root/'verified-install.json',b'{}')
+        with patch.object(c,'verify_install',side_effect=verified), patch.object(c,'owned_pause',side_effect=owned):
+            self.tick()
+        self.assertTrue(self.pause.exists()); self.assertIn('stopped-paused',self.sent[-1])
+
+    def test_child_receipt_arriving_during_verification_is_checked(self):
+        self.rows.append(self.control())
+        original=c.verify_install
+        def verify(*args,**kwargs):
+            original(*args,**kwargs)
+            identity={'pid':99901,'pgid':99901,'start':'child'}
+            m.private_write(self.root/'descendants-abcd.json',m.canonical([identity]))
+            self.io.rows=[dict(identity,ppid=1,command='/usr/bin/python3 detached_task.py')]
+        with patch.object(c,'verify_install',side_effect=verify): self.tick()
+        self.assertTrue(self.pause.exists()); self.assertIn('stopped-paused',self.sent[-1])
+
+    def test_recorded_pid_reuse_and_group_remain_blocked(self):
+        identity={'pid':99901,'pgid':99901,'start':'recorded-child'}
+        m.private_write(self.root/'descendants-abcd.json',m.canonical([identity]))
+        for pid,pgid in ((99901,123),(123,99901)):
+            self.io.rows=[dict(identity,pid=pid,pgid=pgid,start='reused',ppid=1,
+                               command='/usr/bin/python3 detached_task.py')]
+            self.rows.append(self.control(id=600+len(self.sent))); self.tick()
+            self.assertTrue(self.pause.exists())
+            self.assertIn('stopped-paused',self.sent[-1])
+
+    def test_corrupt_descendant_evidence_fails_closed(self):
+        p=self.root/'descendants-abcd.json'
+        for raw in (b'broken',b'{}',b'[]',b'[{}]',
+                    b'[{"pid":true,"pgid":1,"start":"x"}]',
+                    b'[{"pid":1,"pgid":1,"start":""}]'):
+            with self.subTest(raw=raw):
+                p.write_bytes(raw); p.chmod(0o600)
+                self.rows.append(self.control(id=700+len(self.sent))); self.tick()
+                self.assertTrue(self.pause.exists())
+                self.assertIn('stopped-paused',self.sent[-1])
+        p.write_bytes(m.canonical([{'pid':99901,'pgid':99901,'start':'child'}]))
+        p.chmod(0o644)
+        self.rows.append(self.control(id=800)); self.tick()
+        self.assertTrue(self.pause.exists()); self.assertIn('stopped-paused',self.sent[-1])
+        p.unlink(); p.symlink_to(self.root/'activation.json')
+        self.rows.append(self.control(id=801)); self.tick()
+        self.assertTrue(self.pause.exists()); self.assertIn('stopped-paused',self.sent[-1])
+
     def test_success_waits_for_explicit_resume_and_releases_both_slot_pause(self):
         self.tick(); self.assertTrue(self.pause.exists())
         self.rows.append(self.control()); self.tick()

@@ -137,9 +137,44 @@ def source_pins(plan):
         m.require(m.digest(Path(path).read_bytes()) == expected, 'source drift')
 
 
+def not_cancelled(plan, io):
+    # Cancellation is independent of the expired installation deadline. STATUS
+    # remains available, but no recovery/resume effect may override a stop.
+    p = Path(plan['cancel'])
+    m.require(not p.exists() and not p.is_symlink(), 'cancelled locally')
+    body = f"[Chief] MACBOOK-CANCEL J3892 coordinator={plan['job']} {plan['nonce']}"
+    m.require(not any(row.get('body') == body
+        and row.get('issue_url') == plan['issue_url']
+        and row.get('author_association') in {'OWNER', 'MEMBER', 'COLLABORATOR'}
+        and row.get('user', {}).get('type') == 'User'
+        for row in io.comments(plan)), 'cancelled on thread')
+    # Network reads can take time; also check the local stop afterwards.
+    m.require(not p.exists() and not p.is_symlink(), 'cancelled locally')
+
+
+def recovery_drained(plan, directory, io):
+    owners = list(plan['owners'])
+    for p in directory.glob('descendants-*.json'):
+        m.require(re.fullmatch(r'descendants-[0-9a-f]+\.json', p.name) is not None,
+                  'invalid descendant receipt name')
+        m.require(not p.is_symlink() and p.is_file()
+                  and p.stat().st_mode & 0o077 == 0, 'private descendant receipt required')
+        rows = json.loads(p.read_bytes())
+        m.require(isinstance(rows, list) and bool(rows), 'invalid descendant receipt')
+        for row in rows:
+            m.require(isinstance(row, dict) and set(row) == {'pid', 'pgid', 'start'},
+                      'invalid descendant identity')
+            m.require(all(type(row[k]) is int and row[k] > 0 for k in ('pid', 'pgid'))
+                      and isinstance(row['start'], str) and bool(row['start'].strip()),
+                      'invalid descendant identity')
+        owners.extend(rows)
+    m.drained(dict(plan, owners=owners), io.queue(plan), io.processes(), os.getpid())
+
+
 def verify_install(plan, activation, directory, io, recover=False, authorize=lambda: None):
+    not_cancelled(plan, io)
     owned_pause(plan, directory)
-    m.drained(plan, io.queue(plan), io.processes(), os.getpid())
+    recovery_drained(plan, directory, io)
     source_pins(plan)
     io.production(plan, activation)
     for root in plan['engines']:
@@ -192,6 +227,8 @@ def verify_install(plan, activation, directory, io, recover=False, authorize=lam
     for root in plan['engines']:
         m.require(engine_guard.refusal(root, p) is None, 'new engine guard drift')
     owned_pause(plan, directory)
+    recovery_drained(plan, directory, io)
+    not_cancelled(plan, io)
 
 
 def evidence(directory):
@@ -263,10 +300,15 @@ def tick(plan_path, expected, io=None):
                     continue
             m.require(len(candidates) <= 1, 'ambiguous recovery activation')
             if candidates:
-                activation = candidates[0]
-                owned_pause(plan, directory)
-                source_pins(plan)
-                m.private_write(directory / 'activation.json', m.canonical(activation))
+                try:
+                    owned_pause(plan, directory)
+                    source_pins(plan)
+                    not_cancelled(plan, io)
+                except m.Refused:
+                    pass  # Retain STATUS reporting without accepting authority.
+                else:
+                    activation = candidates[0]
+                    m.private_write(directory / 'activation.json', m.canonical(activation))
         status = current_status(plan, directory)
         if activation is not None:
             try: activation_for(plan, directory, io)
@@ -299,18 +341,23 @@ def tick(plan_path, expected, io=None):
                             owned_pause(plan, directory)
                             source_pins(plan)
                             io.production(plan, activation)
+                            recovery_drained(plan, directory, io)
+                            not_cancelled(plan, io)
                         authorize()
                         verify_install(plan, activation, directory, io, recover=action == 'RECOVER', authorize=authorize)
                         # Re-fetch immutable fresh command after all network checks.
                         m.require(io.comment(plan, c['id']) == fresh, 'control changed before effect')
                         command(fresh, plan, activation, time.time())
                         if action == 'RECOVER':
+                            authorize()
                             p = directory / 'verified-install.json'
                             if not p.exists(): m.private_write(p, m.canonical({'request': c['id'], 'chief': chief}))
                             status = 'installed-paused'
                         else:
                             authorize()
                             owned_pause(plan, directory)
+                            recovery_drained(plan, directory, io)
+                            not_cancelled(plan, io)
                             Path(plan['pause']).unlink()
                             status = 'resumed'
                             m.private_write(directory / 'resumed.json', m.canonical({'request': c['id'], 'chief': chief}))
