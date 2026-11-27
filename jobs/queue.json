@@ -352829,24 +352829,29 @@
           "at": "2026-11-27T01:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:24Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Gemini worker claimed J3833; running independent mechanical parity check on PR #200 (dd92d70) and live-fetching all primary sources"
         }
       ],
-      "remaining_action": "Re-run Gemini on joins J01-J10, C1-C7 and E07 (first run timed out), then publish CLAIMS_CHECK_v06.md",
+      "remaining_action": "Fetch primary sources live and independently verify v06 blocks E01-E07, joins J01-J10, C1-C7, and mechanical parity",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected Operation Pedestal narration against its sources",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-27T01:18Z",
-        "by": "claudecode",
+        "at": "2026-11-27T01:24Z",
+        "by": "gemini",
         "plan": [
           "Read v06 and brief",
           "Run Gemini check",
           "Verify output and parity",
           "Publish and record"
         ],
-        "note": "Gemini timed out at 15 min; E01-E06 PASS, rest missing"
+        "note": "Gemini worker claimed J3833; running independent mechanical parity check on PR #200 (dd92d70) and live-fetching all prim"
       },
       "taskKeys": [
         "WW2:009"
