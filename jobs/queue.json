@@ -1,5 +1,5 @@
 {
-  "next_id": 3854,
+  "next_id": 3855,
   "jobs": [
     {
       "id": "J0001",
@@ -282324,6 +282324,11 @@
           "at": "2026-11-27T00:17Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed."
+        },
+        {
+          "at": "2026-11-27T06:22Z",
+          "by": "relay",
+          "what": "condition verification queued: J3854"
         }
       ],
       "remaining_action": "Publish the completed Pluto packaging review",
@@ -282348,7 +282353,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.",
-        "check_at": "2026-11-27T06:17:01+00:00"
+        "check_at": "2026-11-27T07:22:35+00:00",
+        "recheck_task": "J3854"
       }
     },
     {
@@ -354636,6 +354642,37 @@
       "taskKeys": [
         "OWB:032"
       ]
+    },
+    {
+      "id": "J3854",
+      "title": "Verify condition for J3115",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3115: publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3115 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T06:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:22Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publish the completed Pluto packaging review",
+      "kind": "review",
+      "recheck_of": "J3115",
+      "due": "2026-11-27T07:22:35+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
