@@ -364620,9 +364620,14 @@
           "at": "2026-11-27T20:44Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: Verified exact SHA-256 hashes of canonical NAS master, stems, cover, frame0, SRT, locked v03 script (634da160...), VO take (205 chars <= 600 cap), and ledger diffs on PR #1416 (f67c2dcb)"
+        },
+        {
+          "at": "2026-11-27T20:47Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: All 7 automated gates independently PASS on canonical NAS master; fresh faster-whisper small.en decoded 35/35 verbatim words; independent speech coverage 82/82 (100.0%)"
         }
       ],
-      "remaining_action": "Running all 7 automated gates independently, ffprobe loudness/CFR verification, and fresh decoded ASR on canonical NAS master",
+      "remaining_action": "Auditing audio stems & full mix by ear, plus building loop-seam verification clip and inspecting full-res moving frames",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -364639,9 +364644,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T20:44Z",
+        "at": "2026-11-27T20:47Z",
         "by": "gemini",
         "plan": [
           "Verify PR #1416 files, hashes and script/VO locks",
@@ -364650,7 +364655,7 @@
           "Watch moving cut, R03 frame, phone legibility and loop",
           "Post exact-hash QA verdict and park for Chief"
         ],
-        "note": "Step 1 done: Verified exact SHA-256 hashes of canonical NAS master, stems, cover, frame0, SRT, locked v03 script (634da1"
+        "note": "Step 2 done: All 7 automated gates independently PASS on canonical NAS master; fresh faster-whisper small.en decoded 35/"
       },
       "taskKeys": [
         "OWB:064"
