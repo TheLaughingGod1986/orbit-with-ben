@@ -160,6 +160,33 @@ class BoardOK(unittest.TestCase):
         self.assertTrue(ad.UPLOAD_WORD_RE.search('Upload WW2 004 Private'))
         self.assertFalse(ad.UPLOAD_WORD_RE.search('three thumbnails and upload package'))
 
+    def test_a_passed_card_already_on_youtube_is_done_not_waiting(self):
+        # 27 Nov 2026: pilot 2 (live since 24 Nov) and HOS's Franklin Shorts A and C (uploaded 24 Nov, in the HOS register,
+        # their times in SHORTS_RELEASE.json) sat in Passed as "Waiting for the Chief to queue the upload".
+        live = {'key': 'WW2:002', 'lane': 'approved', 'type': 'long', 'approved': {'state': 'waiting'},
+                'youtube': {'state': 'live', 'videoId': 'qfc6EBStOfo', 'privacy': 'public'}}
+        short_a = {'key': 'HOS:ASK:J2699', 'lane': 'approved', 'type': 'short', 'approved': {'state': 'waiting'},
+                   'ask': {'file': 'HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_short_A_v04.mp4'}, 'youtube': None}
+        swap = {'key': 'OWB:029', 'lane': 'approved', 'type': 'long', 'approved': {'state': 'working'},
+                'youtube': {'state': 'live', 'videoId': 'k2kEaA7ICjc'}}   # a job still running may be a swap: stays
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            social = root / '00_Brand/Channel-Setup/social/hos'
+            social.mkdir(parents=True)
+            (social / 'UPLOADS.json').write_text(json.dumps({'videos': {'__UtUYdEUwg': {
+                'kind': 'short', 'file': '/Volumes/data/HOS/008/10_Shorts/hos_008_short_A_v04.mp4'}}}))
+            rel = root / '02_Video-Projects/008_Lightning-Franklin/10_Shorts'
+            rel.mkdir(parents=True)
+            (rel / 'SHORTS_RELEASE.json').write_text(json.dumps({'shorts': [{'id': '__UtUYdEUwg', 'airDate': '2026-11-27T11:30:00Z'}]}))
+            files = vt.upload_files(root)
+        self.assertEqual(files['id']['__UtUYdEUwg']['publishAt'], '2026-11-27T11:30:00Z')
+        videos = [live, short_a, swap]
+        vt.settle_on_youtube(videos, files, NOW)
+        self.assertEqual((live['lane'], live['waitingOn']), ('done', 'YouTube'))
+        self.assertNotIn('approved', live)
+        self.assertEqual((short_a['lane'], short_a['youtube']['videoId']), ('done', '__UtUYdEUwg'))
+        self.assertEqual(swap['lane'], 'approved')
+
     def test_a_finished_delivery_job_never_gets_a_second_upload(self):
         done = {'id': 'J3507', 'kind': 'studio', 'repo': 'owb', 'status': 'done', 'title': 'Upload OWB 032 v03',
                 'history': []}

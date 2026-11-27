@@ -143,8 +143,13 @@ class FinalAudit(unittest.TestCase):
         self.assertNotIn('hold',review)
         self.assertEqual(w.state(review,{'R':review},AT),'review')
         ben={**row('B'),'status':'claimed','by':'gemini'}
-        jobs.do_block(ben,'gemini','needs Ben: sign-in',AT)
+        jobs.do_block(ben,'gemini','needs Ben: real money for the Veo Quality spend',AT)
         data={'jobs':[ben],'next_id':1};self.assertEqual(jobs.reconcile_holds(data,AT+dt.timedelta(days=1)),[])
+        # 27 Nov 2026: a sign-in is Ben's to do but a machine's to check, so it gets one verification (the hold stays).
+        signin={**row('S'),'status':'claimed','by':'gemini'}
+        jobs.do_block(signin,'gemini','needs Ben: sign-in',AT)
+        data={'jobs':[signin],'next_id':1};self.assertIn('S',jobs.reconcile_holds(data,AT+dt.timedelta(days=1)))
+        self.assertEqual((signin['status'],len([x for x in data['jobs'] if x.get('recheck_of')=='S'])),('blocked',1))
 
     def test_dependency_completion_checks_immediately_without_waiting_for_a_timer(self):
         child=row('C');j={**row('P',after='C'),'status':'claimed','by':'gemini'}

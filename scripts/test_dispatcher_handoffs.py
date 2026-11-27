@@ -13,6 +13,26 @@ import jobs
 import workflow_state as w
 
 AT = dt.datetime(2026, 11, 3, 19, 30, tzinfo=dt.timezone.utc)
+# Never write the real ~/_desk/state: that folder marks a worker machine, and on 27 Nov 2026 a test-made one turned a cloud
+# session into a worker that claimed and released real queue jobs (J3857). Alerts state goes to a temporary folder.
+_HOME_GUARD = []
+
+
+def setUpModule():
+    import os as _os, tempfile as _tempfile
+    from unittest import mock as _mock
+    tmp = _tempfile.mkdtemp()
+    guard = _mock.patch.dict(_os.environ, {"BEN_ALERTS_STATE": _os.path.join(tmp, "alerts", "state.json"),
+                                            "BOARD_STATE": _os.path.join(tmp, "board")})
+    guard.start()
+    _HOME_GUARD.append(guard)
+
+
+def tearDownModule():
+    while _HOME_GUARD:
+        _HOME_GUARD.pop().stop()
+
+
 def row(i, **kw):
     return dict(id=i, title=i, status='open', needs='mini', created_at=AT.isoformat(), history=[], **kw)
 def choose(j, up):

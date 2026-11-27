@@ -604,6 +604,21 @@ class MacBookTakesTextJobs(unittest.TestCase):
         self.assertTrue(jobs.claimable(d, d["jobs"][1], {"macbook", "any"}, T0, "macbook"))
         self.assertTrue(jobs.macbook_portable(d["jobs"][2], d))
 
+    def test_the_verifier_records_an_unmet_condition_but_never_releases_it(self):
+        # 27 Nov 2026: 89 verifications in three days; every UNMET one was parked for the Chief, who alone could
+        # record it. The job's own verifier now records "still unmet" (the hold stays, its next check moves).
+        parent = {"id": "J0001", "status": "blocked", "by": "codex", "history": [],
+                  "hold": {"type": "capability", "condition": "needs audio", "check_at": T0.isoformat(), "requires": ["audio_input"]}}
+        later = (T0 + dt.timedelta(hours=6)).isoformat()
+        hold = {"type": "capability", "condition": "still no audio reviewer", "check_at": later, "requires": ["audio_input"]}
+        with mock.patch.object(jobs.chief_relay, "elected_for", return_value=False):
+            with self.assertRaisesRegex(ValueError, "holder or elected Chief"):
+                jobs.set_wait(dict(parent), "gemini", T0, hold, recheck="J0002")
+            jobs.set_wait(parent, "gemini", T0, hold, recheck="J0002", verifier=True)
+        self.assertEqual(parent["status"], "blocked")
+        self.assertEqual(parent["hold"]["condition"], "still no audio reviewer")
+        self.assertEqual(parent["hold"]["last_recheck"], "J0002")
+
     def test_mini_only_tools_keep_a_condition_check_on_the_mini(self):
         for body in ("Mint the next Veo take if the condition holds.",
                      "Call ElevenLabs under the desk-lock if the stem is missing.",

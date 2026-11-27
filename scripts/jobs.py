@@ -575,7 +575,7 @@ def ben_gate(text: str) -> bool:
     return bool(BEN_GATE.search(str(text or "")))
 
 
-def set_wait(job, agent, at, hold, action="", recheck=""):
+def set_wait(job, agent, at, hold, action="", recheck="", verifier=False):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
     if hold.get("type") == "ben" and not ben_gate(str(hold.get("condition") or "")):
@@ -588,7 +588,10 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
         _mine(job,agent)
     if job.get("status") not in ("claimed", "blocked"):
         raise ValueError("A hold can only be recorded on a claimed or blocked job")
-    if agent != "relay" and job.get("by") != agent and not chief_relay.elected_for(agent, at, job):
+    # `verifier`: the agent holding this job's own verification task (recheck_of) records that the condition is still
+    # unmet. That keeps the hold and only moves its next check; releasing a hold stays the Chief's. 27 Nov 2026: every
+    # UNMET verification (89 in three days) was parked for the Chief because only the Chief could record it.
+    if agent != "relay" and job.get("by") != agent and not verifier and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the holder or elected Chief may update this hold")
     condition = str(hold.get("condition") or "").strip()
     check = workflow.normalize_due(hold.get("check_at"))
@@ -607,7 +610,7 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
-        if not chief_relay.elected_for(agent, at, job):
+        if not verifier and not chief_relay.elected_for(agent, at, job):
             raise ValueError("Only the elected Chief may record a condition check")
         value.update(last_recheck=recheck,checked_at=at.isoformat(),checked_by=agent)
     if job.get("status") == "claimed":
@@ -1396,7 +1399,10 @@ def publish_board() -> None:
     whenever a job moves). Fire-and-forget: it never blocks the job or changes its exit code. Off with BOARD_PUBLISH=0,
     and a no-op anywhere without ~/_desk/state (cloud sessions, CI)."""
     script = ROOT / "scripts" / "board_publish.py"
-    if os.environ.get("BOARD_PUBLISH", "1") == "0" or not chief_relay.STATE.is_dir() or not script.exists():
+    # Off by default inside a test process (27 Nov 2026: tests had made ~/_desk/state in a cloud session, so every
+    # queue write there started a real background publish and relay run that launched real agent workers).
+    default = "0" if "unittest" in sys.modules else "1"
+    if os.environ.get("BOARD_PUBLISH", default) == "0" or not chief_relay.STATE.is_dir() or not script.exists():
         return
     try:
         subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
@@ -1634,10 +1640,12 @@ def main(argv=None) -> int:
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "wait":
-                if args.recheck and (find(data,args.recheck) or {}).get("recheck_of") != job["id"]:
+                check = find(data, args.recheck) if args.recheck else None
+                if args.recheck and (check or {}).get("recheck_of") != job["id"]:
                     raise ValueError("--recheck must identify this job's verification task")
+                verifier = bool(check and check.get("status") == "claimed" and check.get("by") == args.agent)
                 set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires,
-                                                "release":"auto" if args.release_at_time else ""}, args.action, args.recheck)
+                                                "release":"auto" if args.release_at_time else ""}, args.action, args.recheck, verifier=verifier)
             elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
                     args.ok or job["status"] in ("open", "claimed", "blocked")):
                 # Clearing a held job that goes on = Ben OK'd it (Ben, 25 Oct 14:13): it shows in "Approved, on its
