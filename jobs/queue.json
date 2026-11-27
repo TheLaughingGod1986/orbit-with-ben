@@ -273871,9 +273871,14 @@
           "at": "2026-11-27T11:30Z",
           "by": "codex",
           "what": "reopened: J3888 Chief ruling: staging condition SATISFIED. J3885 done; reviewed and merged PR 1378 at 10824ac263, and PR 1375 at 5dcbb24c (rules SUCCESS, core SKIPPED). Mini independently clean at parentless eda81876; both MacBook slots match per machine-local evidence, not remote reinspection. Split streak 14; trusted token receipt 7159250002 and preceding-day notice 7186248983 verified. Reopen for active work, NOT live cutover acceptance. Elected Chief next: explain private macbook-heartbeat-2 commit 08715bd2 (10:22Z) through existing MacBook queue; reconcile loaded/installed settings and all wrappers on both machines; then coordinate drain, export a NEW frozen queue and follow runbook rollback/relay/board/tick/both-slot acceptance. Do not run staged rehearsal queue. Preserve 3/4, all original gates and 18:00Z deadline. No new Ben approval or artificial external wait required."
+        },
+        {
+          "at": "2026-11-27T11:30Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: J3888 staging ruling recorded; PRs 1375/1378 merged. Existing progress restored after reopen; live acceptance remains unproven."
         }
       ],
-      "remaining_action": "Review MacBook staging evidence, then coordinate the drain, fresh queue export and live migration acceptance",
+      "remaining_action": "Resolve the early MacBook heartbeat and reconcile both machines before draining writers and exporting the live queue",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273890,7 +273895,20 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-27T11:30Z",
+        "by": "codex",
+        "plan": [
+          "Inspect the split and machine paths",
+          "Prepare and test the move runbook",
+          "Rehearse and verify access",
+          "Move the engine and prove live operation"
+        ],
+        "note": "J3888 staging ruling recorded; PRs 1375/1378 merged. Existing progress restored after reopen; live acceptance remains un"
+      }
     },
     {
       "id": "J3013",
