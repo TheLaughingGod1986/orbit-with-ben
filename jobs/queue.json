@@ -364625,9 +364625,14 @@
           "at": "2026-11-27T20:47Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 done: All 7 automated gates independently PASS on canonical NAS master; fresh faster-whisper small.en decoded 35/35 verbatim words; independent speech coverage 82/82 (100.0%)"
+        },
+        {
+          "at": "2026-11-27T20:48Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3 done: Listened directly to raw VO take, trimmed VO stem, bed stem, SFX stem, and full final mix; all 35 words clear, zero clipped words/gaps, balanced VO/bed/SFX mix"
         }
       ],
-      "remaining_action": "Auditing audio stems & full mix by ear, plus building loop-seam verification clip and inspecting full-res moving frames",
+      "remaining_action": "Watching full 18.375 s moving cut at phone size, loop-seam playback, and full-res R03/R05/R06/R07 frames",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -364644,9 +364649,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T20:47Z",
+        "at": "2026-11-27T20:48Z",
         "by": "gemini",
         "plan": [
           "Verify PR #1416 files, hashes and script/VO locks",
@@ -364655,7 +364660,7 @@
           "Watch moving cut, R03 frame, phone legibility and loop",
           "Post exact-hash QA verdict and park for Chief"
         ],
-        "note": "Step 2 done: All 7 automated gates independently PASS on canonical NAS master; fresh faster-whisper small.en decoded 35/"
+        "note": "Step 3 done: Listened directly to raw VO take, trimmed VO stem, bed stem, SFX stem, and full final mix; all 35 words cle"
       },
       "taskKeys": [
         "OWB:064"
