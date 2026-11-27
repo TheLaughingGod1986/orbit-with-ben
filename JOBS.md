@@ -112,11 +112,32 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
-| J3938 | mini | claimed | codex | 2026-11-27T17:55Z | studio · First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) |  |
 | J3939 | mini | claimed | macbook-2 | 2026-11-27T17:49Z | studio · First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) |  |
 
 Recently finished:
 
+- J3938 done: First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) ("Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) · History of Science · Short · went live Fri 27 Nov 11:30 London
+At 6 h: views 2 · Studio rank 8 of 10 · shown in feed about 1 (from 1 feed views) · stayed to watch 0.0% · average viewed 0.0%
+Usual for this channel: stayed to watch 29.0%, average viewed 69.0%
+
+Verdict: BEHIND, not shown
+  - 2 views at 6 h; the last 6 checked at the same age had 33 (median).
+  - Studio ranks it 8 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - The title starts with "Why", like 3 earlier Shorts: they had 25 views by the next morning (median), against 76 for all Shorts.
+
+Do now
+  - Nothing in the cut explains this yet: YouTube has shown it to too few people to judge it.
+  - Check the faults list is empty, then read tomorrow morning's snapshot. Under a tenth of the usual first day means the feed tried it and stopped: treat the subject and the title as the cause, not the edit.
+
+Carry forward
+  - If "What is different about this one" says earlier videos on its subject were weak too, take that subject off the next four weeks of the schedule and tell the topic go/no-go.
+
+Done (2026-11-27T17:34Z, codex): J3938 acting Chief codex: no publication faults. Public Shorts row, Notices none, Not Made for Kids, exact package description and Related YqCWYlv_LCY verified in signed-in Studio 9460 (9222 had no Studio tab). API confirms definition hd and processingStatus succeeded. Studio Since published at about 17:32Z: 2 views, rank 8/10, feed share 50% therefore 1 feed view, stayed 0%, dashboard average viewed 0%, likes 0. Typical views and shown-in-feed were unavailable and omitted. The judge estimates shown-in-feed; it is not an observed Studio value. BEHIND/not shown ruling: retain the video and all metadata unchanged; too little distribution to assess the edit. Read next morning snapshot through routine analytics before drawing topic or title conclusions. No spend and no YouTube changes.
+
+
+Acting Chief codex resolved the BEHIND escalation: no faults found, HD processing succeeded, leave the video and metadata unchanged; distribution is too small to judge the edit. Next evidence is the routine next-morning snapshot. No spend, no YouTube changes.)
 - J3931 done: Verify condition for J3760 (Condition NOT met (27 Nov 17:20Z). CDP 9222 browser endpoint and Target.getTargetInfo respond (Flow tab 998B0717, flow.google.com/?pli=1, attached:false), but the page websocket opens and both Page.getFrameTree and Runtime.evaluate time out (12-15 s): the renderer is hung, so the account hash, live balance and 100-cr Quality price cannot be read. Nothing clicked, reloaded or spent. J3760 kept blocked; wait recorded (type input, check-at 2026-11-27T23:25Z, recheck J3931).)
 - J3929 done: Verify condition for J3883 (KEEP: J3883 publication condition proven satisfied by merged PR1388 and matching approved REVIEW hash. Reopened parent with evidence; existing 064 thumbnail PASS restored. J3023 newer package FIX remains held for J3910 resolution and elected-Chief revised PR1390 merge; 2026-11-28T14:30Z retry unchanged. Review document local commit 57d23c33d1; automatic review rejected its push. Relay review-progress rejected unrelated active J3860 record; own queue steps recorded instead. No spend or YouTube changes.)
 - J3925 done: Verify condition for J3903 (Chief HOLD ruling recorded: J3903 condition unmet. Fresh NAS read has v01/v02 only; J3922 repair open, J3923 QA open after J3922, no KEEP or repaired-cut PASS; PR1399 OPEN/unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8. Original J3918 FIX stands. J3903 remains blocked with last_recheck J3925 and original 2026-11-28T16:00Z backstop restored. Follow-up is existing zero-spend J3922 immutable v03 repair then J3923 exact-file independent review, Chief ruling and merge before phone UAT. No media, upload, schedule, privacy, Buffer or spend changes.)
@@ -126,4 +147,3 @@ Recently finished:
 - J3918 done: OWB 064 Short 1 (Test A opening v02): Independent QA review (PR #1399) (Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes.)
 - J3916 done: OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX) (PR #1394 head 35c90b3bda059309957e08fa86b93d2dbb36e8dc: added 064_short02_venus_vs_uranus_script_v03.md restoring NASA 'true' qualifier in v02b line 2 ('Uranus has no true surface; that's its coldest air.'); no other spoken words changed; v02 retired per J3914 (16.0-19.0 s band). Recomputed metrics (estimates, no VO take): 205 raw chars (207 with blank lines), 35 written / 41 expanded words, 253 expanded chars, fast/mid/slow 17.30/18.55/19.62 s (mid <= 19.0 s), payoff 15.31 s (82.5%). Referenced completed quote check 064_short02_QUOTECHECK_v02.md. £0 spend; no VO take, Flow/Vertex, upload, or schedule change. Unblocks J3917.)
 - J3914 done: OWB 064 Short 2: review revised script and bounded VO decision (FIX (one word). J3912 ruling published: PR #1396 merged d18b5d4386 (diff read, nothing private; no checks apply to jobs/**). Gemini argon 0 flags + direct URL check: C1-C9 hold verbatim (064_short02_QUOTECHECK_v02.md on PR #1394 at ca9429fd55). Duration resolved to 16-19 s (v02b); v02 retired. Flag: v02b drops NASA's 'true' in 'no true surface'. Ruling in jobs/reviews/J3914/REVIEW.md (PR #1397 merged). Queued J3916 writer fix -> J3917 lock + bounded VO review. Not locked; no VO decision; J3904 hold kept (next check 2026-11-28T14:45Z; recording the recheck on J3904 is for the Chief). Assembly also needs verified native frame-0 footage (R01 not found) and no Veo clips shown as real on the Uranus beats. No spend/upload/schedule.)
-- J3913 done: OWB 064 Short 2: revise narration and evidence after J3912 FIX (PR #1394 head 567850e9aa: script v02 (Venus surface vs Uranus atmospheric minimum; winter and 'Closer in' cause wording removed) plus a 16-19 s variant v02b; CLAIMS_v02 with 9 direct-URL quote rows (Gemini not run yet); plan v02 withdraws every PASS/retention claim and cites the duration rule (gate_shorts_open.py:113 16-19 s warn vs J3904 22-27 s). Provenance: R03/R06 are Veo 3.1 Fast CGI (J2332 generation.json), NOT Keck; R05 is a graded PIA01488 still push-in; R01/R02/R08 files not found at their v01 paths; weic2332a is CC BY, PIA23791 is JAXA-credited. Nothing locked, no spend, no YouTube changes. Next: J3914 review.)
