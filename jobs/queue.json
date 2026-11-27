@@ -1,5 +1,5 @@
 {
-  "next_id": 3859,
+  "next_id": 3860,
   "jobs": [
     {
       "id": "J0001",
@@ -354915,6 +354915,36 @@
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days"
+    },
+    {
+      "id": "J3859",
+      "title": "Field Order History rules review qfc6EBStOfo 48h",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Rules review after the 48h read of qfc6EBStOfo (Battle of the Atlantic: The Month U-Boats Lost). Read-only on YouTube, £0. If the 48h read job (\"Field Order History analytics read qfc6EBStOfo 48h\") has not imported its numbers yet, wait for it rather than guessing.\n1. Read ww2-channel studio/RULES.md and studio/LEARNINGS.md, then this film's 48h numbers in channels/ww2/05_Analytics/READS.md and board.json (strangers only: suggested, browse and search; never our own checks), its retention curve and traffic sources, and any running Test & Compare.\n2. For every open prediction in LEARNINGS.md that this read can test, write the result: held, failed, or not yet testable, with the numbers.\n3. Change RULES.md where the data says so: sharpen a rule, add one, or delete one that did not help, always with the data beside it. A rule whose prediction has failed twice is rewritten or deleted. Keep RULES.md under one page; history belongs in LEARNINGS.md.\n4. Add one LEARNINGS.md line per change: date, film, data, change, and what the next film should show if the change is right.\n5. If nothing changes, say why in one LEARNINGS.md line; a read never passes silently.\nOne ww2-channel PR (the Chief merges), one line on the thread. Never change a live film's title, thumbnail or schedule in this job: propose it as a separate job.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:40Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
+      "due": "2026-11-27T05:00:12Z",
+      "kind": "review",
+      "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us"
     }
   ],
   "focus": [
