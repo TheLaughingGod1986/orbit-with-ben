@@ -272694,13 +272694,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T10:43Z",
-      "eta": "2026-11-27T14:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "",
+      "result": "Waiting for: J3885 has completed both MacBook runtime clones and launcher/guard readiness evidence; review PR 1375 checks and reconcile both machines before the coordinated drain. Mini runtime and private rehearsal eda81876 are staged; neither contains a frozen production queue.",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273851,9 +273851,19 @@
           "at": "2026-11-27T10:51Z",
           "by": "codex",
           "what": "step 3 of 4 done: Published root rehearsal eda81876; clean Mini runtime staged; eight final-path proposals lint clean; all 17 installed plist backups still match. J3885 is claimed on the MacBook. Evidence PR 1375 at 5dcbb24c; live operation remains on Orbit."
+        },
+        {
+          "at": "2026-11-27T10:51Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3885 has completed both MacBook runtime clones and launcher/guard readiness evidence; review PR 1375 checks and reconcile both machines before the coordinated drain. Mini runtime and private rehearsal eda81876 are staged; neither contains a frozen production queue."
+        },
+        {
+          "at": "2026-11-27T10:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T11:20:00Z"
         }
       ],
-      "remaining_action": "Read J3885 MacBook readiness, then freeze fresh source and execute the coordinated cutover",
+      "remaining_action": "Review MacBook staging evidence, then coordinate the drain, fresh queue export and live migration acceptance",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273883,6 +273893,11 @@
           "Move the engine and prove live operation"
         ],
         "note": "Published root rehearsal eda81876; clean Mini runtime staged; eight final-path proposals lint clean; all 17 installed pl"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3885 has completed both MacBook runtime clones and launcher/guard readiness evidence; review PR 1375 checks and reconcile both machines before the coordinated drain. Mini runtime and private rehearsal eda81876 are staged; neither contains a frozen production queue.",
+        "check_at": "2026-11-27T11:20:00Z"
       }
     },
     {
