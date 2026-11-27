@@ -360183,9 +360183,14 @@
           "at": "2026-11-27T21:35Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Registered Ben phone UAT watch on J3903 via jobs.py awaits for canonical NAS v03 (538464b9..., version v03, due 2026-12-13 18:00 London, unscheduled)"
+        },
+        {
+          "at": "2026-11-27T21:38Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verified published board-data (1ba75490) via board_check.py --no-post: ok=true, 0 problems, OWB:ASK:J3903 in Ready for OK (readyFor=Ben, play=302)"
         }
       ],
-      "remaining_action": "Verify board publish and Play link on board-data, then close J3903 and post studio thread report",
+      "remaining_action": "Close J3903 and post studio thread report",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
@@ -360194,16 +360199,16 @@
       ],
       "escalated_at": "2026-11-27T17:55Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T21:35Z",
+        "at": "2026-11-27T21:38Z",
         "by": "gemini",
         "plan": [
           "Verify canonical NAS v03 file and hash",
           "Register Ben phone UAT watch via jobs.py awaits and finish J3903",
           "Verify board publish, board check, and post studio thread report"
         ],
-        "note": "Registered Ben phone UAT watch on J3903 via jobs.py awaits for canonical NAS v03 (538464b9..., version v03, due 2026-12-"
+        "note": "Verified published board-data (1ba75490) via board_check.py --no-post: ok=true, 0 problems, OWB:ASK:J3903 in Ready for O"
       },
       "awaits_ben": {
         "what": "Watch OWB 064 Short 1 (Test A opening v03, 30.75 s, Chief PASS): Why Does Water Ice Survive 430°C Heat on Mercury?",
