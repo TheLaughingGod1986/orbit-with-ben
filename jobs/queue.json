@@ -365068,13 +365068,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T21:43Z",
-      "eta": "2026-11-27T23:43Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T21:41Z",
-      "result": "",
+      "result": "parked for Chief: preservation DONE. Private channel repo freshly verified (owner account, PRIVATE, admin). The two J3933 records copied byte-for-byte from 2247174860 (SHA-256 identical, also re-checked on merged main), JSON valid, diff check and privacy scan clean, plus a status note: the proposal is historical, J3935 no-title-change ruling stands. PR https://github.com/TheLaughingGod1986/ww2-channel/pull/215 merged 21:45Z as 21b41a2c (repo has no CI or required checks). Nothing pushed to the public repo; original J3933 worktree untouched. jobs.py refused my receipt on J3933 (wait --recheck: J3960 is not its registered verification task; plain wait: holder/Chief only). Chief run: python3 scripts/jobs.py done J3933 --agent codex --ref https://github.com/TheLaughingGod1986/ww2-channel/pull/215 --result 'Records preserved privately via J3960 (PR 215, 21b41a2c)' --git ; then python3 scripts/jobs.py done J3960 --agent codex --git . J3706 and all other holds untouched; no YouTube writes, spend or visibility changes.",
       "history": [
         {
           "at": "2026-11-27T21:41Z",
@@ -365105,6 +365105,11 @@
           "at": "2026-11-27T21:46Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: Merged PR 215 in the private channel repo (21b41a2c); records on main hash-match the originals. Receipt could not be written onto J3933 (holder/Chief only)."
+        },
+        {
+          "at": "2026-11-27T21:46Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: preservation DONE. Private channel repo freshly verified (owner account, PRIVATE, admin). The two J3933 records copied byte-for-byte from 2247174860 (SHA-256 identical, also re-checked on merged main), JSON valid, diff check and privacy scan clean, plus a status note: the proposal is historical, J3935 no-title-change ruling stands. PR https://github.com/TheLaughingGod1986/ww2-channel/pull/215 merged 21:45Z as 21b41a2c (repo has no CI or required checks). Nothing pushed to the public repo; original J3933 worktree untouched. jobs.py refused my receipt on J3933 (wait --recheck: J3960 is not its registered verification task; plain wait: holder/Chief only). Chief run: python3 scripts/jobs.py done J3933 --agent codex --ref https://github.com/TheLaughingGod1986/ww2-channel/pull/215 --result 'Records preserved privately via J3960 (PR 215, 21b41a2c)' --git ; then python3 scripts/jobs.py done J3960 --agent codex --git . J3706 and all other holds untouched; no YouTube writes, spend or visibility changes."
         }
       ],
       "remaining_action": "Chief to close the Atlantic read job with the receipt",

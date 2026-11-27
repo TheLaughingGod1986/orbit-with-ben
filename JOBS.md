@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
 | J3956 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
-| J3960 | mini | claimed | claudecode | 2026-11-27T23:43Z | for claudecode · assembly · `mini-claude-opus-5-5` · J3953 ruling: preserve records privately |  |
+| J3960 | mini | blocked | claudecode | – | for claudecode · assembly · `mini-claude-opus-5-5` · J3953 ruling: preserve records privately |  |
 
 Recently finished:
 
