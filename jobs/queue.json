@@ -355676,15 +355676,20 @@
           "at": "2026-11-27T07:55Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Bounded external NASA/JPL search complete (2/3 deep candidates, ~9 min): PIA17656 rejected (720p -> 2.67x > 2.35x); NASA SVS 12709 GSFC_20170912_Cassini_m12709_CIRS_Short [260.00-263.77s, Cassini_Saturn_Animation_Reel.mov] verified 1920x1080 (1.78x) moving Cassini over Titan"
+        },
+        {
+          "at": "2026-11-27T07:57Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Saved SVS12709 Cassini-Titan 1080p clip + provenance to NAS harvest_J3865_v01; verified native motion (fixed-crop median diff 5.31) and 1.78x upscale"
         }
       ],
-      "remaining_action": "Saving verified NASA SVS 12709 Cassini-Titan clip to NAS harvest and designing simplified 68-70px S08 graphic",
+      "remaining_action": "Finalizing S08 68-70px locked-word graphic and writing v03 assembler",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-27T07:55Z",
+        "at": "2026-11-27T07:57Z",
         "by": "gemini",
         "plan": [
           "Read J3856 review and v02 build",
@@ -355694,7 +355699,7 @@
           "Assemble v03 master beside v01/v02 on NAS and run all 7 gates",
           "Inspect stills/warnings, update PR #1366, post report and park for Chief"
         ],
-        "note": "Bounded external NASA/JPL search complete (2/3 deep candidates, ~9 min): PIA17656 rejected (720p -> 2.67x > 2.35x); NASA"
+        "note": "Saved SVS12709 Cassini-Titan 1080p clip + provenance to NAS harvest_J3865_v01; verified native motion (fixed-crop median"
       },
       "taskKeys": [
         "OWB:032"
