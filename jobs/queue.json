@@ -354972,9 +354972,14 @@
           "at": "2026-11-27T07:26Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short v02 review (032 dry_desert_two_oceans v02, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 34c800a4a9bf, PR #1366 commit 1a50bad01d, #99 posted; v01 preserved, J3853 held)"
+        },
+        {
+          "at": "2026-11-27T07:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
         }
       ],
-      "remaining_action": "Waiting for Chief exact-file v02 review of 032 Titan dry_desert_two_oceans v02 and PR #1366",
+      "remaining_action": "Waiting for the corrected Cassini picture and larger teaching graphic in J3865",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short",
       "progress": {
@@ -354993,7 +354998,12 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX: exact v02 34c800a4a9bf is not approved. J3865 must replace Dragonfly shown as Cassini and correct teaching label wording, size and timing, then deliver v03 for exact-file review. PR 1366 remains unmerged. Review committed 7bcaa478f7 in codex/J3856-review.",
+        "check_at": "2026-11-28T06:45:00Z"
+      }
     },
     {
       "id": "J3857",
