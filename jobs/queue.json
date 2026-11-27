@@ -1,5 +1,5 @@
 {
-  "next_id": 3936,
+  "next_id": 3937,
   "jobs": [
     {
       "id": "J0001",
@@ -362157,6 +362157,35 @@
       "remaining_action": "Review the completed post-change performance and decide the proposed title",
       "kind": "chief",
       "plain": "Deciding whether a clearer aircraft title will help the Atlantic film"
+    },
+    {
+      "id": "J3936",
+      "title": "WW2 005: post-publication check and pinned comment",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Chief ruling J3920 accepted and merged WW2 PR210. On or after 2026-12-03T17:05:00Z, check aW1cF9DPcY8 using Studio and Data API only. Confirm Public on Field Order History, saved three-way thumbnail test running, en-GB captions, end screen and playlist intact. Do not play the public watch page. Once Public is confirmed, post and pin the exact existing film 005 11_Upload-Package/PINNED_COMMENT_v02.txt, checking for an existing identical comment first. If still Private, do not change privacy/schedule: retain a typed public hold and retry in one hour. Record evidence in a WW2 PR and the studio thread. No upload, retitle, replacement or interruption of the saved test. One Short only under the channel rule; do not schedule other Shorts as part of this task.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "upload",
+      "after": "J3920",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T17:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T17:27Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Confirm publication and finish the pinned comment",
+      "kind": "studio",
+      "plain": "Check the St Nazaire film is public and pin its question"
     }
   ],
   "focus": [

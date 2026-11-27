@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3933 | mini | blocked | codex | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3934 | mini | open | – | – | review · Verify condition for J3871 |  |
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
+| J3936 | mini | open (after J3920) | – | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 
 Recently finished:
 
