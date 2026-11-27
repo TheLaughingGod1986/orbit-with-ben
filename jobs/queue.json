@@ -351496,9 +351496,14 @@
           "at": "2026-11-27T00:26Z",
           "by": "relay",
           "what": "condition verification queued: J3829"
+        },
+        {
+          "at": "2026-11-27T01:08Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T12:15:00Z"
         }
       ],
-      "remaining_action": "Await Chief PASS, PR #1358 + PR #1359 merge, and J3022 hold clearance",
+      "remaining_action": "Wait for the Venus-picture and Earth-credit corrections, then independently review the corrected package",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351529,9 +351534,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T01:26:03+00:00",
-        "recheck_task": "J3829"
+        "condition": "J3829 Chief FIX: J3835 must replace PIA00233 reconstruction in R11 with verified real nadir radar, correct PIA18033 attribution, and publish corrected exact-file evidence; independent review and required PR merges must confirm readiness before J3022/J3023 release.",
+        "check_at": "2026-11-27T12:15:00Z",
+        "last_recheck": "J3829",
+        "checked_at": "2026-11-27T01:08:22+00:00",
+        "checked_by": "codex"
       }
     },
     {
