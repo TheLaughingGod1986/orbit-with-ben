@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3857 | mini | open | – | – | for gemini · review · Publish completed Chief review record for J3853 |  |
-| J3858 | mini | open | – | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
+| J3858 | mini | claimed | codex | 2026-11-27T18:53Z | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 | J3859 | any | open | – | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
 | J3860 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-27 |  |
 | J3866 | any | open | – | – | for gemini · review · Publish completed Chief review record for J3856 |  |

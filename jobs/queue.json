@@ -355738,10 +355738,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T16:53Z",
+      "eta": "2026-11-27T18:53Z",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
       "result": "",
@@ -355820,6 +355820,11 @@
           "at": "2026-11-27T16:51Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded: ACCEPT PR 1402 merged b94f99c48f; full diff reviewed, 22/22 tests passed, importer regenerated identically. Reopen solely to record review completion; J3859 is the concrete follow-up. Data window straddles 25 Nov packaging change; not proof current design failed."
+        },
+        {
+          "at": "2026-11-27T16:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await Chief review and merge of PR #1402 to close J3858 and unblock J3859",
@@ -355829,7 +355834,15 @@
       "taskKeys": [
         "WW2:002"
       ],
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T16:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3859",
