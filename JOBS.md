@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3834 | any | blocked | codex | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
-| J3853 | mini | claimed | gemini | 2026-11-27T12:09Z | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3857 | mini | open | – | – | for claudecode · review · Publish completed Chief review record for J3853 |  |
 | J3858 | mini | blocked | gemini | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 | J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |

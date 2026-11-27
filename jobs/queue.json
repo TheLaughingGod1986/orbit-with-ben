@@ -354771,13 +354771,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T10:09Z",
-      "eta": "2026-11-27T12:09Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-27T05:58Z",
-      "result": "",
+      "result": "awaiting Ben",
       "history": [
         {
           "at": "2026-11-27T05:58Z",
@@ -354878,6 +354878,11 @@
           "at": "2026-11-27T10:15Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted studio thread #1353 report; UAT files verified (5b5703855c18 / 8acb817fa135), Ben's watch registered (due 2026-11-30 18:00 London/UTC), PR #1366 reconciled (84cd69d016) and updated to v03 for Chief merge"
+        },
+        {
+          "at": "2026-11-27T10:15Z",
+          "by": "gemini",
+          "what": "blocked: awaiting Ben"
         }
       ],
       "remaining_action": "Awaiting Ben's watch of 032 Titan Short #2 (two oceans) v03",
@@ -354910,6 +354915,11 @@
         "title": "Is Titan Just a Dry Desert?",
         "number": "032 Short 2",
         "type": "short"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "awaiting Ben",
+        "check_at": "2026-11-27T16:15:20+00:00"
       }
     },
     {
