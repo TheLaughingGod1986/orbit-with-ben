@@ -365209,9 +365209,14 @@
           "at": "2026-11-27T22:08Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T22:08Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review complete: 62 tests pass; PR1389 merged at 42e9bb1483 and historical note PR1418 merged. Parent held at 3/4 for J3962 live coordination; recheck 28 Nov 04:10Z."
         }
       ],
-      "remaining_action": "Verify readiness: Review corrected recovery controls after J3900, then coordinate the studio move",
+      "remaining_action": "Close the completed Chief verification",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T18:00:00+00:00",
@@ -365225,12 +365230,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T22:05Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-27T22:08Z",
+        "by": "codex",
+        "plan": [
+          "Check inputs and authority",
+          "Review correction and tests",
+          "Record ruling and follow-up"
+        ],
+        "note": "Chief review complete: 62 tests pass; PR1389 merged at 42e9bb1483 and historical note PR1418 merged. Parent held at 3/4 "
       },
       "urgent": 6,
       "for": "codex"
