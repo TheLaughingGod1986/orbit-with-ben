@@ -363038,13 +363038,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-27T17:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T17:06Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T17:06Z",
@@ -363085,32 +363085,20 @@
           "at": "2026-11-27T21:42Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T18:00:00Z"
+        },
+        {
+          "at": "2026-11-27T22:13Z",
+          "by": "codex",
+          "what": "reopened: J3960 Chief ruling: private preservation verified complete on merged main; both records byte-identical to originals and JSON valid. Accept receipt and release only this satisfied publication dependency for immediate closure. J3935 and J3706 unchanged."
         }
       ],
       "remaining_action": "Await the private records receipt from J3960",
       "due": "2026-11-27T23:00:00Z",
       "kind": "studio",
       "plain": "Check whether the Atlantic film needs another title or thumbnail change",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T17:22Z",
-        "by": "codex",
-        "plan": [
-          "Check prior evidence and access",
-          "Read current stranger performance",
-          "Record recommendation and handoff"
-        ],
-        "note": "Sanitized completed-date report committed as 2247174860 on codex/J3933; JSON validation and diff check passed. Immediate"
-      },
       "taskKeys": [
         "WW2:002"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3953 ruling: public publication not authorised. Await J3960 independent private-repository preservation and recorded receipt; evidence remains unchanged locally. Existing J3935 ruling and J3706 date hold stay in force.",
-        "check_at": "2026-11-28T18:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3934",
