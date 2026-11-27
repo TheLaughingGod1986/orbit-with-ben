@@ -1,5 +1,5 @@
 {
-  "next_id": 3849,
+  "next_id": 3850,
   "jobs": [
     {
       "id": "J0001",
@@ -354101,6 +354101,35 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J3849",
+      "title": "J3847 follow-up: refresh HOS audit inventory with reconciled coverage",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief codex accepted and merged HOS PR808 (5f3c0a837587be4ca7aaa2b09c36cdd47725de5b) after 31/31 independent regression tests and a live read-only audit recovering all four omitted IDs (80 videos, 44 public, zero contract errors). Refresh the HOS local inventory using the merged channel-audit.ts --write-live in an isolated HOS worktree with its existing credentials. Confirm qOZgess30h0 is directly returned Public, examine coverage notices and unresolved IDs, and verify every persisted row against the current API response. Do not force 51 rows if live state changed. Commit only safe generated LIVE_VIDEOS.json evidence and a concise result through a PR; run applicable HOS checks. No YouTube/Studio, privacy, schedules, Buffer, test or title writes. This is a repo inventory refresh, not a video restore. Ready after J3847 closes; no external wait or Ben approval required.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/808",
+      "film": "",
+      "stage": "",
+      "after": "J3847",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T03:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T03:07Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Refresh and verify the recorded channel inventory",
+      "kind": "assembly",
+      "plain": "Refresh the History of Science video list so the public Germs Short is included"
     }
   ],
   "focus": [
