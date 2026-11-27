@@ -357864,13 +357864,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T11:32Z",
-      "eta": "2026-11-27T13:32Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T11:29Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #1381 (gemini/J3889-032-short2-package, commit 72e770a51b) and mark J3889 done; yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z verified in API and Studio",
       "history": [
         {
           "at": "2026-11-27T11:29Z",
@@ -357911,6 +357911,11 @@
           "at": "2026-11-27T11:47Z",
           "by": "gemini",
           "what": "step 4 of 5 done: API readback (jobs/reviews/J3889/API_READBACK.json, jobs/readbacks/J3889.json), UPLOADS.json, and shorts_open_library/library.json updated; 13/13 ratchet/network tests and JSON validation PASS"
+        },
+        {
+          "at": "2026-11-27T11:48Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #1381 (gemini/J3889-032-short2-package, commit 72e770a51b) and mark J3889 done; yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z verified in API and Studio"
         }
       ],
       "remaining_action": "Push PR branch, open PR for Chief merge, post studio thread report, and park J3889 for Chief",
