@@ -60,17 +60,17 @@
       "status": "PASS_J3883"
     }
   },
-  "trailer": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/Trailer/064_every_planet_explained_trailer.mp4",
-  "trailerRel": "Trailer/064_every_planet_explained_trailer.mp4",
-  "trailerNasPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/Trailer/064_every_planet_explained_trailer.mp4",
-  "trailerSha256": "771d1f2a368ad4dbe1ee7b4cb541b0422a8d4d739ae946a8923f5ae9a4fe3cff",
+  "trailer": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/Trailer/064_every_planet_explained_trailer_v05.mp4",
+  "trailerRel": "Trailer/064_every_planet_explained_trailer_v05.mp4",
+  "trailerNasPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/Trailer/064_every_planet_explained_trailer_v05.mp4",
+  "trailerSha256": "e57cd79a668d558e2ee451f31b85bb81b515d3169150484112b73bd2b57646ce",
   "privacy": "private",
   "privacyStatus": "private",
   "schedule": "2026-12-16T18:00:00.000Z",
   "proposedPublishAt": "2026-12-16T18:00:00.000Z",
   "proposedSlotLondon": "Wed 16 Dec 2026 18:00 London",
   "benWatchDeadlineLondon": "Fri 11 Dec 2026 18:00 London",
-  "categoryId": "27",
+  "categoryId": "28",
   "language": "en-GB",
   "defaultLanguage": "en-GB",
   "defaultAudioLanguage": "en-GB",
@@ -94,5 +94,20 @@
     "alt": "Real NASA spacecraft images of all eight Solar System planets arranged across deep navy space, captioned 8 EXTREME WORLDS.",
     "coverMs": 2000
   },
-  "notes": "Pre-QA and pre-UAT assembly package built under J3023 (master_v03). Independent completed-cut/package QA and Chief PASS required before placing on Ben's watch board (deadline Fri 11 Dec 18:00 London). No upload, schedule, privacy change, or T045 arming performed; T045 stays proposed with video null."
+  "notes": "Pre-QA and pre-UAT assembly package built under J3023 (master_v03). Independent completed-cut/package QA and Chief PASS required before placing on Ben's watch board (deadline Fri 11 Dec 18:00 London). No upload, schedule, privacy change, or T045 arming performed; T045 stays proposed with video null.",
+  "priorTrailersPreserved": [
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/Trailer/064_every_planet_explained_trailer.mp4",
+      "sha256": "771d1f2a368ad4dbe1ee7b4cb541b0422a8d4d739ae946a8923f5ae9a4fe3cff"
+    }
+  ],
+  "trailerBytes": 8800139,
+  "trailerRepair": {
+    "job": "J3909",
+    "rejectedVersions": [
+      "trailer_v02 and trailer_v04: worker boundary QA rejected; preserved, do not use"
+    ],
+    "audio": "Original v01 AAC stream copied without re-encoding",
+    "review": "Independent J3910 recheck required; no package PASS claimed"
+  }
 }
