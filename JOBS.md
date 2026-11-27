@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
 | J3829 | mini | blocked | claudecode | – | review · Verify condition for J3818 |  |
 | J3830 | gemini | open | – | – | WW2:016 sources · facts · WW2 film 016: Battle of the Bulge independent claims & archive provenance check (PR #197) | ww2-channel#197 |
+| J3831 | any | open (after J3830) | – | – | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
 
 Recently finished:
 
