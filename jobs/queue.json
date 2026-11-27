@@ -353319,10 +353319,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T02:00Z",
+      "eta": "2026-11-27T04:00Z",
       "created_by": "relay",
       "created_at": "2026-11-27T01:40Z",
       "result": "",
@@ -353356,6 +353356,11 @@
           "at": "2026-11-27T02:00Z",
           "by": "codex",
           "what": "reopened: Elected Chief recording this condition ruling; J3022 remains held."
+        },
+        {
+          "at": "2026-11-27T02:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record J3022's actual remaining hold and finish this verification",
@@ -353373,7 +353378,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T02:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3840",
