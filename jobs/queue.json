@@ -361211,10 +361211,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T16:55Z",
+      "eta": "2026-11-27T18:55Z",
       "created_by": "codex",
       "created_at": "2026-11-27T15:56Z",
       "result": "",
@@ -361223,12 +361223,25 @@
           "at": "2026-11-27T15:56Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T16:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair all four narration segments and prove complete speech in the new cut",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
-      "plain": "Restore the missing narration in the first planets Short"
+      "plain": "Restore the missing narration in the first planets Short",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T16:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3923",
