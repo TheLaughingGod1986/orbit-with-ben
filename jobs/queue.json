@@ -1,5 +1,5 @@
 {
-  "next_id": 3960,
+  "next_id": 3961,
   "jobs": [
     {
       "id": "J0001",
@@ -365046,6 +365046,39 @@
           "finish job and report"
         ]
       }
+    },
+    {
+      "id": "J3960",
+      "title": "J3953 ruling: preserve records privately",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3953 Chief ruling: do not push the J3933 evidence to public orbit-with-ben. Its private-destination prerequisite failed. Preserve the original work unchanged. Independently review J3933 and its evidence locally. Preserve the two finished records in the owner-controlled private ww2-channel repository only, after freshly verifying ownership, private visibility and a complete privacy review. If any check fails, stop and report the reason. This does not authorise retrying the rejected public push through another agent or tool.\n\nUse a clean isolated worktree. Transfer only the two evidence documents with byte-for-byte verification into the corresponding channel analytics folder; no whole-branch transfer. Validate the JSON and diff and run required checks. Open a PR to main in the private channel repository and merge only when required checks are green under the standing records-publication authority. Record the receipt on J3933 and finish its publication dependency once landed. Keep evidence content, private paths and operational details out of public queue and thread reports.\n\nA companion note must distinguish the historical proposal from the existing J3935 ruling: no title change now. Preserve J3706 and all unrelated holds. No YouTube changes, spend or repository visibility changes. Claude Code performs the independent publication review; no Codex publication retry. Immediately actionable, due 28 Nov 18:00 UTC.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T21:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T21:41Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Review and preserve the finished records privately",
+      "due": "2026-11-28T18:00:00Z",
+      "for": "claudecode",
+      "kind": "assembly",
+      "model": "mini-claude-opus-5-5",
+      "plain": "Save the Atlantic performance records in the private channel repository",
+      "mini_only": true
     }
   ],
   "focus": [

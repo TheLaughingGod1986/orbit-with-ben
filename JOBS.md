@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3953 | mini | blocked | gemini | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
 | J3956 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
+| J3960 | mini | open | – | – | for claudecode · assembly · `mini-claude-opus-5-5` · J3953 ruling: preserve records privately |  |
 
 Recently finished:
 
