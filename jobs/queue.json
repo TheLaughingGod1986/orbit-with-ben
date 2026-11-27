@@ -353022,9 +353022,14 @@
           "at": "2026-11-27T01:16Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:17Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: read topic, packaging, provenance, claims check; then review, viewer test, v02, PR",
+      "remaining_action": "re-hold J3831 on the Chief merge/lock, then report",
       "kind": "review",
       "recheck_of": "J3831",
       "due": "2026-11-27T02:09:59+00:00",
@@ -353038,12 +353043,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T01:16Z",
+        "at": "2026-11-27T01:17Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read evidence",
+          "Re-hold original",
+          "Report"
+        ]
       }
     }
   ],
