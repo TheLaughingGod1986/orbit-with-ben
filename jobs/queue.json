@@ -351409,9 +351409,14 @@
           "at": "2026-11-27T00:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Inspect exact J3719_v02 thumbnail files at full size and 168x94, verify SHOT_LIST_v02 opening <=4s and R09 PIA00271 removal, and write KEEP/FIX review",
+      "remaining_action": "Inspect J3817 artifacts, SHA-256 hashes, THUMB_SCORES_v02.json and THUMB_LEDGER.json row T045",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351425,12 +351430,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T00:19Z",
+        "of": 5,
+        "at": "2026-11-27T00:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v02 hashes and ledger",
+          "Visually inspect v02 thumbs",
+          "Check title and description lock",
+          "Verify SHOT_LIST_v02 fixes",
+          "Write REVIEW.md and commit"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3819",
