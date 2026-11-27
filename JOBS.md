@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3851 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3852 | mini | claimed | claudecode | 2026-11-27T07:50Z | review · Verify condition for J3815 |  |
+| J3852 | mini | blocked | claudecode | – | review · Verify condition for J3815 |  |
 
 Recently finished:
 
