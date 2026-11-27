@@ -359382,16 +359382,21 @@
           "at": "2026-11-27T15:00Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Finalized 12-cut full-bleed 9:16 24fps Test A timeline (31.000s, 744 frames) with tightened <0.25s breaths and zero split words"
+        },
+        {
+          "at": "2026-11-27T15:09Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Build script actively rendering shots/audio and running gates on MiniWork scratch"
         }
       ],
-      "remaining_action": "Building OWB 064 Short 1 assembler script and rendering full-bleed 9:16 24fps CFR cut",
+      "remaining_action": "Rendering OWB 064 Short 1 v01 (1080x1920 24fps CFR) and running gate suite",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-11-27T15:00Z",
+        "at": "2026-11-27T15:09Z",
         "by": "gemini",
         "plan": [
           "Inspect master v03 and Short rules",
@@ -359401,7 +359406,7 @@
           "Inspect frames and verify packaging",
           "Commit artifacts and submit for QA"
         ],
-        "note": "Finalized 12-cut full-bleed 9:16 24fps Test A timeline (31.000s, 744 frames) with tightened <0.25s breaths and zero spli"
+        "note": "Build script actively rendering shots/audio and running gates on MiniWork scratch"
       },
       "taskKeys": [
         "OWB:064"
