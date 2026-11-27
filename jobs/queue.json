@@ -361978,13 +361978,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T17:15Z",
-      "eta": "2026-11-27T19:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T17:06Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched.",
       "history": [
         {
           "at": "2026-11-27T17:06Z",
@@ -362015,6 +362015,11 @@
           "at": "2026-11-27T17:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Sanitized completed-date report committed as 2247174860 on codex/J3933; JSON validation and diff check passed. Immediate title decision queued as J3935. Automatic approval review refused public GitHub push; no retry or indirect publish attempted."
+        },
+        {
+          "at": "2026-11-27T17:22Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched."
         }
       ],
       "remaining_action": "Publish the finished evidence through the prescribed review handoff",
@@ -362035,7 +362040,12 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3933-records codex/J3933 . Finished evidence commit 2247174860; automatic approval review rejected public analytics push. Do not bypass rejection: publisher must independently review authorization and privacy before publication. Analysis complete; J3935 queued for immediate packaging decision. No YouTube writes; J3706 hold untouched.",
+        "check_at": "2026-11-27T23:22:32+00:00"
+      }
     },
     {
       "id": "J3934",
