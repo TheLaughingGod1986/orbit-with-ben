@@ -352491,16 +352491,21 @@
           "at": "2026-11-27T01:00Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All 23 claims (C01-C23) and 42 archive provenance items verified: 16 PASS, 7 FLAG (5 material, 2 minor); 42/42 US Federal PD clean with 0 agency/private items and 0 unseen-photo narration"
+        },
+        {
+          "at": "2026-11-27T01:03Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened ww2-channel#201 (4359063) stacked on #197: 16 PASS, 7 FLAG (5 material: C02/C17/C18/C20/C21; 2 minor: C09/C22); 42/42 archive provenance PASS; Rule 9 projected v02 18,514 chars"
         }
       ],
-      "remaining_action": "Writing CLAIMS_CHECK_v01.md, opening clean PR on ww2-channel, and posting report",
+      "remaining_action": "Completed claims check PR #201 and posting studio report",
       "due": "2026-12-14T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check all 23 historical claims and 38 archive photo sources for Battle of the Bulge (016)",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-27T01:00Z",
+        "at": "2026-11-27T01:03Z",
         "by": "gemini",
         "plan": [
           "Checkout PR 197 and inspect files",
@@ -352509,7 +352514,7 @@
           "Verify remaining claims and archive provenance",
           "Write claims check, open PR, report"
         ],
-        "note": "All 23 claims (C01-C23) and 42 archive provenance items verified: 16 PASS, 7 FLAG (5 material, 2 minor); 42/42 US Federa"
+        "note": "Opened ww2-channel#201 (4359063) stacked on #197: 16 PASS, 7 FLAG (5 material: C02/C17/C18/C20/C21; 2 minor: C09/C22); 4"
       },
       "taskKeys": [
         "WW2:016"
