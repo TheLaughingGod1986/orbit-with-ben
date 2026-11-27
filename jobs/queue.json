@@ -365008,18 +365008,27 @@
           "at": "2026-11-27T21:36Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T21:37Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Audit HOS live and scheduled video listings",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T21:36Z",
+        "of": 4,
+        "at": "2026-11-27T21:37Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "read brief and last report",
+          "audit live and scheduled HOS videos",
+          "write fix list in HOS repo, open PR",
+          "finish job and report"
+        ]
       }
     }
   ],
