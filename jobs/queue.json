@@ -360625,10 +360625,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T16:01Z",
+      "eta": "2026-11-27T18:01Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T15:36Z",
       "result": "",
@@ -360687,6 +360687,11 @@
           "at": "2026-11-27T15:59Z",
           "by": "codex",
           "what": "remaining role: Chief ruling on completed QA, not a new media QA run; specialist history retained"
+        },
+        {
+          "at": "2026-11-27T16:01Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record the Chief FIX and repair handoff; completed worker QA evidence is preserved",
@@ -360703,7 +360708,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T16:01Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3919",

@@ -87,6 +87,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
-| 064 | edit | codex | 2026-11-27T15:55Z | 2026-11-27T16:15Z | - |
+| 064 | edit | codex | 2026-11-27T16:01Z | 2026-11-27T18:00Z | J3918 OWB 064 Short 1 (Test A opening v02): Independent QA review (PR #1399) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
