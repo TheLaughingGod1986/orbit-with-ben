@@ -357881,9 +357881,14 @@
           "at": "2026-11-27T11:34Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3889; verified NAS v03 master SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 and cover SHA-256 8acb817fa135a0c3a37b6205458674b9c4da49093a859ca6f1d08e4b162c1127"
+        },
+        {
+          "at": "2026-11-27T11:37Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Pre-upload checks PASS: gate_shorts_open PASS (26.9s, dhash 00f0e91745418580, visor 0.0), thumb_preview PASS (sat 170.9, near_black 2%), 0 title dups / 0 Dec 21 collisions across 218 videos, parent T3cBBss1F60 Public, CDP 9223 up"
         }
       ],
-      "remaining_action": "Verify approved v03 master, cover, gates, and YouTube slot availability",
+      "remaining_action": "Build Short #2 listing package and run youtube:package dry-run",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -357905,9 +357910,9 @@
         "handled": true
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T11:34Z",
+        "at": "2026-11-27T11:37Z",
         "by": "gemini",
         "plan": [
           "Verify v03 files, gates, and Dec 21 slot",
@@ -357916,7 +357921,7 @@
           "Read back API/Studio state and update UPLOADS/library",
           "Open PR for Chief merge and report"
         ],
-        "note": "Claimed J3889; verified NAS v03 master SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 and cove"
+        "note": "Pre-upload checks PASS: gate_shorts_open PASS (26.9s, dhash 00f0e91745418580, visor 0.0), thumb_preview PASS (sat 170.9,"
       },
       "taskKeys": [
         "OWB:032"
