@@ -360046,9 +360046,14 @@
           "at": "2026-11-27T14:40Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:40Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Parked for Chief ruling on PR #1394 (merge + ~277-char ElevenLabs VO authorization for Option A, or Option B1 zero-VO fallback directive)",
+      "remaining_action": "Read J3904 job, result and approval history",
       "kind": "review",
       "recheck_of": "J3904",
       "due": "2026-11-27T15:38:38+00:00",
@@ -360066,8 +360071,11 @@
         "of": 3,
         "at": "2026-11-27T14:40Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3904 and history",
+          "Check condition and gates",
+          "Reopen or re-wait J3904"
+        ]
       }
     }
   ],
