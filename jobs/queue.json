@@ -352200,9 +352200,14 @@
           "at": "2026-11-27T00:27Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:27Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await Chief PASS, PR #1358 + PR #1359 merge, and J3022 hold clearance",
+      "remaining_action": "Reading J3818 history and the predecessor it waits on",
       "kind": "review",
       "recheck_of": "J3818",
       "due": "2026-11-27T01:26:03+00:00",
@@ -352220,9 +352225,15 @@
         "of": 3,
         "at": "2026-11-27T00:27Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3818 history and evidence",
+          "Check predecessor and gates",
+          "Reopen or re-wait J3818"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
