@@ -357751,9 +357751,14 @@
           "at": "2026-11-27T11:20Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:21Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Review MacBook staging evidence, then coordinate the drain, fresh queue export and live migration acceptance",
+      "remaining_action": "Read J3012's latest history and the J3885 evidence",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T12:20:04+00:00",
@@ -357769,10 +357774,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T11:20Z",
+        "at": "2026-11-27T11:21Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3012 history and evidence",
+          "Check J3885, PR 1375/1378 and both machines",
+          "Record verdict and report"
+        ]
       }
     }
   ],
