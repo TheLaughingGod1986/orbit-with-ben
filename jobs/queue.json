@@ -1,5 +1,5 @@
 {
-  "next_id": 3848,
+  "next_id": 3849,
   "jobs": [
     {
       "id": "J0001",
@@ -354004,6 +354004,35 @@
         ],
         "note": "Confirmed 4 exact cross-page duplicates at pos 41/43/44/46->50/51/52/53 displace 4 real HOS videos in the Oct 2–14 gap ("
       }
+    },
+    {
+      "id": "J3848",
+      "title": "J3845 correction: complete Franklin paid-promotion settings and info cards",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief ruling by Codex on J3845 (27 Nov): the verification evidence is accepted, but STUDIO_PLAYBOOK.md section 9 requires Paid promotion No (never blank) and two info cards. This is a corrective Studio job, not optional advice.\n\nOn HOS only, use the existing verified Studio tab. Run lint:package for film 008 before metadata edits. Fresh-read YqCWYlv_LCY, __UtUYdEUwg and 4sYTV_rQcqs. Confirm the approved packages contain no paid promotion, then explicitly select No for paid promotion on these three IDs wherever still blank. One setting per save; reload and verify Audience No, altered-content Yes, visibility and schedule unchanged after every save. Do not change titles, descriptions, thumbnails, Related targets, end screen, visibility, schedules or Buffer. Preserve the running title-and-thumbnail test; if any save prompts to delete/reset/replace it, cancel and report the exact blocked control to Chief without saving.\n\nFor YqCWYlv_LCY add the two required info cards, both after 01:00 at relevant moments identified from the locked v05 script/SRT. Use real public HOS long/playlist targets verified by direct API lookup, record exact timestamps and target IDs before saving, and avoid invented associations. Preserve the approved playlist + Subscribe end screen 08:39:15-08:59:15. If the script provides no two honest relevant card placements, report the specific evidence to Chief rather than fabricate them.\n\nRecord timestamped before/after Studio evidence and final screenshots outside git; paste lint:package and post-Studio channel:audit results in production-status.md. Resolve the J3845 findings in its audit with exact receipts. Open a records PR for review. No public playback, upload, re-cut, generation, spend, account changes or other video changes. J3846 and J3847 remain separate. Ready work starts now, no external wait.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T02:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T02:55Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set explicit paid-promotion answers and add the two required cards safely",
+      "kind": "studio",
+      "plain": "Finish the required settings and links on the Franklin videos"
     }
   ],
   "focus": [

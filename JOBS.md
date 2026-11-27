@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3845 | mini | blocked | gemini | – | studio · J3844 follow-up: verify HOS Studio listing fields |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3847 | mini | claimed | gemini | 2026-11-27T04:51Z | assembly · J3844 follow-up: investigate missing public id in audit |  |
+| J3848 | mini | open | – | – | 008 upload · studio · J3845 correction: complete Franklin paid-promotion settings and info cards |  |
 
 Recently finished:
 
