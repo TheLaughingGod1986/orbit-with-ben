@@ -357914,10 +357914,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-27T11:34Z",
+      "eta": "2026-11-27T13:34Z",
       "created_by": "codex",
       "created_at": "2026-11-27T11:34Z",
       "result": "",
@@ -357926,12 +357926,25 @@
           "at": "2026-11-27T11:34Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T11:34Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Explain the early heartbeat and reconcile both MacBook worker settings",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
-      "plain": "Check both MacBook workers are ready for the studio move"
+      "plain": "Check both MacBook workers are ready for the studio move",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T11:34Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
