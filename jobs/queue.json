@@ -355657,10 +355657,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-27T07:44Z",
-      "eta": "2026-11-27T09:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:42Z",
       "result": "",
@@ -355699,6 +355699,11 @@
           "at": "2026-11-27T08:08Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Fixed S08 bars trigger with curved planetary crust at 68px (11.2% of 608px); launched detached full build in tmux J3865-v03-render"
+        },
+        {
+          "at": "2026-11-27T08:08Z",
+          "by": "gemini",
+          "what": "released: Detached v03 render+7-gates+NAS-copy running in tmux session J3865-v03-render (log: /Users/benjaminoats/_desk/logs/J3865-v03-render.log, done: /Users/benjaminoats/_desk/logs/J3865-v03-render.done). Script on worktree /Volumes/MiniWork/scratch/J3856-owb-032-short2-v02 (branch gemini/J3853-owb-032-short2, PR #1366). Bounded external NASA/JPL search complete (2/3 deep candidates, 9 min): PIA17656 rejected (720p -> 2.67x > 2.35x); NASA SVS 12709 GSFC_20170912_Cassini_m12709_CIRS_Short [260.00-263.77s, Cassini_Saturn_Animation_Reel.mov] saved to NAS harvest_J3865_v01/SVS12709_Cassini_Titan_Flyby_260_264_1080.mp4 (sha256: 96749f161f522658833e9fff4f61d17170eb99d11c1fc7a82885bddaee982fa9, 1920x1080, 1.78x, native motion median 5.84). Next run: check .done file (do not start a second render while running), verify rc=0 and all 7 gates, inspect v03 stills + phone preview + warnings, write handoff md, commit & push PR #1366, post report on #99, and park J3865 for Chief."
         }
       ],
       "remaining_action": "Detached tmux J3865-v03-render building v03 master, running 7 gates, and copying to NAS if all pass",
