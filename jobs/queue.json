@@ -360263,9 +360263,14 @@
           "at": "2026-11-27T14:59Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:59Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Revise the Short draft and evidence before voice approval",
+      "remaining_action": "Reading PR #1394 files, J3912 review and Shorts duration rules",
       "due": "2026-11-28T12:00:00Z",
       "kind": "script",
       "plain": "Revise the Venus and Uranus Short script and check its picture sources",
@@ -360279,12 +360284,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-27T14:59Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read PR 1394 and rules",
+          "Revise narration v02",
+          "Gemini claim and quote check",
+          "Shot provenance and licence audit",
+          "Duration rule and metrics",
+          "Push PR and report"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3914",
