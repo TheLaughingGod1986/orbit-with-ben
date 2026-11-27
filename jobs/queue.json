@@ -364610,9 +364610,14 @@
           "at": "2026-11-27T20:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T20:42Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Demonstrated native audio_input and moving_video_input via read_file on 064_short02_venus_vs_uranus_v01.mp4"
         }
       ],
-      "remaining_action": "Listen to full mix and watch moving video of 064_short02_venus_vs_uranus_v01.mp4 (4eb7d94377...) and write KEEP/FIX evidence for Chief",
+      "remaining_action": "Verifying PR #1416 files, exact SHA-256 hashes, script/VO locks, and source credits",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -364630,12 +364635,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T20:41Z",
+        "of": 5,
+        "at": "2026-11-27T20:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify PR #1416 files, hashes and script/VO locks",
+          "Run independent automated gates and fresh ASR",
+          "Inspect audio stems and full mix by ear",
+          "Watch moving cut, R03 frame, phone legibility and loop",
+          "Post exact-hash QA verdict and park for Chief"
+        ],
+        "note": "Demonstrated native audio_input and moving_video_input via read_file on 064_short02_venus_vs_uranus_v01.mp4"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3958",
