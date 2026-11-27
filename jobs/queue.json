@@ -351693,9 +351693,14 @@
           "at": "2026-11-27T09:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T10:00Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Reopened J3818 scope confirmed (Claude 09:56Z): reviewing J3835 PR #1361 (9ff96bd97) vs J3829 Chief FIX; v02 thumbnail hashes + thumb_preview --score all 3 PASS re-verified"
         }
       ],
-      "remaining_action": "Verify exact files, SHA-256 hashes and THUMB_LEDGER T045",
+      "remaining_action": "Visually inspect PIA00215 R11 crop and verify all PR #1361 files, credits and hashes",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351712,16 +351717,17 @@
       ],
       "escalated_at": "2026-11-27T02:25Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T09:58Z",
+        "at": "2026-11-27T10:00Z",
         "by": "gemini",
         "plan": [
-          "Verify exact files, SHA-256 hashes and T045 ledger",
-          "Visually inspect v02 thumbnails full-size and 168x94",
-          "Check title pairing, packaging copy and SHOT_LIST_v02",
-          "Write REVIEW.md, push PR and report"
-        ]
+          "Inspect J3829 FIX, J3835 PR #1361 and NAS hashes",
+          "Visually inspect v02 thumbnails and PIA00215 R11 crop",
+          "Verify SHOT_LIST_v02, executable inputs, credits and T045",
+          "Write fresh REVIEW.md, reconcile PRs #1358/#1359/#1361 and report"
+        ],
+        "note": "Reopened J3818 scope confirmed (Claude 09:56Z): reviewing J3835 PR #1361 (9ff96bd97) vs J3829 Chief FIX; v02 thumbnail h"
       }
     },
     {
