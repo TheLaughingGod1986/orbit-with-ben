@@ -352839,16 +352839,21 @@
           "at": "2026-11-27T01:24Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Gemini worker claimed J3833; running independent mechanical parity check on PR #200 (dd92d70) and live-fetching all primary sources"
+        },
+        {
+          "at": "2026-11-27T01:26Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: All 23 primary/official source documents live-fetched and verbatim quotes extracted; mechanical parity confirmed (v06 sha 8e670990...cb66, 37/37 SCRIPT exact, 30 unchanged, 7 changed, 10,050 chars)"
         }
       ],
-      "remaining_action": "Fetch primary sources live and independently verify v06 blocks E01-E07, joins J01-J10, C1-C7, and mechanical parity",
+      "remaining_action": "Verify every join J01-J10 and C1-C7, assemble CLAIMS_CHECK_v06.md, and check final integrity",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected Operation Pedestal narration against its sources",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-27T01:24Z",
+        "at": "2026-11-27T01:26Z",
         "by": "gemini",
         "plan": [
           "Read v06 and brief",
@@ -352856,7 +352861,7 @@
           "Verify output and parity",
           "Publish and record"
         ],
-        "note": "Gemini worker claimed J3833; running independent mechanical parity check on PR #200 (dd92d70) and live-fetching all prim"
+        "note": "All 23 primary/official source documents live-fetched and verbatim quotes extracted; mechanical parity confirmed (v06 sh"
       },
       "taskKeys": [
         "WW2:009"
