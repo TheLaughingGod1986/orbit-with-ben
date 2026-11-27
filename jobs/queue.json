@@ -354681,9 +354681,14 @@
           "at": "2026-11-27T06:23Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T06:24Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: a4c9c8f534 is on no remote branch; codex/j3115-pluto-review not on origin; local branch ahead 1, behind 295 main"
         }
       ],
-      "remaining_action": "Checking whether J3115's review decision has been published",
+      "remaining_action": "Record J3115 still waiting: decision a4c9c8f534 unpublished",
       "kind": "review",
       "recheck_of": "J3115",
       "due": "2026-11-27T07:22:35+00:00",
@@ -354697,15 +354702,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T06:23Z",
+        "at": "2026-11-27T06:24Z",
         "by": "claudecode",
         "plan": [
           "Read J3115 history",
           "Check decision a4c9c8f534 published",
           "Record wait or reopen"
-        ]
+        ],
+        "note": "a4c9c8f534 is on no remote branch; codex/j3115-pluto-review not on origin; local branch ahead 1, behind 295 main"
       },
       "taskKeys": [
         "OWB:034"
