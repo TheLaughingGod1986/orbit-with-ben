@@ -355059,9 +355059,14 @@
           "at": "2026-11-27T07:42Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
+        },
+        {
+          "at": "2026-11-27T09:01Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
         }
       ],
-      "remaining_action": "Waiting for the corrected Cassini picture and larger teaching graphic in J3865",
+      "remaining_action": "Waiting for the corrected Titan Short playback review in J3878",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short",
       "progress": {
@@ -355083,7 +355088,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief FIX: exact v02 34c800a4a9bf is not approved. J3865 must replace Dragonfly shown as Cassini and correct teaching label wording, size and timing, then deliver v03 for exact-file review. PR 1366 remains unmerged. Review committed 7bcaa478f7 in codex/J3856-review.",
+        "condition": "J3865 correction review accepts v03 Cassini identity, readable teaching labels and preserved crop only. J3878 exact-file audio/moving-video QA and subsequent Chief ruling must finish before UAT. PR 1366 remains unmerged.",
         "check_at": "2026-11-28T06:45:00Z"
       }
     },
