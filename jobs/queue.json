@@ -352370,10 +352370,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T01:06Z",
+      "eta": "2026-11-27T03:06Z",
       "created_by": "relay",
       "created_at": "2026-11-27T00:26Z",
       "result": "",
@@ -352412,6 +352412,11 @@
           "at": "2026-11-27T01:06Z",
           "by": "codex",
           "what": "reopened: Elected Chief taking the requested condition review; parent J3818 stays held during evidence review."
+        },
+        {
+          "at": "2026-11-27T01:06Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Re-hold J3818 on Chief PASS and merges, then finish this check",
@@ -352429,7 +352434,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T01:06Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3830",
