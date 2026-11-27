@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3883 | mini | blocked | codex | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3889 | mini | claimed | gemini | 2026-11-27T13:32Z | studio · Package and upload OWB 032 Short 2 short v03 (Is Titan Just a Dry Desert?) Private, 2026-12-21T11:30Z |  |
-| J3891 | mini | open | – | – | for claudecode · assembly · J3012: Claude Code review and publish completed migration checkpoint |  |
+| J3891 | mini | claimed | claudecode | 2026-11-27T13:40Z | for claudecode · assembly · J3012: Claude Code review and publish completed migration checkpoint |  |
 
 Recently finished:
 
