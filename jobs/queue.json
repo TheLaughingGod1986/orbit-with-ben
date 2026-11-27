@@ -360738,9 +360738,14 @@
           "at": "2026-11-27T15:53Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-27T15:56Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified NAS master v04 SHA-256 62b9e10c...364a8afa, thumbnails A/B/C v02 hashes, SRT v03 hash, Ben board OK (WW2-004 v04, 2026-11-26T09:18:07.609Z), and FOH API token (UCu94mInMFosxu3W0H6jlI6Q, no existing WW2:004 long)."
         }
       ],
-      "remaining_action": "Inspecting J3653/J3430 and verifying NAS master and thumbnail hashes",
+      "remaining_action": "Building WW2:004 PACKAGE_MANIFEST.json and authorizing metadata_v04.json in a clean ww2 worktree",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360765,9 +360770,9 @@
       "due": "2026-11-28T18:00:00Z",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T15:53Z",
+        "at": "2026-11-27T15:56Z",
         "by": "gemini",
         "plan": [
           "Inspect J3653 and verify NAS master + thumbnails SHA-256",
@@ -360776,7 +360781,8 @@
           "Set captions, altered content, thumb A, and 3-way Test & Compare",
           "Read back Private+scheduled and update status.json + UPLOADS",
           "Push PR, report on thread, and hand off for Chief merge"
-        ]
+        ],
+        "note": "Verified NAS master v04 SHA-256 62b9e10c...364a8afa, thumbnails A/B/C v02 hashes, SRT v03 hash, Ben board OK (WW2-004 v0"
       },
       "taskKeys": [
         "WW2:004"
