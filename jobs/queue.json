@@ -363230,9 +363230,14 @@
           "at": "2026-11-27T18:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:23Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original and verification histories plus J3926 authorization and PR1409. Codex elected; review-progress unavailable because active.json is absent."
         }
       ],
-      "remaining_action": "Verify readiness: Obtain explicit authorization for the blocked private-repository push, then publish the script lock",
+      "remaining_action": "Verify published branch and record the remaining merge handoff",
       "kind": "review",
       "recheck_of": "J3834",
       "due": "2026-11-27T19:10:28+00:00",
@@ -363246,13 +363251,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T18:22Z",
+        "at": "2026-11-27T18:23Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check inputs and approval history",
+          "Verify publication evidence and rule",
+          "Record ruling and follow-up"
+        ],
+        "note": "Read original and verification histories plus J3926 authorization and PR1409. Codex elected; review-progress unavailable"
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     }
   ],
   "focus": [
