@@ -351462,9 +351462,14 @@
           "at": "2026-11-27T07:34Z",
           "by": "relay",
           "what": "condition verification queued: J3864"
+        },
+        {
+          "at": "2026-11-27T08:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T20:00:00Z"
         }
       ],
-      "remaining_action": "Repair the opener and loop gates, then obtain Short review",
+      "remaining_action": "Await the queued apple Short repair and capable review",
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
@@ -351484,10 +351489,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload.",
-        "check_at": "2026-11-27T08:34:00+00:00",
-        "recheck_task": "J3864"
+        "type": "dependency",
+        "condition": "J3864 FIX: publication satisfied by draft HOS PR 811 at 2922143e. Repair J3871 and its dependent capable Short review must finish with an exact-version PASS; v02 remains failed (opener 1.14<1.50 and terminal reuse). No UAT, upload or spend authorised. PR 811 stays draft pending repair.",
+        "check_at": "2026-11-27T20:00:00Z",
+        "last_recheck": "J3864",
+        "checked_at": "2026-11-27T08:27:58+00:00",
+        "checked_by": "codex"
       }
     },
     {
