@@ -353349,9 +353349,14 @@
           "at": "2026-11-27T01:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:42Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
+      "remaining_action": "Probing direct read_file media capabilities and checking capabilities, threads, PRs, and NAS hashes",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -353369,12 +353374,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:41Z",
+        "of": 4,
+        "at": "2026-11-27T01:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Probe media capabilities and check agy video input",
+          "Check HOS #694, OWB #954, PRs and agent capabilities",
+          "Verify 6/6 NAS archive hashes and preserved state",
+          "Update J3756 hold, write review evidence, post report and close J3840"
+        ]
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3841",
