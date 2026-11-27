@@ -1,5 +1,5 @@
 {
-  "next_id": 3856,
+  "next_id": 3857,
   "jobs": [
     {
       "id": "J0001",
@@ -354816,6 +354816,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3856",
+      "title": "Backlog correction: J3853 Titan Short picture and teaching graphic",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief FIX follow-up to J3853, OWB 032 Titan dry_desert_two_oceans v01. Read jobs/reviews/J3853/REVIEW.md and PR #1366. No spend, no new VO or generated media, no upload or scheduling. Make v02 using existing locked narration and existing picture: replace slow still zooms at 1.900-8.500s with appropriate moving footage; replace Earth/unsourced bars and early two-oceans pill with one accurate Titan-specific teaching graphic timed to the spoken words and payoff; remove S04 diagonal image boundary over starfield by clean full-frame reframing. Preserve source versions. Record all E1 measurements and provenance, rerun all seven gates and review every warning. Copy master to NAS with verified SHA-256; deliver full-size corrected-shot/graphic stills, contact sheet, captions and metadata. Update PR #1366 or link a replacement. Return for review before UAT; keep J3853 held pending exact-file v02 ruling. Do not alter existing Shorts, Buffer posts, slots or UPLOADS entries. If existing moving footage cannot satisfy the bridge, document bounded asset search and ask for a concrete Chief fallback; never silently waive the rule.",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build a corrected Titan Short from the existing footage and narration",
+      "kind": "assembly",
+      "plain": "Fix the pictures and ocean explanation in the new Titan Short"
     }
   ],
   "focus": [
