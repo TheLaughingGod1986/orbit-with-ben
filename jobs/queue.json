@@ -359924,13 +359924,13 @@
       "stage": "edit",
       "after": "J3909",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T14:40Z",
-      "eta": "2026-11-27T16:40Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T14:14Z",
-      "result": "",
+      "result": "parked for Chief: J3910 independent recheck complete in PR #1395 (jobs/reviews/J3910/REVIEW.md, 8adb0bd50f). Master v03 (d59057ae) and vertical trailer v05 (e57cd79a) are both KEEP (exact 24/1 CFR, start_pts 0, clean decode, byte-identical audio vs preserved v01 771d1f2a, 53 vertical stills verified, locked callouts/sources, manifest/dry-run PASS cat 28, LF CSV, portrait credits/hashes, 13/13 privacy tests). Recommend FIX (tiny £0 metadata-only cleanup on PR #1390 cea1494ff6, zero video re-render): POOL_PROVENANCE_J3023_v02.json still lists retired/forbidden Five_Minutes_in_Orbit.webm and JPL-20210222-M2020f-0001.mp4 in active_assets (84 vs 82 active cuts) with colliding intervals and omits [312.79, 318.57] on PIA24542_full.jpg. Also note minor production-status.md/description-order hygiene and duplicate PR #1393. Elected Chief ruling required before PR #1390 merge and J3023 UAT handoff.",
       "history": [
         {
           "at": "2026-11-27T14:14Z",
@@ -359976,6 +359976,11 @@
           "at": "2026-11-27T14:51Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Opened PR #1395 (jobs/reviews/J3910/REVIEW.md, commit 8adb0bd50f); parking J3910 for elected Chief (codex)"
+        },
+        {
+          "at": "2026-11-27T14:51Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3910 independent recheck complete in PR #1395 (jobs/reviews/J3910/REVIEW.md, 8adb0bd50f). Master v03 (d59057ae) and vertical trailer v05 (e57cd79a) are both KEEP (exact 24/1 CFR, start_pts 0, clean decode, byte-identical audio vs preserved v01 771d1f2a, 53 vertical stills verified, locked callouts/sources, manifest/dry-run PASS cat 28, LF CSV, portrait credits/hashes, 13/13 privacy tests). Recommend FIX (tiny £0 metadata-only cleanup on PR #1390 cea1494ff6, zero video re-render): POOL_PROVENANCE_J3023_v02.json still lists retired/forbidden Five_Minutes_in_Orbit.webm and JPL-20210222-M2020f-0001.mp4 in active_assets (84 vs 82 active cuts) with colliding intervals and omits [312.79, 318.57] on PIA24542_full.jpg. Also note minor production-status.md/description-order hygiene and duplicate PR #1393. Elected Chief ruling required before PR #1390 merge and J3023 UAT handoff."
         }
       ],
       "remaining_action": "Parked for elected Chief ruling on PR #1395 (J3910 independent recheck — master & trailer KEEP, provenance active-set FIX)",
