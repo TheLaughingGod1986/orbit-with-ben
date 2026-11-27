@@ -352536,10 +352536,10 @@
       "stage": "script",
       "after": "J3830",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-27T01:04Z",
+      "eta": "2026-11-27T03:04Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T00:44Z",
       "result": "",
@@ -352553,6 +352553,11 @@
           "at": "2026-11-27T00:50Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-27T01:04Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After J3830 claims check, review TOPIC/PACKAGING/ARCHIVE_PROVENANCE, run Rule-6 first-300 + first-1,200-word viewer test, fold fixes into v02",
@@ -352566,7 +352571,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T01:04Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3832",
