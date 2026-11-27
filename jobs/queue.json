@@ -352205,9 +352205,14 @@
           "at": "2026-11-27T00:27Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T00:27Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: J3817 done (PR #1358 open). J3818 review itself finished (advisory KEEP, PR #1359). Unmet: no Chief PASS; PR #1358 and #1359 both OPEN, unmerged on origin/main at 00:3xZ; no PR comments/reviews."
         }
       ],
-      "remaining_action": "Reading J3818 history and the predecessor it waits on",
+      "remaining_action": "Re-hold J3818 on Chief PASS and merges, then finish this check",
       "kind": "review",
       "recheck_of": "J3818",
       "due": "2026-11-27T01:26:03+00:00",
@@ -352221,7 +352226,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
         "at": "2026-11-27T00:27Z",
         "by": "claudecode",
@@ -352229,7 +352234,8 @@
           "Read J3818 history and evidence",
           "Check predecessor and gates",
           "Reopen or re-wait J3818"
-        ]
+        ],
+        "note": "J3817 done (PR #1358 open). J3818 review itself finished (advisory KEEP, PR #1359). Unmet: no Chief PASS; PR #1358 and #"
       },
       "taskKeys": [
         "OWB:064"
