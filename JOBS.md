@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3851 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3853 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J3855 | mini | claimed | claudecode | 2026-11-27T08:29Z | 034 upload · for claudecode · review · 034 Pluto: resolve rejected packaging publication safely | J3854,J3115 |
+| J3855 | mini | blocked | claudecode | – | 034 upload · for claudecode · review · 034 Pluto: resolve rejected packaging publication safely | J3854,J3115 |
 
 Recently finished:
 

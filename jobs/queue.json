@@ -354760,13 +354760,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T06:29Z",
-      "eta": "2026-11-27T08:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:29Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: clean candidate 6b85fc0248 ready on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate, base origin/main 109b6e867a); privacy review clean; status.json/STATUS.md and untracked 00-13-02 receipt excluded. Needs Chief publication approval before push (job forbids bypass via another agent). Flags: J3119 brief asks Ben thumbnail OK vs REVIEW's Chief-only ruling; Ben's approval record carries the old title. Report ~/_desk/logs/J3855-report.md. No push, upload or spend. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-27T06:29Z",
@@ -354787,6 +354787,11 @@
           "at": "2026-11-27T06:32Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Candidate 6b85fc0248 on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate), from origin/main 109b6e867a. 8 files as patches; status.json/STATUS.md excluded (main has later J3828 thumbs state); untracked 00-13-02 receipt excluded. Privacy grep + email/network ratchets OK. A/B/C thumbnail hashes re-verified on NAS."
+        },
+        {
+          "at": "2026-11-27T06:32Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: parked for Chief: clean candidate 6b85fc0248 ready on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate, base origin/main 109b6e867a); privacy review clean; status.json/STATUS.md and untracked 00-13-02 receipt excluded. Needs Chief publication approval before push (job forbids bypass via another agent). Flags: J3119 brief asks Ben thumbnail OK vs REVIEW's Chief-only ruling; Ben's approval record carries the old title. Report ~/_desk/logs/J3855-report.md. No push, upload or spend. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Chief to approve the external push of the clean Pluto packaging candidate",
