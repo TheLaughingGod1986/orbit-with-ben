@@ -355748,16 +355748,29 @@
           "at": "2026-11-27T17:48Z",
           "by": "codex",
           "what": "reopened: Chief publication review in progress: full single-file historical v01 FIX diff reviewed; 13 safety tests PASS, owner/main destination verified. Reopen only this publication task to record ruling; J3853 and later production decisions unchanged."
+        },
+        {
+          "at": "2026-11-27T17:48Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Explicit user-dispatched elected-Chief merge review; Gemini publication work finished. Pin this review to codex for closure."
         }
       ],
       "remaining_action": "Chief review and merge of PR #1404 (codex/j3853-review)",
-      "for": "gemini",
+      "for": "codex",
       "kind": "review",
       "plain": "Check and publish the completed Titan Short review notes",
       "taskKeys": [
         "OWB:032"
       ],
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "gemini",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gpt-6-astra"
     },
     {
       "id": "J3858",
