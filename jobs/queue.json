@@ -355546,9 +355546,14 @@
           "at": "2026-11-27T08:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:09Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Preserved prior three-step plan after reopen reset; independent Chief milestones recorded separately. PR 1367 and published ruling verified."
         }
       ],
-      "remaining_action": "Elected Chief: reopen and close J3115 (condition verified)",
+      "remaining_action": "Record the satisfied publication condition and release the existing delivery handoff",
       "kind": "review",
       "recheck_of": "J3115",
       "due": "2026-11-27T08:34:00+00:00",
@@ -355565,12 +355570,16 @@
         "OWB:034"
       ],
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
         "at": "2026-11-27T08:09Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify merge on origin/main",
+          "Check gates still valid",
+          "Record outcome on J3115"
+        ],
+        "note": "Preserved prior three-step plan after reopen reset; independent Chief milestones recorded separately. PR 1367 and publis"
       }
     },
     {
