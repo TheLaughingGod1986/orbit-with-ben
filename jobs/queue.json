@@ -340521,6 +340521,11 @@
           "at": "2026-11-26T23:59Z",
           "by": "relay",
           "what": "condition verification queued: J3824"
+        },
+        {
+          "at": "2026-11-27T00:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T00:59:30Z"
         }
       ],
       "remaining_action": "Publishing the committed corrections after the data-export approval is resolved",
@@ -340546,9 +340551,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.",
-        "check_at": "2026-11-27T00:59:30+00:00",
-        "recheck_task": "J3824"
+        "condition": "Corrections remain local at 9e4b053; PR 189 is OPEN at d5d842d. Recorded data-export approval restriction is unresolved. Require approval or authorization review resolving the restriction before authorized publication; do not route around it.",
+        "check_at": "2026-11-27T00:59:30Z",
+        "last_recheck": "J3824",
+        "checked_at": "2026-11-27T00:04:26+00:00",
+        "checked_by": "codex"
       }
     },
     {
