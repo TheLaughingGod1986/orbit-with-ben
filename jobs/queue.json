@@ -352377,13 +352377,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T01:06Z",
-      "eta": "2026-11-27T03:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T00:26Z",
-      "result": "",
+      "result": "Chief FIX: J3818 condition not satisfied. PIA00233 reconstruction must be replaced in R11; correct PIA18033 credit. J3835 owns exact corrections and evidence, due 27 Nov 12:00 London. Parent hold updated with --recheck J3829, dependency J3835 and next check 2026-11-27T12:15:00Z. J3022/J3023 remain unreleased. Ruling commit 7bd7345ae8, codex/J3829-condition-review. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-27T00:26Z",
@@ -352439,6 +352439,11 @@
           "at": "2026-11-27T01:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief FIX recorded on J3818 with recheck J3829. J3835 queued; next verification 27 Nov 12:15Z. Relay review-progress unavailable because active lease record is absent."
+        },
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "codex",
+          "what": "done: Chief FIX: J3818 condition not satisfied. PIA00233 reconstruction must be replaced in R11; correct PIA18033 credit. J3835 owns exact corrections and evidence, due 27 Nov 12:00 London. Parent hold updated with --recheck J3829, dependency J3835 and next check 2026-11-27T12:15:00Z. J3022/J3023 remain unreleased. Ruling commit 7bd7345ae8, codex/J3829-condition-review. No spend or publishing changes."
         }
       ],
       "remaining_action": "Condition review complete; correction follows in J3835",
