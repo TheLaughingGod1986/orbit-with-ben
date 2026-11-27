@@ -355676,13 +355676,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T17:50Z",
-      "eta": "2026-11-27T19:50Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:37Z",
-      "result": "",
+      "result": "Chief KEEP for historical review publication. PR1404 merged to main d809508efcead6eea79f5471e1db2175842c7f43; full one-file diff inspected, owner/main/exact-head verified, 13 safety tests PASS; no CI checks reported. v01 FIX preserved, J3853 and later J3878/J3889 v03 decisions unchanged; PR1366 untouched. Publication complete, no remaining dependency or external wait. Existing Buffer follow-up stays with daily check from 2026-12-14T11:30Z; no duplicate work. Own Chief review 3/3 recorded.",
       "history": [
         {
           "at": "2026-11-27T06:37Z",
@@ -355768,6 +355768,11 @@
           "at": "2026-11-27T17:50Z",
           "by": "codex",
           "what": "step 3 of 3 done: KEEP publication recorded: PR1404 merged d809508efc; 13 safety tests PASS. Historical v01 FIX only; J3853 and v03 approvals unchanged. No external publication wait; existing Buffer follow-up remains daily check from 14 Dec 11:30 UTC."
+        },
+        {
+          "at": "2026-11-27T17:50Z",
+          "by": "codex",
+          "what": "done: Chief KEEP for historical review publication. PR1404 merged to main d809508efcead6eea79f5471e1db2175842c7f43; full one-file diff inspected, owner/main/exact-head verified, 13 safety tests PASS; no CI checks reported. v01 FIX preserved, J3853 and later J3878/J3889 v03 decisions unchanged; PR1366 untouched. Publication complete, no remaining dependency or external wait. Existing Buffer follow-up stays with daily check from 2026-12-14T11:30Z; no duplicate work. Own Chief review 3/3 recorded."
         }
       ],
       "remaining_action": "Publication complete; no remaining work on this review",
@@ -355798,7 +355803,8 @@
         ],
         "note": "KEEP publication recorded: PR1404 merged d809508efc; 13 safety tests PASS. Historical v01 FIX only; J3853 and v03 approv"
       },
-      "urgent": 8
+      "urgent": 8,
+      "done_ref": "d809508efcead6eea79f5471e1db2175842c7f43"
     },
     {
       "id": "J3858",
