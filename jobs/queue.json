@@ -360272,9 +360272,14 @@
           "at": "2026-11-27T20:26Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Located and visually verified all native NASA/ESA moving & still assets on NAS (SVS 14095 ParkerVenus + WISPR 3rd flyby, SDO AIA 171 transit, 4K SVS 20390 Shot 8 Uranus, JWST weic2332a, Voyager 2 PIA01488, Magellan PIA00215); zero Veo CGI, zero Keck misattribution"
+        },
+        {
+          "at": "2026-11-27T20:33Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: All 8 shots rendered (0.79x-1.85x upscale, 0 split words), speech coverage PASS across all 6 VO segments, AAC mix calibrated to -14.00 LUFS / -2.00 dBTP; finalizing mux and gates"
         }
       ],
-      "remaining_action": "Write builder script and assemble full-bleed 9:16 18.25s Short master, stems, and cover",
+      "remaining_action": "Finish final overlay mux and run all 7 automated gates on 064_short02_venus_vs_uranus_v01.mp4",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend",
@@ -360293,7 +360298,7 @@
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-27T20:26Z",
+        "at": "2026-11-27T20:33Z",
         "by": "gemini",
         "plan": [
           "Check ElevenLabs balance & record locked v03 VO",
@@ -360302,7 +360307,7 @@
           "Run all Shorts/picture/polish/music/SFX/ASR gates",
           "Copy verified master to NAS, open PR & queue QA"
         ],
-        "note": "Located and visually verified all native NASA/ESA moving & still assets on NAS (SVS 14095 ParkerVenus + WISPR 3rd flyby,"
+        "note": "All 8 shots rendered (0.79x-1.85x upscale, 0 split words), speech coverage PASS across all 6 VO segments, AAC mix calibr"
       }
     },
     {
