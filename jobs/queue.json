@@ -365346,13 +365346,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T23:27Z",
-      "eta": "2026-11-28T01:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T23:27Z",
-      "result": "",
+      "result": "Condition unmet: Flow tab 998B0717 on CDP 9222 still unresponsive at 23:28Z (websocket opens, Page.getFrameTree and Runtime.evaluate time out at 15 s). J3760 kept waiting, recheck 2026-11-28T06:00Z. Read-only probe, no Create, 0 credits.",
       "history": [
         {
           "at": "2026-11-27T23:27Z",
@@ -365373,6 +365373,11 @@
           "at": "2026-11-27T23:27Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T23:28Z",
+          "by": "claudecode",
+          "what": "done: Condition unmet: Flow tab 998B0717 on CDP 9222 still unresponsive at 23:28Z (websocket opens, Page.getFrameTree and Runtime.evaluate time out at 15 s). J3760 kept waiting, recheck 2026-11-28T06:00Z. Read-only probe, no Create, 0 credits."
         }
       ],
       "remaining_action": "Probe Flow tab on CDP 9222",
