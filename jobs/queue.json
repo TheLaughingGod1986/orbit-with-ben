@@ -359234,9 +359234,14 @@
           "at": "2026-11-27T14:04Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Step 3-4 complete: visually inspected all 17 picture_qa warns, 46 independent master v03 frames, and 10 trailer frames; independently re-ran clip_check (--repeat-ok R27), music_gate (--others), sfx_kit level, review:script v04 (91.6), gate:episode, loudnorm/blackdetect, and youtube:package --dry-run. Master v03 is KEEP; caught blocking 9:16 text-cropping defect in trailer plus 3-clip provenance drift and Neptune portrait credit omission."
+        },
+        {
+          "at": "2026-11-27T14:06Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened PR #1391 (7c3d68b945, jobs/reviews/J3902/REVIEW.md) recommending master_v03 KEEP and targeted £0 package-only FIX (9:16 trailer text clipping, 3-clip provenance sync, Neptune portrait credits, CSV LF/categoryId hygiene); posted report to studio thread."
         }
       ],
-      "remaining_action": "Writing independent QA REVIEW.md on clean worktree PR and handing off to Chief Codex",
+      "remaining_action": "Parked for elected Chief (codex) ruling on PR #1391 and PR #1390",
       "due": "2026-12-09T18:00:00Z",
       "kind": "qa",
       "plain": "Independently review OWB 064 master v03, all 6 QA gate reports, 37s trailer and upload package before Chief PASS and Ben's watch board",
@@ -359249,9 +359254,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-27T14:04Z",
+        "at": "2026-11-27T14:06Z",
         "by": "gemini",
         "plan": [
           "Verify NAS deliverables & PR #1390",
@@ -359260,7 +359265,7 @@
           "Audit upload package, credits, social & T045",
           "Write REVIEW.md PR & hand off to Chief"
         ],
-        "note": "Step 3-4 complete: visually inspected all 17 picture_qa warns, 46 independent master v03 frames, and 10 trailer frames; "
+        "note": "Opened PR #1391 (7c3d68b945, jobs/reviews/J3902/REVIEW.md) recommending master_v03 KEEP and targeted £0 package-only FIX"
       },
       "taskKeys": [
         "OWB:064"
