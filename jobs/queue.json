@@ -360399,9 +360399,14 @@
           "at": "2026-11-27T15:05Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T15:06Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0 comments; no Chief re-review in queue, thread or jobs/reviews/J3012"
         }
       ],
-      "remaining_action": "Verify readiness: Review corrected recovery controls after J3900, then coordinate the studio move",
+      "remaining_action": "Chief re-review of PR 1389, then record the J3012 wait",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T16:04:58+00:00",
@@ -360415,12 +360420,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T15:05Z",
+        "at": "2026-11-27T15:06Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3012, J3899, J3900 and evidence",
+          "Check PR 1389 for Chief re-review",
+          "Record result and park for Chief"
+        ],
+        "note": "Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0"
       }
     }
   ],
