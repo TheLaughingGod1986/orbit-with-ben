@@ -1,5 +1,5 @@
 {
-  "next_id": 3878,
+  "next_id": 3879,
   "jobs": [
     {
       "id": "J0001",
@@ -356545,6 +356545,39 @@
         "HOS:009",
         "HOS:099"
       ]
+    },
+    {
+      "id": "J3878",
+      "title": "Titan Short v03: exact-file playback QA after J3865 corrections",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J3865, OWB:032 dry_desert_two_oceans v03. Correction review accepts S03 Cassini identity, S08 readable labels and S04 crop only. Review exact NAS master 032_short_dry_desert_two_oceans_v03.mp4 SHA256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 in the film 10_Shorts/dry_desert_two_oceans/06_Final-Exports folder. Requires demonstrated audio_input and moving_video_input: inspect complete 26.9s playback, Cassini bridge, graphic/caption timing, voice intelligibility, music/SFX and loop; record actual tools and timecoded findings. Measurements/stills/ASR do not prove hearing or motion perception. If unavailable record typed capability hold with next check 2026-11-28T06:45:00Z; never fabricate PASS. After QA, obtain exact-file Chief decision before UAT. Keep J3853/J3856 held. No spend, changes to locked VO, upload, scheduling, Buffer or existing Shorts. December 26 is not an approved slot. PR 1366 is unmerged and metadata still describes v02; subsequent integration must reconcile conflicts and update description before merge.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366",
+      "film": "032",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T09:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T09:00Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the complete corrected Titan Short with demonstrated audio and moving-video input",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the corrected Titan Short picture timing and sound"
     }
   ],
   "focus": [
