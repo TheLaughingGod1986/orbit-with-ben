@@ -1,5 +1,5 @@
 {
-  "next_id": 3857,
+  "next_id": 3858,
   "jobs": [
     {
       "id": "J0001",
@@ -354855,6 +354855,36 @@
       "remaining_action": "Build a corrected Titan Short from the existing footage and narration",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short"
+    },
+    {
+      "id": "J3857",
+      "title": "Publish completed Chief review record for J3853",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Finished J3853 Chief FIX review is committed on local branch codex/j3853-review in /Volumes/MiniWork/scratch/J3853-chief-review. Codex push was refused by automatic approval review: unverified external Git destination / specific publication authorization. Do not blindly bypass that refusal. Under Ben's 24 November Claude Code publication handoff, independently inspect the full diff for privacy and verify authorization/destination before any publication; if permitted, publish the review-only branch and open/merge its PR after checks. No production PASS or upload permission. J3853 is held with a concrete FIX dependency on repair J3856 and verification 2026-11-28T06:45:00Z. PR 1366 must remain unmerged pending picture corrections. Only report publication outcome; do not perform another review or production job.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:37Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Independently check the review diff and publication permission, then publish if permitted",
+      "for": "claudecode",
+      "kind": "review",
+      "plain": "Check and publish the completed Titan Short review notes"
     }
   ],
   "focus": [
