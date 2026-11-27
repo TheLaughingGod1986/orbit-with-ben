@@ -354807,16 +354807,28 @@
           "at": "2026-11-27T06:41Z",
           "by": "codex",
           "what": "reopened: Elected Chief review of the prepared candidate; original J3115 and J3119 holds remain in force."
+        },
+        {
+          "at": "2026-11-27T06:42Z",
+          "by": "codex",
+          "what": "rerouted to codex: User explicitly assigned this Chief review to elected Codex; claim is for review and safe local preparation, not external packaging publication."
         }
       ],
       "remaining_action": "Chief to approve the external push of the clean Pluto packaging candidate",
       "due": "2026-11-27T08:30:00Z",
-      "for": "claudecode",
+      "for": "codex",
       "kind": "review",
       "plain": "Prepare the Pluto packaging decision for safe publication",
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "claudecode",
+        "model": "",
+        "status": "open",
+        "by": ""
+      }
     },
     {
       "id": "J3856",
