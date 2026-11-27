@@ -353967,13 +353967,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T02:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T02:36Z",
-      "result": "parked for Chief: review and merge HOS PR #808 (J3847 channel-audit uploads coverage reconciliation + safe evidence report)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T02:36Z",
@@ -354019,26 +354019,17 @@
           "at": "2026-11-27T03:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge HOS PR #808 (J3847 channel-audit uploads coverage reconciliation + safe evidence report)"
+        },
+        {
+          "at": "2026-11-27T03:07Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling accepted and recorded: PR808 merged 5f3c0a83 after independent 31/31 tests and live audit 80 videos/44 public/zero errors. J3849 owns inventory refresh after this review closes. Reopen only to claim and close the completed review."
         }
       ],
       "remaining_action": "Parked for elected Chief review and merge of HOS PR #808",
       "kind": "assembly",
       "plain": "Find why a public Germs video is missing from the channel audit",
-      "mini_only": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T03:01Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3844 context and channel-audit code",
-          "Reproduce with bounded read-only API calls",
-          "Analyze pagination, playlist items, and source IDs",
-          "Implement and test targeted fix in isolated worktree",
-          "Publish PR, evidence, and thread report"
-        ],
-        "note": "Published HOS PR #808 (596728fa), passed check_all.sh (ALL CHECKS PASS), posted desk and studio thread reports, and remo"
-      }
+      "mini_only": true
     },
     {
       "id": "J3848",
