@@ -365153,13 +365153,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-27T22:05Z",
-      "eta": "2026-11-28T00:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T21:56Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3961 in orbit-with-ben is 2 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1418. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-27T21:56Z",
@@ -365190,6 +365190,11 @@
           "at": "2026-11-27T22:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T22:07Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3961 in orbit-with-ben is 2 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1418. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Verify readiness: Review corrected recovery controls after J3900, then coordinate the studio move",
