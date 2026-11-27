@@ -274517,9 +274517,14 @@
           "at": "2026-11-27T01:40Z",
           "by": "relay",
           "what": "condition verification queued: J3839"
+        },
+        {
+          "at": "2026-11-27T02:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T12:30:00Z"
         }
       ],
-      "remaining_action": "Wait for J3718 (Cursor reset 2026-11-26T11:00Z) and J3719 (DECISION.md, 24 h cutoff 2026-11-26T14:39Z), then retain DECISION.md, apply approved packaging/opening fixes, and close J3022 to release J3023.",
+      "remaining_action": "Await independent review and merge of the corrected Venus picture and Earth credits, then finish the picture package",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
@@ -274543,12 +274548,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Independent packaging panel incomplete for OWB 064: J3717 (gemini.md, f1f7e46d59) is done, but J3716 (codex.md, Codex out of usage until 27 Nov 16:25), J3718 (cursor.md, Cursor weekly limit resets 2026-11-26T11:00:21Z) and J3719 (DECISION.md, after J3718, 24 h missing-critic cutoff 2026-11-26T14:39Z) remain open; 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md is absent on origin/main.",
-        "check_at": "2026-11-27T02:40:34+00:00",
-        "last_recheck": "J3720",
-        "checked_at": "2026-11-26T00:07:30+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3839"
+        "condition": "J3818 must independently review J3835 corrections in PR 1361 (9ff96bd97), issue a fresh KEEP/FIX, and obtain elected-Chief acceptance with corrected records merged to main. Reconcile overlapping PRs 1358 and 1359 without restoring their superseded unconditional KEEP or PIA00233 option. DECISION.md is already on main fbdfbada07; J3718 was cancelled at the approved cutoff. J3818 check remains 2026-11-27T12:15:00Z; J3023 stays dependent on J3022.",
+        "check_at": "2026-11-27T12:30:00Z",
+        "last_recheck": "J3839",
+        "checked_at": "2026-11-27T02:00:48+00:00",
+        "checked_by": "codex"
       }
     },
     {
