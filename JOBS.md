@@ -97,10 +97,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3953 | mini | blocked | gemini | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
 | J3956 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
-| J3959 | any | claimed | macbook | 2026-11-27T22:36Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J3959 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (HOS PR #815: evening listing check, no new live fix, nothing parked. J3877's two fixes (YqCWYlv_LCY pinned comment, f_-BsKZf8X0 Paid promotion No) were done live in J3880; records wait on HOS #813 / OWB #1373 merge. __UtUYdEUwg Public, J3938 no faults. 008/009/099 chapters match repo; schedules in slots. MacBook has no Data API or Studio, so records + 06:40 snapshot only. No YouTube/Buffer changes, £0.)
 - J3958 done: Verify condition for J3904 (Verified J3904 condition: predecessor J3902 done (codex Chief ruling), but J3904 not clear: J3957 audio/moving-video QA open with no KEEP/FIX, PR #1416 (f67c2dcb) OPEN with no Chief ruling. Kept J3904 blocked; wait recorded (type input, recheck J3958, check 2026-11-28T02:45Z). Flagged for Chief: Short 2 v01 master is 18.375 s / 35 words, under the 22 s floor and 55-65 words for new Shorts (studio/RULES.md, brief 22-27 s). No upload, spend or schedule change.)
 - J3955 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (19 OWB + 8 HOS longs and 131 Shorts (95 OWB + 36 HOS) read cleanly from Studio CDP 9223/9460 (commit 19c9923533); CTR hits vs 4%: OWB 4/19 (h8HGfyShEHI 5.3%, -jmMROGoZCM 4.9%, Js6EQJ8qDi8 4.4%, c5AdqQsnnys 4.3%), HOS 4/8 (wwcjcFfC-5M 17.6%, ETynHpIYLeY 6.9%, _C92tIJCk8A 6.5%, VbPubYd6Fbs 4.6%))
 - J3954 done: Verify condition for J3816 (Verified NOT satisfied: J3874 loop-gate ruling still open; repair J3871 blocked on it (v04 picture FAIL terminal reuse); review J3872 not started; HOS PRs 811 and 814 still open drafts, no repaired Short on HOS main. J3816 kept blocked with dependency wait, recheck J3954, next check 2026-11-28T08:00Z. No UAT, upload or spend.)
@@ -117,4 +117,3 @@ Verdict: UNKNOWN
 
 Do now
   - Read it again from tomorrow morning's snapshot.)
-- J3944 done: Verify condition for J3941 (Condition not met: PR #1411 OPEN, unmerged, 0 reviews (checked ~18:35Z). J3940 done. J3941 kept blocked; wait recorded (input) for Chief merge, next check 2026-11-27T22:30Z, --recheck J3944.)
