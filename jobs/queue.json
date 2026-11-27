@@ -354654,13 +354654,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T06:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T06:22Z",
-      "result": "parked for Chief: condition NOT met. Checked 27 Nov 06:24Z: Chief decision a4c9c8f534 (J3115 packaging PASS) is on no origin branch (git branch -r --contains empty; ls-remote codex/j3115* empty). It exists only in /Volumes/MiniWork/scratch/j3115-review on codex/j3115-pluto-review, ahead 1 / behind origin/main 295, plus an untracked PACKAGE_UPLOAD_RESULT_2026-11-27T00-13-02-816Z.json. Publishing a Chief PASS to main is not a worker call and the push was refused by approval review, so I did not push. Chief run: jobs.py wait J3115 --agent <chief> --type input --check-at 2026-11-27T08:30Z --recheck J3854 --condition \"decision a4c9c8f534 unpublished; rebase onto main and publish via approved route\" --git, then publish a4c9c8f534 and close J3115. No upload, spend or schedule change made.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:22Z",
@@ -354691,6 +354691,11 @@
           "at": "2026-11-27T06:24Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: condition NOT met. Checked 27 Nov 06:24Z: Chief decision a4c9c8f534 (J3115 packaging PASS) is on no origin branch (git branch -r --contains empty; ls-remote codex/j3115* empty). It exists only in /Volumes/MiniWork/scratch/j3115-review on codex/j3115-pluto-review, ahead 1 / behind origin/main 295, plus an untracked PACKAGE_UPLOAD_RESULT_2026-11-27T00-13-02-816Z.json. Publishing a Chief PASS to main is not a worker call and the push was refused by approval review, so I did not push. Chief run: jobs.py wait J3115 --agent <chief> --type input --check-at 2026-11-27T08:30Z --recheck J3854 --condition \"decision a4c9c8f534 unpublished; rebase onto main and publish via approved route\" --git, then publish a4c9c8f534 and close J3115. No upload, spend or schedule change made."
+        },
+        {
+          "at": "2026-11-27T06:28Z",
+          "by": "codex",
+          "what": "reopened: Acting Chief taking the requested condition review; J3115 remains held."
         }
       ],
       "remaining_action": "Record J3115 still waiting: decision a4c9c8f534 unpublished",
@@ -354706,18 +354711,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T06:24Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3115 history",
-          "Check decision a4c9c8f534 published",
-          "Record wait or reopen"
-        ],
-        "note": "a4c9c8f534 is on no remote branch; codex/j3115-pluto-review not on origin; local branch ahead 1, behind 295 main"
-      },
       "taskKeys": [
         "OWB:034"
       ]
