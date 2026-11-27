@@ -1,5 +1,5 @@
 {
-  "next_id": 3890,
+  "next_id": 3891,
   "jobs": [
     {
       "id": "J0001",
@@ -357902,6 +357902,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3890",
+      "title": "J3012: reconcile MacBook readiness and explain the early rehearsal heartbeat",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J3012 continuation authorized by elected Chief Codex. Follow J3885 preparation and docs/STUDIO_MOVE.md. No live switch in this child.\n\nInvestigate the private Studio macbook-heartbeat-2 commit 08715bd2077bf69c1fc40bc0a532c70ae912806c at 27 Nov 10:22:56Z. It reports error, empty job, and a slot-2 rehearsal branch refusal. Suspected cause: test_macbook_worker.RunLock invokes run() without mocking start_other_slots, spawning a real slot on Darwin during J3885 tests. Verify against private local logs/process timing, reporting only sanitized findings. Do not rerun unsafe tests. Verify no ongoing worker uses the staged engine and no queue mutation occurred there. Do not delete heartbeat evidence or reset clones.\n\nReconcile installed and loaded MacBook worker settings, both slot roots, source hashes, staged proposal, engine guards, and current slot activity. Use existing private J3885 backup/proposal. Report differences without credentials, addresses, device names or full environment. Preserve mains/idle policy. Record a concrete drain/install handoff through the current worker: the worker owning the coordination job must be allowed to finish before service replacement; do not create a dependency on completion of J3012. Do not pause, bootout, install, restart, change default branch, write activation marker or run rehearsal queue. Return evidence in jobs/reviews/<id>/ with PR and exact next actions. Parent J3012 remains 3/4. No spending or Ben action.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T11:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T11:34Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Explain the early heartbeat and reconcile both MacBook worker settings",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Check both MacBook workers are ready for the studio move"
     }
   ],
   "focus": [
