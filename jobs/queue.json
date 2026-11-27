@@ -1,5 +1,5 @@
 {
-  "next_id": 3910,
+  "next_id": 3911,
   "jobs": [
     {
       "id": "J0001",
@@ -359670,6 +359670,36 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "assembly",
       "plain": "Fix the every-planet trailer framing and complete its picture credits"
+    },
+    {
+      "id": "J3910",
+      "title": "OWB 064: Independently recheck J3909 trailer and package corrections",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to Chief J3902 package FIX. After the linked package repair finishes, independently verify updated PR1390 diff and exact NAS trailer hash, all cuts/boundaries in vertical stills, CFR/start PTS, decode, unchanged locked audio, callouts matching locked narration/source, manifest path/hash, dry-run, provenance active-set reconciliation, portrait credits, LF and resolved category 28. Confirm unchanged master v03 d59057aed1590e7f6ef097513256a0548c4f9b1d7e544c4bade28aa83fef647a and original trailer preserved. Review PR1391 evidence; write KEEP/FIX in jobs/reviews/<this job>/REVIEW.md. Claims of hearing/motion require demonstrated input; Ben final UAT supplies those under standing rule. If KEEP, hand to elected Chief for exact revised PR1390 merge and J3023 UAT handoff, not direct publication. Any FIX remains held with exact corrections. No spend or YouTube changes.\n",
+      "ref": "J3902",
+      "film": "064",
+      "stage": "edit",
+      "after": "J3909",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T14:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T14:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify repaired trailer and package, then return exact evidence for Chief approval",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "qa",
+      "plain": "Check the repaired every-planet trailer and credits before approval"
     }
   ],
   "focus": [
