@@ -1,5 +1,5 @@
 {
-  "next_id": 3828,
+  "next_id": 3829,
   "jobs": [
     {
       "id": "J0001",
@@ -352086,6 +352086,36 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3828",
+      "title": "034 Pluto: reconcile thumbnail stage after published packaging review",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3827 workflow repair: reconcile OWB:034 thumbnail stage after the existing packaging review J3115 has legitimately completed. This is a records reconciliation, not permission to publish its previously rejected branch or to bypass any automatic approval restriction. Do not push, cherry-pick or delegate that rejected publication under this job.\n\n1. Verify J3115 is done and its exact-file ruling and supporting package records are on main through an authorized route. A local branch, job completion alone, or prose claiming approval is insufficient. If that evidence is absent, retain a dependency hold naming J3115 and the missing publication evidence.\n2. Compare the published ruling, current thumbnail manifests and hashes, and any later fixes. Set film 034 thumbs to done only if the published exact-file approval supports the current files; otherwise leave blocked/review and queue the precise missing correction. Do not repeat media review when unchanged valid published evidence is sufficient.\n3. Record the decision reference in the stage and resolve the superseded J3819 administrative hold when its condition is actually satisfied. J3119 remains the existing delivery job, after J3115; this job authorizes no upload, schedule, visibility, title or thumbnail platform changes. Preserve the recorded Ben long-v02 approval, all release gates, Shorts public-parent holds and current dates (including the later J3123 slot records).\n\nNo spend, generation, media approval inferred from filenames, duplicate watch cards or rule changes. Recheck Chief authority before a protected decision.\n",
+      "ref": "J3827,J3819,J3115",
+      "film": "034",
+      "stage": "thumbs",
+      "after": "J3115",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T00:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T00:25Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the published Pluto packaging decision and update the thumbnail status",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "review",
+      "plain": "Update the Pluto thumbnail status once its packaging review is published"
     }
   ],
   "focus": [
