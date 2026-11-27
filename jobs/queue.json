@@ -354167,13 +354167,13 @@
       "stage": "",
       "after": "J3847",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-27T03:41Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T03:07Z",
-      "result": "",
+      "result": "J3850 Chief KEEP; PR810 merged 3b31db2949b27b698115d915a55bbe3cead3eaef. Fresh read-only audit: 80 videos, zero errors, 51/51 persisted rows match, qOZgess30h0 Public, zero unresolved IDs. Five CI checks passed. No further work or wait.",
       "history": [
         {
           "at": "2026-11-27T03:07Z",
@@ -354219,11 +354219,35 @@
           "at": "2026-11-27T03:40Z",
           "by": "codex",
           "what": "reopened: J3850 ruling KEEP: fresh read-only API audit 80 videos/0 errors, all 51 PR rows match, Germs Short Public, zero unresolved IDs; five CI checks passed. HOS PR810 merged as 3b31db2949b27b698115d915a55bbe3cead3eaef. Reopen solely to close completed inventory refresh."
+        },
+        {
+          "at": "2026-11-27T03:41Z",
+          "by": "codex",
+          "what": "Chief administrative closure under J3850: finished work merged; no second production task started"
+        },
+        {
+          "at": "2026-11-27T03:41Z",
+          "by": "codex",
+          "what": "done: J3850 Chief KEEP; PR810 merged 3b31db2949b27b698115d915a55bbe3cead3eaef. Fresh read-only audit: 80 videos, zero errors, 51/51 persisted rows match, qOZgess30h0 Public, zero unresolved IDs. Five CI checks passed. No further work or wait."
         }
       ],
-      "remaining_action": "Parked for elected Chief review and merge of HOS PR #810",
+      "remaining_action": "Complete; inventory refresh merged and independently verified",
       "kind": "assembly",
-      "plain": "Refresh the History of Science video list so the public Germs Short is included"
+      "plain": "Refresh the History of Science video list so the public Germs Short is included",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-27T03:41Z",
+        "by": "codex",
+        "plan": [
+          "Run inventory audit",
+          "Verify all persisted rows",
+          "Run checks and record evidence",
+          "Publish and merge inventory refresh"
+        ],
+        "note": "Worker work and Chief review complete; PR810 merged"
+      },
+      "done_ref": "3b31db2949b27b698115d915a55bbe3cead3eaef"
     },
     {
       "id": "J3850",
