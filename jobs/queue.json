@@ -351714,21 +351714,33 @@
           "at": "2026-11-27T00:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:04Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the long's Studio numbers 6 h after it went live, record them and give the verdict",
+      "remaining_action": "Inspecting YqCWYlv_LCY in HOS Studio (CDP 9222) and comparing with upload package",
       "due": "2026-11-27T02:03:00Z",
       "kind": "studio",
       "launch": "YqCWYlv_LCY@6",
       "plain": "Check how \"Benjamin Franklin's Kite Experiment Explained\" is doing 6 hours after it went live",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T00:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check Studio video status and package match",
+          "Read 6h Analytics figures",
+          "Record figures and run judge",
+          "Finish or park for Chief and report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
