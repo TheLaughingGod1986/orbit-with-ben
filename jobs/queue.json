@@ -300436,18 +300436,23 @@
           "at": "2026-11-27T19:17Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3310; verified B_v03 SHA-256 matches 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c; checking CDP 9223/9224 and J3308 PR #1410."
+        },
+        {
+          "at": "2026-11-27T19:23Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified J3307/J3382 done, B_v03 SHA-256 445cbfd3...c3c, channel Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog on CDP 9224), and matching finished inconclusive T016 report (28 Oct 21:33 - 11 Nov 21:47, no running test). Preserved report text/JSON/screenshot before New test."
         }
       ],
-      "remaining_action": "Verify J3307/J3382, REXYxuLOBoI_B_v03.jpg hash, and fresh read-only Orbit With Ben Studio state",
+      "remaining_action": "Arm thumbnail-only T043 (live A vs verified B_v03) in Studio on CDP 9224",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval",
       "taskKeys": [
         "OWB:005"
       ],
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T19:17Z",
+        "at": "2026-11-27T19:23Z",
         "by": "gemini",
         "plan": [
           "Verify review, file hash and Studio state",
@@ -300456,7 +300461,7 @@
           "Reload and verify Test running",
           "Update THUMB_LEDGER.json and open PR"
         ],
-        "note": "Claimed J3310; verified B_v03 SHA-256 matches 445cbfd3c41af95f99e621609157e7aec6f2a99b91b7926db2100c9bf6df5c3c; checking"
+        "note": "Verified J3307/J3382 done, B_v03 SHA-256 445cbfd3...c3c, channel Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog on CDP 9224), "
       }
     },
     {
