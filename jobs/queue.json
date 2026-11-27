@@ -356639,10 +356639,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T17:38Z",
+      "eta": "2026-11-27T19:38Z",
       "created_by": "codex",
       "created_at": "2026-11-27T07:43Z",
       "result": "",
@@ -356656,13 +356656,26 @@
           "at": "2026-11-27T16:10Z",
           "by": "claude",
           "what": "re-pinned to gemini on the Mini: claudecode claims landed on a cloud session without /Volumes/MiniWork and were released untouched (08:39Z, 15:39Z). Claude, acting Chief, board audit 27 Nov 16:20Z."
+        },
+        {
+          "at": "2026-11-27T17:38Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Independently review the finished local decision record and publication permission",
       "for": "gemini",
       "kind": "review",
       "plain": "Check and publish the Titan Short correction review",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T17:38Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3867",
