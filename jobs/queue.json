@@ -359476,9 +359476,14 @@
           "at": "2026-11-27T14:13Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T14:14Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Direct read_file probe confirmed audio_input and image_input only; P01_03a_unlabelled_birds_t2.mp4 still returns 8 discrete 1-fps stills (00:00..00:07), not continuous 24-fps moving_video_input. Codex/claudecode/cursor capabilities=[]."
         }
       ],
-      "remaining_action": "Probing session media capabilities and worker capability status",
+      "remaining_action": "Verifying HOS 013 archive hashes, HOS #694, OWB #1353/#954, and open PRs",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -359495,15 +359500,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T14:13Z",
+        "at": "2026-11-27T14:14Z",
         "by": "gemini",
         "plan": [
           "Probe session media capabilities and worker status",
           "Verify HOS 013 archive hashes, desk, thread and PRs",
           "Update J3756 hold, report and close J3906"
-        ]
+        ],
+        "note": "Direct read_file probe confirmed audio_input and image_input only; P01_03a_unlabelled_birds_t2.mp4 still returns 8 discr"
       },
       "taskKeys": [
         "HOS:013"
