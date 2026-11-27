@@ -355102,9 +355102,14 @@
           "at": "2026-11-27T06:48Z",
           "by": "claudecode",
           "what": "step 0 of 4 done: Claimed; branch tip 40c6ca5114 = amend of 64df68bee7 (identical tree 3bc6283b, parent, author Codex <>; only committer time differs)"
+        },
+        {
+          "at": "2026-11-27T06:48Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: Privacy review PASS on all 9 files + metadata (Codex <>, no trailer, old candidates not ancestors). No rebase needed: main only changed 034 status.json since base; merge-tree clean"
         }
       ],
-      "remaining_action": "Read the full candidate diff for private data",
+      "remaining_action": "Push branch, open PR, wait for checks",
       "due": "2026-11-27T08:30:00Z",
       "for": "claudecode",
       "kind": "review",
@@ -355117,7 +355122,7 @@
         "by": ""
       },
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
         "at": "2026-11-27T06:48Z",
         "by": "claudecode",
@@ -355127,7 +355132,7 @@
           "Push and open PR",
           "Merge and record"
         ],
-        "note": "Claimed; branch tip 40c6ca5114 = amend of 64df68bee7 (identical tree 3bc6283b, parent, author Codex <>; only committer t"
+        "note": "Privacy review PASS on all 9 files + metadata (Codex <>, no trailer, old candidates not ancestors). No rebase needed: ma"
       },
       "taskKeys": [
         "OWB:034"
