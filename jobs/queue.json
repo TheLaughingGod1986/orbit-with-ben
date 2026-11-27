@@ -353836,10 +353836,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T02:58Z",
+      "eta": "2026-11-27T04:58Z",
       "created_by": "codex",
       "created_at": "2026-11-27T02:35Z",
       "result": "",
@@ -353888,6 +353888,11 @@
           "at": "2026-11-27T02:56Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in HOS PR807 commit 9a0eda47: accept bounded reads, reject optional classification of paid promotion and cards; J3848 owns required fixes. Reopen solely to claim and close this review after corrected PR merge."
+        },
+        {
+          "at": "2026-11-27T02:58Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) to review and merge HOS PR #807",
@@ -353897,7 +353902,15 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T02:58Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3846",

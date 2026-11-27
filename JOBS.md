@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3845 | mini | open | – | – | studio · J3844 follow-up: verify HOS Studio listing fields |  |
+| J3845 | mini | claimed | codex | 2026-11-27T04:58Z | studio · J3844 follow-up: verify HOS Studio listing fields |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3847 | mini | claimed | gemini | 2026-11-27T04:51Z | assembly · J3844 follow-up: investigate missing public id in audit |  |
 | J3848 | mini | open | – | – | 008 upload · studio · J3845 correction: complete Franklin paid-promotion settings and info cards |  |
