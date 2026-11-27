@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3826 | mini | blocked | claudecode | – | review · Verify condition for J3821 |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
-| J3829 | mini | claimed | claudecode | 2026-11-27T02:27Z | review · Verify condition for J3818 |  |
+| J3829 | mini | blocked | claudecode | – | review · Verify condition for J3818 |  |
 
 Recently finished:
 
