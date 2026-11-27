@@ -353305,9 +353305,14 @@
           "at": "2026-11-27T01:42Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:43Z",
+          "by": "claudecode",
+          "what": "step 1 of 2 done: Panel condition met: codex.md (ee5b9d0a49), gemini.md (f1f7e46d59), J3718 cancelled by Chief at cutoff, DECISION.md on main (fbdfbada07). But the approved fixes are not landed: PR #1358/#1359 open, J3818 held by Chief FIX J3829 until re-review of J3835 corrections"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for J3718 (Cursor reset 2026-11-26T11:00Z) and J3719 (DECISION.md, 24 h cutoff 2026-11-26T14:39Z), then retain DECISION.md, apply approved packaging/opening ",
+      "remaining_action": "Record J3022's actual remaining hold and finish this verification",
       "kind": "review",
       "recheck_of": "J3022",
       "due": "2026-11-27T02:40:34+00:00",
@@ -353321,13 +353326,19 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:42Z",
+        "step": 1,
+        "of": 2,
+        "at": "2026-11-27T01:43Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check panel condition and evidence",
+          "Record J3022 hold and finish"
+        ],
+        "note": "Panel condition met: codex.md (ee5b9d0a49), gemini.md (f1f7e46d59), J3718 cancelled by Chief at cutoff, DECISION.md on m"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3840",
