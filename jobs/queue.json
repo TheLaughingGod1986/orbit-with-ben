@@ -359219,9 +359219,14 @@
           "at": "2026-11-27T13:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T13:55Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Inspect PR #1390, master v03, picture_qa_review.jpg, trailer and PACKAGE_MANIFEST.json; write independent KEEP/FIX review for Chief",
+      "remaining_action": "Inspecting PR #1390, NAS master v03, trailer, and capability probe",
       "due": "2026-12-09T18:00:00Z",
       "kind": "qa",
       "plain": "Independently review OWB 064 master v03, all 6 QA gate reports, 37s trailer and upload package before Chief PASS and Ben's watch board",
@@ -359235,12 +359240,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T13:54Z",
+        "of": 5,
+        "at": "2026-11-27T13:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify NAS deliverables & PR #1390",
+          "Re-run & audit 6 machine gates + dry-run",
+          "Visually inspect warned frames, hook, overlays & trailer",
+          "Audit upload package, credits, social & T045",
+          "Write REVIEW.md PR & hand off to Chief"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3903",
