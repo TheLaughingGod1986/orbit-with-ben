@@ -361680,9 +361680,14 @@
           "at": "2026-11-27T17:10Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:11Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Chief review steps 1 and 2 complete: PR1388 merged a09c483f3e; approved REVIEW SHA256 c92dfd94 matches main; locked VO hash matches; J3022/J3818 done; J3023 after J3022 and newer package FIX hold retained. Shared active record belongs to J3860, so relay review-progress rejects; using separate queue progress."
         }
       ],
-      "remaining_action": "Elected Chief (codex) to release J3883 verified hold and close J3883 (and restore 064 thumbs.state=done)",
+      "remaining_action": "Record the verified publication ruling and preserve the newer package hold",
       "kind": "review",
       "recheck_of": "J3883",
       "due": "2026-11-27T16:10:00+00:00",
@@ -361700,12 +361705,16 @@
       ],
       "urgent": 9,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T17:10Z",
+        "at": "2026-11-27T17:11Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check scope and approval",
+          "Verify published evidence",
+          "Record ruling and follow-up"
+        ],
+        "note": "Chief review steps 1 and 2 complete: PR1388 merged a09c483f3e; approved REVIEW SHA256 c92dfd94 matches main; locked VO h"
       }
     },
     {
