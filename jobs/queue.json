@@ -358036,21 +358036,31 @@
           "at": "2026-11-27T11:40Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:40Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Diff read in full (4 files, +201/-10): no email, token, key, password, revenue or personal data; only sanitized hashes and booleans."
         }
       ],
-      "remaining_action": "J3012: Claude Code review and publish completed migration checkpoint",
+      "remaining_action": "Rebase on main, run worker tests, push and open the PR",
       "due": "2026-11-27T18:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked studio migration fixes and handover notes",
       "mini_only": true,
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 1,
+        "of": 4,
         "at": "2026-11-27T11:40Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Private-data review of diff",
+          "Rebase and run tests",
+          "Push and open PR",
+          "Merge on green and record"
+        ],
+        "note": "Diff read in full (4 files, +201/-10): no email, token, key, password, revenue or personal data; only sanitized hashes a"
       }
     }
   ],
