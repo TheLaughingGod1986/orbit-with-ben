@@ -361440,9 +361440,14 @@
           "at": "2026-11-27T17:39Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Claimed; following J3920 (film 005) as the pattern"
+        },
+        {
+          "at": "2026-11-27T17:41Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: Step 1: NAS master v04 SHA-256 3aa60441... and thumbs A/B/C match recipes. Step 2: PACKAGE_MANIFEST.json + metadata_v04.json built (dry run clean). Upload running in tmux j3921-upload, log ~/_desk/logs/j3921-upload.log"
         }
       ],
-      "remaining_action": "Verifying the Mosquito v04 master and thumbnails A/B/C on the NAS",
+      "remaining_action": "Uploading the v04 master Private, scheduled Sat 5 Dec 17:00 London",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -361467,9 +361472,9 @@
       "due": "2026-12-02T18:00:00Z",
       "urgent": 7,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T17:39Z",
+        "at": "2026-11-27T17:41Z",
         "by": "claudecode",
         "plan": [
           "Verify master and thumbnails",
@@ -361478,7 +361483,7 @@
           "Thumbnail test, captions, settings",
           "Read back and record PR"
         ],
-        "note": "Claimed; following J3920 (film 005) as the pattern"
+        "note": "Step 1: NAS master v04 SHA-256 3aa60441... and thumbs A/B/C match recipes. Step 2: PACKAGE_MANIFEST.json + metadata_v04."
       },
       "taskKeys": [
         "WW2:006"
