@@ -352759,10 +352759,10 @@
       "stage": "sources",
       "after": "J3832",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-27T01:01Z",
-      "eta": "2026-11-27T03:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T00:53Z",
       "result": "",
@@ -352796,6 +352796,11 @@
           "at": "2026-11-27T01:18Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Gemini timed out at 15 min; E01-E06 PASS, rest missing"
+        },
+        {
+          "at": "2026-11-27T01:18Z",
+          "by": "claudecode",
+          "what": "released: Gemini (agy neon-high) hit 15-min print timeout. Partial output: E01-E06 PASS (S04 S05 S10 S31 S32 S35), E07 S36 truncated, joins/C1-C7/OVERALL missing. Saved unedited with prompt and parity on ww2 branch claudecode/J3833-v06-claims (02_Video-Projects/009.../01_Script/J3833_GEMINI_PARTIAL.md, J3833_GEMINI_PROMPT.txt). Parity OK: v06 sha 8e670990...cb66, 37/37 SCRIPT exact, 7 changed blocks, 30 identical to v05, 10050 chars, v01-v05 unchanged. Next: re-run with a smaller prompt (E07 + joins + C1-C7 only) or --print-timeout 1500s in tmux, then write CLAIMS_CHECK_v06.md. v06 input is PR #200 (still open)."
         }
       ],
       "remaining_action": "Re-run Gemini on joins J01-J10, C1-C7 and E07 (first run timed out), then publish CLAIMS_CHECK_v06.md",
