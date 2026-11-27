@@ -346406,13 +346406,13 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T16:28Z",
-      "eta": "2026-11-27T18:28Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "",
+      "result": "Waiting for: Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -346473,9 +346473,19 @@
           "at": "2026-11-27T16:31Z",
           "by": "codex",
           "what": "step 2 of 6 done: Resume dry-run PASS: board, prompts and both approved still hashes match; 0 credits and 0 Create clicks. CDP HTTP responds with existing Flow tab, but Playwright attach timed out after websocket connected and direct page Runtime.evaluate also timed out. Live sign-in/account/balance/price cannot be verified. Row 49 remains PENDING_REVIEW; row 63 unsubmitted."
+        },
+        {
+          "at": "2026-11-27T16:31Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49."
+        },
+        {
+          "at": "2026-11-27T16:31Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T17:00:00Z"
         }
       ],
-      "remaining_action": "Restore responsive Flow browser input, then submit only the remaining book shot",
+      "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
@@ -346496,6 +346506,11 @@
           "Submit evidence for review"
         ],
         "note": "Resume dry-run PASS: board, prompts and both approved still hashes match; 0 credits and 0 Create clicks. CDP HTTP respon"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.",
+        "check_at": "2026-11-27T17:00:00Z"
       }
     },
     {
