@@ -364391,9 +364391,14 @@
           "at": "2026-11-27T21:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T21:26Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3952; checking history-of-science visibility, worktree heads/cleanliness, diff privacy, and existing remote branches/PRs"
         }
       ],
-      "remaining_action": "Push Codex's finished commit and open its PR",
+      "remaining_action": "Verify repo privacy, worktrees, diffs, and remote PR state",
       "due": "2026-11-28T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -364401,11 +364406,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T21:24Z",
+        "at": "2026-11-27T21:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify repo privacy, worktrees, diffs, and remote PR state",
+          "Execute or park per visibility guard",
+          "Report findings on desk and thread"
+        ],
+        "note": "Claimed J3952; checking history-of-science visibility, worktree heads/cleanliness, diff privacy, and existing remote bra"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3953",
