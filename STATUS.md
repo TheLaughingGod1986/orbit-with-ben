@@ -87,5 +87,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
+| 064 | edit | gemini | 2026-11-27T13:10Z | 2026-11-27T15:09Z | J3023 OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

@@ -274739,10 +274739,10 @@
       "stage": "edit",
       "after": "J3022",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T13:10Z",
+      "eta": "2026-11-27T15:10Z",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
       "result": "",
@@ -274776,6 +274776,11 @@
           "at": "2026-11-27T13:03Z",
           "by": "gemini",
           "what": "released: Detached master render running in tmux session J3023-064-render; log: /Users/benjaminoats/_desk/logs/J3023-064-render.log; done: /Users/benjaminoats/_desk/logs/J3023-064-render.done. Worktree: /Volumes/MiniWork/scratch/J3023-owb064-v02 (branch gemini/J3023-owb064-assembly, commit 7af2764951). Check .done before starting any second copy; once exit 0, inspect picture_qa_review.jpg & all 5 gate reports, build trailer + PACKAGE_MANIFEST.json, record teach/polish reviews, queue independent completed-cut/package QA and linked companion Shorts follow-ups."
+        },
+        {
+          "at": "2026-11-27T13:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached tmux J3023-064-render building 138 cuts + 5 QA gates; next run checks .done/.log, inspects flagged frames, finishes trailer/manifest and queues QA",

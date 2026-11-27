@@ -23,7 +23,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J3012 | mini | blocked | codex | – | for gemini · chief · `gemini-argon` · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
+| J3023 | mini | claimed | gemini | 2026-11-27T15:10Z | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
