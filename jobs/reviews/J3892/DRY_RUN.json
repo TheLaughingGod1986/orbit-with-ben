@@ -1,0 +1,25 @@
+{
+  "utc": "20261127T121029Z",
+  "tests_run": 34,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "commands": "all external process/Git/launchctl adapters mocked; Popen forbidden except recorded mock",
+  "source_sha256": {
+    "scripts/macbook_cutover.py": "a7bfd04b37769e9de3a49c9cfb57d4c3ac3ad6ac1d84ed9cc328ac3b4ab9e785",
+    "scripts/test_macbook_cutover.py": "e69d5777a1e0f449dd8b0dd324d2b3af436ac7f6254a7a5467ddea57ae8a0f2e"
+  },
+  "fake_transaction_calls": [
+    "production",
+    "engine",
+    "engine",
+    "production",
+    "replace"
+  ],
+  "live_service_changes": 0,
+  "live_pause_changes": 0,
+  "live_marker_changes": 0,
+  "real_child_processes": 0,
+  "local_receipt": "/Users/ben/_desk/state/j3892-dry-run/20261127T121029Z/receipt.json",
+  "local_receipt_sha256": "7407a669f0c21ce924935957129787be2613fdfa0dc59ea3244e999fe8c11e97"
+}
