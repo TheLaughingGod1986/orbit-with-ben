@@ -116,7 +116,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3922 | mini | open | – | – | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
 | J3923 | mini | open (after J3922) | – | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
 | J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
-| J3925 | mini | claimed | claudecode | 2026-11-27T18:03Z | review · Verify condition for J3903 |  |
+| J3925 | mini | blocked | claudecode | – | review · Verify condition for J3903 |  |
 
 Recently finished:
 
