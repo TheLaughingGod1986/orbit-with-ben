@@ -360782,9 +360782,14 @@
           "at": "2026-11-27T16:02Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Uploaded WW2:004 v04 as 54sAav3iMQw (Private, publishAt 2026-12-01T17:00:00Z, Thumbnail A set, added to PLPPi-oWEDYtA)."
+        },
+        {
+          "at": "2026-11-27T16:07Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Set en-GB captions (AUieDabzBmxxADHyScAQ7qYIOjfhsaIyLigEnu11EXZ7NkS8, serving, 337 cues), playlist PLPPi-oWEDYtA pos 3, 3-way Thumbnail-only Test & Compare (A/B/C), Altered content=Yes, Not made for kids, and End Screen (PLPPi-oWEDYtA + Subscribe) on 54sAav3iMQw."
         }
       ],
-      "remaining_action": "Uploading en-GB captions, arming 3-way Thumbnail Test & Compare (A/B/C), verifying radios and End Screen in Studio 9223",
+      "remaining_action": "Completing Studio reload readback and writing J3919_UPLOAD_READBACK_v04.json, status.json, and UPLOADS.json",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360809,9 +360814,9 @@
       "due": "2026-11-28T18:00:00Z",
       "urgent": 6,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T16:02Z",
+        "at": "2026-11-27T16:07Z",
         "by": "gemini",
         "plan": [
           "Inspect J3653 and verify NAS master + thumbnails SHA-256",
@@ -360821,7 +360826,7 @@
           "Read back Private+scheduled and update status.json + UPLOADS",
           "Push PR, report on thread, and hand off for Chief merge"
         ],
-        "note": "Uploaded WW2:004 v04 as 54sAav3iMQw (Private, publishAt 2026-12-01T17:00:00Z, Thumbnail A set, added to PLPPi-oWEDYtA)."
+        "note": "Set en-GB captions (AUieDabzBmxxADHyScAQ7qYIOjfhsaIyLigEnu11EXZ7NkS8, serving, 337 cues), playlist PLPPi-oWEDYtA pos 3, "
       },
       "taskKeys": [
         "WW2:004"
