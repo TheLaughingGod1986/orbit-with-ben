@@ -360039,13 +360039,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T14:40Z",
-      "eta": "2026-11-27T16:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:38Z",
-      "result": "",
+      "result": "parked for Chief: J3904 condition NOT met. J3902 is done, but PR #1394 (c089fb3ffa) is OPEN and unmerged, with no reviews or comments at 14:45Z, and there is no Chief ruling on the ~277-char VO (Option A) or the zero-VO fallback (Option B1). Workers can't record the recheck hold (holder/Chief-only). Chief run: jobs.py wait J3904 --agent <chief> --condition 'Chief ruling on PR #1394: merge plus Option A VO authorization or Option B1 directive' --check-at 2026-11-27T20:45Z --type input --recheck J3912 --git",
       "history": [
         {
           "at": "2026-11-27T14:38Z",
@@ -360076,6 +360076,11 @@
           "at": "2026-11-27T14:41Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: Workers can't record the recheck hold, so I'm parking this for the Chief with the exact command"
+        },
+        {
+          "at": "2026-11-27T14:41Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3904 condition NOT met. J3902 is done, but PR #1394 (c089fb3ffa) is OPEN and unmerged, with no reviews or comments at 14:45Z, and there is no Chief ruling on the ~277-char VO (Option A) or the zero-VO fallback (Option B1). Workers can't record the recheck hold (holder/Chief-only). Chief run: jobs.py wait J3904 --agent <chief> --condition 'Chief ruling on PR #1394: merge plus Option A VO authorization or Option B1 directive' --check-at 2026-11-27T20:45Z --type input --recheck J3912 --git"
         }
       ],
       "remaining_action": "Chief to rule on PR #1394 and record the J3904 hold",
