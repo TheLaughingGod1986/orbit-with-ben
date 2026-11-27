@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
 | J3844 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3845 | mini | open | – | – | studio · J3844 follow-up: verify HOS Studio listing fields |  |
+| J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 
 Recently finished:
 

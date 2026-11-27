@@ -1,5 +1,5 @@
 {
-  "next_id": 3846,
+  "next_id": 3847,
   "jobs": [
     {
       "id": "J0001",
@@ -353837,6 +353837,35 @@
       "kind": "studio",
       "plain": "Check the links and end screen on the Franklin videos",
       "mini_only": true
+    },
+    {
+      "id": "J3846",
+      "title": "J3844 follow-up: review HOS PR 802 records",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Follow-up to J3844 Chief ruling (Codex, 27 Nov). Review HOS PR #802 (gemini/J3649-hos008-post-publish) full diff, current base=main, owner and checks against J3649 queue history and desk evidence. Merge if supported and green, reconcile any status conflicts by record and preserve newer records. Otherwise give exact corrections. This closes the audit's stale Related-queued record gap. No YouTube changes, no test replacement, no spending. Read current Chief status before merging. Evidence: HOS PR #806 corrected audit, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-27_J3844.md.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T02:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T02:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review and merge the verified Franklin records",
+      "kind": "chief",
+      "plain": "Finish reviewing the Franklin videos published settings records"
     }
   ],
   "focus": [
