@@ -88,11 +88,18 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3821 | gemini | blocked | claudecode | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
-| J3825 | mini | claimed | gemini | 2026-11-27T00:24Z | studio · First-day check at 6 h: "Benjamin Franklin's Kite Experiment Explained" (YqCWYlv_LCY) |  |
 | J3826 | mini | blocked | claudecode | – | review · Verify condition for J3821 |  |
 
 Recently finished:
 
+- J3825 done: First-day check at 6 h: "Benjamin Franklin's Kite Experiment Explained" (YqCWYlv_LCY) ("Benjamin Franklin's Kite Experiment Explained" (YqCWYlv_LCY) · History of Science · long · went live Thu 26 Nov 18:00 London
+At 6 h: views 0 · Studio rank 3 of 8 · impressions 1 · click rate 0.0% · average viewed no figure yet
+
+Verdict: USUAL
+  - Studio ranks it 3 of 8 against our latest videos at the same age.
+
+Do now
+  - Nothing to fix.)
 - J3824 done: Verify condition for J3704 (Condition verified as not yet satisfied. J3704 retains its existing input hold and 2026-11-27T00:59:30Z check, linked with recheck J3824. Detailed review retained locally. Minimal status report: studio thread comment 7206162050. No video changes or spend.)
 - J3820 done: WW2 009: rewrite v05 after Rule-6 failure (NARRATION_v05 sha256 81ddf978e62c340c913aa7ba564afbae2ee57f3c6db32f6b7881ba8db67a66ce (37 blocks, 1708 words, 10322 chars, parity true). Promise ends ~0:38-0:41; Pedestal named and convoy sails ~0:53-0:59. Detour removed, S01/S20 engines consistent, tow payoff clarified from C31/C32 wording only, 'the wreck', figures split. DELTA_CLAIMS_v05.md D01-D20 ready for independent Gemini check, then Rule-6 re-read and Chief review. PR #196 open, not merged. No VO, no spend, no lock.)
 - J3817 done: OWB 064: Rebuild thumbnails A/B/C as J3719_v02, fix R09 Venus source & 0:00-0:33 opening cuts (done)
@@ -102,4 +109,3 @@ Recently finished:
 - J3811 done: Package and upload HOS 008 Short s04 short v01 (Why Did Franklin Never Patent the Lightning Rod?) Private, 2026-12-01T11:30Z (Chief PASS upload records. HOS PR 804 merged 4b88ba36; OWB PR 1352 merged 18743b32. Approved v01 NAS SHA e162a0fb matches; fresh channel:audit 76 videos 0 errors; f_-BsKZf8X0 private for 2026-12-01T11:30Z, parent YqCWYlv_LCY public. Worker reload evidence confirms Related, Altered Yes and Not Made for Kids. J3814 after J3811, due 27 Nov 18:00, archives missing temporary cover without changing uploaded manifest or YouTube. No re-upload; no spend; no further Ben approval needed.)
 - J3810 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief review KEEP: local audit a43a4f59 accepted for read-only scope; 50 active listings reviewed, 21 chapter-file hashes verified. No new public listing fixes. J3501 reopened for existing Gravity Studio finish: end screen missing, Short A Related absent, Short B unverified. Preserve uploads and schedules; after pre-public work retain public-condition check 2026-12-03T18:05:00Z and link both Shorts before 4 Dec 11:30. Rejected audit branch publication remains local, not retried or delegated. No YouTube changes or spend.)
 - J3809 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only live listing check on last 10 public OWB videos (2026-11-26T20:24Z-20:28Z): 10/10 pass, 0 live fixes needed. Live YouTube Data API v3, external URL/Crossref/DOI checks, SRT chapter checks, and read-only Studio CDP 9223 verified across all 10 videos (closing J3795's owed post-publish Related read-back on GbELka8Yu9U -> -jmMROGoZCM and correcting T3cBBss1F60's present 2-element end screen to Subscribe + Best for viewer; 9q_OvQ1Rd8Y remains unlinked under J0216 pending Chief ruling on PR #1130). Nothing changed in Studio; no public watch/Shorts pages opened. Report committed to 05_Analytics/live_fixes/2026-11-26.md on branch gemini/J3809-live-fixes (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1349, ready for Chief merge; supersedes PRs #1336 and #1341). Noted Mini CDP 9223 is signed into OWB again for J3779.)
-- J3808 done: WW2 pilot 2: two Studio-editor cuts (04:27.50-05:05.30 and 05:37.10-06:25.10), then chapters, captions and end screen (done)
