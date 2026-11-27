@@ -361260,16 +361260,21 @@
           "at": "2026-11-27T16:58Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified PR #1400 review, v02 builder bug (post-input -ss before afade), NAS locked inputs, and faster-whisper availability"
+        },
+        {
+          "at": "2026-11-27T17:01Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Created _build_064_short01_testA_v03.py with atrim+asetpts audio fix, v02 video stream-copy equivalence check, speech-coverage regression check, and local faster-whisper 71-word verification"
         }
       ],
-      "remaining_action": "Writing _build_064_short01_testA_v03.py with fixed audio seek/fade and speech-coverage regression test",
+      "remaining_action": "Running _build_064_short01_testA_v03.py to generate immutable v03, verify regression & fresh ASR, and run NAS gates",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-27T16:58Z",
+        "at": "2026-11-27T17:01Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361279,7 +361284,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Verified PR #1400 review, v02 builder bug (post-input -ss before afade), NAS locked inputs, and faster-whisper availabil"
+        "note": "Created _build_064_short01_testA_v03.py with atrim+asetpts audio fix, v02 video stream-copy equivalence check, speech-co"
       },
       "taskKeys": [
         "OWB:064"
