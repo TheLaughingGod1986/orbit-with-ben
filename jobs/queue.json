@@ -365364,9 +365364,14 @@
           "at": "2026-11-27T23:27Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T23:27Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
+      "remaining_action": "Probe Flow tab on CDP 9222",
       "kind": "review",
       "recheck_of": "J3760",
       "due": "2026-11-28T00:27:01+00:00",
@@ -365384,9 +365389,15 @@
         "of": 3,
         "at": "2026-11-27T23:27Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read job and evidence",
+          "Probe Flow tab on 9222",
+          "Record result on J3760"
+        ]
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
