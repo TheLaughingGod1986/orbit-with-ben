@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3902 | mini | claimed | gemini | 2026-11-27T15:54Z | 064 edit · qa · OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) | J3023 |
 | J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 | J3904 | mini | open (after J3902) | – | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
-| J3905 | mini | claimed | claudecode | 2026-11-27T15:54Z | review · Verify condition for J3023 |  |
+| J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
 
 Recently finished:
 

@@ -359339,13 +359339,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T13:54Z",
-      "eta": "2026-11-27T15:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T13:53Z",
-      "result": "",
+      "result": "parked for Chief: J3023 condition unmet at 13:55Z 27 Nov. J3902 completed-cut/package QA is claimed by gemini until 15:54Z with no jobs/reviews/J3902/REVIEW.md; PR #1390 is OPEN, not merged. Original gates and Ben dates (watch Fri 11 Dec 18:00, air Wed 16 Dec 18:00 London) unchanged. Worker cannot record --recheck (Chief-only). Chief run: python3 scripts/jobs.py wait J3023 --agent <chief> --type input --condition 'J3902 independent completed-cut/package QA PASS and Chief merge of PR #1390 still pending (J3902 claimed by gemini, no review yet; PR open)' --check-at '2026-11-27T17:00Z' --recheck J3905 --git, then finish J3905.",
       "history": [
         {
           "at": "2026-11-27T13:53Z",
@@ -359366,6 +359366,11 @@
           "at": "2026-11-27T13:55Z",
           "by": "claudecode",
           "what": "step 1 of 2 done: J3902 claimed by gemini until 15:54Z, no jobs/reviews/J3902/REVIEW.md, PR #1390 OPEN not merged: condition unmet"
+        },
+        {
+          "at": "2026-11-27T13:55Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3023 condition unmet at 13:55Z 27 Nov. J3902 completed-cut/package QA is claimed by gemini until 15:54Z with no jobs/reviews/J3902/REVIEW.md; PR #1390 is OPEN, not merged. Original gates and Ben dates (watch Fri 11 Dec 18:00, air Wed 16 Dec 18:00 London) unchanged. Worker cannot record --recheck (Chief-only). Chief run: python3 scripts/jobs.py wait J3023 --agent <chief> --type input --condition 'J3902 independent completed-cut/package QA PASS and Chief merge of PR #1390 still pending (J3902 claimed by gemini, no review yet; PR open)' --check-at '2026-11-27T17:00Z' --recheck J3905 --git, then finish J3905."
         }
       ],
       "remaining_action": "Park J3905 for Chief with the J3023 wait --recheck command",
