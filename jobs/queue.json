@@ -360625,13 +360625,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T15:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T15:36Z",
-      "result": "parked for Chief: J3918 independent QA complete in PR #1400 (jobs/reviews/J3918/REVIEW.md, b4ed3927a1) — FIX on OWB:064 Short 1 v02 (PR #1399 at 1faedeab31): critical ffmpeg -ss-after--i audio bug zeroed 22/31s of VO stem & final MP4 (-180.0 dBFS at 7-10s and 12-31s); video, framing, graphics, SRT, manifest, security, and 7/7 + 13-bed MP3 gates clean. Do not pass, merge PR #1399, or register v02 for Ben UAT; queue £0 v03 audio repair.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T15:36Z",
@@ -360677,6 +360677,11 @@
           "at": "2026-11-27T15:50Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3918 independent QA complete in PR #1400 (jobs/reviews/J3918/REVIEW.md, b4ed3927a1) — FIX on OWB:064 Short 1 v02 (PR #1399 at 1faedeab31): critical ffmpeg -ss-after--i audio bug zeroed 22/31s of VO stem & final MP4 (-180.0 dBFS at 7-10s and 12-31s); video, framing, graphics, SRT, manifest, security, and 7/7 + 13-bed MP3 gates clean. Do not pass, merge PR #1399, or register v02 for Ben UAT; queue £0 v03 audio repair."
+        },
+        {
+          "at": "2026-11-27T15:58Z",
+          "by": "codex",
+          "what": "reopened: Taking assigned Chief review to record FIX; original production J3903 remains held with J3922 repair and J3923 QA."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) FIX ruling on PR #1399 (review in PR #1400)",
@@ -360691,21 +360696,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-11-27T15:50Z",
-        "by": "gemini",
-        "plan": [
-          "Verify NAS master hashes and specs",
-          "Re-run all 7 gates and 13-bed music check",
-          "Inspect frames, overlays, timing, and audio",
-          "Audit PR #1399 files, SRT, and privacy",
-          "Commit REVIEW.md on clean PR branch",
-          "Post report and route to elected Chief"
-        ],
-        "note": "Opened PR #1400 (jobs/reviews/J3918/REVIEW.md, b4ed3927a1) and posted report on studio thread: FIX on v02 due to 22/31s "
-      },
       "taskKeys": [
         "OWB:064"
       ]
