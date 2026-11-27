@@ -351798,17 +351798,22 @@
           "at": "2026-11-27T00:15Z",
           "by": "gemini",
           "what": "step 0 of 4 done: API readback OK (Public, HD processed, not Made for Kids, description exact match); restarted frozen HOS Studio Chrome 9460 via launchd and scraping Studio pages"
+        },
+        {
+          "at": "2026-11-27T00:16Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 1: 0 faults (Public, Notices empty, Not Made for Kids, no age restriction, SD+HD complete, description exact match, A/B test running). Step 2 (6h14m): 0 views, rank 3 of 8, 1 impression, 0.0% CTR, 0 likes, AVD 0:00 (0%)/retention not ready, no typical line shown"
         }
       ],
-      "remaining_action": "Reading YqCWYlv_LCY details and 6h analytics in HOS Studio (CDP 9460)",
+      "remaining_action": "Recording 6h figures via launch_check.py and running judge verdict",
       "due": "2026-11-27T02:03:00Z",
       "kind": "studio",
       "launch": "YqCWYlv_LCY@6",
       "plain": "Check how \"Benjamin Franklin's Kite Experiment Explained\" is doing 6 hours after it went live",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-27T00:15Z",
+        "at": "2026-11-27T00:16Z",
         "by": "gemini",
         "plan": [
           "Check Studio video status and package match",
@@ -351816,7 +351821,7 @@
           "Record figures and run judge",
           "Finish or park for Chief and report"
         ],
-        "note": "API readback OK (Public, HD processed, not Made for Kids, description exact match); restarted frozen HOS Studio Chrome 9"
+        "note": "Step 1: 0 faults (Public, Notices empty, Not Made for Kids, no age restriction, SD+HD complete, description exact match,"
       },
       "taskKeys": [
         "HOS:008"
