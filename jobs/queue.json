@@ -364374,13 +364374,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T21:24Z",
-      "eta": "2026-11-27T21:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T19:55Z",
-      "result": "",
+      "result": "parked for Chief: history-of-science is PUBLIC (isPrivate=false, triggering J3952 brief stop-and-park guard), and both branches/draft PRs are already published on origin: codex/J3816 @ 2922143e -> open draft PR 811 (J3864), codex/J3871 @ c8c3372e -> open draft PR 814 (J3911), both already recorded in J3816/J3871 holds. Worktrees clean, privacy grep clean (0 emails/tokens/keys/IPs). Zero pushes or PR edits made; Chief to close/cancel J3952.",
       "history": [
         {
           "at": "2026-11-27T19:55Z",
@@ -364401,6 +364401,11 @@
           "at": "2026-11-27T21:28Z",
           "by": "gemini",
           "what": "step 2 of 3 done: history-of-science is PUBLIC (isPrivate=false, stop-and-park guard triggered); both branches/draft PRs already live on origin: codex/J3816 @ 2922143e -> draft PR 811, codex/J3871 @ c8c3372e -> draft PR 814. Zero pushes made."
+        },
+        {
+          "at": "2026-11-27T21:28Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: history-of-science is PUBLIC (isPrivate=false, triggering J3952 brief stop-and-park guard), and both branches/draft PRs are already published on origin: codex/J3816 @ 2922143e -> open draft PR 811 (J3864), codex/J3871 @ c8c3372e -> open draft PR 814 (J3911), both already recorded in J3816/J3871 holds. Worktrees clean, privacy grep clean (0 emails/tokens/keys/IPs). Zero pushes or PR edits made; Chief to close/cancel J3952."
         }
       ],
       "remaining_action": "Park J3952 for Chief and post reports",
