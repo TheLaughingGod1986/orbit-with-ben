@@ -359362,13 +359362,13 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T14:25Z",
-      "eta": "2026-11-27T16:25Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "",
+      "result": "parked for Chief: PR #1394 (c089fb3ffa) proves locked 064 VO cannot cleanly deliver Venus 464C vs Uranus -224.2C within Shorts gates; review and merge PR #1394, then either authorize ~277-char ElevenLabs VO (£0 cash, plan resets 2026-11-30T10:50Z) for Option A (064_short02_venus_vs_uranus_script_v01.md) + queue vo/assembly, or direct Option B1 zero-VO fallback",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -359409,6 +359409,11 @@
           "at": "2026-11-27T14:38Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Opened PR #1394 (commit c089fb3ffa, email/private-network tests PASS); cleaned up worktree; parking J3904 for elected Chief decision"
+        },
+        {
+          "at": "2026-11-27T14:38Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #1394 (c089fb3ffa) proves locked 064 VO cannot cleanly deliver Venus 464C vs Uranus -224.2C within Shorts gates; review and merge PR #1394, then either authorize ~277-char ElevenLabs VO (£0 cash, plan resets 2026-11-30T10:50Z) for Option A (064_short02_venus_vs_uranus_script_v01.md) + queue vo/assembly, or direct Option B1 zero-VO fallback"
         }
       ],
       "remaining_action": "Parked for Chief ruling on PR #1394 (merge + ~277-char ElevenLabs VO authorization for Option A, or Option B1 zero-VO fallback directive)",
