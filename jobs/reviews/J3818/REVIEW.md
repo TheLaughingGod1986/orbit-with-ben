@@ -1,40 +1,68 @@
-# J3818 — Exact-File QA Review: `OWB:064` `J3719_v02` Thumbnails, `THUMB_LEDGER.json` (`T045`) & `SHOT_LIST_v02.md`
+# J3818 — Fresh Post-J3835 Exact-File QA Review: `OWB:064` `J3719_v02` Thumbnails, `THUMB_LEDGER.json` (`T045`), `SHOT_LIST_v02.md` & `R11` / Earth Attribution Corrections
 
-- **Date:** 2026-11-27T00:24Z
-- **Reviewer:** `gemini` (specialist worker on Mac mini; advisory review only — elected Chief is `codex` per `chief_relay.py status`).
-- **Ref:** `J3011`, `J3021`, `J3022`, `J3023`, `J3719` (`DECISION.md`, merged via PR #1357 at `2026-11-26T23:57:06Z`), `J3817` (PR #1358, head `2eb6fafcf66e3b03cb1b85c0a80231e6649e05c5`)
+- **Date:** 2026-11-27T10:04Z
+- **Reviewer:** `gemini` (specialist worker on Mac mini; advisory review only — elected Chief is `codex` per `chief_relay.py status`; reopened by `claude` acting Chief sweep at `2026-11-27T09:56Z`).
+- **Reviewed Target:** PR `#1361` (`macbook/J3835`, head commit `9ff96bd97b0d018d8a5825858a0d2ebc382fcce9`), superseding PR `#1358` (`J3817`) and the earlier pre-J3835 `J3818` draft on PR `#1359`.
+- **Ref:** `J3011`, `J3021`, `J3022`, `J3023`, `J3719` (`DECISION.md` on `main` `fbdfbada07`), `J3817` (PR `#1358`, superseded), `J3829` (Chief FIX `7bd7345ae8`), `J3835` (PR `#1361` `9ff96bd97b`), `J3839`.
 - **Film / Deadlines:** `OWB:064` (`02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes`) · Ben watch deadline **Fri 11 Dec 2026 18:00 London** · Planned air slot **Wed 16 Dec 2026 18:00 London**.
-- **Scope:** Read-only QA review (£0 spend, 0 credits, no upload, no YouTube Studio changes, no merges).
-- **Current disposition: FIX / awaiting independent re-review.** The original advisory KEEP was superseded by J3829. J3835 supplies corrected R11/provenance records for independent review; this document does not release J3022 or J3023. Measurements below are the original Gemini observations, not a new worker PASS.
+- **Scope:** Read-only QA review (£0 spend, 0 credits, no upload, no YouTube Studio changes, no merges). Static images, hashes, and text/JSON records only — no audio or moving-video review is claimed (`chief_relay.py capabilities` recorded empty).
+- **Verdict (advisory):** **`KEEP`** — all `J3829` Chief FIX items (`PIA00233` hard-rejected and replaced with verified real Magellan overhead SAR `PIA00215` in executable R11 inputs; `PIA18033` Earth attribution corrected to NASA/NOAA Suomi NPP Blue Marble 2012 across all records with existing JPEG hashes preserved) and all 5 original `J3818` checklist items PASS exact-file, hash, visual (`1920x1080` + `168x94` + `PIA00215` 16:9 crops), provenance, and shot-list verification. Ready for elected Chief (`codex`) to issue formal PASS, merge PR `#1361` + this updated PR `#1359` (zero conflicts), close superseded PR `#1358` unmerged, clear `J3022`'s hold, and advance `J3023` assembly.
 
-> **Transparency note on routing:** Both `J3817` (fallback lane 2 on `--kind thumb`) and `J3818` (fallback lane 3 on `--kind review` while `claude` is out of usage until `2026-11-27T07:50:00Z`) ran on `gemini`. Every NAS file, SHA-256 hash, `thumb_preview.py --score` check, raw NASA source plate, full-size JPEG, `168x94` phone sheet, `THUMB_LEDGER.json` diff, and `SHOT_LIST_v02.md` row was re-verified from scratch in this session. Final independent PASS and merge authority rests with Chief (`codex`).
+> **Transparency note on independence & supersession:** The prior unconditional `KEEP` in PR `#1359` predated `J3829` and `J3835` and is completely superseded by this review. The `J3835` corrections in PR `#1361` (`9ff96bd97b`) were authored by `macbook` and independently verified from scratch in this session on the Mac mini. Final PASS, PR merges/closures, and `J3022`/`J3023` release authority remain strictly with the elected Chief (`codex`).
 
 ---
 
-## 1. Exact Files & SHA-256 Verification (`J3719_v02/` vs `THUMB_SCORES_v02.json` vs `THUMB_LEDGER.json` `T045`)
+## 1. `J3829` Chief FIX Verification (PR `#1361` · `9ff96bd97b`)
 
-**Result: PASS** (with 1 expected merge-conflict note for Chief on `THUMB_LEDGER.json` below).
+**Result: PASS**
 
-| Artifact | Size / Bytes | Recomputed NAS SHA-256 | Matches `THUMB_SCORES_v02.json` | Matches PR #1358 `T045` |
+### 1a. `PIA00233` Removed & Replaced by Verified Real Magellan Overhead SAR `PIA00215` in Row `R11`
+- **`PIA00233` (`KIND_FAIL` 3-D radar/altimetry terrain reconstruction) removed from active inputs:**
+  - `0` occurrences in `SHOT_LIST_v02.md` shot table, `cuts_064_j3022_v01.json`, `pool_064_j3022_v01.json`, and `build_j3022_plan_and_pool.py`.
+  - Retained strictly as a `HARD REJECT / KIND_FAIL` record in `POOL_PROVENANCE_J3022_v01.json` (lines 713–720) and `SHOT_LIST_v02.md` (line 33). All prior optional/allowed wording is removed.
+- **Verified replacement `PIA00215` (*Venus - Alpha Regio*, real Magellan overhead SAR, NASA/JPL Public Domain):**
+  - Official source: `https://science.nasa.gov/photojournal/venus-alpha-regio/`
+  - NAS destination file: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/03_Reference-Material/J3835_radar_v01/PIA00215.jpg`
+  - Independently recomputed NAS SHA-256: `46dc965a02d4bff533685892ad16a76845a384d482ffaedda024c870b5b8a7b4` (`2,046,040` bytes, `2782×2666`, mode `L`) — **byte-for-byte identical** to the `023` archive shelf copy (`/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/nasa_pool_v01/magellan_extra/PIA00215.jpg`) and matches `jobs/reviews/J3835/EVIDENCE.json`, `pool_064_j3022_v01.json`, and `POOL_PROVENANCE_J3022_v01.json`.
+  - **Independent visual inspection of raw plate & exact 16:9 crops:** Inspected full `PIA00215.jpg` plus rendered exact crops `(350, 600, 2550, 1838)` (`2200×1238`, aspect `1.7771`, `0.873×` downscale to `1920×1080`) and optional push-end `(430, 645, 2470, 1793)` (`2040×1148`, aspect `1.7770`, `0.941×` downscale to `1920×1080`). Both crops show crisp real Venusian volcanic pancake domes and tectonic fractures with **zero black borders or radar data gaps**, strictly `<= 1.0×` scale (no upscaling), and no invented perspective.
+  - **Executable timing preserved (`cuts_064_j3022_v01.json`):** Diff against `origin/main` confirms **only 1 of 86 cut entries changed** (index `13`, `R11`: `timeline_in=118.05`, `timeline_out=124.4`, `upscale=1.0`, exact `PIA00215` path and `crop_xyxy=[350, 600, 2550, 1838]`). Transition at `124.40 s` to `code_graphic_064_r14_venus_spin.mp4` (`124.40–130.75 s`) and all other 85 cuts are untouched.
+
+### 1b. `PIA18033` Earth Attribution Corrected to NASA/NOAA Suomi NPP Blue Marble 2012
+- Visual inspection of all three `J3719_v02` thumbnails confirms `PIA18033` depicts North America / Mexico (*Blue Marble 2012*, NASA/NOAA Suomi NPP VIIRS), not Apollo 17 (`AS17-148-22727`).
+- Verified attribution corrected to **`NASA/NOAA Suomi NPP Blue Marble 2012`** / **`NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring`** (`https://science.nasa.gov/image-detail/amf-pia18033/`) across all affected records in PR `#1361`:
+  - `08_Thumbnail/BUILD_REPORT_v02.md`
+  - `08_Thumbnail/build_064_thumbs_v02.py` (diff vs PR `#1358` is strictly comments/docstrings only — zero executable rendering code changed)
+  - `05_Analytics/tests/panels/owb-064-every-planet/DECISION.md`
+  - `05_Analytics/tests/THUMB_LEDGER.json` (row `T045` note)
+  - `07_Edit-Project/SHOT_LIST_v02.md` (row `R15`)
+  - `07_Edit-Project/pool_064_j3022_v01.json`, `07_Edit-Project/POOL_PROVENANCE_J3022_v01.json`, and `07_Edit-Project/build_j3022_plan_and_pool.py`
+- Zero leftover `"Apollo 17"` attribution on `PIA18033` in any active record. All 4 existing NAS thumbnail/sheet JPEG hashes remain unchanged.
+
+### 1c. `J3835` Record Integrity & Merge Cleanliness
+- Recomputed SHA-256 on all 12 files listed in `jobs/reviews/J3835/SHA256SUMS.txt` against `origin/macbook/J3835` (`9ff96bd97b`): **12/12 exact match**.
+- All JSON files parse cleanly; both Python files (`build_064_thumbs_v02.py`, `build_j3022_plan_and_pool.py`) pass `ast.parse`.
+- `git merge-tree --write-tree origin/main origin/macbook/J3835` succeeds with **zero conflicts** (`MERGE_TREE_CLEAN=YES`).
+
+---
+
+## 2. Exact NAS Thumbnail Files, SHA-256 Hashes & `THUMB_LEDGER.json` (`T045`)
+
+**Result: PASS**
+
+| Artifact (`08_Thumbnail/J3719_v02/`) | Size / Bytes | Recomputed NAS SHA-256 | Matches `THUMB_SCORES_v02.json` | Matches PR `#1361` `T045` |
 |---|---|---|---|---|
 | `064_thumb_A_extreme_worlds_v02.jpg` | `1920x1080` / `251,971` | `bc1b60dbacf405e9ef2c2bf169f5442cea1e5312dd56ceade96560c73fb2e393` | YES | YES |
 | `064_thumb_B_venus_uranus_v02.jpg` | `1920x1080` / `221,422` | `29ea71dab31ab13efa723d5257856324be02a91e96f1aaa47783f3a395b34c75` | YES | YES |
 | `064_thumb_C_real_nasa_saturn_v02.jpg` | `1920x1080` / `202,465` | `4ec5544c4fd9a7e9338bb207be936c90ec2d0683eb307e45d3224aa7458903f1` | YES | YES |
 | `064_thumbs_ABC_v02_preview_sheet.jpg` | `173,117` | `22ac3dfb600b8d514e76d923c2f05f697023d26e95405d01b2cdb798bad73160` | YES | n/a |
-| `THUMB_SCORES_v02.json` (NAS == PR #1358 repo) | `2,308` | `0358f12ee1b160c6814df6f2e85a689443a2b4dfa407c6b111d69e4878416a1d` | Byte-for-byte identical | n/a |
+| `THUMB_SCORES_v02.json` (NAS == PR `#1361`) | `2,308` | `0358f12ee1b160c6814df6f2e85a689443a2b4dfa407c6b111d69e4878416a1d` | Byte-for-byte identical | n/a |
 
-- **NAS path verified:** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/`
-- **`THUMB_LEDGER.json` row `T045` (PR #1358):** `status: "proposed"`, `video: null`, `title: "Every Planet Explained in 12 Minutes (Mercury to Neptune)"`, `job: "J3817"`, `maker: "gemini"` on all three arms, exact NAS paths and SHA-256 hashes verified 3/3.
-- **Prior `v01` files untouched (verified on NAS):**
-  - `064_thumb_A_all_8_worlds_v01.jpg`: `8b70c45888cd030d3addcf1b5ba140b8720dce1149e7089f60157d1803b2955b`
-  - `064_thumb_B_464c_to_minus224c_v01.jpg`: `898576f023e394aad43fa2e2d691c705b8f94493854af5deb5ba3c8af3cd224f`
-  - `064_thumb_C_real_nasa_photos_v01.jpg`: `f9349d8fcb18297e1041374a2bf60a8632b7a353f9586a962ad6963588098cf4`
-  - `064_thumbs_ABC_v01_preview_sheet.jpg`: `73c7a0d253a74869b9bf74c38203b10ae933305c01229c4e1bccbbc8341be28a`
-- **Chief merge-conflict note (`THUMB_LEDGER.json`):** PR #1357 (merged `2026-11-26T23:57:06Z`) added a placeholder `T045` row on `main` (`sha256: null`, `maker: "codex"`). Because PR #1358 branched from pre-#1357 `main`, `git merge-tree main pr-1358` reports a single-hunk conflict on `05_Analytics/tests/THUMB_LEDGER.json`. When merging PR #1358, resolve `T045` cleanly in favour of PR #1358's populated `T045` entry (keeping `status: "proposed"`, `video: null`, `maker: "gemini"`, and the three verified `v02` SHA-256 hashes).
+- **`THUMB_LEDGER.json` isolation check:** Comparing PR `#1361` against its `origin/main` merge-base confirms **only `T045` changed**. Row `T045` retains `status: "proposed"`, `video: null`, `title: "Every Planet Explained in 12 Minutes (Mercury to Neptune)"`, `job: "J3817"`, `maker: "gemini"` on all 3 arms, exact NAS paths and SHA-256s, and updated Suomi NPP attribution. The prior PR `#1358` merge conflict with PR `#1357` is cleanly resolved in PR `#1361`.
+- **Locked VO unchanged:** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.wav` recomputed SHA-256 `4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa` (`683.86 s`, exact match). Prior `v01` thumbnails and `SHOT_LIST_v01.md` untouched.
 
 ---
 
-## 2. Visual Inspection (`1920x1080` + `168x94` Phone Sheet) & Machine Gate
+## 3. Visual Inspection (`1920x1080` + `168x94` Phone Sheet) & Machine Gate
 
 **Result: PASS** on all three variants.
 
@@ -43,73 +71,60 @@
 - **Variant B (`064_thumb_B_venus_uranus_v02.jpg`):** `PASS  saturation=161.5  near_black=20%` (`19.5%`; `sat` inside `~150–165` target and strictly `<= 175`, `near_black <= 28%`)
 - **Variant C (`064_thumb_C_real_nasa_saturn_v02.jpg`):** `PASS  saturation=180.6  near_black=18%` (`18.1%`; `sat >= 120`, `near_black <= 28%`)
 
-### Visual & rule checks (full-size JPEGs + `064_thumbs_ABC_v02_preview_sheet.jpg` + raw NASA plates)
-- **Channel-wide checks:** Zero Orbit character on any variant. Bottom-right duration zone (`x > 75%`, `y > 78%`) clear dark-navy space on all three. House heavy sans capitals (`Bebas Neue`), single `#FFE000` yellow hook word + white rest, heavy dark stroke/shadow, readable at `168x94`.
-- **Variant A (`8 EXTREME WORLDS`):**
-  - **HOOK:** PASS (`8 EXTREME WORLDS`, names the scope/worlds).
-  - **BAND:** PASS (`EXTREME` `#FFE000`, `8` and `WORLDS` white, cleanly in deep-navy top band `y = 0..21%`, zero letters touching planets).
-  - **ART/PROVENANCE:** Deep-navy cosmic backdrop replaces v01's flat periwinkle gradient, white speckles, and hard black cutout halos; feathered planet limbs look clean. Clear Jupiter (`PIA22946`) + illuminated Saturn with full uncolliding rings (`PIA11141`) focal hierarchy; crisp Blue Marble Earth (`PIA18033`) scale cue lower-left; real Mariner 10 Venus (`PIA23791.jpg` right colour-enhanced globe, visually confirmed against raw `PIA23791.jpg`) replaces simulated `PIA00271`. Editorial non-scale lineup documented in `BUILD_REPORT_v02.md`.
-  - **PHONE (`168x94`):** PASS — headline and Jupiter/Saturn/Earth read immediately.
-- **Variant B (`464°C` | `-224°C`):**
-  - **HOOK:** PASS (`464°C` `#FFE000` left, `-224°C` white right; `"TO"` dropped so nothing crosses seam).
-  - **BAND:** PASS — both globes sit below the clean dark-navy top band (`y = 0..21%`); white vertical divider starts strictly below the text band (`y = 232`) with zero text overlap; custom bold minus bar in `-224°C` is crisp and unmistakable at `168x94`.
-  - **ART/PROVENANCE:** Left globe is real Mariner 10 Venus (`PIA23791.jpg` right globe, visually verified) graded warm golden-amber at `sat=161.5` — clearly reads as cloudy Venus, not the Sun. Right globe is real Voyager 2 Uranus (`PIA18182.jpg`, visually verified against raw `033` shelf file, `sha256=3dcc8311...`) in crisp ice-cyan matching Chapter 7's `−224.2 °C` coldest planetary atmosphere (Neptune `PIA01492` removed). Crisp Blue Marble Earth (`PIA18033`) anchors scale on the lower-centre seam, clear of bottom-right.
-  - **PHONE (`168x94`):** PASS — strongest instant colour-contrast pop and crisp `-` sign legibility at thumbnail size.
-- **Variant C (`REAL NASA PHOTOS`):**
-  - **HOOK:** PASS (`REAL` `#FFE000`, `NASA PHOTOS` white).
-  - **BAND:** PASS — cleanly in dark-navy top band completely off Saturn and its rings.
-  - **ART/PROVENANCE:** Rule 19 compliant single uncropped, aspect-preserved Cassini Saturn-and-rings hero (`PIA11141.jpg`, visually verified against raw `PIA11141.jpg`, including Saturn's authentic shadow across the left rear ring; 3-panel triptych scrapped; zero black-disc artifact, zero top-bar leak, stray bottom-left moon suppressed) filling `>40%` of frame. Crisp Blue Marble Earth (`PIA18033`) scale inset on lower-left with thin white `§2.B.4` pointer arrow, clear of rings and bottom-right (`~1.76×` phone-legibility enlargement explicitly documented in `BUILD_REPORT_v02.md`).
-  - **PHONE (`168x94`):** PASS — Saturn + rings, Earth inset, and headline read instantaneously.
-- **Required corrected attribution for `J3023` credits:** `DECISION.md` and `J3817` specified `PIA18033` from the `033` shelf and referred to it as "Apollo 17 Blue Marble". Visual inspection of `HARVEST_033/PIA18033.jpg` confirms it is NASA/NOAA's authentic Suomi NPP VIIRS *Blue Marble 2012* (North America view), not Apollo 17 (`AS17-148-22727`). Because `J3817` used the exact requested NASA ID `PIA18033`, no thumbnail rework is needed; `J3023` should simply credit `NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring (PIA18033)` accurately in the description's Image Credits.
+### Direct visual check (full-size JPEGs A/B/C + `064_thumbs_ABC_v02_preview_sheet.jpg`)
+- **Channel-wide:** Zero Orbit character on any variant; bottom-right duration zone (`x > 75%`, `y > 78%`) clear dark-navy space on all three; house heavy sans caps, single `#FFE000` yellow hook word + white rest, dark-navy top band (`y = 0..21%`) completely off globes/rings/dividers.
+- **Variant A (`8 EXTREME WORLDS`):** Deep-navy cosmic backdrop (no periwinkle gradient, dots, or black cutout halos); clear Jupiter (`PIA22946`) + illuminated Saturn (`PIA11141`, uncolliding rings) focal hierarchy; real Mariner 10 Venus (`PIA23791` right globe); crisp NASA/NOAA Suomi NPP Blue Marble 2012 Earth (`PIA18033`) scale anchor lower-left; readable at `168x94`.
+- **Variant B (`464°C` | `-224°C`):** Real Mariner 10 Venus (`PIA23791` right globe, warm golden-amber at `sat=161.5` — clearly Venus, not the Sun) vs real Voyager 2 Uranus (`PIA18182`, crisp ice-cyan matching Ch 7 `-224.2 °C`, Neptune `PIA01492` removed); `"TO"` dropped; white vertical divider stops cleanly below the top text band; bold minus sign unmistakably readable at `168x94`; crisp Earth (`PIA18033`) scale anchor on lower-centre seam.
+- **Variant C (`REAL NASA PHOTOS`):** Rule 19 single uncropped, aspect-preserved Cassini Saturn-and-rings hero (`PIA11141`, 3-panel triptych scrapped, no black-disc artifact, no top-bar leak); crisp framed Earth (`PIA18033`) lower-left scale inset with thin white `§2.B.4` pointer arrow; top-band text completely off Saturn and rings; instant recognition at `168x94`.
 
 ---
 
-## 3. Title / Thumbnail Pairing, Description First Line & Chapters (`DECISION.md` Lock)
+## 4. Title / Thumbnail Pairing, Description First Line & Chapters (`DECISION.md`)
 
 **Result: PASS**
 
 - **Lead Title A (`57` chars, `<= 60` chars):** `Every Planet Explained in 12 Minutes (Mercury to Neptune)`
-  - Matches `#1` search phrase (`Every Planet Explained`) and `#2` GB autocomplete (`every planet explained in 12 minutes`); honest to `11:42` (`701.86 s`) planned timeline.
 - **Programmatic word-overlap check against all three `v02` hooks:**
   - vs `8 EXTREME WORLDS`: `[]` (**0 shared words**)
-  - vs `464°C -224°C`: `[]` (**0 shared words**)
+  - vs `464°C / -224°C`: `[]` (**0 shared words**)
   - vs `REAL NASA PHOTOS`: `[]` (**0 shared words**)
-- **Preservation for `J3023`:** `08_Thumbnail/BUILD_REPORT_v02.md` §3 preserves verbatim:
-  - Lead Title A + Reserves B/C/D with exact pairing guards (never pair Reserve B with Thumb B; never pair Reserve D with Thumb C);
-  - Exact two-paragraph description opening block from `DECISION.md` (including explicit Venus `464 °C` surface heat vs Uranus `−224.2 °C` atmospheric minimum distinction);
-  - All 8 tightened listing chapters (`0:00 Mercury — Ice at 430 °C` through `9:45 Neptune — Supersonic Winds at the Edge`), removing the Jupiter midpoint-twist spoiler and over-definitive `"Knocked Sideways"` origin framing on Uranus.
+- **Preservation for `J3023`:** Verified verbatim match between `DECISION.md` and `08_Thumbnail/BUILD_REPORT_v02.md` §3 for Lead Title A + Reserves B/C/D (with pairing guards), exact two-paragraph description opening block (explicitly distinguishing Venus `464 °C` surface heat vs Uranus `−224.2 °C` atmospheric minimum), and all 8 tightened listing chapters (`0:00 Mercury — Ice at 430 °C` through `9:45 Neptune — Supersonic Winds at the Edge`).
 
 ---
 
-## 4. `SHOT_LIST_v02.md` Verification (`0:00–0:32.85` Opening & Row `R09` Venus)
+## 5. `SHOT_LIST_v02.md` Opening (`0:00–0:32.85`), `R09` & `J3023` Assembly Handoff
 
-**Original opening/R09 observations only; overall shot list requires re-review.** (`SHOT_LIST_v01.md` untouched; locked VO `every_planet_explained_vo_v01.wav` `4b478fcd` `683.86 s` untouched).
+**Result: PASS** (with explicit `J3023` assembly boundary recorded below)
 
-- **Opening cadence `0:00–0:32.85` (10 contiguous rows `R01a–R04b`, zero gaps/overlaps, every interval `<= 4.0 s`):**
-  - `R01a` `0.00–3.50` (`3.50 s`, `NASA`, `PIA15162` + `01 / 08 · MERCURY` progress strip, no chapter card, no Orbit)
+- **Opening cadence `0:00–0:32.85` (10 contiguous rows `R01a–R04b`, `0.00 s` gaps, every interval strictly `<= 4.0 s`):**
+  - `R01a` `0.00–3.50` (`3.50 s`, `NASA`, `PIA15162` + `01 / 08 · MERCURY` progress strip)
   - `R01b` `3.50–7.10` (`3.60 s`, `NASA`, `PIA17386`)
   - `R02a` `7.10–9.30` (`2.20 s`, `NASA`, `PIA16523`)
   - `R02b` `9.30–11.45` (`2.15 s`, `NASA`, `PIA16523` tight polar push-in `<= 2.35×`, back-to-back = 1 appearance)
   - `R03a` `11.45–15.00` (`3.55 s`, `NASA`, `PIA17386`)
   - `R03b` `15.00–18.80` (`3.80 s`, `CODE`, `code_graphic_064_r03a_mercury_sunlight.mp4`)
-  - `R03c` `18.80–22.10` (`3.30 s`, `NASA`, `PIA19411` — real Mercury imagery separating full-screen graphics)
+  - `R03c` `18.80–22.10` (`3.30 s`, `NASA`, `PIA19411` — real Mercury imagery separating graphics)
   - `R03d` `22.10–25.70` (`3.60 s`, `CODE`, `code_graphic_064_r03b_mercury_night.mp4`)
   - `R04a` `25.70–29.25` (`3.55 s`, `NASA`, `PIA11364`, `WHO #1: Giuseppe Colombo (1920–1984) — Italian mathematician`)
   - `R04b` `29.25–32.85` (`3.60 s`, `NASA`, `PIA16853`, `WHEN: 1965`)
-- **Rule checks across all 60 rows:**
-  - First chapter card: `C02` at `81.90 s` (strictly `> 0:45`).
-  - Consecutive `CODE` rows: **0**.
-  - Stills exceeding `MAX_REUSE = 2` non-adjacent appearances across the full film: **0** (`PIA15162`: 1, `PIA17386`: 2, `PIA16523`: 1, `PIA19411`: 2, `PIA11364`: 2, `PIA16853`: 2, `PIA23791`: 2, `pvo_uv_790205`: 1).
-- **Row `R09` (`82.20–93.80 s`) Venus provenance repair:**
-  - `PIA00271` (NASA Magellan *"Computer Simulated Global View of the Northern Hemisphere"*, `KIND_FAIL`) is **completely removed** from the shot table (`0` occurrences) and logged under Hard Rejects.
-  - Replaced with real Mariner 10 Venus (`PIA23791.jpg` right colour-enhanced globe cropped off divider) + verified 023-shelf Pioneer Venus Orbiter UV clouds (`pvo_uv_790205.jpg`, verified on archive NAS at `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/nasa_pool_v01/pioneer/pvo_uv_790205.jpg`, exact SHA-256 `f9d45efa36ac2bd00bc72f5abf8beedd0ee75d06c99c629012e27c87ee59db80`).
-  - J3829 invalidated the original PIA00233 acceptance: a 3-D reconstruction is KIND_FAIL. J3835 removes it from R11 and executable pool/cut inputs and selects verified real overhead SAR PIA00215. Exact path, hash, resolution and crop are in SHOT_LIST_v02.md and jobs/reviews/J3835/EVIDENCE.json. Independent review must verify this change.
-
+- **Full-table checks (60 rows):** First chapter card is `C02` at `81.90 s` (`> 0:45`); `0` consecutive `CODE` rows; `PIA00271` completely removed from `R09` (replaced with `PIA23791` right globe + verified 023-shelf `pvo_uv_790205`); `PIA00233` completely removed from `R11` (replaced with verified overhead SAR `PIA00215`).
+- **Required `J3023` assembly execution checklist (documented per `J3835` `HANDOFF.md`):**
+  1. `cuts_064_j3022_v01.json`, `pool_064_j3022_v01.json`, and `POOL_PROVENANCE_J3022_v01.json` already incorporate the `R11` `PIA00215` replacement and `PIA18033` Suomi NPP attribution, while still retaining the pre-`v02` opening (`R01–R04`) and `R09` (`PIA00271`) entries. `J3023` **must** generate `v02` executable cut/pool inputs synchronized to `SHOT_LIST_v02.md` (splitting `R01a–R04b`, removing `PIA00271` from `R09` -> `PIA23791` right globe + `pvo_uv_790205`), render `code_graphic_064_r03a_mercury_sunlight.mp4`, `code_graphic_064_r03b_mercury_night.mp4`, and the `01 / 08 · MERCURY` progress strip, and verify `picture_qa.py` PASS on the `v02` cut/pool files.
+  2. Never run the historical `build_j3022_plan_and_pool.py` script during assembly.
+  3. Credit `PIA18033` as `NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring (PIA18033)` and `PIA00215` as `NASA/JPL (PIA00215)` in the `11_Upload-Package` description Image Credits.
 
 ---
 
-## 5. Independent J3818 re-review required
+## 6. Overlapping PR Reconciliation (`#1358`, `#1359`, `#1361`) & Chief Handoff
 
-The unconditional KEEP and release recommendation are withdrawn by J3829. Review the J3835 correction PR together with #1358/#1359. Verify the required PIA00215 substitution, overhead radar provenance and crop, unchanged timing/VO and four thumbnail hashes, corrected Suomi NPP credits, and the populated proposed T045 row. Only the independent reviewer may issue the next KEEP/FIX. Confirm required merges separately and verify J3022 readiness before any J3023 advance. Ben watch Fri 11 Dec 18:00 London and planned air Wed 16 Dec 18:00 London remain unchanged.
+| PR | Branch | State / Action for Elected Chief (`codex`) |
+|---|---|---|
+| **PR `#1358`** | `gemini/J3817-owb064-thumbs-v02` | **SUPERSEDED — DO NOT MERGE.** Converted to Draft with warning comment. Chief: close PR `#1358` unmerged so its stale `PIA00233` optional wording, `Apollo 17` misattribution, and `THUMB_LEDGER.json` conflict are never restored. |
+| **PR `#1361`** | `macbook/J3835` (`9ff96bd97b`) | **READY TO MERGE.** Carries all 5 `J3817` files with `J3835` fixes applied, corrected `07_Edit-Project` files, updated `DECISION.md`, and `jobs/reviews/J3835/` evidence (`MERGE_TREE_CLEAN=YES` against `origin/main`). |
+| **PR `#1359`** | `gemini/J3818-owb064-review` | **READY TO MERGE (updated directly on top of `9ff96bd97b`).** Replaces the superseded pre-J3835 unconditional `KEEP` with this fresh post-J3835 `KEEP` review (1 commit ahead of `#1361`, modifying only `jobs/reviews/J3818/REVIEW.md`, zero conflicts). |
 
-The existing J3023 work still includes syncing opening/R09 executable inputs to SHOT_LIST_v02 and rendering its split Mercury graphics and progress strip. Historical v01 shot-list files are not current assembly instructions. Do not run the legacy plan builder blindly: it predates the opening/R09 repairs. PIA00233 is rejected, never an optional fallback.
+**Next steps for elected Chief (`codex`):**
+1. Issue formal Chief PASS on this `J3818` review and PR `#1361` (`9ff96bd97b`).
+2. Merge PR `#1361` then PR `#1359` (or merge PR `#1359` directly, which includes `9ff96bd97b`), and close superseded PR `#1358` unmerged.
+3. Clear `J3022`'s hold (ensuring `J3023` executes the `SHOT_LIST_v02.md` opening/`R09` sync + split Mercury graphics noted in §5) and advance `J3023` assembly ahead of Ben's **Fri 11 Dec 2026 18:00 London** watch deadline (planned air **Wed 16 Dec 2026 18:00 London**).
+4. `T045` remains `status: "proposed"` (`video: null`); no YouTube upload, scheduling, or Studio test arming occurs until after Ben's UAT watch.
