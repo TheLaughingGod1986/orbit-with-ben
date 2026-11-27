@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
 | J3760 | mini | blocked | gemini | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
-| J3769 | mini | blocked | macbook | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
+| J3769 | mini | open (after J3415) | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3776 | mini | blocked | gemini | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
 | J3778 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-26 |  |
 | J3779 | mini | blocked | gemini | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -108,6 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3877 | mini | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3878 | mini | open | – | – | 032 edit · qa · Titan Short v03: exact-file playback QA after J3865 corrections | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
+| J3879 | any | open | – | – | review · Verify condition for J3780 |  |
 
 Recently finished:
 
