@@ -355715,9 +355715,14 @@
           "at": "2026-11-27T07:45Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:45Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publish the finished script review through Claude Code",
+      "remaining_action": "Read J3834 job history and evidence",
       "kind": "review",
       "recheck_of": "J3834",
       "due": "2026-11-27T08:44:25+00:00",
@@ -355735,8 +355740,11 @@
         "of": 3,
         "at": "2026-11-27T07:45Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3834 history",
+          "Check publish condition",
+          "Record outcome"
+        ]
       }
     }
   ],
