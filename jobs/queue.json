@@ -360853,13 +360853,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T16:11Z",
-      "eta": "2026-11-27T18:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T15:43Z",
-      "result": "",
+      "result": "parked for Chief: WW2:005 v05 uploaded Private as aW1cF9DPcY8 (publishAt 2026-12-03T17:00:00Z, HD processed PT14M47S, en-GB captions serving, 3-way Thumbnail-only T&C A/B/C saved, Altered content=Yes, Not made for kids, playlist PLPPi-oWEDYtA pos 4 after 54sAav3iMQw, End Screen Subscribe+PLPPi-oWEDYtA 14:26:04-14:46:05 verified after Studio 9223 reload). Review and merge ww2-channel PR #210 (gemini/J3920-ww2-005-upload, 618460f), close J3920, and queue post-publish check/pin (2026-12-03T17:05Z) + 48h read (2026-12-05T17:05Z).",
       "history": [
         {
           "at": "2026-11-27T15:43Z",
@@ -360905,6 +360905,11 @@
           "at": "2026-11-27T16:23Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Studio 9223 reload + Data API readback verified complete for aW1cF9DPcY8: Private scheduled 2026-12-03T17:00:00Z, HD processed (PT14M47S), en-GB captions serving, 3-way Thumb T&C (mqdefault_custom_1/2/3), Altered content=Yes, Not made for kids, playlist PLPPi-oWEDYtA pos 4, End Screen Subscribe+PLPPi-oWEDYtA (14:26:04-14:46:05)."
+        },
+        {
+          "at": "2026-11-27T16:24Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: WW2:005 v05 uploaded Private as aW1cF9DPcY8 (publishAt 2026-12-03T17:00:00Z, HD processed PT14M47S, en-GB captions serving, 3-way Thumbnail-only T&C A/B/C saved, Altered content=Yes, Not made for kids, playlist PLPPi-oWEDYtA pos 4 after 54sAav3iMQw, End Screen Subscribe+PLPPi-oWEDYtA 14:26:04-14:46:05 verified after Studio 9223 reload). Review and merge ww2-channel PR #210 (gemini/J3920-ww2-005-upload, 618460f), close J3920, and queue post-publish check/pin (2026-12-03T17:05Z) + 48h read (2026-12-05T17:05Z)."
         }
       ],
       "remaining_action": "Committing WW2 PR for status.json, UPLOADS.json, PACKAGE_MANIFEST.json, and readback receipt",
