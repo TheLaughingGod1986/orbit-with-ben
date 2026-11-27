@@ -354589,15 +354589,20 @@
           "at": "2026-11-27T06:06Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026, tied-fewest Shorts built at 2) with unused verbatim myth-bust question lift S44+S45+S46+S52 ('Is Titan just a dry desert?', 65w, 26.90s)"
+        },
+        {
+          "at": "2026-11-27T06:08Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Locked OWB:032 Titan Short #2 design: 'Is Titan Just a Dry Desert?' (S44+S45+S46+S52, 65w, 26.90s), 10 full-bleed shots (Cut 1=1.900s, Cut 2=4.733s, max=3.767s, payoff=78.1%, tail=0.660s), distinct Frame 0 SVS20311_DF_Open_1080 @ 1.80s, animated 2-ocean depth Teach graphic"
         }
       ],
-      "remaining_action": "Inspecting 032 Titan SVS clips and Cassini plates to lock distinct Frame 0 and 9:16 EDL",
+      "remaining_action": "Writing assembler script for 032 Titan Short #2 (dry_desert_two_oceans v01) and running dry-build + 7 gates",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T06:06Z",
+        "at": "2026-11-27T06:08Z",
         "by": "gemini",
         "plan": [
           "Select film & locked passage",
@@ -354606,7 +354611,7 @@
           "Run all ship & QA gates",
           "Commit, PR & post #99 report"
         ],
-        "note": "Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026, tied-fewest Shorts built at 2) with unused verbatim myth-bust que"
+        "note": "Locked OWB:032 Titan Short #2 design: 'Is Titan Just a Dry Desert?' (S44+S45+S46+S52, 65w, 26.90s), 10 full-bleed shots "
       },
       "taskKeys": [
         "OWB:032"
