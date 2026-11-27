@@ -363259,9 +363259,14 @@
           "at": "2026-11-27T18:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:57Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3942; inspecting J3780 hold, prior rechecks J3879/J3887, capabilities, and HOS PR #797"
         }
       ],
-      "remaining_action": "Verify readiness: Listen independently to both Shorts voiceovers, then rule and merge if passed",
+      "remaining_action": "Verify whether an independent non-producer reviewer with audio_input can hear HOS 128 Shorts VO",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -363280,11 +363285,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T18:56Z",
+        "at": "2026-11-27T18:57Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3780 hold, PR #797, and capability probes",
+          "Check non-producer audio_input readiness",
+          "Record J3780 wait or reopen and finish J3942"
+        ],
+        "note": "Claimed J3942; inspecting J3780 hold, prior rechecks J3879/J3887, capabilities, and HOS PR #797"
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3943",
