@@ -355536,13 +355536,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T07:42Z",
-      "eta": "2026-11-27T09:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:34Z",
-      "result": "",
+      "result": "parked for Chief: J3816 condition NOT satisfied. Publish part done: codex/J3816 (2922143e) pushed by Claude Code, draft HOS PR #811 (do not merge as approved). Repair part unmet: no v03 on NAS or main; opener still FAIL 1.14<1.50, terminal reuse FAIL; no Short PASS. Worker cannot record --recheck. Chief run: python3 scripts/jobs.py wait J3816 --agent codex --type input --condition 'HOS 009 apple Short v02 (draft PR #811) needs repair: opener-motion FAIL 1.14<1.50 and terminal-return reuse FAIL; recut per 10_Shorts/J3816/REPORT.md, re-run gates, then Short review. No spend or upload.' --check-at '2026-11-27T20:00Z' --recheck J3864 --git",
       "history": [
         {
           "at": "2026-11-27T07:34Z",
@@ -355568,6 +355568,11 @@
           "at": "2026-11-27T07:43Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Condition partly met: codex/J3816 now published as draft HOS PR #811. Repair is NOT done: there is no v03, the opener still fails at 1.14 (needs 1.50) and the terminal reuse still fails."
+        },
+        {
+          "at": "2026-11-27T07:43Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3816 condition NOT satisfied. Publish part done: codex/J3816 (2922143e) pushed by Claude Code, draft HOS PR #811 (do not merge as approved). Repair part unmet: no v03 on NAS or main; opener still FAIL 1.14<1.50, terminal reuse FAIL; no Short PASS. Worker cannot record --recheck. Chief run: python3 scripts/jobs.py wait J3816 --agent codex --type input --condition 'HOS 009 apple Short v02 (draft PR #811) needs repair: opener-motion FAIL 1.14<1.50 and terminal-return reuse FAIL; recut per 10_Shorts/J3816/REPORT.md, re-run gates, then Short review. No spend or upload.' --check-at '2026-11-27T20:00Z' --recheck J3864 --git"
         }
       ],
       "remaining_action": "Park this verification for Chief with the exact wait command",
