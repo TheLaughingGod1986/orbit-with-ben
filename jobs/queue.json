@@ -356035,20 +356035,35 @@
           "at": "2026-11-27T08:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:25Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3869; verified locked NARRATION_v02.txt SHA-256 0f8afe812b5c259a3c8f0a386438c9247c74dd6dc1920476f9fdb49d35e13d62"
         }
       ],
-      "remaining_action": "Gather full-resolution archive pictures and verify their dates and contents",
+      "remaining_action": "Inspecting WW2 picture/thumbnail conventions and starting full-res archive harvest for WW2:016",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T08:24Z",
+        "of": 6,
+        "at": "2026-11-27T08:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Harvest full-res archive to NAS & resolve #26/#29",
+          "Inspect pixels, dedupe & verify dates/insignia",
+          "Build shot list with Dec cold-open & >=60% archive",
+          "Render clean per-shot code maps & inspect",
+          "Build 3 archive thumbnails + 168px sheet & inspect",
+          "Update provenance/status, open PR & queue Chief review"
+        ],
+        "note": "Claimed J3869; verified locked NARRATION_v02.txt SHA-256 0f8afe812b5c259a3c8f0a386438c9247c74dd6dc1920476f9fdb49d35e13d6"
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     },
     {
       "id": "J3870",
