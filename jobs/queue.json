@@ -359813,6 +359813,11 @@
           "at": "2026-11-27T16:35Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T16:00:00Z"
+        },
+        {
+          "at": "2026-11-27T17:55Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Restore narration, complete independent review, then obtain Chief approval before phone watch",
@@ -359844,7 +359849,8 @@
         "last_recheck": "J3925",
         "checked_at": "2026-11-27T16:35:27+00:00",
         "checked_by": "codex"
-      }
+      },
+      "escalated_at": "2026-11-27T17:55Z"
     },
     {
       "id": "J3904",
@@ -360483,6 +360489,11 @@
           "at": "2026-11-27T14:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3910 independent recheck complete in PR #1395 (jobs/reviews/J3910/REVIEW.md, 8adb0bd50f). Master v03 (d59057ae) and vertical trailer v05 (e57cd79a) are both KEEP (exact 24/1 CFR, start_pts 0, clean decode, byte-identical audio vs preserved v01 771d1f2a, 53 vertical stills verified, locked callouts/sources, manifest/dry-run PASS cat 28, LF CSV, portrait credits/hashes, 13/13 privacy tests). Recommend FIX (tiny £0 metadata-only cleanup on PR #1390 cea1494ff6, zero video re-render): POOL_PROVENANCE_J3023_v02.json still lists retired/forbidden Five_Minutes_in_Orbit.webm and JPL-20210222-M2020f-0001.mp4 in active_assets (84 vs 82 active cuts) with colliding intervals and omits [312.79, 318.57] on PIA24542_full.jpg. Also note minor production-status.md/description-order hygiene and duplicate PR #1393. Elected Chief ruling required before PR #1390 merge and J3023 UAT handoff."
+        },
+        {
+          "at": "2026-11-27T17:55Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Parked for elected Chief ruling on PR #1395 (J3910 independent recheck — master & trailer KEEP, provenance active-set FIX)",
@@ -360514,7 +360525,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "escalated_at": "2026-11-27T17:55Z"
     },
     {
       "id": "J3911",
@@ -360911,6 +360923,11 @@
           "at": "2026-11-27T15:06Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3012 condition NOT met. J3900 delivered the cancellation/descendant-drain fix as PR #1389 (head 5631f820b0, includes unmerged #1387; macbook-2 reports 62 mocked tests pass), but PR #1389 is OPEN with 0 reviews and 0 comments, and no Chief re-review of the changed head is recorded in the queue, the thread or jobs/reviews/J3012. J3012 stays blocked at 3/4; no live activation, no merge. Recording the recheck is Chief-only. Chief: review PR #1389 at 5631f820b0; if FIX/pending run: python3 scripts/jobs.py wait J3012 --agent <chief> --condition 'Elected Chief re-reviews PR #1389 at 5631f820b0 (J3900 cancellation and persisted-descendant drain fixes plus regression tests) before a separate live coordination child. Preserve 3/4 and all gates. No live activation.' --check-at '2026-11-27T19:00Z' --type input --recheck J3915 --git, then finish J3915."
+        },
+        {
+          "at": "2026-11-27T17:55Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief re-review of PR 1389, then record the J3012 wait",
@@ -360937,7 +360954,8 @@
           "Record result and park for Chief"
         ],
         "note": "Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0"
-      }
+      },
+      "escalated_at": "2026-11-27T17:55Z"
     },
     {
       "id": "J3916",
