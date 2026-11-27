@@ -1,5 +1,5 @@
 {
-  "next_id": 3835,
+  "next_id": 3836,
   "jobs": [
     {
       "id": "J0001",
@@ -352791,6 +352791,36 @@
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the corrected Operation Pedestal script before recording"
+    },
+    {
+      "id": "J3835",
+      "title": "OWB 064: correct R11 reconstruction and Earth attribution after J3829 FIX",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Acting-Chief FIX from J3829 for OWB:064. Read jobs/reviews/J3829/REVIEW.md (codex/J3829-condition-review) and current PRs #1358/#1359. Correct SHOT_LIST_v02 R11: PIA00233 is a 3D terrain reconstruction and must be replaced, not optionally retained. Select and verify a real nadir radar shelf alternative PIA00215/PIA00240/PIA00241 via official source, exact local hash, resolution and fit; preserve locked VO and timing. Correct the rejection/provenance wording. Correct PIA18033 attribution from Apollo 17 to NASA/NOAA Suomi NPP Blue Marble 2012 in packaging records, preserving existing thumbnail pixels/hashes. Update the review evidence to remove unconditional KEEP and optional-swap wording. Preserve populated T045 proposed row when resolving the PR #1358 conflict. Use an isolated worktree, publish corrected records, and hand back to independent J3818 review; do not self-PASS or release J3022/J3023. No generation, spend, upload, schedule, test arming or locked VO changes. All Ben watch/date gates remain intact. Full rationale is also in the J3829 studio thread report; do not wait for its documentation PR if the brief is sufficient. Deliver corrected exact files and hashes plus PR links for independent review by 27 Nov 12:00 London.",
+      "ref": "J3829",
+      "film": "064",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T01:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T01:08Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Replace the reconstructed Venus view and correct the Earth image credit for independent review",
+      "due": "2026-11-27T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Correct the Venus picture choice and Earth image credit in the every-planet film"
     }
   ],
   "focus": [
