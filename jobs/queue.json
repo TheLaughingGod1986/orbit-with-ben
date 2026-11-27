@@ -351387,10 +351387,10 @@
       "stage": "thumbs",
       "after": "J3817",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T00:19Z",
+      "eta": "2026-11-27T02:19Z",
       "created_by": "macbook",
       "created_at": "2026-11-26T23:45Z",
       "result": "",
@@ -351404,6 +351404,11 @@
           "at": "2026-11-26T23:47Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-27T00:19Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspect exact J3719_v02 thumbnail files at full size and 168x94, verify SHOT_LIST_v02 opening <=4s and R09 PIA00271 removal, and write KEEP/FIX review",
@@ -351417,7 +351422,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T00:19Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3819",
