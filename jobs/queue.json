@@ -351366,18 +351366,27 @@
           "at": "2026-11-27T01:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:19Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Prepare the next HOS Short from approved existing material",
+      "remaining_action": "Check which locked film needs another search-titled Short",
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:18Z",
+        "of": 4,
+        "at": "2026-11-27T01:19Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check existing Shorts and source files",
+          "Build the unused excerpt",
+          "Run gates and review evidence",
+          "Post the handoff"
+        ]
       }
     },
     {
