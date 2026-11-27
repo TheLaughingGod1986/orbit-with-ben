@@ -358,7 +358,11 @@ def _ask_answered(entry: dict, checks: dict) -> bool:
     ver = entry.get("version") or ""
     tver = str(tick.get("version") or "")
     same = not ver or not tver or tver == ver
-    return bool(same and tick.get("verdict") in ("ok", "change"))
+    # Ben's answer on a later cut answers the earlier one too (27 Nov 2026: J2996 still asked for pilot 2 v05 "by 18:00"
+    # three days after Ben OK'd v06 and it went public).
+    nums = [re.search(r"\d+", v) for v in (ver, tver)]
+    newer = all(nums) and int(nums[1].group()) > int(nums[0].group())
+    return bool((same or newer) and tick.get("verdict") in ("ok", "change"))
 
 
 def _matching_card_key(entry: dict, videos: list[dict]) -> str:
