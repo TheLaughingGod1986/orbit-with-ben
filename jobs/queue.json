@@ -357901,13 +357901,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T11:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T11:29Z",
-      "result": "parked for Chief: review and merge PR #1381 (gemini/J3889-032-short2-package, commit 72e770a51b) and mark J3889 done; yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z verified in API and Studio",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T11:29Z",
@@ -357953,6 +357953,11 @@
           "at": "2026-11-27T11:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1381 (gemini/J3889-032-short2-package, commit 72e770a51b) and mark J3889 done; yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z verified in API and Studio"
+        },
+        {
+          "at": "2026-11-27T12:01Z",
+          "by": "codex",
+          "what": "reopened: Chief review KEEP: PR 1381 merged after full eight-file review, 13 safety tests PASS, exact master/cover hashes match Ben-approved v03, fresh API confirms yDwDH-MV2wc Private for 2026-12-21T11:30:00Z with captions/custom cover; parent T3cBBss1F60 Public. Reopening solely to record completion; never upload again. Review milestones 1 and 2 completed; relay progress rejected because active review record absent."
         }
       ],
       "remaining_action": "Push PR branch, open PR for Chief merge, post studio thread report, and park J3889 for Chief",
@@ -357975,20 +357980,6 @@
         "at": "2026-11-27T11:29:02.692Z",
         "version": "v03",
         "handled": true
-      },
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-27T11:47Z",
-        "by": "gemini",
-        "plan": [
-          "Verify v03 files, gates, and Dec 21 slot",
-          "Build Short 2 listing package and dry-run",
-          "Upload Private 2026-12-21T11:30Z and set Studio cover/Related",
-          "Read back API/Studio state and update UPLOADS/library",
-          "Open PR for Chief merge and report"
-        ],
-        "note": "API readback (jobs/reviews/J3889/API_READBACK.json, jobs/readbacks/J3889.json), UPLOADS.json, and shorts_open_library/li"
       },
       "taskKeys": [
         "OWB:032"
