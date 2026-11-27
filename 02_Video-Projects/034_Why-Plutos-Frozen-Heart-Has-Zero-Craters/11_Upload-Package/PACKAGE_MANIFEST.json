@@ -4,14 +4,11 @@
   "episode": "034",
   "slug": "034_Why-Plutos-Frozen-Heart-Has-Zero-Craters",
   "series": "Real Worlds",
-  "status": "review_pending_J3115",
+  "status": "packaging_PASS_J3115",
   "titleIndex": 1,
   "title": "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)",
   "titleAbc": [
-    "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)",
-    "Why Pluto's Frozen Heart Has Zero Craters",
-    "The Only Spacecraft Photos Ever Taken of Pluto",
-    "New Horizons Pluto Images: A Heart With Zero Craters"
+    "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)"
   ],
   "titlesFile": "Titles/pluto_frozen_heart_titles_v01.txt",
   "descriptionFile": "Descriptions/pluto_frozen_heart_long_description_v01.txt",
@@ -34,7 +31,7 @@
       "source_sha256": "257757c3f7a481a677f2932749a8bf3b93c0874ae3a6ed5eead6ea718d7825a1",
       "hook": "NITROGEN GLACIER",
       "maker": "codex",
-      "status": "DRAFT_REVIEW_NOT_APPROVED",
+      "status": "PASS_J3115",
       "role": "Whole globe with 3.5 px circular limb feather, no rectangular paste seam. 560 px diameter prioritises whole limb and text clearance under J3112. Planet diameter explicitly labelled; no glacier caliper."
     },
     "B": {
@@ -44,7 +41,7 @@
       "source_sha256": "e3c18859009cc3dc9c30ce0c7a371d46101c7d6c8f7dc0ed853fb0021b54da89",
       "hook": "ICE MOUNTAINS",
       "maker": "codex",
-      "status": "DRAFT_REVIEW_NOT_APPROVED",
+      "status": "PASS_J3115",
       "role": "Cold blue/silver editorial grade, not true colour. 18% horizontal crop retains haze and mountain/plain boundary. Approximate scene-width scale, not a local foreshortened terrain measurement."
     },
     "C": {
@@ -54,7 +51,7 @@
       "source_sha256": "b574be3f199b8b305efdce747f372d59a3acd484faf125199a7cf249da671c12",
       "hook": "FLOWING ICE",
       "maker": "codex",
-      "status": "DRAFT_REVIEW_NOT_APPROVED",
+      "status": "PASS_J3115",
       "role": "Warm cream/rust/charcoal editorial grade, not natural colour; actual cellular plain and shoreline. Smooth navy top vignette and lower-left scale pad. Full 400 km source width retained; approximate scene reference."
     }
   },
@@ -113,15 +110,15 @@
       "status": "Ben OK 18 Nov 2026 (J2868/J3065); held until 034 Pluto long is public"
     }
   ],
-  "notes": "J3114 applies panel text and controlling J3112 fixes. Three revised thumbnail concepts await exact-file Chief review J3115; no arms locked. Ben long UAT J2868.1 remains required, watch-by 8 Dec 18:00 London, proposed 13 Dec 18:00 slot. Shorts holds unchanged.",
+  "notes": "J3115 approves the exact three J3105_v02 thumbnails and fixed search-first title. J3119 owns Private scheduled delivery for 13 Dec 18:00 London. Ben long v02 approval is recorded in J3119. No duplicate watch card. Shorts public-parent holds and current J3123 scheduling records remain unchanged.",
   "chiefDecision": {
-    "job": "J3112",
+    "job": "J3115",
     "agent": "codex",
-    "verdict": "FIX",
-    "record": "jobs/reviews/J3112/REVIEW.md",
-    "rebuildJob": "J3114",
-    "finalReviewJob": "J3115",
-    "deliveryRequires": "Exact-file packaging PASS and Ben UAT approval of long v02 on J2868.1",
-    "finalArmsLocked": false
+    "verdict": "PASS",
+    "record": "jobs/reviews/J3115/REVIEW.md",
+    "finalArmsLocked": true,
+    "testType": "thumbnail_only",
+    "deliveryJob": "J3119",
+    "deliveryRequires": "Exact v02 master hash, Ben approval recorded in J3119 approved_from (18 Nov 22:16Z), all release gates and no existing test."
   }
 }

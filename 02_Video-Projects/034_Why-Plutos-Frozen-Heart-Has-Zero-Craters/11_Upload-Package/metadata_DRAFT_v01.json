@@ -1,5 +1,5 @@
 {
-  "status": "review_pending_J3115",
+  "status": "packaging_PASS_J3115",
   "series": "Real Worlds",
   "source_script": "01_Script/pluto_frozen_heart_script_master_v03.md",
   "description_file": "Descriptions/pluto_frozen_heart_long_description_v01.txt",
@@ -141,7 +141,7 @@
   ],
   "launch_plan": {
     "test": "Day-1 YouTube Test & Compare, A/B/C (LEARNINGS rules 12, 14, 19); future authorised publishing job only after packaging panel, Chief decision, and Ben UAT watch",
-    "decision": "J3112 FIX implemented by J3114; J3115 must review exact files and lock three distinct picture arms before gated delivery.",
+    "decision": "J3115 PASS: thumbnail-only A/B/C with the same lead title; alternate titles are unused reserves.",
     "shared_design": "One large focal point, scale visible at 168x94. House heavy sans (Arial Black), one yellow hook word (#ffe119), other words white, dark outline, top band clear of subject, no Orbit. Grade (mean saturation >=100; near-black <=30%) and phone-preview gates passed in J3105.",
     "concepts": [
       {
@@ -183,16 +183,15 @@
     ]
   },
   "pre_upload_holds": [
-    "Packaging panel (Codex, Gemini, Cursor) and Chief decision required before locking final title and thumbnail Test & Compare arms.",
-    "Ben UAT watch on J2868 (watch-by 8 Dec 2026 18:00 London for planned Sun 13 Dec 2026 18:00 London slot) required before any live YouTube upload or scheduling.",
-    "Shorts J3066 (Mon 21 Dec 11:30 London) and J3065 (Wed 23 Dec 11:30 London) remain held until the 034 Pluto long is public."
+    "J3119 must verify exact master and thumbnail hashes, release gates and fresh Studio state before Private scheduled delivery. Preserve Shorts public-parent holds and current J3123 schedule records."
   ],
   "pre_upload_holds_resolved": [
     "Resolved in J3106: Verified Long Master v02 SHA-256 e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62 (646.933 s, 19,408 frames @ 30/1 CFR) unchanged against J2868/J3087.",
     "Resolved in J3106: Replaced all ?:?? chapter timestamps from actual final cut cuts_v02.json / shot_list_v02.csv (0:00, 1:06, 2:41, 4:26, 6:15, 7:41, 9:05).",
     "Resolved in J3106: Verified YouTube autocomplete search demand ('why does pluto have a heart', 'pluto heart', 'new horizons pluto') and zero title collisions across 281 channel videos and public YouTube search.",
     "Resolved in J3106: Removed obsolete future-film promise for paused 035 Triton ('Next in the series: Why Neptune's Largest Moon Orbits Backwards') per J2864 / LEARNINGS rule 34, pointing the Real Worlds series line to scheduled 033 Uranus ('More in the Real Worlds series: Why Knocked-Sideways Uranus Has 21-Year Winters').",
-    "Resolved in J3106: Added complete 6-entry Sources line from SOURCES.md, full 67-asset NASA/Commons/CC Image credits from cuts_v02.json + full_frame_graphics.py + J3105 thumbnails, honest making-of disclosure, 189-cue en-GB.srt captions from stt_timeline_offset_v02.json, and 52.500 s vertical trailer (sha256 01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd)."
+    "Resolved in J3106: Added complete 6-entry Sources line from SOURCES.md, full 67-asset NASA/Commons/CC Image credits from cuts_v02.json + full_frame_graphics.py + J3105 thumbnails, honest making-of disclosure, 189-cue en-GB.srt captions from stt_timeline_offset_v02.json, and 52.500 s vertical trailer (sha256 01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd).",
+    "J3115 exact-file packaging PASS; J3119 approved_from records Ben long v02 approval at 2026-11-18T22:16Z. Thumbnails are approved by elected Chief codex under AGENTS.md; no separate Ben thumbnail approval required."
   ],
   "line_check": {
     "method": "Every public-facing sentence, chapter and tag checked against locked pluto_frozen_heart_script_master_v03.md and verified SOURCES.md quote tables (J2149, 4 Nov 2026; J2868/J3087 v02 master).",
