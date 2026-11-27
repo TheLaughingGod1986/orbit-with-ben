@@ -30,9 +30,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
-| J3308 | mini | blocked | gemini | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
-| J3309 | mini | blocked | gemini | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
-| J3310 | mini | blocked | gemini | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
@@ -69,10 +66,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
 | J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
-| J3760 | mini | blocked | gemini | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
+| J3760 | mini | blocked | codex | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
 | J3776 | mini | blocked | gemini | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
-| J3778 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-26 |  |
-| J3779 | mini | blocked | gemini | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J3779 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3780 | any | blocked | codex | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |
 | J3781 | mini | blocked | codex | – | HOS:136 vo · for codex · chief · `gpt-6-astra` · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
@@ -81,41 +77,96 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3819 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
-| J3834 | any | blocked | codex | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J3857 | mini | open | – | – | for claudecode · review · Publish completed Chief review record for J3853 |  |
-| J3858 | mini | blocked | gemini | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
-| J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
-| J3860 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-27 |  |
-| J3866 | any | open | – | – | for claudecode · review · Publish completed Chief review record for J3856 |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
-| J3873 | mini | open | – | – | for claudecode · review · Publish completed J3864 Chief ruling through designated route |  |
 | J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3883 | mini | blocked | codex | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
-| J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
-| J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
-| J3901 | mini | blocked | macbook | – | review · Verify condition for J3834 |  |
-| J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
-| J3904 | mini | claimed | gemini | 2026-11-27T16:25Z | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
-| J3906 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
-| J3907 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3910 | mini | open (after J3909) | – | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
+| J3903 | mini | blocked | gemini | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
+| J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
+| J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
+| J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
+| J3917 | mini | blocked | gemini | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
+| J3923 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
+| J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
+| J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
+| J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
+| J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
+| J3933 | mini | blocked | codex | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
+| J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
+| J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
+| J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
+| J3941 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
+| J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
+| J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
 
 Recently finished:
 
-- J3909 done: OWB 064: Repair vertical trailer and package after J3902 FIX (Repair delivered: PR #1393 open; PR #1390 updated to cea1494ff604cb5a07ed10b5368ab87398faea7e. Trailer v05 e57cd79a668d558e2ee451f31b85bb81b515d3169150484112b73bd2b57646ce, 8800139 bytes; exact 24/1 CFR/start PTS 0; 44 stills inspected; original AAC identical; full decode clean. Immutable hashes verified, provenance/credits/LF/category repaired. Final package dry run ok; 13 privacy checks pass; diff clean. Temporary worktree returned to main and removed; original checkout on main. J3910 independent recheck and Chief approval required; no PASS/merge/UAT/platform changes.)
-- J3908 done: Verify condition for J3859 (Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved.)
-- J3905 done: Verify condition for J3023 (Chief verification complete: condition unmet. Existing J3902 master KEEP/package FIX ruling stands. PR1390 OPEN at 81e0cdfc13; J3909 repairs package, J3910 independently rechecks after J3909, then elected Chief must approve and merge revised PR1390. J3023 remains dependency-held, last_recheck J3905, next check 2026-11-28T14:30Z. Ben watch 11 Dec 18:00 and air 16 Dec 18:00 London unchanged. No package PASS, UAT release, spend or YouTube changes.)
-- J3902 done: OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) (Chief ruling: KEEP master v03 d59057ae unchanged; package FIX, no PASS or merge of PR1390. Confirmed trailer clipping and provenance/portrait-credit defects. J3909 owns package repair; J3910 independently rechecks after J3909. J3023 remains held until recheck KEEP and elected-Chief merge, next check 2026-11-28T14:30Z. No UAT release, spend or upload. Ruling local commit 8f98ad1311; automatic review rejected document push as internal-workflow data egress. User explicit review priority recorded to resolve plan-pacing claim filter; review now complete.)
-- J3900 done: J3012: preserve cancellation and descendant drain in recovery (Implemented cancellation and persisted-descendant recovery safety fixes in 5631f820b; PR #1389 includes unmerged #1387 plus the scoped correction. All 62 mocked cutover/control tests and diff check pass. No live activation or merge; J3012 remains held for Chief re-review and a separate live coordination child. Checkout returned to main.)
-- J3899 done: Verify condition for J3012 (Chief FIX: PR1387 comment 7219162024; 55 existing tests pass but three mocked probes fail cancellation and persisted-descendant drain. J3900 queued for correction/regression tests; J3012 stays held 3/4 with 15:00Z recheck. Local evidence commit 673850aaa4; automatic review refused evidence-branch publication, retained locally. No live change.)
-- J3898 done: OWB 064: Publish accepted integration records from J3883 (Published J3883 integration: PR #1388 merged a09c483f3e (re-applied 034d41fbc5 end state onto current main; newer history kept). Read-back: J3022/J3818 done (done_ref J3883 REVIEW.md), J3023 open after=J3022 with full v02 handoff, 064 picture/thumbs PASS, REVIEW.md sha256 matches. J3883 left for elected-Chief closure. Report: issues/1353#issuecomment-7218599463)
-- J3897 done: Verify condition for J3022 (Chief ruling: condition PARTLY MET; J3022 remains held. Verified PRs 1359/1361 merged 9b3ca6cb52, 1358 closed unmerged, and J3883 formal KEEP comment 7215924852. Integration commit 034d41fbc5 remains only on codex/J3883-integration; required completion and assembly handoff records are not on main. Delegated privacy-reviewed publication/merge and read-back to Claude Code as J3898, due 27 Nov 16:31Z. Parent updated with --recheck J3897, dependency J3898 and existing integration retry 16:31:06Z. J3023 stays dependent on J3022; no spend, generation or YouTube changes authorized.)
-- J3896 done: J3012: complete remote cutover result and resume controls (Implemented authenticated thread result, explicit resume and bounded independent recovery protocol in PR #1387 (56f80d636). 86 mocked and launcher/security checks passed; exact source hashes and local mocked receipt recorded. Chief review required before separate live coordination child; J3012 stays 3/4. No live cutover or rehearsal queue run. Temporary worktree returned to main then removed; worker checkout on main.)
-- J3894 done: Verify condition for J3532 (Chief review complete: condition NOT MET. Exact PR1384 merged ce561a745da89b4a849953ea8d723c375ef8ee48 after 13 privacy tests and channel_check. Existing trusted protected-history ruling retained. J3532 stays blocked via wait --recheck J3894 until 2026-11-30T12:00:00Z; require explicit protected-desk exception, then fresh backup/rehearsal, quiet writer window and day-before notice. No rewrite, spend or publishing change. No duplicate request to Ben.)
+- J3948 done: Verify condition for J3923 (Condition partly met: J3922 done, J3923 QA KEEP in PR #1412, NAS v03 sha256 538464b9 re-verified. Unmet: no elected-Chief ruling; PR #1399 and #1412 OPEN, unmerged. J3923 kept blocked with typed wait --recheck J3948, next check 2026-11-28T07:00Z. J3903 hold unchanged. No media, YouTube or spend changes.)
+- J3945 done: First-day check at 6 h: "WW2 U-Boats: Why They Could Not Stay Underwater" (ZCnSldSJzME) ("WW2 U-Boats: Why They Could Not Stay Underwater" (ZCnSldSJzME) · Field Order History · Short · went live Fri 27 Nov 12:30 London
+At 6 h: views 746 · shown in feed about 1305 (from 731 feed views) · stayed to watch 56.0% · average viewed 66.4%
+
+Verdict: UNKNOWN
+  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
+
+Do now
+  - Read it again from tomorrow morning's snapshot.)
+- J3944 done: Verify condition for J3941 (Condition not met: PR #1411 OPEN, unmerged, 0 reviews (checked ~18:35Z). J3940 done. J3941 kept blocked; wait recorded (input) for Chief merge, next check 2026-11-27T22:30Z, --recheck J3944.)
+- J3943 done: Verify condition for J3834 (KEEP publication finding with timestamp/authorization qualifications in merged OWB PR1409. Independently verified ww2 PR213 OPEN at exact d734610. Reopened J3834 only for elected-Chief merge and main hash verification; updated remaining action. J3838 dependency, 30 Nov 10:50 UTC date and live-credit checks unchanged; J3581/J3582 unchanged. No second job taken, no VO/upload/spend. Relay review-progress unavailable without active.json; own review milestones recorded on queue.)
+- J3942 done: Verify condition for J3780 (Condition UNMET for J3780 (HOS:128 Shorts S01/S02 independent non-producer VO listen). Live 27 Nov 18:55-18:59Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) have capabilities available=[]; claude down until 2026-11-27T21:50:00Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56:00Z relay probe PASS 1.00 + 18:58Z direct read_file session probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671/HOS PR #797 and is barred by the non-producer guard. Freshly verified: HOS PR #797 OPEN/MERGEABLE (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, zero media); 5/5 SHA-256 hashes match (SHORTS_SCRIPTS_v03.md + both tight WAV/MP3 masters); HOS:128 status.json unchanged (J3670 waits for 30 Nov 10:50:31Z ElevenLabs reset); zero new desk/thread rulings. Recorded typed capability wait directly on J3780 as verifier (--type capability --requires audio_input --recheck J3942 --check-at 2026-11-28T09:00:00Z). Reports posted: HOS desk #694 (#7226081113) and OWB thread #1353 (#7226081527). £0 / 0 credits spent.)
+- J3940 done: First-day check at 48 h: "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) (PR #1408 (branch macbook/J3940; read-only Studio check via CDP 9223, no faults, £0).
+
+"What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) · Orbit With Ben · long · went live Wed 25 Nov 18:00 London
+At 48 h: views 5 · impressions 15 · click rate 0.0% · average viewed 4.0%
+Usual for this channel: click rate 2.2%, average viewed 14.5%
+
+Verdict: USUAL
+  - 5 views at 48 h; the last 3 checked at the same age had 8 (median).
+  - By the next morning it had 4 views; the 8 before it had 2 (median).
+
+Do now
+  - Nothing to fix.)
+- J3939 done: First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) (PR #1405 (macbook/J3939, commit c415dfe73; 0 faults: Public, Shorts tab, Restrictions empty, not Made for Kids, no age restriction, HD done, Related c5AdqQsnnys, title+description exact manifest match; Studio typical range 20-210 so --typical omitted; no Shown in feed card so --shown omitted; 48 engaged views, 1 like; read-only, £0).
+
+"The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) · Orbit With Ben · Short · went live Fri 27 Nov 11:30 London
+At 6 h: views 151 · Studio rank 7 of 10 · shown in feed about 432 (from 143 feed views) · stayed to watch 33.1% · average viewed 62.5%
+Usual for this channel: stayed to watch 33.8%, average viewed 67.0%
+
+Verdict: USUAL
+  - 151 views at 6 h; the last 10 checked at the same age had 214 (median).
+  - Studio ranks it 7 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - "Star" was in the title of 3 earlier Shorts: they had 16 views by the next morning (median), against 174 for all Shorts.
+  - It is a second upload of the same video (it replaced A6TW_6CXhcs).
+
+Do now
+  - Nothing to fix.)
+- J3938 done: First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) ("Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) · History of Science · Short · went live Fri 27 Nov 11:30 London
+At 6 h: views 2 · Studio rank 8 of 10 · shown in feed about 1 (from 1 feed views) · stayed to watch 0.0% · average viewed 0.0%
+Usual for this channel: stayed to watch 29.0%, average viewed 69.0%
+
+Verdict: BEHIND, not shown
+  - 2 views at 6 h; the last 6 checked at the same age had 33 (median).
+  - Studio ranks it 8 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - The title starts with "Why", like 3 earlier Shorts: they had 25 views by the next morning (median), against 76 for all Shorts.
+
+Do now
+  - Nothing in the cut explains this yet: YouTube has shown it to too few people to judge it.
+  - Check the faults list is empty, then read tomorrow morning's snapshot. Under a tenth of the usual first day means the feed tried it and stopped: treat the subject and the title as the cause, not the edit.
+
+Carry forward
+  - If "What is different about this one" says earlier videos on its subject were weak too, take that subject off the next four weeks of the schedule and tell the topic go/no-go.
+
+Done (2026-11-27T17:34Z, codex): J3938 acting Chief codex: no publication faults. Public Shorts row, Notices none, Not Made for Kids, exact package description and Related YqCWYlv_LCY verified in signed-in Studio 9460 (9222 had no Studio tab). API confirms definition hd and processingStatus succeeded. Studio Since published at about 17:32Z: 2 views, rank 8/10, feed share 50% therefore 1 feed view, stayed 0%, dashboard average viewed 0%, likes 0. Typical views and shown-in-feed were unavailable and omitted. The judge estimates shown-in-feed; it is not an observed Studio value. BEHIND/not shown ruling: retain the video and all metadata unchanged; too little distribution to assess the edit. Read next morning snapshot through routine analytics before drawing topic or title conclusions. No spend and no YouTube changes.
+
+
+Acting Chief codex resolved the BEHIND escalation: no faults found, HD processing succeeded, leave the video and metadata unchanged; distribution is too small to judge the edit. Next evidence is the routine next-morning snapshot. No spend, no YouTube changes.)
+- J3934 done: Verify condition for J3871 (Verified: publication condition met (draft HOS PR 814 open at c8c3372e = codex/J3871; PR 811 still draft; nothing merged). J3871 not reopened: still incomplete pending the J3874 loop-gate ruling (picture FAIL terminal reuse). Hold replaced with a dependency wait on J3874, recheck J3934, next check 2026-11-28T06:00Z.)
+- J3932 done: J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 (Chief KEEP: all six corrections accepted; PR211 exact d543ad7c merged as 632656817be1ce8eb8b8eb6441449d44581040f6. Ruling comment 7225140951. Follow-up J3933 evidence publication remains held until independent Claude Code review, retry 2026-11-27T23:22:32Z; J3935 owns immediate separate packaging decision. No live change approved. J3706 date/credit/Ben holds preserved.)
