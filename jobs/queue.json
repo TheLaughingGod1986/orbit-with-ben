@@ -360938,9 +360938,14 @@
           "at": "2026-11-27T17:30Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Read live ElevenLabs balance via GET /v1/user/subscription (2026-11-27T17:30Z): 7,275 of 121,114 chars left, overage disabled, next reset 2026-11-30T10:50:31Z, TTS_PAUSE=False, lock=False; audited all 13 active/held VO jobs (every held long needs >=7,761 chars > 7,275)."
+        },
+        {
+          "at": "2026-11-27T17:31Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Posted advisory review packet on studio thread; all v03 diff/source/timing/live-EL-balance checks verified; parking protected Chief lock, PR #1394 merge, bounded VO allowance, downstream queuing, and J3904 hold update for elected Chief (codex)."
         }
       ],
-      "remaining_action": "Preparing final advisory review report and parking J3917 protected Chief lock/VO ruling",
+      "remaining_action": "Awaiting elected Chief (codex) lock of v03 script, PR #1394 merge, bounded ElevenLabs VO authorization, vo/assembly/QA queuing, and J3904 hold ruling",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -360951,9 +360956,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-27T17:30Z",
+        "at": "2026-11-27T17:31Z",
         "by": "gemini",
         "plan": [
           "Inspect J3916 PR #1394 and diff v03 vs v02b",
@@ -360961,7 +360966,7 @@
           "Read live ElevenLabs balance and credit holds",
           "Write advisory review and park Chief lock/VO ruling"
         ],
-        "note": "Read live ElevenLabs balance via GET /v1/user/subscription (2026-11-27T17:30Z): 7,275 of 121,114 chars left, overage dis"
+        "note": "Posted advisory review packet on studio thread; all v03 diff/source/timing/live-EL-balance checks verified; parking prot"
       },
       "taskKeys": [
         "OWB:064"
