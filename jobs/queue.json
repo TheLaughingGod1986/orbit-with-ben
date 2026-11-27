@@ -361316,16 +361316,21 @@
           "at": "2026-11-27T17:14Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Immutable v03 checksum-copied to NAS (sha256 538464b9...); v01/v02 untouched; all 7 canonical NAS gates + 13-bed MP3 music gate + playback health PASS; fresh ASR 1.00 recall (75/75 tokens); v02 regression FAIL vs v03 PASS"
+        },
+        {
+          "at": "2026-11-27T17:17Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Updated versioned PACKAGE_MANIFEST.json/v03 (preserving PACKAGE_MANIFEST_v02.json), verified youtube:package --dry-run PASS (ok: true), wrote GATE_REPORT_v03.md and SHORT1_BRIEF_AND_CHECKLIST_v03.md"
         }
       ],
-      "remaining_action": "Updating versioned upload package manifest, running youtube:package --dry-run, and writing GATE_REPORT_v03.md + SHORT1_BRIEF_AND_CHECKLIST_v03.md",
+      "remaining_action": "Committing v03 builder, sidecars, versioned manifests, and reports on PR #1399 branch, pushing, and posting report",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-27T17:14Z",
+        "at": "2026-11-27T17:17Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361335,7 +361340,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Immutable v03 checksum-copied to NAS (sha256 538464b9...); v01/v02 untouched; all 7 canonical NAS gates + 13-bed MP3 mus"
+        "note": "Updated versioned PACKAGE_MANIFEST.json/v03 (preserving PACKAGE_MANIFEST_v02.json), verified youtube:package --dry-run P"
       },
       "taskKeys": [
         "OWB:064"
