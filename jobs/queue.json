@@ -365446,9 +365446,14 @@
           "at": "2026-11-27T23:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T23:58Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J3964 for OWB:064 Short 1 v03 (Ben OK OWB:ASK:J3903); checking long 064 schedule status and existing 07_Upload-Package manifest"
         }
       ],
-      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "remaining_action": "Inspect OWB 064 long schedule status and verify existing Short 1 v03 listing package against rules",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -365471,12 +365476,20 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T23:55Z",
+        "of": 4,
+        "at": "2026-11-27T23:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect 064 long status and v03 package",
+          "Finalize v03 listing package in worktree",
+          "Run dry-run, gate, and privacy checks",
+          "Open PR and park waiting for 064 long"
+        ],
+        "note": "Starting J3964 for OWB:064 Short 1 v03 (Ben OK OWB:ASK:J3903); checking long 064 schedule status and existing 07_Upload-"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
