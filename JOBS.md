@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3839 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3841 | mini | claimed | gemini | 2026-11-27T03:47Z | review · Verify condition for J3781 |  |
+| J3842 | any | open | – | – | WW2:016 script · review · WW2 016: finish source reconciliation and final-file viewer evidence for J3831 | ww2-channel#202 |
 
 Recently finished:
 
