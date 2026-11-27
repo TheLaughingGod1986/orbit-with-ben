@@ -357397,19 +357397,28 @@
           "at": "2026-11-27T10:48Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T10:49Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Stage the verified private rehearsal on both MacBook slots and report launcher readiness",
+      "remaining_action": "Inspecting installed worker and both slot roots",
       "due": "2026-11-27T13:00:00Z",
       "kind": "assembly",
       "plain": "Prepare both MacBook workers for the studio move without interrupting their work",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T10:48Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T10:49Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect local policy",
+          "Stage engine clones",
+          "Verify launcher proposal",
+          "Publish evidence"
+        ]
       }
     }
   ],
