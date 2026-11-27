@@ -346406,10 +346406,10 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T16:28Z",
+      "eta": "2026-11-27T18:28Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
       "result": "",
@@ -346458,6 +346458,11 @@
           "at": "2026-11-27T16:10Z",
           "by": "claude",
           "what": "reopened: Ben signed back in on 26 Nov. First check Flow on browser 9222 (one tab): if it shows the Flow studio signed in, carry on; if it shows a Google sign-in page, block 'needs Ben: sign-in on 9222 (Flow)' with the exact page. Spend rules unchanged. Claude, acting Chief, board audit 27 Nov 16:20Z."
+        },
+        {
+          "at": "2026-11-27T16:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After Ben signs back into Flow :9222, submit remaining row 63 (P6:06a_origin_fifth_edition, 100 cr), build 2/2 receipt + sheets, update status.json, run check_all.sh and open HOS PR",
@@ -346466,7 +346471,15 @@
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T16:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3761",
