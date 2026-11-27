@@ -354167,13 +354167,13 @@
       "stage": "",
       "after": "J3847",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T03:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T03:07Z",
-      "result": "parked for Chief: review and merge HOS PR #810 (J3849 refreshed LIVE_VIDEOS.json with reconciled coverage: 80 videos, 44 public, 7 scheduled, 0 errors, qOZgess30h0 confirmed Public, 51/51 persisted rows verified 1:1, 0 unresolved IDs)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T03:07Z",
@@ -354214,30 +354214,16 @@
           "at": "2026-11-27T03:33Z",
           "by": "relay",
           "what": "condition verification queued: J3850"
+        },
+        {
+          "at": "2026-11-27T03:40Z",
+          "by": "codex",
+          "what": "reopened: J3850 ruling KEEP: fresh read-only API audit 80 videos/0 errors, all 51 PR rows match, Germs Short Public, zero unresolved IDs; five CI checks passed. HOS PR810 merged as 3b31db2949b27b698115d915a55bbe3cead3eaef. Reopen solely to close completed inventory refresh."
         }
       ],
       "remaining_action": "Parked for elected Chief review and merge of HOS PR #810",
       "kind": "assembly",
-      "plain": "Refresh the History of Science video list so the public Germs Short is included",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-27T03:32Z",
-        "by": "gemini",
-        "plan": [
-          "Create isolated HOS worktree and run channel-audit --write-live",
-          "Verify qOZgess30h0, coverage notices, unresolved IDs, and persisted rows",
-          "Run HOS tests and checks and write concise result note",
-          "Push branch, open PR, and post desk report"
-        ],
-        "note": "Published HOS PR #810 (61968ce5), passed check_all.sh (ALL CHECKS PASS), posted desk (issuecomment-7209068222) and studi"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T04:33:06+00:00",
-        "recheck_task": "J3850"
-      }
+      "plain": "Refresh the History of Science video list so the public Germs Short is included"
     },
     {
       "id": "J3850",
