@@ -353549,7 +353549,7 @@
     {
       "id": "J3842",
       "title": "WW2 016: finish source reconciliation and final-file viewer evidence for J3831",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Finish the work explicitly left incomplete in J3831 and ww2-channel PR #202, using J3830 CLAIMS_CHECK_v01.md section 4. This is the correction follow-up from Chief condition review J3837. J3831 remains held; no lock or merge is approved.\n\nReconcile SOURCES.md to v02 and fix the archive dedup typo and corridor description named by the existing review. Carry those corrections into PACKAGING.md and the proposed Short descriptions in status.json so the old chronology cannot return. Reconcile the narrated vehicle-tally window with the audit and its graphic. Read the final narration under Rule 6 and record exact paragraph parity, character count, hash and whole-film figure-window evidence. Keep NARRATION_v01, air 2026-12-31, archive harvest/pixel guards, extra-Short gates, the post-reset voice hold and Pilot 2 seven-day Rule-12 guard unchanged. Deliver a clean revised PR for fresh review and record its exact head on J3831. No spend, production, upload or schedule changes.\n",
       "ref": "ww2-channel#202",
@@ -353569,12 +353569,25 @@
           "at": "2026-11-27T01:50Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T01:51Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Reconcile the corrected script with its sources and picture plans, then verify the final narration",
       "due": "2026-11-27T07:00:00Z",
       "kind": "review",
-      "plain": "Finish the historical corrections and check the final Battle of the Bulge script"
+      "plain": "Finish the historical corrections and check the final Battle of the Bulge script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
