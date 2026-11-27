@@ -356862,15 +356862,20 @@
           "at": "2026-11-27T09:39Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Created YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg via update-pinned-comment.ts; reconciled f_-BsKZf8X0 in shorts_open_library and 5 public IDs in OWB UPLOADS.json"
+        },
+        {
+          "at": "2026-11-27T09:48Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Studio fixes executed: f_-BsKZf8X0 Paid promotion=No saved & reload-verified; YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg pinned (perform_comment_action HTTP 200 STATUS_SUCCEEDED / RENDERING_PRIORITY_PINNED_COMMENT; Studio get_comments reload quirk verified identical on ETynHpIYLeY & _C92tIJCk8A)"
         }
       ],
-      "remaining_action": "Pinning YqCWYlv_LCY comment and setting Paid promotion = No on f_-BsKZf8X0 in HOS Studio (CDP 9460)",
+      "remaining_action": "Running post-Studio channel:audit and API read-back",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T09:39Z",
+        "at": "2026-11-27T09:48Z",
         "by": "gemini",
         "plan": [
           "Read audit, lint 008 & inspect state",
@@ -356879,7 +356884,7 @@
           "Reconcile open-library & OWB UPLOADS.json",
           "Run channel:audit, update records, open PRs & report"
         ],
-        "note": "Created YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg via update-pinned-comment.ts; reconciled f_-BsKZf8X0 in shorts_op"
+        "note": "Studio fixes executed: f_-BsKZf8X0 Paid promotion=No saved & reload-verified; YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4Aa"
       },
       "taskKeys": [
         "HOS:008"
