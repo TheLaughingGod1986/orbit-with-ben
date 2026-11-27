@@ -360262,9 +360262,14 @@
           "at": "2026-11-27T20:18Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed reopened J3904 after Chief Claude v03 script lock & <=600-char VO authorization"
+        },
+        {
+          "at": "2026-11-27T20:24Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Live ElevenLabs balance verified (7,275 left >= 600, overage off); recorded 064_short02_venus_vs_uranus_vo_v01 via desk-lock+vo_take.py (205 chars <= 600 cap, PASS, 19.2s raw, -20.1 LUFS, Scribe 97.14% exact words minus->-224)"
         }
       ],
-      "remaining_action": "Verify live ElevenLabs balance (>=600 chars, overage off) and inspect existing Venus/Uranus moving assets",
+      "remaining_action": "Inspect verified NASA moving Venus/Uranus footage and finalize full-bleed 9:16 17.75s shot plan",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend",
@@ -360281,9 +360286,9 @@
       ],
       "escalated_at": "2026-11-27T16:42Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T20:18Z",
+        "at": "2026-11-27T20:24Z",
         "by": "gemini",
         "plan": [
           "Check ElevenLabs balance & record locked v03 VO",
@@ -360292,7 +360297,7 @@
           "Run all Shorts/picture/polish/music/SFX/ASR gates",
           "Copy verified master to NAS, open PR & queue QA"
         ],
-        "note": "Claimed reopened J3904 after Chief Claude v03 script lock & <=600-char VO authorization"
+        "note": "Live ElevenLabs balance verified (7,275 left >= 600, overage off); recorded 064_short02_venus_vs_uranus_vo_v01 via desk-"
       }
     },
     {
