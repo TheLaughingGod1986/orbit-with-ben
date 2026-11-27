@@ -282329,9 +282329,14 @@
           "at": "2026-11-27T06:22Z",
           "by": "relay",
           "what": "condition verification queued: J3854"
+        },
+        {
+          "at": "2026-11-27T06:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T08:30:00Z"
         }
       ],
-      "remaining_action": "Publish the completed Pluto packaging review",
+      "remaining_action": "Await safe publication review in J3855 before closing the Pluto packaging decision",
       "due": "2026-12-08T18:00:00Z",
       "kind": "chief",
       "plain": "Check the corrected Pluto thumbnails and description before arranging delivery",
@@ -282352,9 +282357,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.",
-        "check_at": "2026-11-27T07:22:35+00:00",
-        "recheck_task": "J3854"
+        "condition": "Decision a4c9c8f534 remains unpublished on origin. J3855 must resolve the rejected publication through a reviewed safe candidate and applicable approval; then Chief verifies publication and closes J3115 before J3119 upload.",
+        "check_at": "2026-11-27T08:30:00Z",
+        "last_recheck": "J3854",
+        "checked_at": "2026-11-27T06:29:46+00:00",
+        "checked_by": "codex"
       }
     },
     {
