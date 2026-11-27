@@ -356707,9 +356707,14 @@
           "at": "2026-11-27T09:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:17Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Listen independently to both Shorts voiceovers, then rule and merge if passed",
+      "remaining_action": "Inspecting J3780 evidence, audio files, and probing direct audio input capability",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -356727,11 +356732,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T09:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3780 history and audio paths",
+          "Probe actual audio input capability",
+          "Verify J3780 audio condition",
+          "Update J3780 and finish J3879"
+        ]
       }
     },
     {
