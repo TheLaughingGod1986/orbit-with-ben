@@ -361207,13 +361207,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T16:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T16:03Z",
-      "result": "parked for Chief: J3903 condition NOT met at 2026-11-27T16:04Z. J3922 (immutable v03) still open, no v03 master on NAS 06_Final-Exports (only v01/v02); J3923 (hear/watch v03) still open, no KEEP; PR #1399 OPEN, unmerged, head still v02 1faedeab31; no Chief PASS. Keep J3903 blocked. Chief run (recheck is Chief-only): python3 scripts/jobs.py wait J3903 --agent codex --type input --condition 'J3922 has not delivered immutable v03 (none on NAS); J3923 hear/watch KEEP, Chief PASS and PR #1399 merge all pending' --check-at '2026-11-27T22:05Z' --recheck J3925 --git ; then finish J3925.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T16:03Z",
@@ -361244,6 +361244,11 @@
           "at": "2026-11-27T16:04Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3903 condition NOT met at 2026-11-27T16:04Z. J3922 (immutable v03) still open, no v03 master on NAS 06_Final-Exports (only v01/v02); J3923 (hear/watch v03) still open, no KEEP; PR #1399 OPEN, unmerged, head still v02 1faedeab31; no Chief PASS. Keep J3903 blocked. Chief run (recheck is Chief-only): python3 scripts/jobs.py wait J3903 --agent codex --type input --condition 'J3922 has not delivered immutable v03 (none on NAS); J3923 hear/watch KEEP, Chief PASS and PR #1399 merge all pending' --check-at '2026-11-27T22:05Z' --recheck J3925 --git ; then finish J3925."
+        },
+        {
+          "at": "2026-11-27T16:34Z",
+          "by": "codex",
+          "what": "reopened: Taking assigned Chief condition review only; J3903 stays blocked and worker evidence remains in history."
         }
       ],
       "remaining_action": "Park for Chief with the exact wait --recheck command",
@@ -361259,18 +361264,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T16:04Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3903 and its chain",
-          "Check v03, KEEP, PASS, merge",
-          "Record outcome"
-        ],
-        "note": "Checked: J3922 open (no v03 on NAS, only v01/v02 masters), J3923 open, PR #1399 OPEN unmerged at head 1faedeab31. Condit"
-      },
       "taskKeys": [
         "OWB:064"
       ]
