@@ -361380,9 +361380,14 @@
           "at": "2026-11-27T17:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:37Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "remaining_action": "Checking the approved Mosquito film and its upload package",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -361409,11 +361414,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T17:36Z",
+        "at": "2026-11-27T17:37Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify approved files and listing",
+          "Merge upload package",
+          "Upload and record scheduled state"
+        ]
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3922",
