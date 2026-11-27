@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926, J3860.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -86,7 +86,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3857 | mini | open | – | – | for gemini · review · Publish completed Chief review record for J3853 |  |
 | J3859 | mini | blocked | macbook-2 | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
-| J3860 | mini | claimed | codex | 2026-11-27T19:00Z | studio · Field Order History channel totals read 2026-11-27 |  |
 | J3866 | any | open | – | – | for gemini · review · Publish completed Chief review record for J3856 |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
