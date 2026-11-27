@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3896 | macbook | claimed | macbook | 2026-11-27T14:30Z | assembly · J3012: complete remote cutover result and resume controls |  |
-| J3898 | mini | open | – | – | 064 thumbs · for claudecode · assembly · `mini-claude-opus-5-5` · OWB 064: Publish accepted integration records from J3883 | J3897 |
+| J3898 | mini | claimed | claudecode | 2026-11-27T14:40Z | 064 thumbs · for claudecode · assembly · `mini-claude-opus-5-5` · OWB 064: Publish accepted integration records from J3883 | J3897 |
 
 Recently finished:
 
