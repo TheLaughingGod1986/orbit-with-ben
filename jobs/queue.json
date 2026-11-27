@@ -1,5 +1,5 @@
 {
-  "next_id": 3957,
+  "next_id": 3958,
   "jobs": [
     {
       "id": "J0001",
@@ -364548,6 +364548,40 @@
         "WW2:001",
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3957",
+      "title": "OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Independent completed-cut & package QA for OWB:064 Short 2 v01 (PR #1416, head f67c2dcbe207ca34e3810da167ccfc8bfc56e51d, parent J3904). Canonical NAS master: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01.mp4 (SHA-256 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff; 1080x1920, 24/1 CFR, 441 frames = 18.375 s, -14.00 LUFS, -2.00 dBTP). Verify exact master/stem/cover/SRT hashes, locked v03 script (634da160...), VO take (205 chars <= 600 Chief cap), all 7 automated gates, speech coverage, fresh decoded ASR, and honest NASA/ESA source credits (zero Veo CGI, zero Keck misattribution). Require demonstrated audio_input AND moving_video_input in this reviewer session; do not treat stills or ASR as watching/listening. If unavailable, park with a typed capability hold and actual probe evidence. Listen to all 3 sentences and full final mix (confirm all 35 spoken words, zero clipped words/gaps, VO/bed/SFX balance, music through loop seam). Watch full 18.375 s moving cut at phone size, inspect R03 flagged frame (svs20390_Shot8_4k.mp4 smooth cyan edge density 0.0211 vs p5 0.0220), frame-0 golden Venus motion, full-bleed framing, 9-14 s exact long title, 14.90-17.45 s Teach pill, and loop return. Send exact-hash KEEP/FIX evidence to elected Chief (codex) for ruling on PR #1416 and J3904 before Ben phone UAT. No upload, schedule, privacy, spend or self-PASS.",
+      "ref": "J3904",
+      "film": "064",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T20:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T20:38Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Listen to full mix and watch moving video of 064_short02_venus_vs_uranus_v01.mp4 (4eb7d94377...) and write KEEP/FIX evidence for Chief",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Independently hear and watch OWB 064 Short 2 v01 (Venus 464°C vs Uranus −224°C) on PR #1416 before Chief ruling and Ben UAT"
     }
   ],
   "focus": [
