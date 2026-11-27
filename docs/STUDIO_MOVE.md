@@ -22,14 +22,18 @@ no active workflow YAML. Source is Orbit `f5a2bd4fa734c73be9c681484cb21105ab0696
 Eight linted proposals now use that final runtime path and are stored privately at
 `/Volumes/MiniWork/scratch/J3012-runtime-proposals-1127/`. Reconcile current source hashes before installation.
 
-The MacBook is online but existing SSH is unavailable. J3885 stages both independent engine clones and verifies
-the launcher through the installed worker, without service changes. Read its evidence and coordinate the
-MacBook drain/install through that worker; do not enable remote login as a shortcut. The earlier inventory
-alone does not prove clone or launcher readiness.
+Both MacBook engine clones were staged and verified by J3885 (merged PR #1378); PR #1375 is also merged.
+J3888 reopened this job after reviewing that evidence. The private slot-2 error heartbeat at 10:22:56Z is
+not live acceptance. Two worker loop tests could spawn a real second slot on Darwin; the fix and current
+Mini reconciliation are in `jobs/reviews/J3012/RUNTIME_RECONCILIATION_2026-11-27.md`.
+J3890 checks machine-local attribution and loaded MacBook settings through the installed worker. Do not rerun
+the unpatched tests or enable remote login as a shortcut.
 
-Next: finish J3885, reconcile loaded settings and remaining wrappers on both machines, then coordinate the
-drain and export a **new frozen queue** through the cutover order below. No service, active-engine marker,
-pause file, board deployment, production branch, default branch or live store has switched.
+Eight Mini services now have matching installed/loaded argv, configured environment and observed path/interval
+fields; both remote-worker proposals have been regenerated for the final runtime path. This is not a drain or
+full effective-policy acceptance. Next: finish J3890, merge the isolation fix, reconcile remaining schedules,
+coordinate the drain and export a **new frozen queue** through the cutover order below. No service,
+active-engine marker, pause file, board deployment, production branch, default branch or live store has switched.
 
 After the engine passes relay/publish/tick/both-slot acceptance, the latest J3012 brief additionally requires
 moving the tick store and studio thread into private Studio, including HOS watch ticks. The older instruction
