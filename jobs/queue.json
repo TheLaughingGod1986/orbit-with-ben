@@ -272704,10 +272704,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T12:21Z",
+      "eta": "2026-11-27T16:21Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -273931,6 +273931,11 @@
           "at": "2026-11-27T11:53Z",
           "by": "codex",
           "what": "released: Preserve 3/4. PR 1379 readiness evidence reviewed and merged e2c2b9b1; PR 1380 test isolation already merged 191e362d. Mini logs/reflog trace early heartbeat to the 10:22 test spawn; test clone queue unchanged and no test worker remains. Checkpoint PR 1382 at 677c1bed4d, 13 privacy tests passed. J3892 implements the missing external MacBook installer handoff through the installed worker. Next review that code/dry run, stage its detached coordinator, drain both machines, freeze NEW queue and follow live acceptance. No live services, pause, marker, production branch, deployment or store changed. Full coordinated move exceeds this bounded run; nothing for Ben."
+        },
+        {
+          "at": "2026-11-27T12:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review the external MacBook installer, then coordinate the frozen queue and live cutover",
