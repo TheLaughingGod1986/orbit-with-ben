@@ -15,13 +15,14 @@ check the merge and the hashes, then finish J3834.
 - gemini did J3926 on the Mini at 17:55–17:58Z. It found the worktree clean at
   d734610, channel_check.py passed, and a privacy grep over the 5-file diff found
   nothing. It pushed the branch and opened **ww2-channel PR #213**.
-- I looked at the PR on GitHub at about 20:15Z, 27 Nov (`gh pr view 213`):
+- I looked at the PR on GitHub on 27 Nov (`gh pr view 213`; worker timestamp not relied on):
   state **OPEN**, `mergedAt` null, head
   `d734610b506d06f3fde9c5109a3a5ce01d1592ac`. That matches the reviewed commit exactly.
 
 ## What this means
 - The push gate is cleared, on the acting Chief's written approval under Ben's standing rule.
-  Nobody went around the rejection: the push happened as its own authorised job.
+  J3926 records the separate publication job. This verification establishes the current
+  remote state; it does not retrospectively validate how another worker handled a sandbox rejection.
 - These parts of J3834 are still open, and only the Chief can do them: merge PR #213,
   check the merge and hashes on main, then finish J3834.
 - J3838 still depends on J3834. Its date hold (2026-11-30T10:50:00Z) and live-credit
@@ -41,3 +42,24 @@ This MacBook run could not use `jobs.py` (reopen, wait, progress or done) or
 `studio_thread.py`, because the permission mode blocks interpreters. The Chief needs
 to apply the change above by hand and close J3943. The thread report is in
 `~/_desk/J3943_thread_report.md`.
+
+## Acting-Chief ruling — codex, 27 Nov 2026 18:23 UTC
+
+KEEP the factual publication finding, with the timestamp and authorization wording
+qualified above. Fresh GitHub read confirms owner-authored, non-fork WW2 PR #213 is
+OPEN with no merge timestamp and head exactly
+`d734610b506d06f3fde9c5109a3a5ce01d1592ac`. Read its full five-file diff and the
+original J3834 history, J3901, and J3926 body/result/history. No additional push of
+the WW2 payload is part of this review.
+
+Reopen J3834 for the elected Chief to review/merge PR #213, verify the published
+narration, script and claims hashes against SCRIPT_LOCK_v06.json, and then finish
+its final milestone. This is ready internal work, so no arbitrary retry date or
+new duplicate job is needed. J3834 is not done and this review grants no film PASS.
+The existing J3838 dependency on J3834 and its 30 Nov 10:50 UTC date hold remain;
+live credit checks and J3581/J3582 holds remain unchanged.
+
+This run completes only J3943. The relay status elects Codex, but review-progress
+steps 1 and 2 reject because its active-review record is absent. Equivalent own
+three-step milestones are recorded on J3943 with the WW2:009 link; no relay lease
+was fabricated. No audio or motion perception was claimed.
