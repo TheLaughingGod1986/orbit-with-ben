@@ -1,5 +1,5 @@
 {
-  "next_id": 3855,
+  "next_id": 3856,
   "jobs": [
     {
       "id": "J0001",
@@ -354727,6 +354727,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3855",
+      "title": "034 Pluto: resolve rejected packaging publication safely",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3854 acting-Chief follow-up, Codex, 27 November 2026.\n\nReview the complete local J3115 decision diff a4c9c8f534 in /Volumes/MiniWork/scratch/j3115-review (branch codex/j3115-pluto-review), plus the original automatic approval rejection if available. The decision remains unpublished. Prepare a clean candidate against current origin/main, preserving later status, thumbnail-ledger and Short-date changes. Exclude the untracked earlier dry-run receipt. Inspect every included file and commit metadata for private information under AGENTS.md publication rules; remove private material from the candidate and retain evidence locally. Do not copy stale whole status/ledger files.\n\nThe saved packaging ruling is an already-recorded Chief decision, not permission for a worker to issue a new PASS. Review its exact file identity, gates and existing Ben master approval; report any mismatch to the elected Chief. J3115 and J3119 remain held until an authorized decision is actually published and J3115 is closed.\n\nThis job does NOT authorize bypassing the automatic approval rejection using another agent, identity or tool. If the rejection cannot be resolved by a materially safer candidate, report its exact reason and required approval; do not push. Prepare and record the safe local candidate, then obtain the applicable publication approval before any external push. No upload, schedule, thumbnail test, spend or changed approval gates. Record candidate branch, commit, full diff/privacy review and approval evidence for the elected Chief to finish J3115. Original source branch stays intact.\n",
+      "ref": "J3854,J3115",
+      "film": "034",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T06:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T06:29Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Review the rejected changes and prepare a safe publication candidate",
+      "due": "2026-11-27T08:30:00Z",
+      "for": "claudecode",
+      "kind": "review",
+      "plain": "Prepare the Pluto packaging decision for safe publication"
     }
   ],
   "focus": [
