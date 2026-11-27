@@ -353206,25 +353206,41 @@
       "stage": "vo",
       "after": "J3834",
       "eta_min": 120,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T01:37Z",
-      "result": "",
+      "result": "Recording date restriction set by elected Chief; no production claim or work started.",
       "history": [
         {
           "at": "2026-11-27T01:37Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T01:39Z",
+          "by": "codex",
+          "what": "New successor restricted before dispatch; CLI wait requires blocked or claimed state"
+        },
+        {
+          "at": "2026-11-27T01:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-30T10:50:00Z"
         }
       ],
-      "remaining_action": "Wait for the recording date, then check credits and record the locked narration",
+      "remaining_action": "Wait for recording date, then check live credits and record the locked narration",
       "due": "2026-12-01T18:00:00Z",
       "kind": "vo",
       "plain": "Record the approved Operation Pedestal narration after the voice credit reset",
-      "mini_only": true
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Do not record before 30 Nov 2026 10:50 UTC. J3834 dependency separately requires published script lock; live balance and no-overage checks remain mandatory at execution.",
+        "check_at": "2026-11-30T10:50:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [

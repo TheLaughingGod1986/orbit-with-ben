@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3834 | any | claimed | codex | 2026-11-27T03:34Z | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3836 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3837 | mini | blocked | macbook | – | review · Verify condition for J3831 |  |
-| J3838 | mini | open (after J3834) | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
+| J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 
 Recently finished:
 
