@@ -357545,9 +357545,14 @@
           "at": "2026-11-27T11:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:02Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Chief review inputs and authorization checked; parent J3884 held while review proceeds."
         }
       ],
-      "remaining_action": "Park for Chief with the exact wait command",
+      "remaining_action": "Verify the test evidence and record the Chief decision",
       "kind": "review",
       "recheck_of": "J3884",
       "due": "2026-11-27T11:50:39+00:00",
@@ -357566,12 +357571,16 @@
         "HOS:099"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T11:01Z",
+        "at": "2026-11-27T11:02Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs and authority",
+          "Review evidence and rule",
+          "Record decision and follow-up"
+        ],
+        "note": "Chief review inputs and authorization checked; parent J3884 held while review proceeds."
       }
     },
     {
