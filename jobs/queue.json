@@ -359005,13 +359005,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-27T13:11Z",
-      "eta": "2026-11-27T15:11Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T13:10Z",
-      "result": "",
+      "result": "Implemented cancellation and persisted-descendant recovery safety fixes in 5631f820b; PR #1389 includes unmerged #1387 plus the scoped correction. All 62 mocked cutover/control tests and diff check pass. No live activation or merge; J3012 remains held for Chief re-review and a separate live coordination child. Checkout returned to main.",
       "history": [
         {
           "at": "2026-11-27T13:10Z",
@@ -359037,6 +359037,11 @@
           "at": "2026-11-27T13:15Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-27T13:15Z",
+          "by": "macbook-2",
+          "what": "done: Implemented cancellation and persisted-descendant recovery safety fixes in 5631f820b; PR #1389 includes unmerged #1387 plus the scoped correction. All 62 mocked cutover/control tests and diff check pass. No live activation or merge; J3012 remains held for Chief re-review and a separate live coordination child. Checkout returned to main."
         }
       ],
       "remaining_action": "Record PR 1389 and hand off to Chief review",
