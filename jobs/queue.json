@@ -355030,16 +355030,21 @@
           "at": "2026-11-27T07:28Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-27T07:36Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Checked configured Studio CDP 9224 (2026-11-27T07:35Z, fresh reload): permission denied for UCu94mInMFosxu3W0H6jlI6Q (wrong Google account signed in, only OpptiAI/Orbit/HOS listed); CDP 9223 is active on Orbit (no account switching allowed). Parking for Ben sign-in on 9224."
         }
       ],
-      "remaining_action": "Verify CDP 9224 channel and read 2026-11-24..2026-11-25 Studio analytics for qfc6EBStOfo",
+      "remaining_action": "Wait for Ben to sign CDP 9224 into Field Order History (UCu94mInMFosxu3W0H6jlI6Q), then verify CHANNEL_ID and collect 2026-11-24..2026-11-25 Studio analytics for qfc6EBStOfo",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-27T07:28Z",
+        "at": "2026-11-27T07:36Z",
         "by": "gemini",
         "plan": [
           "Verify Studio channel",
@@ -355047,7 +355052,8 @@
           "Check Test and Compare",
           "Import and rebuild reports",
           "Open PR and report"
-        ]
+        ],
+        "note": "Checked configured Studio CDP 9224 (2026-11-27T07:35Z, fresh reload): permission denied for UCu94mInMFosxu3W0H6jlI6Q (wr"
       },
       "taskKeys": [
         "WW2:002"
