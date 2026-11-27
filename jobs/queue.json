@@ -358131,10 +358131,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-27T11:55Z",
+      "eta": "2026-11-27T13:55Z",
       "created_by": "codex",
       "created_at": "2026-11-27T11:51Z",
       "result": "",
@@ -358143,12 +358143,25 @@
           "at": "2026-11-27T11:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T11:55Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build and test the detached installer handoff for the studio move",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
-      "plain": "Prepare the MacBook to switch studio engines safely after its workers finish"
+      "plain": "Prepare the MacBook to switch studio engines safely after its workers finish",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T11:55Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3893",
