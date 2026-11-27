@@ -357319,13 +357319,18 @@
           "at": "2026-11-27T10:42Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3884; verified compilation_thumb_v02.jpg location and started inspection"
+        },
+        {
+          "at": "2026-11-27T10:42Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified HOS Studio CDP 9460 (UCXp7HkBIl1LgaznXuZHJyRg), ledger row T029 for 007 (none yet for 004), and compilation_thumb_v02.jpg SHA-256 match (07f34be9...)"
         }
       ],
-      "remaining_action": "Inspecting existing ledger rows, J3365 context, and HOS Studio CDP session",
+      "remaining_action": "Reading attached Studio test reports for HOS 004 (GHZDsiH7L7A) and 007 (ETynHpIYLeY) on CDP 9460",
       "kind": "studio",
       "plain": "Check the atom and vaccine thumbnail test results and the compilation cover",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-27T10:42Z",
         "by": "gemini",
@@ -357336,7 +357341,7 @@
           "Run HOS channel:audit & record result",
           "Update ledger/patterns & open readback PR"
         ],
-        "note": "Claimed J3884; verified compilation_thumb_v02.jpg location and started inspection"
+        "note": "Verified HOS Studio CDP 9460 (UCXp7HkBIl1LgaznXuZHJyRg), ledger row T029 for 007 (none yet for 004), and compilation_thu"
       },
       "taskKeys": [
         "HOS:004",
