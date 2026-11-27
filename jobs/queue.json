@@ -355700,13 +355700,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T08:16Z",
-      "eta": "2026-11-27T10:16Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:42Z",
-      "result": "",
+      "result": "parked for Chief: Short v03 review (032 dry_desert_two_oceans v03, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 5b5703855c18, PR #1366 commit 7f84cbba48, #99 posted; v01/v02 preserved, J3853/J3856 held)",
       "history": [
         {
           "at": "2026-11-27T07:42Z",
@@ -355772,6 +355772,11 @@
           "at": "2026-11-27T08:23Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Pushed commit 7f84cbba48 to PR #1366, posted #99 report and PR comment, verified NAS v03 master sha256 5b5703855c18 beside untouched v01/v02, 7/7 gates + 13 canonical NAS MP3 beds PASS"
+        },
+        {
+          "at": "2026-11-27T08:23Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short v03 review (032 dry_desert_two_oceans v03, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 5b5703855c18, PR #1366 commit 7f84cbba48, #99 posted; v01/v02 preserved, J3853/J3856 held)"
         }
       ],
       "remaining_action": "Parked for Chief exact-file review of v03 (5b5703855c18) and PR #1366 (7f84cbba48)",
