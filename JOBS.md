@@ -68,7 +68,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
 | J3760 | mini | blocked | codex | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
 | J3776 | mini | blocked | gemini | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
-| J3779 | mini | claimed | gemini | 2026-11-27T20:35Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3780 | any | blocked | codex | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |
 | J3781 | mini | blocked | codex | – | HOS:136 vo · for codex · chief · `gpt-6-astra` · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
 | J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
