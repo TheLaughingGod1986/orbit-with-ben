@@ -360361,9 +360361,14 @@
           "at": "2026-11-27T15:07Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-27T15:08Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: J3912 ruling pushed as PR #1396 (diff read, nothing private); waiting on checks"
         }
       ],
-      "remaining_action": "Publishing J3912 ruling commit",
+      "remaining_action": "Gemini claim check running; quote check next",
       "due": "2026-11-28T14:00:00Z",
       "kind": "review",
       "plain": "Check the revised Venus and Uranus Short before approving its narration",
@@ -360376,9 +360381,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T15:07Z",
+        "at": "2026-11-27T15:08Z",
         "by": "claudecode",
         "plan": [
           "Publish J3912 ruling",
@@ -360386,7 +360391,8 @@
           "Gemini claim check",
           "Direct quote check",
           "Record ruling"
-        ]
+        ],
+        "note": "J3912 ruling pushed as PR #1396 (diff read, nothing private); waiting on checks"
       },
       "taskKeys": [
         "OWB:064"
