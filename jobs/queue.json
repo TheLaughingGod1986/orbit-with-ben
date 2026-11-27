@@ -364542,16 +364542,21 @@
           "at": "2026-11-27T21:06Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified signed-in Studio CDP sessions: OWB (9223, UC_esArsDKd3GJvOkeO0DUog) and HOS (9460, UCXp7HkBIl1LgaznXuZHJyRg)"
+        },
+        {
+          "at": "2026-11-27T21:13Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Read 19 OWB longs + 95 OWB Shorts (0 errors) and 8 HOS longs + 36 HOS Shorts (0 errors) from Studio CDP 9223 and 9460"
         }
       ],
-      "remaining_action": "Read OWB Studio metrics for all 19 longs and 95 Shorts via CDP 9223",
+      "remaining_action": "Validate extracted metrics, run studio_reach morning, rebuild analytics report and board",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T21:06Z",
+        "at": "2026-11-27T21:13Z",
         "by": "gemini",
         "plan": [
           "Verify Studio CDP sessions",
@@ -364560,7 +364565,7 @@
           "Run studio_reach and rebuild tracker",
           "Commit and publish updates"
         ],
-        "note": "Verified signed-in Studio CDP sessions: OWB (9223, UC_esArsDKd3GJvOkeO0DUog) and HOS (9460, UCXp7HkBIl1LgaznXuZHJyRg)"
+        "note": "Read 19 OWB longs + 95 OWB Shorts (0 errors) and 8 HOS longs + 36 HOS Shorts (0 errors) from Studio CDP 9223 and 9460"
       }
     },
     {
