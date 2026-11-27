@@ -351762,23 +351762,29 @@
           "at": "2026-11-27T00:35Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T00:36Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: v05 sha256 81ddf978...a66ce read back; 37 blocks, 10322 chars; SCRIPT.md 37/37 parity; 18 unchanged blocks byte-identical to v04 (S11-19,S21-28,S37). Gemini/agy run started (tmux j3821-agy)."
         }
       ],
-      "remaining_action": "Read v05 narration and v04 claims check",
+      "remaining_action": "Gemini is checking the 20 changed lines against sources",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the revised Operation Pedestal narration against its sources",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T00:35Z",
+        "at": "2026-11-27T00:36Z",
         "by": "claudecode",
         "plan": [
           "Read v05 and v04 check",
           "Run Gemini/agy claims check",
           "Write CLAIMS_CHECK_v05.md",
           "PR and report"
-        ]
+        ],
+        "note": "v05 sha256 81ddf978...a66ce read back; 37 blocks, 10322 chars; SCRIPT.md 37/37 parity; 18 unchanged blocks byte-identica"
       },
       "taskKeys": [
         "WW2:009"
