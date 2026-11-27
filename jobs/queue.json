@@ -352791,16 +352791,21 @@
           "at": "2026-11-27T01:03Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Gemini (agy, gemini-4-neon-high) started 01:03Z in tmux j3833-gemini; log ~/_desk/logs/j3833-gemini.md, .done file marks finish"
+        },
+        {
+          "at": "2026-11-27T01:18Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Gemini timed out at 15 min; E01-E06 PASS, rest missing"
         }
       ],
-      "remaining_action": "Gemini check running; then verify and publish",
+      "remaining_action": "Re-run Gemini on joins J01-J10, C1-C7 and E07 (first run timed out), then publish CLAIMS_CHECK_v06.md",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected Operation Pedestal narration against its sources",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-27T01:03Z",
+        "at": "2026-11-27T01:18Z",
         "by": "claudecode",
         "plan": [
           "Read v06 and brief",
@@ -352808,7 +352813,7 @@
           "Verify output and parity",
           "Publish and record"
         ],
-        "note": "Gemini (agy, gemini-4-neon-high) started 01:03Z in tmux j3833-gemini; log ~/_desk/logs/j3833-gemini.md, .done file marks"
+        "note": "Gemini timed out at 15 min; E01-E06 PASS, rest missing"
       },
       "taskKeys": [
         "WW2:009"
