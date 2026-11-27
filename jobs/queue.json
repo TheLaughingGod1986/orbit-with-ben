@@ -352110,6 +352110,11 @@
           "at": "2026-11-27T20:00Z",
           "by": "relay",
           "what": "condition verification queued: J3954"
+        },
+        {
+          "at": "2026-11-27T20:01Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T08:00:00Z"
         }
       ],
       "remaining_action": "Await the queued apple Short repair and capable review",
@@ -352133,12 +352138,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3864 FIX: publication satisfied by draft HOS PR 811 at 2922143e. Repair J3871 and its dependent capable Short review must finish with an exact-version PASS; v02 remains failed (opener 1.14<1.50 and terminal reuse). No UAT, upload or spend authorised. PR 811 stays draft pending repair.",
-        "check_at": "2026-11-27T21:00:00+00:00",
-        "last_recheck": "J3864",
-        "checked_at": "2026-11-27T08:27:58+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3954"
+        "condition": "HOS 009 apple Short not repaired and passed: J3874 loop-gate ruling still open (picture_qa terminal reuse vs 22-27s terminal_loop contract on a 16-19s Short); repair J3871 blocked on it (v04 picture FAIL terminal reuse); capable exact-version review J3872 not started. PRs 811 and 814 still draft, nothing on HOS main. No UAT, upload or spend.",
+        "check_at": "2026-11-28T08:00:00Z",
+        "last_recheck": "J3954",
+        "checked_at": "2026-11-27T20:01:31+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
