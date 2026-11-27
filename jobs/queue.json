@@ -308177,10 +308177,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T10:19Z",
+      "eta": "2026-11-27T13:19Z",
       "created_by": "refill",
       "created_at": "2026-11-22T12:47Z",
       "result": "",
@@ -308309,6 +308309,11 @@
           "at": "2026-11-27T09:56Z",
           "by": "claude",
           "what": "reopened: Not merged: PR #1170's Willow finished-test row is numbered T045, but main's THUMB_LEDGER.json gave T045 to OWB 064 (PR #1357, 26 Nov). Renumber Willow to the next free T-id in the ledger and the audit text, merge main in, re-run the ledger check, then park for Chief merge. No other changes. Claude, acting Chief, 27 Nov 09:55Z (Chief sweep)."
+        },
+        {
+          "at": "2026-11-27T10:19Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Independent Chief review and merge of PR #1170 (d44ed0d4ac)",
@@ -308324,7 +308329,15 @@
         "HOS:007",
         "HOS:099"
       ],
-      "escalated_at": "2026-11-25T15:52Z"
+      "escalated_at": "2026-11-25T15:52Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T10:19Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3366",
