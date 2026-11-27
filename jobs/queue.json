@@ -354974,13 +354974,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-27T06:43Z",
-      "eta": "2026-11-27T08:43Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "",
+      "result": "Waiting for: J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -354991,9 +354991,19 @@
           "at": "2026-11-27T06:43Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T06:44Z",
+          "by": "macbook",
+          "what": "blocked: Waiting for: J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md"
+        },
+        {
+          "at": "2026-11-27T06:44Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-11-27T14:00:00Z"
         }
       ],
-      "remaining_action": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
+      "remaining_action": "Reopen J3859 for the rules review once J3858 is done and the 48h row is in READS.md",
       "due": "2026-11-27T05:00:12Z",
       "kind": "review",
       "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
@@ -355004,6 +355014,11 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3858 (Field Order History analytics read qfc6EBStOfo 48h) has imported its numbers: a qfc6EBStOfo 48h row in channels/ww2/05_Analytics/READS.md",
+        "check_at": "2026-11-27T14:00:00Z"
       }
     },
     {

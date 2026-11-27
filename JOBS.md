@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3856 | mini | claimed | gemini | 2026-11-27T08:41Z | assembly · Backlog correction: J3853 Titan Short picture and teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 | J3857 | mini | open | – | – | for claudecode · review · Publish completed Chief review record for J3853 |  |
 | J3858 | mini | open | – | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
-| J3859 | any | claimed | macbook | 2026-11-27T08:43Z | review · Field Order History rules review qfc6EBStOfo 48h |  |
+| J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
 | J3860 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-27 |  |
 
 Recently finished:
