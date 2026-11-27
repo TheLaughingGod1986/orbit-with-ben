@@ -346668,6 +346668,11 @@
           "at": "2026-11-27T23:27Z",
           "by": "relay",
           "what": "condition verification queued: J3963"
+        },
+        {
+          "at": "2026-11-27T23:28Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T06:00:00Z"
         }
       ],
       "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
@@ -346694,12 +346699,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Flow tab 998B0717 on CDP 9222 renderer unresponsive: 27 Nov 17:20Z browser endpoint and Target.getTargetInfo answer (attached:false, flow.google.com/?pli=1) but page websocket opens and Page.getFrameTree and Runtime.evaluate both time out (12-15 s); account hash, balance and Quality price unverifiable. No Create clicked; only row 63 remains.",
-        "check_at": "2026-11-28T00:27:01+00:00",
-        "last_recheck": "J3931",
-        "checked_at": "2026-11-27T17:20:21+00:00",
-        "checked_by": "claudecode",
-        "recheck_task": "J3963"
+        "condition": "Flow tab 998B0717 (flow.google.com/?pli=1) on CDP 9222 renderer still unresponsive at 27 Nov 23:28Z: /json/version and /json/list answer, page websocket opens in 0.01 s, but Page.getFrameTree and a read-only Runtime.evaluate both time out at 15 s. A Google accountchooser page (2B8360B3) is also open in that browser. Account hash, balance and Quality price unverifiable. No Create clicked; row 49 archived, only row 63 remains (100 cr, must submit before 5 Dec 00:00Z).",
+        "check_at": "2026-11-28T06:00:00Z",
+        "last_recheck": "J3963",
+        "checked_at": "2026-11-27T23:28:48+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
