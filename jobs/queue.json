@@ -361881,10 +361881,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T17:55Z",
+      "eta": "2026-11-27T18:10Z",
       "created_by": "claude",
       "created_at": "2026-11-27T16:10Z",
       "result": "",
@@ -361893,6 +361893,11 @@
           "at": "2026-11-27T16:10Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T17:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Push Codex's finished WW2 009 v06 lock commit and open its PR",
@@ -361900,7 +361905,15 @@
       "kind": "studio",
       "mini_only": true,
       "for": "gemini",
-      "urgent": 7
+      "urgent": 7,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T17:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3927",
