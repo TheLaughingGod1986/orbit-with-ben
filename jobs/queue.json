@@ -365451,9 +365451,14 @@
           "at": "2026-11-27T23:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J3964 for OWB:064 Short 1 v03 (Ben OK OWB:ASK:J3903); checking long 064 schedule status and existing 07_Upload-Package manifest"
+        },
+        {
+          "at": "2026-11-27T23:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Confirmed OWB:064 long is not on YouTube yet (PR #1390 open, J3023 blocked before Ben watch, absent from UPLOADS.json/snapshots). Verified canonical NAS v03 mp4 (538464b9) and cover (0e5b9937), SRT captions, and existing 07_Upload-Package/PACKAGE_MANIFEST.json (still status awaiting_qa_and_ben_uat with no schedule field)."
         }
       ],
-      "remaining_action": "Inspect OWB 064 long schedule status and verify existing Short 1 v03 listing package against rules",
+      "remaining_action": "Finalize OWB 064 Short 1 v03 listing package manifest in a clean worktree",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -365475,9 +365480,9 @@
         "handled": true
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T23:58Z",
+        "at": "2026-11-27T23:59Z",
         "by": "gemini",
         "plan": [
           "Inspect 064 long status and v03 package",
@@ -365485,7 +365490,7 @@
           "Run dry-run, gate, and privacy checks",
           "Open PR and park waiting for 064 long"
         ],
-        "note": "Starting J3964 for OWB:064 Short 1 v03 (Ben OK OWB:ASK:J3903); checking long 064 schedule status and existing 07_Upload-"
+        "note": "Confirmed OWB:064 long is not on YouTube yet (PR #1390 open, J3023 blocked before Ben watch, absent from UPLOADS.json/sn"
       },
       "taskKeys": [
         "OWB:064"
