@@ -351688,9 +351688,14 @@
           "at": "2026-11-27T09:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:58Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Wait for the Venus-picture and Earth-credit corrections, then independently review the corrected package",
+      "remaining_action": "Verify exact files, SHA-256 hashes and THUMB_LEDGER T045",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351708,11 +351713,15 @@
       "escalated_at": "2026-11-27T02:25Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T09:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify exact files, SHA-256 hashes and T045 ledger",
+          "Visually inspect v02 thumbnails full-size and 168x94",
+          "Check title pairing, packaging copy and SHOT_LIST_v02",
+          "Write REVIEW.md, push PR and report"
+        ]
       }
     },
     {
