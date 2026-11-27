@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
 | J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
 | J3917 | mini | blocked | gemini | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
-| J3923 | mini | claimed | gemini | 2026-11-27T21:01Z | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
+| J3923 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
 | J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
