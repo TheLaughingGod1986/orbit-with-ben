@@ -351814,9 +351814,14 @@
           "at": "2026-11-27T00:08Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:08Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Verify the rewritten narration and rescue details independently",
+      "remaining_action": "Check whether a v05 narration has been merged on WW2 main",
       "kind": "review",
       "recheck_of": "J3821",
       "due": "2026-11-27T01:07:47+00:00",
@@ -351834,8 +351839,11 @@
         "of": 3,
         "at": "2026-11-27T00:08Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3821 and its precondition",
+          "Check WW2 main and PRs #195/#196",
+          "Reopen or re-wait J3821"
+        ]
       }
     }
   ],
