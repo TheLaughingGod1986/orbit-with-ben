@@ -355676,13 +355676,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T17:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:37Z",
-      "result": "parked for Chief: review and merge PR #1404 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1404, codex/j3853-review head 15971d717f, jobs/reviews/J3853/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:37Z",
@@ -355743,24 +355743,17 @@
           "at": "2026-11-27T17:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1404 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1404, codex/j3853-review head 15971d717f, jobs/reviews/J3853/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)"
+        },
+        {
+          "at": "2026-11-27T17:48Z",
+          "by": "codex",
+          "what": "reopened: Chief publication review in progress: full single-file historical v01 FIX diff reviewed; 13 safety tests PASS, owner/main destination verified. Reopen only this publication task to record ruling; J3853 and later production decisions unchanged."
         }
       ],
       "remaining_action": "Chief review and merge of PR #1404 (codex/j3853-review)",
       "for": "gemini",
       "kind": "review",
       "plain": "Check and publish the completed Titan Short review notes",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T17:36Z",
-        "by": "gemini",
-        "plan": [
-          "Find the review branch",
-          "Check diff and destination",
-          "Publish and open PR"
-        ],
-        "note": "Pushed codex/j3853-review (15971d717f) and opened PR #1404 for Chief merge; PR #1366 remains open and untouched"
-      },
       "taskKeys": [
         "OWB:032"
       ],
