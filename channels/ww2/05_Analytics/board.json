@@ -8,24 +8,24 @@
       "current": 1,
       "target": 1000,
       "eta": null,
-      "asOf": "2026-11-27T06:40:32.922Z",
-      "source": "YouTube API"
+      "asOf": "2026-11-27T16:45:40Z",
+      "source": "Studio"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 2.8833333333333333,
+      "current": 5,
       "target": 4000,
       "eta": null,
-      "asOf": "data through 2026-11-25",
-      "source": "API estimate"
+      "asOf": "2026-11-27T16:45:40Z",
+      "source": "Studio, all watch time"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 2.8833333333333333,
+      "current": 5,
       "target": 8000,
       "eta": null,
-      "asOf": "data through 2026-11-25",
-      "source": "API estimate"
+      "asOf": "2026-11-27T16:45:40Z",
+      "source": "Studio, all watch time"
     }
   ],
   "eligibleWatchHours": 0,
@@ -46,8 +46,8 @@
         "averageViewPercentage": 9.95,
         "subscribersGained": 0
       },
-      "impressions": null,
-      "ctr": null,
+      "impressions": 1044,
+      "ctr": 1.2,
       "viewed": 9.95,
       "watchHours": 0.45,
       "sources": [
@@ -340,19 +340,24 @@
         }
       ],
       "newViewers": null,
-      "returningViewers": null,
+      "returningViewers": 0,
       "studioMissing": {
-        "reach": "No matching dated Studio read"
+        "newViewers": "Studio Advanced mode (24-25 Nov 2026 Pacific) shows '—' for New viewers (total and both days); Audience by watch behaviour says Not enough data.",
+        "testCompare": "Studio Details shows a single uploaded thumbnail with no active Test & Compare or test report (A/B testing shows setup only), and Reach tab has no A/B test card or watch-time shares."
       },
-      "testCompare": null,
+      "testCompare": {
+        "status": "unavailable",
+        "variants": []
+      },
       "flags": [
+        "Change thumbnail first, then title; Chief reviews before any change.",
         "Tighten the next script's first two minutes."
       ],
       "medianAvgSeconds": 190.5,
       "avgSecondsVsMedian": -56.5,
-      "medianCtr": 0.9,
+      "medianCtr": 1.05,
       "medianViewed": 12.875,
-      "ctrVsMedian": null,
+      "ctrVsMedian": 0.1499999999999999,
       "viewedVsMedian": -2.9250000000000007
     },
     {
@@ -1028,9 +1033,9 @@
       ],
       "medianAvgSeconds": 190.5,
       "avgSecondsVsMedian": 56.5,
-      "medianCtr": 0.9,
+      "medianCtr": 1.05,
       "medianViewed": 12.875,
-      "ctrVsMedian": 0,
+      "ctrVsMedian": -0.15000000000000002,
       "viewedVsMedian": 2.9250000000000007
     }
   ],

@@ -123,11 +123,18 @@ def claim_is_stalled(j, at, execution=None):
     latest = max((t for t in stamps if t), default=None)
     return bool(latest and at > latest + STALL_GRACE)
 
+# A browser sign-in is Ben's to do but a machine's to check: whether a Studio or Flow window is signed in can be read
+# without him. 27 Nov 2026: nine jobs sat a day on "Ben sign-in required on :9223" after he had signed back in on 26 Nov.
+SIGNIN_RE = re.compile(r"sign(?:ed)?[- ]?(?:back )?(?:in(?:to)?|out)\b", re.I)
+
+
 def hold_due(j, by_id, at):
     """A due hold requests verification; it never grants permission to release the work."""
-    if j.get("status") != "blocked" or j.get("needs") == "ben" or j.get("awaits_ben") or (j.get("hold") or {}).get("type") == "ben":
-        return False
     hold = j.get("hold") or {}
+    if j.get("status") != "blocked" or j.get("needs") == "ben" or j.get("awaits_ben"):
+        return False
+    if hold.get("type") == "ben" and not SIGNIN_RE.search(str(hold.get("condition") or "")):
+        return False
     check = timestamp(hold.get("check_at"))
     if hold.get("type") == "dependency" and not hold.get("last_recheck"):
         if j.get("after") and by_id.get(j["after"],{}).get("status") == "done":

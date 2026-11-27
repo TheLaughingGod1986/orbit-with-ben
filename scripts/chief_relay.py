@@ -1525,7 +1525,10 @@ def spawn_second_slot(at: dt.datetime, parent_slot: int | None = None) -> bool:
     this run cannot stop it), which waits CHIEF_SPAWN_DELAY seconds for this run's lease and then takes the next free
     slot under the usual memory guard. Job boundaries retry if that child has exited.
     A spawned run never spawns again. CHIEF_SPAWN_SLOTS=0 turns this off."""
-    if os.environ.get("CHIEF_SPAWN_SLOTS", "1") == "0" or os.environ.get("CHIEF_SPAWNED") == "1":
+    # Off by default inside a test process: a detached run outlives the test and launches real agent workers
+    # (27 Nov 2026, five spawns in one test run). Tests of spawning set CHIEF_SPAWN_SLOTS=1 themselves.
+    default = "0" if "unittest" in sys.modules else "1"
+    if os.environ.get("CHIEF_SPAWN_SLOTS", default) == "0" or os.environ.get("CHIEF_SPAWNED") == "1":
         return False
     if (STATE / "chief-relay.pause").exists():
         return False
