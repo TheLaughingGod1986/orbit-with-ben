@@ -1,5 +1,5 @@
 {
-  "next_id": 3932,
+  "next_id": 3933,
   "jobs": [
     {
       "id": "J0001",
@@ -361776,6 +361776,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3932",
+      "title": "J3859 corrections: distinguish cohorts and qualify rule predictions in PR211",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Acting Chief Codex ruling on J3859: FIX before merge of ww2-channel PR211, head ce28c5e82bfa76805801db4e26552a9362aea319. Amend that existing PR, not a second rules PR. No YouTube writes, spending or unrelated hold changes.\n1. Keep separate: Studio 24-25 Nov Pacific reach 1044/1.2%, lagged API 16 views/134s/9.95%, and J3800 lifetime 1211/1.0%/30 views. These do not share populations. 1.2% is Studio-imported reach, not API CTR.\n2. API retention is aggregate; do not call 40% at 1min to 30% at 5min stranger retention. Ten-point steps do not verify an exact sample of ten; label sample size unavailable unless a source proves it. 56% at 30s is an interpolated checkpoint. Preserve measured Suggested 11.2% separately.\n3. Remove approximate post-change 1.2% CTR: subtracting rounded lifetime CTRs cannot establish it. +329 impressions and +14 views are lifetime deltas, not verified post-change stranger clicks/CTR. Keep source-specific impression deltas explicitly as such.\n4. Record prediction outcomes as observed below target vs causal rule tests: no clean rule failure or same-cause assertion when implementation, source population and packaging windows are confounded. Update each original table Result cell with the current dated outcome; retain historical evidence in the narrative.\n5. Rule8 principle accepted in concept: use post-change evidence and do not wait blindly for day7. Require a dated fresh stranger read, explicit data availability and test status. If date-only controls cannot isolate 25 Nov 10:48:50Z, use completed 26 Nov+ Pacific days and record bounds; never invent minute precision. A missing sample calls for a typed data wait with a concrete retry, not an automatic change or day7 delay.\n6. Make explicit decisions on row17 proposals (adopt/defer with reasons), distinguish existing Rule1 violations from evidence for a new rule, and remove superseded blanket hold-until-Dec2 advice in the J3801 narrative by marking it historical/superseded. Preserve J3706 date hold and all credit/Ben holds.\nReturn amended PR211 for elected-Chief review, report all changes and the remaining fresh Studio evidence job. No live packaging change is approved by this correction job. Rules stay concise.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/211",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T17:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T17:06Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the evidence and prediction results in the existing rules review",
+      "kind": "review",
+      "plain": "Correct the Atlantic rules review so its conclusions match the evidence"
     }
   ],
   "focus": [
