@@ -358770,9 +358770,14 @@
           "at": "2026-11-27T12:40Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T12:40Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Review the finished records for privacy, publish and merge, then verify the assembly handoff",
+      "remaining_action": "Inspecting the integration branch diff",
       "due": "2026-11-27T16:31:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -358781,12 +358786,20 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-27T12:40Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect the integration branch",
+          "Check for private data",
+          "Update it onto current main",
+          "Open the pull request and merge",
+          "Read back and report"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
