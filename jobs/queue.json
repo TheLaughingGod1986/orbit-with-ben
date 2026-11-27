@@ -355481,13 +355481,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T08:09Z",
-      "eta": "2026-11-27T10:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:34Z",
-      "result": "",
+      "result": "Chief ruling: condition SATISFIED. Independently verified PR 1367 merged at 63265bea07, candidate 40c6ca5114 on origin/main, nine published files unchanged and all eight NAS hashes matching. Existing packaging PASS and Ben v02 approval valid. Reopened J3115 with ruling and evidence for closure; J3119 and J3828 remain dependent on J3115. Shorts holds/dates unchanged; no platform writes or spend.",
       "history": [
         {
           "at": "2026-11-27T07:34Z",
@@ -355543,6 +355543,11 @@
           "at": "2026-11-27T08:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief ruling recorded on J3115: publication proven; hold released with eight matching NAS hashes. Existing J3115 closure, J3119 delivery and J3828 reconciliation are the concrete follow-up."
+        },
+        {
+          "at": "2026-11-27T08:10Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition SATISFIED. Independently verified PR 1367 merged at 63265bea07, candidate 40c6ca5114 on origin/main, nine published files unchanged and all eight NAS hashes matching. Existing packaging PASS and Ben v02 approval valid. Reopened J3115 with ruling and evidence for closure; J3119 and J3828 remain dependent on J3115. Shorts holds/dates unchanged; no platform writes or spend."
         }
       ],
       "remaining_action": "Verification complete; close original packaging review and retain existing delivery checks",
@@ -355572,7 +355577,8 @@
           "Record outcome on J3115"
         ],
         "note": "Chief ruling recorded on J3115: publication proven; hold released with eight matching NAS hashes. Existing J3115 closure"
-      }
+      },
+      "done_ref": "63265bea07191f79edc19123eb110ff2345e1a1a"
     },
     {
       "id": "J3864",
