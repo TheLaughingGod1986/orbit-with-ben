@@ -325561,18 +325561,25 @@
           "at": "2026-11-27T11:54Z",
           "by": "relay",
           "what": "condition verification queued: J3894"
+        },
+        {
+          "at": "2026-11-27T12:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-30T12:00:00Z"
         }
       ],
-      "remaining_action": "Keep the rewrite parked until a named protected-desk exception is recorded",
+      "remaining_action": "Verify the protected-history exception, then arrange a fresh controlled rewrite window",
       "due": "2026-11-30T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "hold": {
         "type": "input",
-        "condition": "Do not run the history rewrite. The 24 Nov chat line in f2292898b4 does not name an irreversible rewrite of protected HOS hos-desk history while retaining PR180. J2537's protected-history hold stands (6faeab492c). Grok ruling 7018109147: the question is already open; do not ask again. Reaching 30 Nov does not authorize the push.",
-        "check_at": "2026-11-27T12:54:19+00:00",
-        "recheck_task": "J3894"
+        "condition": "J3894 Chief review: NOT MET. PR1384 merged as ce561a745d after exact evidence review, 13 privacy tests and channel_check. Trusted rulings 7018109147 and 7133511774 still govern: the 24 Nov chat line does not name the irreversible protected HOS hos-desk history rewrite retaining PR180. Fresh replies through OWB7217990843 and HOS7217967394 add no named exception. Keep blocked; reaching 30 Nov does not authorize a push. Question already open; do not ask Ben again. Next verification 30 Nov 12:00 UTC aligned with J2537 under the 72-hour approval backoff. After explicit authorization, resolve ordinary HOS PRs, refresh NAS backup and private rehearsal against current heads, give day-before notice, verify J3012 timing and hold HOS writers before a newly controlled window.",
+        "check_at": "2026-11-30T12:00:00Z",
+        "last_recheck": "J3894",
+        "checked_at": "2026-11-27T12:17:57+00:00",
+        "checked_by": "codex"
       }
     },
     {
