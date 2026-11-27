@@ -282273,13 +282273,13 @@
       "stage": "upload",
       "after": "J3114",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T00:10Z",
-      "eta": "2026-11-27T02:10Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T05:33Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.",
       "history": [
         {
           "at": "2026-11-19T05:33Z",
@@ -282310,6 +282310,11 @@
           "at": "2026-11-27T00:16Z",
           "by": "codex",
           "what": "step 2 of 3 done: Review complete at a4c9c8f534 on codex/j3115-pluto-review. Automatic approval review rejected branch publication; no retry or indirect push attempted."
+        },
+        {
+          "at": "2026-11-27T00:17Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed."
         }
       ],
       "remaining_action": "Publish the completed Pluto packaging review",
@@ -282330,7 +282335,12 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.",
+        "check_at": "2026-11-27T06:17:01+00:00"
+      }
     },
     {
       "id": "J3116",
