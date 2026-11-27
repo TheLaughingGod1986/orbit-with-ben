@@ -354068,19 +354068,34 @@
           "at": "2026-11-27T03:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T03:02Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3848; starting pre-flight checks"
         }
       ],
-      "remaining_action": "Set explicit paid-promotion answers and add the two required cards safely",
+      "remaining_action": "Run lint:package for film 008, inspect J3845 audit, v05 script/SRT, and live HOS targets",
       "kind": "studio",
       "plain": "Finish the required settings and links on the Franklin videos",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-27T03:02Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Pre-flight lint & script/API target check",
+          "Fresh-read Studio state (before evidence)",
+          "Set Paid promotion No per video & verify",
+          "Add two info cards on YqCWYlv_LCY & verify",
+          "Run channel:audit & capture after evidence",
+          "Commit records PR & post report"
+        ],
+        "note": "Claimed J3848; starting pre-flight checks"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
