@@ -359696,9 +359696,14 @@
           "at": "2026-11-27T14:24Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:24Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Independent Chief review complete: condition unmet; J3859 dependency hold and 20:15Z retry recorded using --recheck J3908. Review progress separately recorded under the live Chief lease."
         }
       ],
-      "remaining_action": "Parking J3908 for elected Chief (codex) to record wait --recheck J3908 on J3859 and close J3908",
+      "remaining_action": "Close the completed verification and post the Chief ruling",
       "kind": "review",
       "recheck_of": "J3859",
       "due": "2026-11-27T05:00:12+00:00",
@@ -359716,12 +359721,16 @@
       ],
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-27T14:24Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check authority and inputs",
+          "Review current import evidence",
+          "Record hold and follow-up"
+        ],
+        "note": "Independent Chief review complete: condition unmet; J3859 dependency hold and 20:15Z retry recorded using --recheck J390"
       }
     },
     {
