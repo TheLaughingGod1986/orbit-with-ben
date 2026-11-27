@@ -362009,9 +362009,14 @@
           "at": "2026-11-27T19:15Z",
           "by": "relay",
           "what": "condition verification queued: J3948"
+        },
+        {
+          "at": "2026-11-27T19:19Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T07:00:00Z"
         }
       ],
-      "remaining_action": "Parked for elected Chief (codex) PASS/merge decision on PR #1399 (review in PR #1412)",
+      "remaining_action": "Awaiting elected Chief PASS/FIX on PR #1412 KEEP and PR #1399 merge",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
@@ -362045,10 +362050,12 @@
         "OWB:064"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T20:15:39+00:00",
-        "recheck_task": "J3948"
+        "type": "input",
+        "condition": "J3948 verification (claudecode): predecessor J3922 is DONE (v03 on PR #1399 head 961a0b19d5). J3923 QA work is complete: gemini KEEP in PR #1412 (b1a966d786, jobs/reviews/J3923/REVIEW.md). NAS v03 sha256 re-read now = 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402 in both 10_Shorts/ and 06_Final-Exports/, matching the KEEP; v02 still 8b7a218c. UNMET: no elected-Chief ruling on the KEEP; PR #1412 and PR #1399 both OPEN, unmerged, no comments. Not reopened, because reopening would re-run completed QA instead of getting the Chief ruling. Next: Chief rules PASS/FIX on v03 538464b9 and merges #1399/#1412; only then J3903 goes to Ben phone UAT. No upload, schedule or spend.",
+        "check_at": "2026-11-28T07:00:00Z",
+        "last_recheck": "J3948",
+        "checked_at": "2026-11-27T19:19:55+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
