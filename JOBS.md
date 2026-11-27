@@ -106,7 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
 | J3906 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3907 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3908 | mini | open | – | – | review · Verify condition for J3859 |  |
+| J3908 | mini | claimed | codex | 2026-11-27T16:24Z | review · Verify condition for J3859 |  |
 | J3909 | mini | claimed | macbook-2 | 2026-11-27T16:18Z | 064 edit · assembly · OWB 064: Repair vertical trailer and package after J3902 FIX | J3902 |
 | J3910 | mini | open (after J3909) | – | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
 
