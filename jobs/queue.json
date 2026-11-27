@@ -355008,13 +355008,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T07:27Z",
-      "eta": "2026-11-27T09:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "",
+      "result": "Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which currently holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on fresh reload (2026-11-27T07:35Z). CDP 9223 is on Orbit (UC_esArsDKd3GJvOkeO0DUog) and account switching is forbidden by J3858 and channels/ww2/05_Analytics/README.md.",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355035,9 +355035,19 @@
           "at": "2026-11-27T07:36Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Checked configured Studio CDP 9224 (2026-11-27T07:35Z, fresh reload): permission denied for UCu94mInMFosxu3W0H6jlI6Q (wrong Google account signed in, only OpptiAI/Orbit/HOS listed); CDP 9223 is active on Orbit (no account switching allowed). Parking for Ben sign-in on 9224."
+        },
+        {
+          "at": "2026-11-27T07:36Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which currently holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on fresh reload (2026-11-27T07:35Z). CDP 9223 is on Orbit (UC_esArsDKd3GJvOkeO0DUog) and account switching is forbidden by J3858 and channels/ww2/05_Analytics/README.md."
+        },
+        {
+          "at": "2026-11-27T07:36Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-27T11:30:00Z"
         }
       ],
-      "remaining_action": "Wait for Ben to sign CDP 9224 into Field Order History (UCu94mInMFosxu3W0H6jlI6Q), then verify CHANNEL_ID and collect 2026-11-24..2026-11-25 Studio analytics for qfc6EBStOfo",
+      "remaining_action": "Verify UCu94mInMFosxu3W0H6jlI6Q on CDP 9224, collect strict 2026-11-24..2026-11-25 Pacific Studio reach/audience/Test & Compare for qfc6EBStOfo, import via field-order-studio-import.ts, and open PR from clean worktree",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
@@ -355057,7 +355067,12 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben restores Field Order History (UCu94mInMFosxu3W0H6jlI6Q) sign-in on configured Mac mini CDP Chrome 9224 (~/.ww2-chrome-youtube-studio), which currently holds the Orbit/HOS/OpptiAI Google account and returns 'Oops, you don't have permission to view this page' on fresh reload (2026-11-27T07:35Z). CDP 9223 is on Orbit (UC_esArsDKd3GJvOkeO0DUog) and account switching is forbidden by J3858 and channels/ww2/05_Analytics/README.md.",
+        "check_at": "2026-11-27T11:30:00Z"
+      }
     },
     {
       "id": "J3859",
