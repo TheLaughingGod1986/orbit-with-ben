@@ -355764,13 +355764,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T08:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:42Z",
-      "result": "parked for Chief: Short v03 review (032 dry_desert_two_oceans v03, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 5b5703855c18, PR #1366 commit 7f84cbba48, #99 posted; v01/v02 preserved, J3853/J3856 held)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T07:42Z",
@@ -355841,25 +355841,16 @@
           "at": "2026-11-27T08:23Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short v03 review (032 dry_desert_two_oceans v03, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 5b5703855c18, PR #1366 commit 7f84cbba48, #99 posted; v01/v02 preserved, J3853/J3856 held)"
+        },
+        {
+          "at": "2026-11-27T09:01Z",
+          "by": "codex",
+          "what": "reopened: Chief correction ruling recorded in 045503bf1c; J3878 owns remaining playback QA. Reopen only to close the completed correction review; parent holds remain."
         }
       ],
       "remaining_action": "Parked for Chief exact-file review of v03 (5b5703855c18) and PR #1366 (7f84cbba48)",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T08:23Z",
-        "by": "gemini",
-        "plan": [
-          "Search official NASA/JPL/Cassini moving Titan footage",
-          "Inspect v02 script and redesign S08 graphic",
-          "Assemble v03 master beside v01/v02 on NAS",
-          "Run seven fresh gates and inspect stills",
-          "Update PR 1366 and park for Chief review"
-        ],
-        "note": "Pushed commit 7f84cbba48 to PR #1366, posted #99 report and PR comment, verified NAS v03 master sha256 5b5703855c18 besi"
-      },
       "taskKeys": [
         "OWB:032"
       ]
