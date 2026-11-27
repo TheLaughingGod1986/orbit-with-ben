@@ -363269,9 +363269,14 @@
           "at": "2026-11-27T18:57Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified HOS PR #797 OPEN/MERGEABLE 6/6 CI green at a855da7475 and live capability probes: only producer gemini has audio_input"
+        },
+        {
+          "at": "2026-11-27T18:59Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Confirmed 5/5 SHA-256 hashes, PR #797 OPEN/6-of-6 CI green, status.json unchanged, zero new desk/thread rulings; no independent non-producer reviewer has audio_input"
         }
       ],
-      "remaining_action": "Verify NAS/script hashes and non-producer audio_input status before recording J3780 wait",
+      "remaining_action": "Record unmet capability wait on J3780 (--recheck J3942), post reports, and close J3942",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -363288,16 +363293,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T18:57Z",
+        "at": "2026-11-27T18:59Z",
         "by": "gemini",
         "plan": [
           "Inspect J3780 hold, PR #797, and capability probes",
           "Check non-producer audio_input readiness",
           "Record J3780 wait or reopen and finish J3942"
         ],
-        "note": "Verified HOS PR #797 OPEN/MERGEABLE 6/6 CI green at a855da7475 and live capability probes: only producer gemini has audi"
+        "note": "Confirmed 5/5 SHA-256 hashes, PR #797 OPEN/6-of-6 CI green, status.json unchanged, zero new desk/thread rulings; no inde"
       },
       "taskKeys": [
         "HOS:128"
