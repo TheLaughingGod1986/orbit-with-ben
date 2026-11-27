@@ -358785,9 +358785,14 @@
           "at": "2026-11-27T12:41Z",
           "by": "claudecode",
           "what": "step 2 of 5 done: Diff inspected: 5 files (review, film status, queue for J3022/J3818/J3023, generated boards). No private data. Main has newer J3022/J3818 history, so rebuilding on current main"
+        },
+        {
+          "at": "2026-11-27T12:42Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Rebuilt on current main and opened PR #1388 (5 files, privacy tests OK)"
         }
       ],
-      "remaining_action": "Rebuilding the integration change on current main",
+      "remaining_action": "Waiting for checks, then merging the pull request",
       "due": "2026-11-27T16:31:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -358795,9 +358800,9 @@
       "plain": "Publish the approved picture records so the every-planet film can be assembled",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T12:41Z",
+        "at": "2026-11-27T12:42Z",
         "by": "claudecode",
         "plan": [
           "Inspect the integration branch",
@@ -358806,7 +358811,7 @@
           "Open the pull request and merge",
           "Read back and report"
         ],
-        "note": "Diff inspected: 5 files (review, film status, queue for J3022/J3818/J3023, generated boards). No private data. Main has "
+        "note": "Rebuilt on current main and opened PR #1388 (5 files, privacy tests OK)"
       },
       "taskKeys": [
         "OWB:064"
