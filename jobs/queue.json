@@ -354777,21 +354777,34 @@
           "at": "2026-11-27T06:29Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T06:30Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Review the rejected changes and prepare a safe publication candidate",
+      "remaining_action": "Reading the saved Pluto packaging decision and why it was rejected",
       "due": "2026-11-27T08:30:00Z",
       "for": "claudecode",
       "kind": "review",
       "plain": "Prepare the Pluto packaging decision for safe publication",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T06:29Z",
+        "of": 5,
+        "at": "2026-11-27T06:30Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read decision diff and rejection",
+          "Build clean candidate on current main",
+          "Privacy review of every file",
+          "Check ruling identity and gates",
+          "Record candidate and park for Chief"
+        ]
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
