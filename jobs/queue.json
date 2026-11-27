@@ -353964,19 +353964,29 @@
           "at": "2026-11-27T02:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T02:51Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Check the audit coverage against a direct video lookup",
+      "remaining_action": "Inspecting J3844 context and HOS channel-audit implementation",
       "kind": "assembly",
       "plain": "Find why a public Germs video is missing from the channel audit",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-27T02:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3844 context and channel-audit code",
+          "Reproduce with bounded read-only API calls",
+          "Analyze pagination, playlist items, and source IDs",
+          "Implement and test targeted fix in isolated worktree",
+          "Publish PR, evidence, and thread report"
+        ]
       }
     }
   ],
