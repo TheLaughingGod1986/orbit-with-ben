@@ -355764,13 +355764,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T09:03Z",
-      "eta": "2026-11-27T11:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:42Z",
-      "result": "",
+      "result": "Chief review: correction KEEP only on v03 SHA256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13. Cassini identity, 68px labels and S04 crop accepted. J3878 owns demonstrated audio/moving-video QA before full-cut Chief decision/UAT. J3853/J3856 remain dependency-held, checkpoint 2026-11-28T06:45:00Z. Ruling 045503bf1c pushed on codex/J3865-review-complete. Automatic review rejected PR creation; no retry. No publishing changes.",
       "history": [
         {
           "at": "2026-11-27T07:42Z",
@@ -355851,6 +355851,11 @@
           "at": "2026-11-27T09:03Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T09:03Z",
+          "by": "codex",
+          "what": "done: Chief review: correction KEEP only on v03 SHA256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13. Cassini identity, 68px labels and S04 crop accepted. J3878 owns demonstrated audio/moving-video QA before full-cut Chief decision/UAT. J3853/J3856 remain dependency-held, checkpoint 2026-11-28T06:45:00Z. Ruling 045503bf1c pushed on codex/J3865-review-complete. Automatic review rejected PR creation; no retry. No publishing changes."
         }
       ],
       "remaining_action": "Parked for Chief exact-file review of v03 (5b5703855c18) and PR #1366 (7f84cbba48)",
@@ -355867,7 +355872,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "045503bf1c"
     },
     {
       "id": "J3866",
