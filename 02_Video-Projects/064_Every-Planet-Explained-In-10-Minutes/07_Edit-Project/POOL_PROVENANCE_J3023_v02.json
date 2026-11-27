@@ -543,30 +543,6 @@
       ]
     },
     {
-      "id": "Five_Minutes_in_Orbit",
-      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Five_Minutes_in_Orbit.webm",
-      "title": "ISS orbital sunset and Earth limb timelapse (027 shelf)",
-      "credit": "NASA/ISS",
-      "license": "Public Domain (NASA)",
-      "is_code_graphic": false,
-      "video": true,
-      "width": null,
-      "height": null,
-      "upscale_max": 1.0,
-      "sha256": "92c169055e72829e118584cb0d5bd67485700334d1cb4ca96d2af394c7828c48",
-      "bytes": 7973947,
-      "intervals": [
-        [
-          186.95,
-          193.15
-        ],
-        [
-          232.25,
-          237.75
-        ]
-      ]
-    },
-    {
       "id": "orbit_northpole_omni_v01",
       "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/04_Generated-Clips/01_Raw/omni_v01/orbit_northpole_omni_v01.mp4",
       "title": "Orbit hovering over Arctic sea ice (027 verified Omni)",
@@ -855,23 +831,7 @@
         [
           307.02,
           312.79
-        ]
-      ]
-    },
-    {
-      "id": "JPL-20210222-M2020f-0001",
-      "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/07_Edit-Project/nasa_pool_v01/launch_edl/JPL-20210222-M2020f-0001.mp4",
-      "title": "Perseverance Mars descent and Jezero landing footage (025 shelf)",
-      "credit": "NASA/JPL-Caltech",
-      "license": "Public Domain (NASA/JPL)",
-      "is_code_graphic": false,
-      "video": true,
-      "width": null,
-      "height": null,
-      "upscale_max": 1.0,
-      "sha256": "85a50c53205b27850c7891bab2a1f74c7c5cd61f35b80a6c99f5dd5592a30abe",
-      "bytes": 135524266,
-      "intervals": [
+        ],
         [
           312.79,
           318.57
@@ -2002,6 +1962,38 @@
       "bytes": 8671737,
       "intervals": [],
       "reject": "Retired from v02/v03 cuts; replaced by sunlit ISS plate_031_r25 at source_in 6 s."
+    },
+    {
+      "id": "Five_Minutes_in_Orbit",
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Five_Minutes_in_Orbit.webm",
+      "title": "ISS orbital sunset and Earth limb timelapse (027 shelf)",
+      "credit": "NASA/ISS",
+      "license": "Public Domain (NASA)",
+      "is_code_graphic": false,
+      "video": true,
+      "width": null,
+      "height": null,
+      "upscale_max": 1.0,
+      "sha256": "92c169055e72829e118584cb0d5bd67485700334d1cb4ca96d2af394c7828c48",
+      "bytes": 7973947,
+      "intervals": [],
+      "reject": "Retired from v02/v03 cuts (near-black/EOF); replaced by plate_031_r26_iss_clouds_v01 [186.95, 193.15] and plate_031_r21_earth_limb_v01 [232.25, 237.75]."
+    },
+    {
+      "id": "JPL-20210222-M2020f-0001",
+      "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/07_Edit-Project/nasa_pool_v01/launch_edl/JPL-20210222-M2020f-0001.mp4",
+      "title": "Perseverance Mars descent and Jezero landing footage (025 shelf)",
+      "credit": "NASA/JPL-Caltech",
+      "license": "Public Domain (NASA/JPL)",
+      "is_code_graphic": false,
+      "video": true,
+      "width": null,
+      "height": null,
+      "upscale_max": 1.0,
+      "sha256": "85a50c53205b27850c7891bab2a1f74c7c5cd61f35b80a6c99f5dd5592a30abe",
+      "bytes": 135524266,
+      "intervals": [],
+      "reject": "Retired from v02/v03 cuts (3-panel split-screen telemetry); replaced by PIA24542_full.jpg tight Ingenuity crop [312.79, 318.57]."
     }
   ],
   "v02b_polish_fixes": {
