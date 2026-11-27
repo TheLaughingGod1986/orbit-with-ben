@@ -23,17 +23,19 @@ Eight linted proposals now use that final runtime path and are stored privately 
 `/Volumes/MiniWork/scratch/J3012-runtime-proposals-1127/`. Reconcile current source hashes before installation.
 
 Both MacBook engine clones were staged and verified by J3885 (merged PR #1378); PR #1375 is also merged.
-J3888 reopened this job after reviewing that evidence. The private slot-2 error heartbeat at 10:22:56Z is
-not live acceptance. Two worker loop tests could spawn a real second slot on Darwin; the fix and current
-Mini reconciliation are in `jobs/reviews/J3012/RUNTIME_RECONCILIATION_2026-11-27.md`.
-J3890 checks machine-local attribution and loaded MacBook settings through the installed worker. Do not rerun
-the unpatched tests or enable remote login as a shortcut.
+J3888 reopened this job after reviewing that evidence. J3890's MacBook readiness report is now
+reviewed and merged (PR #1379); the loop-test isolation fix is merged in PR #1380. The early private
+slot-2 heartbeat has been traced to the Mini's detached future-identity suite, not the actual MacBook.
+Its accidental Mini clone is clean, its queue unchanged, and no test worker remains running.
+See `jobs/reviews/J3012/COORDINATION_2026-11-27.md` for provenance and limits.
 
-Eight Mini services now have matching installed/loaded argv, configured environment and observed path/interval
-fields; both remote-worker proposals have been regenerated for the final runtime path. This is not a drain or
-full effective-policy acceptance. Next: finish J3890, merge the isolation fix, reconcile any changed settings,
-coordinate the drain and export a **new frozen queue** through the cutover order below. No service,
-active-engine marker, pause file, board deployment, production branch, default branch or live store has switched.
+Eight Mini services have matching installed/loaded argv, configured environment and observed path/interval
+fields; both remote-worker proposals use the final runtime path. This is not a drain or full effective-policy
+acceptance. **J3892 implements the external MacBook installer handoff** required to avoid booting out its own
+coordinator. Review that code and machine-local dry run, stage its bounded detached coordinator through the
+installed worker, then coordinate both-machine drain and a NEW frozen queue export. An existing main branch
+or the rehearsal queue is never activation permission. No live switch, pause, activation marker, production
+branch, default branch, board deployment or approval store has changed.
 
 After the engine passes relay/publish/tick/both-slot acceptance, the latest J3012 brief additionally requires
 moving the tick store and studio thread into private Studio, including HOS watch ticks. The older instruction
