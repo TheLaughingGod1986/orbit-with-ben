@@ -360625,13 +360625,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T16:01Z",
-      "eta": "2026-11-27T18:01Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T15:36Z",
-      "result": "",
+      "result": "Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes.",
       "history": [
         {
           "at": "2026-11-27T15:36Z",
@@ -360692,6 +360692,11 @@
           "at": "2026-11-27T16:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:02Z",
+          "by": "codex",
+          "what": "done: Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes."
         }
       ],
       "remaining_action": "Record the Chief FIX and repair handoff; completed worker QA evidence is preserved",
@@ -360715,7 +360720,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "12f4082187"
     },
     {
       "id": "J3919",
