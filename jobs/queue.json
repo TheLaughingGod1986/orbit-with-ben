@@ -354676,9 +354676,14 @@
           "at": "2026-11-27T06:23Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T06:23Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publish the completed Pluto packaging review",
+      "remaining_action": "Checking whether J3115's review decision has been published",
       "kind": "review",
       "recheck_of": "J3115",
       "due": "2026-11-27T07:22:35+00:00",
@@ -354696,9 +354701,15 @@
         "of": 3,
         "at": "2026-11-27T06:23Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3115 history",
+          "Check decision a4c9c8f534 published",
+          "Record wait or reopen"
+        ]
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
