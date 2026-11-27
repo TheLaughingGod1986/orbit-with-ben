@@ -355869,13 +355869,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-27T16:54Z",
-      "eta": "2026-11-27T18:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3859 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/211. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -355921,6 +355921,11 @@
           "at": "2026-11-27T16:54Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:57Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3859 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/211. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "After J3858 imports the matching Studio numbers, verify them and release the Atlantic rules review",
