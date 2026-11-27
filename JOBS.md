@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3932 | mini | open | – | – | review · J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3933 | mini | claimed | codex | 2026-11-27T19:15Z | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3934 | mini | open | – | – | review · Verify condition for J3871 |  |
+| J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 
 Recently finished:
 

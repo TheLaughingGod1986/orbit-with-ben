@@ -1,5 +1,5 @@
 {
-  "next_id": 3935,
+  "next_id": 3936,
   "jobs": [
     {
       "id": "J0001",
@@ -362062,6 +362062,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3935",
+      "title": "Atlantic: decide one title fix from clean post-change CTR",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "J3933 read-only follow-up to J3859 / WW2 PR211 found clean 26 Nov Pacific CTR below 2%: Suggested 194 impressions at 0%; Browse 50 at 2.0%; overall 244 at 0.4%. Search absent, exact clicks unavailable; no views-as-clicks inference. Studio current title Battle of the Atlantic: The Month U-Boats Lost; Design E U-BOAT HUNTED verified. Native A/B dialog shows setup, no active report.\n\nDecide one title-only proposal now: Battle of the Atlantic: How Planes Hunted U-Boats (49 chars), keeping Design E. Rollback: Battle of the Atlantic: The Month U-Boats Lost. Mechanism is supported by the published description; low sample does not establish causality. Evidence channels/ww2/05_Analytics/packaging/qfc6EBStOfo_2026-11-27_J3933.md and companion JSON on codex/J3933.\n\nCheck chief_relay.py status immediately before protected decision. If approved, queue execution with explicit readback and timestamp; execution must freshly verify test status and preserve any newly running test, especially a title-and-thumbnail test. No automatic title edit permission if a test is set. No write was authorized or performed by J3933. Do not release J3706 before its 2 Dec 10:50Z date hold.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/211",
+      "film": "002",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T17:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T17:21Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the completed post-change performance and decide the proposed title",
+      "kind": "chief",
+      "plain": "Deciding whether a clearer aircraft title will help the Atlantic film"
     }
   ],
   "focus": [
