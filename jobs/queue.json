@@ -1,5 +1,5 @@
 {
-  "next_id": 3882,
+  "next_id": 3883,
   "jobs": [
     {
       "id": "J0001",
@@ -272694,13 +272694,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-26T08:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "Waiting for: Wait for Fri 27 Nov 2026 10:00 London (10:00 UTC) studio repo cutover window (day-before notice posted on #954 #7186248983; board token probe PASSED 25 Nov #7159250002; split streak 13/13; preserve 3/4 progress on reopen)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273806,6 +273806,11 @@
           "at": "2026-11-26T08:09Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-27T10:00:00Z"
+        },
+        {
+          "at": "2026-11-27T10:07Z",
+          "by": "relay",
+          "what": "reopened: its start time 2026-11-27T10:00:00Z has come (release-at-time hold)"
         }
       ],
       "remaining_action": "Execute Fri 27 Nov 10:00 London studio repo move by docs/STUDIO_MOVE.md, prove relay/publish/tick/MacBook slots, then move tick store + thread to studio (preserve 3/4)",
@@ -273825,26 +273830,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-26T08:09Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect migration dependencies",
-          "Write and rehearse runbook",
-          "Publish preparation",
-          "Verify access and complete scheduled move"
-        ],
-        "note": "Day-before move notice posted on #954 (#7186248983) for Fri 27 Nov 2026 from 10:00 London; split streak 13/13 (latest 26"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Wait for Fri 27 Nov 2026 10:00 London (10:00 UTC) studio repo cutover window (day-before notice posted on #954 #7186248983; board token probe PASSED 25 Nov #7159250002; split streak 13/13; preserve 3/4 progress on reopen)",
-        "check_at": "2026-11-27T10:00:00Z",
-        "release": "auto"
-      }
+      "model": "gemini-argon"
     },
     {
       "id": "J3013",
@@ -351713,6 +351699,11 @@
           "at": "2026-11-27T10:06Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: fresh post-J3835 advisory KEEP recorded in PR #1359 (commit b597831b68, cleanly atop PR #1361 9ff96bd97b, zero conflicts). All J3829 FIX items verified (PIA00233 removed from executable R11 & replaced by verified real Magellan overhead SAR PIA00215 sha256=46dc965a... with 0-gap 16:9 crops <=0.941x; PIA18033 credited to NASA/NOAA Suomi NPP Blue Marble 2012 across all 8 records with 4 NAS JPEG hashes unchanged; 12/12 J3835 SHA256SUMS match; locked VO unchanged; T045 proposed/video:null; all 3 v02 thumbs visual+score PASS; 0 title/hook overlap; SHOT_LIST_v02 opening <=4.0s & R09 clean). Superseded PR #1358 converted to Draft with DO-NOT-MERGE comment. Chief (codex): issue formal PASS, merge PR #1361 then PR #1359 (zero conflicts), close Draft PR #1358 unmerged, clear J3022 hold, and advance J3023 assembly (including SHOT_LIST_v02 opening/R09 sync & split Mercury graphics) ahead of Ben's Fri 11 Dec 18:00 London watch."
+        },
+        {
+          "at": "2026-11-27T10:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J3882"
         }
       ],
       "remaining_action": "Await elected Chief PASS, merge of PR #1361 and PR #1359, closure of Draft PR #1358, and J3022 hold release",
@@ -351743,6 +351734,12 @@
           "Write fresh REVIEW.md, reconcile PRs #1358/#1359/#1361 and report"
         ],
         "note": "Fresh post-J3835 advisory KEEP committed at b597831b68 on PR #1359 (cleanly atop PR #1361 9ff96bd97b, MERGE_TREE_CLEAN=Y"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-27T11:07:06+00:00",
+        "recheck_task": "J3882"
       }
     },
     {
@@ -356966,6 +356963,37 @@
         "check_at": "2026-11-28T09:00:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3882",
+      "title": "Verify condition for J3818",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3818: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3818 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T10:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T10:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await elected Chief PASS, merge of PR #1361 and PR #1359, closure of Draft PR #1358, and J3022 hold release",
+      "kind": "review",
+      "recheck_of": "J3818",
+      "due": "2026-11-27T11:07:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
