@@ -360835,9 +360835,14 @@
           "at": "2026-11-27T16:11Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3920; checking film 005 assets and J3653 reference."
+        },
+        {
+          "at": "2026-11-27T16:13Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified exact NAS master ww2_005_st_nazaire_v05_mix.mp4 (SHA-256 d766f537...4bdce, 136,350,786 bytes), thumbnails A/B/C (b6ec8ae5, 3ffd239e, a4f0bf77), and ww2_005_en-GB_v02.srt (dbb2399e, 214 cues); Studio 9223 active on FOH."
         }
       ],
-      "remaining_action": "Inspecting NAS master, thumbnails A/B/C, and existing 005 upload package",
+      "remaining_action": "Building PACKAGE_MANIFEST.json and preparing clean WW2 worktree for upload",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360862,9 +360867,9 @@
       "due": "2026-11-30T18:00:00Z",
       "urgent": 7,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T16:11Z",
+        "at": "2026-11-27T16:13Z",
         "by": "gemini",
         "plan": [
           "Verify NAS master and thumbnails",
@@ -360874,7 +360879,7 @@
           "Set playlist, end screen and read back",
           "Record in status.json and UPLOADS.json PR"
         ],
-        "note": "Claimed J3920; checking film 005 assets and J3653 reference."
+        "note": "Verified exact NAS master ww2_005_st_nazaire_v05_mix.mp4 (SHA-256 d766f537...4bdce, 136,350,786 bytes), thumbnails A/B/C"
       },
       "taskKeys": [
         "WW2:005"
