@@ -360896,13 +360896,13 @@
       "stage": "script",
       "after": "J3916",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T17:27Z",
-      "eta": "2026-11-27T19:27Z",
+      "eta": "",
       "created_by": "claudecode",
       "created_at": "2026-11-27T15:13Z",
-      "result": "",
+      "result": "parked for Chief: Advisory review complete for OWB 064 Short 2 v03 (PR #1394 head 35c90b3bda059309957e08fa86b93d2dbb36e8dc, Rules check PASS; 064_short02_venus_vs_uranus_script_v03.md sha256 634da1601232b9b8debb1880203228c4b98c95c354ae21711797f176e0c80ca0). Programmatic diff confirms v03 differs from v02b ONLY by inserting \"true\" in Line 2 (\"Uranus has no true surface; that's its coldest air.\"), matching verified NASA C5 quote in 064_short02_QUOTECHECK_v02.md (J3914, C1-C9 verbatim, 0 Gemini flags; no new Gemini run needed). Recomputed estimates confirmed: 205 raw chars (207 with breaks), 35 written / 41 expanded words, 253 expanded chars, fast/mid/slow 17.30/18.55/19.62 s (mid 18.55 s <= 19.0 s), payoff 15.31 s (82.5%). Live ElevenLabs GET /v1/user/subscription at 2026-11-27T17:30Z: 7,275 of 121,114 chars left, overage disabled, next reset 2026-11-30T10:50:31Z, TTS_PAUSE=False, lock=False; all credit-held long VO jobs need >=7,761 chars and already wait for 30 Nov reset. Ready for elected Chief (codex) to: (1) merge PR #1394 and lock v03 script; (2) decide bounded separate ElevenLabs VO allowance from existing subscription (e.g. <=600 chars cap, Ben Orbit Narrator eleven_v3, £0 cash/no overage/0 Flow/Vertex, live balance re-check at execution); (3) queue vo -> assembly (must first locate/replace verified native moving frame-0 footage since R01 not found and re-plan Uranus beats without presenting Veo CGI clips R03/R06 as real per plan v02 §4) -> independent QA/Ben UAT & listing rewrite; (4) record ruling on J3904 and keep its hold until satisfied. £0 spent; no upload/schedule/privacy change; text/diff/metadata check only.",
       "history": [
         {
           "at": "2026-11-27T15:13Z",
@@ -360943,6 +360943,11 @@
           "at": "2026-11-27T17:31Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted advisory review packet on studio thread; all v03 diff/source/timing/live-EL-balance checks verified; parking protected Chief lock, PR #1394 merge, bounded VO allowance, downstream queuing, and J3904 hold update for elected Chief (codex)."
+        },
+        {
+          "at": "2026-11-27T17:31Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Advisory review complete for OWB 064 Short 2 v03 (PR #1394 head 35c90b3bda059309957e08fa86b93d2dbb36e8dc, Rules check PASS; 064_short02_venus_vs_uranus_script_v03.md sha256 634da1601232b9b8debb1880203228c4b98c95c354ae21711797f176e0c80ca0). Programmatic diff confirms v03 differs from v02b ONLY by inserting \"true\" in Line 2 (\"Uranus has no true surface; that's its coldest air.\"), matching verified NASA C5 quote in 064_short02_QUOTECHECK_v02.md (J3914, C1-C9 verbatim, 0 Gemini flags; no new Gemini run needed). Recomputed estimates confirmed: 205 raw chars (207 with breaks), 35 written / 41 expanded words, 253 expanded chars, fast/mid/slow 17.30/18.55/19.62 s (mid 18.55 s <= 19.0 s), payoff 15.31 s (82.5%). Live ElevenLabs GET /v1/user/subscription at 2026-11-27T17:30Z: 7,275 of 121,114 chars left, overage disabled, next reset 2026-11-30T10:50:31Z, TTS_PAUSE=False, lock=False; all credit-held long VO jobs need >=7,761 chars and already wait for 30 Nov reset. Ready for elected Chief (codex) to: (1) merge PR #1394 and lock v03 script; (2) decide bounded separate ElevenLabs VO allowance from existing subscription (e.g. <=600 chars cap, Ben Orbit Narrator eleven_v3, £0 cash/no overage/0 Flow/Vertex, live balance re-check at execution); (3) queue vo -> assembly (must first locate/replace verified native moving frame-0 footage since R01 not found and re-plan Uranus beats without presenting Veo CGI clips R03/R06 as real per plan v02 §4) -> independent QA/Ben UAT & listing rewrite; (4) record ruling on J3904 and keep its hold until satisfied. £0 spent; no upload/schedule/privacy change; text/diff/metadata check only."
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) lock of v03 script, PR #1394 merge, bounded ElevenLabs VO authorization, vo/assembly/QA queuing, and J3904 hold ruling",
