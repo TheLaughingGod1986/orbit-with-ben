@@ -86,24 +86,21 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3903 | mini | blocked | gemini | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
-| J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
-| J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
-| J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
-| J3917 | mini | blocked | gemini | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
-| J3923 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
-| J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
+| J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
+| J3904 | mini | open (after J3902) | – | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
+| J3924 | mini | open | – | – | for gemini · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
-| J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
 | J3933 | mini | blocked | codex | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
-| J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
-| J3941 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 | J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
 | J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
 | J3949 | mini | claimed | macbook-2 | 2026-11-27T20:54Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3950 | mini | open | – | – | 064 edit · studio · OWB 064: provenance metadata fix on PR #1390 (J3910 FIX), then make it mergeable |  |
+| J3951 | mini | open | – | – | WW2:002 upload · for gemini · studio · Publish J3704 corrections: push 9e4b053 (codex/J3704-corrections) to ww2-channel; PR to replace #189 |  |
+| J3952 | mini | open | – | – | for gemini · studio · Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e) |  |
+| J3953 | mini | open | – | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
 
 Recently finished:
 
@@ -119,6 +116,7 @@ Do now
 - J3944 done: Verify condition for J3941 (Condition not met: PR #1411 OPEN, unmerged, 0 reviews (checked ~18:35Z). J3940 done. J3941 kept blocked; wait recorded (input) for Chief merge, next check 2026-11-27T22:30Z, --recheck J3944.)
 - J3943 done: Verify condition for J3834 (KEEP publication finding with timestamp/authorization qualifications in merged OWB PR1409. Independently verified ww2 PR213 OPEN at exact d734610. Reopened J3834 only for elected-Chief merge and main hash verification; updated remaining action. J3838 dependency, 30 Nov 10:50 UTC date and live-credit checks unchanged; J3581/J3582 unchanged. No second job taken, no VO/upload/spend. Relay review-progress unavailable without active.json; own review milestones recorded on queue.)
 - J3942 done: Verify condition for J3780 (Condition UNMET for J3780 (HOS:128 Shorts S01/S02 independent non-producer VO listen). Live 27 Nov 18:55-18:59Z checks: codex (elected Chief), claudecode, and cursor (down until 2026-12-04T02:42Z) have capabilities available=[]; claude down until 2026-11-27T21:50:00Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56:00Z relay probe PASS 1.00 + 18:58Z direct read_file session probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671/HOS PR #797 and is barred by the non-producer guard. Freshly verified: HOS PR #797 OPEN/MERGEABLE (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, zero media); 5/5 SHA-256 hashes match (SHORTS_SCRIPTS_v03.md + both tight WAV/MP3 masters); HOS:128 status.json unchanged (J3670 waits for 30 Nov 10:50:31Z ElevenLabs reset); zero new desk/thread rulings. Recorded typed capability wait directly on J3780 as verifier (--type capability --requires audio_input --recheck J3942 --check-at 2026-11-28T09:00:00Z). Reports posted: HOS desk #694 (#7226081113) and OWB thread #1353 (#7226081527). £0 / 0 credits spent.)
+- J3941 done: Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) (PR #1411 reviewed (privacy clean, evidence row only on Rule 38) and merged as 75c9dbb. Claude, acting Chief, evening sweep 27 Nov 20:30Z.)
 - J3940 done: First-day check at 48 h: "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) (PR #1408 (branch macbook/J3940; read-only Studio check via CDP 9223, no faults, £0).
 
 "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) · Orbit With Ben · long · went live Wed 25 Nov 18:00 London
@@ -169,5 +167,4 @@ Done (2026-11-27T17:34Z, codex): J3938 acting Chief codex: no publication faults
 
 
 Acting Chief codex resolved the BEHIND escalation: no faults found, HD processing succeeded, leave the video and metadata unchanged; distribution is too small to judge the edit. Next evidence is the routine next-morning snapshot. No spend, no YouTube changes.)
-- J3934 done: Verify condition for J3871 (Verified: publication condition met (draft HOS PR 814 open at c8c3372e = codex/J3871; PR 811 still draft; nothing merged). J3871 not reopened: still incomplete pending the J3874 loop-gate ruling (picture FAIL terminal reuse). Hold replaced with a dependency wait on J3874, recheck J3934, next check 2026-11-28T06:00Z.)
-- J3932 done: J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 (Chief KEEP: all six corrections accepted; PR211 exact d543ad7c merged as 632656817be1ce8eb8b8eb6441449d44581040f6. Ruling comment 7225140951. Follow-up J3933 evidence publication remains held until independent Claude Code review, retry 2026-11-27T23:22:32Z; J3935 owns immediate separate packaging decision. No live change approved. J3706 date/credit/Ben holds preserved.)
+- J3935 done: Atlantic: decide one title fix from clean post-change CTR (Chief ruling: no title change now. Pilot 2's title and Design E thumbnail both changed on 25 Nov 10:48Z, and the clean sample is one day (244 impressions, about one click), too small to tell title from thumbnail. The proposed title also repeats the thumbnail's word 'hunted'. Decide at J3706's 7-day read (2 Dec 10:50Z). If Suggested CTR is still under 2% then, change the title and keep the rollback. Claude, acting Chief, evening sweep 27 Nov 20:30Z.)

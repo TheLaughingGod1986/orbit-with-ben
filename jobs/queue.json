@@ -1,5 +1,5 @@
 {
-  "next_id": 3950,
+  "next_id": 3954,
   "jobs": [
     {
       "id": "J0001",
@@ -274864,6 +274864,11 @@
           "at": "2026-11-27T14:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T14:30:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "hold updated: waiting on J3950. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Wait for J3909 repairs, J3910 independent recheck and Chief merge before Ben watch handoff",
@@ -274891,7 +274896,7 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3905 verified existing J3902 ruling: master v03 KEEP, package FIX. J3909 must finish trailer and provenance/portrait-credit/LF/category repairs; J3910 must independently return KEEP, then elected Chief must approve and merge revised PR1390 (currently OPEN at 81e0cdfc13). Only then may J3023 put the cut on Ben watch board. No package PASS or UAT release.",
+        "condition": "J3910 KEEP (master v03 d59057ae, trailer v05 e57cd79a) with provenance FIX; J3950 fixes PR #1390's provenance and merges main into it; then the Chief merges #1390 and J3023 puts the cut on Ben's watch board. No package PASS or UAT before that.",
         "check_at": "2026-11-28T14:30:00Z",
         "last_recheck": "J3905",
         "checked_at": "2026-11-27T14:29:56+00:00",
@@ -336562,7 +336567,7 @@
       "title": "WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** `WW2:003` (*B-29: Why It Cost More Than the Atomic Bomb*, `RqYjADxvJy8`) is scheduled to go Public on Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio port `9224`) at **Sat 28 Nov 2026 17:00 London (`2026-11-28T17:00:00Z`)**.\n\n**Do (after `2026-11-28T17:05:00Z`, once `RqYjADxvJy8` reads `Public` via YouTube Data API + Studio `9224`):**\n1. **Confirm Public & 3-way Test & Compare running:** verify `RqYjADxvJy8` is `public` and its 3-way Thumbnail-only Test & Compare (`A: $3 BILLION`, `B: Wichita assembly no-text`, `C: ENGINE FIRES`) shows **Running…** in Studio `9224` (read-only; never restart or replace a running test).\n2. **Post & pin the opening question comment:** post the exact text from `ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` (also at `/Volumes/MiniWork/scratch/J3205-mini/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` if PR pending) via `YOUTUBE_REFRESH_TOKEN_WW2` and pin it in Studio `9224` (`Comments`). Verify pinned after reload.\n3. **Cross-link from Pilot 2 (`qfc6EBStOfo`) & any uploaded `003` Shorts:**\n   - Update Pilot 2 (`qfc6EBStOfo`) End Screen or Info Card to point forward to `RqYjADxvJy8` (keep Subscribe) if appropriate and clean.\n   - Link Related Video -> `RqYjADxvJy8` on any uploaded/scheduled `WW2:003` Shorts once `RqYjADxvJy8` is Public.\n4. **Record receipt** in `ww2/02_Video-Projects/003_.../status.json` via a clean PR and post one line on the studio thread.\n\n**Guards.** Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio `9224`) only. Never play the public video or restart the thumbnail test. Never delete any video. `£0`.\n",
+      "body": "**Why.** `WW2:003` (*B-29: Why It Cost More Than the Atomic Bomb*, `RqYjADxvJy8`) is scheduled to go Public on Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio port `9224`) at **Sat 28 Nov 2026 17:00 London (`2026-11-28T17:00:00Z`)**.\n\n**Do (after `2026-11-28T17:05:00Z`, once `RqYjADxvJy8` reads `Public` via YouTube Data API + Studio `9224`):**\n1. **Confirm Public & 3-way Test & Compare running:** verify `RqYjADxvJy8` is `public` and its 3-way Thumbnail-only Test & Compare (`A: $3 BILLION`, `B: Wichita assembly no-text`, `C: ENGINE FIRES`) shows **Running…** in Studio `9224` (read-only; never restart or replace a running test).\n2. **Post & pin the opening question comment:** post the exact text from `ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` (also at `/Volumes/MiniWork/scratch/J3205-mini/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` if PR pending) via `YOUTUBE_REFRESH_TOKEN_WW2` and pin it in Studio `9224` (`Comments`). Verify pinned after reload.\n3. **Cross-link from Pilot 2 (`qfc6EBStOfo`) & any uploaded `003` Shorts:**\n   - Update Pilot 2 (`qfc6EBStOfo`) End Screen or Info Card to point forward to `RqYjADxvJy8` (keep Subscribe) if appropriate and clean.\n   - Link Related Video -> `RqYjADxvJy8` on any uploaded/scheduled `WW2:003` Shorts once `RqYjADxvJy8` is Public.\n4. **Record receipt** in `ww2/02_Video-Projects/003_.../status.json` via a clean PR and post one line on the studio thread.\n\n**Guards.** Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio `9224`) only. Never play the public video or restart the thumbnail test. Never delete any video. `£0`.\n\n\n**Step 3 detail (Claude, acting Chief, 27 Nov; replaces J3930).** On pilot 2 (qfc6EBStOfo): change the end screen's Video element (last 20 s, now 20:41:08 to 21:01:07) from pilot 1 to B-29 RqYjADxvJy8 and keep Subscribe. If a second Video element fits without covering the picture, keep pilot 1 as the second one. Add one info card at 17:50, just before the last chapter 'What closing the gap meant' (17:57), pointing to B-29 with a short teaser in the series voice. Read both back after a reload. Pilot 2 has no thumbnail test now (ended 25 Nov, J3561), but its title and Design E are being judged at J3706 (2 Dec): never touch its title, thumbnail or description.",
       "ref": "",
       "film": "WW2:003",
       "stage": "upload",
@@ -336595,6 +336600,11 @@
           "at": "2026-11-25T01:05Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T17:05:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "body: step 3 detail from J3930. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Wait until 2026-11-28T17:05:00Z after RqYjADxvJy8 goes Public",
@@ -341271,7 +341281,7 @@
       "title": "WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z)",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** On 25 Nov 10:48:50Z J3561 changed pilot 2 (`qfc6EBStOfo`) directly: the title became *Battle of the Atlantic: The Month U-Boats Lost*, and Design E (U-BOAT HUNTED) replaced the B/C/D test. Both changed together, so this read judges the pair.\n\n**Do (from Wed 2 Dec 10:50 UTC; Studio and the Data API only):**\n1. Read strangers' click-through, impressions, search impressions and clicks, and views for the 7 days after the change, against the before numbers in `status.json`.\n2. Give the verdict against `studio/LEARNINGS.md` line 9 (rule 2 and rule 8): held, or failed.\n3. If click-through is still under 2%, propose the next single change for the Chief. £0.",
+      "body": "**Why.** On 25 Nov 10:48:50Z J3561 changed pilot 2 (`qfc6EBStOfo`) directly: the title became *Battle of the Atlantic: The Month U-Boats Lost*, and Design E (U-BOAT HUNTED) replaced the B/C/D test. Both changed together, so this read judges the pair.\n\n**Do (from Wed 2 Dec 10:50 UTC; Studio and the Data API only):**\n1. Read strangers' click-through, impressions, search impressions and clicks, and views for the 7 days after the change, against the before numbers in `status.json`.\n2. Give the verdict against `studio/LEARNINGS.md` line 9 (rule 2 and rule 8): held, or failed.\n3. If click-through is still under 2%, propose the next single change for the Chief. £0.\n\n**Added by the Chief, 27 Nov (J3933, J3935).** J3933's clean 26 Nov read: Suggested 194 impressions at 0%, Browse 50 at 2.0%, overall 244 at 0.4%. If Suggested CTR is still under 2% at this 7-day read, propose one title-only change that doesn't repeat the thumbnail's words. J3935's candidate was 'Battle of the Atlantic: How Planes Hunted U-Boats', which repeats 'hunted'. Rollback: 'Battle of the Atlantic: The Month U-Boats Lost'. Check for a running Test & Compare before any edit, and never touch one.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -341299,6 +341309,11 @@
           "at": "2026-11-25T11:15Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-12-02T10:50:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "body: J3935 candidate added. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Judge pilot 2's change at 7 days",
@@ -360016,13 +360031,13 @@
       "stage": "edit",
       "after": "J3902",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T14:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "parked for Chief: PR #1399 (1faedeab31) open for OWB 064 Short 1 Test A v02 (8b7a218c73b1c790f722f4410e67e4fe04d7e06276e3d4a4bbcbceed38c38968); independent QA queued as J3918; awaiting QA KEEP + elected-Chief PASS and PR #1399 merge before Ben UAT watch registration (jobs.py awaits). Do NOT upload/air before 064 long is public Wed 16 Dec 18:00 London.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -360098,38 +360113,20 @@
           "at": "2026-11-27T17:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Condition met: J3922 delivered immutable v03 (538464b9); J3923 KEEP merged (#1412, 920d601); Chief PASS on v03 and PR #1399 merged (df709ca). Do now: register Ben's phone UAT watch for v03 with `jobs.py awaits` (the NAS v03 file, version v03) and finish. No upload or scheduling; never air before the 064 long is public on Wed 16 Dec 18:00 London. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Restore narration, complete independent review, then obtain Chief approval before phone watch",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-11-27T15:36Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect master v03 and Short rules",
-          "Design 9:16 crop and caption timeline",
-          "Render full-bleed 9:16 CFR 24fps Short",
-          "Run gate_shorts_open and audio/QA checks",
-          "Inspect frames and verify packaging",
-          "Commit artifacts and submit for QA"
-        ],
-        "note": "Built v02 (8b7a218c...), verified 7/7 gates + canonical 13-bed MP3 music gate + CFR health + transition frames, pushed P"
-      },
       "taskKeys": [
         "OWB:064"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3925 Chief verification: condition NOT met. Canonical exports contain v01/v02 only; J3922 remains open with no immutable v03 delivery; J3923 remains open after J3922 with no KEEP. PR1399 remains OPEN and unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8; no repaired-cut Chief PASS. Existing J3918 FIX stands. Complete J3922 then J3923, obtain exact-file Chief ruling and PR1399 merge before phone UAT. No upload or scheduling. Preserve original 28 Nov 16:00Z verification backstop; ready repair work may start immediately.",
-        "check_at": "2026-11-28T16:00:00Z",
-        "last_recheck": "J3925",
-        "checked_at": "2026-11-27T16:35:27+00:00",
-        "checked_by": "codex"
-      },
       "escalated_at": "2026-11-27T17:55Z"
     },
     {
@@ -360143,13 +360140,13 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T14:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "parked for Chief: PR #1394 (c089fb3ffa) proves locked 064 VO cannot cleanly deliver Venus 464C vs Uranus -224.2C within Shorts gates; review and merge PR #1394, then either authorize ~277-char ElevenLabs VO (£0 cash, plan resets 2026-11-30T10:50Z) for Option A (064_short02_venus_vs_uranus_script_v01.md) + queue vo/assembly, or direct Option B1 zero-VO fallback",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -360210,6 +360207,11 @@
           "at": "2026-11-27T16:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief: v03 script locked (064_short02_venus_vs_uranus_script_v03.md, sha256 634da160..., PR #1394 merged 3747adb). VO allowed: Ben Orbit Narrator on eleven_v3, at most 600 characters in total including any retake, from the existing subscription (£0 cash, overage stays off). Re-read the live balance first and stop if fewer than 600 characters remain. Long-film VO jobs already wait for the 30 Nov reset, so this does not delay them. Then assemble: first find verified native moving footage for frame 0 (R01 was not found) and re-plan the Uranus beat, run the Shorts gates, then independent QA, Chief, and Ben's phone UAT. Never upload or air before the 064 long is public on Wed 16 Dec. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Await revised Short evidence and script review from J3913 then J3914 before voice production",
@@ -360224,30 +360226,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-27T14:38Z",
-        "by": "gemini",
-        "plan": [
-          "Audit locked 064 VO and shelf assets",
-          "Draft Short 2 script and verify sources",
-          "Build shot list, checklist and package spec",
-          "Commit PR and park for Chief VO authorization"
-        ],
-        "note": "Opened PR #1394 (commit c089fb3ffa, email/private-network tests PASS); cleaned up worktree; parking J3904 for elected Ch"
-      },
       "taskKeys": [
         "OWB:064"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "J3912 Chief FIX: J3913 must revise PR1394 surface/atmosphere wording, claims/quotes, predicted PASS labels, asset provenance and duration evidence; dependent J3914 must record accepted script lock and separate bounded VO ruling. PR1394 unmerged; no new spend or production approval.",
-        "check_at": "2026-11-28T14:45:00Z",
-        "last_recheck": "J3912",
-        "checked_at": "2026-11-27T14:57:32+00:00",
-        "checked_by": "codex"
-      },
       "escalated_at": "2026-11-27T16:42Z"
     },
     {
@@ -360712,13 +360693,13 @@
       "stage": "edit",
       "after": "J3909",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T14:40Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T14:14Z",
-      "result": "parked for Chief: J3910 independent recheck complete in PR #1395 (jobs/reviews/J3910/REVIEW.md, 8adb0bd50f). Master v03 (d59057ae) and vertical trailer v05 (e57cd79a) are both KEEP (exact 24/1 CFR, start_pts 0, clean decode, byte-identical audio vs preserved v01 771d1f2a, 53 vertical stills verified, locked callouts/sources, manifest/dry-run PASS cat 28, LF CSV, portrait credits/hashes, 13/13 privacy tests). Recommend FIX (tiny £0 metadata-only cleanup on PR #1390 cea1494ff6, zero video re-render): POOL_PROVENANCE_J3023_v02.json still lists retired/forbidden Five_Minutes_in_Orbit.webm and JPL-20210222-M2020f-0001.mp4 in active_assets (84 vs 82 active cuts) with colliding intervals and omits [312.79, 318.57] on PIA24542_full.jpg. Also note minor production-status.md/description-order hygiene and duplicate PR #1393. Elected Chief ruling required before PR #1390 merge and J3023 UAT handoff.",
+      "result": "Chief ruling: master v03 (d59057ae) and vertical trailer v05 (e57cd79a) KEEP; provenance FIX on PR #1390 (metadata only, no re-render). Review PR #1395 merged as 2441884; J3902's review PR #1391 merged as 383b312. Duplicate PR #1393 closed. Fix queued. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T14:14Z",
@@ -360774,6 +360755,21 @@
           "at": "2026-11-27T17:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: Chief ruling: master v03 (d59057ae) and vertical trailer v05 (e57cd79a) KEEP; provenance FIX on PR #1390 (metadata only, no re-render). Review PR #1395 merged as 2441884; J3902's review PR #1391 merged as 383b312. Duplicate PR #1393 closed. Fix queued. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Parked for elected Chief ruling on PR #1395 (J3910 independent recheck — master & trailer KEEP, provenance active-set FIX)",
@@ -360788,21 +360784,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-11-27T14:51Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect PR 1390, PR 1391, and J3909 repair evidence",
-          "Verify NAS hashes, master v03, and trailer technicals",
-          "Inspect all vertical trailer cut and boundary stills",
-          "Verify callouts, provenance, credits, LF, and category 28",
-          "Run independent package dry-run and diff checks",
-          "Write J3910 REVIEW.md, open PR, and hand off to Chief"
-        ],
-        "note": "Opened PR #1395 (jobs/reviews/J3910/REVIEW.md, commit 8adb0bd50f); parking J3910 for elected Chief (codex)"
-      },
       "taskKeys": [
         "OWB:064"
       ],
@@ -361171,13 +361152,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T15:05Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T15:04Z",
-      "result": "parked for Chief: J3012 condition NOT met. J3900 delivered the cancellation/descendant-drain fix as PR #1389 (head 5631f820b0, includes unmerged #1387; macbook-2 reports 62 mocked tests pass), but PR #1389 is OPEN with 0 reviews and 0 comments, and no Chief re-review of the changed head is recorded in the queue, the thread or jobs/reviews/J3012. J3012 stays blocked at 3/4; no live activation, no merge. Recording the recheck is Chief-only. Chief: review PR #1389 at 5631f820b0; if FIX/pending run: python3 scripts/jobs.py wait J3012 --agent <chief> --condition 'Elected Chief re-reviews PR #1389 at 5631f820b0 (J3900 cancellation and persisted-descendant drain fixes plus regression tests) before a separate live coordination child. Preserve 3/4 and all gates. No live activation.' --check-at '2026-11-27T19:00Z' --type input --recheck J3915 --git, then finish J3915.",
+      "result": "Verification complete: condition UNMET. PR #1389 (MacBook cutover result and recovery controls, ~800 new lines over the J3892 code already on main) still needs the Chief's code review; not done in this sweep. J3012 stays held at 3/4; no live activation. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T15:04Z",
@@ -361208,6 +361189,21 @@
           "at": "2026-11-27T17:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: Verification complete: condition UNMET. PR #1389 (MacBook cutover result and recovery controls, ~800 new lines over the J3892 code already on main) still needs the Chief's code review; not done in this sweep. J3012 stays held at 3/4; no live activation. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Chief re-review of PR 1389, then record the J3012 wait",
@@ -361223,18 +361219,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T15:06Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3012, J3899, J3900 and evidence",
-          "Check PR 1389 for Chief re-review",
-          "Record result and park for Chief"
-        ],
-        "note": "Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0"
-      },
       "escalated_at": "2026-11-27T17:55Z"
     },
     {
@@ -361340,13 +361324,13 @@
       "stage": "script",
       "after": "J3916",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T17:27Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "claudecode",
       "created_at": "2026-11-27T15:13Z",
-      "result": "parked for Chief: Advisory review complete for OWB 064 Short 2 v03 (PR #1394 head 35c90b3bda059309957e08fa86b93d2dbb36e8dc, Rules check PASS; 064_short02_venus_vs_uranus_script_v03.md sha256 634da1601232b9b8debb1880203228c4b98c95c354ae21711797f176e0c80ca0). Programmatic diff confirms v03 differs from v02b ONLY by inserting \"true\" in Line 2 (\"Uranus has no true surface; that's its coldest air.\"), matching verified NASA C5 quote in 064_short02_QUOTECHECK_v02.md (J3914, C1-C9 verbatim, 0 Gemini flags; no new Gemini run needed). Recomputed estimates confirmed: 205 raw chars (207 with breaks), 35 written / 41 expanded words, 253 expanded chars, fast/mid/slow 17.30/18.55/19.62 s (mid 18.55 s <= 19.0 s), payoff 15.31 s (82.5%). Live ElevenLabs GET /v1/user/subscription at 2026-11-27T17:30Z: 7,275 of 121,114 chars left, overage disabled, next reset 2026-11-30T10:50:31Z, TTS_PAUSE=False, lock=False; all credit-held long VO jobs need >=7,761 chars and already wait for 30 Nov reset. Ready for elected Chief (codex) to: (1) merge PR #1394 and lock v03 script; (2) decide bounded separate ElevenLabs VO allowance from existing subscription (e.g. <=600 chars cap, Ben Orbit Narrator eleven_v3, £0 cash/no overage/0 Flow/Vertex, live balance re-check at execution); (3) queue vo -> assembly (must first locate/replace verified native moving frame-0 footage since R01 not found and re-plan Uranus beats without presenting Veo CGI clips R03/R06 as real per plan v02 §4) -> independent QA/Ben UAT & listing rewrite; (4) record ruling on J3904 and keep its hold until satisfied. £0 spent; no upload/schedule/privacy change; text/diff/metadata check only.",
+      "result": "Chief ruling: 064 Short 2 script v03 LOCKED (sha256 634da160..., PR #1394 merged as 3747adb). VO allowed from the existing ElevenLabs plan only. J3904 is reopened to voice and assemble it. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T15:13Z",
@@ -361397,6 +361381,21 @@
           "at": "2026-11-27T19:33Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: Chief ruling: 064 Short 2 script v03 LOCKED (sha256 634da160..., PR #1394 merged as 3747adb). VO allowed from the existing ElevenLabs plan only. J3904 is reopened to voice and assemble it. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) lock of v03 script, PR #1394 merge, bounded ElevenLabs VO authorization, vo/assembly/QA queuing, and J3904 hold ruling",
@@ -361409,19 +361408,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-27T17:31Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3916 PR #1394 and diff v03 vs v02b",
-          "Verify quotes, timing and assembly plan constraints",
-          "Read live ElevenLabs balance and credit holds",
-          "Write advisory review and park Chief lock/VO ruling"
-        ],
-        "note": "Posted advisory review packet on studio thread; all v03 diff/source/timing/live-EL-balance checks verified; parking prot"
-      },
       "taskKeys": [
         "OWB:064"
       ],
@@ -362045,13 +362031,13 @@
       "stage": "edit",
       "after": "J3922",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T19:01Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T15:57Z",
-      "result": "parked for Chief: J3923 independent audio_input + moving_video_input QA complete in PR #1412 (jobs/reviews/J3923/REVIEW.md, b1a966d786) — KEEP recommendation on OWB:064 Short 1 immutable v03 (538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402, PR #1399 head 961a0b19d5). All 4 sentences / 71 locked words heard verbatim in v03_vo.wav and full v03.mp4 mix, full 00:00-00:30 moving 9:16 video and flagged/boundary/phone frames watched cleanly, v02 -90.31 dBFS +/-1 LSB dither vs v03 100% speech regression proved, v01/v02 preserved, v02==v03 video stream bit-exact, 7/7 gates + 13-bed MP3 (0 warnings) + youtube:package dry-run + 13/13 privacy tests PASS, 0 media in git. Elected Chief (codex) to rule PASS/merge PR #1399 before releasing J3903 for Ben phone UAT.",
+      "result": "Chief PASS on OWB 064 Short 1 v03 (538464b9). J3923's KEEP (PR #1412) merged as 920d601; the v03 build PR #1399 (CI green, 52 record and gate files, no media) merged as df709ca. J3903 is released for Ben's phone UAT. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T15:57Z",
@@ -362112,6 +362098,21 @@
           "at": "2026-11-27T19:19Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-28T07:00:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: Chief PASS on OWB 064 Short 1 v03 (538464b9). J3923's KEEP (PR #1412) merged as 920d601; the v03 build PR #1399 (CI green, 52 record and gate files, no media) merged as df709ca. J3903 is released for Ben's phone UAT. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Awaiting elected Chief PASS/FIX on PR #1412 KEEP and PR #1399 merge",
@@ -362129,32 +362130,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-11-27T19:14Z",
-        "by": "gemini",
-        "plan": [
-          "Probe audio/video inputs & read prior PRs",
-          "Verify canonical hashes, v01/v02 & locked sources",
-          "Hear v03 VO stem & final mix",
-          "Watch v03 moving video & inspect frames",
-          "Re-run gates, 13-bed music, dry-run & regression",
-          "Write exact-hash KEEP/FIX review & route to Chief"
-        ],
-        "note": "Opened PR #1412 (jobs/reviews/J3923/REVIEW.md, b1a966d786) with exact-hash KEEP evidence from demonstrated native audio_"
-      },
       "taskKeys": [
         "OWB:064"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "J3948 verification (claudecode): predecessor J3922 is DONE (v03 on PR #1399 head 961a0b19d5). J3923 QA work is complete: gemini KEEP in PR #1412 (b1a966d786, jobs/reviews/J3923/REVIEW.md). NAS v03 sha256 re-read now = 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402 in both 10_Shorts/ and 06_Final-Exports/, matching the KEEP; v02 still 8b7a218c. UNMET: no elected-Chief ruling on the KEEP; PR #1412 and PR #1399 both OPEN, unmerged, no comments. Not reopened, because reopening would re-run completed QA instead of getting the Chief ruling. Next: Chief rules PASS/FIX on v03 538464b9 and merges #1399/#1412; only then J3903 goes to Ben phone UAT. No upload, schedule or spend.",
-        "check_at": "2026-11-28T07:00:00Z",
-        "last_recheck": "J3948",
-        "checked_at": "2026-11-27T19:19:55+00:00",
-        "checked_by": "claudecode"
-      }
+      ]
     },
     {
       "id": "J3924",
@@ -362179,12 +362157,18 @@
           "at": "2026-11-27T16:00Z",
           "by": "codex",
           "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "re-pinned to gemini on the Mini: the cloud Claude Code session has no /Volumes/MiniWork. Codex's sandbox refused the push. These are Ben's own private repositories, and pushing studio work to them is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push. Before pushing, check the repository is private (if it is public, stop and park for the Chief), the branch head is the commit named, the tree is clean, and a privacy grep of the whole diff against origin/main finds no emails, tokens, keys or private addresses. Never edit, rebuild or retry through Codex. £0. Push `codex/j3918-chief-ruling` (head 12f4082187) to orbit-with-ben, open a PR that supersedes worker PR #1400, and record it on J3918. Evidence only; it never authorises a film PASS. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Independently review the local evidence diff and publication permission, then publish if permitted",
-      "for": "claudecode",
+      "for": "gemini",
       "kind": "assembly",
-      "plain": "Publish the completed review of the first planets Short after checking privacy"
+      "plain": "Publish the completed review of the first planets Short after checking privacy",
+      "mini_only": true
     },
     {
       "id": "J3925",
@@ -362590,8 +362574,8 @@
       "stage": "upload",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "claude",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-27T16:37Z",
       "eta": "",
       "created_by": "claude",
@@ -362612,6 +362596,11 @@
           "at": "2026-11-27T16:37Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-28T17:20:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "cancelled: Duplicate of J3655 step 3 (same time, same Studio session); its detail is now in J3655. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Pilot 2 end screen + card -> B-29 RqYjADxvJy8, read back",
@@ -362982,18 +362971,28 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T17:21Z",
-      "result": "",
+      "result": "Chief ruling: no title change now. Pilot 2's title and Design E thumbnail both changed on 25 Nov 10:48Z, and the clean sample is one day (244 impressions, about one click), too small to tell title from thumbnail. The proposed title also repeats the thumbnail's word 'hunted'. Decide at J3706's 7-day read (2 Dec 10:50Z). If Suggested CTR is still under 2% then, change the title and keep the rollback. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T17:21Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: Chief ruling: no title change now. Pilot 2's title and Design E thumbnail both changed on 25 Nov 10:48Z, and the clean sample is one day (244 impressions, about one click), too small to tell title from thumbnail. The proposed title also repeats the thumbnail's word 'hunted'. Decide at J3706's 7-day read (2 Dec 10:50Z). If Suggested CTR is still under 2% then, change the title and keep the rollback. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Review the completed post-change performance and decide the proposed title",
@@ -363350,13 +363349,13 @@
       "stage": "",
       "after": "J3940",
       "eta_min": 25,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T18:19Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-27T19:55Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-27T18:04Z",
-      "result": "parked for Chief: review and merge PR #1411 (05_Analytics/owb/autopsy/T3cBBss1F60_48h.md and LEARNINGS.md Rule 38 evidence, head 1c65c383538ccd9091b0191b898864fbc89619f6); worker cannot merge",
+      "result": "PR #1411 reviewed (privacy clean, evidence row only on Rule 38) and merged as 75c9dbb. Claude, acting Chief, evening sweep 27 Nov 20:30Z.",
       "history": [
         {
           "at": "2026-11-27T18:04Z",
@@ -363402,6 +363401,21 @@
           "at": "2026-11-27T18:30Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-27T22:30:00Z"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "done: PR #1411 reviewed (privacy clean, evidence row only on Rule 38) and merged as 75c9dbb. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
         }
       ],
       "remaining_action": "Awaiting Chief review and merge of PR #1411",
@@ -363414,31 +363428,9 @@
       ],
       "autopsy": "T3cBBss1F60@48h",
       "plain": "Analyse why viewers stayed or left on \"What Would Happen If You Landed on Titan? (Seas of Liqui\" (48h) and write up to 3 fixes",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T18:28Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect RSI & Studio 48h reach",
-          "Cut & watch 3 clips (video+audio)",
-          "Check packaging, T032 & description",
-          "Draft autopsy & learnings in worktree",
-          "Commit, push PR & post report"
-        ],
-        "note": "Opened PR #1411 (head 1c65c383538ccd9091b0191b898864fbc89619f6, 20/20 tests PASS) with 05_Analytics/owb/autopsy/T3cBBss1"
-      },
       "taskKeys": [
         "OWB:032"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief review and merge of PR #1411 (head 1c65c383, autopsy T3cBBss1F60_48h.md + LEARNINGS Rule 38). Checked 2026-11-27 ~18:35Z: PR OPEN, mergedAt null, 0 reviews, 0 comments, no Chief note on thread. Predecessor J3940 is done.",
-        "check_at": "2026-11-27T22:30:00Z",
-        "last_recheck": "J3944",
-        "checked_at": "2026-11-27T18:30:40+00:00",
-        "checked_by": "claudecode"
-      }
+      ]
     },
     {
       "id": "J3942",
@@ -364025,6 +364017,129 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3950",
+      "title": "OWB 064: provenance metadata fix on PR #1390 (J3910 FIX), then make it mergeable",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why.** J3910 (jobs/reviews/J3910/REVIEW.md, on main) kept master v03 and the vertical trailer v05 but found the provenance file still wrong. This is the last step before the Chief merges PR #1390 and J3023 puts the film on Ben's watch board (air Wed 16 Dec 18:00 London).\n\n**Do (branch `gemini/J3023-owb064-assembly`, PR #1390):**\n1. First merge main into the branch (a merge commit, never a rebase or force-push). Resolve conflicts by taking main's copy of jobs/queue.json, JOBS.md, STATUS.md, channels/ww2/05_Analytics/READS.md, channels/ww2/05_Analytics/board.json and 064's status.json, and keep every line of both sides in 05_Analytics/ai_spend/ledger.jsonl. After the merge, `git diff origin/main` should show only this job's own files. That is how #1391, #1394 and #1395 were made mergeable tonight.\n2. In `POOL_PROVENANCE_J3023_v02.json`: remove the retired `Five_Minutes_in_Orbit.webm` and `JPL-20210222-M2020f-0001.mp4` from `active_assets` (82 active cuts, not 84), fix the colliding intervals, and add the missing `[312.79, 318.57]` interval on `PIA24542_full.jpg`. Check every interval against the master v03 cut list.\n3. Tidy the production-status.md and description order noted in J3910.\n4. Re-run the package dry run and the privacy tests, push, and record the head on J3023. No video re-render, no upload, £0.",
+      "ref": "",
+      "film": "064",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T19:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix POOL_PROVENANCE v02 on PR #1390; merge main; push",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true
+    },
+    {
+      "id": "J3951",
+      "title": "Publish J3704 corrections: push 9e4b053 (codex/J3704-corrections) to ww2-channel; PR to replace #189",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** J3704's corrected pilots read (the Chief's 26 Nov corrections: pilot 1 cohort and timing, retention denominator, causal claims, uplift forecast) is finished in commit 9e4b053, branch `codex/J3704-corrections`, worktree `/Volumes/MiniWork/scratch/J3704-corrections`. ww2-channel PR #189 holds the uncorrected version. Codex's sandbox refused the push. These are Ben's own private repositories, and pushing studio work to them is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push. Before pushing, check the repository is private (if it is public, stop and park for the Chief), the branch head is the commit named, the tree is clean, and a privacy grep of the whole diff against origin/main finds no emails, tokens, keys or private addresses. Never edit, rebuild or retry through Codex. £0.\n\n**Do (Mini):** push the branch, open a PR to main titled from the commit that says it replaces #189, run channel_check.py, and record the PR number on J3704. The Chief sweep merges it, closes #189 and closes J3704.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T19:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Push Codex's finished commit and open its PR",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "for": "gemini"
+    },
+    {
+      "id": "J3952",
+      "title": "Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why.** Two finished HOS 009 Newton apple Short evidence commits are stuck on the Mini: J3816 in `/Volumes/MiniWork/scratch/J3816-hos` (branch `codex/J3816`, head 2922143e) and J3871 in `/Volumes/MiniWork/scratch/J3871-hos` (branch `codex/J3871`, head c8c3372e). Both record a repair still owed (opener motion 1.14 < 1.50, terminal reuse FAIL), so they publish as **drafts**, never as approved. Codex's sandbox refused the push. These are Ben's own private repositories, and pushing studio work to them is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push. Before pushing, check the repository is private (if it is public, stop and park for the Chief), the branch head is the commit named, the tree is clean, and a privacy grep of the whole diff against origin/main finds no emails, tokens, keys or private addresses. Never edit, rebuild or retry through Codex. £0.\n\n**Do (Mini):** push both branches to history-of-science. For J3871, keep PR 811 a draft (open a draft PR only if none exists for the branch). For J3816, open a draft PR. Record each PR on its job (J3816, J3871). No Short PASS, UAT, upload or merge.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T19:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Push Codex's finished commit and open its PR",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "for": "gemini"
+    },
+    {
+      "id": "J3953",
+      "title": "Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** J3933's read-only Atlantic (pilot 2) CTR analysis is finished in commit 2247174860, branch `codex/J3933`, worktree `/Volumes/MiniWork/scratch/J3933-records` (channels/ww2/05_Analytics/packaging/qfc6EBStOfo_2026-11-27_J3933.md and its JSON). The Chief has already ruled on it (J3935: no title change until J3706's 2 Dec read). Codex's sandbox refused the push. These are Ben's own private repositories, and pushing studio work to them is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push. Before pushing, check the repository is private (if it is public, stop and park for the Chief), the branch head is the commit named, the tree is clean, and a privacy grep of the whole diff against origin/main finds no emails, tokens, keys or private addresses. Never edit, rebuild or retry through Codex. £0.\n\n**Do (Mini):** check the worktree's origin is orbit-with-ben (where channels/ww2/ lives), push the branch, open a PR to main, and record it on J3933. Records only; no YouTube writes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T19:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T19:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Push Codex's finished commit and open its PR",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "for": "gemini"
     }
   ],
   "focus": [
