@@ -355795,9 +355795,14 @@
           "at": "2026-11-27T16:32Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified FOH channel UCu94mInMFosxu3W0H6jlI6Q on CDP 9223 (reused tab; 9224 showed permission denied). Collected 24-25 Nov Pacific impressions=1044, CTR=1.2%"
+        },
+        {
+          "at": "2026-11-27T16:38Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Collected all 48h Studio metrics (24-25 Nov 2026 Pacific): impressions=1044, CTR=1.2%, returningViewers=0, newViewers=null (suppressed), testCompare=unavailable (single uploaded thumb, no active test)"
         }
       ],
-      "remaining_action": "Collect new/returning viewers and Test & Compare status for qfc6EBStOfo (24-25 Nov 2026 Pacific)",
+      "remaining_action": "Import strict dated Studio read for qfc6EBStOfo (2026-11-24..2026-11-25 Pacific) into a clean worktree and run analytics tests",
       "due": "2026-11-26T17:00:12Z",
       "kind": "studio",
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
@@ -355805,9 +355810,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T16:32Z",
+        "at": "2026-11-27T16:38Z",
         "by": "gemini",
         "plan": [
           "Verify Studio browser & channel",
@@ -355816,7 +355821,7 @@
           "Commit & push PR from clean worktree",
           "Report evidence & close job"
         ],
-        "note": "Verified FOH channel UCu94mInMFosxu3W0H6jlI6Q on CDP 9223 (reused tab; 9224 showed permission denied). Collected 24-25 N"
+        "note": "Collected all 48h Studio metrics (24-25 Nov 2026 Pacific): impressions=1044, CTR=1.2%, returningViewers=0, newViewers=nu"
       }
     },
     {
