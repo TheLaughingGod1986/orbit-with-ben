@@ -355672,7 +355672,7 @@
     {
       "id": "J3867",
       "title": "Verify condition for J3834",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J3834: publish via Claude Code: /Volumes/MiniWork/scratch/J3834-review codex/J3834-v06-lock. Finished review commit d734610; clean tree and channel_check PASS; hashes and 37-block parity verified. Automatic approval review rejected public push as disclosure of unpublished film content. Apply the standing privacy review before any publication; no bypass of that review. PR200 and PR203 merged into main. Local exact-version script PASS/lock is not yet published; J3838 remains dependent on J3834 and date-held until 2026-11-30T10:50:00Z with live credit checks. After approved publication, mark final progress step and complete J3834. No voice or upload.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3834 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -355692,13 +355692,26 @@
           "at": "2026-11-27T07:44Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T07:44Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Publish the finished script review through Claude Code",
       "kind": "review",
       "recheck_of": "J3834",
       "due": "2026-11-27T08:44:25+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
