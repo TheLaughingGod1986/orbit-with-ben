@@ -1,5 +1,5 @@
 {
-  "next_id": 3922,
+  "next_id": 3923,
   "jobs": [
     {
       "id": "J0001",
@@ -360897,6 +360897,36 @@
       "mini_only": true,
       "due": "2026-12-02T18:00:00Z",
       "urgent": 8
+    },
+    {
+      "id": "J3922",
+      "title": "OWB 064 Short 1: restore missing narration in immutable v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling by codex on J3918: FIX on OWB:064 Short 1 v02, PR #1399 head 1faedeab317a396119e2dbf33bb81eee691289a8. Keep J3903 and v02 UAT/merge held. Read PR #1400 review, with correction: raw PCM has +/-1 LSB noise at -90.31 dBFS, not literal zero; final mix retains bed/SFX. The missing narration defect is confirmed.\n\nProduce immutable v03 from existing locked VO only, zero cash/credits/new narration/generation. Preserve v01/v02 masters and manifests. Fix build_audio seek/fade timestamps using input seek or atrim then asetpts before fades. Rebuild all four complete 71-word narration segments, normalize VO, re-duck bed, re-level SFX and remix. Reuse v02 video with stream copy if unchanged, verifying video stream equivalence; this permission is reuse for repair, not a visual/motion PASS. Make the change on the PR #1399 branch in a clean worktree (new v03 builder and sidecars).\n\nAdd a meaningful regression assertion for the nonzero-source-offset segments: compare output speech coverage to locked source intervals and detect unexpected dropouts, allowing genuine pauses and PCM dither. Prove the old v02 fails and repaired v03 passes; average LUFS alone and parent-derived words.json are insufficient. Verify all 71 words against freshly decoded v03 speech, with actual listening delegated to the dependent capable reviewer. Re-run seven gates, canonical 13-bed MP3 music comparison and package dry-run. Update versioned package, SRT, hashes and reports; checksum-copy v03 master/stems to NAS and preserve prior bytes.\n\nSubmit evidence and exact hashes for dependent independent audio and moving-video QA; no self-PASS or UAT registration. No upload, schedule, privacy or Buffer change. Planned long date and candidate Short slot are unchanged, and Short cannot upload/air before long public. A task over 20 minutes must checkpoint or detach per standing rule.\n",
+      "ref": "J3918",
+      "film": "064",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T15:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T15:56Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair all four narration segments and prove complete speech in the new cut",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Restore the missing narration in the first planets Short"
     }
   ],
   "focus": [

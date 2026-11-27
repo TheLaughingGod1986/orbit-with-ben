@@ -114,6 +114,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3919 | mini | claimed | gemini | 2026-11-27T17:52Z | WW2:004 upload · studio · Package and upload WW2 004 long v04 (Mark 14 Torpedo: Why Perfect Hits Failed) Private, 2026-12-01T17:00Z |  |
 | J3920 | mini | open | – | – | WW2:005 upload · studio · Package and upload WW2 005 long v05 (St Nazaire Raid: The Ship Turned Into a Bomb) Private, 2026-12-03T17:00Z |  |
 | J3921 | mini | open | – | – | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
+| J3922 | mini | open | – | – | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
 
 Recently finished:
 
