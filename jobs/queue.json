@@ -356088,16 +356088,21 @@
           "at": "2026-11-27T08:31Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Harvested 31/31 Commons/DVIDS masters + verified CMH 12-3 PDF (SHA match) rendered at 300 DPI + 10 code maps drafted"
+        },
+        {
+          "at": "2026-11-27T08:39Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: 44/44 NAS archive SHA-256 verified; shot list verified pass; 10 clean maps + 3 thumbnails rendered"
         }
       ],
-      "remaining_action": "Inspecting harvested pixels, cropping CMH 12-3 plates, comparing duplicates, and verifying dates/insignia",
+      "remaining_action": "Inspecting rendered thumbnails (1280x720 + 168x94) and final maps, updating provenance & status records",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T08:31Z",
+        "at": "2026-11-27T08:39Z",
         "by": "gemini",
         "plan": [
           "Harvest full-res archive to NAS & resolve #26/#29",
@@ -356107,7 +356112,7 @@
           "Build 3 archive thumbnails + 168px sheet & inspect",
           "Update provenance/status, open PR & queue Chief review"
         ],
-        "note": "Harvested 31/31 Commons/DVIDS masters + verified CMH 12-3 PDF (SHA match) rendered at 300 DPI + 10 code maps drafted"
+        "note": "44/44 NAS archive SHA-256 verified; shot list verified pass; 10 clean maps + 3 thumbnails rendered"
       },
       "taskKeys": [
         "WW2:016"
