@@ -360071,9 +360071,14 @@
           "at": "2026-11-27T14:41Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: J3902 is done (Chief FIX ruling). PR #1394 is OPEN, unmerged, with no reviews or comments. There is no Chief ruling on the ~277-char VO or the Option B1 fallback on the queue or the thread."
+        },
+        {
+          "at": "2026-11-27T14:41Z",
+          "by": "claudecode",
+          "what": "step 3 of 3 done: Workers can't record the recheck hold, so I'm parking this for the Chief with the exact command"
         }
       ],
-      "remaining_action": "Put J3904 back on hold and finish J3912",
+      "remaining_action": "Chief to rule on PR #1394 and record the J3904 hold",
       "kind": "review",
       "recheck_of": "J3904",
       "due": "2026-11-27T15:38:38+00:00",
@@ -360087,7 +360092,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-27T14:41Z",
         "by": "claudecode",
@@ -360096,7 +360101,7 @@
           "Check condition and gates",
           "Reopen or re-wait J3904"
         ],
-        "note": "J3902 is done (Chief FIX ruling). PR #1394 is OPEN, unmerged, with no reviews or comments. There is no Chief ruling on t"
+        "note": "Workers can't record the recheck hold, so I'm parking this for the Chief with the exact command"
       }
     }
   ],
