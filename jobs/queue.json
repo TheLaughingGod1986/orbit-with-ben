@@ -357601,9 +357601,14 @@
           "at": "2026-11-27T10:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3887 (Verify condition for J3780, HOS:128 Shorts S01/S02 VO non-producer listen); inspecting prior J3879 handling and live state"
         }
       ],
-      "remaining_action": "Verify readiness: Listen independently to both Shorts voiceovers, then rule and merge if passed",
+      "remaining_action": "Inspecting J3780 hold history, live Chief/worker capabilities, PR #797, NAS hashes, and desk threads",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -357621,12 +357626,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T10:59Z",
+        "of": 4,
+        "at": "2026-11-27T11:01Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3780 hold and history",
+          "Verify capability, PR #797, hashes, and threads",
+          "Record session capabilities",
+          "Park J3887 for Chief and post reports"
+        ],
+        "note": "Claimed J3887 (Verify condition for J3780, HOS:128 Shorts S01/S02 VO non-producer listen); inspecting prior J3879 handli"
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     }
   ],
   "focus": [
