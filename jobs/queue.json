@@ -354099,15 +354099,20 @@
           "at": "2026-11-27T03:18Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Added and reload-verified 2 info cards on YqCWYlv_LCY: 05:44:00 -> GHZDsiH7L7A (What's Inside an Atom? Mostly Empty Space) and 08:07:00 -> PLEbpfUzWzcXU (How Did We Discover…? playlist); End screen 08:39:15-08:59:15, Paid promotion No, Audience No, Altered Yes, Visibility Public, and running A/B test all verified intact"
+        },
+        {
+          "at": "2026-11-27T03:24Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Post-Studio channel:audit PASS (76 videos, 0 errors); post-Studio API readback confirmed all 3 IDs intact; final screenshots saved under ~/_desk/J3848/"
         }
       ],
-      "remaining_action": "Run post-Studio channel:audit and API readback, then commit records PR and post report",
+      "remaining_action": "Update production-status.md and 2026-11-27_J3845.md in clean worktree, run check_all.sh, open records PR, and post desk report",
       "kind": "studio",
       "plain": "Finish the required settings and links on the Franklin videos",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-27T03:18Z",
+        "at": "2026-11-27T03:24Z",
         "by": "gemini",
         "plan": [
           "Pre-flight lint & script/API target check",
@@ -354117,7 +354122,7 @@
           "Run channel:audit & capture after evidence",
           "Commit records PR & post report"
         ],
-        "note": "Added and reload-verified 2 info cards on YqCWYlv_LCY: 05:44:00 -> GHZDsiH7L7A (What's Inside an Atom? Mostly Empty Spac"
+        "note": "Post-Studio channel:audit PASS (76 videos, 0 errors); post-Studio API readback confirmed all 3 IDs intact; final screens"
       },
       "taskKeys": [
         "HOS:008"
