@@ -361184,13 +361184,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T17:28Z",
-      "eta": "2026-11-27T19:28Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T15:43Z",
-      "result": "",
+      "result": "Chief ACCEPT: PR210 merged 4815be16c362c66f99fe767e443d846d5e4b20a2. NAS master, thumbnails and captions hash-verified; fresh API confirms approved listing, Private 2026-12-03T17:00Z, HD processed, en-GB serving. Existing QA and Ben v05 watch approval retained. Follow-ups J3936 publication/pin 3 Dec 17:05Z and J3937 48-hour read 5 Dec 17:05Z. No further upload or schedule change.",
       "history": [
         {
           "at": "2026-11-27T15:43Z",
@@ -361251,6 +361251,11 @@
           "at": "2026-11-27T17:28Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:28Z",
+          "by": "codex",
+          "what": "done: Chief ACCEPT: PR210 merged 4815be16c362c66f99fe767e443d846d5e4b20a2. NAS master, thumbnails and captions hash-verified; fresh API confirms approved listing, Private 2026-12-03T17:00Z, HD processed, en-GB serving. Existing QA and Ben v05 watch approval retained. Follow-ups J3936 publication/pin 3 Dec 17:05Z and J3937 48-hour read 5 Dec 17:05Z. No further upload or schedule change."
         }
       ],
       "remaining_action": "Committing WW2 PR for status.json, UPLOADS.json, PACKAGE_MANIFEST.json, and readback receipt",
@@ -361287,7 +361292,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/210#issuecomment-7224408212"
     },
     {
       "id": "J3921",
