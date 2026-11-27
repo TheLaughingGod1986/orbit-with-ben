@@ -365083,13 +365083,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T21:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T21:41Z",
-      "result": "parked for Chief: preservation DONE. Private channel repo freshly verified (owner account, PRIVATE, admin). The two J3933 records copied byte-for-byte from 2247174860 (SHA-256 identical, also re-checked on merged main), JSON valid, diff check and privacy scan clean, plus a status note: the proposal is historical, J3935 no-title-change ruling stands. PR https://github.com/TheLaughingGod1986/ww2-channel/pull/215 merged 21:45Z as 21b41a2c (repo has no CI or required checks). Nothing pushed to the public repo; original J3933 worktree untouched. jobs.py refused my receipt on J3933 (wait --recheck: J3960 is not its registered verification task; plain wait: holder/Chief only). Chief run: python3 scripts/jobs.py done J3933 --agent codex --ref https://github.com/TheLaughingGod1986/ww2-channel/pull/215 --result 'Records preserved privately via J3960 (PR 215, 21b41a2c)' --git ; then python3 scripts/jobs.py done J3960 --agent codex --git . J3706 and all other holds untouched; no YouTube writes, spend or visibility changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T21:41Z",
@@ -365125,13 +365125,18 @@
           "at": "2026-11-27T21:46Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: preservation DONE. Private channel repo freshly verified (owner account, PRIVATE, admin). The two J3933 records copied byte-for-byte from 2247174860 (SHA-256 identical, also re-checked on merged main), JSON valid, diff check and privacy scan clean, plus a status note: the proposal is historical, J3935 no-title-change ruling stands. PR https://github.com/TheLaughingGod1986/ww2-channel/pull/215 merged 21:45Z as 21b41a2c (repo has no CI or required checks). Nothing pushed to the public repo; original J3933 worktree untouched. jobs.py refused my receipt on J3933 (wait --recheck: J3960 is not its registered verification task; plain wait: holder/Chief only). Chief run: python3 scripts/jobs.py done J3933 --agent codex --ref https://github.com/TheLaughingGod1986/ww2-channel/pull/215 --result 'Records preserved privately via J3960 (PR 215, 21b41a2c)' --git ; then python3 scripts/jobs.py done J3960 --agent codex --git . J3706 and all other holds untouched; no YouTube writes, spend or visibility changes."
+        },
+        {
+          "at": "2026-11-27T22:13Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Chief receipt review only; independent publication already completed by Claude Code and verified. J3933 now closed. Accept private preservation, retain J3935 ruling and J3706 date hold. No Codex publication retry or further transfer."
         }
       ],
       "remaining_action": "Chief to close the Atlantic read job with the receipt",
       "due": "2026-11-28T18:00:00Z",
-      "for": "claudecode",
+      "for": "codex",
       "kind": "assembly",
-      "model": "mini-claude-opus-5-5",
+      "model": "gpt-6-astra",
       "plain": "Save the Atlantic performance records in the private channel repository",
       "mini_only": true,
       "progress": {
@@ -365150,7 +365155,14 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "claudecode",
+        "model": "mini-claude-opus-5-5",
+        "status": "blocked",
+        "by": "claudecode"
+      }
     },
     {
       "id": "J3961",
