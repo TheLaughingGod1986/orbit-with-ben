@@ -353208,9 +353208,14 @@
           "at": "2026-11-27T01:48Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:48Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Chief inputs checked independently. review-progress API refused because chief/active.json is absent; recording actual review milestones here."
         }
       ],
-      "remaining_action": "re-hold J3831 on the Chief merge/lock, then report",
+      "remaining_action": "Review the Battle of the Bulge evidence and record fixes required before script lock",
       "kind": "review",
       "recheck_of": "J3831",
       "due": "2026-11-27T02:09:59+00:00",
@@ -353224,13 +353229,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-27T01:48Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Chief inputs checked independently. review-progress API refused because chief/active.json is absent; recording actual re"
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     },
     {
       "id": "J3838",
