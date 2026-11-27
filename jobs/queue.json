@@ -359500,9 +359500,14 @@
           "at": "2026-11-27T16:03Z",
           "by": "relay",
           "what": "condition verification queued: J3925"
+        },
+        {
+          "at": "2026-11-27T16:35Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T16:00:00Z"
         }
       ],
-      "remaining_action": "Await restored narration and independent playback review before phone watch",
+      "remaining_action": "Restore narration, complete independent review, then obtain Chief approval before phone watch",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
@@ -359526,9 +359531,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3918 Chief FIX: v02 missing narration. J3922 must deliver immutable v03; dependent J3923 must hear/watch and recommend KEEP, followed by elected-Chief PASS and PR1399 merge before UAT. No upload or scheduling.",
-        "check_at": "2026-11-27T17:03:05+00:00",
-        "recheck_task": "J3925"
+        "condition": "J3925 Chief verification: condition NOT met. Canonical exports contain v01/v02 only; J3922 remains open with no immutable v03 delivery; J3923 remains open after J3922 with no KEEP. PR1399 remains OPEN and unmerged at 1faedeab317a396119e2dbf33bb81eee691289a8; no repaired-cut Chief PASS. Existing J3918 FIX stands. Complete J3922 then J3923, obtain exact-file Chief ruling and PR1399 merge before phone UAT. No upload or scheduling. Preserve original 28 Nov 16:00Z verification backstop; ready repair work may start immediately.",
+        "check_at": "2026-11-28T16:00:00Z",
+        "last_recheck": "J3925",
+        "checked_at": "2026-11-27T16:35:27+00:00",
+        "checked_by": "codex"
       }
     },
     {
