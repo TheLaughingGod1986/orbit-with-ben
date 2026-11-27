@@ -274733,10 +274733,10 @@
       "stage": "edit",
       "after": "J3022",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-27T12:44Z",
-      "eta": "2026-11-27T14:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
       "result": "",
@@ -274765,6 +274765,11 @@
           "at": "2026-11-27T13:02Z",
           "by": "gemini",
           "what": "step 3 of 7 done: Steps 1-3 done (£0): v02 inputs (138 cuts, 0 PIA00271/PIA00233, exact R11 PIA00215, clip_check PASS, picture_qa src PASS 0 fails/0 LONG_RUN), 9 v02 graphics rendered & inspected, SFX kit + stems + mix PASS (-14.4 LUFS, -1.5 dBTP, sfx_kit level PASS), gate:episode PASS (91.6/100). Worktree commit 7af2764951 on gemini/J3023-owb064-assembly."
+        },
+        {
+          "at": "2026-11-27T13:03Z",
+          "by": "gemini",
+          "what": "released: Detached master render running in tmux session J3023-064-render; log: /Users/benjaminoats/_desk/logs/J3023-064-render.log; done: /Users/benjaminoats/_desk/logs/J3023-064-render.done. Worktree: /Volumes/MiniWork/scratch/J3023-owb064-v02 (branch gemini/J3023-owb064-assembly, commit 7af2764951). Check .done before starting any second copy; once exit 0, inspect picture_qa_review.jpg & all 5 gate reports, build trailer + PACKAGE_MANIFEST.json, record teach/polish reviews, queue independent completed-cut/package QA and linked companion Shorts follow-ups."
         }
       ],
       "remaining_action": "Detached tmux J3023-064-render building 138 cuts + 5 QA gates; next run checks .done/.log, inspects flagged frames, finishes trailer/manifest and queues QA",
