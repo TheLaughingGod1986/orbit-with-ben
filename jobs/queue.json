@@ -362262,10 +362262,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T20:56Z",
+      "eta": "2026-11-27T22:56Z",
       "created_by": "codex",
       "created_at": "2026-11-27T16:00Z",
       "result": "",
@@ -362279,13 +362279,26 @@
           "at": "2026-11-27T19:55Z",
           "by": "claude",
           "what": "re-pinned to gemini on the Mini: the cloud Claude Code session has no /Volumes/MiniWork. Codex's sandbox refused the push. These are Ben's own private repositories, and pushing studio work to them is authorised by Ben's standing rule of 24 Nov (AGENTS.md, PR #1250). Claude, acting Chief, authorises this push. Before pushing, check the repository is private (if it is public, stop and park for the Chief), the branch head is the commit named, the tree is clean, and a privacy grep of the whole diff against origin/main finds no emails, tokens, keys or private addresses. Never edit, rebuild or retry through Codex. £0. Push `codex/j3918-chief-ruling` (head 12f4082187) to orbit-with-ben, open a PR that supersedes worker PR #1400, and record it on J3918. Evidence only; it never authorises a film PASS. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T20:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Independently review the local evidence diff and publication permission, then publish if permitted",
       "for": "gemini",
       "kind": "assembly",
       "plain": "Publish the completed review of the first planets Short after checking privacy",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T20:56Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3925",
