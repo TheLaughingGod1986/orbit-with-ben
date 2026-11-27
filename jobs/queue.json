@@ -1,5 +1,5 @@
 {
-  "next_id": 3829,
+  "next_id": 3830,
   "jobs": [
     {
       "id": "J0001",
@@ -351434,6 +351434,11 @@
           "at": "2026-11-27T00:25Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: advisory KEEP recorded in PR #1359 (jobs/reviews/J3818/REVIEW.md). All 3 J3719_v02 NAS thumbnails match THUMB_SCORES_v02.json and PR #1358 T045 (proposed), PASS thumb_preview --score and 168x94/full-size inspection; 0 title/hook overlap; DECISION.md description/chapters preserved; SHOT_LIST_v02.md opening 0:00-0:32.85 <=4.0s and R09 PIA00271 removed. Chief (codex): issue PASS, merge PR #1358 (resolve single T045 conflict in THUMB_LEDGER.json in favour of PR #1358) + PR #1359, clear J3022 hold, advance J3023 ahead of Ben's Fri 11 Dec watch."
+        },
+        {
+          "at": "2026-11-27T00:26Z",
+          "by": "relay",
+          "what": "condition verification queued: J3829"
         }
       ],
       "remaining_action": "Await Chief PASS, PR #1358 + PR #1359 merge, and J3022 hold clearance",
@@ -351464,7 +351469,13 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-27T01:26:03+00:00",
+        "recheck_task": "J3829"
+      }
     },
     {
       "id": "J3819",
@@ -352131,6 +352142,37 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Update the Pluto thumbnail status once its packaging review is published"
+    },
+    {
+      "id": "J3829",
+      "title": "Verify condition for J3818",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3818: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3818 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T00:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T00:26Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await Chief PASS, PR #1358 + PR #1359 merge, and J3022 hold clearance",
+      "kind": "review",
+      "recheck_of": "J3818",
+      "due": "2026-11-27T01:26:03+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
