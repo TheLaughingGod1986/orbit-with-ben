@@ -355273,9 +355273,14 @@
           "at": "2026-11-27T07:31Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await J3842 corrected source records and final script checks, then review for lock",
+      "remaining_action": "Verify source corrections and decide whether the script review can resume",
       "kind": "review",
       "recheck_of": "J3831",
       "due": "2026-11-27T08:05:46+00:00",
@@ -355293,9 +355298,15 @@
         "of": 3,
         "at": "2026-11-27T07:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check inputs and authority",
+          "Verify corrected evidence",
+          "Record ruling and follow-up"
+        ]
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     }
   ],
   "focus": [
