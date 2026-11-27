@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
 | J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
 | J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
-| J3950 | mini | open | – | – | 064 edit · studio · OWB 064: provenance metadata fix on PR #1390 (J3910 FIX), then make it mergeable |  |
+| J3950 | mini | claimed | codex | 2026-11-27T20:42Z | 064 edit · studio · OWB 064: provenance metadata fix on PR #1390 (J3910 FIX), then make it mergeable |  |
 | J3952 | mini | open | – | – | for gemini · studio · Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e) |  |
 | J3953 | mini | open | – | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
 | J3955 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
