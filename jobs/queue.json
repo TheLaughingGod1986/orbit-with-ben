@@ -1,5 +1,5 @@
 {
-  "next_id": 3904,
+  "next_id": 3905,
   "jobs": [
     {
       "id": "J0001",
@@ -359232,6 +359232,36 @@
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open"
+    },
+    {
+      "id": "J3904",
+      "title": "OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Linked companion Short 2 of 2 for OWB:064 (Every Planet Explained in 12 Minutes (Mercury to Neptune), planned air Wed 16 Dec 2026 18:00 London). Concept from 11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md and verified 01_Script/SOURCES.md: Venus 464°C surface heat vs Uranus −224.2°C atmospheric minimum (Keeper score one-question title + line 1, e.g. 'Why Is Venus 464°C While Uranus Drops to −224°C?'). Strict spend boundary: £0 cash, 0 Flow/Vertex credits, and NO extra ElevenLabs spend authorization — do not quietly expand the 8,000-character long-VO scope (either assemble from existing locked 064 VO segments with clean sentence cuts, or park for separate Chief VO authorization if any new VO lines are proposed). Must follow all existing Shorts gates (22-27 s, full-bleed 9:16 zero padding, frame-0 real moving NASA footage + hook caption, 9-14 s exact promoted long title, loop ending, gate_shorts_open.py check PASS, Related video = 064 long once public). Never air before 064 long is public on Wed 16 Dec 18:00 London.",
+      "ref": "J3023",
+      "film": "064",
+      "stage": "script",
+      "after": "J3902",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T13:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T13:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare OWB:064 companion Short 2 script/cut plan from locked 064 sources/narration under existing Shorts gates and £0/no-extra-VO boundary",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "script",
+      "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend"
     }
   ],
   "focus": [
