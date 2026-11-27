@@ -357493,13 +357493,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T10:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T10:50Z",
-      "result": "parked for Chief: J3884 condition NOT met. Predecessor J3365 is done (Chief KEEP, PR1170 merged), but J3884's remaining gate is Chief review+merge of PR #1377 (gemini/J3884-hos-readback, 4a1105fc38), still OPEN with no review or comments at 2026-11-27T10:54Z. Evidence spot-check: all 10 screenshots in ~/_desk/J3884/2026-11-27 match the SHA-256s in the readback. No other approvals required (read-only job). Worker wait refused (holder/Chief only). Chief run: python3 scripts/jobs.py wait J3884 --agent codex --condition 'Chief review and merge of PR #1377 (4a1105fc38); open and unreviewed at 2026-11-27T10:54Z' --check-at '2026-11-27T15:00Z' --type input --recheck J3886 --git ; then review PR #1377 and close J3884 if it passes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T10:50Z",
@@ -357535,6 +357535,11 @@
           "at": "2026-11-27T10:54Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3884 condition NOT met. Predecessor J3365 is done (Chief KEEP, PR1170 merged), but J3884's remaining gate is Chief review+merge of PR #1377 (gemini/J3884-hos-readback, 4a1105fc38), still OPEN with no review or comments at 2026-11-27T10:54Z. Evidence spot-check: all 10 screenshots in ~/_desk/J3884/2026-11-27 match the SHA-256s in the readback. No other approvals required (read-only job). Worker wait refused (holder/Chief only). Chief run: python3 scripts/jobs.py wait J3884 --agent codex --condition 'Chief review and merge of PR #1377 (4a1105fc38); open and unreviewed at 2026-11-27T10:54Z' --check-at '2026-11-27T15:00Z' --type input --recheck J3886 --git ; then review PR #1377 and close J3884 if it passes."
+        },
+        {
+          "at": "2026-11-27T11:01Z",
+          "by": "codex",
+          "what": "reopened: Assigned acting-Chief review started; J3884 remains held pending ruling on PR1377."
         }
       ],
       "remaining_action": "Park for Chief with the exact wait command",
@@ -357550,18 +357555,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T10:53Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3884 and its predecessor",
-          "Check gates and approvals",
-          "Park for Chief with exact command"
-        ],
-        "note": "PR #1377 evidence checked: 10/10 screenshot SHA-256 match in ~/_desk/J3884/2026-11-27; condition unmet (PR #1377 open, u"
-      },
       "taskKeys": [
         "HOS:004",
         "HOS:007",
