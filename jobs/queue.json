@@ -274838,9 +274838,14 @@
           "at": "2026-11-27T13:53Z",
           "by": "relay",
           "what": "condition verification queued: J3905"
+        },
+        {
+          "at": "2026-11-27T14:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T14:30:00Z"
         }
       ],
-      "remaining_action": "After J3902 KEEP and Chief PR #1390 merge, set jobs.py awaits on Ben's watch board and queue approved-delivery handoff",
+      "remaining_action": "Wait for trailer and credit repairs, independent recheck and Chief merge before Ben watch handoff",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
@@ -274865,9 +274870,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Independent completed-cut/package QA (J3902) PASS and Chief merge of PR #1390 required before setting jobs.py awaits on Ben's watch board (deadline Fri 11 Dec 18:00 London) and queueing approved-delivery handoff for Wed 16 Dec 18:00 London.",
-        "check_at": "2026-11-27T14:53:55+00:00",
-        "recheck_task": "J3905"
+        "condition": "J3902 Chief ruling: master v03 retained, package FIX. J3909 must repair vertical trailer and provenance/portrait credits/LF/category, then J3910 independent recheck must KEEP and elected Chief must merge revised PR1390 before J3023 may set Ben UAT. No upload or package PASS.",
+        "check_at": "2026-11-28T14:30:00Z"
       }
     },
     {
