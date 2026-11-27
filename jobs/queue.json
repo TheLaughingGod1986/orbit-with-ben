@@ -282334,9 +282334,14 @@
           "at": "2026-11-27T06:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T08:30:00Z"
+        },
+        {
+          "at": "2026-11-27T06:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T08:30:00Z"
         }
       ],
-      "remaining_action": "Await safe publication review in J3855 before closing the Pluto packaging decision",
+      "remaining_action": "Await publication of the reviewed Pluto decision through J3861",
       "due": "2026-12-08T18:00:00Z",
       "kind": "chief",
       "plain": "Check the corrected Pluto thumbnails and description before arranging delivery",
@@ -282356,12 +282361,9 @@
         "OWB:034"
       ],
       "hold": {
-        "type": "input",
-        "condition": "Decision a4c9c8f534 remains unpublished on origin. J3855 must resolve the rejected publication through a reviewed safe candidate and applicable approval; then Chief verifies publication and closes J3115 before J3119 upload.",
-        "check_at": "2026-11-27T08:30:00Z",
-        "last_recheck": "J3854",
-        "checked_at": "2026-11-27T06:29:46+00:00",
-        "checked_by": "codex"
+        "type": "dependency",
+        "condition": "J3855 Chief review authorizes privacy-corrected candidate 40c6ca5114 through Claude Code publication job J3861, after J3855. J3861 must publish through its applicable approved route and record origin/main merge evidence; elected Chief must verify and close J3115 before J3119. Original rejection and metadata correction recorded in J3855 ruling. No upload yet.",
+        "check_at": "2026-11-27T08:30:00Z"
       }
     },
     {
