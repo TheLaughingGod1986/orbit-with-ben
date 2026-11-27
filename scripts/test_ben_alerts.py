@@ -123,6 +123,20 @@ class WatchTriggerTests(unittest.TestCase):
             self.assertEqual(len(r3["sent"]), 0)
             self.assertEqual(len(sent), 1)
 
+    def test_an_ok_on_a_later_cut_answers_the_earlier_ask(self):
+        # 27 Nov 2026: J2996 still asked Ben to watch pilot 2 v05 "by 18:00" although he OK'd v06 on 24 Nov and it was public.
+        entry = {"id": "J2996", "job": "J2996", "card": "WW2:002", "version": "v05", "number": "002", "channel": "WW2"}
+        cid = ba.video_tracker.ask_check_id(entry)
+        self.assertTrue(ba._ask_answered(entry, {cid: {"verdict": "ok", "version": "v06"}}))
+        self.assertTrue(ba._ask_answered(entry, {cid: {"verdict": "change", "version": "v07"}}))
+        self.assertFalse(ba._ask_answered(entry, {cid: {"verdict": "ok", "version": "v04"}}))  # an older answer doesn't count
+        with tempfile.TemporaryDirectory() as tmp:
+            jobs = [watch_job(jid="J2996", repo="ww2", film="002", title="U-boats", version="v05", vtype="long",
+                              card="WW2:002", due="2026-11-27T18:00:00Z", airs="")]
+            r = ba.evaluate(at=utc(2026, 11, 27, 8, 30), jobs=jobs, checks={cid: {"verdict": "ok", "version": "v06"}},
+                            state_file=Path(tmp) / "s.json", config_file=Path(tmp) / "c.json", deliver=False)
+            self.assertEqual(r["board"]["active"], [])
+
     def test_watch_ignores_deadlines_over_12h_or_already_past(self):
         with tempfile.TemporaryDirectory() as tmp:
             st = Path(tmp) / "state.json"
