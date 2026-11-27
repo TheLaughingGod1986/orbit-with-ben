@@ -359465,9 +359465,14 @@
           "at": "2026-11-27T14:29Z",
           "by": "codex",
           "what": "step 1 of 2 done: Chief independently checked J3902 review and posted ruling, PR1390 OPEN at 81e0cdfc13, active J3909 repair and dependent J3910 recheck. Existing two-step worker plan retained; Chief review tracked separately."
+        },
+        {
+          "at": "2026-11-27T14:30Z",
+          "by": "codex",
+          "what": "step 2 of 2 done: Recorded J3023 dependency hold with last_recheck J3905 and retained check 2026-11-28T14:30Z. Follow-up already owned by J3909 then J3910 and elected Chief; no duplicate work queued."
         }
       ],
-      "remaining_action": "Record the unmet release condition and close this verification",
+      "remaining_action": "Close completed condition verification; parent remains held",
       "kind": "review",
       "recheck_of": "J3023",
       "due": "2026-11-27T14:53:55+00:00",
@@ -359484,11 +359489,11 @@
         "OWB:064"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 2,
-        "at": "2026-11-27T14:29Z",
+        "at": "2026-11-27T14:30Z",
         "by": "codex",
-        "note": "Chief independently checked J3902 review and posted ruling, PR1390 OPEN at 81e0cdfc13, active J3909 repair and dependent"
+        "note": "Recorded J3023 dependency hold with last_recheck J3905 and retained check 2026-11-28T14:30Z. Follow-up already owned by "
       }
     },
     {
