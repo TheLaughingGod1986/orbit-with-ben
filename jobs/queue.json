@@ -272694,10 +272694,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-27T10:08Z",
-      "eta": "2026-11-27T14:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -273826,6 +273826,11 @@
           "at": "2026-11-27T10:12Z",
           "by": "codex",
           "what": "step 3 of 4 done: 14 daily zero results; eight service proposals lint clean, five CI files staged, 52 focused tests pass. Full split and conditional future-identity verification are detached; production still uses Orbit."
+        },
+        {
+          "at": "2026-11-27T10:15Z",
+          "by": "codex",
+          "what": "released: Preserve 3/4. PR #1375 at f5a2bd4fa7 records current handoff; token probe and prior-day notice already satisfied, streak 14. Eight private service proposals lint PASS; 52 focused tests pass; original plists backed up privately. Detached tmux J3012-split and J3012-future continue: logs ~/. _desk placeholder not used; actual logs /Users/benjaminoats/_desk/logs/J3012-split-1127.log and J3012-future-1127.log, matching .done files. Missing .done means running: do not duplicate. Source worktree /Volumes/MiniWork/scratch/J3012-cutover-1127; full details jobs/reviews/J3012/CUTOVER_CHECKPOINT_2026-11-27.md in PR. Full migration exceeds this run: next read test results, resolve any failure, reconcile both machines, drain writers, freeze fresh queue and execute cutover/acceptance. No service, pause, activation marker or deployment changed. Required offload exited 0 with no eligible files; internal disk 13 GB, MiniWork 140 GB. Nothing for Ben."
         }
       ],
       "remaining_action": "Finish current-source and future-studio verification, then drain writers and perform the live move",
