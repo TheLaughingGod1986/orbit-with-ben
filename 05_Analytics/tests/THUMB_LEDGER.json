@@ -96,7 +96,7 @@
     },
     {
       "id": "T004",
-      "status": "running",
+      "status": "done",
       "started": "2026-10-22",
       "channel": "owb",
       "video": "rVqgtkBV3jc",
@@ -110,9 +110,22 @@
         "maker": "codex",
         "file": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnail/j0143_v02/024_panel_b_7_years_gone.jpg"
       },
-      "result": null,
-      "readBack": "2026-11-12",
-      "note": "Armed 22 Oct by J0206, thumbnail only. A is the live answer cover (YOU: 1 YEAR / EARTH: 7 YEARS). B is 7 YEARS GONE. Title unchanged. Scheduled; Studio shows Ineligible until it airs. | J2680 check 12 Nov 2026 08:01Z–08:03Z (Orbit Studio CDP 9223 on the MacBook, Public since 1 Nov 18:00Z): Video details > Thumbnail shows 'Running…' (split preview A 'YOU: 1 YEAR / EARTH: 7 YEARS' vs B '7 YEARS GONE'); Analytics > Reach A/B test card shows 'Watch time share • Running' with both arms active. Since published Reach (1 Nov 18:00–12 Nov 08:02): 41 key-metric thumbnail impressions (40 funnel impressions), 0.0% CTR, 0 views, 0 engaged views. Expected 14-day test completion ~2026-11-15T18:00Z. Read-only: no new test queued or set."
+      "result": {
+        "read": "2026-11-27",
+        "readAt": "2026-11-27T19:36:52Z",
+        "winner": "draw",
+        "studioVerdict": "Not enough impressions to declare a winner",
+        "visible_to_all": "a",
+        "wt_a": null,
+        "wt_b": null,
+        "ran_from": "2026-11-01 18:00",
+        "ran_to": "2026-11-15 18:39",
+        "screenshot": "/Users/benjaminoats/_desk/jobs/J3309/04_t004_report_modal_20261127T193652Z.png",
+        "note": "J3309 Studio CDP 9224 fresh read-back (27 Nov 2026 19:36:52Z) prior to successor T042: Test finished. Ran from 1 November 2026 at 18:00 to 15 November 2026 at 18:39. Studio verdict: 'Not enough impressions to declare a winner'; both watch-time shares shown as em dashes; Option A ('YOU: 1 YEAR / EARTH: 7 YEARS') 'Now visible to all viewers'. Preserved in jobs/reviews/J3309/rVqgtkBV3jc_T004_preserved_report.txt before New test/Continue under Chief J3382 authorization."
+      },
+      "readBack": "2026-11-27",
+      "note": "Armed 22 Oct by J0206, thumbnail only. A is the live answer cover (YOU: 1 YEAR / EARTH: 7 YEARS). B is 7 YEARS GONE. Title unchanged. Scheduled; Studio shows Ineligible until it airs. | J2680 check 12 Nov 2026 08:01Z–08:03Z (Orbit Studio CDP 9223 on the MacBook, Public since 1 Nov 18:00Z): Video details > Thumbnail shows 'Running…' (split preview A 'YOU: 1 YEAR / EARTH: 7 YEARS' vs B '7 YEARS GONE'); Analytics > Reach A/B test card shows 'Watch time share • Running' with both arms active. Since published Reach (1 Nov 18:00–12 Nov 08:02): 41 key-metric thumbnail impressions (40 funnel impressions), 0.0% CTR, 0 views, 0 engaged views. Expected 14-day test completion ~2026-11-15T18:00Z. Read-only: no new test queued or set. | J3309 read-back 27 Nov 2026: finished inconclusive draw (2026-11-01 18:00 to 2026-11-15 18:39; A visible to all; report preserved before successor T042).",
+      "ended": "2026-11-15"
     },
     {
       "id": "T005",
@@ -1580,14 +1593,14 @@
     },
     {
       "id": "T042",
-      "status": "proposed",
-      "started": null,
+      "status": "running",
+      "started": "2026-11-27",
       "channel": "owb",
       "film": "024",
       "video": "rVqgtkBV3jc",
       "title": "What Happens If You Travel Near Light Speed?",
       "title_b": "Why 1 Year Near Light Speed Ages Earth 7 Years",
-      "job": "J3381",
+      "job": "J3309",
       "a": {
         "maker": "house",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnails/repackage_2026-11/J3302_v01/rVqgtkBV3jc_live_A.jpg",
@@ -1601,7 +1614,7 @@
         "text": "EARTH AGES 7×"
       },
       "result": null,
-      "note": "J3382 exact v03 PASS and conditional one-test successor permission. Still proposed, not running. J3307 publication/completion remains required. Round 2 titles parked.",
+      "note": "Armed 27 Nov 2026 at 19:45:25Z (J3309, after J3307 done and J3382 exact-file PASS + one-test successor authorization over finished inconclusive T004). Thumbnail-only A vs B on rVqgtkBV3jc (Orbit With Ben UC_esArsDKd3GJvOkeO0DUog; accessed via reused Studio tab on CDP 9224 after 26 Nov port swap, as 9223 holds FOH). Prior finished T004 report (1 Nov 18:00 to 15 Nov 18:39, inconclusive, A visible to all) verified and preserved before New test/Continue. Slot 1: unchanged live A (YOU: 1 YEAR / EARTH: 7 YEARS, sha256 0df5e274...6af98); Slot 2: exact approved codex v03 B (EARTH AGES 7×, sha256 0e643ed4...92bba); Slot 3 empty. Saved, reloaded and verified at 2026-11-27T19:45:42Z: 'Thumbnail only / A/B test report / Test running… Estimated time remaining: 13 days 23 hours…'. Title ('What Happens If You Travel Near Light Speed?'), description (3,310 chars), Public visibility and audience unchanged. Round 2 titles remain parked. Evidence: jobs/reviews/J3309/REPORT.md. Read back 2026-12-11; do not replace the running test.",
       "history": [
         {
           "recorded": "2026-11-22",
@@ -1687,6 +1700,16 @@
         "prior_test": "T004",
         "evidence": "jobs/reviews/J3382/REVIEW.md",
         "conditions": "J3307 completed; fresh matching finished report and no running test; unchanged live A and title"
+      },
+      "readBack": "2026-12-11",
+      "studio_arm": {
+        "armed_utc": "2026-11-27T19:45:25Z",
+        "verified_utc": "2026-11-27T19:45:42Z",
+        "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+        "test_type": "thumbnail_only",
+        "prior_report_preserved": "jobs/reviews/J3309/rVqgtkBV3jc_T004_preserved_report.txt",
+        "armed_report": "jobs/reviews/J3309/rVqgtkBV3jc_T042_armed_report.txt",
+        "evidence": "jobs/reviews/J3309/REPORT.md"
       }
     },
     {
