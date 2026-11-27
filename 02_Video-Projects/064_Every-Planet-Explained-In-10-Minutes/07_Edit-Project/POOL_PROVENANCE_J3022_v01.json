@@ -105,16 +105,17 @@
       "planned_upscale": 1.0
     },
     {
-      "key": "PIA00233",
-      "id": "PIA00233",
-      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/03_Reference-Material/harvest_J3022_v01/PIA00233.jpg",
-      "bytes": 141670,
-      "sha256": "14d3741993ab9ee87997a2645fbe63aa71162a6fd0386070a66c9c6c76245208",
-      "title": "Venus Magellan Radar 3-D Perspective View of Eistla Regio",
+      "key": "PIA00215",
+      "id": "PIA00215",
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/03_Reference-Material/J3835_radar_v01/PIA00215.jpg",
+      "bytes": 2046040,
+      "sha256": "46dc965a02d4bff533685892ad16a76845a384d482ffaedda024c870b5b8a7b4",
+      "title": "Venus - Alpha Regio (real Magellan overhead SAR)",
       "credit": "NASA/JPL",
       "license": "Public Domain (NASA/JPL)",
       "is_video": false,
-      "planned_upscale": 1.54
+      "planned_upscale": 1.0,
+      "source_url": "https://science.nasa.gov/photojournal/venus-alpha-regio/"
     },
     {
       "key": "Venera13_surface",
@@ -158,11 +159,12 @@
       "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18033.jpg",
       "bytes": 7246556,
       "sha256": "872e1a5317ac31612a766ef6dfa7e774e2d10509b1e564b38e3aa384d6b0bf19",
-      "title": "Earth Blue Marble from Apollo 17 (033 shelf)",
-      "credit": "NASA/Apollo 17",
+      "title": "Earth - Suomi NPP Blue Marble 2012",
+      "credit": "NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring",
       "license": "Public Domain (NASA)",
       "is_video": false,
-      "planned_upscale": 1.0
+      "planned_upscale": 1.0,
+      "source_url": "https://science.nasa.gov/image-detail/amf-pia18033/"
     },
     {
       "key": "Five_Minutes_in_Orbit",
@@ -707,6 +709,14 @@
       "id": "020_jupiter_film_v05_shelf_music_etc",
       "title": "Shelf music beds & source-film code graphics (020/021/023/025/027/031/033)",
       "reject": "Source-film code graphics are references only (every 064 graphic row has its own fresh render); shelf music beds are prohibited by music_gate.py."
+    },
+    {
+      "id": "PIA00233",
+      "disposition": "HARD REJECT / KIND_FAIL",
+      "reason": "3-D radar/altimetry terrain reconstruction; prior-film use grants no exception. J3829 requires removal from R11.",
+      "source_url": "https://science.nasa.gov/photojournal/venus-3-d-perspective-view-of-eistla-regio/",
+      "replacement": "PIA00215",
+      "job": "J3835"
     }
   ]
 }

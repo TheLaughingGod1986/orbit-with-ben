@@ -1,0 +1,79 @@
+{
+  "job": "J3835",
+  "agent": "macbook",
+  "disposition": "Corrections delivered for independent J3818 review; no PASS or release",
+  "chosen_asset": {
+    "id": "PIA00215",
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/03_Reference-Material/J3835_radar_v01/PIA00215.jpg",
+    "shelf_source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/nasa_pool_v01/magellan_extra/PIA00215.jpg",
+    "sha256": "46dc965a02d4bff533685892ad16a76845a384d482ffaedda024c870b5b8a7b4",
+    "bytes": 2046040,
+    "resolution": [
+      2782,
+      2666
+    ],
+    "source_url": "https://science.nasa.gov/photojournal/venus-alpha-regio/",
+    "official_download": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00215/PIA00215.jpg",
+    "official_download_sha256": "2f50dd6a560093099de005c669793db7bbbf1d21a8db120701902ed6a67d2229",
+    "decoded_pixels_identical_to_official": true,
+    "credit": "NASA/JPL",
+    "rights": "NASA/JPL public-domain mission image; no third-party credit identified on official page",
+    "crop_xyxy": [
+      350,
+      600,
+      2550,
+      1838
+    ],
+    "optional_push_end_xyxy": [
+      430,
+      645,
+      2470,
+      1793
+    ],
+    "max_scale_to_1080p": 0.941,
+    "visual_check": "Source and 1920x1080 crop inspected; domes/fractures retained, black data gaps excluded. Overhead radar context, not optical photography or proof of spin.",
+    "still_interval_s": [
+      118.05,
+      124.4
+    ],
+    "following_graphic_interval_s": [
+      124.4,
+      130.75
+    ]
+  },
+  "thumbnails": [
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_A_extreme_worlds_v02.jpg",
+      "sha256": "bc1b60dbacf405e9ef2c2bf169f5442cea1e5312dd56ceade96560c73fb2e393",
+      "unchanged": true
+    },
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_B_venus_uranus_v02.jpg",
+      "sha256": "29ea71dab31ab13efa723d5257856324be02a91e96f1aaa47783f3a395b34c75",
+      "unchanged": true
+    },
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumb_C_real_nasa_saturn_v02.jpg",
+      "sha256": "4ec5544c4fd9a7e9338bb207be936c90ec2d0683eb307e45d3224aa7458903f1",
+      "unchanged": true
+    },
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/08_Thumbnail/J3719_v02/064_thumbs_ABC_v02_preview_sheet.jpg",
+      "sha256": "22ac3dfb600b8d514e76d923c2f05f697023d26e95405d01b2cdb798bad73160",
+      "unchanged": true
+    }
+  ],
+  "locked_vo": {
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.wav",
+    "sha256": "4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa",
+    "duration_s": 683.86
+  },
+  "checks": [
+    "All cut entries/times identical except required R11 still source, framing and scale",
+    "Three proposed T045 arms match NAS JPEG bytes and score manifest",
+    "Only T045 changed in ledger; status proposed and video null",
+    "Historical v01 shot-list records and locked script unchanged",
+    "Both Python files parse; thumbnail builder edits only comments/docstrings",
+    "No new verdict; J3022/J3023 holds remain"
+  ]
+}
