@@ -359402,16 +359402,21 @@
           "at": "2026-11-27T15:24Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Frame inspection of v01 caught 4 defects: title banner collided with R03b graphic at 13.4-13.9s, SRT dropped 9-14s words, Colombo pill ended at 26.4s before name finished (27.64s), and proposed Thu 17 Dec is not an Orbit Short day; preserving v01 on NAS and building v02"
+        },
+        {
+          "at": "2026-11-27T15:36Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Built v02 (8b7a218c...), verified 7/7 gates + canonical 13-bed MP3 music gate + CFR health + transition frames, pushed PR #1399 (1faedeab31)"
         }
       ],
-      "remaining_action": "Rebuilding v02 to fix 12.88-14.00s title/graphic overlap, missing 9-14s SRT lines, Colombo pill timing, and Mon 28 Dec slot, then re-verifying all 7 gates and opening QA PR",
+      "remaining_action": "Awaiting independent QA KEEP, elected-Chief PASS and PR #1399 merge before Ben UAT watch registration",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-27T15:24Z",
+        "at": "2026-11-27T15:36Z",
         "by": "gemini",
         "plan": [
           "Inspect master v03 and Short rules",
@@ -359421,7 +359426,7 @@
           "Inspect frames and verify packaging",
           "Commit artifacts and submit for QA"
         ],
-        "note": "Frame inspection of v01 caught 4 defects: title banner collided with R03b graphic at 13.4-13.9s, SRT dropped 9-14s words"
+        "note": "Built v02 (8b7a218c...), verified 7/7 gates + canonical 13-bed MP3 music gate + CFR health + transition frames, pushed P"
       },
       "taskKeys": [
         "OWB:064"
