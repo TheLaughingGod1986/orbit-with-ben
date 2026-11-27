@@ -1,5 +1,5 @@
 {
-  "next_id": 3896,
+  "next_id": 3897,
   "jobs": [
     {
       "id": "J0001",
@@ -358564,6 +358564,36 @@
         "WW2:001",
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3896",
+      "title": "J3012: complete remote cutover result and resume controls",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J3012 continuation, authorized by elected Chief Codex. Finish the concrete control gap found while reviewing J3892/PR1385. Parent remains 3/4. Work only on this missing handoff boundary; no new inventory, credential probe, full rehearsal suite or runbook recreation.\n\nRead jobs/reviews/J3012/CUTOVER_HELPER_REVIEW_2026-11-27.md and scripts/macbook_cutover.py. The helper currently writes its outcome only to a private MacBook file, exits with both workers paused, and leaves Mini Chief with no result/resume path because SSH is unavailable. A follow-up queue job cannot run while the worker is paused. Do not launch a live cutover with this gap.\n\nImplement a bounded, authenticated cross-machine result and resume/recovery protocol over the existing trusted studio thread, not a new queue, remote login or a new network service. Deliver a concrete command sequence that the Mini can execute after the coordinator exits. Report only allowlisted status, source/activation identifiers and receipt digests; keep local paths, process details and configuration private. Posting must use structured stdin/file bodies, never shell interpolation. A successful install must retain its pause until an explicit fresh immutable trusted elected-Chief resume command tied to the exact job, nonce, plan, production commit and activation. Preserve role attribution. Require the installed service, marker, production head and exact migration-owned pause identity still match before removing that pause. Never remove a pre-existing/user pause. Failure must retain the pause and rollback evidence; do not silently resume the old queue. Define and prove how Chief can retrieve failure evidence and recover if the bounded supervisor times out after switching. A process that exits and leaves no remote recovery route is not sufficient; do not solve that with an unbounded daemon.\n\nKeep the original exact-source, root-commit, trusted-author, no-edits, freshness, terminal coordinator, PID/group/child/lock drain checks. Preserve both slot content roots, mains/idle policy, identity, locks and heartbeats. No agent kills, deleting held locks, force resets, production branch changes, live marker changes, pause, bootout, install, restart or activation in this preparation task. All service/process/Git effects in tests must be mocked. Do not run the rehearsal queue. No money or Ben action.\n\nWork in an isolated clean worktree. Test delivery success/failure and ambiguous response/retry, untrusted/stale/edited/mismatched resume commands, pause ownership and replacement, source/marker drift, timeout before and after replacement, and controlled both-slot resume. Produce machine-local mocked receipts and sanitized exact source hashes. Include a walkthrough from ordinary coordinator exit through Mini-observed install result to explicit resume, plus failed/expired recovery. Open a PR; return checkouts to main. Chief must review the complete protocol before a separate live coordination child. This is required implementation under the existing J3012 authorization, not a request for Ben to approve again.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3892",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T12:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T12:28Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Complete the MacBook result, resume and recovery handoff before the studio move",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Make the MacBook report the studio move and resume safely when instructed"
     }
   ],
   "focus": [
