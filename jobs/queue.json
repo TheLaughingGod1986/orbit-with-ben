@@ -356852,15 +356852,20 @@
           "at": "2026-11-27T09:35Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3880; starting pre-write inspection"
+        },
+        {
+          "at": "2026-11-27T09:37Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Pre-write checks passed: lint:package 008 PASS, fresh API confirmed 0 comments on YqCWYlv_LCY, f_-BsKZf8X0 private scheduled 2026-12-01T11:30:00Z, 5 UPLOADS.json IDs confirmed public, master sha256 verified and gate_shorts_open PASS"
         }
       ],
-      "remaining_action": "Reading J3877 audit, running lint:package for film 008, and inspecting Studio CDP 9460 & files",
+      "remaining_action": "Posting and pinning approved channel comment on YqCWYlv_LCY",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T09:35Z",
+        "at": "2026-11-27T09:37Z",
         "by": "gemini",
         "plan": [
           "Read audit, lint 008 & inspect state",
@@ -356869,7 +356874,7 @@
           "Reconcile open-library & OWB UPLOADS.json",
           "Run channel:audit, update records, open PRs & report"
         ],
-        "note": "Claimed J3880; starting pre-write inspection"
+        "note": "Pre-write checks passed: lint:package 008 PASS, fresh API confirmed 0 comments on YqCWYlv_LCY, f_-BsKZf8X0 private sched"
       },
       "taskKeys": [
         "HOS:008"
