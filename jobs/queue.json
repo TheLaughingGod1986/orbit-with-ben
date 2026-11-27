@@ -357901,9 +357901,14 @@
           "at": "2026-11-27T11:38Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Short #2 listing package built and youtube:package dry-run PASSED (2026-12-21T11:30:00Z, private, madeForKids=false, containsSyntheticMedia=true, 8 tags)"
+        },
+        {
+          "at": "2026-11-27T11:45Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Uploaded yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z; en-GB language + serving captions set; Studio custom cover (TITAN'S / 2 OCEANS?) and Related video (T3cBBss1F60) verified after reload; Not Made for Kids & Altered Content=Yes confirmed"
         }
       ],
-      "remaining_action": "Upload approved v03 Short Private for 2026-12-21T11:30Z and finish Studio cover/Related",
+      "remaining_action": "Read back YouTube API/Studio state and update UPLOADS.json, library.json, and readback files",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -357925,9 +357930,9 @@
         "handled": true
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T11:38Z",
+        "at": "2026-11-27T11:45Z",
         "by": "gemini",
         "plan": [
           "Verify v03 files, gates, and Dec 21 slot",
@@ -357936,7 +357941,7 @@
           "Read back API/Studio state and update UPLOADS/library",
           "Open PR for Chief merge and report"
         ],
-        "note": "Short #2 listing package built and youtube:package dry-run PASSED (2026-12-21T11:30:00Z, private, madeForKids=false, con"
+        "note": "Uploaded yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z; en-GB language + serving captions set; Studio custom cover "
       },
       "taskKeys": [
         "OWB:032"
