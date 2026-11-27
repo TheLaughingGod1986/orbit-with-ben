@@ -356098,16 +356098,21 @@
           "at": "2026-11-27T08:39Z",
           "by": "gemini",
           "what": "step 4 of 6 done: 44/44 NAS archive SHA-256 verified; shot list verified pass; 10 clean maps + 3 thumbnails rendered"
+        },
+        {
+          "at": "2026-11-27T08:43Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: 44/44 NAS archive verified, 76.0% archive shot list, 10 maps, 3 thumbnails built at 168x94, PR #207 opened, Chief review queued"
         }
       ],
-      "remaining_action": "Inspecting rendered thumbnails (1280x720 + 168x94) and final maps, updating provenance & status records",
+      "remaining_action": "Completed J3869; PR #207 opened and Chief review queued",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals",
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-27T08:39Z",
+        "at": "2026-11-27T08:43Z",
         "by": "gemini",
         "plan": [
           "Harvest full-res archive to NAS & resolve #26/#29",
@@ -356117,7 +356122,7 @@
           "Build 3 archive thumbnails + 168px sheet & inspect",
           "Update provenance/status, open PR & queue Chief review"
         ],
-        "note": "44/44 NAS archive SHA-256 verified; shot list verified pass; 10 clean maps + 3 thumbnails rendered"
+        "note": "44/44 NAS archive verified, 76.0% archive shot list, 10 maps, 3 thumbnails built at 168x94, PR #207 opened, Chief review"
       },
       "taskKeys": [
         "WW2:016"
