@@ -355972,13 +355972,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-27T16:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3859 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/211. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:40Z",
@@ -356034,6 +356034,11 @@
           "at": "2026-11-27T17:06Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
+        },
+        {
+          "at": "2026-11-27T18:09Z",
+          "by": "codex",
+          "what": "reopened: Dependency satisfied: J3932 Chief KEEP and PR211 merged as 632656817b, ruling comment 7225140951. Reopen only to close completed original rules work. Fresh packaging decision belongs to J3935; J3706 unchanged."
         }
       ],
       "remaining_action": "Review the corrected Atlantic rules PR after J3932; J3933 checks fresh packaging data now",
@@ -356047,20 +356052,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T16:54Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief FIX, PR211 ce28c5e82bfa76805801db4e26552a9362aea319: aggregate retention is not stranger retention; post-change CTR is unmeasured; clean-rule-failure and causal claims need qualification. J3932 must correct the existing PR before elected-Chief merge review. J3933 owns the immediate fresh post-change Studio read and any single-fix proposal; no YouTube change authorized here. Keep J3706 date-held. Review stages 1 and 2 complete; relay progress refused because its active lease points to J3860, which was left untouched.",
-        "check_at": "2026-11-28T09:00:00Z"
-      }
+      "open_claim": true
     },
     {
       "id": "J3860",
