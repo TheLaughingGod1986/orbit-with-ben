@@ -2,6 +2,8 @@
 
 Preparation only. J3012 remains 3/4. No service, pause, marker or production branch is changed by this PR or its tests. Chief must review and merge the implementation before a separately authorized coordination window. This is a system change; this worker does not grant PASS or activation.
 
+**27 November Chief review: not ready for live activation.** The helper still needs a cross-machine result and resume/recovery route. Its local result and retained pause cannot be operated from the Mini through an unavailable SSH connection or through the paused worker. See `jobs/reviews/J3012/CUTOVER_HELPER_REVIEW_2026-11-27.md`. The invocation below remains preparatory documentation until that gap is implemented and reviewed.
+
 ## Two phases, using the existing queue and thread
 
 1. Chief assigns a coordination child through the installed worker's authoritative queue. Do not make it depend on J3012 completion. The child has explicit authorization to establish the existing worker pause, arrange the global writer drain/freeze with Chief, prepare the private plan and launch the external supervisor. J3892 itself is preparation and cannot do those live actions. The future child becomes `job` in the plan and terminal gate; every activation command is also anchored to implementation J3892.
