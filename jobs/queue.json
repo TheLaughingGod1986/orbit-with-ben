@@ -282282,13 +282282,13 @@
       "stage": "upload",
       "after": "J3114",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-27T00:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T05:33Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/j3115-review codex/j3115-pluto-review; completed decision a4c9c8f534. Automatic approval review rejected external branch push; publication requires approved review route. Do not upload until decision is published and J3115 closed.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T05:33Z",
@@ -282344,33 +282344,20 @@
           "at": "2026-11-27T07:34Z",
           "by": "relay",
           "what": "condition verification queued: J3863"
+        },
+        {
+          "at": "2026-11-27T08:10Z",
+          "by": "codex",
+          "what": "reopened: J3863 Chief ruling: publication condition satisfied. PR 1367 merged at 63265bea07191f79edc19123eb110ff2345e1a1a; candidate 40c6ca5114 and merge are ancestors of origin/main; all nine published files unchanged. All eight NAS hashes rechecked and match. Existing exact-file PASS and Ben long-v02 approval 18 Nov 22:16Z remain valid. Close this completed review, then existing J3119 delivers with fresh release checks and J3828 reconciles thumbnails; Shorts holds and dates unchanged."
         }
       ],
       "remaining_action": "Await publication of the reviewed Pluto decision through J3861",
       "due": "2026-12-08T18:00:00Z",
       "kind": "chief",
       "plain": "Check the corrected Pluto thumbnails and description before arranging delivery",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T00:16Z",
-        "by": "codex",
-        "plan": [
-          "Verify rebuilt files",
-          "Review packaging and gates",
-          "Record decision and handoff"
-        ],
-        "note": "Review complete at a4c9c8f534 on codex/j3115-pluto-review. Automatic approval review rejected branch publication; no ret"
-      },
       "taskKeys": [
         "OWB:034"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3855 Chief review authorizes privacy-corrected candidate 40c6ca5114 through Claude Code publication job J3861, after J3855. J3861 must publish through its applicable approved route and record origin/main merge evidence; elected Chief must verify and close J3115 before J3119. Original rejection and metadata correction recorded in J3855 ruling. No upload yet.",
-        "check_at": "2026-11-27T08:34:00+00:00",
-        "recheck_task": "J3863"
-      }
+      ]
     },
     {
       "id": "J3116",
