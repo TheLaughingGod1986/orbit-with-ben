@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3849 | mini | open (after J3847) | – | – | assembly · J3847 follow-up: refresh HOS audit inventory with reconciled coverage | https://github.com/TheLaughingGod1986/history-of-science/pull/808 |
 | J3850 | mini | blocked | claudecode | – | review · Verify condition for J3849 |  |
-| J3851 | mini | open | – | – | review · Verify condition for J3178 |  |
+| J3851 | mini | claimed | gemini | 2026-11-27T05:40Z | review · Verify condition for J3178 |  |
 
 Recently finished:
 
