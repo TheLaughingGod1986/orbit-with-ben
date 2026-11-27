@@ -274746,13 +274746,13 @@
       "stage": "edit",
       "after": "J3022",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T13:34Z",
-      "eta": "2026-11-27T15:34Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "",
+      "result": "Waiting for: Independent completed-cut/package QA (J3902) PASS and Chief merge of PR #1390 required before setting jobs.py awaits on Ben's watch board (deadline Fri 11 Dec 18:00 London) and queueing approved-delivery handoff for Wed 16 Dec 18:00 London.",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274823,9 +274823,19 @@
           "at": "2026-11-27T13:53Z",
           "by": "gemini",
           "what": "step 6 of 7 done: Master v03 verified on studio-live (d59057ae, 557.5 MB; v01/v02 preserved), all 6 gates + package dry-run PASS, 37s trailer (771d1f2a), PR #1390 open, queued J3902 QA & J3903/J3904 Shorts"
+        },
+        {
+          "at": "2026-11-27T13:53Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Independent completed-cut/package QA (J3902) PASS and Chief merge of PR #1390 required before setting jobs.py awaits on Ben's watch board (deadline Fri 11 Dec 18:00 London) and queueing approved-delivery handoff for Wed 16 Dec 18:00 London."
+        },
+        {
+          "at": "2026-11-27T13:53Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-27T16:00:00Z"
         }
       ],
-      "remaining_action": "Wait for QA J3902 and Chief merge of PR #1390, then put master v03 on Ben's watch board (jobs.py awaits) by 11 Dec",
+      "remaining_action": "After J3902 KEEP and Chief PR #1390 merge, set jobs.py awaits on Ben's watch board and queue approved-delivery handoff",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
@@ -274847,6 +274857,11 @@
           "Queue completed-cut QA and companion Shorts follow-ups"
         ],
         "note": "Master v03 verified on studio-live (d59057ae, 557.5 MB; v01/v02 preserved), all 6 gates + package dry-run PASS, 37s trai"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Independent completed-cut/package QA (J3902) PASS and Chief merge of PR #1390 required before setting jobs.py awaits on Ben's watch board (deadline Fri 11 Dec 18:00 London) and queueing approved-delivery handoff for Wed 16 Dec 18:00 London.",
+        "check_at": "2026-11-27T16:00:00Z"
       }
     },
     {
