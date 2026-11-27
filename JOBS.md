@@ -96,7 +96,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
 | J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
 | J3950 | mini | open | – | – | 064 edit · studio · OWB 064: provenance metadata fix on PR #1390 (J3910 FIX), then make it mergeable |  |
-| J3951 | mini | claimed | gemini | 2026-11-27T20:21Z | WW2:002 upload · for gemini · studio · Publish J3704 corrections: push 9e4b053 (codex/J3704-corrections) to ww2-channel; PR to replace #189 |  |
 | J3952 | mini | open | – | – | for gemini · studio · Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e) |  |
 | J3953 | mini | open | – | – | for gemini · studio · Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR |  |
 | J3955 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -104,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J3954 done: Verify condition for J3816 (Verified NOT satisfied: J3874 loop-gate ruling still open; repair J3871 blocked on it (v04 picture FAIL terminal reuse); review J3872 not started; HOS PRs 811 and 814 still open drafts, no repaired Short on HOS main. J3816 kept blocked with dependency wait, recheck J3954, next check 2026-11-28T08:00Z. No UAT, upload or spend.)
+- J3951 done: Publish J3704 corrections: push 9e4b053 (codex/J3704-corrections) to ww2-channel; PR to replace #189 (Pushed 9e4b053 (codex/J3704-corrections) from clean worktree /Volumes/MiniWork/scratch/J3704-corrections to private TheLaughingGod1986/ww2-channel after verifying repo privacy (PRIVATE), branch head 9e4b053, clean tree, channel_check.py PASS on both worktree and ww2 checkout, and full 4-file PR diff privacy grep clean (zero emails/tokens/keys/private addresses; only benign 'Secret' in existing video title). Opened PR #214 (https://github.com/TheLaughingGod1986/ww2-channel/pull/214, OPEN, head 9e4b05300c5aaa276ff9505fe606686d8002cfb9, titled 'J3704: correct retention estimates and separate unreconciled cohorts (replaces #189)'). Note: jobs.py restricts direct edits on blocked Codex-held J3704 to holder/elected Chief, so ww2-channel#214 is recorded here and on the studio thread for the Chief sweep to merge #214 (note: CONFLICTING vs current main in 002.../status.json and studio/LEARNINGS.md; commit left unedited per brief), close #189, and close J3704. £0.)
 - J3949 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check on last 10 live OWB videos: 10/10 pass, 0 live fixes needed. Verified live in Studio CDP 9223 (aAUgIGEuPwQ new #1 Related=c5AdqQsnnys; GbELka8Yu9U closes J3795 post-publish Studio Related=-jmMROGoZCM read-back; all 8 Shorts Related verified; T3cBBss1F60 and 6bbbvfCx6zY chapters and 2-element end screens verified; A/B tests untouched; nothing changed in Studio). Wrote 05_Analytics/live_fixes/2026-11-27.md in PR #1415.)
 - J3948 done: Verify condition for J3923 (Condition partly met: J3922 done, J3923 QA KEEP in PR #1412, NAS v03 sha256 538464b9 re-verified. Unmet: no elected-Chief ruling; PR #1399 and #1412 OPEN, unmerged. J3923 kept blocked with typed wait --recheck J3948, next check 2026-11-28T07:00Z. J3903 hold unchanged. No media, YouTube or spend changes.)
 - J3945 done: First-day check at 6 h: "WW2 U-Boats: Why They Could Not Stay Underwater" (ZCnSldSJzME) ("WW2 U-Boats: Why They Could Not Stay Underwater" (ZCnSldSJzME) · Field Order History · Short · went live Fri 27 Nov 12:30 London
@@ -127,22 +127,6 @@ Usual for this channel: click rate 2.2%, average viewed 14.5%
 Verdict: USUAL
   - 5 views at 48 h; the last 3 checked at the same age had 8 (median).
   - By the next morning it had 4 views; the 8 before it had 2 (median).
-
-Do now
-  - Nothing to fix.)
-- J3939 done: First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) (PR #1405 (macbook/J3939, commit c415dfe73; 0 faults: Public, Shorts tab, Restrictions empty, not Made for Kids, no age restriction, HD done, Related c5AdqQsnnys, title+description exact manifest match; Studio typical range 20-210 so --typical omitted; no Shown in feed card so --shown omitted; 48 engaged views, 1 like; read-only, £0).
-
-"The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) · Orbit With Ben · Short · went live Fri 27 Nov 11:30 London
-At 6 h: views 151 · Studio rank 7 of 10 · shown in feed about 432 (from 143 feed views) · stayed to watch 33.1% · average viewed 62.5%
-Usual for this channel: stayed to watch 33.8%, average viewed 67.0%
-
-Verdict: USUAL
-  - 151 views at 6 h; the last 10 checked at the same age had 214 (median).
-  - Studio ranks it 7 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - "Star" was in the title of 3 earlier Shorts: they had 16 views by the next morning (median), against 174 for all Shorts.
-  - It is a second upload of the same video (it replaced A6TW_6CXhcs).
 
 Do now
   - Nothing to fix.)
