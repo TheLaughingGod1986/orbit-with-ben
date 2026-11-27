@@ -93,10 +93,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3839 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3842 | mini | claimed | claudecode | 2026-11-27T03:51Z | WW2:016 script · review · WW2 016: finish source reconciliation and final-file viewer evidence for J3831 | ww2-channel#202 |
 
 Recently finished:
 
+- J3842 done: WW2 016: finish source reconciliation and final-file viewer evidence for J3831 (J3831 revised PR: ww2-channel #204 head adea65975040928a2cc70fc7f97a74d6fa19d2e6 (on #202). SOURCES v02 reconciled to J3830 s4 (inherited checks, not re-run); #30->#33 + corridor fixed; PACKAGING/TOPIC/status Shorts on corrected chronology; ledger line J3830 exact 19-23 Dec. Final-file Rule 6: 53=53 parity, 18,488 stripped chars, sha256 7bcda278694fa818b427c553b6bca823c8f1d33efd66ebecff32fd5d7027db0c, 300w/1,200w PASS, max 4 figures/30s. Not locked; Chief fresh review.)
 - J3837 done: Verify condition for J3831 (Chief ruling FIX. J3831 remains held on J3842 corrections and fresh final-file review, recheck 2026-11-27T07:00Z. Narration parity/cap checked; source reconciliation unfinished. Detailed local review 937ed6cafe (publication rejected); operational ruling and follow-up recorded.)
 - J3835 done: OWB 064: correct R11 reconstruction and Earth attribution after J3829 FIX (Corrections published in PR #1361 (macbook/J3835, 9ff96bd97). Required PIA00215 R11 replacement verified against NASA; exact NAS file/hash/crop and corrected records hashes in jobs/reviews/J3835. PIA18033 credits corrected; four JPEG hashes and locked VO hash unchanged. Populated proposed T045 preserved. Independent J3818 re-review required; J3022/J3023 remain held. No merge, generation, spend or YouTube changes. 13 privacy tests and focused verification pass.)
 - J3833 done: WW2 009: independent v06 claims check (Independent Gemini v06 claims check PASS (17 PASS, 0 FLAG, 0 UNVERIFIABLE; C1-C7 7/7 PASS; D15 resolved). Published 01_Script/CLAIMS_CHECK_v06.md in ww2-channel PR #203 (commit 478b269, stacked on PR #200 claudecode/J3832-v06 dd92d70). Verified NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66, 37/37 SCRIPT exact parity, 30/37 unchanged vs v05, v01-v05 unchanged vs main, 10,050 chars <=21,000 cap. Zero spoken edits, £0 spend, no VO/upload/lock. Ready for Chief (codex) review/lock in J3834; VO hold until BOTH lock and 2026-11-30T10:50:00Z remains; J3581/J3582 unchanged (one Short).)
@@ -113,4 +113,3 @@ Verdict: USUAL
 
 Do now
   - Nothing to fix.)
-- J3824 done: Verify condition for J3704 (Condition verified as not yet satisfied. J3704 retains its existing input hold and 2026-11-27T00:59:30Z check, linked with recheck J3824. Detailed review retained locally. Minimal status report: studio thread comment 7206162050. No video changes or spend.)
