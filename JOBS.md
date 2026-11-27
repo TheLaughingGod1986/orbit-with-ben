@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3829 | mini | blocked | claudecode | – | review · Verify condition for J3818 |  |
 | J3830 | gemini | claimed | gemini | 2026-11-27T02:53Z | WW2:016 sources · facts · WW2 film 016: Battle of the Bulge independent claims & archive provenance check (PR #197) | ww2-channel#197 |
 | J3831 | mini | open (after J3830) | – | – | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
-| J3833 | gemini | open (after J3832) | – | – | WW2:009 sources · facts · WW2 009: independent v06 claims check | ww2-channel#198 |
+| J3833 | gemini | claimed | claudecode | 2026-11-27T03:01Z | WW2:009 sources · facts · WW2 009: independent v06 claims check | ww2-channel#198 |
 | J3834 | any | open (after J3833) | – | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 
 Recently finished:
