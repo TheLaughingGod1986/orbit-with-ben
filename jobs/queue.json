@@ -351414,9 +351414,14 @@
           "at": "2026-11-27T00:20Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-27T00:21Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified exact NAS J3719_v02 SHA-256 hashes match THUMB_SCORES_v02.json and PR #1358 T045; ran thumb_preview.py --score (all 3 PASS) and visually inspected full-size + 168x94 sheets"
         }
       ],
-      "remaining_action": "Inspect J3817 artifacts, SHA-256 hashes, THUMB_SCORES_v02.json and THUMB_LEDGER.json row T045",
+      "remaining_action": "Verify title/description lock and full SHOT_LIST_v02.md opening/R09 fixes",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351429,9 +351434,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T00:20Z",
+        "at": "2026-11-27T00:21Z",
         "by": "gemini",
         "plan": [
           "Verify v02 hashes and ledger",
@@ -351439,7 +351444,8 @@
           "Check title and description lock",
           "Verify SHOT_LIST_v02 fixes",
           "Write REVIEW.md and commit"
-        ]
+        ],
+        "note": "Verified exact NAS J3719_v02 SHA-256 hashes match THUMB_SCORES_v02.json and PR #1358 T045; ran thumb_preview.py --score "
       },
       "taskKeys": [
         "OWB:064"
