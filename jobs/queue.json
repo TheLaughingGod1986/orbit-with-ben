@@ -354104,15 +354104,20 @@
           "at": "2026-11-27T03:24Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Post-Studio channel:audit PASS (76 videos, 0 errors); post-Studio API readback confirmed all 3 IDs intact; final screenshots saved under ~/_desk/J3848/"
+        },
+        {
+          "at": "2026-11-27T03:26Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Opened records PR https://github.com/TheLaughingGod1986/history-of-science/pull/809 (check_all.sh ALL CHECKS PASS), posted desk review report, finishing J3848 for Chief review"
         }
       ],
-      "remaining_action": "Update production-status.md and 2026-11-27_J3845.md in clean worktree, run check_all.sh, open records PR, and post desk report",
+      "remaining_action": "Complete; awaiting Chief review/merge of records PR",
       "kind": "studio",
       "plain": "Finish the required settings and links on the Franklin videos",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-27T03:24Z",
+        "at": "2026-11-27T03:26Z",
         "by": "gemini",
         "plan": [
           "Pre-flight lint & script/API target check",
@@ -354122,7 +354127,7 @@
           "Run channel:audit & capture after evidence",
           "Commit records PR & post report"
         ],
-        "note": "Post-Studio channel:audit PASS (76 videos, 0 errors); post-Studio API readback confirmed all 3 IDs intact; final screens"
+        "note": "Opened records PR https://github.com/TheLaughingGod1986/history-of-science/pull/809 (check_all.sh ALL CHECKS PASS), post"
       },
       "taskKeys": [
         "HOS:008"
