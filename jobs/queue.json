@@ -353166,13 +353166,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-27T01:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T01:09Z",
-      "result": "parked for Chief: J3831 condition NOT met at 01:17Z 27 Nov. J3830 is done, but J3831 is parked for the elected Chief (codex): ww2-channel PR #202 (macbook/J3831, topic GO, viewer test PASS, script v02 not locked) and its stack #197 and #201 are all OPEN, unmerged, with no Chief comment. Still open on J3831: SOURCES.md v02 notes and the ARCHIVE_PROVENANCE #30->#33 typo. Did not reopen J3831. jobs.py wait refused (only the elected Chief may record a condition check), so the Chief should run: jobs.py wait J3831 --condition 'Chief merge + v02 lock PASS on ww2 #197/#201/#202, or named fixes' --check-at 2026-11-27T07:00Z --type input --recheck J3837, or rule on #202 directly.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T01:09Z",
@@ -353198,6 +353198,11 @@
           "at": "2026-11-27T01:18Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J3831 condition NOT met at 01:17Z 27 Nov. J3830 is done, but J3831 is parked for the elected Chief (codex): ww2-channel PR #202 (macbook/J3831, topic GO, viewer test PASS, script v02 not locked) and its stack #197 and #201 are all OPEN, unmerged, with no Chief comment. Still open on J3831: SOURCES.md v02 notes and the ARCHIVE_PROVENANCE #30->#33 typo. Did not reopen J3831. jobs.py wait refused (only the elected Chief may record a condition check), so the Chief should run: jobs.py wait J3831 --condition 'Chief merge + v02 lock PASS on ww2 #197/#201/#202, or named fixes' --check-at 2026-11-27T07:00Z --type input --recheck J3837, or rule on #202 directly."
+        },
+        {
+          "at": "2026-11-27T01:48Z",
+          "by": "codex",
+          "what": "reopened: Taking assigned Chief condition review; J3831 remains held pending evidence-based ruling."
         }
       ],
       "remaining_action": "re-hold J3831 on the Chief merge/lock, then report",
@@ -353212,18 +353217,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-27T01:17Z",
-        "by": "macbook",
-        "plan": [
-          "Read evidence",
-          "Re-hold original",
-          "Report"
-        ]
-      }
+      "open_claim": true
     },
     {
       "id": "J3838",
