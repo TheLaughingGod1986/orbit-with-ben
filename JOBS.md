@@ -107,7 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3930 | mini | blocked | claude | – | WW2:002 upload · studio · FOH pilot 2: once B-29 is public, point its end screen and a card at B-29 (keep the chain going) |  |
 | J3932 | mini | blocked | gemini | – | review · J3859 corrections: distinguish cohorts and qualify rule predictions in PR211 | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3933 | mini | blocked | codex | – | studio · Atlantic: read post-change stranger CTR and propose one justified packaging fix | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
-| J3934 | mini | open | – | – | review · Verify condition for J3871 |  |
+| J3934 | mini | claimed | claudecode | 2026-11-27T19:57Z | review · Verify condition for J3871 |  |
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
