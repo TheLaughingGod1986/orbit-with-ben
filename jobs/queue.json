@@ -356131,13 +356131,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T08:31Z",
-      "eta": "2026-11-27T10:31Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:27Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push.",
       "history": [
         {
           "at": "2026-11-27T08:27Z",
@@ -356163,6 +356163,11 @@
           "at": "2026-11-27T08:37Z",
           "by": "codex",
           "what": "step 1 of 3 done: V04 safely copied and hash-verified on NAS. Open PASS 1.91; polish/music/VO/SFX PASS; picture still FAIL solely terminal reuse. Evidence commit c8c3372e, gate review J3874 queued. Public push rejected; designated Claude Code publication required."
+        },
+        {
+          "at": "2026-11-27T08:37Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push."
         }
       ],
       "remaining_action": "Resolve the terminal-loop gate conflict before approval review",
@@ -356182,7 +356187,12 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push.",
+        "check_at": "2026-11-27T14:37:43+00:00"
+      }
     },
     {
       "id": "J3872",
