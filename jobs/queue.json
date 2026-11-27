@@ -355563,9 +355563,14 @@
           "at": "2026-11-27T07:42Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T07:43Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Condition partly met: codex/J3816 now published as draft HOS PR #811. Repair is NOT done: there is no v03, the opener still fails at 1.14 (needs 1.50) and the terminal reuse still fails."
         }
       ],
-      "remaining_action": "Read J3816 history and the HOS 009 apple Short evidence",
+      "remaining_action": "Park this verification for Chief with the exact wait command",
       "kind": "review",
       "recheck_of": "J3816",
       "due": "2026-11-27T08:34:00+00:00",
@@ -355579,15 +355584,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T07:42Z",
+        "at": "2026-11-27T07:43Z",
         "by": "claudecode",
         "plan": [
           "Read J3816 history and evidence",
           "Check repair state of HOS 009 Short",
           "Park for Chief with exact command"
-        ]
+        ],
+        "note": "Condition partly met: codex/J3816 now published as draft HOS PR #811. Repair is NOT done: there is no v03, the opener st"
       },
       "taskKeys": [
         "HOS:009"
