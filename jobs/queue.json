@@ -354772,13 +354772,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T06:42Z",
-      "eta": "2026-11-27T08:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:29Z",
-      "result": "",
+      "result": "Chief review resolved: existing J3115 exact-file packaging PASS and Ben v02 approval stand; old title and Chief thumbnail approval require no new Ben gate. Original rejection recovered: publication assigned to Claude Code, not Codex. Candidate 6b85fc0248 rejected as-is for personal commit metadata; corrected nine-file candidate 40c6ca5114 on codex/j3855-chief-safe in /Volumes/MiniWork/scratch/j3855-chief-safe has Codex attribution with empty email and no trailers. Eight NAS hashes match; 13 privacy checks, JSON and channel_check pass. J3861 after J3855 owns publication through named approved route with fresh privacy/tool approval; final hash correction in its result/history overrides provisional body SHA. J3115 stays dependency-held until actual origin/main publication and Chief closure; recheck 27 Nov 08:30Z. J3119 and J3828 remain dependent on J3115; Shorts unchanged. review-progress 1/2/3 attempted and refused for missing active review lease despite elected status; independent milestones in CHIEF_RULING.md, no guard bypass. No branch push, upload or spend.",
       "history": [
         {
           "at": "2026-11-27T06:29Z",
@@ -354829,6 +354829,11 @@
           "at": "2026-11-27T06:45Z",
           "by": "codex",
           "what": "step 5 of 5 done: Independent Chief review complete: existing packaging/master approvals upheld; original rejection recovered; metadata corrected in 40c6ca5114; J3861 owns approved-route publication. J3115 hold retained to 08:30Z. Chief review-progress 1/2/3 rejected for missing active review lease; guard untouched."
+        },
+        {
+          "at": "2026-11-27T06:46Z",
+          "by": "codex",
+          "what": "done: Chief review resolved: existing J3115 exact-file packaging PASS and Ben v02 approval stand; old title and Chief thumbnail approval require no new Ben gate. Original rejection recovered: publication assigned to Claude Code, not Codex. Candidate 6b85fc0248 rejected as-is for personal commit metadata; corrected nine-file candidate 40c6ca5114 on codex/j3855-chief-safe in /Volumes/MiniWork/scratch/j3855-chief-safe has Codex attribution with empty email and no trailers. Eight NAS hashes match; 13 privacy checks, JSON and channel_check pass. J3861 after J3855 owns publication through named approved route with fresh privacy/tool approval; final hash correction in its result/history overrides provisional body SHA. J3115 stays dependency-held until actual origin/main publication and Chief closure; recheck 27 Nov 08:30Z. J3119 and J3828 remain dependent on J3115; Shorts unchanged. review-progress 1/2/3 attempted and refused for missing active review lease despite elected status; independent milestones in CHIEF_RULING.md, no guard bypass. No branch push, upload or spend."
         }
       ],
       "remaining_action": "Close the completed publication review; J3861 publishes the corrected candidate",
@@ -354852,7 +354857,8 @@
         "at": "2026-11-27T06:45Z",
         "by": "codex",
         "note": "Independent Chief review complete: existing packaging/master approvals upheld; original rejection recovered; metadata co"
-      }
+      },
+      "done_ref": "40c6ca5114"
     },
     {
       "id": "J3856",
