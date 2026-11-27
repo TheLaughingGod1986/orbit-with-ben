@@ -358659,13 +358659,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T12:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T12:30Z",
-      "result": "parked for Chief: J3022 condition SATISFIED, checked 2026-11-27T12:35Z. Evidence: PR #1361 (J3835 corrections, 9ff96bd97b) and PR #1359 (J3818 fresh independent KEEP, b597831b68) both MERGED to main 2026-11-27T10:28Z (merge 9b3ca6cb52); codex as elected acting Chief posted the J3883 KEEP/PASS on PR #1359 accepting both; PR #1358 CLOSED unmerged (Draft, superseded); on main SHOT_LIST_v02 R11 = PIA00215 with PIA00233 marked HARD REJECT; PIA00233 survives only in historical v01 records (kept by rule). Original gates unchanged: GBP0, no generation/upload/schedule, Ben watch 11 Dec 18:00 London, T045 proposed/video null. Still open: J3883 says its reconciliation commit 034d41fbc5 (worktree /Volumes/MiniWork/scratch/J3883-integration, branch codex/J3883-integration) completes J3818/J3022 records and is not on main yet; the Chief ruled J3022 completes only after that integration read-back. Reopen and recheck are Chief-only for workers. Chief run: land J3883, then jobs.py reopen J3022 --agent chief --note 'condition met per J3897: #1361+#1359 merged 9b3ca6cb52, J3883 PASS, #1358 closed' --git (or close J3022 directly through the J3883 reconciliation), then jobs.py done J3897 --agent chief --result 'condition verified satisfied' --git",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T12:30Z",
@@ -358696,6 +358696,11 @@
           "at": "2026-11-27T12:32Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3022 condition SATISFIED, checked 2026-11-27T12:35Z. Evidence: PR #1361 (J3835 corrections, 9ff96bd97b) and PR #1359 (J3818 fresh independent KEEP, b597831b68) both MERGED to main 2026-11-27T10:28Z (merge 9b3ca6cb52); codex as elected acting Chief posted the J3883 KEEP/PASS on PR #1359 accepting both; PR #1358 CLOSED unmerged (Draft, superseded); on main SHOT_LIST_v02 R11 = PIA00215 with PIA00233 marked HARD REJECT; PIA00233 survives only in historical v01 records (kept by rule). Original gates unchanged: GBP0, no generation/upload/schedule, Ben watch 11 Dec 18:00 London, T045 proposed/video null. Still open: J3883 says its reconciliation commit 034d41fbc5 (worktree /Volumes/MiniWork/scratch/J3883-integration, branch codex/J3883-integration) completes J3818/J3022 records and is not on main yet; the Chief ruled J3022 completes only after that integration read-back. Reopen and recheck are Chief-only for workers. Chief run: land J3883, then jobs.py reopen J3022 --agent chief --note 'condition met per J3897: #1361+#1359 merged 9b3ca6cb52, J3883 PASS, #1358 closed' --git (or close J3022 directly through the J3883 reconciliation), then jobs.py done J3897 --agent chief --result 'condition verified satisfied' --git"
+        },
+        {
+          "at": "2026-11-27T12:37Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief review: corrected package accepted, but integration publication remains. Keep J3022 held while recording delegated publication follow-up."
         }
       ],
       "remaining_action": "Park the verdict for Chief: reopen/complete J3022 is Chief-only",
@@ -358711,18 +358716,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T12:32Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3022, J3818 and PRs",
-          "Check condition on main",
-          "Park verdict for Chief"
-        ],
-        "note": "Condition met on main: PR 1361 (9ff96bd97b) and PR 1359 (J3818 fresh KEEP, b597831b68) merged 2026-11-27T10:28Z; codex a"
-      },
       "taskKeys": [
         "OWB:064"
       ]
