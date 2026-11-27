@@ -359366,16 +359366,21 @@
           "at": "2026-11-27T14:54Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3903; checking 064 master v03 and existing Short build patterns"
+        },
+        {
+          "at": "2026-11-27T14:57Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified locked master v03 (d59057ae...), VO v01 (4b478fcd...), score bed v01 (3e47e9d6...), STT words 0-32.48s, and 6 Mercury MESSENGER plates + v02 code graphics"
         }
       ],
-      "remaining_action": "Inspecting OWB 064 locked master v03, assets, and house Test A Short specs",
+      "remaining_action": "Designing full-bleed 9:16 crop, motion, and caption timeline for OWB 064 Short 1",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T14:54Z",
+        "at": "2026-11-27T14:57Z",
         "by": "gemini",
         "plan": [
           "Inspect master v03 and Short rules",
@@ -359385,7 +359390,7 @@
           "Inspect frames and verify packaging",
           "Commit artifacts and submit for QA"
         ],
-        "note": "Claimed J3903; checking 064 master v03 and existing Short build patterns"
+        "note": "Verified locked master v03 (d59057ae...), VO v01 (4b478fcd...), score bed v01 (3e47e9d6...), STT words 0-32.48s, and 6 M"
       },
       "taskKeys": [
         "OWB:064"
