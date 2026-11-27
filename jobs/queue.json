@@ -1,5 +1,5 @@
 {
-  "next_id": 3958,
+  "next_id": 3959,
   "jobs": [
     {
       "id": "J0001",
@@ -360297,6 +360297,11 @@
           "at": "2026-11-27T20:39Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: OWB 064 Short 2 v01 voiced (205 chars <= 600 cap, £0 cash, live balance verified) and assembled on PR #1416 (head f67c2dcbe207ca34e3810da167ccfc8bfc56e51d); canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (sha256 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff, 18.375s / 441f 24fps CFR, -14.00 LUFS, -2.00 dBTP) passes all 7 automated gates, speech coverage, faster-whisper ASR, and youtube:package --dry-run with zero Veo CGI / zero Keck misattribution. Queued independent audio & moving-video QA job J3957; awaiting J3957 KEEP/FIX and elected Chief (codex) ruling on PR #1416 before Ben phone UAT. No upload/schedule/self-PASS."
+        },
+        {
+          "at": "2026-11-27T20:39Z",
+          "by": "relay",
+          "what": "condition verification queued: J3958"
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
@@ -360328,6 +360333,12 @@
           "Copy verified master to NAS, open PR & queue QA"
         ],
         "note": "Opened PR #1416 (f67c2dcbe2), verified canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (4eb7d94377...), passed "
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-27T21:39:24+00:00",
+        "recheck_task": "J3958"
       }
     },
     {
@@ -364592,6 +364603,37 @@
         "moving_video_input"
       ],
       "plain": "Independently hear and watch OWB 064 Short 2 v01 (Venus 464°C vs Uranus −224°C) on PR #1416 before Chief ruling and Ben UAT"
+    },
+    {
+      "id": "J3958",
+      "title": "Verify condition for J3904",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3904: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3904 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T20:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T20:39Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
+      "kind": "review",
+      "recheck_of": "J3904",
+      "due": "2026-11-27T21:39:24+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

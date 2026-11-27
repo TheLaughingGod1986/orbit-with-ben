@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3955 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3956 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3957 | mini | open | – | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
+| J3958 | mini | open | – | – | review · Verify condition for J3904 |  |
 
 Recently finished:
 
