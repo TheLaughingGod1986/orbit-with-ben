@@ -274793,9 +274793,14 @@
           "at": "2026-11-27T13:14Z",
           "by": "gemini",
           "what": "step 4 of 7 done: Master v01 muxed (488 MB) with separate VO/SFX/music stems on studio-live; picture_qa/polish_gate/music_gate/sfx_level now running in J3023-064-render"
+        },
+        {
+          "at": "2026-11-27T13:26Z",
+          "by": "gemini",
+          "what": "step 4 of 7 done: Master v01 preserved (3fb6a311): clip_check/music_gate(0 warns)/sfx_level PASS, 6 picture_qa/polish_gate fails + visual box/star/quad defects found; patched v02b (source picture_qa PASS 0 fails) and launched detached tmux J3023-064-v02-render"
         }
       ],
-      "remaining_action": "Run and verify 5 QA gates on master v01, inspect flagged frames, build trailer/manifest, queue QA and Shorts",
+      "remaining_action": "Finish v02 master render + 5 QA gates in J3023-064-v02-render, inspect flagged frames, build trailer & upload package, queue QA & Shorts",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
@@ -274805,7 +274810,7 @@
       "progress": {
         "step": 4,
         "of": 7,
-        "at": "2026-11-27T13:14Z",
+        "at": "2026-11-27T13:26Z",
         "by": "gemini",
         "plan": [
           "Build v02 synchronized cuts, pool and provenance",
@@ -274816,7 +274821,7 @@
           "Prepare upload package, trailer and listing",
           "Queue completed-cut QA and companion Shorts follow-ups"
         ],
-        "note": "Master v01 muxed (488 MB) with separate VO/SFX/music stems on studio-live; picture_qa/polish_gate/music_gate/sfx_level n"
+        "note": "Master v01 preserved (3fb6a311): clip_check/music_gate(0 warns)/sfx_level PASS, 6 picture_qa/polish_gate fails + visual "
       }
     },
     {
