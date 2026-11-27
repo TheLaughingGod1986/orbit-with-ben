@@ -352676,14 +352676,19 @@
           "at": "2026-11-27T01:02Z",
           "by": "claudecode",
           "what": "step 0 of 4 done: v06 found on PR #200 branch claudecode/J3832-v06"
+        },
+        {
+          "at": "2026-11-27T01:02Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Parity OK: v06 sha 8e670990…cb66, 37/37 SCRIPT blocks exact, 7 changed (S04 S05 S10 S31 S32 S35 S36), 30 identical to v05, 10,050 chars"
         }
       ],
-      "remaining_action": "Run Gemini check of v06 narration against v05 and sources",
+      "remaining_action": "Run Gemini check of the 7 changed v06 blocks and joins",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected Operation Pedestal narration against its sources",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-27T01:02Z",
         "by": "claudecode",
@@ -352693,7 +352698,7 @@
           "Verify output and parity",
           "Publish and record"
         ],
-        "note": "v06 found on PR #200 branch claudecode/J3832-v06"
+        "note": "Parity OK: v06 sha 8e670990…cb66, 37/37 SCRIPT blocks exact, 7 changed (S04 S05 S10 S31 S32 S35 S36), 30 identical to v0"
       },
       "taskKeys": [
         "WW2:009"
