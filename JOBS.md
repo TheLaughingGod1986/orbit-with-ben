@@ -89,7 +89,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3831 | mini | blocked | macbook | – | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
 | J3834 | any | blocked | codex | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3836 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
-| J3837 | mini | claimed | codex | 2026-11-27T03:48Z | review · Verify condition for J3831 |  |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3839 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
@@ -98,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3837 done: Verify condition for J3831 (Chief ruling FIX. J3831 remains held on J3842 corrections and fresh final-file review, recheck 2026-11-27T07:00Z. Narration parity/cap checked; source reconciliation unfinished. Detailed local review 937ed6cafe (publication rejected); operational ruling and follow-up recorded.)
 - J3835 done: OWB 064: correct R11 reconstruction and Earth attribution after J3829 FIX (Corrections published in PR #1361 (macbook/J3835, 9ff96bd97). Required PIA00215 R11 replacement verified against NASA; exact NAS file/hash/crop and corrected records hashes in jobs/reviews/J3835. PIA18033 credits corrected; four JPEG hashes and locked VO hash unchanged. Populated proposed T045 preserved. Independent J3818 re-review required; J3022/J3023 remain held. No merge, generation, spend or YouTube changes. 13 privacy tests and focused verification pass.)
 - J3833 done: WW2 009: independent v06 claims check (Independent Gemini v06 claims check PASS (17 PASS, 0 FLAG, 0 UNVERIFIABLE; C1-C7 7/7 PASS; D15 resolved). Published 01_Script/CLAIMS_CHECK_v06.md in ww2-channel PR #203 (commit 478b269, stacked on PR #200 claudecode/J3832-v06 dd92d70). Verified NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66, 37/37 SCRIPT exact parity, 30/37 unchanged vs v05, v01-v05 unchanged vs main, 10,050 chars <=21,000 cap. Zero spoken edits, £0 spend, no VO/upload/lock. Ready for Chief (codex) review/lock in J3834; VO hold until BOTH lock and 2026-11-30T10:50:00Z remains; J3581/J3582 unchanged (one Short).)
 - J3832 done: WW2 009: correct v06 after Chief v05 review (v06 written for review, NOT LOCKED: NARRATION_v06 sha256 8e67099028def7a6725bd5a0a989b5ad0115354fac5b60e3da5dc59c3daccb66; 7 blocks changed (S04,S05,S10,S31,S32,S35,S36); 37 blocks exact SCRIPT parity; 10050 chars; Strait crossing done at 56.9 s @140 wpm with pauses; promise 42.8 s. DELTA_v06.md + VALIDATION_v06.json. Ready for J3833 Gemini check once PR #200 lands.)
@@ -114,4 +114,3 @@ Verdict: USUAL
 Do now
   - Nothing to fix.)
 - J3824 done: Verify condition for J3704 (Condition verified as not yet satisfied. J3704 retains its existing input hold and 2026-11-27T00:59:30Z check, linked with recheck J3824. Detailed review retained locally. Minimal status report: studio thread comment 7206162050. No video changes or spend.)
-- J3822 done: WW2 009: v05 viewer test, quality pass and Chief script lock (Review complete: v05 FAIL / NOT LOCKED. PR198 claims report and PR199 exact-hash review/status merged. D15 unresolved; opening action lacks pause margin; figure spacing and night/RAF join need correction. Successors J3832 -> J3833 -> J3834. 37 blocks exact parity, 10322 characters. No VO/spend/upload; voice date and J3581/J3582 holds unchanged.)
