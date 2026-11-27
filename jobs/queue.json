@@ -358153,7 +358153,7 @@
     {
       "id": "J3893",
       "title": "Verify condition for J2537",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2537: Explicit one-time authorization for the irreversible rewrite of protected HOS hos-desk history while retaining PR180 is still absent. Codex recorded the J3478 NOT MET ruling at 2026-11-24T11:54Z (wait 5603dda217, done df14e7ba2e, PR1233 80fd69590c) from owner comments through OWB7130642535 and HOS7130323741. Claude commit f2292898b4 at 12:25Z replaced that hold using the chat line \"1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\" That line does not name protected hos-desk history or PR180, so it does not satisfy this hold. Grok ruling 7018109147 stands: the question is already open; do not ask again. After a named exception: resolve non-desk PRs, refresh backup and private rehearsal, give day-before notice and hold HOS writers. No live rewrite is authorized. Next check is 2026-11-27T11:54:00Z under the 72-hour Ben-decision backoff.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -358173,13 +358173,26 @@
           "at": "2026-11-27T11:54Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T11:54Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3894",
