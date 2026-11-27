@@ -1,5 +1,5 @@
 {
-  "next_id": 3911,
+  "next_id": 3913,
   "jobs": [
     {
       "id": "J0001",
@@ -356787,6 +356787,11 @@
           "at": "2026-11-27T08:37Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push."
+        },
+        {
+          "at": "2026-11-27T14:38Z",
+          "by": "relay",
+          "what": "condition verification queued: J3911"
         }
       ],
       "remaining_action": "Resolve the terminal-loop gate conflict before approval review",
@@ -356810,7 +356815,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push.",
-        "check_at": "2026-11-27T14:37:43+00:00"
+        "check_at": "2026-11-27T15:38:38+00:00",
+        "recheck_task": "J3911"
       }
     },
     {
@@ -359414,6 +359420,11 @@
           "at": "2026-11-27T14:38Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #1394 (c089fb3ffa) proves locked 064 VO cannot cleanly deliver Venus 464C vs Uranus -224.2C within Shorts gates; review and merge PR #1394, then either authorize ~277-char ElevenLabs VO (£0 cash, plan resets 2026-11-30T10:50Z) for Option A (064_short02_venus_vs_uranus_script_v01.md) + queue vo/assembly, or direct Option B1 zero-VO fallback"
+        },
+        {
+          "at": "2026-11-27T14:38Z",
+          "by": "relay",
+          "what": "condition verification queued: J3912"
         }
       ],
       "remaining_action": "Parked for Chief ruling on PR #1394 (merge + ~277-char ElevenLabs VO authorization for Option A, or Option B1 zero-VO fallback directive)",
@@ -359443,7 +359454,13 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-27T15:38:38+00:00",
+        "recheck_task": "J3912"
+      }
     },
     {
       "id": "J3905",
@@ -359932,6 +359949,68 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3911",
+      "title": "Verify condition for J3871",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3871: publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3871 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T14:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T14:38Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve the terminal-loop gate conflict before approval review",
+      "kind": "review",
+      "recheck_of": "J3871",
+      "due": "2026-11-27T15:38:38+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3912",
+      "title": "Verify condition for J3904",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3904: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3904 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T14:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T14:38Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief ruling on PR #1394 (merge + ~277-char ElevenLabs VO authorization for Option A, or Option B1 zero-VO fallback directive)",
+      "kind": "review",
+      "recheck_of": "J3904",
+      "due": "2026-11-27T15:38:38+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

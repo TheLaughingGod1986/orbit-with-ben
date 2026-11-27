@@ -106,6 +106,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3906 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3907 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
 | J3910 | mini | open (after J3909) | – | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
+| J3911 | mini | open | – | – | review · Verify condition for J3871 |  |
+| J3912 | mini | open | – | – | review · Verify condition for J3904 |  |
 
 Recently finished:
 
