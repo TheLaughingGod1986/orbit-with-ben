@@ -356639,13 +356639,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T09:23Z",
-      "eta": "2026-11-27T11:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T09:00Z",
-      "result": "",
+      "result": "parked for Chief: exact-file perceptual playback QA complete (PASS RECOMMENDED, worker QA only) on 032_short_dry_desert_two_oceans_v03.mp4 SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 via demonstrated audio_input+moving_video_input (read_file on exact MP4, isolated WAV stems, loop-seam and 0.5x S08 clips). Full timecoded report in PR #1372 (647aee220f) and studio thread #1353. Requires exact-file Chief decision before UAT; J3853/J3856 remain held; PR #1366 remains unmerged with v02 metadata to reconcile before merge; Dec 26 not an approved slot.",
       "history": [
         {
           "at": "2026-11-27T09:00Z",
@@ -356686,6 +356686,11 @@
           "at": "2026-11-27T09:32Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Published J3878 QA report in PR #1372 (647aee220f), posted full report to studio thread #1353, and parking J3878 for Chief exact-file decision"
+        },
+        {
+          "at": "2026-11-27T09:32Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: exact-file perceptual playback QA complete (PASS RECOMMENDED, worker QA only) on 032_short_dry_desert_two_oceans_v03.mp4 SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 via demonstrated audio_input+moving_video_input (read_file on exact MP4, isolated WAV stems, loop-seam and 0.5x S08 clips). Full timecoded report in PR #1372 (647aee220f) and studio thread #1353. Requires exact-file Chief decision before UAT; J3853/J3856 remain held; PR #1366 remains unmerged with v02 metadata to reconcile before merge; Dec 26 not an approved slot."
         }
       ],
       "remaining_action": "Await elected Chief exact-file decision on v03 before UAT",
