@@ -361941,9 +361941,14 @@
           "at": "2026-11-27T19:01Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-27T19:03Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Demonstrated native audio_input and moving_video_input via read_file on canonical NAS v03_vo.wav and v03.mp4; read J3918 Chief FIX and PR #1400/#1399"
         }
       ],
-      "remaining_action": "Probing audio_input and moving_video_input on canonical v03 and reading PR #1399/#1400",
+      "remaining_action": "Verifying canonical v03/v02/v01 hashes, video stream equivalence, locked sources, and PR #1399 files",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
@@ -361959,9 +361964,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T19:01Z",
+        "at": "2026-11-27T19:03Z",
         "by": "gemini",
         "plan": [
           "Probe audio/video inputs & read prior PRs",
@@ -361970,7 +361975,8 @@
           "Watch v03 moving video & inspect frames",
           "Re-run gates, 13-bed music, dry-run & regression",
           "Write exact-hash KEEP/FIX review & route to Chief"
-        ]
+        ],
+        "note": "Demonstrated native audio_input and moving_video_input via read_file on canonical NAS v03_vo.wav and v03.mp4; read J3918"
       },
       "taskKeys": [
         "OWB:064"
