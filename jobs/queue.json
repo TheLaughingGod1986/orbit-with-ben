@@ -358912,13 +358912,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T13:11Z",
-      "eta": "2026-11-27T15:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T13:03Z",
-      "result": "",
+      "result": "Chief FIX: PR1387 comment 7219162024; 55 existing tests pass but three mocked probes fail cancellation and persisted-descendant drain. J3900 queued for correction/regression tests; J3012 stays held 3/4 with 15:00Z recheck. Local evidence commit 673850aaa4; automatic review refused evidence-branch publication, retained locally. No live change.",
       "history": [
         {
           "at": "2026-11-27T13:03Z",
@@ -358959,6 +358959,11 @@
           "at": "2026-11-27T13:11Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T13:12Z",
+          "by": "codex",
+          "what": "done: Chief FIX: PR1387 comment 7219162024; 55 existing tests pass but three mocked probes fail cancellation and persisted-descendant drain. J3900 queued for correction/regression tests; J3012 stays held 3/4 with 15:00Z recheck. Local evidence commit 673850aaa4; automatic review refused evidence-branch publication, retained locally. No live change."
         }
       ],
       "remaining_action": "Park for Chief with the exact wait --recheck command",
@@ -358981,7 +358986,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1387#issuecomment-7219162024"
     },
     {
       "id": "J3900",
