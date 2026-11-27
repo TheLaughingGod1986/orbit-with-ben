@@ -361238,16 +361238,21 @@
           "at": "2026-11-27T16:56Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
+        },
+        {
+          "at": "2026-11-27T16:58Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified PR #1400 review, v02 builder bug (post-input -ss before afade), NAS locked inputs, and faster-whisper availability"
         }
       ],
-      "remaining_action": "Inspecting PR 1400 review, v02 builder, and NAS locked inputs",
+      "remaining_action": "Writing _build_064_short01_testA_v03.py with fixed audio seek/fade and speech-coverage regression test",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-27T16:56Z",
+        "at": "2026-11-27T16:58Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361257,7 +361262,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
+        "note": "Verified PR #1400 review, v02 builder bug (post-input -ss before afade), NAS locked inputs, and faster-whisper availabil"
       },
       "taskKeys": [
         "OWB:064"
