@@ -127,6 +127,39 @@ class BoardOK(unittest.TestCase):
             first = ad.plan_actions([short, unscheduled], [ask], now=NOW, root=Path(d))[0]
             self.assertIn("Its long (HOS:008) is not on YouTube yet", first['body'])
 
+    def test_the_watch_job_that_built_the_upload_package_is_not_the_upload(self):
+        # 27 Nov 2026: Ben OK'd FOH 004 on 26 Nov; J3430 ("edit, captions, three thumbnails and upload package, to Ben's
+        # watch") was done before his OK and counted as the upload, so nothing queued one and no alert fired.
+        at = (NOW - dt.timedelta(hours=26)).isoformat()
+        film = card(key='WW2:004', checkId='WW2-004', channel='WW2', number='004', type='long', title='Mark 14 Torpedo',
+                    version='v04', check={'verdict': 'ok', 'at': at, 'version': 'v04', 'handled': False},
+                    approved={'job': 'J3430', 'askJob': 'J3430', 'version': 'v04', 'okAt': at, 'airs': '2026-12-01T17:00Z'},
+                    ask={'job': 'J3430', 'file': 'ww2_004_v04.mp4'})
+        watch = {'id': 'J3430', 'status': 'done', 'kind': 'assembly', 'stage': 'edit', 'film': 'WW2:004', 'repo': 'ww2',
+                 'title': "WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch",
+                 'result': 'v04 in WW2 UAT; package ready', 'history': []}
+        self.assertEqual(ad.delivery_jobs_for(film, [watch]), [])
+        self.assertEqual(len(ad.approval_alerts([film], [watch], now=NOW)), 1)
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(ad.lp, 'for_video', return_value={'complete': False}), \
+                mock.patch.object(ad, 'taken_cadence_days', return_value=set()):
+            a = ad.plan_actions([film], [watch], now=NOW, root=Path(d))[0]
+        self.assertEqual((a['op'], a['airs']), ('create', '2026-12-01T17:00Z'))
+        self.assertTrue(a['title'].startswith('Package and upload WW2 004 long v04'), a['title'])
+        # A held ask job that will reopen to upload, or one whose result reads an upload back, still counts.
+        held = dict(watch, status='blocked', title='WW2 004: upload v04 Private after Ben OKs it')
+        self.assertEqual(ad.delivery_jobs_for(film, [held]), [held])
+        uploaded = dict(watch, title='WW2 004: upload v04 Private', result='Uploaded Private, publishAt 2026-12-01T17:00Z, read back')
+        self.assertEqual(ad.delivery_jobs_for(film, [uploaded]), [uploaded])
+        # Its Short's upload and an unrelated job that mentions 004 in its brief aren't the film's upload either.
+        short_upload = {'id': 'J3753', 'status': 'done', 'kind': 'studio', 'stage': 'upload', 'film': 'WW2:004', 'repo': 'ww2',
+                        'title': 'WW2 004-S1: upload Ben-approved Mark 14 Torpedo depth Short v01',
+                        'approved_from': {'card': 'WW2:004-S1', 'number': '004-S1', 'type': 'short', 'channel': 'WW2', 'version': 'v01'}}
+        setup = {'id': 'J3254', 'status': 'done', 'kind': 'studio', 'repo': 'ww2',
+                 'title': 'Field Order History: set up its upload path', 'body': 'films 004 and 005; pilot 2 v04'}
+        self.assertEqual(ad.delivery_jobs_for(film, [short_upload, setup]), [])
+        self.assertTrue(ad.UPLOAD_WORD_RE.search('Upload WW2 004 Private'))
+        self.assertFalse(ad.UPLOAD_WORD_RE.search('three thumbnails and upload package'))
+
     def test_a_finished_delivery_job_never_gets_a_second_upload(self):
         done = {'id': 'J3507', 'kind': 'studio', 'repo': 'owb', 'status': 'done', 'title': 'Upload OWB 032 v03',
                 'history': []}
