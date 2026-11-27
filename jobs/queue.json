@@ -353710,15 +353710,20 @@
           "at": "2026-11-27T02:24Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Fetched all 218 OWB uploads via Data API; confirmed true last 10 live public videos (GbELka8Yu9U through 9q_OvQ1Rd8Y), parent longs public, and long comments live"
+        },
+        {
+          "at": "2026-11-27T02:26Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: All 10 descriptions verified against manifests; all 19 non-YT source URLs checked (NASA/Nature/APL/CC 200, Lorenz Crossref 200, Frisch&Smith DOI 302->AIP, GAO-26-107805 403 WAF); 032 (7/7) and 027 (6/6) chapters verified against SRTs"
         }
       ],
-      "remaining_action": "Auditing chapters against cuts, description manifests, source URLs, and read-only Studio end screens/Related pills",
+      "remaining_action": "Completing read-only Studio CDP 9223 verification of end screens and Shorts Related pills",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T02:24Z",
+        "at": "2026-11-27T02:26Z",
         "by": "gemini",
         "plan": [
           "Fetch last 10 live OWB videos",
@@ -353727,7 +353732,7 @@
           "Write live_fixes report",
           "Commit and hand off"
         ],
-        "note": "Fetched all 218 OWB uploads via Data API; confirmed true last 10 live public videos (GbELka8Yu9U through 9q_OvQ1Rd8Y), p"
+        "note": "All 10 descriptions verified against manifests; all 19 non-YT source URLs checked (NASA/Nature/APL/CC 200, Lorenz Crossr"
       },
       "taskKeys": [
         "OWB:032",
