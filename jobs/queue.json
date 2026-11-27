@@ -352460,16 +352460,21 @@
           "at": "2026-11-27T00:53Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-27T00:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Checked out PR #197 worktree; verified NARRATION_v01.txt (54 paras, 18,275 chars, matching SHA-256), SOURCES.md (23 claims), and ARCHIVE_PROVENANCE.md (38+4 items)"
         }
       ],
-      "remaining_action": "Checking out PR #197 worktree and reading script, sources, and provenance",
+      "remaining_action": "Verifying F1-F2 claims (Third Army AAR totals, staff ranks, COMZ trucks, 4th Armored march)",
       "due": "2026-12-14T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check all 23 historical claims and 38 archive photo sources for Battle of the Bulge (016)",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T00:53Z",
+        "at": "2026-11-27T00:54Z",
         "by": "gemini",
         "plan": [
           "Checkout PR 197 and inspect files",
@@ -352477,7 +352482,8 @@
           "Verify F3-F5 claims against primary sources",
           "Verify remaining claims and archive provenance",
           "Write claims check, open PR, report"
-        ]
+        ],
+        "note": "Checked out PR #197 worktree; verified NARRATION_v01.txt (54 paras, 18,275 chars, matching SHA-256), SOURCES.md (23 clai"
       },
       "taskKeys": [
         "WW2:016"
