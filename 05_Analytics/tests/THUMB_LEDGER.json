@@ -926,7 +926,7 @@
     },
     {
       "id": "T029",
-      "status": "running",
+      "status": "done",
       "started": "2026-11-10",
       "channel": "hos",
       "video": "ETynHpIYLeY",
@@ -946,10 +946,40 @@
         "title": "Why Vaccines Are Named After a Cow",
         "text": "IMMUNE"
       },
-      "result": null,
+      "result": {
+        "read": "2026-11-27",
+        "readAt": "2026-11-27T10:44:47Z",
+        "winner": "draw",
+        "status": "NOT_ENOUGH_DATA",
+        "studioVerdict": "Not enough impressions to declare a winner",
+        "experimentId": 2,
+        "state": "CREATOR_EXPERIMENT_STATE_FINISHED",
+        "finishedReason": "CREATOR_EXPERIMENT_FINISHED_REASON_COMPLETED",
+        "resultState": "CREATOR_EXPERIMENT_RESULT_STATE_NOT_ENOUGH_DATA",
+        "selectedArm": "CREATOR_EXPERIMENT_ARM_1",
+        "winnerArm": "CREATOR_EXPERIMENT_ARM_UNSPECIFIED",
+        "startedAt": "2026-11-12T18:00:43Z",
+        "finishedAt": "2026-11-26T18:10:47Z",
+        "wt_a": null,
+        "wt_b": null,
+        "impressions": null,
+        "ctr_a": null,
+        "ctr_b": null,
+        "note": "J3884 read-back (2026-11-27T10:44:47Z, HOS Studio CDP 9460, UCXp7HkBIl1LgaznXuZHJyRg): Title and thumbnail experimentId 2 finished (12 November 2026 at 18:00 to 26 November 2026 at 18:10 London / 2026-11-12T18:00:43Z to 2026-11-26T18:10:47Z). Studio verdict: 'Not enough impressions to declare a winner' (CREATOR_EXPERIMENT_RESULT_STATE_NOT_ENOUGH_DATA). Both watch-time shares displayed as em dashes (null); no experiment impressions or variant CTR displayed. Option A (How Was the First Vaccine Made? (And Why It's Named After a Cow) + THE MILKMAID'S SECRET, CREATOR_EXPERIMENT_ARM_1) remains visible to all viewers. Read-only: finished report preserved untouched.",
+        "evidence": "05_Analytics/weekly_thumb_audit/HOS/2026-11-27_J3884_readback.json"
+      },
       "film": "007",
-      "readBack": "2026-11-10",
-      "note": "Armed 10 Nov 2026 (J2536; Ben 10 Nov 'Ok on both', third exception in AGENTS.md Never, Studio): replaces the J0959 title-and-thumbnail test on History of Science 007 ETynHpIYLeY, which had not started (Studio: Ineligible) and had no ledger row. 'Edit title' confirmed, Studio showed 'Experiment deleted'; title set; new Title and thumbnail Test & Compare set and saved. Slot 1: How Was the First Vaccine Made? (And Why It's Named After a Cow) + the video's own thumbnail (THE MILKMAID'S SECRET, thumbnail A, kept by Studio, not uploaded again); Slot 2: Why Vaccines Are Named After a Cow + hos_007_thumb_B_immune_v01.jpg (uploaded from the Mini). The J0959 pairing was A title + A thumbnail, 'How Was the First Vaccine Made?' + B thumbnail; thumbnail B now sits with the old side A title, as the brief says. Private, scheduled 2026-11-12T18:00:00Z. Studio state at read-back: Ineligible until public. Makers of the two thumbnails are not recorded in this repo, so both are 'unknown'. | J2894 check 15 Nov 2026: Public 2026-11-12T18:00:36Z; Studio experimentId 2 state CREATOR_EXPERIMENT_STATE_STARTED (started 2026-11-12T18:00:43Z, due ~26 Nov); early reach 16 impr, 12.50% CTR, 3 views from impressions."
+      "readBack": "2026-11-27",
+      "note": "Armed 10 Nov 2026 (J2536; Ben 10 Nov 'Ok on both', third exception in AGENTS.md Never, Studio): replaces the J0959 title-and-thumbnail test on History of Science 007 ETynHpIYLeY, which had not started (Studio: Ineligible) and had no ledger row. 'Edit title' confirmed, Studio showed 'Experiment deleted'; title set; new Title and thumbnail Test & Compare set and saved. Slot 1: How Was the First Vaccine Made? (And Why It's Named After a Cow) + the video's own thumbnail (THE MILKMAID'S SECRET, thumbnail A, kept by Studio, not uploaded again); Slot 2: Why Vaccines Are Named After a Cow + hos_007_thumb_B_immune_v01.jpg (uploaded from the Mini). The J0959 pairing was A title + A thumbnail, 'How Was the First Vaccine Made?' + B thumbnail; thumbnail B now sits with the old side A title, as the brief says. Private, scheduled 2026-11-12T18:00:00Z. Studio state at read-back: Ineligible until public. Makers of the two thumbnails are not recorded in this repo, so both are 'unknown'. | J2894 check 15 Nov 2026: Public 2026-11-12T18:00:36Z; Studio experimentId 2 state CREATOR_EXPERIMENT_STATE_STARTED (started 2026-11-12T18:00:43Z, due ~26 Nov); early reach 16 impr, 12.50% CTR, 3 views from impressions. | J3884 read-back 27 Nov 2026 (10:44:47Z, CDP 9460): experimentId 2 finished (2026-11-12T18:00:43Z to 2026-11-26T18:10:47Z; Studio display 12 Nov 18:00 to 26 Nov 18:10 London), CREATOR_EXPERIMENT_RESULT_STATE_NOT_ENOUGH_DATA ('Not enough impressions to declare a winner'), both watch-time shares em-dash (null), variant CTR/impressions not shown, Option A (CREATOR_EXPERIMENT_ARM_1) Now visible to all viewers. Read-only; finished report preserved untouched.",
+      "ended": "2026-11-26",
+      "test_type": "title_and_thumbnail",
+      "experiment_identity": {
+        "experimentId": 2,
+        "startedAt": "2026-11-12T18:00:43Z",
+        "finishedAt": "2026-11-26T18:10:47Z",
+        "studio_display_interval": "12 November 2026 at 18:00 to 26 November 2026 at 18:10",
+        "timezone": "Europe/London (UTC on both dates)"
+      }
     },
     {
       "id": "T030",
