@@ -363090,9 +363090,14 @@
           "at": "2026-11-27T18:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3941; ran initial retention_autopsy.py inspect (36.7h snapshot, 5 views; checking live 48h Studio reach next)"
         }
       ],
-      "remaining_action": "Run 48h RSI retention autopsy on T3cBBss1F60, watch 3 steepest drop windows with video+audio, write 05_Analytics/owb/autopsy/T3cBBss1F60_48h.md",
+      "remaining_action": "Inspecting 48h RSI, Studio reach/T032 status, and prior autopsy format",
       "due": "2026-11-28T06:04:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -363104,12 +363109,21 @@
       "plain": "Analyse why viewers stayed or left on \"What Would Happen If You Landed on Titan? (Seas of Liqui\" (48h) and write up to 3 fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T18:19Z",
+        "of": 5,
+        "at": "2026-11-27T18:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect RSI & Studio 48h reach",
+          "Cut & watch 3 clips (video+audio)",
+          "Check packaging, T032 & description",
+          "Draft autopsy & learnings in worktree",
+          "Commit, push PR & post report"
+        ],
+        "note": "Claimed J3941; ran initial retention_autopsy.py inspect (36.7h snapshot, 5 views; checking live 48h Studio reach next)"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3942",
