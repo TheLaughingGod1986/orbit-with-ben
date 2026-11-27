@@ -1,5 +1,5 @@
 {
-  "next_id": 3923,
+  "next_id": 3924,
   "jobs": [
     {
       "id": "J0001",
@@ -360927,6 +360927,39 @@
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short"
+    },
+    {
+      "id": "J3923",
+      "title": "OWB 064 Short 1: independently hear and watch repaired v03",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Independent recheck after J3922 for OWB:064 Short 1 immutable v03. Read J3918 Chief FIX and PR #1400 with its numerical correction: v02 narration stem has near-silence, not exact zero. Verify exact canonical master/stem hashes, preserved v01/v02 and locked-source identities. Require demonstrated audio_input AND moving_video_input in this reviewer session; do not call sampled stills motion or ASR listening. If unavailable use a typed capability hold with actual probe evidence.\n\nListen to all four sentences and the full final mix, confirm every one of the 71 locked words, no clipped words or unexpected gaps, VO/bed/SFX balance, full-runtime music and loop seam. Watch the complete v03 moving file at phone size, inspect all flagged frames and title/graphic/Colombo timings against actually audible words. Verify actual frame-0 motion and subject recognition, full-bleed crop, all seven gates plus canonical 13-bed check, package/SRT/dry-run, old-v02-fails/new-v03-passes speech regression and unchanged copied video track if reused. Distinguish measured, heard and watched evidence explicitly.\n\nWrite exact-hash KEEP/FIX evidence and send to elected Chief for decision on PR #1399 and J3903. No automatic PASS, merge or Ben watch merely because automated gates pass. Only Chief PASS and merge may release J3903 for Ben phone UAT; no upload, scheduling, privacy, generation or spend. If FIX, queue concrete repair and dependent recheck; retain J3903 hold.\n",
+      "ref": "J3918",
+      "film": "064",
+      "stage": "edit",
+      "after": "J3922",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T15:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T15:57Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Independently hear and watch the repaired cut and recommend KEEP or FIX",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the restored narration and moving picture before Ben watches the planets Short"
     }
   ],
   "focus": [
