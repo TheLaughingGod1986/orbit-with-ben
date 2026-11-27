@@ -359229,9 +359229,14 @@
           "at": "2026-11-27T13:59Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 1-2: PR #1390 commit 81e0cdfc13 checked out cleanly; master v03 SHA-256 d59057ae, v01 3fb6a311, locked VO 4b478fcd, R11 PIA00215 46dc965a, J3719_v02 thumbs & preview sheet hashes verified; 0 PIA00271/PIA00233 in active cuts/pool/desc; 17 picture_qa_review.jpg frames inspected"
+        },
+        {
+          "at": "2026-11-27T14:04Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Step 3-4 complete: visually inspected all 17 picture_qa warns, 46 independent master v03 frames, and 10 trailer frames; independently re-ran clip_check (--repeat-ok R27), music_gate (--others), sfx_kit level, review:script v04 (91.6), gate:episode, loudnorm/blackdetect, and youtube:package --dry-run. Master v03 is KEEP; caught blocking 9:16 text-cropping defect in trailer plus 3-clip provenance drift and Neptune portrait credit omission."
         }
       ],
-      "remaining_action": "Visually inspecting rendered master v03 & trailer frames, auditing image credits, loudness, and checking remaining gate outputs",
+      "remaining_action": "Writing independent QA REVIEW.md on clean worktree PR and handing off to Chief Codex",
       "due": "2026-12-09T18:00:00Z",
       "kind": "qa",
       "plain": "Independently review OWB 064 master v03, all 6 QA gate reports, 37s trailer and upload package before Chief PASS and Ben's watch board",
@@ -359244,9 +359249,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T13:59Z",
+        "at": "2026-11-27T14:04Z",
         "by": "gemini",
         "plan": [
           "Verify NAS deliverables & PR #1390",
@@ -359255,7 +359260,7 @@
           "Audit upload package, credits, social & T045",
           "Write REVIEW.md PR & hand off to Chief"
         ],
-        "note": "Step 1-2: PR #1390 commit 81e0cdfc13 checked out cleanly; master v03 SHA-256 d59057ae, v01 3fb6a311, locked VO 4b478fcd,"
+        "note": "Step 3-4 complete: visually inspected all 17 picture_qa warns, 46 independent master v03 frames, and 10 trailer frames; "
       },
       "taskKeys": [
         "OWB:064"
