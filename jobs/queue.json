@@ -352425,7 +352425,7 @@
     {
       "id": "J3831",
       "title": "WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Review-lane topic/archive gate, Rule-6 stranger viewer test, and v02 script lock for **WW2:016** (*Battle of the Bulge: Patton's 133,000-Vehicle Turn*, air `Thu 31 Dec 2026 17:00 London`, Ben watch `Mon 28 Dec`, script lock deadline `Wed 16 Dec 18:00 London`), dependent on **`J3830`** (`CLAIMS_CHECK_v01.md`) and `ww2-channel` PR **`#197`** (`gemini/J3487-ww2-016-bulge`, commit `0cdcfcd`).\n\n**Do (zero spend, £0, no VO spend here):**\n1. Review `TOPIC.md`, `PACKAGING.md` (`Battle of the Bulge: Patton's 133,000-Vehicle Turn`, `50` chars; 3 close-crop Rule-2/13 thumbnail concepts), and `03_Picture/ARCHIVE_PROVENANCE.md` (`38` active US Federal PD items + `4` spares = `42` total, `~63.3%` projected real archive screen time) against `studio/RULES.md` Rules 1–6 & 13 and `J3830`'s `CLAIMS_CHECK_v01.md`. Write `TOPIC_REVIEW.md` with Rule-E GO/NO-GO recommendation (or elected-Chief ruling if acting Chief).\n2. Run **Rule 6 stranger viewer test** (`01_Script/VIEWER_TEST_v01.md`) covering **both**:\n   - the **first 300 words** (Rule 3: concrete moment `<= 0:30`, promise `<= 0:45`, main story moving `< 1:00`, no detours, title answer withheld); AND\n   - the **first ~1,200 words (8 min)** (25 Nov Rule 6 update: zero background turn before the main story; zero `>= 5` figure bursts in any 30 s window across the whole film).\n3. Fold any `J3830` required `FLAG` fixes (and any Rule-6 opening edits) into `01_Script/SCRIPT.md` (`v02`), `01_Script/NARRATION_v02.txt` (exact 1:1 paragraph parity, `<= 21,000` stripped spoken chars; preserve `NARRATION_v01.txt` untouched), and `01_Script/SOURCES.md` (`v02`). Keep `\"air\": \"2026-12-31\"` verbatim in `status.json`.\n4. Open a clean consolidated PR on `ww2-channel` (ordinary worker parks merge & final lock PASS for elected Chief `codex`; elected Chief may lock and queue `03_Picture` harvest + post-reset VO with Pilot 2 `7d` Rule-12 guard).\n",
       "ref": "ww2-channel#197",
@@ -352445,12 +352445,25 @@
           "at": "2026-11-27T00:44Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T00:50Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "After J3830 claims check, review TOPIC/PACKAGING/ARCHIVE_PROVENANCE, run Rule-6 first-300 + first-1,200-word viewer test, fold fixes into v02",
       "due": "2026-12-16T18:00:00Z",
       "kind": "review",
-      "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02"
+      "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
