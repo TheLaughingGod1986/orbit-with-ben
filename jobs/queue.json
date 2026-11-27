@@ -354584,19 +354584,33 @@
           "at": "2026-11-27T05:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T06:06Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026, tied-fewest Shorts built at 2) with unused verbatim myth-bust question lift S44+S45+S46+S52 ('Is Titan just a dry desert?', 65w, 26.90s)"
         }
       ],
-      "remaining_action": "Prepare the next Orbit Short from approved existing material",
+      "remaining_action": "Inspecting 032 Titan SVS clips and Cassini plates to lock distinct Frame 0 and 9:16 EDL",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T05:59Z",
+        "of": 5,
+        "at": "2026-11-27T06:06Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Select film & locked passage",
+          "Design 9:16 EDL & Teach graphic",
+          "Assemble 9:16 Short & cover",
+          "Run all ship & QA gates",
+          "Commit, PR & post #99 report"
+        ],
+        "note": "Selected OWB:032 Titan (T3cBBss1F60, live 25 Nov 2026, tied-fewest Shorts built at 2) with unused verbatim myth-bust que"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [
