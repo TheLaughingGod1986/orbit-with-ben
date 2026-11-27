@@ -358218,10 +358218,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T12:10Z",
+      "eta": "2026-11-27T14:10Z",
       "created_by": "relay",
       "created_at": "2026-11-27T11:54Z",
       "result": "",
@@ -358275,6 +358275,11 @@
           "at": "2026-11-27T12:09Z",
           "by": "codex",
           "what": "rerouted to codex: Elected Chief handling the explicit J3893 decision; specialist verification is complete."
+        },
+        {
+          "at": "2026-11-27T12:10Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge PR #1383, record wait J2537 --recheck J3893 for 2026-11-30T12:00:00Z, and close J3893",
@@ -358291,7 +358296,15 @@
       },
       "open_claim": true,
       "for": "codex",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T12:10Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3894",
