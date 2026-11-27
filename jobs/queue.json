@@ -359392,16 +359392,21 @@
           "at": "2026-11-27T15:11Z",
           "by": "gemini",
           "what": "step 3 of 6 done: First build passed gate_shorts_open (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.1 LUFS, TP=-2.1 dBTP), thumb_preview, sfx_kit, and music_gate; fixed R01b/R03c jitter via symmetric zoom and R03b globe detail"
+        },
+        {
+          "at": "2026-11-27T15:17Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: All 7 gates PASS (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.10 LUFS, TP=-2.10 dBTP, polish_gate 0/12 fail, picture_qa 0/12 fail); NAS SHA-256 verified b805c51d..."
         }
       ],
-      "remaining_action": "Re-running full 7-gate suite after fixing R01b/R03c symmetric push jitter and R03b detail",
+      "remaining_action": "Inspecting final frames, writing packaging manifest/checklist/gate report, and opening PR for QA",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T15:11Z",
+        "at": "2026-11-27T15:17Z",
         "by": "gemini",
         "plan": [
           "Inspect master v03 and Short rules",
@@ -359411,7 +359416,7 @@
           "Inspect frames and verify packaging",
           "Commit artifacts and submit for QA"
         ],
-        "note": "First build passed gate_shorts_open (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.1 LUFS, TP=-2.1 dBTP), thu"
+        "note": "All 7 gates PASS (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.10 LUFS, TP=-2.10 dBTP, polish_gate 0/12 fail"
       },
       "taskKeys": [
         "OWB:064"
