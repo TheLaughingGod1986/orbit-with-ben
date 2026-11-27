@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3889 | mini | blocked | gemini | – | studio · Package and upload OWB 032 Short 2 short v03 (Is Titan Just a Dry Desert?) Private, 2026-12-21T11:30Z |  |
 | J3892 | macbook | claimed | macbook-2 | 2026-11-27T13:55Z | assembly · J3012: implement the external MacBook cutover handoff |  |
-| J3893 | mini | claimed | gemini | 2026-11-27T13:55Z | review · Verify condition for J2537 |  |
+| J3893 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
 | J3894 | mini | open | – | – | review · Verify condition for J3532 |  |
 | J3895 | mini | open | – | – | review · Verify condition for J3704 |  |
 
