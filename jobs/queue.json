@@ -356727,7 +356727,7 @@
     {
       "id": "J3866",
       "title": "Publish completed Chief review record for J3856",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Publish via Claude Code: /Volumes/MiniWork/scratch/J3856-chief-review codex/J3856-review, completed review commit 7bcaa478f7. Automatic approval review rejected Codex push: requires independent Claude Code publication review and treats external destination as unverified. Do not bypass that rejection. Independently review the full diff and verify publication permission and privacy before any publication. If authorized and safe, push branch, open PR and merge only with green checks and current Chief authority as required; otherwise record the exact blocking reason. Text-only review of J3856 Titan v02; FIX and J3865 correction dependency already recorded on queue. No media, no changes to PR 1366 production branch, no approval of cut or upload. J3853/J3856 stay held pending corrected v03 review.",
       "ref": "",
@@ -356735,13 +356735,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T17:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:43Z",
-      "result": "parked for Chief: review and merge PR #1406 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1406, codex/J3856-review head 7bcaa478f7, jobs/reviews/J3856/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T07:43Z",
@@ -356777,10 +356777,15 @@
           "at": "2026-11-27T17:41Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1406 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1406, codex/J3856-review head 7bcaa478f7, jobs/reviews/J3856/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)"
+        },
+        {
+          "at": "2026-11-27T18:16Z",
+          "by": "codex",
+          "what": "rerouted to codex: Elected Chief taking publication review and merge of PR1406; independent publication inspection completed by Gemini under Claude authorization. No production release."
         }
       ],
       "remaining_action": "Chief review and merge of PR #1406 (codex/J3856-review)",
-      "for": "gemini",
+      "for": "codex",
       "kind": "review",
       "plain": "Check and publish the Titan Short correction review",
       "mini_only": true,
@@ -356798,7 +356803,14 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "gemini",
+        "model": "",
+        "status": "blocked",
+        "by": "gemini"
+      }
     },
     {
       "id": "J3867",
