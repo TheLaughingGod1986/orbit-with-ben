@@ -361285,16 +361285,21 @@
           "at": "2026-11-27T17:07Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Audio rebuild, v02-FAIL/v03-PASS speech-coverage regression, v02 video stream-copy equivalence, and playback health all succeeded; passing 16 kHz numpy WAV to faster-whisper to complete fresh ASR + NAS gates"
+        },
+        {
+          "at": "2026-11-27T17:12Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: 5-minute progress heartbeat: checking task-61 output (ASR + local/NAS gate suite)"
         }
       ],
-      "remaining_action": "Re-running v03 builder after fixing faster-whisper float32 numpy input bypass for PyAV",
+      "remaining_action": "Completing v03 NAS copy and canonical gate checks (task-61 running)",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-27T17:07Z",
+        "at": "2026-11-27T17:12Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361304,7 +361309,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Audio rebuild, v02-FAIL/v03-PASS speech-coverage regression, v02 video stream-copy equivalence, and playback health all "
+        "note": "5-minute progress heartbeat: checking task-61 output (ASR + local/NAS gate suite)"
       },
       "taskKeys": [
         "OWB:064"
