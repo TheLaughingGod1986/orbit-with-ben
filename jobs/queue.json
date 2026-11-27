@@ -352707,6 +352707,11 @@
           "at": "2026-11-27T01:51Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T07:00:00Z"
+        },
+        {
+          "at": "2026-11-27T03:28Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Await J3842 corrected source records and final script checks, then review for lock",
@@ -352741,7 +352746,8 @@
         "last_recheck": "J3837",
         "checked_at": "2026-11-27T01:51:09+00:00",
         "checked_by": "codex"
-      }
+      },
+      "escalated_at": "2026-11-27T03:28Z"
     },
     {
       "id": "J3832",
@@ -353139,6 +353145,11 @@
           "at": "2026-11-27T01:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1362 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1362, d67daa2710, jobs/reviews/J3836/REVIEW.md; test_email_ratchet + test_no_private_network 13/13 PASS). Condition UNMET — keep J3704 blocked: local /Volumes/MiniWork/scratch/J3704-corrections remains at unpushed 9e4b053; ww2-channel PR #189 remains OPEN at d5d842d with zero reviews and no replacement PR; studio thread #1353 through #7207071007 has no authorization review resolving the data-export approval restriction and no Claude Code publication; OWB PR #1254 remains OPEN. scripts/jobs.py restricts jobs.py wait J3704 --recheck J3836 to the holder or elected Chief (codex). Elected Chief to merge PR #1362, run jobs.py wait J3704 --agent codex --type input --recheck J3836 --check-at 2026-11-27T07:55:00Z (after Claude's 07:50:00Z reset), and close J3836. Zero video/Studio/schedule changes, £0 spend."
+        },
+        {
+          "at": "2026-11-27T03:28Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) to merge OWB PR #1362, record jobs.py wait J3704 --recheck J3836, and close J3836",
@@ -353170,7 +353181,8 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "escalated_at": "2026-11-27T03:28Z"
     },
     {
       "id": "J3837",
