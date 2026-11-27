@@ -30,3 +30,5 @@ Locked script v04, SOURCES_v03.md Mercury row, and locked Scribe word times chec
 ## Immutable checks and remaining gate
 
 `locked_hashes.json`: master d59057ae, locked script 556f3c8d, VO 4b478fcd, R11 PIA00215 46dc965a and all J3719_v02 thumbnails/preview hash-match. Cuts unchanged, including R11 interval. No active PIA00271/PIA00233; original source exclusions unchanged. T045 remains proposed, video null. No spend, generation, upload, schedule/privacy edits, Buffer changes, merge or UAT handoff. J3910 and elected-Chief review remain required.
+
+Validation: final uploader dry run returned `ok: true`, `dryRun: true`, resolved category 28, exact master d59057ae and trailer v05. Its simulated scheduling fields are dry-run output only; no platform state changed. `git diff --check` clean; 13 email/private-network checks passed; builder compiled and completed a full encode/decode. Portrait original downloads independently SHA-256-match all three active files (PORTRAIT_SOURCE_MATCH.json).
