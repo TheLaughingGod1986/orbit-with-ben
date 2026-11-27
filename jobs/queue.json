@@ -361321,16 +361321,21 @@
           "at": "2026-11-27T17:17Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Updated versioned PACKAGE_MANIFEST.json/v03 (preserving PACKAGE_MANIFEST_v02.json), verified youtube:package --dry-run PASS (ok: true), wrote GATE_REPORT_v03.md and SHORT1_BRIEF_AND_CHECKLIST_v03.md"
+        },
+        {
+          "at": "2026-11-27T17:18Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Committed and pushed v03 builder, sidecars, versioned manifests, and reports to PR #1399 (961a0b19d5); posted evidence to PR #1399 and studio thread"
         }
       ],
-      "remaining_action": "Committing v03 builder, sidecars, versioned manifests, and reports on PR #1399 branch, pushing, and posting report",
+      "remaining_action": "Done: immutable v03 pushed on PR #1399 (961a0b19d5) and handed off for independent QA (J3923)",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-27T17:17Z",
+        "at": "2026-11-27T17:18Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361340,7 +361345,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "Updated versioned PACKAGE_MANIFEST.json/v03 (preserving PACKAGE_MANIFEST_v02.json), verified youtube:package --dry-run P"
+        "note": "Committed and pushed v03 builder, sidecars, versioned manifests, and reports to PR #1399 (961a0b19d5); posted evidence t"
       },
       "taskKeys": [
         "OWB:064"
