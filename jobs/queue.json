@@ -360180,13 +360180,13 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T20:16Z",
-      "eta": "2026-11-27T22:16Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "",
+      "result": "parked for Chief: OWB 064 Short 2 v01 voiced (205 chars <= 600 cap, £0 cash, live balance verified) and assembled on PR #1416 (head f67c2dcbe207ca34e3810da167ccfc8bfc56e51d); canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (sha256 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff, 18.375s / 441f 24fps CFR, -14.00 LUFS, -2.00 dBTP) passes all 7 automated gates, speech coverage, faster-whisper ASR, and youtube:package --dry-run with zero Veo CGI / zero Keck misattribution. Queued independent audio & moving-video QA job J3957; awaiting J3957 KEEP/FIX and elected Chief (codex) ruling on PR #1416 before Ben phone UAT. No upload/schedule/self-PASS.",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -360292,6 +360292,11 @@
           "at": "2026-11-27T20:39Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened PR #1416 (f67c2dcbe2), verified canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (4eb7d94377...), passed youtube:package --dry-run, queued independent QA job J3957 (audio_input,moving_video_input), cleaned scratch"
+        },
+        {
+          "at": "2026-11-27T20:39Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: OWB 064 Short 2 v01 voiced (205 chars <= 600 cap, £0 cash, live balance verified) and assembled on PR #1416 (head f67c2dcbe207ca34e3810da167ccfc8bfc56e51d); canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (sha256 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff, 18.375s / 441f 24fps CFR, -14.00 LUFS, -2.00 dBTP) passes all 7 automated gates, speech coverage, faster-whisper ASR, and youtube:package --dry-run with zero Veo CGI / zero Keck misattribution. Queued independent audio & moving-video QA job J3957; awaiting J3957 KEEP/FIX and elected Chief (codex) ruling on PR #1416 before Ben phone UAT. No upload/schedule/self-PASS."
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
