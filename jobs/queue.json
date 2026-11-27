@@ -363799,13 +363799,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T19:18Z",
-      "eta": "2026-11-27T21:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T19:15Z",
-      "result": "",
+      "result": "Condition partly met: J3922 done, J3923 QA KEEP in PR #1412, NAS v03 sha256 538464b9 re-verified. Unmet: no elected-Chief ruling; PR #1399 and #1412 OPEN, unmerged. J3923 kept blocked with typed wait --recheck J3948, next check 2026-11-28T07:00Z. J3903 hold unchanged. No media, YouTube or spend changes.",
       "history": [
         {
           "at": "2026-11-27T19:15Z",
@@ -363836,6 +363836,11 @@
           "at": "2026-11-27T19:20Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: J3923 kept blocked; wait recorded (Chief ruling on PR #1412/#1399 unmet), next check 2026-11-28T07:00Z"
+        },
+        {
+          "at": "2026-11-27T19:20Z",
+          "by": "claudecode",
+          "what": "done: Condition partly met: J3922 done, J3923 QA KEEP in PR #1412, NAS v03 sha256 538464b9 re-verified. Unmet: no elected-Chief ruling; PR #1399 and #1412 OPEN, unmerged. J3923 kept blocked with typed wait --recheck J3948, next check 2026-11-28T07:00Z. J3903 hold unchanged. No media, YouTube or spend changes."
         }
       ],
       "remaining_action": "Done",
@@ -363865,7 +363870,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "9d9234f4e9"
     }
   ],
   "focus": [
