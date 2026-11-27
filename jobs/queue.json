@@ -360376,9 +360376,14 @@
           "at": "2026-11-27T15:08Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: J3912 ruling pushed as PR #1396 (diff read, nothing private)"
+        },
+        {
+          "at": "2026-11-27T15:10Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: PR #1396 merged (d18b5d4386). Direct quote check: C1-C9 hold verbatim on live NASA pages; one flag: v02b drops 'true' from 'no true surface'"
         }
       ],
-      "remaining_action": "Gemini claim check running; quote check next",
+      "remaining_action": "Waiting on Gemini claim check; then record ruling",
       "due": "2026-11-28T14:00:00Z",
       "kind": "review",
       "plain": "Check the revised Venus and Uranus Short before approving its narration",
@@ -360391,9 +360396,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T15:08Z",
+        "at": "2026-11-27T15:10Z",
         "by": "claudecode",
         "plan": [
           "Publish J3912 ruling",
@@ -360402,7 +360407,7 @@
           "Direct quote check",
           "Record ruling"
         ],
-        "note": "J3912 ruling pushed as PR #1396 (diff read, nothing private)"
+        "note": "PR #1396 merged (d18b5d4386). Direct quote check: C1-C9 hold verbatim on live NASA pages; one flag: v02b drops 'true' fr"
       },
       "taskKeys": [
         "OWB:064"
