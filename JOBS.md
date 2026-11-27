@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
 | J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
 | J3917 | mini | blocked | gemini | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
-| J3921 | mini | open | – | – | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
+| J3921 | mini | claimed | codex | 2026-11-27T19:36Z | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
 | J3923 | mini | open (after J3922) | – | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
 | J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3926 | mini | open | – | – | WW2:009 script · for gemini · studio · Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR |  |
