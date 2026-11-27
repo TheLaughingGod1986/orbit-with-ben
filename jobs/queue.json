@@ -1,5 +1,5 @@
 {
-  "next_id": 3892,
+  "next_id": 3893,
   "jobs": [
     {
       "id": "J0001",
@@ -358097,6 +358097,36 @@
         ],
         "note": "Rebased on main; 102 worker/launcher/guard tests OK; pushed and opened PR #1380 (head e14669c705)."
       }
+    },
+    {
+      "id": "J3892",
+      "title": "J3012: implement the external MacBook cutover handoff",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J3012 continuation, authorized by elected acting Chief Codex. Implement and verify the external MacBook cutover handoff described in merged J3890 PR #1379. This is a necessary migration substep, not a new migration or a request for Ben approval. Parent remains 3/4. PR #1380 has merged the unsafe test fixes; do not use old unpatched test files.\n\nImplement one bounded, restartable handoff outside the worker/service process group that it will replace. Work in an isolated clean worktree. Produce reviewed code and machine-local dry-run evidence with mocked launchctl/process/Git operations. Use existing queue/thread as authority, not a parallel production tracker. No remote-login changes, no credential values, no money.\n\nRequired behavior: preserve exact installed/loaded settings and private rollback originals; enforce exact expected source/proposal hashes; fail closed unless its coordinating job is terminal and its owning PID/process group has exited, both slot locks are unheld, and no other MacBook job/agent child remains. A launchd not-running state or completed queue row alone is insufficient. Recheck immediately before replacement. Do not kill agents or remove held locks. Avoid PID-reuse mistakes. Initial launch must be detached with bounded timeout and mode-0600 state/logs; record supervisor identity and result path. Dry-run must never touch real services, pause files or markers.\n\nThe handoff needs an explicit elected-Chief activation for the exact fresh production Studio commit after global drain/freeze. Do not infer activation from the existence of main or a local main rehearsal branch. Design the two-phase invocation so the coordinator can publish its result and exit before replacement, and Chief can supply exact production commit without SSH or creating another queue. A trusted owner/collaborator command on the existing studio thread is acceptable if narrowly parsed, tied to this job, fresh and immutable by comment ID; untrusted comments and changed payloads must fail closed. The ordinary installed worker may receive the initial coordination job. The activation itself must be separately recorded after review; do not wait for J3012 completion, which would deadlock.\n\nOn authorized activation only: fetch and verify the exact fresh Studio production root/queue, fast-forward or otherwise safely update the two staged engine clones without destructive reset, regenerate/revalidate the proposal against current installation, replace only the worker service, arm the existing engine guard, verify old-engine refusal, and retain pauses until Chief resumes. Preserve mains-only, idle policy, both distinct engine/content roots, locks and heartbeats. If any step fails, stop and retain rollback evidence; do not silently resume an old stale queue. Document how the external handoff is supervised after this CLI exits and how Chief can cancel it safely.\n\nDeliver helper code, focused tests covering refusal/race/rollback boundaries, exact machine-local dry-run receipts, and a concrete activation command/sequence on a PR. No live pause, bootout, install, restart, marker, production branch/default change or rehearsal-queue run in this preparation job. This is the last missing MacBook implementation before the coordinated live drain. Return all checkouts to main and publish sanitized report. No repeat of already completed inventories/probe/full 1606-test suite.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T11:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T11:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and test the detached installer handoff for the studio move",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Prepare the MacBook to switch studio engines safely after its workers finish"
     }
   ],
   "focus": [
