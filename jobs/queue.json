@@ -356468,9 +356468,14 @@
           "at": "2026-11-27T08:44Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Inspecting OWB listing check precedent and recent HOS audit state",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -356483,11 +356488,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T08:44Z",
+        "of": 4,
+        "at": "2026-11-27T08:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect precedent and pull live HOS listings",
+          "Audit chapters, sources, end screens, Related",
+          "Write audit report and exact fix list in HOS",
+          "File PR, update queue, and post report"
+        ]
       }
     }
   ],
