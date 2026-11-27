@@ -1,5 +1,5 @@
 {
-  "next_id": 3946,
+  "next_id": 3947,
   "jobs": [
     {
       "id": "J0001",
@@ -363613,6 +363613,36 @@
       "taskKeys": [
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3946",
+      "title": "WW2 006: public-state check and pinned comment",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up to Chief upload PASS J3921, ww2-channel PR212. At or after 2026-12-05T17:05:00Z use Data API and Studio only to verify 9YeKm3e2xto is Public on Field Order History, correct title and schedule, three-arm thumbnail-only test running, captions, playlist and end screen intact. If not Public, record a typed public wait with a concrete retry; do not change visibility or schedule. Once Public, post and pin the existing approved 11_Upload-Package/PINNED_COMMENT_v01.txt for film 006, checking for an existing identical comment first. Use current channel-account mapping and reuse the Studio tab. Never open/play a public watch page; do not alter the test. Record evidence and status through a WW2 PR, report on studio thread. No spend. Do not release or change Shorts holds. Link J3921 and this exact video in the result.",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "upload",
+      "after": "J3921",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T19:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T19:02Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Confirm the Mosquito film is public and pin its approved comment",
+      "due": "2026-12-05T18:00:00Z",
+      "kind": "studio",
+      "plain": "Check the Mosquito film after release and pin its discussion question"
     }
   ],
   "focus": [
