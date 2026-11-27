@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3883 | mini | blocked | codex | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3894 | mini | blocked | gemini | – | review · Verify condition for J3532 |  |
-| J3895 | mini | claimed | gemini | 2026-11-27T14:08Z | review · Verify condition for J3704 |  |
+| J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 
 Recently finished:
 
