@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3908.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -106,12 +106,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
 | J3906 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3907 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
-| J3908 | mini | claimed | codex | 2026-11-27T16:24Z | review · Verify condition for J3859 |  |
 | J3909 | mini | claimed | macbook-2 | 2026-11-27T16:18Z | 064 edit · assembly · OWB 064: Repair vertical trailer and package after J3902 FIX | J3902 |
 | J3910 | mini | open (after J3909) | – | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
 
 Recently finished:
 
+- J3908 done: Verify condition for J3859 (Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved.)
 - J3902 done: OWB 064: Independent completed-cut & package QA on master v03 (PR #1390) (Chief ruling: KEEP master v03 d59057ae unchanged; package FIX, no PASS or merge of PR1390. Confirmed trailer clipping and provenance/portrait-credit defects. J3909 owns package repair; J3910 independently rechecks after J3909. J3023 remains held until recheck KEEP and elected-Chief merge, next check 2026-11-28T14:30Z. No UAT release, spend or upload. Ruling local commit 8f98ad1311; automatic review rejected document push as internal-workflow data egress. User explicit review priority recorded to resolve plan-pacing claim filter; review now complete.)
 - J3900 done: J3012: preserve cancellation and descendant drain in recovery (Implemented cancellation and persisted-descendant recovery safety fixes in 5631f820b; PR #1389 includes unmerged #1387 plus the scoped correction. All 62 mocked cutover/control tests and diff check pass. No live activation or merge; J3012 remains held for Chief re-review and a separate live coordination child. Checkout returned to main.)
 - J3899 done: Verify condition for J3012 (Chief FIX: PR1387 comment 7219162024; 55 existing tests pass but three mocked probes fail cancellation and persisted-descendant drain. J3900 queued for correction/regression tests; J3012 stays held 3/4 with 15:00Z recheck. Local evidence commit 673850aaa4; automatic review refused evidence-branch publication, retained locally. No live change.)
@@ -121,4 +121,3 @@ Recently finished:
 - J3894 done: Verify condition for J3532 (Chief review complete: condition NOT MET. Exact PR1384 merged ce561a745da89b4a849953ea8d723c375ef8ee48 after 13 privacy tests and channel_check. Existing trusted protected-history ruling retained. J3532 stays blocked via wait --recheck J3894 until 2026-11-30T12:00:00Z; require explicit protected-desk exception, then fresh backup/rehearsal, quiet writer window and day-before notice. No rewrite, spend or publishing change. No duplicate request to Ben.)
 - J3893 done: Verify condition for J2537 (Chief review complete: NOT MET. Evidence PR1383 merged 2c340d7f30; 13 privacy tests and channel check pass. J2537 remains blocked via wait --recheck J3893 until 2026-11-30T12:00:00Z verification. Fresh comments through OWB7217873683/HOS7217874281 establish no named protected-history exception. After authorization: resolve ordinary PRs, refresh backup/rehearsal, day-before notice, writer hold. J3532/J3894 untouched. No live rewrite or duplicate ask. Chief review progress recorded in active slot 1 because stock review-progress reads only slot 0.)
 - J3892 done: J3012: implement the external MacBook cutover handoff (Implemented external two-phase MacBook cutover helper and runbook on macbook/J3892; PR #1385 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1385 head 1e08d9754. 34 focused mocked tests plus 13 privacy checks passed; exact private dry-run receipt/source hashes in jobs/reviews/J3892/DRY_RUN.json. All touched checkouts returned to main; temporary worktree removed. No real supervisor, service, pause, marker, staged/production Git operation or rehearsal queue ran. Chief review and separately recorded exact fresh production activation remain; J3012 stays 3/4.)
-- J3891 done: J3012: Claude Code review and publish completed migration checkpoint (done)

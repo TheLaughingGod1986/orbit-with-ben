@@ -359649,13 +359649,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T14:24Z",
-      "eta": "2026-11-27T16:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T14:07Z",
-      "result": "",
+      "result": "Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved.",
       "history": [
         {
           "at": "2026-11-27T14:07Z",
@@ -359701,6 +359701,11 @@
           "at": "2026-11-27T14:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: Independent Chief review complete: condition unmet; J3859 dependency hold and 20:15Z retry recorded using --recheck J3908. Review progress separately recorded under the live Chief lease."
+        },
+        {
+          "at": "2026-11-27T14:25Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved."
         }
       ],
       "remaining_action": "Close the completed verification and post the Chief ruling",
