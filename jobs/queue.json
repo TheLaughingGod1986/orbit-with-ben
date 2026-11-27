@@ -355708,13 +355708,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T07:45Z",
-      "eta": "2026-11-27T09:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:44Z",
-      "result": "",
+      "result": "parked for Chief: J3834 condition NOT met at 2026-11-27T07:50Z. Review commit d734610 (branch codex/J3834-v06-lock, worktree /Volumes/MiniWork/scratch/J3834-review, clean, ahead 3 of origin/gemini/J3833-ww2-009-claims-v06) is on no origin branch (git branch -r --contains d734610 empty; ls-remote codex/J3834* empty); no J3834 PR on ww2-channel (only #199, #200, #203, all merged). Note for Chief: ww2-channel is a PRIVATE repo, so a push/PR there is not public disclosure; the privacy-review call and the v06 lock itself are Chief-only, so a worker did not push. Chief run: python3 scripts/jobs.py wait J3834 --agent <chief> --type input --condition 'd734610 (codex/J3834-v06-lock) not yet pushed or PR-merged to private ww2-channel; Chief to approve privacy review and publish the lock' --check-at '2026-11-27T13:50Z' --recheck J3867 --git ; or, after publishing: jobs.py reopen J3834 with the merge evidence. Lock deadline 30 Nov 18:00 UTC.",
       "history": [
         {
           "at": "2026-11-27T07:44Z",
@@ -355740,6 +355740,11 @@
           "at": "2026-11-27T07:46Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Unmet: d734610 (codex/J3834-v06-lock, /Volumes/MiniWork/scratch/J3834-review, ahead 3, clean) is on no origin branch; no J3834 PR on ww2-channel (only #199/#200/#203). ww2-channel is PRIVATE."
+        },
+        {
+          "at": "2026-11-27T07:46Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3834 condition NOT met at 2026-11-27T07:50Z. Review commit d734610 (branch codex/J3834-v06-lock, worktree /Volumes/MiniWork/scratch/J3834-review, clean, ahead 3 of origin/gemini/J3833-ww2-009-claims-v06) is on no origin branch (git branch -r --contains d734610 empty; ls-remote codex/J3834* empty); no J3834 PR on ww2-channel (only #199, #200, #203, all merged). Note for Chief: ww2-channel is a PRIVATE repo, so a push/PR there is not public disclosure; the privacy-review call and the v06 lock itself are Chief-only, so a worker did not push. Chief run: python3 scripts/jobs.py wait J3834 --agent <chief> --type input --condition 'd734610 (codex/J3834-v06-lock) not yet pushed or PR-merged to private ww2-channel; Chief to approve privacy review and publish the lock' --check-at '2026-11-27T13:50Z' --recheck J3867 --git ; or, after publishing: jobs.py reopen J3834 with the merge evidence. Lock deadline 30 Nov 18:00 UTC."
         }
       ],
       "remaining_action": "Park verification for Chief with the exact wait command",
