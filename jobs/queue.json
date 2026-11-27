@@ -352055,13 +352055,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T00:23Z",
-      "eta": "2026-11-27T02:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T00:22Z",
-      "result": "",
+      "result": "Workflow repair complete: created linked review successor J3828 (OWB:034 thumbs, after J3115) and recorded it on blocked thumbnail stage. Verified dependency and released claim. J3115 publication restriction, J3119 delivery dependency, Ben master approval and Shorts holds preserved. No media PASS or platform action.",
       "history": [
         {
           "at": "2026-11-27T00:22Z",
@@ -352092,6 +352092,11 @@
           "at": "2026-11-27T00:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified successor dependency, blocked stage, released claim and unchanged delivery/Short holds. Report posted on studio thread."
+        },
+        {
+          "at": "2026-11-27T00:26Z",
+          "by": "codex",
+          "what": "done: Workflow repair complete: created linked review successor J3828 (OWB:034 thumbs, after J3115) and recorded it on blocked thumbnail stage. Verified dependency and released claim. J3115 publication restriction, J3119 delivery dependency, Ben master approval and Shorts holds preserved. No media PASS or platform action."
         }
       ],
       "remaining_action": "Workflow repair complete; J3828 waits for the existing packaging review",
@@ -352116,7 +352121,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "J3828"
     },
     {
       "id": "J3828",
