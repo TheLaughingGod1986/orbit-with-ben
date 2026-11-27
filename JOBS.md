@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3883 | mini | open | – | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
+| J3883 | mini | claimed | codex | 2026-11-27T19:13Z | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
 | J3903 | mini | blocked | gemini | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 | J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
 | J3910 | mini | blocked | gemini | – | 064 edit · qa · OWB 064: Independently recheck J3909 trailer and package corrections | J3902 |
