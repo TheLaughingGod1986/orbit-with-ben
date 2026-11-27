@@ -300364,18 +300364,23 @@
           "at": "2026-11-27T19:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3309; verified B_v03 SHA-256 matches 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba and J3307/J3382 are done"
+        },
+        {
+          "at": "2026-11-27T19:37Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read-only Studio check confirmed Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, rVqgtkBV3jc Public, matching finished inconclusive T004 report (1 Nov 18:00 to 15 Nov 18:39, Not enough impressions, A visible to all), no running test; report preserved"
         }
       ],
-      "remaining_action": "Verify B_v03 hash, J3307/J3382 dependencies, and fresh read-only Studio state for rVqgtkBV3jc",
+      "remaining_action": "Arm thumbnail-only T042 (live A vs exact B_v03) in YouTube Studio CDP 9224 and verify reload shows Test running",
       "kind": "studio",
       "plain": "Start T042 thumbnail A/B test on OWB 024 (rVqgtkBV3jc) after Chief approval",
       "taskKeys": [
         "OWB:024"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T19:34Z",
+        "at": "2026-11-27T19:37Z",
         "by": "gemini",
         "plan": [
           "Verify file hash and read-only Studio T004 state",
@@ -300383,7 +300388,7 @@
           "Update THUMB_LEDGER.json and open PR",
           "Post Studio thread report and finish J3309"
         ],
-        "note": "Claimed J3309; verified B_v03 SHA-256 matches 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba and J3307"
+        "note": "Read-only Studio check confirmed Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, rVqgtkBV3jc Public, matching finished inconclu"
       }
     },
     {
