@@ -352913,13 +352913,13 @@
       "stage": "script",
       "after": "J3833",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T01:34Z",
-      "eta": "2026-11-27T03:34Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T00:54Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3834-review codex/J3834-v06-lock. Finished review commit d734610; clean tree and channel_check PASS; hashes and 37-block parity verified. Automatic approval review rejected public push as disclosure of unpublished film content. Apply the standing privacy review before any publication; no bypass of that review. PR200 and PR203 merged into main. Local exact-version script PASS/lock is not yet published; J3838 remains dependent on J3834 and date-held until 2026-11-30T10:50:00Z with live credit checks. After approved publication, mark final progress step and complete J3834. No voice or upload.",
       "history": [
         {
           "at": "2026-11-27T00:54Z",
@@ -352950,6 +352950,11 @@
           "at": "2026-11-27T01:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Review committed d734610 in isolated worktree; PR200 and PR203 merged. J3838 has date hold. Public push rejected by automatic review; final publication handed to Claude Code."
+        },
+        {
+          "at": "2026-11-27T01:40Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3834-review codex/J3834-v06-lock. Finished review commit d734610; clean tree and channel_check PASS; hashes and 37-block parity verified. Automatic approval review rejected public push as disclosure of unpublished film content. Apply the standing privacy review before any publication; no bypass of that review. PR200 and PR203 merged into main. Local exact-version script PASS/lock is not yet published; J3838 remains dependent on J3834 and date-held until 2026-11-30T10:50:00Z with live credit checks. After approved publication, mark final progress step and complete J3834. No voice or upload."
         }
       ],
       "remaining_action": "Publish the finished script review through Claude Code",
@@ -352970,7 +352975,12 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3834-review codex/J3834-v06-lock. Finished review commit d734610; clean tree and channel_check PASS; hashes and 37-block parity verified. Automatic approval review rejected public push as disclosure of unpublished film content. Apply the standing privacy review before any publication; no bypass of that review. PR200 and PR203 merged into main. Local exact-version script PASS/lock is not yet published; J3838 remains dependent on J3834 and date-held until 2026-11-30T10:50:00Z with live credit checks. After approved publication, mark final progress step and complete J3834. No voice or upload.",
+        "check_at": "2026-11-27T07:40:11+00:00"
+      }
     },
     {
       "id": "J3835",
