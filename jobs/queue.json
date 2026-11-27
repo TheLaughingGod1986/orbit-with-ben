@@ -355628,13 +355628,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T08:29Z",
-      "eta": "2026-11-27T10:29Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:34Z",
-      "result": "",
+      "result": "FIX: publication satisfied by draft HOS PR 811 at 2922143e; independently hashed NAS v02 remains failed (opening 1.14<1.50; terminal reuse). J3816 remains blocked via --recheck J3864; check 2026-11-27T20:00Z. Repair J3871 then capable audio/motion review J3872 own follow-up. PR 811 stays draft; no Short PASS/UAT/upload/spend. Review commit 54fd3acb20; designated publication review J3873 handles rejected public push. Ruling and dependencies recorded, this verification complete.",
       "history": [
         {
           "at": "2026-11-27T07:34Z",
@@ -355675,6 +355675,11 @@
           "at": "2026-11-27T08:29Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:30Z",
+          "by": "codex",
+          "what": "done: FIX: publication satisfied by draft HOS PR 811 at 2922143e; independently hashed NAS v02 remains failed (opening 1.14<1.50; terminal reuse). J3816 remains blocked via --recheck J3864; check 2026-11-27T20:00Z. Repair J3871 then capable audio/motion review J3872 own follow-up. PR 811 stays draft; no Short PASS/UAT/upload/spend. Review commit 54fd3acb20; designated publication review J3873 handles rejected public push. Ruling and dependencies recorded, this verification complete."
         }
       ],
       "remaining_action": "Park this verification for Chief with the exact wait command",
@@ -355700,7 +355705,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "54fd3acb20"
     },
     {
       "id": "J3865",
