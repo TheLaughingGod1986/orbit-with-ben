@@ -273836,9 +273836,14 @@
           "at": "2026-11-27T10:43Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T10:44Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Resuming the existing checkpoint and detached verification; preserving 3 of 4 completed steps."
         }
       ],
-      "remaining_action": "Finish current-source and future-studio verification, then drain writers and perform the live move",
+      "remaining_action": "Read the detached verification results and complete the remaining cutover checks",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273859,7 +273864,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T10:12Z",
+        "at": "2026-11-27T10:44Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273867,7 +273872,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "14 daily zero results; eight service proposals lint clean, five CI files staged, 52 focused tests pass. Full split and c"
+        "note": "Resuming the existing checkpoint and detached verification; preserving 3 of 4 completed steps."
       }
     },
     {
