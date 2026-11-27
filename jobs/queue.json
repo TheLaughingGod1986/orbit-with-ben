@@ -352803,9 +352803,14 @@
           "at": "2026-11-27T07:47Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:51Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Correct the closing convoy line, refresh checks, and finish the script lock review",
+      "remaining_action": "Independently verifying ww2-channel PR #205 (a77f306) files, hashes, parity, char count, and Rule-6 windows",
       "due": "2026-12-16T18:00:00Z",
       "kind": "review",
       "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02",
@@ -352819,12 +352824,15 @@
       "open_claim": true,
       "escalated_at": "2026-11-27T03:28Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T07:36Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-27T07:51Z",
+        "by": "macbook",
+        "plan": [
+          "Verify PR 205 against J3862 ruling",
+          "Fix any remaining discrepancy",
+          "Park for Chief lock/merge and report"
+        ]
       }
     },
     {
