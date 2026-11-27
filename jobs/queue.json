@@ -273966,9 +273966,14 @@
           "at": "2026-11-27T13:03Z",
           "by": "relay",
           "what": "condition verification queued: J3899"
+        },
+        {
+          "at": "2026-11-27T13:11Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T15:00:00Z"
         }
       ],
-      "remaining_action": "Review the remote handoff controls and complete the studio move",
+      "remaining_action": "Review corrected recovery controls after J3900, then coordinate the studio move",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -274001,9 +274006,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved.",
-        "check_at": "2026-11-27T14:03:33+00:00",
-        "recheck_task": "J3899"
+        "condition": "J3900 corrects PR1387 cancellation and persisted-descendant drain failures; elected Chief reviews changed head and regression evidence before a separate live coordination child. J3899 FIX at comment 7219162024; preserve 3/4 and all existing gates. No live activation.",
+        "check_at": "2026-11-27T15:00:00Z",
+        "last_recheck": "J3899",
+        "checked_at": "2026-11-27T13:11:30+00:00",
+        "checked_by": "codex"
       }
     },
     {
