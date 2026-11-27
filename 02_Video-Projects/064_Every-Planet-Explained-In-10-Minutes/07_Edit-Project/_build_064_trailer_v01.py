@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build 37 s vertical 9:16 social trailer (608x1080, 24 fps CFR) for OWB:064 from master v02.
+"""Build 37 s vertical 9:16 social trailer (608x1080, 24 fps CFR) for OWB:064 from master v03.
 
 Follows STUDIO_PLAYBOOK.md §12:
   - Vertical 30–60 s cut (37.0 s total: 32.85 s opening hook + 4.15 s "Full film on YouTube" end card)
@@ -21,7 +21,7 @@ NAS_FILM = Path(
     "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/"
     "064_Every-Planet-Explained-In-10-Minutes"
 )
-MASTER = NAS_FILM / "09_Final-Export/064_every_planet_explained_master_v02.mp4"
+MASTER = NAS_FILM / "09_Final-Export/064_every_planet_explained_master_v03.mp4"
 END_IMG_SRC = NAS_FILM / "03_Reference-Material/harvest_J3022_v01/PIA11141.jpg"
 WORK = Path(os.environ.get("STUDIO_SCRATCH", "/Volumes/MiniWork/scratch")) / "J3023_064_trailer_v01"
 OUT_LOCAL = WORK / "064_every_planet_explained_trailer.mp4"

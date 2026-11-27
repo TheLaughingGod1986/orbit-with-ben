@@ -698,9 +698,10 @@
     "upscale": 1.0,
     "video": true,
     "framing": {
-      "offset": 9.0,
-      "note": "J3023 v02 fix: replaced vertical-gutter plate_031_r42a with full-bleed bright ISS orbit plate_031_r25_iss_orbit_cuts_v01.mp4 @ 9.0s"
-    }
+      "offset": 6.0,
+      "note": "J3023 v03 fix: shifted offset 9.0s -> 6.0s (real sunlit ISS/Soyuz Earth horizon, 6.0-8.95s)"
+    },
+    "source_in": 6.0
   },
   {
     "row": 20,
@@ -1197,7 +1198,14 @@
     "video": false,
     "framing": {
       "reframe": "wide",
-      "crop": "full 16:9 or framed inset <=1.95x"
+      "crop": "full 16:9 or framed inset <=1.95x",
+      "crop_xyxy": [
+        0,
+        0,
+        2012,
+        876
+      ],
+      "note": "J3023 v03 fix: cropped bottom black strip [0,0,2012,876] + luminance-keyed onto lifted cosmic navy"
     }
   },
   {
@@ -1210,7 +1218,14 @@
     "video": false,
     "framing": {
       "reframe": "tight",
-      "crop": "full 16:9 or framed inset <=1.95x"
+      "crop": "full 16:9 or framed inset <=1.95x",
+      "crop_xyxy": [
+        0,
+        0,
+        2012,
+        876
+      ],
+      "note": "J3023 v03 fix: cropped bottom black strip [0,0,2012,876] + luminance-keyed onto lifted cosmic navy"
     }
   },
   {
@@ -1223,7 +1238,14 @@
     "video": false,
     "framing": {
       "reframe": "left",
-      "crop": "full 16:9 or framed inset <=1.95x"
+      "crop": "full 16:9 or framed inset <=1.95x",
+      "crop_xyxy": [
+        0,
+        0,
+        2012,
+        876
+      ],
+      "note": "J3023 v03 fix: cropped bottom black strip [0,0,2012,876] + luminance-keyed onto lifted cosmic navy"
     }
   },
   {
@@ -1323,7 +1345,14 @@
     "upscale": 1.05,
     "video": false,
     "framing": {
-      "crop": "full 16:9 or framed inset <=1.95x"
+      "crop": "full 16:9 or framed inset <=1.95x",
+      "crop_xyxy": [
+        0,
+        0,
+        2012,
+        876
+      ],
+      "note": "J3023 v03 fix: cropped bottom black strip [0,0,2012,876] + luminance-keyed onto lifted cosmic navy"
     }
   },
   {
@@ -1814,8 +1843,9 @@
     "upscale": 1.0,
     "video": true,
     "framing": {
-      "offset": 23.5
+      "offset": 46.5,
+      "note": "J3023 v03 fix: shifted offset 23.5s -> 46.5s (high-detail Pluto terrain, std ~17.0, edge ~0.064, >27s after R49)"
     },
-    "source_in": 23.5
+    "source_in": 46.5
   }
 ]

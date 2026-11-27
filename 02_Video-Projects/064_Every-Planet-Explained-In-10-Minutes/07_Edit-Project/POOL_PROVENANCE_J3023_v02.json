@@ -1962,5 +1962,15 @@
       "PIA24542_full.jpg [2500,2200,12100,7600] (removed tan mosaic fill)"
     ],
     "compact_progress_strip": "code_graphic_064_ch01_mercury_progress_strip_v02b.png"
+  },
+  "v03_polish_fixes": {
+    "date": "2026-11-27",
+    "fixes": [
+      "PIA21046.jpg cropped [0,0,2012,876] and luminance-keyed onto lifted cosmic navy (eliminates 0.88/0.90 horizontal gutter split-panel FAILs)",
+      "plate_031_r25_iss_orbit_cuts_v01.mp4 offset 9.0s -> 6.0s (real sunlit ISS/Soyuz Earth horizon; removes red animation & low-detail WARN)",
+      "New Horizons Pluto Flyby R51 offset 23.5s -> 46.5s (high-detail terrain, std ~17.0 / edge ~0.064; eliminates 11:39 low-detail FAIL)",
+      "GLOBE_ON_BLACK reframes no longer rectangular-crop into planet disks (fixes square edges on Mars PIA00407, Neptune PIA01492, etc.)",
+      "PIA19400.jpg tight reframe kept full-bleed 16:9 at <=1.92x (eliminates vertical pillarbox bars at 4:30)"
+    ]
   }
 }
