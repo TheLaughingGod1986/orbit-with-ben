@@ -9,6 +9,26 @@ T0 = dt.datetime(2026, 10, 7, 12, 0, tzinfo=dt.timezone.utc)
 MIN = dt.timedelta(minutes=1)
 
 
+# Never write the real ~/_desk/state: that folder marks a worker machine, and on 27 Nov 2026 a test-made one turned a cloud
+# session into a worker that claimed and released real queue jobs (J3857). Alerts state goes to a temporary folder.
+_HOME_GUARD = []
+
+
+def setUpModule():
+    import os as _os, tempfile as _tempfile
+    from unittest import mock as _mock
+    tmp = _tempfile.mkdtemp()
+    guard = _mock.patch.dict(_os.environ, {"BEN_ALERTS_STATE": _os.path.join(tmp, "alerts", "state.json"),
+                                            "BOARD_STATE": _os.path.join(tmp, "board")})
+    guard.start()
+    _HOME_GUARD.append(guard)
+
+
+def tearDownModule():
+    while _HOME_GUARD:
+        _HOME_GUARD.pop().stop()
+
+
 def _layout(home: bool, studio=None, others=None):
     """Pin which layout a test is about, whichever one it runs in. `home` True is today's: the default channel's repo
     carries the studio and every other channel is beside it. False is the layout after the move: the studio has a

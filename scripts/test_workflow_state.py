@@ -13,6 +13,17 @@ def choose(j,up):
     return 'gemini' if 'gemini' in up else next(iter(up),'')
 
 class Workflow(unittest.TestCase):
+    def test_a_sign_in_hold_is_rechecked_but_a_watch_or_money_hold_is_not(self):
+        # 27 Nov 2026: nine jobs waited a day on "Ben sign-in required" after Ben had signed back in.
+        past = (NOW - dt.timedelta(hours=1)).isoformat()
+        def held(condition, **over):
+            return {"id": "J1", "status": "blocked", "hold": {"type": "ben", "condition": condition, "check_at": past}, **over}
+        self.assertTrue(w.hold_due(held("Ben sign-in required on Mac mini CDP Chrome :9223"), {}, NOW))
+        self.assertTrue(w.hold_due(held("Ben to sign back into Orbit With Ben YouTube Studio on 9223"), {}, NOW))
+        self.assertFalse(w.hold_due(held("Ben approves the spend on Veo Quality"), {}, NOW))
+        self.assertFalse(w.hold_due(held("Ben sign-in required on :9223", awaits_ben={"what": "watch"}), {}, NOW))
+        self.assertFalse(w.hold_due(held("Ben sign-in required on :9223", needs="ben"), {}, NOW))
+
     def test_shared_video_job_retains_production_priority(self):
         repair = job('J1471', taskKeys=['OWB:030'])
         repair['created_at'] = '2026-10-25T08:00Z'
