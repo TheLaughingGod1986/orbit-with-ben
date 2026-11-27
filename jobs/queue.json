@@ -352433,10 +352433,10 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T00:53Z",
+      "eta": "2026-11-27T02:53Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T00:43Z",
       "result": "",
@@ -352445,12 +352445,25 @@
           "at": "2026-11-27T00:43Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T00:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audit C01-C23, F1-F5, and ARCHIVE_PROVENANCE.md on ww2-channel PR #197 and write CLAIMS_CHECK_v01.md",
       "due": "2026-12-14T18:00:00Z",
       "kind": "facts",
-      "plain": "Independently check all 23 historical claims and 38 archive photo sources for Battle of the Bulge (016)"
+      "plain": "Independently check all 23 historical claims and 38 archive photo sources for Battle of the Bulge (016)",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T00:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3831",
