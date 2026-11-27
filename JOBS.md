@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3857 | mini | open | – | – | for gemini · review · Publish completed Chief review record for J3853 |  |
 | J3858 | mini | blocked | gemini | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 | J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
-| J3860 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-27 |  |
+| J3860 | mini | claimed | gemini | 2026-11-27T18:42Z | studio · Field Order History channel totals read 2026-11-27 |  |
 | J3866 | any | open | – | – | for gemini · review · Publish completed Chief review record for J3856 |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
