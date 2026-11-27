@@ -360377,13 +360377,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T15:05Z",
-      "eta": "2026-11-27T17:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T15:04Z",
-      "result": "",
+      "result": "parked for Chief: J3012 condition NOT met. J3900 delivered the cancellation/descendant-drain fix as PR #1389 (head 5631f820b0, includes unmerged #1387; macbook-2 reports 62 mocked tests pass), but PR #1389 is OPEN with 0 reviews and 0 comments, and no Chief re-review of the changed head is recorded in the queue, the thread or jobs/reviews/J3012. J3012 stays blocked at 3/4; no live activation, no merge. Recording the recheck is Chief-only. Chief: review PR #1389 at 5631f820b0; if FIX/pending run: python3 scripts/jobs.py wait J3012 --agent <chief> --condition 'Elected Chief re-reviews PR #1389 at 5631f820b0 (J3900 cancellation and persisted-descendant drain fixes plus regression tests) before a separate live coordination child. Preserve 3/4 and all gates. No live activation.' --check-at '2026-11-27T19:00Z' --type input --recheck J3915 --git, then finish J3915.",
       "history": [
         {
           "at": "2026-11-27T15:04Z",
@@ -360404,6 +360404,11 @@
           "at": "2026-11-27T15:06Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Condition unmet: J3900 done (PR #1389 head 5631f820b0, 62 mocked tests reported passing) but PR is OPEN with 0 reviews/0 comments; no Chief re-review in queue, thread or jobs/reviews/J3012"
+        },
+        {
+          "at": "2026-11-27T15:06Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3012 condition NOT met. J3900 delivered the cancellation/descendant-drain fix as PR #1389 (head 5631f820b0, includes unmerged #1387; macbook-2 reports 62 mocked tests pass), but PR #1389 is OPEN with 0 reviews and 0 comments, and no Chief re-review of the changed head is recorded in the queue, the thread or jobs/reviews/J3012. J3012 stays blocked at 3/4; no live activation, no merge. Recording the recheck is Chief-only. Chief: review PR #1389 at 5631f820b0; if FIX/pending run: python3 scripts/jobs.py wait J3012 --agent <chief> --condition 'Elected Chief re-reviews PR #1389 at 5631f820b0 (J3900 cancellation and persisted-descendant drain fixes plus regression tests) before a separate live coordination child. Preserve 3/4 and all gates. No live activation.' --check-at '2026-11-27T19:00Z' --type input --recheck J3915 --git, then finish J3915."
         }
       ],
       "remaining_action": "Chief re-review of PR 1389, then record the J3012 wait",
