@@ -351703,9 +351703,14 @@
           "at": "2026-11-27T10:03Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified all 12 J3835 SHA256SUMS, PIA00215 NAS hash & 16:9 crops (0 data gaps, <=0.941x), PIA00233 removed from executable R11, PIA18033 Suomi NPP attribution fixed across all records, all 3 v02 thumbs visual+score PASS, 0 title/hook overlap, SHOT_LIST_v02 0:00-32.85 <=4.0s & R09 clean"
+        },
+        {
+          "at": "2026-11-27T10:06Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Fresh post-J3835 advisory KEEP committed at b597831b68 on PR #1359 (cleanly atop PR #1361 9ff96bd97b, MERGE_TREE_CLEAN=YES); superseded PR #1358 converted to Draft with warning comment"
         }
       ],
-      "remaining_action": "Write fresh post-J3835 REVIEW.md on top of PR #1361 (9ff96bd97), reconcile PRs #1358/#1359, and park for Chief",
+      "remaining_action": "Await elected Chief PASS, merge of PR #1361 and PR #1359, closure of Draft PR #1358, and J3022 hold release",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351722,9 +351727,9 @@
       ],
       "escalated_at": "2026-11-27T02:25Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-27T10:03Z",
+        "at": "2026-11-27T10:06Z",
         "by": "gemini",
         "plan": [
           "Inspect J3829 FIX, J3835 PR #1361 and NAS hashes",
@@ -351732,7 +351737,7 @@
           "Verify SHOT_LIST_v02, executable inputs, credits and T045",
           "Write fresh REVIEW.md, reconcile PRs #1358/#1359/#1361 and report"
         ],
-        "note": "Verified all 12 J3835 SHA256SUMS, PIA00215 NAS hash & 16:9 crops (0 data gaps, <=0.941x), PIA00233 removed from executab"
+        "note": "Fresh post-J3835 advisory KEEP committed at b597831b68 on PR #1359 (cleanly atop PR #1361 9ff96bd97b, MERGE_TREE_CLEAN=Y"
       }
     },
     {
