@@ -353693,9 +353693,14 @@
           "at": "2026-11-27T18:27Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:27Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Review and merge WW2 PR213, verify the published script-lock hashes, then finish the script review",
+      "remaining_action": "Check the corrected Ohio script and independent fact review",
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the corrected Operation Pedestal script before recording",
@@ -353707,8 +353712,11 @@
         "of": 3,
         "at": "2026-11-27T18:27Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify exact script and claims",
+          "Review opening and full story",
+          "Publish decision and next job"
+        ]
       }
     },
     {
