@@ -352716,10 +352716,10 @@
       "stage": "script",
       "after": "J3830",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-27T07:40Z",
-      "eta": "2026-11-27T09:40Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T00:44Z",
       "result": "",
@@ -352793,6 +352793,11 @@
           "at": "2026-11-27T07:40Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T07:42Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-27T09:42:13Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Correct the closing convoy line, refresh checks, and finish the script lock review",
