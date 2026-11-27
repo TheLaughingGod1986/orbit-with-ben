@@ -360173,6 +360173,11 @@
           "at": "2026-11-27T21:35Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified canonical NAS v03 MP4 (75,099,108 B, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402), cover (0e5b9937...), frame0 (0e05827a...), merged PR #1399 (df709ca) and PR #1412 (920d601)"
+        },
+        {
+          "at": "2026-11-27T21:35Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch OWB 064 Short 1 (Test A opening v03, 30.75 s, Chief PASS): Why Does Water Ice Survive 430°C Heat on Mercury? (by 2026-12-13 18:00 London)"
         }
       ],
       "remaining_action": "Register Ben phone UAT watch for canonical NAS v03 via jobs.py awaits",
@@ -360194,6 +360199,16 @@
           "Verify board publish, board check, and post studio thread report"
         ],
         "note": "Verified canonical NAS v03 MP4 (75,099,108 B, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402), "
+      },
+      "awaits_ben": {
+        "what": "Watch OWB 064 Short 1 (Test A opening v03, 30.75 s, Chief PASS): Why Does Water Ice Survive 430°C Heat on Mercury?",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03.mp4",
+        "version": "v03",
+        "due": "2026-12-13T18:00Z",
+        "ifNot": "Hold unscheduled until Ben watches and approves; never upload or schedule without Ben's UAT OK, and never upload or air before OWB 064 long is public on Wed 16 Dec 2026 18:00 London (candidate slot Mon 28 Dec 2026 11:30 London)",
+        "title": "Why Does Water Ice Survive 430°C Heat on Mercury?",
+        "number": "064 Short 1",
+        "type": "short"
       }
     },
     {
