@@ -353354,9 +353354,14 @@
           "at": "2026-11-27T01:42Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T01:42Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Direct read_file probe confirmed audio_input and image_input only; P01_03a_unlabelled_birds_t2.mp4 returned 8 discrete 1-fps stills (00:00..00:07), not continuous 24-fps moving_video_input. Recorded honest capabilities."
         }
       ],
-      "remaining_action": "Probing direct read_file media capabilities and checking capabilities, threads, PRs, and NAS hashes",
+      "remaining_action": "Reviewing HOS #694, OWB #954, open PRs, and worker capabilities",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -353373,7 +353378,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-27T01:42Z",
         "by": "gemini",
@@ -353382,7 +353387,8 @@
           "Check HOS #694, OWB #954, PRs and agent capabilities",
           "Verify 6/6 NAS archive hashes and preserved state",
           "Update J3756 hold, write review evidence, post report and close J3840"
-        ]
+        ],
+        "note": "Direct read_file probe confirmed audio_input and image_input only; P01_03a_unlabelled_birds_t2.mp4 returned 8 discrete 1"
       },
       "taskKeys": [
         "HOS:013"
