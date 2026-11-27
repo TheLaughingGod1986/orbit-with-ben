@@ -353295,13 +353295,26 @@
           "at": "2026-11-27T01:40Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T01:40Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Wait for J3718 (Cursor reset 2026-11-26T11:00Z) and J3719 (DECISION.md, 24 h cutoff 2026-11-26T14:39Z), then retain DECISION.md, apply approved packaging/opening ",
       "kind": "review",
       "recheck_of": "J3022",
       "due": "2026-11-27T02:40:34+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3840",
