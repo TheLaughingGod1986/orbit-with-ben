@@ -1,5 +1,5 @@
 {
-  "next_id": 3863,
+  "next_id": 3865,
   "jobs": [
     {
       "id": "J0001",
@@ -282339,6 +282339,11 @@
           "at": "2026-11-27T06:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T08:30:00Z"
+        },
+        {
+          "at": "2026-11-27T07:34Z",
+          "by": "relay",
+          "what": "condition verification queued: J3863"
         }
       ],
       "remaining_action": "Await publication of the reviewed Pluto decision through J3861",
@@ -282363,7 +282368,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3855 Chief review authorizes privacy-corrected candidate 40c6ca5114 through Claude Code publication job J3861, after J3855. J3861 must publish through its applicable approved route and record origin/main merge evidence; elected Chief must verify and close J3115 before J3119. Original rejection and metadata correction recorded in J3855 ruling. No upload yet.",
-        "check_at": "2026-11-27T08:30:00Z"
+        "check_at": "2026-11-27T08:34:00+00:00",
+        "recheck_task": "J3863"
       }
     },
     {
@@ -351459,6 +351465,11 @@
           "at": "2026-11-27T01:33Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload."
+        },
+        {
+          "at": "2026-11-27T07:34Z",
+          "by": "relay",
+          "what": "condition verification queued: J3864"
         }
       ],
       "remaining_action": "Repair the opener and loop gates, then obtain Short review",
@@ -351483,7 +351494,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload.",
-        "check_at": "2026-11-27T07:33:32+00:00"
+        "check_at": "2026-11-27T08:34:00+00:00",
+        "recheck_task": "J3864"
       }
     },
     {
@@ -355316,6 +355328,68 @@
       "taskKeys": [
         "WW2:016"
       ]
+    },
+    {
+      "id": "J3863",
+      "title": "Verify condition for J3115",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3115: J3855 Chief review authorizes privacy-corrected candidate 40c6ca5114 through Claude Code publication job J3861, after J3855. J3861 must publish through its applicable approved route and record origin/main merge evidence; elected Chief must verify and close J3115 before J3119. Original rejection and metadata correction recorded in J3855 ruling. No upload yet.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3115 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T07:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T07:34Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await publication of the reviewed Pluto decision through J3861",
+      "kind": "review",
+      "recheck_of": "J3115",
+      "due": "2026-11-27T08:34:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3864",
+      "title": "Verify condition for J3816",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3816: publish via Claude Code: /Volumes/MiniWork/scratch/J3816-hos codex/J3816 (2922143e). Internal HOS 009 apple Short v02 exists on NAS; opener-motion FAIL 1.14 < 1.50 and terminal-return reuse FAIL. Repair required before Short PASS; do not merge as approved or send to Ben UAT. No spend or upload.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3816 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T07:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T07:34Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Repair the opener and loop gates, then obtain Short review",
+      "kind": "review",
+      "recheck_of": "J3816",
+      "due": "2026-11-27T08:34:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

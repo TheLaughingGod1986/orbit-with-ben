@@ -99,6 +99,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3858 | mini | claimed | gemini | 2026-11-27T09:27Z | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 | J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
 | J3860 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-27 |  |
+| J3863 | mini | open | – | – | review · Verify condition for J3115 |  |
+| J3864 | mini | open | – | – | review · Verify condition for J3816 |  |
 
 Recently finished:
 
