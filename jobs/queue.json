@@ -357210,13 +357210,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T18:03Z",
-      "eta": "2026-11-27T20:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:29Z",
-      "result": "",
+      "result": "KEEP for record publication only. PR1407 merged 2026-11-27T18:02:09Z, merge da8a6b7f20b83dbda859b37e8f31557a2429c293, reviewed head 54fd3acb203c5b897372eceb8d2f63f5d5a7d290. One text review file; full privacy audit and 13 email/network tests PASS; diff whitespace clean. No hosted checks apply: jobs-only paths excluded by workflows. J3864 historical FIX ruling preserved. J3816 remains blocked; concrete follow-up J3874 loop-gate decision -> J3871 repair -> J3872 capable exact-version review. J3871 dependency checkpoint remains 2026-11-28T06:00Z. HOS PR811 and PR814 independently read OPEN/draft. No Short PASS, UAT, upload or spending. This publication review is complete.",
       "history": [
         {
           "at": "2026-11-27T08:29Z",
@@ -357267,6 +357267,11 @@
           "at": "2026-11-27T18:03Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review complete: PR1407 merged da8a6b7f20 after exact diff review and 13 passing privacy tests. J3816 held; J3874 loop decision then J3871 repair and J3872 capable review. HOS PR811 and PR814 remain drafts."
+        },
+        {
+          "at": "2026-11-27T18:03Z",
+          "by": "codex",
+          "what": "done: KEEP for record publication only. PR1407 merged 2026-11-27T18:02:09Z, merge da8a6b7f20b83dbda859b37e8f31557a2429c293, reviewed head 54fd3acb203c5b897372eceb8d2f63f5d5a7d290. One text review file; full privacy audit and 13 email/network tests PASS; diff whitespace clean. No hosted checks apply: jobs-only paths excluded by workflows. J3864 historical FIX ruling preserved. J3816 remains blocked; concrete follow-up J3874 loop-gate decision -> J3871 repair -> J3872 capable exact-version review. J3871 dependency checkpoint remains 2026-11-28T06:00Z. HOS PR811 and PR814 independently read OPEN/draft. No Short PASS, UAT, upload or spending. This publication review is complete."
         }
       ],
       "remaining_action": "Publication review complete; production remains with the existing repair and review jobs",
@@ -357295,7 +357300,8 @@
         "model": "",
         "status": "blocked",
         "by": "gemini"
-      }
+      },
+      "done_ref": "da8a6b7f20b83dbda859b37e8f31557a2429c293"
     },
     {
       "id": "J3874",
