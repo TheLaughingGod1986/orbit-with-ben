@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3864 | mini | blocked | claudecode | – | review · Verify condition for J3816 |  |
 | J3865 | mini | open | – | – | 032 edit · assembly · Titan Short v03: correct Cassini picture and readable teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 | J3866 | any | open | – | – | for claudecode · review · Publish completed Chief review record for J3856 |  |
-| J3868 | mini | claimed | macbook | 2026-11-27T10:06Z | review · Verify condition for J3819 |  |
+| J3868 | mini | blocked | macbook | – | review · Verify condition for J3819 |  |
 
 Recently finished:
 

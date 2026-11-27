@@ -355877,13 +355877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-27T08:06Z",
-      "eta": "2026-11-27T10:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T08:05Z",
-      "result": "",
+      "result": "parked for Chief: J3819 condition VERIFIED SATISFIED (OWB PR #1369, branch macbook/J3868, commit 104eab1d3, jobs/reviews/J3868/REVIEW.md; 26/26 ratchet/privacy tests + channel_check PASS). J3855 Chief ruling authorized candidate 40c6ca5114 (Codex <>, no trailers; a4c9c8f534/6b85fc0248 not ancestors); J3861 published via PR #1367 merged 2026-11-27T06:49:22Z (merge 63265bea07 on origin/main, all 9 files unchanged); acting Chief codex closed J3863 and reopened J3115 at 08:10Z; 8/8 NAS SHA-256 hashes match HASH_CHECK.json. 034 status.json (thumbs blocked ref J3115,J3828), linked successor J3828 (after J3115), J3119 (Ben v02 approval 18 Nov 22:16Z), T044 (proposed) and Shorts J3065/J3066 holds remain intact. jobs.py reopen J3819 is Chief-only (Chief: Codex). Chief action: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868. No upload, schedule, Buffer change or spend.",
       "history": [
         {
           "at": "2026-11-27T08:05Z",
@@ -355919,6 +355919,11 @@
           "at": "2026-11-27T08:13Z",
           "by": "macbook",
           "what": "step 4 of 4 done: PR #1369 open on macbook/J3868; parking for Chief (reopen is Chief-only)"
+        },
+        {
+          "at": "2026-11-27T08:13Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J3819 condition VERIFIED SATISFIED (OWB PR #1369, branch macbook/J3868, commit 104eab1d3, jobs/reviews/J3868/REVIEW.md; 26/26 ratchet/privacy tests + channel_check PASS). J3855 Chief ruling authorized candidate 40c6ca5114 (Codex <>, no trailers; a4c9c8f534/6b85fc0248 not ancestors); J3861 published via PR #1367 merged 2026-11-27T06:49:22Z (merge 63265bea07 on origin/main, all 9 files unchanged); acting Chief codex closed J3863 and reopened J3115 at 08:10Z; 8/8 NAS SHA-256 hashes match HASH_CHECK.json. 034 status.json (thumbs blocked ref J3115,J3828), linked successor J3828 (after J3115), J3119 (Ben v02 approval 18 Nov 22:16Z), T044 (proposed) and Shorts J3065/J3066 holds remain intact. jobs.py reopen J3819 is Chief-only (Chief: Codex). Chief action: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868. No upload, schedule, Buffer change or spend."
         }
       ],
       "remaining_action": "Elected Chief: merge PR #1369, reopen/resolve J3819 alongside J3115/J3828, and close J3868",
