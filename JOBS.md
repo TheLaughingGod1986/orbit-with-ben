@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
 | J3941 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
-| J3942 | mini | open | – | – | review · Verify condition for J3780 |  |
+| J3942 | mini | claimed | gemini | 2026-11-27T20:56Z | review · Verify condition for J3780 |  |
 
 Recently finished:
 
