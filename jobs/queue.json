@@ -274609,13 +274609,13 @@
       "stage": "picture",
       "after": "J3021",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T14:17Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "Waiting for: Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md",
+      "result": "J3883 Chief KEEP integrated in PR #1359 (9b3ca6cb52), including #1361 corrections and fresh independent J3818 review. Exact NAS evidence verified; #1358 closed unmerged. Preparation package accepted; executable v02 opening/R09 synchronization and split Mercury renders explicitly belong to J3023 before final gates.",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274686,17 +274686,27 @@
           "at": "2026-11-27T12:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T16:31:06Z"
+        },
+        {
+          "at": "2026-11-27T10:29Z",
+          "by": "codex",
+          "what": "Chief completion reconciliation under J3883 (no additional job claimed): J3883 Chief KEEP integrated in PR #1359 (9b3ca6cb52), including #1361 corrections and fresh independent J3818 review. Exact NAS evidence verified; #1358 closed unmerged. Preparation package accepted; executable v02 opening/R09 synchronization and split Mercury renders explicitly belong to J3023 before final gates."
+        },
+        {
+          "at": "2026-11-27T12:50Z",
+          "by": "claudecode",
+          "what": "J3898: published J3883 integration records onto current main (hold cleared; completion reconciled per jobs/reviews/J3883/REVIEW.md)."
         }
       ],
-      "remaining_action": "Publish the approved integration records through Claude Code, then verify the assembly handoff",
+      "remaining_action": "Complete; assembly continues in J3023",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-25T14:39Z",
-        "by": "gemini",
+        "at": "2026-11-27T10:29Z",
+        "by": "codex",
         "plan": [
           "Audit shelf media and fetch NASA plates",
           "Build timestamped shot list and provenance pool",
@@ -274705,26 +274715,19 @@
           "Finalize film-specific music plan and hashes",
           "Commit package and queue packaging panel"
         ],
-        "note": "Merged PR #1326: shot_list_v01 (clip_check PASS 54 rows), cuts/pool/provenance (picture_qa PASS 0/86 fail), 25 fresh 24f"
+        "note": "J3883 verified and integrated the completed deliverables; final assembly gates remain required."
       },
       "taskKeys": [
         "OWB:064"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3898: Claude Code must privacy-review and publish the completed J3883 integration branch codex/J3883-integration (034d41fbc5), merge with current main and verify J3818/J3022 completion records plus mandatory J3023 v02 handoff. PRs 1359/1361 already merged 9b3ca6cb52 and 1358 closed unmerged; creative acceptance is complete, publication/read-back is not. J3023.after remains J3022. Preserve all existing gates and dates.",
-        "check_at": "2026-11-27T16:31:06Z",
-        "last_recheck": "J3897",
-        "checked_at": "2026-11-27T12:38:51+00:00",
-        "checked_by": "codex"
-      }
+      "done_ref": "jobs/reviews/J3883/REVIEW.md"
     },
     {
       "id": "J3023",
       "title": "OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board",
       "needs": "mini",
       "repo": "owb",
-      "body": "J3011: Ben locked OWB:064 Every Planet Explained in 10 Minutes (Mercury to Neptune), in chat on 17 Nov 2026 (\"Lock it.\"). Planned air slot Wed 16 Dec 2026 18:00 London; finished cut on Ben's board no later than Fri 11 Dec 18:00 London. Read AGENTS.md, studio/RULES.md and 02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md, especially section 6. This is the approved format test, not permission to restart paused single-question longs. Four sequential build packages. No upload, scheduling, privacy changes or live metadata changes in this build. No dated film moves. £0 cash, zero Flow/Vertex credits, no top-up, upgrade or paid overage. Working media belongs on studio-live, scratch on STUDIO_SCRATCH, no media/secrets/account addresses in git. Claim the film stage, report honest progress with --films OWB:064, preserve exact versions and submit evidence. Long work starts detached with log and done file. All existing channel gates remain; the concept sheet is not a waiver.\n\nBuild package 4 of 4: assemble the complete ten-minute film from the locked narration and reviewed picture/graphics/three thumbnails. CFR 24 fps; preserve sentence ends, house transitions, chapter timing, full-runtime film-specific music, SFX and separate stems. No new paid media generation. Run picture_qa, polish_gate, music_gate, sfx_kit level, clip_check with word timing and gate:episode; all must PASS, with flagged frames inspected and the teach/polish reviews recorded. Use the review lane for completed-cut QA; if separate QA jobs are necessary, keep this package pending until they finish. Passing measurements/stills are not a claim of actual hearing or motion perception. Preserve the current and prior master, hash the exact final file, copy it to the film NAS folder and verify the checksum. Prepare listing/source credits/social copy and the required trailer; package review must pass before delivery. By Fri 11 Dec 18:00 London, set jobs.py awaits with the playable cut and matching thumbnails on the board, checking the correct card and review state. Ben's final watch supplies the actual watch/listen. Do not mark a film approved or schedule/upload it in this job. Queue the normal approved-delivery handoff after his watch with the reserved Wed 16 Dec 18:00 slot. Ensure the two companion Shorts required by the channel get linked follow-up work using the sheet concepts, existing gates and no extra spend authorization; do not quietly expand the 8,000-character long-VO scope.\n",
+      "body": "J3011: Ben locked OWB:064 Every Planet Explained in 10 Minutes (Mercury to Neptune), in chat on 17 Nov 2026 (\"Lock it.\"). Planned air slot Wed 16 Dec 2026 18:00 London; finished cut on Ben's board no later than Fri 11 Dec 18:00 London. Read AGENTS.md, studio/RULES.md and 02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md, especially section 6. This is the approved format test, not permission to restart paused single-question longs. Four sequential build packages. No upload, scheduling, privacy changes or live metadata changes in this build. No dated film moves. £0 cash, zero Flow/Vertex credits, no top-up, upgrade or paid overage. Working media belongs on studio-live, scratch on STUDIO_SCRATCH, no media/secrets/account addresses in git. Claim the film stage, report honest progress with --films OWB:064, preserve exact versions and submit evidence. Long work starts detached with log and done file. All existing channel gates remain; the concept sheet is not a waiver.\n\nBuild package 4 of 4: assemble the complete ten-minute film from the locked narration and reviewed picture/graphics/three thumbnails. CFR 24 fps; preserve sentence ends, house transitions, chapter timing, full-runtime film-specific music, SFX and separate stems. No new paid media generation. Run picture_qa, polish_gate, music_gate, sfx_kit level, clip_check with word timing and gate:episode; all must PASS, with flagged frames inspected and the teach/polish reviews recorded. Use the review lane for completed-cut QA; if separate QA jobs are necessary, keep this package pending until they finish. Passing measurements/stills are not a claim of actual hearing or motion perception. Preserve the current and prior master, hash the exact final file, copy it to the film NAS folder and verify the checksum. Prepare listing/source credits/social copy and the required trailer; package review must pass before delivery. By Fri 11 Dec 18:00 London, set jobs.py awaits with the playable cut and matching thumbnails on the board, checking the correct card and review state. Ben's final watch supplies the actual watch/listen. Do not mark a film approved or schedule/upload it in this job. Queue the normal approved-delivery handoff after his watch with the reserved Wed 16 Dec 18:00 slot. Ensure the two companion Shorts required by the channel get linked follow-up work using the sheet concepts, existing gates and no extra spend authorization; do not quietly expand the 8,000-character long-VO scope.\n\n\nJ3883 formal integration handoff (27 Nov 2026; jobs/reviews/J3883/REVIEW.md; PR #1359 merged 9b3ca6cb52 including #1361, #1358 closed unmerged): corrected preparation package KEEP. Before rendering, generate NEW v02 executable cuts/pool/provenance synchronized to SHOT_LIST_v02 opening R01a-R04b and R09. Remove PIA00271 from active inputs; use PIA23791 right globe plus pvo_uv_790205 for R09. Render code_graphic_064_r03a_mercury_sunlight.mp4, code_graphic_064_r03b_mercury_night.mp4 and the revised 01 / 08 MERCURY progress strip. NEVER run historical build_j3022_plan_and_pool.py or render from old v01 cut inputs. Preserve required R11 PIA00215 hash 46dc965a02d4bff533685892ad16a76845a384d482ffaedda024c870b5b8a7b4, crop (350,600,2550,1838), optional push (430,645,2470,1793), 118.05-124.40 s, and following graphic through 130.75 s. Preserve corrected PIA18033 NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring credit and locked VO. Enforce picture cadence and reuse across ALL narration blocks, not only the first 33 seconds. Require picture_qa on final v02 inputs, polish_gate, music_gate on actual laid score (stored v01 PASS has comparison-input warnings), sfx_kit level, clip_check with word timing, gate:episode, flagged-frame inspection, chapter teaching/polish review and completed-cut/package QA before UAT. Verify final runtime/title and chapter timestamps. T045 remains proposed/video null. Ben watch 11 Dec 18:00 London and air 16 Dec 18:00 London unchanged; no upload/schedule/test arming/spend. This job stays after completed J3022.\n",
       "ref": "J3011",
       "film": "064",
       "stage": "edit",
@@ -274742,12 +274745,20 @@
           "at": "2026-11-17T23:36Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T10:29Z",
+          "by": "codex",
+          "what": "J3883: accepted preparation package; added mandatory v02 opening/R09, split graphics, source-credit and final-gate handoff; after J3022 preserved."
         }
       ],
-      "remaining_action": "Assemble and check the every-planet film, then put it on Ben’s watch board",
+      "remaining_action": "Build corrected opening and Venus edit inputs, then assemble and check the every-planet film",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
-      "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board"
+      "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3024",
@@ -351853,13 +351864,13 @@
       "stage": "thumbs",
       "after": "J3817",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-27T09:58Z",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-26T23:45Z",
-      "result": "parked for Chief: fresh post-J3835 advisory KEEP recorded in PR #1359 (commit b597831b68, cleanly atop PR #1361 9ff96bd97b, zero conflicts). All J3829 FIX items verified (PIA00233 removed from executable R11 & replaced by verified real Magellan overhead SAR PIA00215 sha256=46dc965a... with 0-gap 16:9 crops <=0.941x; PIA18033 credited to NASA/NOAA Suomi NPP Blue Marble 2012 across all 8 records with 4 NAS JPEG hashes unchanged; 12/12 J3835 SHA256SUMS match; locked VO unchanged; T045 proposed/video:null; all 3 v02 thumbs visual+score PASS; 0 title/hook overlap; SHOT_LIST_v02 opening <=4.0s & R09 clean). Superseded PR #1358 converted to Draft with DO-NOT-MERGE comment. Chief (codex): issue formal PASS, merge PR #1361 then PR #1359 (zero conflicts), close Draft PR #1358 unmerged, clear J3022 hold, and advance J3023 assembly (including SHOT_LIST_v02 opening/R09 sync & split Mercury graphics) ahead of Ben's Fri 11 Dec 18:00 London watch.",
+      "result": "J3883 Chief KEEP integrated in PR #1359 (9b3ca6cb52), including #1361 corrections and fresh independent J3818 review. Exact NAS evidence verified; #1358 closed unmerged. Independent review accepted.",
       "history": [
         {
           "at": "2026-11-26T23:45Z",
@@ -351965,9 +351976,19 @@
           "at": "2026-11-27T12:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T10:29Z",
+          "by": "codex",
+          "what": "Chief completion reconciliation under J3883 (no additional job claimed): J3883 Chief KEEP integrated in PR #1359 (9b3ca6cb52), including #1361 corrections and fresh independent J3818 review. Exact NAS evidence verified; #1358 closed unmerged. Independent review accepted."
+        },
+        {
+          "at": "2026-11-27T12:50Z",
+          "by": "claudecode",
+          "what": "J3898: published J3883 integration records onto current main (hold cleared; completion reconciled per jobs/reviews/J3883/REVIEW.md)."
         }
       ],
-      "remaining_action": "Complete J3883 integration decision before releasing planet-film assembly",
+      "remaining_action": "Complete; assembly continues in J3023",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Review rebuilt OWB 064 v02 thumbnails and SHOT_LIST_v02 against DECISION.md before assembly",
@@ -351986,24 +352007,17 @@
       "progress": {
         "step": 4,
         "of": 4,
-        "at": "2026-11-27T10:06Z",
-        "by": "gemini",
+        "at": "2026-11-27T10:29Z",
+        "by": "codex",
         "plan": [
           "Inspect J3829 FIX, J3835 PR #1361 and NAS hashes",
           "Visually inspect v02 thumbnails and PIA00215 R11 crop",
           "Verify SHOT_LIST_v02, executable inputs, credits and T045",
           "Write fresh REVIEW.md, reconcile PRs #1358/#1359/#1361 and report"
         ],
-        "note": "Fresh post-J3835 advisory KEEP committed at b597831b68 on PR #1359 (cleanly atop PR #1361 9ff96bd97b, MERGE_TREE_CLEAN=Y"
+        "note": "J3883 verified and integrated the completed deliverables; final assembly gates remain required."
       },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3883 records formal corrected-package ruling, integrates accepted PRs #1361/#1359, reconciles superseded #1358 and verifies J3022 completion with J3023 opening/R09 and graphics requirements preserved",
-        "check_at": "2026-11-27T16:10:00Z",
-        "last_recheck": "J3882",
-        "checked_at": "2026-11-27T10:20:47+00:00",
-        "checked_by": "codex"
-      }
+      "done_ref": "jobs/reviews/J3883/REVIEW.md"
     },
     {
       "id": "J3819",
