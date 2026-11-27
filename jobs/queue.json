@@ -1,5 +1,5 @@
 {
-  "next_id": 3888,
+  "next_id": 3889,
   "jobs": [
     {
       "id": "J0001",
@@ -273861,6 +273861,11 @@
           "at": "2026-11-27T10:51Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T11:20:00Z"
+        },
+        {
+          "at": "2026-11-27T11:20Z",
+          "by": "relay",
+          "what": "condition verification queued: J3888"
         }
       ],
       "remaining_action": "Review MacBook staging evidence, then coordinate the drain, fresh queue export and live migration acceptance",
@@ -273897,7 +273902,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3885 has completed both MacBook runtime clones and launcher/guard readiness evidence; review PR 1375 checks and reconcile both machines before the coordinated drain. Mini runtime and private rehearsal eda81876 are staged; neither contains a frozen production queue.",
-        "check_at": "2026-11-27T11:20:00Z"
+        "check_at": "2026-11-27T12:20:04+00:00",
+        "recheck_task": "J3888"
       }
     },
     {
@@ -357711,6 +357717,37 @@
       "taskKeys": [
         "HOS:128"
       ]
+    },
+    {
+      "id": "J3888",
+      "title": "Verify condition for J3012",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3012: J3885 has completed both MacBook runtime clones and launcher/guard readiness evidence; review PR 1375 checks and reconcile both machines before the coordinated drain. Mini runtime and private rehearsal eda81876 are staged; neither contains a frozen production queue.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3012 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T11:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T11:20Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review MacBook staging evidence, then coordinate the drain, fresh queue export and live migration acceptance",
+      "kind": "review",
+      "recheck_of": "J3012",
+      "due": "2026-11-27T12:20:04+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
