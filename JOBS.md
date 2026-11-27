@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
 | J3831 | mini | blocked | macbook | – | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
-| J3833 | gemini | open (after J3832) | – | – | WW2:009 sources · facts · WW2 009: independent v06 claims check | ww2-channel#198 |
+| J3833 | gemini | claimed | gemini | 2026-11-27T03:22Z | WW2:009 sources · facts · WW2 009: independent v06 claims check | ww2-channel#198 |
 | J3834 | any | open (after J3833) | – | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3836 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3837 | mini | blocked | macbook | – | review · Verify condition for J3831 |  |
