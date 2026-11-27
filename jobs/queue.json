@@ -354877,13 +354877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T06:41Z",
-      "eta": "2026-11-27T08:41Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:36Z",
-      "result": "",
+      "result": "parked for Chief: Short v02 review (032 dry_desert_two_oceans v02, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 34c800a4a9bf, PR #1366 commit 1a50bad01d, #99 posted; v01 preserved, J3853 held)",
       "history": [
         {
           "at": "2026-11-27T06:36Z",
@@ -354939,6 +354939,11 @@
           "at": "2026-11-27T07:26Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Pushed commit 1a50bad01d to PR #1366, posted #99 report, verified NAS v02 master sha256 34c800a4a9bf beside untouched v01 (07ef33e02198), 7/7 gates + 13 canonical NAS MP3 beds PASS"
+        },
+        {
+          "at": "2026-11-27T07:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short v02 review (032 dry_desert_two_oceans v02, 26.90s, 7/7 gates + 13 canonical MP3 beds PASS, NAS sha256 34c800a4a9bf, PR #1366 commit 1a50bad01d, #99 posted; v01 preserved, J3853 held)"
         }
       ],
       "remaining_action": "Waiting for Chief exact-file v02 review of 032 Titan dry_desert_two_oceans v02 and PR #1366",
