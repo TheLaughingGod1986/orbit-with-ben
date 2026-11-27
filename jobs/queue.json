@@ -354487,9 +354487,14 @@
           "at": "2026-11-27T05:50Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T05:50Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Correct the source brief with an unused compliant spoken opener before building",
+      "remaining_action": "Read J3815 and its source-audit evidence",
       "kind": "review",
       "recheck_of": "J3815",
       "due": "2026-11-27T06:48:20+00:00",
@@ -354507,8 +354512,11 @@
         "of": 3,
         "at": "2026-11-27T05:50Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3815 and its evidence",
+          "Check whether the condition is met",
+          "Record result and report"
+        ]
       }
     }
   ],
