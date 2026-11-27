@@ -361960,9 +361960,14 @@
           "at": "2026-11-27T19:05Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Verified exact canonical v03 master/stem/SRT/thumb hashes, preserved v01/v02 hashes, bit-exact v02==v03 video stream copy, and directly heard all 4 sentences / 71 words in v03_vo.wav and full v03.mp4 mix"
+        },
+        {
+          "at": "2026-11-27T19:10Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Watched full v03.mp4 moving video, inspected all 5 picture_qa WARNs, 12-shot sheet, open sheet, phone previews, and boundary frames; independently passed 7/7 gates + canonical 13-bed MP3 music gate"
         }
       ],
-      "remaining_action": "Inspecting flagged frames/phone previews and independently re-running all 7 gates, 13-bed music check, speech regression, and dry-run",
+      "remaining_action": "Finalizing independent gate/dry-run/dither verification and preparing exact-hash KEEP review",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
@@ -361978,9 +361983,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T19:05Z",
+        "at": "2026-11-27T19:10Z",
         "by": "gemini",
         "plan": [
           "Probe audio/video inputs & read prior PRs",
@@ -361990,7 +361995,7 @@
           "Re-run gates, 13-bed music, dry-run & regression",
           "Write exact-hash KEEP/FIX review & route to Chief"
         ],
-        "note": "Verified exact canonical v03 master/stem/SRT/thumb hashes, preserved v01/v02 hashes, bit-exact v02==v03 video stream cop"
+        "note": "Watched full v03.mp4 moving video, inspected all 5 picture_qa WARNs, 12-shot sheet, open sheet, phone previews, and boun"
       },
       "taskKeys": [
         "OWB:064"
