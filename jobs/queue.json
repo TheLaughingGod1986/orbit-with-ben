@@ -361653,13 +361653,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T18:42Z",
-      "eta": "2026-11-27T20:42Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T15:43Z",
-      "result": "",
+      "result": "parked for Chief: review & merge ww2-channel PR #212 (WW2:006 v04 9YeKm3e2xto Private scheduled 2026-12-05T17:00Z — HD processed, 3-way Thumbnail T&C A/B/C, Altered content=Yes, Not made for kids, en-GB captions serving, PLPPi-oWEDYtA pos 5, End Screen 23:18:09-23:38:09 all verified after Studio 9223 reload; worker gemini cannot self-merge)",
       "history": [
         {
           "at": "2026-11-27T15:43Z",
@@ -361740,6 +361740,11 @@
           "at": "2026-11-27T18:54Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Pushed commit d688830 to claudecode/J3921-ww2-006-upload (PR #212) with complete Studio 9223 + Data API readback, status.json, metadata_v04.json, PACKAGE_MANIFEST.json, and UPLOADS.json"
+        },
+        {
+          "at": "2026-11-27T18:54Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review & merge ww2-channel PR #212 (WW2:006 v04 9YeKm3e2xto Private scheduled 2026-12-05T17:00Z — HD processed, 3-way Thumbnail T&C A/B/C, Altered content=Yes, Not made for kids, en-GB captions serving, PLPPi-oWEDYtA pos 5, End Screen 23:18:09-23:38:09 all verified after Studio 9223 reload; worker gemini cannot self-merge)"
         }
       ],
       "remaining_action": "Parked for Chief: review and merge ww2-channel PR #212",
