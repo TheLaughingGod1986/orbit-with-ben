@@ -355932,9 +355932,14 @@
           "at": "2026-11-27T16:57Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3859 in ww2-channel is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/211. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-27T17:06Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
         }
       ],
-      "remaining_action": "After J3858 imports the matching Studio numbers, verify them and release the Atlantic rules review",
+      "remaining_action": "Review the corrected Atlantic rules PR after J3932; J3933 checks fresh packaging data now",
       "due": "2026-11-27T05:00:12Z",
       "kind": "review",
       "plain": "Update the channel's rules from what Battle of the Atlantic: The Month U-Boats Lost's first two days taught us",
@@ -355953,6 +355958,11 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX, PR211 ce28c5e82bfa76805801db4e26552a9362aea319: aggregate retention is not stranger retention; post-change CTR is unmeasured; clean-rule-failure and causal claims need qualification. J3932 must correct the existing PR before elected-Chief merge review. J3933 owns the immediate fresh post-change Studio read and any single-fix proposal; no YouTube change authorized here. Keep J3706 date-held. Review stages 1 and 2 complete; relay progress refused because its active lease points to J3860, which was left untouched.",
+        "check_at": "2026-11-28T09:00:00Z"
       }
     },
     {
