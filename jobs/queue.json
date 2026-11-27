@@ -282295,22 +282295,28 @@
           "at": "2026-11-27T00:11Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T00:13Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Viewed all three full-size thumbnails and the 168 px sheet; 12 NAS artifacts match builder hashes; description URLs and credits preserved."
         }
       ],
-      "remaining_action": "Check the rebuilt Pluto thumbnails and package",
+      "remaining_action": "Finish package checks and record the Pluto packaging decision",
       "due": "2026-12-08T18:00:00Z",
       "kind": "chief",
       "plain": "Check the corrected Pluto thumbnails and description before arranging delivery",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T00:11Z",
+        "at": "2026-11-27T00:13Z",
         "by": "codex",
         "plan": [
           "Verify rebuilt files",
           "Review packaging and gates",
           "Record decision and handoff"
-        ]
+        ],
+        "note": "Viewed all three full-size thumbnails and the 168 px sheet; 12 NAS artifacts match builder hashes; description URLs and "
       },
       "taskKeys": [
         "OWB:034"
