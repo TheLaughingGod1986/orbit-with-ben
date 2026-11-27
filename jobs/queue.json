@@ -354094,15 +354094,20 @@
           "at": "2026-11-27T03:09Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Paid promotion = No set and reload-verified (one setting per save) on __UtUYdEUwg, 4sYTV_rQcqs, and YqCWYlv_LCY; Audience No, Altered Yes, Visibility/Schedule, Related targets, and running A/B test all verified intact"
+        },
+        {
+          "at": "2026-11-27T03:18Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Added and reload-verified 2 info cards on YqCWYlv_LCY: 05:44:00 -> GHZDsiH7L7A (What's Inside an Atom? Mostly Empty Space) and 08:07:00 -> PLEbpfUzWzcXU (How Did We Discover…? playlist); End screen 08:39:15-08:59:15, Paid promotion No, Audience No, Altered Yes, Visibility Public, and running A/B test all verified intact"
         }
       ],
-      "remaining_action": "Add two relevant info cards after 01:00 on YqCWYlv_LCY (05:44 -> GHZDsiH7L7A, 08:07 -> PLEbpfUzWzcXU) and reload-verify cards, end screen, and disclosures",
+      "remaining_action": "Run post-Studio channel:audit and API readback, then commit records PR and post report",
       "kind": "studio",
       "plain": "Finish the required settings and links on the Franklin videos",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T03:09Z",
+        "at": "2026-11-27T03:18Z",
         "by": "gemini",
         "plan": [
           "Pre-flight lint & script/API target check",
@@ -354112,7 +354117,7 @@
           "Run channel:audit & capture after evidence",
           "Commit records PR & post report"
         ],
-        "note": "Paid promotion = No set and reload-verified (one setting per save) on __UtUYdEUwg, 4sYTV_rQcqs, and YqCWYlv_LCY; Audienc"
+        "note": "Added and reload-verified 2 info cards on YqCWYlv_LCY: 05:44:00 -> GHZDsiH7L7A (What's Inside an Atom? Mostly Empty Spac"
       },
       "taskKeys": [
         "HOS:008"
