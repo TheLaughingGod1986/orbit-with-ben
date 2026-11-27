@@ -360830,9 +360830,14 @@
           "at": "2026-11-27T16:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:11Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3920; checking film 005 assets and J3653 reference."
         }
       ],
-      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "remaining_action": "Inspecting NAS master, thumbnails A/B/C, and existing 005 upload package",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -360858,12 +360863,22 @@
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-27T16:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify NAS master and thumbnails",
+          "Build PACKAGE_MANIFEST.json",
+          "Upload Private scheduled 2026-12-03T17:00Z",
+          "Add captions and 3-way thumb T&C",
+          "Set playlist, end screen and read back",
+          "Record in status.json and UPLOADS.json PR"
+        ],
+        "note": "Claimed J3920; checking film 005 assets and J3653 reference."
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     },
     {
       "id": "J3921",
