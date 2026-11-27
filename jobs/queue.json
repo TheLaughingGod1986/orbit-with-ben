@@ -361311,16 +361311,21 @@
           "at": "2026-11-27T17:12Z",
           "by": "gemini",
           "what": "step 3 of 6 done: 5-minute progress heartbeat: checking task-61 output (ASR + local/NAS gate suite)"
+        },
+        {
+          "at": "2026-11-27T17:14Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Immutable v03 checksum-copied to NAS (sha256 538464b9...); v01/v02 untouched; all 7 canonical NAS gates + 13-bed MP3 music gate + playback health PASS; fresh ASR 1.00 recall (75/75 tokens); v02 regression FAIL vs v03 PASS"
         }
       ],
-      "remaining_action": "Completing v03 NAS copy and canonical gate checks (task-61 running)",
+      "remaining_action": "Updating versioned upload package manifest, running youtube:package --dry-run, and writing GATE_REPORT_v03.md + SHORT1_BRIEF_AND_CHECKLIST_v03.md",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T17:12Z",
+        "at": "2026-11-27T17:14Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1400 review, v02 builder, and NAS assets",
@@ -361330,7 +361335,7 @@
           "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
           "Commit v03 artifacts on PR 1399 branch, push, and report"
         ],
-        "note": "5-minute progress heartbeat: checking task-61 output (ASR + local/NAS gate suite)"
+        "note": "Immutable v03 checksum-copied to NAS (sha256 538464b9...); v01/v02 untouched; all 7 canonical NAS gates + 13-bed MP3 mus"
       },
       "taskKeys": [
         "OWB:064"
