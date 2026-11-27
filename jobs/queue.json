@@ -1,5 +1,5 @@
 {
-  "next_id": 3929,
+  "next_id": 3930,
   "jobs": [
     {
       "id": "J0001",
@@ -357665,6 +357665,11 @@
           "at": "2026-11-27T10:31Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3883-integration codex/J3883-integration. Finished integration/reconciliation commit 034d41fbc5 plus current-main merge. Formal KEEP posted #7215924852; #1359 merged (9b3ca6cb52) including #1361; #1358 closed unmerged. Exact NAS hashes, 25 graphics, music stems, 12 correction records and 13 privacy tests verified. Final local diff completes J3818/J3022 and carries mandatory v02 opening/R09/graphics/gates into J3023 with after J3022 preserved. Automatic approval review rejected branch publication; Claude Code must privacy-review, publish/merge records, then finish J3883. Main assembly remains held until reconciliation lands. No spend or YouTube changes."
+        },
+        {
+          "at": "2026-11-27T16:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J3929"
         }
       ],
       "remaining_action": "Publishing verified completion records and the assembly handoff",
@@ -357689,7 +357694,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3883-integration codex/J3883-integration. Finished integration/reconciliation commit 034d41fbc5 plus current-main merge. Formal KEEP posted #7215924852; #1359 merged (9b3ca6cb52) including #1361; #1358 closed unmerged. Exact NAS hashes, 25 graphics, music stems, 12 correction records and 13 privacy tests verified. Final local diff completes J3818/J3022 and carries mandatory v02 opening/R09/graphics/gates into J3023 with after J3022 preserved. Automatic approval review rejected branch publication; Claude Code must privacy-review, publish/merge records, then finish J3883. Main assembly remains held until reconciliation lands. No spend or YouTube changes.",
-        "check_at": "2026-11-27T16:31:06+00:00"
+        "check_at": "2026-11-27T17:31:39+00:00",
+        "recheck_task": "J3929"
       }
     },
     {
@@ -361385,6 +361391,37 @@
         "check_at": "2026-11-29T12:35:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3929",
+      "title": "Verify condition for J3883",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3883: publish via Claude Code: /Volumes/MiniWork/scratch/J3883-integration codex/J3883-integration. Finished integration/reconciliation commit 034d41fbc5 plus current-main merge. Formal KEEP posted #7215924852; #1359 merged (9b3ca6cb52) including #1361; #1358 closed unmerged. Exact NAS hashes, 25 graphics, music stems, 12 correction records and 13 privacy tests verified. Final local diff completes J3818/J3022 and carries mandatory v02 opening/R09/graphics/gates into J3023 with after J3022 preserved. Automatic approval review rejected branch publication; Claude Code must privacy-review, publish/merge records, then finish J3883. Main assembly remains held until reconciliation lands. No spend or YouTube changes.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3883 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T16:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T16:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publishing verified completion records and the assembly handoff",
+      "kind": "review",
+      "recheck_of": "J3883",
+      "due": "2026-11-27T16:10:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
