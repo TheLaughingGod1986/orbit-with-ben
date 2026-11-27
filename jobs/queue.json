@@ -273946,9 +273946,14 @@
           "at": "2026-11-27T12:26Z",
           "by": "codex",
           "what": "step 3 of 4 done: Reviewed PR1385; fixed channel ratchet and missing parentless-root check at 0a01b8fe32. 66 focused checks pass; PR1382 handoff documentation merged. Waiting for corrected PR CI before coordination."
+        },
+        {
+          "at": "2026-11-27T12:29Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR1382 and corrected PR1385 merged; 66 focused tests and final CI green. J3896 implements missing remote result/resume/recovery path; live activation is not authorized until that review passes."
         }
       ],
-      "remaining_action": "Finish the coordinated studio move and verify both machines and the board",
+      "remaining_action": "Complete the remote resume controls, then move and verify the studio engine",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273969,7 +273974,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T12:26Z",
+        "at": "2026-11-27T12:29Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273977,7 +273982,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Reviewed PR1385; fixed channel ratchet and missing parentless-root check at 0a01b8fe32. 66 focused checks pass; PR1382 h"
+        "note": "PR1382 and corrected PR1385 merged; 66 focused tests and final CI green. J3896 implements missing remote result/resume/r"
       }
     },
     {
