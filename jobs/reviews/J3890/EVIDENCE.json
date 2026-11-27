@@ -1,0 +1,128 @@
+{
+  "observed_at": "2026-11-27T11:36:52.147315+00:00",
+  "service": {
+    "installed_sha256": "804d9c80529c3502ececc36d1f01d27c19fff141edc6a722b80157bd581ff071",
+    "installed_unchanged": true,
+    "proposal_sha256": "901afa6a8d9665e4346b0edc5854b2f93811606d2c8744da31b21c15a7d42856",
+    "non_bootstrap_settings_equal": true,
+    "old_env_preserved": true,
+    "new_env_names": [
+      "STUDIO_GIT_URL",
+      "STUDIO_REPO"
+    ],
+    "loaded_read": true,
+    "loaded_state": "not running",
+    "loaded_arguments_equal_backup": true,
+    "loaded_environment_equal_backup": true,
+    "loaded_macbook_override_names": [],
+    "loaded_installed_arguments_match": true,
+    "loaded_installed_explicit_env_match": true,
+    "loaded_extra_env_names": [
+      "OSLogRateLimit",
+      "XPC_SERVICE_NAME"
+    ]
+  },
+  "slots": [
+    {
+      "slot": 1,
+      "engine_head": "eda81876dc28c11b6a0d7b6cb0281b801bfd00c9",
+      "engine_branch": "main",
+      "engine_clean": true,
+      "engine_queue_sha256": "f208a2a70a621be277aa81ede0a2406bec72ffac673bb986f6aa735aa335c969",
+      "queue_equals_rehearsal": true,
+      "queue_history": [
+        "eda8187"
+      ],
+      "old_source_head": "8df56a3d52d5803003832acb314684c9b3013ff6",
+      "old_worker_sha256": "1a436cb09d8fe20aac4b62d2a57777ee22afd2bd76f39b8e3370dcb00264511b",
+      "old_guard_sha256": "89aab43e68b1c5dc0803a3b0eae30abd69d79240b26e7e909c598b331fe14274",
+      "new_worker_sha256": "1a436cb09d8fe20aac4b62d2a57777ee22afd2bd76f39b8e3370dcb00264511b",
+      "new_guard_sha256": "89aab43e68b1c5dc0803a3b0eae30abd69d79240b26e7e909c598b331fe14274",
+      "guard_before_cli": true,
+      "pause_check_present": true,
+      "contents": [
+        {
+          "name": "orbit-with-ben",
+          "branch": "main",
+          "clean": true
+        },
+        {
+          "name": "history-of-science",
+          "branch": "main",
+          "clean": true
+        },
+        {
+          "name": "ww2-channel",
+          "branch": "main",
+          "clean": true
+        }
+      ],
+      "lock": "not held"
+    },
+    {
+      "slot": 2,
+      "engine_head": "eda81876dc28c11b6a0d7b6cb0281b801bfd00c9",
+      "engine_branch": "main",
+      "engine_clean": true,
+      "engine_queue_sha256": "f208a2a70a621be277aa81ede0a2406bec72ffac673bb986f6aa735aa335c969",
+      "queue_equals_rehearsal": true,
+      "queue_history": [
+        "eda8187"
+      ],
+      "old_source_head": "a753c6ef147321deecb955da1881d3bb19af6360",
+      "old_worker_sha256": "1a436cb09d8fe20aac4b62d2a57777ee22afd2bd76f39b8e3370dcb00264511b",
+      "old_guard_sha256": "89aab43e68b1c5dc0803a3b0eae30abd69d79240b26e7e909c598b331fe14274",
+      "new_worker_sha256": "1a436cb09d8fe20aac4b62d2a57777ee22afd2bd76f39b8e3370dcb00264511b",
+      "new_guard_sha256": "89aab43e68b1c5dc0803a3b0eae30abd69d79240b26e7e909c598b331fe14274",
+      "guard_before_cli": true,
+      "pause_check_present": true,
+      "contents": [
+        {
+          "name": "orbit-with-ben",
+          "branch": "main",
+          "clean": true
+        },
+        {
+          "name": "history-of-science",
+          "branch": "main",
+          "clean": true
+        },
+        {
+          "name": "ww2-channel",
+          "branch": "main",
+          "clean": true
+        }
+      ],
+      "lock": "held"
+    }
+  ],
+  "flags": {
+    "macbook-worker.pause": false,
+    "active-studio.json": false
+  },
+  "claims": [
+    {
+      "id": "J3012",
+      "by": "codex",
+      "status": "claimed"
+    },
+    {
+      "id": "J3890",
+      "by": "macbook-2",
+      "status": "claimed"
+    }
+  ],
+  "process_observation": {
+    "at": "2026-11-27T11:37:48.509621+00:00",
+    "workers": [
+      {
+        "pid": 78575,
+        "parent_pid": 1,
+        "started": "Fri Nov 27 11:34:19 2026",
+        "script": "~/_desk/worker/orbit-with-ben/scripts/macbook_worker.py",
+        "command": "run"
+      }
+    ],
+    "staged_worker_count": 0
+  }
+}
