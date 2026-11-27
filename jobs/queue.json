@@ -358301,9 +358301,14 @@
           "at": "2026-11-27T12:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T12:03Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Keep the rewrite parked until a named protected-desk exception is recorded",
+      "remaining_action": "Inspect J3532, J2537, commits f2292898b4 and 6faeab492c, and recent approval history",
       "kind": "review",
       "recheck_of": "J3532",
       "mini_only": true,
@@ -358320,10 +358325,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T12:02Z",
+        "at": "2026-11-27T12:03Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3532/J2537 history and commits",
+          "Check recent thread, HOS desk, and GitHub comments for new Ben approval",
+          "Record verified wait/reopen on J3532 and finish J3894"
+        ]
       }
     },
     {
