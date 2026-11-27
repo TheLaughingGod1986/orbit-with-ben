@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3919, J3920, J3921, J3926.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3920, J3921, J3926.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -103,7 +103,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3915 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
 | J3916 | mini | open | – | – | 064 script · script · OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX) | J3914 |
 | J3917 | mini | open (after J3916) | – | – | 064 script · review · OWB 064 Short 2: lock v03 script and bounded VO decision | J3914 |
-| J3919 | mini | blocked | gemini | – | WW2:004 upload · studio · Package and upload WW2 004 long v04 (Mark 14 Torpedo: Why Perfect Hits Failed) Private, 2026-12-01T17:00Z |  |
 | J3920 | mini | claimed | gemini | 2026-11-27T18:11Z | WW2:005 upload · studio · Package and upload WW2 005 long v05 (St Nazaire Raid: The Ship Turned Into a Bomb) Private, 2026-12-03T17:00Z |  |
 | J3921 | mini | open | – | – | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
 | J3922 | mini | open | – | – | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
@@ -111,9 +110,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 | J3925 | mini | blocked | claudecode | – | review · Verify condition for J3903 |  |
 | J3926 | mini | open | – | – | WW2:009 script · for gemini · studio · Publish WW2 009 v06 script lock: push d734610 (codex/J3834-v06-lock) to ww2-channel and open the PR |  |
+| J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 
 Recently finished:
 
+- J3919 done: Package and upload WW2 004 long v04 (Mark 14 Torpedo: Why Perfect Hits Failed) Private, 2026-12-01T17:00Z (WW2:004 v04 uploaded Private as 54sAav3iMQw, publishAt 2026-12-01T17:00Z; en-GB captions serving; 3-way thumbnail Test & Compare A/B/C saved; end screen and playlist set; Studio and Data API read back. Records merged in ww2-channel PR #208. Claude, acting Chief.)
 - J3918 done: OWB 064 Short 1 (Test A opening v02): Independent QA review (PR #1399) (Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes.)
 - J3914 done: OWB 064 Short 2: review revised script and bounded VO decision (FIX (one word). J3912 ruling published: PR #1396 merged d18b5d4386 (diff read, nothing private; no checks apply to jobs/**). Gemini argon 0 flags + direct URL check: C1-C9 hold verbatim (064_short02_QUOTECHECK_v02.md on PR #1394 at ca9429fd55). Duration resolved to 16-19 s (v02b); v02 retired. Flag: v02b drops NASA's 'true' in 'no true surface'. Ruling in jobs/reviews/J3914/REVIEW.md (PR #1397 merged). Queued J3916 writer fix -> J3917 lock + bounded VO review. Not locked; no VO decision; J3904 hold kept (next check 2026-11-28T14:45Z; recording the recheck on J3904 is for the Chief). Assembly also needs verified native frame-0 footage (R01 not found) and no Veo clips shown as real on the Uranus beats. No spend/upload/schedule.)
 - J3913 done: OWB 064 Short 2: revise narration and evidence after J3912 FIX (PR #1394 head 567850e9aa: script v02 (Venus surface vs Uranus atmospheric minimum; winter and 'Closer in' cause wording removed) plus a 16-19 s variant v02b; CLAIMS_v02 with 9 direct-URL quote rows (Gemini not run yet); plan v02 withdraws every PASS/retention claim and cites the duration rule (gate_shorts_open.py:113 16-19 s warn vs J3904 22-27 s). Provenance: R03/R06 are Veo 3.1 Fast CGI (J2332 generation.json), NOT Keck; R05 is a graded PIA01488 still push-in; R01/R02/R08 files not found at their v01 paths; weic2332a is CC BY, PIA23791 is JAXA-credited. Nothing locked, no spend, no YouTube changes. Next: J3914 review.)
@@ -123,4 +124,3 @@ Recently finished:
 - J3908 done: Verify condition for J3859 (Chief ruling: condition UNMET. J3859 remains blocked; wait --recheck J3908 recorded dependency and retry 2026-11-27T20:15:00Z. READS.md has API-only 48h row with impressions/CTR pending; studio_read.json lacks qfc6EBStOfo; board.json Studio fields null. J3858 remains collection owner on its existing sign-in hold. After sign-in, J3858 imports 24-25 November Pacific Studio read; next verifier checks the import before releasing J3859. No YouTube changes or spend; original gates and approvals preserved.)
 - J3907 done: Verify condition for J3781 (Verification complete: condition UNMET; J3781 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.)
 - J3906 done: Verify condition for J3756 (Verification complete: condition UNMET; J3756 stays held. From now on the verifier records this itself (PR #1401). Claude, acting Chief, board audit 27 Nov 16:20Z.)
-- J3905 done: Verify condition for J3023 (Chief verification complete: condition unmet. Existing J3902 master KEEP/package FIX ruling stands. PR1390 OPEN at 81e0cdfc13; J3909 repairs package, J3910 independently rechecks after J3909, then elected Chief must approve and merge revised PR1390. J3023 remains dependency-held, last_recheck J3905, next check 2026-11-28T14:30Z. Ben watch 11 Dec 18:00 and air 16 Dec 18:00 London unchanged. No package PASS, UAT release, spend or YouTube changes.)
