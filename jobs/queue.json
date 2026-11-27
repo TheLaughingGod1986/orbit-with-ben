@@ -365157,13 +365157,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T22:08Z",
-      "eta": "2026-11-28T00:08Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T21:56Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3961 in orbit-with-ben is 2 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1418. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "Chief KEEP of PR1389 exact head 5631f820b: independently reviewed cancellation and persisted-descendant boundaries; 62 mocked tests pass. Merged PR1389 at 42e9bb1483 and historical verification PR1418. J3962 queued for separate elected-Chief live coordination and operational proof. Parent J3012 remains held at 3/4, last_recheck J3961, next check 2026-11-28T04:10Z. No live activation or spend.",
       "history": [
         {
           "at": "2026-11-27T21:56Z",
@@ -365214,6 +365214,11 @@
           "at": "2026-11-27T22:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review complete: 62 tests pass; PR1389 merged at 42e9bb1483 and historical note PR1418 merged. Parent held at 3/4 for J3962 live coordination; recheck 28 Nov 04:10Z."
+        },
+        {
+          "at": "2026-11-27T22:08Z",
+          "by": "codex",
+          "what": "done: Chief KEEP of PR1389 exact head 5631f820b: independently reviewed cancellation and persisted-descendant boundaries; 62 mocked tests pass. Merged PR1389 at 42e9bb1483 and historical verification PR1418. J3962 queued for separate elected-Chief live coordination and operational proof. Parent J3012 remains held at 3/4, last_recheck J3961, next check 2026-11-28T04:10Z. No live activation or spend."
         }
       ],
       "remaining_action": "Close the completed Chief verification",
@@ -365242,7 +365247,8 @@
         "note": "Chief review complete: 62 tests pass; PR1389 merged at 42e9bb1483 and historical note PR1418 merged. Parent held at 3/4 "
       },
       "urgent": 6,
-      "for": "codex"
+      "for": "codex",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274"
     },
     {
       "id": "J3962",
