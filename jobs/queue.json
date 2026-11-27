@@ -354848,9 +354848,14 @@
           "at": "2026-11-27T10:12Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed reopened J3853 following Chief PASS on v03 (J3878, SHA-256 5b5703855c18); verified NAS v03 master and cover hashes and metadata title 'Is Titan Just a Dry Desert?'"
+        },
+        {
+          "at": "2026-11-27T10:13Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Copied exact v03 master (SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13) and cover (SHA-256 8acb817fa135a0c3a37b6205458674b9c4da49093a859ca6f1d08e4b162c1127) to OWB UAT and re-verified both hashes"
         }
       ],
-      "remaining_action": "Copy verified 032 Short #2 v03 master and cover to OWB UAT and verify SHA-256 hashes",
+      "remaining_action": "Register Ben's watch on J3853 via jobs.py awaits",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "taskKeys": [
@@ -354859,9 +354864,9 @@
       "escalated_at": "2026-11-27T08:48Z",
       "for": "gemini",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T10:12Z",
+        "at": "2026-11-27T10:13Z",
         "by": "gemini",
         "plan": [
           "Copy v03 master and cover to OWB UAT",
@@ -354869,7 +354874,7 @@
           "Reconcile PR #1366 with main and update to v03",
           "Block J3853 awaiting Ben and post report"
         ],
-        "note": "Claimed reopened J3853 following Chief PASS on v03 (J3878, SHA-256 5b5703855c18); verified NAS v03 master and cover hash"
+        "note": "Copied exact v03 master (SHA-256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13) and cover (SHA-256 8a"
       }
     },
     {
