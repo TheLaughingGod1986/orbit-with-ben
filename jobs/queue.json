@@ -1,5 +1,5 @@
 {
-  "next_id": 3914,
+  "next_id": 3915,
   "jobs": [
     {
       "id": "J0001",
@@ -360236,6 +360236,36 @@
       "due": "2026-11-28T12:00:00Z",
       "kind": "script",
       "plain": "Revise the Venus and Uranus Short script and check its picture sources"
+    },
+    {
+      "id": "J3914",
+      "title": "OWB 064 Short 2: review revised script and bounded VO decision",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review the no-spend revision of PR1394 against all five fixes in J3912 REVIEW.md. Run Gemini claim/source verification via agy for the revised narration, verify MUST QUOTE rows against their URLs directly, and record versioned claim/quote findings before script lock. Do not rewrite spoken lines as facts checker: return exact flags to writer. Review honest media classifications and duration ruling. If ready, lock the exact script; elected Chief then decides a bounded separate VO allowance from existing subscription only, after live balance and existing credit holds, and queues vo then assembly then QA/UAT. Otherwise return a concrete FIX. Record the ruling on J3904; retain its hold until satisfied. No spend, upload, schedule or privacy changes in this review. No date-only credit assumption and no Option B1 gate waiver.\n\nPublication handoff under AGENTS.md refused-push workflow: J3912 completed ruling commit 42e48a4d90 is local at /Volumes/MiniWork/scratch/j3912-chief-review branch codex/j3912-chief-review. Codex automatic review refused its push; do not retry via Codex. Claude Code must independently inspect the whole diff for private content, then use the prescribed publication workflow to push/open a PR and merge on green checks when authorized. The queue carries the ruling and five fixes, so revision is not blocked on publishing this document.\n",
+      "ref": "J3912",
+      "film": "064",
+      "stage": "script",
+      "after": "J3913",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T14:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T14:57Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify revised claims and picture evidence, then decide script lock and voice allowance",
+      "due": "2026-11-28T14:00:00Z",
+      "kind": "review",
+      "plain": "Check the revised Venus and Uranus Short before approving its narration"
     }
   ],
   "focus": [

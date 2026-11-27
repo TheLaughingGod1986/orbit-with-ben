@@ -109,6 +109,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3911 | mini | blocked | claudecode | – | review · Verify condition for J3871 |  |
 | J3912 | mini | blocked | claudecode | – | review · Verify condition for J3904 |  |
 | J3913 | mini | open | – | – | 064 script · script · OWB 064 Short 2: revise narration and evidence after J3912 FIX | J3912 |
+| J3914 | mini | open (after J3913) | – | – | 064 script · review · OWB 064 Short 2: review revised script and bounded VO decision | J3912 |
 
 Recently finished:
 
