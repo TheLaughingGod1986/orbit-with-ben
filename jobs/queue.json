@@ -358041,18 +358041,23 @@
           "at": "2026-11-27T11:40Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Diff read in full (4 files, +201/-10): no email, token, key, password, revenue or personal data; only sanitized hashes and booleans."
+        },
+        {
+          "at": "2026-11-27T11:41Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: Rebased on main; 102 worker/launcher/guard tests OK; pushed and opened PR #1380 (head e14669c705)."
         }
       ],
-      "remaining_action": "Rebase on main, run worker tests, push and open the PR",
+      "remaining_action": "Wait for PR #1380 checks, then merge and record",
       "due": "2026-11-27T18:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked studio migration fixes and handover notes",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-27T11:40Z",
+        "at": "2026-11-27T11:41Z",
         "by": "claudecode",
         "plan": [
           "Private-data review of diff",
@@ -358060,7 +358065,7 @@
           "Push and open PR",
           "Merge on green and record"
         ],
-        "note": "Diff read in full (4 files, +201/-10): no email, token, key, password, revenue or personal data; only sanitized hashes a"
+        "note": "Rebased on main; 102 worker/launcher/guard tests OK; pushed and opened PR #1380 (head e14669c705)."
       }
     }
   ],
