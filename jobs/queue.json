@@ -363831,9 +363831,14 @@
           "at": "2026-11-27T19:19Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: J3922 done (v03 on PR #1399 head 961a0b19d5); J3923 QA KEEP in PR #1412 b1a966d786; PR #1399 and #1412 both OPEN, unmerged"
+        },
+        {
+          "at": "2026-11-27T19:20Z",
+          "by": "claudecode",
+          "what": "step 3 of 3 done: J3923 kept blocked; wait recorded (Chief ruling on PR #1412/#1399 unmet), next check 2026-11-28T07:00Z"
         }
       ],
-      "remaining_action": "Checking v03 master hash on NAS and Chief ruling state",
+      "remaining_action": "Done",
       "kind": "review",
       "recheck_of": "J3923",
       "due": "2026-11-27T20:15:39+00:00",
@@ -363847,16 +363852,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T19:19Z",
+        "at": "2026-11-27T19:20Z",
         "by": "claudecode",
         "plan": [
           "Read J3923 history",
           "Verify condition",
           "Reopen or re-wait J3923"
         ],
-        "note": "J3922 done (v03 on PR #1399 head 961a0b19d5); J3923 QA KEEP in PR #1412 b1a966d786; PR #1399 and #1412 both OPEN, unmerg"
+        "note": "J3923 kept blocked; wait recorded (Chief ruling on PR #1412/#1399 unmet), next check 2026-11-28T07:00Z"
       },
       "taskKeys": [
         "OWB:064"
