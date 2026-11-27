@@ -357337,13 +357337,13 @@
       "stage": "thumbs",
       "after": "J3365",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T10:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T10:38Z",
-      "result": "parked for Chief: review and merge PR #1377 (J3884 HOS 004/007/099 readback)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T10:38Z",
@@ -357384,36 +357384,21 @@
           "at": "2026-11-27T10:50Z",
           "by": "relay",
           "what": "condition verification queued: J3886"
+        },
+        {
+          "at": "2026-11-27T11:03Z",
+          "by": "codex",
+          "what": "reopened: J3886 ruling KEEP at PR1377 comment 7216617328. All gates satisfied: exact head 4a1105fc38 reviewed, merged 2026-11-27T11:03:11Z as 5a479a21cd2e0bfa97eb060e59fbce3602b7ac68. Ten evidence hashes, package hash, screenshots, 21 tests and fresh HOS audit 80 videos/0 errors verified. Reopening solely to record completed work; no repeat Studio task authorized."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) review and merge of PR #1377",
       "kind": "studio",
       "plain": "Check the atom and vaccine thumbnail test results and the compilation cover",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T10:50Z",
-        "by": "gemini",
-        "plan": [
-          "Check ledger, package hash & Studio session",
-          "Read 004 & 007 Studio test reports",
-          "Read compilation title/cover & compare",
-          "Run HOS channel:audit & record result",
-          "Update ledger/patterns & open readback PR"
-        ],
-        "note": "Opened readback PR #1377 (gemini/J3884-hos-readback, 4a1105fc38): T029 updated to done/draw (null shares), 004 no attach"
-      },
       "taskKeys": [
         "HOS:004",
         "HOS:007",
         "HOS:099"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-27T11:50:39+00:00",
-        "recheck_task": "J3886"
-      }
+      ]
     },
     {
       "id": "J3885",
