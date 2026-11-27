@@ -147,15 +147,20 @@ class System:
     def __init__(self, deadline=None):
         self.deadline = deadline
 
-    def run(self, argv, cwd=None):
+    def run(self, argv, cwd=None, input=None):
         remaining = self.deadline - time.time() if self.deadline else 30
         require(remaining > 0, "deadline expired")
-        r = subprocess.run(argv, cwd=cwd, capture_output=True, timeout=min(30, remaining))
+        r = subprocess.run(argv, cwd=cwd, capture_output=True, input=input, timeout=min(30, remaining))
         require(r.returncode == 0, "external command failed (private diagnostics withheld)")
         return r.stdout
 
     def api(self, path):
         return json.loads(self.run(["gh", "api", path]))
+
+    def post(self, plan, body):
+        return self.run(["gh", "api", "--method", "POST",
+            f"repos/{plan['authority_repo']}/issues/{plan['thread']}/comments", "--input", "-"],
+            input=canonical({"body": body}))
 
     def processes(self):
         rows = []
@@ -258,6 +263,8 @@ def preflight(plan, io, activation=None):
                     and c.get("author_association") in {"OWNER", "MEMBER", "COLLABORATOR"}
                     and c.get("user", {}).get("type") == "User" for c in io.comments(plan)), "cancelled on thread")
     require(Path(plan["pause"]).is_file(), "worker pause absent")
+    from macbook_cutover_control import owned_pause
+    owned_pause(plan, Path(plan["cancel"]).parent)
     require(not Path(plan["marker"]).exists(), "engine marker already exists")
     for path, expected in plan["sources"].items():
         require(digest(Path(path).read_bytes()) == expected, "source hash changed")
@@ -303,6 +310,11 @@ def execute(plan, io, activation, attempt_dir, locks=slot_locks):
         private_write(attempt_dir / "success.json", canonical({"activation": activation, "paused": True}))
 
 def supervise(plan_path, expected):
+    from macbook_cutover_control import control_lock
+    with control_lock(Path(plan_path).parent):
+        return _supervise(plan_path, expected)
+
+def _supervise(plan_path, expected):
     raw = Path(plan_path).read_bytes()
     require(digest(raw) == expected, "plan changed")
     plan = json.loads(raw)
@@ -350,6 +362,9 @@ def supervise(plan_path, expected):
                 else:
                     attempt = directory / ("attempt-" + uuid.uuid4().hex)
                     attempt.mkdir(mode=0o700)
+                    private_write(directory / "activation.json", canonical(activation))
+                    from macbook_cutover_control import owned_pause
+                    owned_pause(plan, directory)
                     execute(plan, io, activation, attempt)
                     private_write(directory / "result.json", canonical({"status": "installed-paused", "attempt": str(attempt)}))
                     return
@@ -399,7 +414,8 @@ def prepare(config_path, out, io):
     require(digest(installed) == plan["installed_hash"], "installed hash mismatch")
     require(digest(canonical(loaded_settings(loaded.decode()))) == plan["loaded_hash"], "loaded hash mismatch")
     require(digest(proposal(installed, plan["engines"], plan["production_url"])) == plan["proposal_hash"], "proposal hash mismatch")
-    mandatory = {str(Path(__file__).resolve()), str(Path(__file__).resolve().with_name("engine_guard.py")), plan["installed"]}
+    mandatory = {str(Path(__file__).resolve()), str(Path(__file__).resolve().with_name("engine_guard.py")),
+                 str(Path(__file__).resolve().with_name("macbook_cutover_control.py")), plan["installed"]}
     mandatory.update({str(Path(render_worker_plist.__file__).resolve()), str(render_worker_plist.TEMPLATE.resolve())})
     mandatory.update(str(Path(root) / "scripts" / name) for root in plan["old_engines"]
                      for name in ("macbook_worker.py", "engine_guard.py"))
@@ -421,6 +437,20 @@ def prepare(config_path, out, io):
     originals.mkdir(mode=0o700)
     for i, path in enumerate(plan["sources"]):
         private_write(originals / str(i), Path(path).read_bytes())
+    # Recovery must not depend on a checkout staying on this revision. Bundle
+    # the reviewed helpers and their import dependencies privately and pin each.
+    bundle = out / "control"
+    (bundle / "macbook").mkdir(parents=True, mode=0o700)
+    files = {"macbook_cutover.py": Path(__file__).resolve(),
+             "macbook_cutover_control.py": Path(__file__).with_name("macbook_cutover_control.py"),
+             "engine_guard.py": Path(__file__).with_name("engine_guard.py"),
+             "macbook/render_worker_plist.py": Path(render_worker_plist.__file__),
+             "macbook/" + render_worker_plist.TEMPLATE.name: render_worker_plist.TEMPLATE}
+    plan["control_bundle"] = {}
+    for name, source in files.items():
+        data = source.read_bytes()
+        private_write(bundle / name, data)
+        plan["control_bundle"][name] = digest(data)
     raw = canonical(plan)
     private_write(out / "plan.json", raw)
     return digest(raw)
@@ -453,9 +483,11 @@ def main():
     require(str(Path(__file__).resolve()) in plan["sources"]
             and digest(Path(__file__).read_bytes()) == plan["sources"][str(Path(__file__).resolve())], "helper changed")
     require(Path(plan["pause"]).is_file(), "authorized coordinator must pause before launch")
+    from macbook_cutover_control import arm
+    arm(args.plan, args.sha256, dict(plan, plan_hash=args.sha256), System(time.time() + 60))
     private_write(directory / "launched", b"one launch only; fresh plan required for retry\n")
     with open(directory / "supervisor.log", "xb", opener=lambda p, f: os.open(p, f, 0o600)) as log:
-        child = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), "supervise", "--plan", str(args.plan.resolve()),
+        child = subprocess.Popen([sys.executable, str(directory / "control/macbook_cutover.py"), "supervise", "--plan", str(args.plan.resolve()),
             "--sha256", args.sha256], stdin=subprocess.DEVNULL, stdout=log, stderr=log, start_new_session=True,
             close_fds=True, cwd=directory)
     print(json.dumps({"supervisor_pid": child.pid, "result": str(directory / "result.json")}))

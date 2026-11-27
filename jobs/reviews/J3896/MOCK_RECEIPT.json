@@ -1,0 +1,21 @@
+{
+  "job": "J3896",
+  "agent": "macbook",
+  "mode": "mocked-only",
+  "created": "2026-11-27T12:37:54.013175+00:00",
+  "tests": {
+    "cutover_and_control": 55,
+    "launcher": 5,
+    "channel_ratchet": 13,
+    "private_network": 5,
+    "email_ratchet": 8
+  },
+  "total_passed": 86,
+  "live_effects": false,
+  "source_sha256": {
+    "scripts/macbook_cutover.py": "b7b8a968f58813e32742a01f00ab3eca8a3995d159abe6265280db90942ce72b",
+    "scripts/macbook_cutover_control.py": "0b1a10635265708d5f5a83afaf9116a7e1d802e9c8b4ac24ceda76169048e87d",
+    "scripts/test_macbook_cutover.py": "33dda0902db202ed4c69cf2134cdf6d2d401e0e3c799210924ebb6e328cc7051",
+    "scripts/test_macbook_cutover_control.py": "bfa54bf47a783e4e5920be095934dc3c9effdb3095eea7e0c321bdba48beca45"
+  }
+}
