@@ -365424,10 +365424,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T23:55Z",
+      "eta": "2026-11-28T01:55Z",
       "created_by": "relay",
       "created_at": "2026-11-27T23:54Z",
       "result": "",
@@ -365441,6 +365441,11 @@
           "at": "2026-11-27T23:54Z",
           "by": "relay",
           "what": "approved by Ben: Passed cut — deliver listing package v03 (asked in J3903)"
+        },
+        {
+          "at": "2026-11-27T23:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
@@ -365463,6 +365468,14 @@
         "at": "2026-11-27T23:52:50.146Z",
         "version": "v03",
         "handled": true
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T23:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     }
   ],
