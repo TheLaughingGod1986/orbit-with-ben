@@ -107,7 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
 | J3873 | mini | open | – | – | for claudecode · review · Publish completed J3864 Chief ruling through designated route |  |
 | J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
-| J3875 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3875 | any | claimed | macbook-2 | 2026-11-27T09:39Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
