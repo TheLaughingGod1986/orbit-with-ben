@@ -357493,10 +357493,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T11:01Z",
+      "eta": "2026-11-27T13:01Z",
       "created_by": "relay",
       "created_at": "2026-11-27T10:50Z",
       "result": "",
@@ -357540,6 +357540,11 @@
           "at": "2026-11-27T11:01Z",
           "by": "codex",
           "what": "reopened: Assigned acting-Chief review started; J3884 remains held pending ruling on PR1377."
+        },
+        {
+          "at": "2026-11-27T11:01Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park for Chief with the exact wait command",
@@ -357559,7 +357564,15 @@
         "HOS:004",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T11:01Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3887",
