@@ -354924,15 +354924,20 @@
           "at": "2026-11-27T07:13Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Reviewed J3853 REVIEW.md (d0e3eaaa54) and prior v02 stills; fixed S04 PIA21434 crop to verified interior (460,150,949,1020) zero-border box, cleared Dragonfly nose edge from S02 dunes (x0=1180..1312), and tightened S08 pre-payoff connector line"
+        },
+        {
+          "at": "2026-11-27T07:18Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Dry build passed all 7/7 gates (rc=0) plus 13 canonical NAS MP3 beds uniqueness check (0 warnings); visually inspected S02, S04, S08 (20.8s/21.8s/23.4s), 10-shot sheet, open sheet and cover"
         }
       ],
-      "remaining_action": "Running v02 dry build and all 7 ship/QA gates with verified PIA21434 interior crop and pure-dunes S02 framing",
+      "remaining_action": "Writing verified v02 master, stills, contact sheet, captions and 7-gate pack to NAS beside preserved v01",
       "kind": "assembly",
       "plain": "Fix the pictures and ocean explanation in the new Titan Short",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-27T07:13Z",
+        "at": "2026-11-27T07:18Z",
         "by": "gemini",
         "plan": [
           "Inspect review, PR #1366 and 032 assets",
@@ -354941,7 +354946,7 @@
           "Verify NAS copy, stills, contact sheet and captions",
           "Update PR #1366 and post review handback"
         ],
-        "note": "Reviewed J3853 REVIEW.md (d0e3eaaa54) and prior v02 stills; fixed S04 PIA21434 crop to verified interior (460,150,949,10"
+        "note": "Dry build passed all 7/7 gates (rc=0) plus 13 canonical NAS MP3 beds uniqueness check (0 warnings); visually inspected S"
       },
       "taskKeys": [
         "OWB:032"
