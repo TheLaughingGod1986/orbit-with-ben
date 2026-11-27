@@ -112,10 +112,25 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
-| J3939 | mini | claimed | macbook-2 | 2026-11-27T17:49Z | studio · First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) |  |
 
 Recently finished:
 
+- J3939 done: First-day check at 6 h: "The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) (PR #1405 (macbook/J3939, commit c415dfe73; 0 faults: Public, Shorts tab, Restrictions empty, not Made for Kids, no age restriction, HD done, Related c5AdqQsnnys, title+description exact manifest match; Studio typical range 20-210 so --typical omitted; no Shown in feed card so --shown omitted; 48 engaged views, 1 like; read-only, £0).
+
+"The Nearest Star Is a Cherry Past Cairo. How Do We Know?" (aAUgIGEuPwQ) · Orbit With Ben · Short · went live Fri 27 Nov 11:30 London
+At 6 h: views 151 · Studio rank 7 of 10 · shown in feed about 432 (from 143 feed views) · stayed to watch 33.1% · average viewed 62.5%
+Usual for this channel: stayed to watch 33.8%, average viewed 67.0%
+
+Verdict: USUAL
+  - 151 views at 6 h; the last 10 checked at the same age had 214 (median).
+  - Studio ranks it 7 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - "Star" was in the title of 3 earlier Shorts: they had 16 views by the next morning (median), against 174 for all Shorts.
+  - It is a second upload of the same video (it replaced A6TW_6CXhcs).
+
+Do now
+  - Nothing to fix.)
 - J3938 done: First-day check at 6 h: "Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) ("Why Was Franklin's Kite Experiment So Dangerous?" (__UtUYdEUwg) · History of Science · Short · went live Fri 27 Nov 11:30 London
 At 6 h: views 2 · Studio rank 8 of 10 · shown in feed about 1 (from 1 feed views) · stayed to watch 0.0% · average viewed 0.0%
 Usual for this channel: stayed to watch 29.0%, average viewed 69.0%
@@ -146,4 +161,3 @@ Acting Chief codex resolved the BEHIND escalation: no faults found, HD processin
 - J3919 done: Package and upload WW2 004 long v04 (Mark 14 Torpedo: Why Perfect Hits Failed) Private, 2026-12-01T17:00Z (WW2:004 v04 uploaded Private as 54sAav3iMQw, publishAt 2026-12-01T17:00Z; en-GB captions serving; 3-way thumbnail Test & Compare A/B/C saved; end screen and playlist set; Studio and Data API read back. Records merged in ww2-channel PR #208. Claude, acting Chief.)
 - J3918 done: OWB 064 Short 1 (Test A opening v02): Independent QA review (PR #1399) (Chief FIX: v02 hash 8b7a218c has 21.75s missing narration; measured VO -90.31 dBFS, not literal zero. No v02 PASS, PR1399 merge or UAT. J3922 zero-spend immutable v03 repair; J3923 independent audio/motion QA after J3922. J3903 held with 28 Nov 16:00Z verification. Ruling committed 12f4082187; publish via Claude Code: /Volumes/MiniWork/scratch/j3918-chief-ruling codex/j3918-chief-ruling. J3924 records independent privacy/permission handoff after auto-review refused push. No media or YouTube changes.)
 - J3916 done: OWB 064 Short 2: restore 'true' qualifier in v02b (J3914 FIX) (PR #1394 head 35c90b3bda059309957e08fa86b93d2dbb36e8dc: added 064_short02_venus_vs_uranus_script_v03.md restoring NASA 'true' qualifier in v02b line 2 ('Uranus has no true surface; that's its coldest air.'); no other spoken words changed; v02 retired per J3914 (16.0-19.0 s band). Recomputed metrics (estimates, no VO take): 205 raw chars (207 with blank lines), 35 written / 41 expanded words, 253 expanded chars, fast/mid/slow 17.30/18.55/19.62 s (mid <= 19.0 s), payoff 15.31 s (82.5%). Referenced completed quote check 064_short02_QUOTECHECK_v02.md. £0 spend; no VO take, Flow/Vertex, upload, or schedule change. Unblocks J3917.)
-- J3914 done: OWB 064 Short 2: review revised script and bounded VO decision (FIX (one word). J3912 ruling published: PR #1396 merged d18b5d4386 (diff read, nothing private; no checks apply to jobs/**). Gemini argon 0 flags + direct URL check: C1-C9 hold verbatim (064_short02_QUOTECHECK_v02.md on PR #1394 at ca9429fd55). Duration resolved to 16-19 s (v02b); v02 retired. Flag: v02b drops NASA's 'true' in 'no true surface'. Ruling in jobs/reviews/J3914/REVIEW.md (PR #1397 merged). Queued J3916 writer fix -> J3917 lock + bounded VO review. Not locked; no VO decision; J3904 hold kept (next check 2026-11-28T14:45Z; recording the recheck on J3904 is for the Chief). Assembly also needs verified native frame-0 footage (R01 not found) and no Veo clips shown as real on the Uranus beats. No spend/upload/schedule.)
