@@ -362267,13 +362267,13 @@
       "stage": "upload",
       "after": "J3920",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T17:29Z",
-      "eta": "2026-11-27T19:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T17:27Z",
-      "result": "",
+      "result": "Waiting for: First 48-hour read becomes due; verify actual publication time before interpreting results",
       "history": [
         {
           "at": "2026-11-27T17:27Z",
@@ -362284,9 +362284,19 @@
           "at": "2026-11-27T17:29Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:29Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: First 48-hour read becomes due; verify actual publication time before interpreting results"
+        },
+        {
+          "at": "2026-11-27T17:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-12-05T17:05:00Z"
         }
       ],
-      "remaining_action": "Read the first two days of viewer results",
+      "remaining_action": "Read viewer results after the first two days",
       "kind": "studio",
       "plain": "Measure how viewers respond to the St Nazaire film and its music",
       "progress": {
@@ -362296,6 +362306,12 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "First 48-hour read becomes due; verify actual publication time before interpreting results",
+        "check_at": "2026-12-05T17:05:00Z",
+        "release": "auto"
       }
     }
   ],
