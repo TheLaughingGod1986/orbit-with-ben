@@ -359384,9 +359384,14 @@
           "at": "2026-11-27T14:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:30Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3904; verified disk (11 GB free, nas_offload nothing eligible) and capabilities; auditing locked 064 VO sentences and Venus/Uranus assets on NAS"
         }
       ],
-      "remaining_action": "Prepare OWB:064 companion Short 2 script/cut plan from locked 064 sources/narration under existing Shorts gates and £0/no-extra-VO boundary",
+      "remaining_action": "Audit locked 064 VO sentences, shelf Venus/Uranus visual assets, and Shorts gates for OWB:064 Short 2",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend",
@@ -359400,12 +359405,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T14:25Z",
+        "of": 4,
+        "at": "2026-11-27T14:30Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Audit locked 064 VO and shelf assets",
+          "Draft Short 2 script and verify sources",
+          "Build shot list, checklist and package spec",
+          "Commit PR and park for Chief VO authorization"
+        ],
+        "note": "Claimed J3904; verified disk (11 GB free, nas_offload nothing eligible) and capabilities; auditing locked 064 VO sentenc"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3905",
