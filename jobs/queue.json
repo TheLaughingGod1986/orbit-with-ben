@@ -320836,9 +320836,14 @@
           "at": "2026-11-27T00:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:29Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3487; reviewed PR #173 checkpoint (15 CMH 12-3 photos + packaging draft)"
         }
       ],
-      "remaining_action": "Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
+      "remaining_action": "Inspecting Film 015/017 templates and verifying official US Army archive & historical sources for Battle of the Bulge (016)",
       "due": "2026-12-16T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
@@ -320846,12 +320851,21 @@
       "for": "gemini",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T00:28Z",
+        "of": 5,
+        "at": "2026-11-27T00:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify 35+ official archive photos & topic evidence",
+          "Finalise Rule-2/13 packaging & competitor gap",
+          "Draft sourced Battle of the Bulge script & SOURCES.md",
+          "Verify char/word/figure pacing & SCRIPT/NARRATION parity",
+          "Open WW2 PR, queue claims/viewer review & post report"
+        ],
+        "note": "Claimed J3487; reviewed PR #173 checkpoint (15 CMH 12-3 photos + packaging draft)"
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     },
     {
       "id": "J3488",
