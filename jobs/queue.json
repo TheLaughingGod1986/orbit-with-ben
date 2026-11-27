@@ -274843,9 +274843,14 @@
           "at": "2026-11-27T14:15Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T14:30:00Z"
+        },
+        {
+          "at": "2026-11-27T14:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T14:30:00Z"
         }
       ],
-      "remaining_action": "Wait for trailer and credit repairs, independent recheck and Chief merge before Ben watch handoff",
+      "remaining_action": "Wait for J3909 repairs, J3910 independent recheck and Chief merge before Ben watch handoff",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
@@ -274870,8 +274875,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3902 Chief ruling: master v03 retained, package FIX. J3909 must repair vertical trailer and provenance/portrait credits/LF/category, then J3910 independent recheck must KEEP and elected Chief must merge revised PR1390 before J3023 may set Ben UAT. No upload or package PASS.",
-        "check_at": "2026-11-28T14:30:00Z"
+        "condition": "J3905 verified existing J3902 ruling: master v03 KEEP, package FIX. J3909 must finish trailer and provenance/portrait-credit/LF/category repairs; J3910 must independently return KEEP, then elected Chief must approve and merge revised PR1390 (currently OPEN at 81e0cdfc13). Only then may J3023 put the cut on Ben watch board. No package PASS or UAT release.",
+        "check_at": "2026-11-28T14:30:00Z",
+        "last_recheck": "J3905",
+        "checked_at": "2026-11-27T14:29:56+00:00",
+        "checked_by": "codex"
       }
     },
     {
