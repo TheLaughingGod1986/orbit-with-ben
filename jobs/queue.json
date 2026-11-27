@@ -1,5 +1,5 @@
 {
-  "next_id": 3964,
+  "next_id": 3965,
   "jobs": [
     {
       "id": "J0001",
@@ -360212,6 +360212,11 @@
           "at": "2026-11-27T21:38Z",
           "by": "gemini",
           "what": "done: Registered Ben phone UAT watch on J3903 via jobs.py awaits for Chief-PASSed canonical NAS v03 (064_short01_testA_opening_v03.mp4, sha256 538464b9addf45088affe5e09146cec7324351d2e18552a41d66bb4d89bac402, version v03, due 2026-12-13 18:00 London). Verified live on board-data (1ba75490) via board_check.py: ok=true, OWB:ASK:J3903 in lane=ready (readyFor=Ben, play=302). £0 spend; zero upload/scheduling; never upload or air before 064 long is public Wed 16 Dec 2026 18:00 London."
+        },
+        {
+          "at": "2026-11-27T23:54Z",
+          "by": "relay",
+          "what": "no longer waits on Ben: OK'd, delivered by J3964"
         }
       ],
       "remaining_action": "Close J3903 and post studio thread report",
@@ -360234,7 +360239,8 @@
         ],
         "note": "Verified published board-data (1ba75490) via board_check.py --no-post: ok=true, 0 problems, OWB:ASK:J3903 in Ready for O"
       },
-      "awaits_ben": {
+      "done_ref": "df709ca909",
+      "awaits_was": {
         "what": "Watch OWB 064 Short 1 (Test A opening v03, 30.75 s, Chief PASS): Why Does Water Ice Survive 430°C Heat on Mercury?",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03.mp4",
         "version": "v03",
@@ -360243,8 +360249,7 @@
         "title": "Why Does Water Ice Survive 430°C Heat on Mercury?",
         "number": "064 Short 1",
         "type": "short"
-      },
-      "done_ref": "df709ca909"
+      }
     },
     {
       "id": "J3904",
@@ -365407,6 +365412,58 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3964",
+      "title": "Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd this cut on the board, but it has no complete listing package yet (missing: title, thumbnail, description, tags).\n1. Build its own listing package in the channel's repo, in the layout its other Shorts' packages already use: PACKAGE_MANIFEST.json with title, thumbnail (the custom cover), description and tags, by that channel's studio/RULES.md. Keep the title Ben OK'd: \"Why Does Water Ice Survive 430°C Heat on Mercury?\". The description's first line names and links its long, and its Related video is the long. Merge it through a pull request.\n2. Upload the file Ben OK'd to YouTube Studio as Private and set publishAt in the locked cadence. Use youtube:package on the Mini. Do not swap a file onto an existing id. Do not reuse TtgHNLXfDSs or k9pXeeJvLpc as destinations.\n3. Read back Private + scheduled and record it in the channel's UPLOADS register.\nIts long (OWB:064) is not on YouTube yet: build the package now, then schedule this Short after the long's publish time; if the long has none yet, block 'waiting for OWB:064 to be scheduled'.\nApproved board card: OWB:ASK:J3903; cut: v03.\nApproval/watch job: J3903.\nWatch file: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03.mp4.\nListing package: to build in step 1.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T23:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T23:54Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-27T23:54Z",
+          "by": "relay",
+          "what": "approved by Ben: Passed cut — deliver listing package v03 (asked in J3903)"
+        }
+      ],
+      "remaining_action": "Build the listing package, then upload to YouTube Studio as Private",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Passed cut — deliver listing package",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short01_testA_opening/06_Final-Exports/064_short01_testA_opening_v03.mp4",
+        "version": "v03",
+        "title": "Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z",
+        "number": "064 Short 1",
+        "type": "short",
+        "airs": "2026-12-23T11:30Z",
+        "channel": "OWB",
+        "card": "OWB:ASK:J3903",
+        "job": "J3903",
+        "okAt": "2026-11-27T23:52:50.146Z"
+      },
+      "board_ok": {
+        "id": "OWB-J3903",
+        "at": "2026-11-27T23:52:50.146Z",
+        "version": "v03",
+        "handled": true
+      }
     }
   ],
   "focus": [
