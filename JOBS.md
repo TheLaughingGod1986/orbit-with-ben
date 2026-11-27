@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3858 | mini | blocked | gemini | – | studio · Field Order History analytics read qfc6EBStOfo 48h |  |
 | J3859 | any | blocked | macbook | – | review · Field Order History rules review qfc6EBStOfo 48h |  |
 | J3860 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-27 |  |
-| J3864 | mini | blocked | claudecode | – | review · Verify condition for J3816 |  |
+| J3864 | mini | open | – | – | review · Verify condition for J3816 |  |
 | J3865 | mini | blocked | gemini | – | 032 edit · assembly · Titan Short v03: correct Cassini picture and readable teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 | J3866 | any | open | – | – | for claudecode · review · Publish completed Chief review record for J3856 |  |
 | J3868 | mini | blocked | macbook | – | review · Verify condition for J3819 |  |
