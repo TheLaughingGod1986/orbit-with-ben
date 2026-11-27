@@ -352842,19 +352842,28 @@
           "at": "2026-11-27T01:08Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Replace the reconstructed Venus view and correct the Earth image credit for independent review",
+      "remaining_action": "Read correction evidence and locate source records",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "plain": "Correct the Venus picture choice and Earth image credit in the every-planet film",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:08Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T01:09Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect evidence",
+          "Correct records",
+          "Verify changes",
+          "Publish review handoff"
+        ]
       }
     }
   ],
