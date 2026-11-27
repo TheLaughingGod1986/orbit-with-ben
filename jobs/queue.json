@@ -1,5 +1,5 @@
 {
-  "next_id": 3836,
+  "next_id": 3838,
   "jobs": [
     {
       "id": "J0001",
@@ -340633,6 +340633,11 @@
           "at": "2026-11-27T00:04Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-27T00:59:30Z"
+        },
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "relay",
+          "what": "condition verification queued: J3836"
         }
       ],
       "remaining_action": "Publishing the committed corrections after the data-export approval is resolved",
@@ -340659,10 +340664,11 @@
       "hold": {
         "type": "input",
         "condition": "Corrections remain local at 9e4b053; PR 189 is OPEN at d5d842d. Recorded data-export approval restriction is unresolved. Require approval or authorization review resolving the restriction before authorized publication; do not route around it.",
-        "check_at": "2026-11-27T00:59:30Z",
+        "check_at": "2026-11-27T02:09:59+00:00",
         "last_recheck": "J3824",
         "checked_at": "2026-11-27T00:04:26+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3836"
       }
     },
     {
@@ -352605,6 +352611,11 @@
           "at": "2026-11-27T01:08Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: ww2-channel PR #202 open (topic GO, Rule-6 viewer test PASS after opening edit, SCRIPT/NARRATION v02 with all 7 J3830 fixes, 18,451 chars). Merge + lock PASS are codex's. Not done: SOURCES.md v02 notes, ARCHIVE_PROVENANCE #30->#33 typo."
+        },
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "relay",
+          "what": "condition verification queued: J3837"
         }
       ],
       "remaining_action": "read topic, packaging, provenance, claims check; then review, viewer test, v02, PR",
@@ -352631,6 +352642,12 @@
           "PR",
           "Report"
         ]
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-27T02:09:59+00:00",
+        "recheck_task": "J3837"
       }
     },
     {
@@ -352865,6 +352882,69 @@
           "Publish review handoff"
         ]
       }
+    },
+    {
+      "id": "J3836",
+      "title": "Verify condition for J3704",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3704: Corrections remain local at 9e4b053; PR 189 is OPEN at d5d842d. Recorded data-export approval restriction is unresolved. Require approval or authorization review resolving the restriction before authorized publication; do not route around it.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3704 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T01:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publishing the committed corrections after the data-export approval is resolved",
+      "kind": "review",
+      "recheck_of": "J3704",
+      "mini_only": true,
+      "due": "2026-11-25T14:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3837",
+      "title": "Verify condition for J3831",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3831: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3831 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T01:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T01:09Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: read topic, packaging, provenance, claims check; then review, viewer test, v02, PR",
+      "kind": "review",
+      "recheck_of": "J3831",
+      "due": "2026-11-27T02:09:59+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
