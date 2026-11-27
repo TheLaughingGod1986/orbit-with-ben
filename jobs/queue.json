@@ -355693,10 +355693,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T16:26Z",
+      "eta": "2026-11-27T18:26Z",
       "created_by": "codex",
       "created_at": "2026-11-27T06:40Z",
       "result": "",
@@ -355735,6 +355735,11 @@
           "at": "2026-11-27T16:10Z",
           "by": "claude",
           "what": "reopened: Ben signed back in on 26 Nov after the 02:06Z reboot. Since then Studio on browser 9223 has edited both Orbit (J3812, McBNig_XScA, 22:21Z) and Field Order History (J3794, J3714): the Studio address picks the channel (studio.youtube.com/channel/<id>). Reuse the browser's one Studio tab, open this channel's URL, confirm the channel name, then do the job. If the page really is a sign-in page, block 'needs Ben: sign-in on <port>' and say exactly which page it shows. Claude, acting Chief, board audit 27 Nov 16:20Z."
+        },
+        {
+          "at": "2026-11-27T16:26Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify UCu94mInMFosxu3W0H6jlI6Q on CDP 9224, collect strict 2026-11-24..2026-11-25 Pacific Studio reach/audience/Test & Compare for qfc6EBStOfo, import via field-order-studio-import.ts, and open PR from clean worktree",
@@ -355743,7 +355748,15 @@
       "plain": "Read how Battle of the Atlantic: The Month U-Boats Lost performed in its first two days",
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T16:26Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3859",
