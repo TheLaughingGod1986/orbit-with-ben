@@ -352417,9 +352417,14 @@
           "at": "2026-11-27T01:06Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Chief review inputs checked; parent remains held. review-progress refused because relay active.json is absent; recording this review on the claimed queue job."
         }
       ],
-      "remaining_action": "Re-hold J3818 on Chief PASS and merges, then finish this check",
+      "remaining_action": "Independently check the packaging evidence and record the ruling",
       "kind": "review",
       "recheck_of": "J3818",
       "due": "2026-11-27T01:26:03+00:00",
@@ -352436,12 +352441,16 @@
         "OWB:064"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-27T01:06Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs and authority",
+          "Review evidence and choose ruling",
+          "Record ruling and follow-up"
+        ],
+        "note": "Chief review inputs checked; parent remains held. review-progress refused because relay active.json is absent; recording"
       }
     },
     {
