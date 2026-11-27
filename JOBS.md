@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3901 | mini | blocked | macbook | – | review · Verify condition for J3834 |  |
-| J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
+| J3903 | mini | claimed | gemini | 2026-11-27T16:54Z | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 | J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
 | J3906 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3907 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
