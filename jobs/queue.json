@@ -359397,16 +359397,21 @@
           "at": "2026-11-27T15:17Z",
           "by": "gemini",
           "what": "step 4 of 6 done: All 7 gates PASS (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.10 LUFS, TP=-2.10 dBTP, polish_gate 0/12 fail, picture_qa 0/12 fail); NAS SHA-256 verified b805c51d..."
+        },
+        {
+          "at": "2026-11-27T15:24Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Frame inspection of v01 caught 4 defects: title banner collided with R03b graphic at 13.4-13.9s, SRT dropped 9-14s words, Colombo pill ended at 26.4s before name finished (27.64s), and proposed Thu 17 Dec is not an Orbit Short day; preserving v01 on NAS and building v02"
         }
       ],
-      "remaining_action": "Inspecting final frames, writing packaging manifest/checklist/gate report, and opening PR for QA",
+      "remaining_action": "Rebuilding v02 to fix 12.88-14.00s title/graphic overlap, missing 9-14s SRT lines, Colombo pill timing, and Mon 28 Dec slot, then re-verifying all 7 gates and opening QA PR",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Build OWB 064 companion Short 1 (Test A opening reframe from locked master v03, £0 / 0 VO chars) and pass gate_shorts_open",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-11-27T15:17Z",
+        "at": "2026-11-27T15:24Z",
         "by": "gemini",
         "plan": [
           "Inspect master v03 and Short rules",
@@ -359416,7 +359421,7 @@
           "Inspect frames and verify packaging",
           "Commit artifacts and submit for QA"
         ],
-        "note": "All 7 gates PASS (0/62 padded, f0diff=5.66, motion=13.32, cut1=2.5s, I=-14.10 LUFS, TP=-2.10 dBTP, polish_gate 0/12 fail"
+        "note": "Frame inspection of v01 caught 4 defects: title banner collided with R03b graphic at 13.4-13.9s, SRT dropped 9-14s words"
       },
       "taskKeys": [
         "OWB:064"
