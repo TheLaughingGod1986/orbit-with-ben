@@ -364106,20 +364106,32 @@
           "at": "2026-11-27T20:12Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T20:12Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Fix POOL_PROVENANCE v02 on PR #1390; merge main; push",
+      "remaining_action": "Correcting the film’s source records and preparing its review branch",
       "due": "2026-11-29T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T20:12Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Merge current main",
+          "Correct provenance intervals",
+          "Tidy package records",
+          "Validate and publish branch"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3951",
