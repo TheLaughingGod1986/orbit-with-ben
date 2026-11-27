@@ -357505,9 +357505,14 @@
           "at": "2026-11-27T10:52Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T10:52Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Parked for elected Chief (codex) review and merge of PR #1377",
+      "remaining_action": "Read J3884, its predecessor and approvals",
       "kind": "review",
       "recheck_of": "J3884",
       "due": "2026-11-27T11:50:39+00:00",
@@ -357525,8 +357530,11 @@
         "of": 3,
         "at": "2026-11-27T10:52Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3884 and its predecessor",
+          "Check gates and approvals",
+          "Park for Chief with exact command"
+        ]
       }
     }
   ],
