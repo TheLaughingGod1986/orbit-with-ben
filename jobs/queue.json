@@ -354073,15 +354073,20 @@
           "at": "2026-11-27T03:02Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3848; starting pre-flight checks"
+        },
+        {
+          "at": "2026-11-27T03:06Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Pre-flight lint:package PASS (SHORTS_RELEASE.json PASS, long SKIP/public); direct API lookup confirmed 7 other public HOS longs + public playlist PLEbpfUzWzcXU; fresh-read CDP 9460 confirmed Paid promotion blank on all 3 IDs, 0 info cards on YqCWYlv_LCY, A/B test running, End screen intact"
         }
       ],
-      "remaining_action": "Run lint:package for film 008, inspect J3845 audit, v05 script/SRT, and live HOS targets",
+      "remaining_action": "Set Paid promotion = No (one setting per save) on __UtUYdEUwg, 4sYTV_rQcqs, and YqCWYlv_LCY and reload-verify each",
       "kind": "studio",
       "plain": "Finish the required settings and links on the Franklin videos",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-27T03:02Z",
+        "at": "2026-11-27T03:06Z",
         "by": "gemini",
         "plan": [
           "Pre-flight lint & script/API target check",
@@ -354091,7 +354096,7 @@
           "Run channel:audit & capture after evidence",
           "Commit records PR & post report"
         ],
-        "note": "Claimed J3848; starting pre-flight checks"
+        "note": "Pre-flight lint:package PASS (SHORTS_RELEASE.json PASS, long SKIP/public); direct API lookup confirmed 7 other public HO"
       },
       "taskKeys": [
         "HOS:008"
