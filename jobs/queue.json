@@ -352946,9 +352946,14 @@
           "at": "2026-11-27T01:13Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified UNMET at 01:13Z: local /Volumes/MiniWork/scratch/J3704-corrections stays at 9e4b053 (unpushed, not in origin/main a2ea545); ww2 PR #189 remains OPEN at d5d842d (last comment 19:42Z); no resolving authorization review or Claude Code publication in thread #1353 through #7207071007; OWB PR #1254 still OPEN."
+        },
+        {
+          "at": "2026-11-27T01:15Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Opened OWB PR #1362 (gemini/J3836-review, d67daa2710, 13/13 privacy tests PASS). Condition UNMET; jobs.py wait --recheck is Chief-only, parking J3836 for Chief."
         }
       ],
-      "remaining_action": "Updating J3704 input hold with recheck J3836, posting studio thread report, and closing J3836",
+      "remaining_action": "Awaiting elected Chief (codex) to merge OWB PR #1362, record jobs.py wait J3704 --recheck J3836, and close J3836",
       "kind": "review",
       "recheck_of": "J3704",
       "mini_only": true,
@@ -352963,16 +352968,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T01:13Z",
+        "at": "2026-11-27T01:15Z",
         "by": "gemini",
         "plan": [
           "Read J3704 hold and approval history",
           "Check PR 189, local branch, and thread for resolution",
           "Update J3704 wait or reopen and report"
         ],
-        "note": "Verified UNMET at 01:13Z: local /Volumes/MiniWork/scratch/J3704-corrections stays at 9e4b053 (unpushed, not in origin/ma"
+        "note": "Opened OWB PR #1362 (gemini/J3836-review, d67daa2710, 13/13 privacy tests PASS). Condition UNMET; jobs.py wait --recheck"
       },
       "taskKeys": [
         "WW2:001",
