@@ -357906,9 +357906,14 @@
           "at": "2026-11-27T11:45Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Uploaded yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z; en-GB language + serving captions set; Studio custom cover (TITAN'S / 2 OCEANS?) and Related video (T3cBBss1F60) verified after reload; Not Made for Kids & Altered Content=Yes confirmed"
+        },
+        {
+          "at": "2026-11-27T11:47Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: API readback (jobs/reviews/J3889/API_READBACK.json, jobs/readbacks/J3889.json), UPLOADS.json, and shorts_open_library/library.json updated; 13/13 ratchet/network tests and JSON validation PASS"
         }
       ],
-      "remaining_action": "Read back YouTube API/Studio state and update UPLOADS.json, library.json, and readback files",
+      "remaining_action": "Push PR branch, open PR for Chief merge, post studio thread report, and park J3889 for Chief",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -357930,9 +357935,9 @@
         "handled": true
       },
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T11:45Z",
+        "at": "2026-11-27T11:47Z",
         "by": "gemini",
         "plan": [
           "Verify v03 files, gates, and Dec 21 slot",
@@ -357941,7 +357946,7 @@
           "Read back API/Studio state and update UPLOADS/library",
           "Open PR for Chief merge and report"
         ],
-        "note": "Uploaded yDwDH-MV2wc Private scheduled 2026-12-21T11:30:00Z; en-GB language + serving captions set; Studio custom cover "
+        "note": "API readback (jobs/reviews/J3889/API_READBACK.json, jobs/readbacks/J3889.json), UPLOADS.json, and shorts_open_library/li"
       },
       "taskKeys": [
         "OWB:032"
