@@ -58,6 +58,9 @@ class FixtureBase(unittest.TestCase):
                 self.calls.append('engine')
                 if self.race: self.race()
             def replace(self,*args): self.calls.append('replace'); return b'new loaded'
+        import macbook_cutover_control as control
+        self.pause.unlink()
+        control.create_pause(self.plan, self.root)
         self.io=Fake()
         self.attempt=self.root/'attempt'; self.attempt.mkdir(mode=0o700)
 
@@ -248,13 +251,13 @@ class ProductionBoundaries(FixtureBase):
         helper=str(Path(m.__file__).resolve())
         self.plan['sources'][helper]=m.digest(Path(helper).read_bytes())
         path.write_bytes(m.canonical(self.plan)); path.chmod(0o600); self.root.chmod(0o700)
-        with patch.object(m.subprocess,'Popen') as popen,patch.object(m.sys,'argv',['helper','launch','--plan',str(path),'--sha256',m.digest(path.read_bytes())]),patch('builtins.print'):
+        with patch('macbook_cutover_control.arm') as arm,patch.object(m.subprocess,'Popen') as popen,patch.object(m.sys,'argv',['helper','launch','--plan',str(path),'--sha256',m.digest(path.read_bytes())]),patch('builtins.print'):
             popen.return_value.pid=777
             m.main()
             self.assertTrue(popen.call_args.kwargs['start_new_session'])
             self.assertEqual(popen.call_args.kwargs['stdin'],m.subprocess.DEVNULL)
             self.assertEqual((self.root/'supervisor.log').stat().st_mode & 0o777,0o600)
-        with patch.object(m.subprocess,'Popen',side_effect=AssertionError('must not relaunch')),patch.object(m.sys,'argv',['helper','launch','--plan',str(path),'--sha256',m.digest(path.read_bytes())]):
+        with patch('macbook_cutover_control.arm'),patch.object(m.subprocess,'Popen',side_effect=AssertionError('must not relaunch')),patch.object(m.sys,'argv',['helper','launch','--plan',str(path),'--sha256',m.digest(path.read_bytes())]):
             with self.assertRaises(FileExistsError): m.main()
 
 class AdapterBoundaries(FixtureBase):
@@ -310,7 +313,7 @@ class PreparationBoundaries(FixtureBase):
         loaded='arguments = {\n'+'\n'.join(doc['ProgramArguments'])+'\n}\nenvironment = {\n'+'\n'.join(k+' => '+v for k,v in doc['EnvironmentVariables'].items())+'\n}\n'
         self.io.loaded=lambda: loaded.encode()
         self.io.git=lambda root,*args: '' if args[0]=='status' else 'd'*40
-        paths=[installed,Path(m.__file__).resolve(),Path(m.__file__).resolve().with_name('engine_guard.py')]
+        paths=[installed,Path(m.__file__).resolve(),Path(m.__file__).resolve().with_name('engine_guard.py'), Path(m.__file__).resolve().with_name('macbook_cutover_control.py')]
         paths.extend([Path(m.render_worker_plist.__file__).resolve(), m.render_worker_plist.TEMPLATE.resolve()])
         for root in plan['old_engines']:
             for name in ['macbook_worker.py','engine_guard.py']:
