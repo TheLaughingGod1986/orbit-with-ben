@@ -364615,9 +364615,14 @@
           "at": "2026-11-27T20:42Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Demonstrated native audio_input and moving_video_input via read_file on 064_short02_venus_vs_uranus_v01.mp4"
+        },
+        {
+          "at": "2026-11-27T20:44Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: Verified exact SHA-256 hashes of canonical NAS master, stems, cover, frame0, SRT, locked v03 script (634da160...), VO take (205 chars <= 600 cap), and ledger diffs on PR #1416 (f67c2dcb)"
         }
       ],
-      "remaining_action": "Verifying PR #1416 files, exact SHA-256 hashes, script/VO locks, and source credits",
+      "remaining_action": "Running all 7 automated gates independently, ffprobe loudness/CFR verification, and fresh decoded ASR on canonical NAS master",
       "due": "2026-12-13T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -364634,9 +364639,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T20:42Z",
+        "at": "2026-11-27T20:44Z",
         "by": "gemini",
         "plan": [
           "Verify PR #1416 files, hashes and script/VO locks",
@@ -364645,7 +364650,7 @@
           "Watch moving cut, R03 frame, phone legibility and loop",
           "Post exact-hash QA verdict and park for Chief"
         ],
-        "note": "Demonstrated native audio_input and moving_video_input via read_file on 064_short02_venus_vs_uranus_v01.mp4"
+        "note": "Step 1 done: Verified exact SHA-256 hashes of canonical NAS master, stems, cover, frame0, SRT, locked v03 script (634da1"
       },
       "taskKeys": [
         "OWB:064"
