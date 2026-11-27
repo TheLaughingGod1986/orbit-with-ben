@@ -1,5 +1,5 @@
 {
-  "next_id": 3830,
+  "next_id": 3831,
   "jobs": [
     {
       "id": "J0001",
@@ -352360,6 +352360,36 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3830",
+      "title": "WW2 film 016: Battle of the Bulge independent claims & archive provenance check (PR #197)",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Independent Gemini `facts`-lane claims and archive provenance audit for **WW2:016** (*Battle of the Bulge: Patton's 133,000-Vehicle Turn*), stage PR **`TheLaughingGod1986/ww2-channel#197`** (branch `gemini/J3487-ww2-016-bulge`, commit `0cdcfcd`, drafted in `J3487`).\n\n**Do (zero spend, £0, no VO, no merge):**\n1. Check out PR #197 (`gemini/J3487-ww2-016-bulge`) in a clean worktree of `ww2-channel`.\n2. Independently verify all 23 claims (`C01`–`C23`) in `02_Video-Projects/016_Battle-of-the-Bulge-Pattons-Turn/01_Script/SOURCES.md` against `SCRIPT.md` and `NARRATION_v01.txt` (`54/54` paragraphs, `2,843` words, `18,275` stripped chars, SHA-256 `6b0df8139e6e90a4b778c7247b498d91560516792cb5f9eeb828cb0be7d19cfa`), focusing on the 5 priority checkpoints:\n   - **F1 (Ch 1 & Ch 6):** Exact primary-source basis and date window (`19–23 Dec` vs `19–26 Dec` vs `19–31 Dec`) for `133,178` vehicles, `1,654,042` miles, and `41,933` tons in Third Army AAR / G-4 records; confirm Dec 1944 ranks for `Col. Oscar W. Koch` (G-2), `Col. Halley G. Maddox` (G-3), `Col. Walter J. Muller` (G-4), and `Brig. Gen. Hobart R. Gay` (Chief of Staff).\n   - **F2 (Ch 2):** `COMZ` `>2,500` trucks diverted by `20 Dec` (Ruppenthal Vol. II), `11` artillery bns at `20 mph` (Cole Ch. 21), and `4th Armored Division`'s `~150`-mile winter march distance from the Saar/Lorraine sector to Arlon.\n   - **F3 (Ch 3 & Ch 4):** `~4,000` 1944 Bastogne population, `10` rounds/gun & `5` rounds/mission (`420th AFA`), and IX Troop Carrier Command drop counts (`23 Dec`: `241` planes; `24 Dec`: `160`; `25 Dec`: `11` gliders / `4` surgeons vs `26–27 Dec` glider surgical teams; `26 Dec`: `289` planes).\n   - **F4 (Ch 4):** `19 Dec 1944` Eisenhower / SHAEF authorization date for VT radio proximity fuze land use in the Ardennes (vs `18 Dec` early firing).\n   - **F5 (Ch 5 & Ch 6):** `Col. Wendell Blanchard` full name & CCR command, `14:00` Cobreville stone-wall bulldozer (`1` hour), `Concentration Number Nine`, `1st Lt. Charles P. Boggess Jr.` / M4A3E2 *Cobra King* (`16:45`–`16:50`), `\"barely three hundred yards wide\"` corridor width citation, `40` supply trucks / `70` ambulances, and `16 Jan 1945` Houffalize link-up.\n3. Spot-check `03_Picture/ARCHIVE_PROVENANCE.md` (`38` active US Federal PD items + `4` spares) to confirm zero AP/Getty/Pathé/Bundesarchiv/private donations, honest date guards, and zero unseen-photo narration.\n4. Write `01_Script/CLAIMS_CHECK_v01.md` (listing every `PASS` and `FLAG` with exact fix wording for any `FLAG`), open a clean PR on `ww2-channel`, and do **not** rewrite `NARRATION_v01.txt` yourself (the dependent review job folds approved fixes into locked `v02`).\n",
+      "ref": "ww2-channel#197",
+      "film": "WW2:016",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T00:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T00:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Audit C01-C23, F1-F5, and ARCHIVE_PROVENANCE.md on ww2-channel PR #197 and write CLAIMS_CHECK_v01.md",
+      "due": "2026-12-14T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independently check all 23 historical claims and 38 archive photo sources for Battle of the Bulge (016)"
     }
   ],
   "focus": [
