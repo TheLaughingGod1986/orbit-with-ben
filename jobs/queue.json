@@ -363095,9 +363095,14 @@
           "at": "2026-11-27T18:20Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3941; ran initial retention_autopsy.py inspect (36.7h snapshot, 5 views; checking live 48h Studio reach next)"
+        },
+        {
+          "at": "2026-11-27T18:22Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified master SHA-256 (51986972...) & duration (585.44s); extracted and watched all 3x40s source-proxy clips with video+audio (0:00-0:40, 0:40-1:20, 9:05-9:45)"
         }
       ],
-      "remaining_action": "Inspecting 48h RSI, Studio reach/T032 status, and prior autopsy format",
+      "remaining_action": "Reading live 48h Studio reach, T032 test state, end-screen target, and verifying packaging",
       "due": "2026-11-28T06:04:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -363108,9 +363113,9 @@
       "autopsy": "T3cBBss1F60@48h",
       "plain": "Analyse why viewers stayed or left on \"What Would Happen If You Landed on Titan? (Seas of Liqui\" (48h) and write up to 3 fixes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T18:20Z",
+        "at": "2026-11-27T18:22Z",
         "by": "gemini",
         "plan": [
           "Inspect RSI & Studio 48h reach",
@@ -363119,7 +363124,7 @@
           "Draft autopsy & learnings in worktree",
           "Commit, push PR & post report"
         ],
-        "note": "Claimed J3941; ran initial retention_autopsy.py inspect (36.7h snapshot, 5 views; checking live 48h Studio reach next)"
+        "note": "Verified master SHA-256 (51986972...) & duration (585.44s); extracted and watched all 3x40s source-proxy clips with vide"
       },
       "taskKeys": [
         "OWB:032"
