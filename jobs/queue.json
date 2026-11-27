@@ -364116,14 +364116,19 @@
           "at": "2026-11-27T20:13Z",
           "by": "codex",
           "what": "step 1 of 4 done: Merged current main without conflicts; current queue and film status retained, both ledger sides preserved; remaining diff is film assembly and J3909 evidence only."
+        },
+        {
+          "at": "2026-11-27T20:13Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Removed both retired assets from active provenance, retained them as rejected, restored the missing Ingenuity interval; all 138 intervals match 82 active sources exactly. Updated trailer v05 record and moved portrait credits before disclosure."
         }
       ],
-      "remaining_action": "Reconciling all source intervals against the final cut list",
+      "remaining_action": "Running the package dry run and privacy checks before publishing the repaired branch",
       "due": "2026-11-29T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
         "at": "2026-11-27T20:13Z",
         "by": "codex",
@@ -364133,7 +364138,7 @@
           "Tidy package records",
           "Validate and publish branch"
         ],
-        "note": "Merged current main without conflicts; current queue and film status retained, both ledger sides preserved; remaining di"
+        "note": "Removed both retired assets from active provenance, retained them as rejected, restored the missing Ingenuity interval; "
       },
       "taskKeys": [
         "OWB:064"
