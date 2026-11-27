@@ -273821,9 +273821,14 @@
           "at": "2026-11-27T10:09Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored the existing 3/4 plan after claim reset; token probe and preceding-day notice already passed. Checking disk headroom and current source before live cutover."
+        },
+        {
+          "at": "2026-11-27T10:12Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: 14 daily zero results; eight service proposals lint clean, five CI files staged, 52 focused tests pass. Full split and conditional future-identity verification are detached; production still uses Orbit."
         }
       ],
-      "remaining_action": "Verify current cutover inputs, move the engine, and prove relay, board and both MacBook slots",
+      "remaining_action": "Finish current-source and future-studio verification, then drain writers and perform the live move",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273844,7 +273849,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T10:09Z",
+        "at": "2026-11-27T10:12Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273852,7 +273857,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Restored the existing 3/4 plan after claim reset; token probe and preceding-day notice already passed. Checking disk hea"
+        "note": "14 daily zero results; eight service proposals lint clean, five CI files staged, 52 focused tests pass. Full split and c"
       }
     },
     {
