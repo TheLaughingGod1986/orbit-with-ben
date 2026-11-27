@@ -105,6 +105,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3903 | mini | open (after J3902) | – | – | 064 edit · assembly · OWB 064 Short 1 (Test A opening): Reframe Mercury 430°C polar ice opening to 9:16 | J3023 |
 | J3904 | mini | open (after J3902) | – | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
 | J3905 | mini | blocked | claudecode | – | review · Verify condition for J3023 |  |
+| J3906 | mini | open | – | – | review · Verify condition for J3756 |  |
+| J3907 | mini | open | – | – | review · Verify condition for J3781 |  |
+| J3908 | any | open | – | – | review · Verify condition for J3859 |  |
 
 Recently finished:
 
