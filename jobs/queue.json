@@ -361408,9 +361408,14 @@
           "at": "2026-11-27T17:39Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T17:39Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: Claimed; following J3920 (film 005) as the pattern"
         }
       ],
-      "remaining_action": "Checking the approved Mosquito film and its upload package",
+      "remaining_action": "Verifying the Mosquito v04 master and thumbnails A/B/C on the NAS",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -361436,14 +361441,17 @@
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T17:37Z",
-        "by": "codex",
+        "of": 5,
+        "at": "2026-11-27T17:39Z",
+        "by": "claudecode",
         "plan": [
-          "Verify approved files and listing",
-          "Merge upload package",
-          "Upload and record scheduled state"
-        ]
+          "Verify master and thumbnails",
+          "Build listing package",
+          "Upload Private and schedule",
+          "Thumbnail test, captions, settings",
+          "Read back and record PR"
+        ],
+        "note": "Claimed; following J3920 (film 005) as the pattern"
       },
       "taskKeys": [
         "WW2:006"
