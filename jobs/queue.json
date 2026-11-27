@@ -363264,9 +363264,14 @@
           "at": "2026-11-27T18:57Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3942; inspecting J3780 hold, prior rechecks J3879/J3887, capabilities, and HOS PR #797"
+        },
+        {
+          "at": "2026-11-27T18:57Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified HOS PR #797 OPEN/MERGEABLE 6/6 CI green at a855da7475 and live capability probes: only producer gemini has audio_input"
         }
       ],
-      "remaining_action": "Verify whether an independent non-producer reviewer with audio_input can hear HOS 128 Shorts VO",
+      "remaining_action": "Verify NAS/script hashes and non-producer audio_input status before recording J3780 wait",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -363283,7 +363288,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-27T18:57Z",
         "by": "gemini",
@@ -363292,7 +363297,7 @@
           "Check non-producer audio_input readiness",
           "Record J3780 wait or reopen and finish J3942"
         ],
-        "note": "Claimed J3942; inspecting J3780 hold, prior rechecks J3879/J3887, capabilities, and HOS PR #797"
+        "note": "Verified HOS PR #797 OPEN/MERGEABLE 6/6 CI green at a855da7475 and live capability probes: only producer gemini has audi"
       },
       "taskKeys": [
         "HOS:128"
