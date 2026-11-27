@@ -1,5 +1,5 @@
 {
-  "next_id": 3870,
+  "next_id": 3871,
   "jobs": [
     {
       "id": "J0001",
@@ -355990,6 +355990,37 @@
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals"
+    },
+    {
+      "id": "J3870",
+      "title": "WW2 016: record locked narration after reset and Pilot 2 seven-day review",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3831 Chief follow-up: voice WW2 016 only after J3831 lock is on main (PR206 merge 2b79228), Pilot 2 seven-day read J3706 AND its Rule-12 review are recorded, and 30 Nov 2026 10:50 UTC reset has actually replenished the live balance. Dependency J3706 is necessary but does not waive its downstream Rule-12 ruling. Read current RULES/LEARNINGS and linked review; if unfinished, use a dependency hold naming that review. Any mandated opening rewrite needs claims/viewer review and a new lock before spending.\n\nLocked file: 02_Video-Projects/016_Battle-of-the-Bulge-Pattons-Turn/01_Script/NARRATION_v02.txt, SHA256 0f8afe812b5c259a3c8f0a386438c9247c74dd6dc1920476f9fdb49d35e13d62, 18492 stripped chars, 53 exact spoken paragraphs. Check hash and parity. Use Mini vo_take.py/el_client, Ben Orbit Narrator eleven_v3, API only, one recorder, shared ledger, dry-run first and live balance/reservations sufficient for the entire take plus retake margin. No top-up, plan change, overage or paid fallback. If insufficient, typed credits wait with observed reset evidence.\n\nRecord only long narration; no extra Shorts VO. Natural reviewed pace around 150wpm; actual word timing must show promise <=45s and main story <60s, no speed-up to force it. Scribe word/repetition check, loudness and pronunciation review; do not substitute ASR for audio quality perception. Save durable NAS copy/hash/stems and evidence, open PR, queue capable VO review. No upload/schedule change. Ben watch 28 Dec; planned air 31 Dec unchanged.\n",
+      "ref": "ww2-channel#206",
+      "film": "WW2:016",
+      "stage": "vo",
+      "after": "J3706",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T08:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for the Pilot 2 review and verified voice credits before recording",
+      "due": "2026-12-20T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record the Battle of the Bulge narration after credits and the earlier film review are ready",
+      "mini_only": true
     }
   ],
   "focus": [
