@@ -355671,15 +355671,20 @@
           "at": "2026-11-27T07:46Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Read J3856 REVIEW.md and v02 assembler/words; confirmed S03 and S08 exact fix specs"
+        },
+        {
+          "at": "2026-11-27T07:55Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Bounded external NASA/JPL search complete (2/3 deep candidates, ~9 min): PIA17656 rejected (720p -> 2.67x > 2.35x); NASA SVS 12709 GSFC_20170912_Cassini_m12709_CIRS_Short [260.00-263.77s, Cassini_Saturn_Animation_Reel.mov] verified 1920x1080 (1.78x) moving Cassini over Titan"
         }
       ],
-      "remaining_action": "Searching official NASA/JPL/Cassini external video sources for S03 Titan north-polar radar/observation footage (max 3 deep candidates)",
+      "remaining_action": "Saving verified NASA SVS 12709 Cassini-Titan clip to NAS harvest and designing simplified 68-70px S08 graphic",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-27T07:46Z",
+        "at": "2026-11-27T07:55Z",
         "by": "gemini",
         "plan": [
           "Read J3856 review and v02 build",
@@ -355689,7 +355694,7 @@
           "Assemble v03 master beside v01/v02 on NAS and run all 7 gates",
           "Inspect stills/warnings, update PR #1366, post report and park for Chief"
         ],
-        "note": "Read J3856 REVIEW.md and v02 assembler/words; confirmed S03 and S08 exact fix specs"
+        "note": "Bounded external NASA/JPL search complete (2/3 deep candidates, ~9 min): PIA17656 rejected (720p -> 2.67x > 2.35x); NASA"
       },
       "taskKeys": [
         "OWB:032"
