@@ -354266,9 +354266,14 @@
           "at": "2026-11-27T03:34Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T03:35Z",
+          "by": "claudecode",
+          "what": "step 1 of 3 done: J3847 done (codex). J3849 work finished by gemini; its only open gate is Chief review+merge of HOS PR #810, which gh shows OPEN, not merged, no review (27 Nov 03:3xZ)."
         }
       ],
-      "remaining_action": "Verify readiness: Parked for elected Chief review and merge of HOS PR #810",
+      "remaining_action": "Record the unmet gate and park the hold update for Chief",
       "kind": "review",
       "recheck_of": "J3849",
       "due": "2026-11-27T04:33:06+00:00",
@@ -354282,12 +354287,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T03:34Z",
+        "at": "2026-11-27T03:35Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3849, its result and gates",
+          "Check HOS PR 810 live state",
+          "Record finding and park for Chief"
+        ],
+        "note": "J3847 done (codex). J3849 work finished by gemini; its only open gate is Chief review+merge of HOS PR #810, which gh sho"
       }
     }
   ],
