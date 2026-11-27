@@ -354604,15 +354604,20 @@
           "at": "2026-11-27T06:20Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All 7 gates PASS (rc=0; gate_shorts_open cut1=1.9s, 0/27 & 0/54 padded frames, AAC -14.10 LUFS / -2.10 dBTP, frame0/cover/SFX/music/polish/picture_qa PASS) and NAS SHA-256 verified: 07ef33e02198"
+        },
+        {
+          "at": "2026-11-27T06:21Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: PR #1366 opened, #99 report posted, 7/7 gates PASS on NAS 032_short_dry_desert_two_oceans_v01.mp4 (sha256 07ef33e02198)"
         }
       ],
-      "remaining_action": "Committing assembler script PR, posting #99 report with cut/contact-sheet/gate evidence, and blocking for Chief Short PASS",
+      "remaining_action": "Parked for Chief Short PASS and PR #1366 review",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-27T06:20Z",
+        "at": "2026-11-27T06:21Z",
         "by": "gemini",
         "plan": [
           "Select film & locked passage",
@@ -354621,7 +354626,7 @@
           "Run all ship & QA gates",
           "Commit, PR & post #99 report"
         ],
-        "note": "All 7 gates PASS (rc=0; gate_shorts_open cut1=1.9s, 0/27 & 0/54 padded frames, AAC -14.10 LUFS / -2.10 dBTP, frame0/cove"
+        "note": "PR #1366 opened, #99 report posted, 7/7 gates PASS on NAS 032_short_dry_desert_two_oceans_v01.mp4 (sha256 07ef33e02198)"
       },
       "taskKeys": [
         "OWB:032"
