@@ -352558,9 +352558,14 @@
           "at": "2026-11-27T01:04Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T01:05Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "After J3830 claims check, review TOPIC/PACKAGING/ARCHIVE_PROVENANCE, run Rule-6 first-300 + first-1,200-word viewer test, fold fixes into v02",
+      "remaining_action": "read topic, packaging, provenance, claims check; then review, viewer test, v02, PR",
       "due": "2026-12-16T18:00:00Z",
       "kind": "review",
       "plain": "Run topic/archive review and Rule-6 stranger viewer test on Battle of the Bulge (016) after claims check, then lock script v02",
@@ -352573,12 +352578,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T01:04Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-27T01:05Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Topic review",
+          "Viewer test",
+          "Script v02",
+          "PR",
+          "Report"
+        ]
       }
     },
     {
