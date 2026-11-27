@@ -355494,13 +355494,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T07:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:34Z",
-      "result": "parked for Chief: J3115 condition VERIFIED SATISFIED. PR #1367 merged 2026-11-27T06:49:22Z (owner repo, no fork, base main, checks green); merge 63265bea07 and candidate 40c6ca5114 (Codex <>, tree 3bc6283b) are on origin/main; all 9 ruling/package files unchanged since. Ben v02 approval 18 Nov 22:16Z and J3115 exact-file PASS stand per J3855. jobs.py reopen J3115 refused for a worker (only the elected Chief may resume). Chief run: jobs.py reopen J3115 --agent codex --note 'publication verified by J3863: PR #1367 / 63265bea07 on origin/main' --git, then verify and close J3115 so J3119 can start; then finish J3863. No upload, schedule or spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T07:34Z",
@@ -355536,6 +355536,11 @@
           "at": "2026-11-27T07:36Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3115 condition VERIFIED SATISFIED. PR #1367 merged 2026-11-27T06:49:22Z (owner repo, no fork, base main, checks green); merge 63265bea07 and candidate 40c6ca5114 (Codex <>, tree 3bc6283b) are on origin/main; all 9 ruling/package files unchanged since. Ben v02 approval 18 Nov 22:16Z and J3115 exact-file PASS stand per J3855. jobs.py reopen J3115 refused for a worker (only the elected Chief may resume). Chief run: jobs.py reopen J3115 --agent codex --note 'publication verified by J3863: PR #1367 / 63265bea07 on origin/main' --git, then verify and close J3115 so J3119 can start; then finish J3863. No upload, schedule or spend."
+        },
+        {
+          "at": "2026-11-27T08:09Z",
+          "by": "codex",
+          "what": "reopened: Elected Chief taking the assigned publication-condition ruling; independent review steps 1 and 2 recorded. J3115 remains held until ruling is recorded."
         }
       ],
       "remaining_action": "Elected Chief: reopen and close J3115 (condition verified)",
@@ -355551,18 +355556,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T07:35Z",
-        "by": "claudecode",
-        "plan": [
-          "Verify merge on origin/main",
-          "Check gates still valid",
-          "Record outcome on J3115"
-        ],
-        "note": "Condition proven; J3115 reopen refused for worker (Chief-only); parking for Chief"
-      },
       "taskKeys": [
         "OWB:034"
       ]
