@@ -356857,15 +356857,20 @@
           "at": "2026-11-27T09:37Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Pre-write checks passed: lint:package 008 PASS, fresh API confirmed 0 comments on YqCWYlv_LCY, f_-BsKZf8X0 private scheduled 2026-12-01T11:30:00Z, 5 UPLOADS.json IDs confirmed public, master sha256 verified and gate_shorts_open PASS"
+        },
+        {
+          "at": "2026-11-27T09:39Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Created YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg via update-pinned-comment.ts; reconciled f_-BsKZf8X0 in shorts_open_library and 5 public IDs in OWB UPLOADS.json"
         }
       ],
-      "remaining_action": "Posting and pinning approved channel comment on YqCWYlv_LCY",
+      "remaining_action": "Pinning YqCWYlv_LCY comment and setting Paid promotion = No on f_-BsKZf8X0 in HOS Studio (CDP 9460)",
       "kind": "studio",
       "plain": "Finish the Franklin film comment and correct its Short settings and records",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-27T09:37Z",
+        "at": "2026-11-27T09:39Z",
         "by": "gemini",
         "plan": [
           "Read audit, lint 008 & inspect state",
@@ -356874,7 +356879,7 @@
           "Reconcile open-library & OWB UPLOADS.json",
           "Run channel:audit, update records, open PRs & report"
         ],
-        "note": "Pre-write checks passed: lint:package 008 PASS, fresh API confirmed 0 comments on YqCWYlv_LCY, f_-BsKZf8X0 private sched"
+        "note": "Created YqCWYlv_LCY comment UgwITIX3pTdVbC_D20V4AaABAg via update-pinned-comment.ts; reconciled f_-BsKZf8X0 in shorts_op"
       },
       "taskKeys": [
         "HOS:008"
