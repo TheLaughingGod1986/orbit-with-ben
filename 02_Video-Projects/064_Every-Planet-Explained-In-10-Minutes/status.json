@@ -1,6 +1,6 @@
 {
   "film": "064",
-  "title": "Every Planet Explained in 10 Minutes (Mercury to Neptune)",
+  "title": "Every Planet Explained in 12 Minutes (Mercury to Neptune)",
   "air": "2026-12-16",
   "stages": {
     "topic": {
@@ -26,21 +26,17 @@
       "ref": "jobs/reviews/J3021/CHIEF_RULING.md (every_planet_explained_vo_v01 WAV 4b478fcd)"
     },
     "picture": {
-      "state": "doing"
+      "state": "done",
+      "ref": "jobs/reviews/J3883/REVIEW.md",
+      "ruling": "PASS"
     },
     "thumbs": {
-      "state": "doing",
-      "ref": "ee5b9d0a49"
+      "state": "done",
+      "ref": "jobs/reviews/J3883/REVIEW.md",
+      "ruling": "PASS"
     }
   },
   "claims": [
-    {
-      "stage": "picture",
-      "by": "gemini",
-      "at": "2026-11-25T14:17Z",
-      "eta": "2026-11-25T16:16Z",
-      "note": "J3022 OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film"
-    },
     {
       "stage": "thumbs",
       "by": "claudecode",
@@ -49,5 +45,5 @@
       "note": "J3898 OWB 064: Publish accepted integration records from J3883"
     }
   ],
-  "next": "VO every_planet_explained_vo_v01 LOCKED (PASS) by acting Chief gemini (J3021; 683.86s, -20.21 LUFS, -3.64 dBTP, 100% true Scribe word match, 0 repetitions, WAV SHA-256 4b478fcd... on studio-live; 3,940 net ElevenLabs credits billed, 8,003/121,114 left). J3021 complete; J3022 shelf picture/graphics/thumbnails released. Ben watch deadline Fri 11 Dec / planned air Wed 16 Dec unchanged."
+  "next": "J3883 corrected preparation/packaging KEEP; PR #1359 merged including #1361, #1358 closed unmerged. J3818/J3022 complete. J3023 builds v02 opening/R09 inputs and split Mercury graphics, then assembly and all final gates before Ben watch 11 Dec 18:00; planned air 16 Dec 18:00. Locked VO unchanged; T045 proposed/video null."
 }
