@@ -353699,15 +353699,20 @@
           "at": "2026-11-27T02:22Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-27T02:24Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Fetched all 218 OWB uploads via Data API; confirmed true last 10 live public videos (GbELka8Yu9U through 9q_OvQ1Rd8Y), parent longs public, and long comments live"
         }
       ],
-      "remaining_action": "Reading prior live_fixes report and identifying the last 10 live OWB videos",
+      "remaining_action": "Auditing chapters against cuts, description manifests, source URLs, and read-only Studio end screens/Related pills",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-27T02:22Z",
+        "at": "2026-11-27T02:24Z",
         "by": "gemini",
         "plan": [
           "Fetch last 10 live OWB videos",
@@ -353715,8 +353720,15 @@
           "Check end screens and Related pills",
           "Write live_fixes report",
           "Commit and hand off"
-        ]
-      }
+        ],
+        "note": "Fetched all 218 OWB uploads via Data API; confirmed true last 10 live public videos (GbELka8Yu9U through 9q_OvQ1Rd8Y), p"
+      },
+      "taskKeys": [
+        "OWB:032",
+        "OWB:027",
+        "OWB:024",
+        "OWB:026"
+      ]
     },
     {
       "id": "J3844",
