@@ -116,6 +116,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3921 | mini | open | – | – | WW2:006 upload · studio · Package and upload WW2 006 long v04 (De Havilland Mosquito: Why It Was Made of Wood) Private, 2026-12-05T17:00Z |  |
 | J3922 | mini | open | – | – | 064 edit · assembly · OWB 064 Short 1: restore missing narration in immutable v03 | J3918 |
 | J3923 | mini | open (after J3922) | – | – | 064 edit · qa · OWB 064 Short 1: independently hear and watch repaired v03 | J3918 |
+| J3924 | mini | open | – | – | for claudecode · assembly · Publish completed J3918 Chief FIX evidence after independent privacy review | J3918 |
 
 Recently finished:
 
