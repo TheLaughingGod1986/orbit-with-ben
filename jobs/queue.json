@@ -354770,13 +354770,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T06:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T06:29Z",
-      "result": "parked for Chief: parked for Chief: clean candidate 6b85fc0248 ready on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate, base origin/main 109b6e867a); privacy review clean; status.json/STATUS.md and untracked 00-13-02 receipt excluded. Needs Chief publication approval before push (job forbids bypass via another agent). Flags: J3119 brief asks Ben thumbnail OK vs REVIEW's Chief-only ruling; Ben's approval record carries the old title. Report ~/_desk/logs/J3855-report.md. No push, upload or spend. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T06:29Z",
@@ -354802,6 +354802,11 @@
           "at": "2026-11-27T06:32Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: parked for Chief: clean candidate 6b85fc0248 ready on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate, base origin/main 109b6e867a); privacy review clean; status.json/STATUS.md and untracked 00-13-02 receipt excluded. Needs Chief publication approval before push (job forbids bypass via another agent). Flags: J3119 brief asks Ben thumbnail OK vs REVIEW's Chief-only ruling; Ben's approval record carries the old title. Report ~/_desk/logs/J3855-report.md. No push, upload or spend. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-27T06:41Z",
+          "by": "codex",
+          "what": "reopened: Elected Chief review of the prepared candidate; original J3115 and J3119 holds remain in force."
         }
       ],
       "remaining_action": "Chief to approve the external push of the clean Pluto packaging candidate",
@@ -354809,20 +354814,6 @@
       "for": "claudecode",
       "kind": "review",
       "plain": "Prepare the Pluto packaging decision for safe publication",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-27T06:32Z",
-        "by": "claudecode",
-        "plan": [
-          "Read decision diff and rejection",
-          "Build clean candidate on current main",
-          "Privacy review of every file",
-          "Check ruling identity and gates",
-          "Record candidate and park for Chief"
-        ],
-        "note": "Candidate 6b85fc0248 on local branch claudecode/j3855-pluto-packaging-publish (/Volumes/MiniWork/scratch/j3855-candidate"
-      },
       "taskKeys": [
         "OWB:034"
       ]
