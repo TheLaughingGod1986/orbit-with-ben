@@ -117,9 +117,13 @@ class ApprovedDeliver(unittest.TestCase):
             "listing": ready_listing(),
             "approved": {},
         }
+        # The package is on its way in a live delivery job, so the card waits for it (26 Nov 2026: with no delivery work
+        # at all, the relay queues a package-and-upload job instead; test_board_ok_handoff covers that).
+        packaging = {"id": "J2", "status": "open", "kind": "listing", "repo": "owb", "stage": "upload",
+                     "title": "Upload package for OWB 032 v03", "approved_from": {"card": "OWB:032"}}
         empty = Path(tempfile.mkdtemp())
         with mock.patch.object(ad.lp, "for_video", side_effect=lambda v, root=None: v.get("listing") or {}):
-            actions = ad.plan_actions([incomplete, banned], [], now=NOW, root=empty)
+            actions = ad.plan_actions([incomplete, banned], [packaging], now=NOW, root=empty)
         by_key = {a["key"]: a for a in actions}
         self.assertEqual(by_key["OWB:032"]["op"], "wait")
         self.assertIn("thumbnail", by_key["OWB:032"]["reason"])

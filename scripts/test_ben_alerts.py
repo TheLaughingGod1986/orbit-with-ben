@@ -123,6 +123,20 @@ class WatchTriggerTests(unittest.TestCase):
             self.assertEqual(len(r3["sent"]), 0)
             self.assertEqual(len(sent), 1)
 
+    def test_an_ok_on_a_later_cut_answers_the_earlier_ask(self):
+        # 27 Nov 2026: J2996 still asked Ben to watch pilot 2 v05 "by 18:00" although he OK'd v06 on 24 Nov and it was public.
+        entry = {"id": "J2996", "job": "J2996", "card": "WW2:002", "version": "v05", "number": "002", "channel": "WW2"}
+        cid = ba.video_tracker.ask_check_id(entry)
+        self.assertTrue(ba._ask_answered(entry, {cid: {"verdict": "ok", "version": "v06"}}))
+        self.assertTrue(ba._ask_answered(entry, {cid: {"verdict": "change", "version": "v07"}}))
+        self.assertFalse(ba._ask_answered(entry, {cid: {"verdict": "ok", "version": "v04"}}))  # an older answer doesn't count
+        with tempfile.TemporaryDirectory() as tmp:
+            jobs = [watch_job(jid="J2996", repo="ww2", film="002", title="U-boats", version="v05", vtype="long",
+                              card="WW2:002", due="2026-11-27T18:00:00Z", airs="")]
+            r = ba.evaluate(at=utc(2026, 11, 27, 8, 30), jobs=jobs, checks={cid: {"verdict": "ok", "version": "v06"}},
+                            state_file=Path(tmp) / "s.json", config_file=Path(tmp) / "c.json", deliver=False)
+            self.assertEqual(r["board"]["active"], [])
+
     def test_watch_ignores_deadlines_over_12h_or_already_past(self):
         with tempfile.TemporaryDirectory() as tmp:
             st = Path(tmp) / "state.json"
@@ -211,6 +225,34 @@ class PullTriggerTests(unittest.TestCase):
                              notify_fn=lambda m: sent.append(m) or True, site_url="https://board.oppti.dev")
             self.assertEqual(r5["sent"], [])
             self.assertEqual(r5["board"]["active"], [])
+
+    def test_register_read_gap_is_not_a_pull_and_a_raised_alert_clears_when_still_in_slot(self):
+        # 26 Nov 2026: WW2 002-S1 (ZCnSldSJzME, Private, 27 Nov 12:30Z) was flagged "taken off tomorrow's 12:30 slot"
+        # when one run could not read the WW2 register; YouTube never changed.
+        rec = {"ZCnSldSJzME": {"kind": "short", "film": "002", "title": "WW2 U-Boats", "privacyStatus": "private",
+                               "publishAt": "2026-11-27T12:30:00Z"}}
+        with tempfile.TemporaryDirectory() as tmp:
+            st, cfg, sent = Path(tmp) / "state.json", Path(tmp) / "config.json", []
+            kw = dict(state_file=st, config_file=cfg, notify_fn=lambda m: sent.append(m) or True)
+            ba.evaluate(at=utc(2026, 11, 26, 19, 50), videos=[], uploads={"WW2": dict(rec)}, **kw)
+            gap = ba.evaluate(at=utc(2026, 11, 26, 19, 56), videos=[], uploads={}, **kw)  # register unreadable
+            self.assertEqual((gap["sent"], gap["board"]["active"]), ([], []))
+            back = ba.evaluate(at=utc(2026, 11, 26, 20, 5), videos=[], uploads={"WW2": dict(rec)}, **kw)
+            self.assertEqual(back["board"]["active"], [])
+        # An alert raised before this fix (state already holds the pull) clears once the video is seen in its slot.
+        with tempfile.TemporaryDirectory() as tmp:
+            st, cfg = Path(tmp) / "state.json", Path(tmp) / "config.json"
+            st.write_text(json.dumps({"seededAt": "2026-11-20T00:00Z", "known_scheduled": {}, "events": {}, "pulls": {
+                "pull:WW2:ZCnSldSJzME:2026-11-27T12:30": {
+                    "id": "pull:WW2:ZCnSldSJzME:2026-11-27T12:30", "channel": "WW2", "videoId": "ZCnSldSJzME",
+                    "title": "WW2 U-Boats", "type": "short", "film": "", "slotAt": "2026-11-27T12:30:00Z",
+                    "change": "unscheduled", "reason": "", "detectedAt": "2026-11-26T19:56:56Z", "supersededBy": "",
+                    "job": ""}}}))
+            r = ba.evaluate(at=utc(2026, 11, 26, 20, 10), videos=[], uploads={"WW2": dict(rec)}, state_file=st,
+                            config_file=cfg, notify_fn=lambda m: True)
+            self.assertEqual(r["board"]["active"], [])
+            pull = json.loads(st.read_text())["pulls"]["pull:WW2:ZCnSldSJzME:2026-11-27T12:30"]
+            self.assertEqual(pull.get("resolution"), "still scheduled in its slot")
 
     def test_pull_outside_24h_and_normal_go_live_do_not_alert(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -425,8 +467,10 @@ class PullTriggerTests(unittest.TestCase):
             }
             ba.evaluate(at=utc(2026, 11, 21, 16, 0), uploads=uploads_seed, state_file=st, config_file=cfg,
                         notify_fn=lambda m: True)
-            # All three lose their publishAt -> each banner must name its video, never just "HOS Short".
-            res = ba.evaluate(at=utc(2026, 11, 21, 17, 0), uploads={}, state_file=st, config_file=cfg,
+            # All three lose their publishAt -> each banner must name its video, never just "HOS Short". (The records
+            # stay in the register with publishAt null: an empty register is a read gap, not a pull, since 26 Nov.)
+            unscheduled = {"HOS": {vid: {**meta, "publishAt": None} for vid, meta in uploads_seed["HOS"].items()}}
+            res = ba.evaluate(at=utc(2026, 11, 21, 17, 0), uploads=unscheduled, state_file=st, config_file=cfg,
                               notify_fn=lambda m: True, site_url="https://board.oppti.dev")
             msgs = {a["id"]: a["message"] for a in res["board"]["active"]}
             self.assertEqual(len(msgs), 3)

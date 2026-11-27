@@ -23,7 +23,8 @@ class Prelaunch(unittest.TestCase):
         root = Path(tmp.name)
         channel = dict(channels.get('ww2'), local='channels/ww2', launch_state='prelaunch',
                        youtube={'handle': '@FieldOrderHistory'},
-                       repo={'url': '', 'env': 'WW2_REPO', 'checkouts': ['ww2']})
+                       repo={'url': '', 'env': 'WW2_REPO', 'checkouts': ['ww2']},
+                       shorts={'planned_per_long': 0})  # ten film cards only, whatever the live Shorts setting
         base = tuple(channel if c['slug'] == 'ww2' else c for c in channels._load())
         self.enterContext(mock.patch.object(channels, 'ROOT', root))
         original_load = channels._load

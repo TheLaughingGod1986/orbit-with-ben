@@ -1,6 +1,6 @@
 {
   "name": "Field Order History",
-  "through": "2026-11-23",
+  "through": "2026-11-25",
   "deadline": "2027-02-01",
   "targets": [
     {
@@ -8,31 +8,353 @@
       "current": 1,
       "target": 1000,
       "eta": null,
-      "asOf": "2026-11-25T07:08:34Z",
-      "source": "Studio"
+      "asOf": "2026-11-27T06:40:32.922Z",
+      "source": "YouTube API"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 2.4,
+      "current": 2.8833333333333333,
       "target": 4000,
       "eta": null,
-      "asOf": "2026-11-25T07:08:34Z",
-      "source": "Studio, all watch time"
+      "asOf": "data through 2026-11-25",
+      "source": "API estimate"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 2.4,
+      "current": 2.8833333333333333,
       "target": 8000,
       "eta": null,
-      "asOf": "2026-11-25T07:08:34Z",
-      "source": "Studio, all watch time"
+      "asOf": "data through 2026-11-25",
+      "source": "API estimate"
     }
   ],
   "eligibleWatchHours": 0,
   "studioReadAt": "2026-11-23T07:02:42Z",
-  "estimatedPublicLongHours": 0.2833333333333333,
+  "estimatedPublicLongHours": 2.8833333333333333,
   "note": "Watch-hour forecasts are estimates, not YPP eligibility. Rolling 365-day hours can expire. February 1 is the studio planning line; confirm current policy before applying.",
   "films": [
+    {
+      "id": "qfc6EBStOfo",
+      "title": "Battle of the Atlantic: The Month U-Boats Lost",
+      "window": "48h",
+      "startDate": "2026-11-24",
+      "endDate": "2026-11-25",
+      "metrics": {
+        "views": 16,
+        "estimatedMinutesWatched": 27,
+        "averageViewDuration": 134,
+        "averageViewPercentage": 9.95,
+        "subscribersGained": 0
+      },
+      "impressions": null,
+      "ctr": null,
+      "viewed": 9.95,
+      "watchHours": 0.45,
+      "sources": [
+        {
+          "insightTrafficSourceType": "NO_LINK_OTHER",
+          "views": 2
+        },
+        {
+          "insightTrafficSourceType": "SUBSCRIBER",
+          "views": 2
+        },
+        {
+          "insightTrafficSourceType": "RELATED_VIDEO",
+          "views": 12
+        }
+      ],
+      "suggested": [
+        {
+          "insightTrafficSourceDetail": "22VsQYFMybY",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "77mDeoKHxC0",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "8KkEbVdT12E",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "E9ro4ToVnYo",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "F7LcdpgQnVs",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "Q36S1X16oFM",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "TjBc7kD5ffM",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "a7GRLxS_4h8",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "fUnU-Mg9-y0",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "lM5FTQjMYpg",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "r4sw06_o12Y",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "rqDhVhkvJro",
+          "views": 1
+        }
+      ],
+      "retention": [
+        {
+          "at": 0.01,
+          "watching": 1,
+          "relative": 0.23370000000000002
+        },
+        {
+          "at": 0.02,
+          "watching": 0.6,
+          "relative": 0.19505
+        },
+        {
+          "at": 0.03,
+          "watching": 0.5,
+          "relative": 0.17070000000000002
+        },
+        {
+          "at": 0.04,
+          "watching": 0.4,
+          "relative": 0.16405000000000003
+        },
+        {
+          "at": 0.05,
+          "watching": 0.4,
+          "relative": 0.16265000000000002
+        },
+        {
+          "at": 0.06,
+          "watching": 0.4,
+          "relative": 0.1622
+        },
+        {
+          "at": 0.07,
+          "watching": 0.4,
+          "relative": 0.16135
+        },
+        {
+          "at": 0.08,
+          "watching": 0.4,
+          "relative": 0.1582
+        },
+        {
+          "at": 0.09,
+          "watching": 0.4,
+          "relative": 0.1532
+        },
+        {
+          "at": 0.1,
+          "watching": 0.3,
+          "relative": 0.14984999999999998
+        },
+        {
+          "at": 0.11,
+          "watching": 0.3,
+          "relative": 0.1483
+        },
+        {
+          "at": 0.12,
+          "watching": 0.3,
+          "relative": 0.14689999999999998
+        },
+        {
+          "at": 0.13,
+          "watching": 0.3,
+          "relative": 0.14615
+        },
+        {
+          "at": 0.14,
+          "watching": 0.3,
+          "relative": 0.1446
+        },
+        {
+          "at": 0.15,
+          "watching": 0.3,
+          "relative": 0.13780000000000003
+        },
+        {
+          "at": 0.16,
+          "watching": 0.3,
+          "relative": 0.12514999999999998
+        },
+        {
+          "at": 0.17,
+          "watching": 0.3,
+          "relative": 0.10869999999999996
+        },
+        {
+          "at": 0.18,
+          "watching": 0.3,
+          "relative": 0.09055000000000002
+        },
+        {
+          "at": 0.19,
+          "watching": 0.3,
+          "relative": 0.07270000000000004
+        },
+        {
+          "at": 0.2,
+          "watching": 0.3,
+          "relative": 0.05654999999999999
+        },
+        {
+          "at": 0.21,
+          "watching": 0.3,
+          "relative": 0.04465000000000002
+        },
+        {
+          "at": 0.22,
+          "watching": 0.3,
+          "relative": 0.03854999999999997
+        },
+        {
+          "at": 0.23,
+          "watching": 0.3,
+          "relative": 0.0363
+        },
+        {
+          "at": 0.24,
+          "watching": 0.3,
+          "relative": 0.035150000000000015
+        },
+        {
+          "at": 0.25,
+          "watching": 0.3,
+          "relative": 0.033899999999999986
+        },
+        {
+          "at": 0.26,
+          "watching": 0.1,
+          "relative": 0.03259999999999996
+        },
+        {
+          "at": 0.27,
+          "watching": 0.1,
+          "relative": 0.03130000000000005
+        },
+        {
+          "at": 0.28,
+          "watching": 0.1,
+          "relative": 0.03005000000000002
+        },
+        {
+          "at": 0.29,
+          "watching": 0.1,
+          "relative": 0.028849999999999987
+        },
+        {
+          "at": 0.3,
+          "watching": 0.1,
+          "relative": 0.02789999999999998
+        },
+        {
+          "at": 0.31,
+          "watching": 0.1,
+          "relative": 0.027500000000000024
+        },
+        {
+          "at": 0.32,
+          "watching": 0.1,
+          "relative": 0.029299999999999993
+        },
+        {
+          "at": 0.33,
+          "watching": 0.1,
+          "relative": 0.03270000000000001
+        },
+        {
+          "at": 0.34,
+          "watching": 0.1,
+          "relative": 0.03384999999999999
+        },
+        {
+          "at": 0.35,
+          "watching": 0.1,
+          "relative": 0.032799999999999996
+        },
+        {
+          "at": 0.36,
+          "watching": 0.1,
+          "relative": 0.031850000000000045
+        },
+        {
+          "at": 0.37,
+          "watching": 0.1,
+          "relative": 0.03119999999999995
+        }
+      ],
+      "checkpoints": [
+        {
+          "seconds": 30,
+          "ratio": 0.562282091917591
+        },
+        {
+          "seconds": 60,
+          "ratio": 0.4
+        },
+        {
+          "seconds": 120,
+          "ratio": 0.3491283676703645
+        },
+        {
+          "seconds": 0,
+          "ratio": null
+        },
+        {
+          "seconds": 128,
+          "ratio": 0.3
+        },
+        {
+          "seconds": 300,
+          "ratio": 0.3
+        },
+        {
+          "seconds": 564,
+          "ratio": null
+        },
+        {
+          "seconds": 805,
+          "ratio": null
+        },
+        {
+          "seconds": 1077,
+          "ratio": null
+        }
+      ],
+      "newViewers": null,
+      "returningViewers": null,
+      "studioMissing": {
+        "reach": "No matching dated Studio read"
+      },
+      "testCompare": null,
+      "flags": [
+        "Tighten the next script's first two minutes."
+      ],
+      "medianAvgSeconds": 190.5,
+      "avgSecondsVsMedian": -56.5,
+      "medianCtr": 0.9,
+      "medianViewed": 12.875,
+      "ctrVsMedian": null,
+      "viewedVsMedian": -2.9250000000000007
+    },
     {
       "id": "ek9F61FVYqY",
       "title": "Mulberry Harbours: D-Day's Floating Ports",
@@ -40,24 +362,24 @@
       "startDate": "2026-11-22",
       "endDate": "2026-11-23",
       "metrics": {
-        "views": 9,
-        "estimatedMinutesWatched": 17,
-        "averageViewDuration": 128,
-        "averageViewPercentage": 7.76,
-        "subscribersGained": 0
+        "views": 32,
+        "estimatedMinutesWatched": 146,
+        "averageViewDuration": 247,
+        "averageViewPercentage": 15.8,
+        "subscribersGained": 1
       },
       "impressions": 1561,
       "ctr": 0.9,
-      "viewed": 7.76,
-      "watchHours": 0.2833333333333333,
+      "viewed": 15.8,
+      "watchHours": 2.433333333333333,
       "sources": [
         {
           "insightTrafficSourceType": "NO_LINK_OTHER",
-          "views": 1
+          "views": 6
         },
         {
           "insightTrafficSourceType": "RELATED_VIDEO",
-          "views": 7
+          "views": 25
         },
         {
           "insightTrafficSourceType": "PLAYLIST",
@@ -66,11 +388,55 @@
       ],
       "suggested": [
         {
+          "insightTrafficSourceDetail": "I_DcgLvwgBs",
+          "views": 3
+        },
+        {
+          "insightTrafficSourceDetail": "2IfQyC9SgfM",
+          "views": 2
+        },
+        {
+          "insightTrafficSourceDetail": "Dmg4_DVr79Q",
+          "views": 2
+        },
+        {
+          "insightTrafficSourceDetail": "YAQYPiCPdOo",
+          "views": 2
+        },
+        {
           "insightTrafficSourceDetail": "0d8EK1riXaE",
           "views": 1
         },
         {
+          "insightTrafficSourceDetail": "3hwqjvQ18vg",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "85imanS8ZTE",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "A26ip1Qb7Jg",
+          "views": 1
+        },
+        {
           "insightTrafficSourceDetail": "Ca0LcbubFaY",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "DMk--63SHOs",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "HjQnX5G-pms",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "I6RpPujwAZ4",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "J9jS0uDlLGE",
           "views": 1
         },
         {
@@ -86,27 +452,540 @@
           "views": 1
         },
         {
+          "insightTrafficSourceDetail": "grBaH7LMnEY",
+          "views": 1
+        },
+        {
           "insightTrafficSourceDetail": "hlmP6bz8jPY",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "of60wacXiTQ",
           "views": 1
         },
         {
           "insightTrafficSourceDetail": "rXdsDZqPH-g",
           "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "vwxP6HXkKIY",
+          "views": 1
         }
       ],
-      "retention": [],
+      "retention": [
+        {
+          "at": 0.01,
+          "watching": 0.9259000000000001,
+          "relative": 0.22644999999999998
+        },
+        {
+          "at": 0.02,
+          "watching": 0.40740000000000004,
+          "relative": 0.17804999999999999
+        },
+        {
+          "at": 0.03,
+          "watching": 0.40740000000000004,
+          "relative": 0.14740000000000003
+        },
+        {
+          "at": 0.04,
+          "watching": 0.3333,
+          "relative": 0.1387
+        },
+        {
+          "at": 0.05,
+          "watching": 0.2963,
+          "relative": 0.13595000000000002
+        },
+        {
+          "at": 0.06,
+          "watching": 0.3333,
+          "relative": 0.13305
+        },
+        {
+          "at": 0.07,
+          "watching": 0.2963,
+          "relative": 0.12770000000000004
+        },
+        {
+          "at": 0.08,
+          "watching": 0.2963,
+          "relative": 0.11995
+        },
+        {
+          "at": 0.09,
+          "watching": 0.3333,
+          "relative": 0.11359999999999998
+        },
+        {
+          "at": 0.1,
+          "watching": 0.2963,
+          "relative": 0.10920000000000002
+        },
+        {
+          "at": 0.11,
+          "watching": 0.2963,
+          "relative": 0.1049
+        },
+        {
+          "at": 0.12,
+          "watching": 0.2963,
+          "relative": 0.10039999999999999
+        },
+        {
+          "at": 0.13,
+          "watching": 0.3333,
+          "relative": 0.09689999999999999
+        },
+        {
+          "at": 0.14,
+          "watching": 0.2963,
+          "relative": 0.09615000000000001
+        },
+        {
+          "at": 0.15,
+          "watching": 0.2593,
+          "relative": 0.09765000000000001
+        },
+        {
+          "at": 0.16,
+          "watching": 0.1852,
+          "relative": 0.09770000000000001
+        },
+        {
+          "at": 0.17,
+          "watching": 0.1852,
+          "relative": 0.09625
+        },
+        {
+          "at": 0.18,
+          "watching": 0.1852,
+          "relative": 0.09515000000000001
+        },
+        {
+          "at": 0.19,
+          "watching": 0.1852,
+          "relative": 0.09484999999999999
+        },
+        {
+          "at": 0.2,
+          "watching": 0.1481,
+          "relative": 0.09515000000000001
+        },
+        {
+          "at": 0.21,
+          "watching": 0.1481,
+          "relative": 0.09555000000000002
+        },
+        {
+          "at": 0.22,
+          "watching": 0.1481,
+          "relative": 0.09555000000000002
+        },
+        {
+          "at": 0.23,
+          "watching": 0.1852,
+          "relative": 0.09424999999999994
+        },
+        {
+          "at": 0.24,
+          "watching": 0.1852,
+          "relative": 0.09100000000000003
+        },
+        {
+          "at": 0.25,
+          "watching": 0.1852,
+          "relative": 0.08545000000000003
+        },
+        {
+          "at": 0.26,
+          "watching": 0.1852,
+          "relative": 0.07784999999999997
+        },
+        {
+          "at": 0.27,
+          "watching": 0.1852,
+          "relative": 0.0686
+        },
+        {
+          "at": 0.28,
+          "watching": 0.1852,
+          "relative": 0.05890000000000001
+        },
+        {
+          "at": 0.29,
+          "watching": 0.1852,
+          "relative": 0.049750000000000016
+        },
+        {
+          "at": 0.3,
+          "watching": 0.1852,
+          "relative": 0.04229999999999995
+        },
+        {
+          "at": 0.31,
+          "watching": 0.1852,
+          "relative": 0.0383
+        },
+        {
+          "at": 0.32,
+          "watching": 0.1852,
+          "relative": 0.03685000000000005
+        },
+        {
+          "at": 0.33,
+          "watching": 0.1481,
+          "relative": 0.03639999999999999
+        },
+        {
+          "at": 0.34,
+          "watching": 0.1481,
+          "relative": 0.036199999999999954
+        },
+        {
+          "at": 0.35,
+          "watching": 0.11109999999999999,
+          "relative": 0.036150000000000015
+        },
+        {
+          "at": 0.36,
+          "watching": 0.0741,
+          "relative": 0.0363
+        },
+        {
+          "at": 0.37,
+          "watching": 0.0741,
+          "relative": 0.03655000000000003
+        },
+        {
+          "at": 0.38,
+          "watching": 0.0741,
+          "relative": 0.037150000000000016
+        },
+        {
+          "at": 0.39,
+          "watching": 0.0741,
+          "relative": 0.03939999999999999
+        },
+        {
+          "at": 0.4,
+          "watching": 0.0741,
+          "relative": 0.0464
+        },
+        {
+          "at": 0.41,
+          "watching": 0.0741,
+          "relative": 0.061450000000000005
+        },
+        {
+          "at": 0.42,
+          "watching": 0.0741,
+          "relative": 0.08759999999999996
+        },
+        {
+          "at": 0.43,
+          "watching": 0.0741,
+          "relative": 0.1279
+        },
+        {
+          "at": 0.44,
+          "watching": 0.11109999999999999,
+          "relative": 0.1829
+        },
+        {
+          "at": 0.45,
+          "watching": 0.11109999999999999,
+          "relative": 0.24780000000000002
+        },
+        {
+          "at": 0.46,
+          "watching": 0.0741,
+          "relative": 0.31295
+        },
+        {
+          "at": 0.47,
+          "watching": 0.0741,
+          "relative": 0.36595
+        },
+        {
+          "at": 0.48,
+          "watching": 0.11109999999999999,
+          "relative": 0.3972
+        },
+        {
+          "at": 0.49,
+          "watching": 0.11109999999999999,
+          "relative": 0.4038
+        },
+        {
+          "at": 0.5,
+          "watching": 0.11109999999999999,
+          "relative": 0.38765
+        },
+        {
+          "at": 0.51,
+          "watching": 0.11109999999999999,
+          "relative": 0.3527
+        },
+        {
+          "at": 0.52,
+          "watching": 0.11109999999999999,
+          "relative": 0.30585
+        },
+        {
+          "at": 0.53,
+          "watching": 0.11109999999999999,
+          "relative": 0.25649999999999995
+        },
+        {
+          "at": 0.54,
+          "watching": 0.11109999999999999,
+          "relative": 0.2136
+        },
+        {
+          "at": 0.55,
+          "watching": 0.11109999999999999,
+          "relative": 0.17924999999999996
+        },
+        {
+          "at": 0.56,
+          "watching": 0.0741,
+          "relative": 0.14895000000000003
+        },
+        {
+          "at": 0.57,
+          "watching": 0.0741,
+          "relative": 0.12280000000000002
+        },
+        {
+          "at": 0.58,
+          "watching": 0.0741,
+          "relative": 0.10515000000000002
+        },
+        {
+          "at": 0.59,
+          "watching": 0.0741,
+          "relative": 0.09499999999999997
+        },
+        {
+          "at": 0.6,
+          "watching": 0.0741,
+          "relative": 0.09009999999999996
+        },
+        {
+          "at": 0.61,
+          "watching": 0.11109999999999999,
+          "relative": 0.09055000000000002
+        },
+        {
+          "at": 0.62,
+          "watching": 0.11109999999999999,
+          "relative": 0.09484999999999999
+        },
+        {
+          "at": 0.63,
+          "watching": 0.0741,
+          "relative": 0.09720000000000001
+        },
+        {
+          "at": 0.64,
+          "watching": 0.0741,
+          "relative": 0.09770000000000001
+        },
+        {
+          "at": 0.65,
+          "watching": 0.0741,
+          "relative": 0.10170000000000001
+        },
+        {
+          "at": 0.66,
+          "watching": 0.0741,
+          "relative": 0.11005000000000004
+        },
+        {
+          "at": 0.67,
+          "watching": 0.0741,
+          "relative": 0.12159999999999999
+        },
+        {
+          "at": 0.68,
+          "watching": 0.0741,
+          "relative": 0.13670000000000004
+        },
+        {
+          "at": 0.69,
+          "watching": 0.0741,
+          "relative": 0.15704999999999997
+        },
+        {
+          "at": 0.7,
+          "watching": 0.0741,
+          "relative": 0.1819
+        },
+        {
+          "at": 0.71,
+          "watching": 0.0741,
+          "relative": 0.20690000000000003
+        },
+        {
+          "at": 0.72,
+          "watching": 0.0741,
+          "relative": 0.2313
+        },
+        {
+          "at": 0.73,
+          "watching": 0.0741,
+          "relative": 0.25625
+        },
+        {
+          "at": 0.74,
+          "watching": 0.0741,
+          "relative": 0.28155
+        },
+        {
+          "at": 0.75,
+          "watching": 0.0741,
+          "relative": 0.30625
+        },
+        {
+          "at": 0.76,
+          "watching": 0.0741,
+          "relative": 0.32855
+        },
+        {
+          "at": 0.77,
+          "watching": 0.0741,
+          "relative": 0.34665
+        },
+        {
+          "at": 0.78,
+          "watching": 0.0741,
+          "relative": 0.35885
+        },
+        {
+          "at": 0.79,
+          "watching": 0.0741,
+          "relative": 0.36335
+        },
+        {
+          "at": 0.8,
+          "watching": 0.0741,
+          "relative": 0.3621
+        },
+        {
+          "at": 0.81,
+          "watching": 0.0741,
+          "relative": 0.35835
+        },
+        {
+          "at": 0.82,
+          "watching": 0.0741,
+          "relative": 0.34785
+        },
+        {
+          "at": 0.83,
+          "watching": 0.0741,
+          "relative": 0.32725000000000004
+        },
+        {
+          "at": 0.84,
+          "watching": 0.0741,
+          "relative": 0.2989
+        },
+        {
+          "at": 0.85,
+          "watching": 0.0741,
+          "relative": 0.2691
+        },
+        {
+          "at": 0.86,
+          "watching": 0.0741,
+          "relative": 0.24109999999999998
+        },
+        {
+          "at": 0.87,
+          "watching": 0.0741,
+          "relative": 0.21600000000000003
+        },
+        {
+          "at": 0.88,
+          "watching": 0.0741,
+          "relative": 0.19690000000000002
+        },
+        {
+          "at": 0.89,
+          "watching": 0.0741,
+          "relative": 0.18385
+        },
+        {
+          "at": 0.9,
+          "watching": 0.0741,
+          "relative": 0.1725
+        },
+        {
+          "at": 0.91,
+          "watching": 0.0741,
+          "relative": 0.16194999999999998
+        },
+        {
+          "at": 0.92,
+          "watching": 0.0741,
+          "relative": 0.15360000000000001
+        },
+        {
+          "at": 0.93,
+          "watching": 0.0741,
+          "relative": 0.14784999999999998
+        },
+        {
+          "at": 0.94,
+          "watching": 0.0741,
+          "relative": 0.14399999999999996
+        },
+        {
+          "at": 0.95,
+          "watching": 0.0741,
+          "relative": 0.14130000000000004
+        },
+        {
+          "at": 0.96,
+          "watching": 0.0741,
+          "relative": 0.13945000000000002
+        },
+        {
+          "at": 0.97,
+          "watching": 0.037000000000000005,
+          "relative": 0.13799999999999996
+        },
+        {
+          "at": 0.98,
+          "watching": 0.037000000000000005,
+          "relative": 0.13689999999999997
+        },
+        {
+          "at": 0.99,
+          "watching": 0.037000000000000005,
+          "relative": 0.1362
+        },
+        {
+          "at": 1,
+          "watching": 0.037000000000000005,
+          "relative": 0.13579999999999998
+        }
+      ],
       "checkpoints": [
         {
           "seconds": 30,
-          "ratio": null
+          "ratio": 0.40740000000000004
         },
         {
           "seconds": 60,
-          "ratio": null
+          "ratio": 0.31913783783783783
         },
         {
           "seconds": 120,
-          "ratio": null
+          "ratio": 0.3246243243243243
         },
         {
           "seconds": 0,
@@ -114,23 +993,23 @@
         },
         {
           "seconds": 87,
-          "ratio": null
+          "ratio": 0.32016486486486484
         },
         {
           "seconds": 363,
-          "ratio": null
+          "ratio": 0.1852
         },
         {
-          "seconds": 613,
-          "ratio": null
+          "seconds": 549,
+          "ratio": 0.0741
         },
         {
-          "seconds": 888,
-          "ratio": null
+          "seconds": 824,
+          "ratio": 0.08112702702702711
         },
         {
-          "seconds": 1142,
-          "ratio": null
+          "seconds": 1078,
+          "ratio": 0.0741
         }
       ],
       "newViewers": null,
@@ -147,12 +1026,12 @@
         "Change thumbnail first, then title; Chief reviews before any change.",
         "Tighten the next script's first two minutes."
       ],
-      "medianAvgSeconds": 128,
-      "avgSecondsVsMedian": 0,
+      "medianAvgSeconds": 190.5,
+      "avgSecondsVsMedian": 56.5,
       "medianCtr": 0.9,
-      "medianViewed": 7.76,
+      "medianViewed": 12.875,
       "ctrVsMedian": 0,
-      "viewedVsMedian": 0
+      "viewedVsMedian": 2.9250000000000007
     }
   ],
   "countries": [],

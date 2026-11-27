@@ -76,7 +76,7 @@ class PlanBoardTest(unittest.TestCase):
         self.assertEqual(hos["baseline"]["best"], "Best long so far: 162 views")
         self.assertEqual(hos["baseline"]["showings"],
                          "All 7 longs: about 2,185 showings (read 20 Nov)")
-        self.assertEqual(len(hos["steps"]), 9)
+        self.assertEqual(len(hos["steps"]), 14)
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
