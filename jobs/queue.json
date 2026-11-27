@@ -354744,9 +354744,14 @@
           "at": "2026-11-27T08:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-27T09:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
         }
       ],
-      "remaining_action": "Waiting for J3865 Titan Short corrections and exact-file review",
+      "remaining_action": "Waiting for the corrected Titan Short playback review in J3878",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
@@ -354768,7 +354773,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief FIX remains: v01 and v02 are not approved. J3865 must deliver corrected v03 and exact-file review must pass before UAT. J3856 review found Dragonfly depicted as Cassini and undersized, non-spoken depth labeling. No upload or scheduling.",
+        "condition": "J3865 correction review accepts v03 picture and graphic corrections only, exact hash 5b5703855c18. J3878 must complete demonstrated audio/moving-video QA, followed by exact-file Chief decision before UAT. No publishing approval.",
         "check_at": "2026-11-28T06:45:00Z"
       },
       "escalated_at": "2026-11-27T08:48Z"
