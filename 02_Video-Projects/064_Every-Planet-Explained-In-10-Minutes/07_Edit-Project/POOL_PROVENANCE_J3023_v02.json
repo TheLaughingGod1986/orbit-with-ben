@@ -1947,5 +1947,20 @@
       "title": "Superseded v01 Venus spin graphic containing PIA00271",
       "reject": "Replaced by code_graphic_064_r14_venus_spin_v02.mp4 using real PIA23791 right globe."
     }
-  ]
+  ],
+  "v02b_polish_fixes": {
+    "date": "2026-11-27",
+    "replaced_sources": [
+      "Five_Minutes_in_Orbit.webm -> plate_031_r26_iss_clouds_v01.mp4 & plate_031_r21_earth_limb_v01.mp4 (near-black/EOF fix)",
+      "plate_031_r42a_iss_blue_limb_v01.mp4 -> plate_031_r25_iss_orbit_cuts_v01.mp4 @ 9.0s (vertical-gutter fix)",
+      "JPL-20210222-M2020f-0001.mp4 -> PIA24542_full.jpg tight Ingenuity crop (3-panel telemetry fix)"
+    ],
+    "crop_fixes": [
+      "PIA11364.jpg single-globe crops (removed 2x2 quad)",
+      "Venera13_surface.jpg [80,118,1965,470] (removed VENERA 13 text label & bars)",
+      "PIA17386.jpg [200,240,3896,1808] (removed polar scalloping)",
+      "PIA24542_full.jpg [2500,2200,12100,7600] (removed tan mosaic fill)"
+    ],
+    "compact_progress_strip": "code_graphic_064_ch01_mercury_progress_strip_v02b.png"
+  }
 }
