@@ -360149,10 +360149,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T14:58Z",
+      "eta": "2026-11-27T16:58Z",
       "created_by": "relay",
       "created_at": "2026-11-27T14:38Z",
       "result": "",
@@ -360196,6 +360196,11 @@
           "at": "2026-11-27T14:57Z",
           "by": "codex",
           "what": "reopened: Chief FIX review completed and parent hold recorded with recheck J3912; J3913 and dependent J3914 queued. Reopening verification only to claim and close it; J3904 remains blocked."
+        },
+        {
+          "at": "2026-11-27T14:58Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief to rule on PR #1394 and record the J3904 hold",
@@ -360210,7 +360215,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T14:58Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3913",
