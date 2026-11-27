@@ -359214,6 +359214,11 @@
           "at": "2026-11-27T13:52Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: condition UNMET at 13:55Z 27 Nov. No explicit Ben authorization to push d734610 (codex/J3834-v06-lock) to TheLaughingGod1986/ww2-channel: Ben's last thread comment is #7205844411 (26 Nov 23:46Z, an automated alarm), before the J3867 ruling. ww2-channel has no J3834 PR (latest PRs 196-207; none from codex/J3834-v06-lock). J3834 stays blocked; J3838 date/credit gates unchanged. macbook was refused for the wait ('Only the holder or elected Chief may update this hold'). Chief to run: jobs.py wait J3834 --agent codex --type input --recheck J3901 --check-at 2026-11-27T19:50:00Z --condition 'Explicit Ben authorization still absent to push d734610 on codex/J3834-v06-lock to private ww2-channel; no J3834 PR. After authorization: reviewed PR to main, verify merge and hashes, finish J3834. Lock due 30 Nov 18:00 UTC.' and then close J3901. Ben must authorize this push himself before the 30 Nov 18:00 UTC lock deadline. No branch or PR, no push, spend, upload or YouTube change."
+        },
+        {
+          "at": "2026-11-27T15:52Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Record unmet condition and hand wait to Chief",
@@ -359238,7 +359243,8 @@
           "Verify condition",
           "Record result"
         ]
-      }
+      },
+      "escalated_at": "2026-11-27T15:52Z"
     },
     {
       "id": "J3902",
