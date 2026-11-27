@@ -273936,9 +273936,14 @@
           "at": "2026-11-27T12:21Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T12:22Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Resuming existing 3/4 plan; inspecting MacBook verification and merged runtime reconciliation before any drain."
         }
       ],
-      "remaining_action": "Review the external MacBook installer, then coordinate the frozen queue and live cutover",
+      "remaining_action": "Verify both machines and finish the studio move with rollback and live checks",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273959,7 +273964,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T11:53Z",
+        "at": "2026-11-27T12:22Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273967,7 +273972,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Merged readiness PR 1379; fix PR 1380 already merged. Traced early heartbeat to Mini test spawn, verified unchanged rehe"
+        "note": "Resuming existing 3/4 plan; inspecting MacBook verification and merged runtime reconciliation before any drain."
       }
     },
     {
