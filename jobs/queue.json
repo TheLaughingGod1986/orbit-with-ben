@@ -355340,13 +355340,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-27T07:34Z",
-      "eta": "2026-11-27T09:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T07:34Z",
-      "result": "",
+      "result": "parked for Chief: J3115 condition VERIFIED SATISFIED. PR #1367 merged 2026-11-27T06:49:22Z (owner repo, no fork, base main, checks green); merge 63265bea07 and candidate 40c6ca5114 (Codex <>, tree 3bc6283b) are on origin/main; all 9 ruling/package files unchanged since. Ben v02 approval 18 Nov 22:16Z and J3115 exact-file PASS stand per J3855. jobs.py reopen J3115 refused for a worker (only the elected Chief may resume). Chief run: jobs.py reopen J3115 --agent codex --note 'publication verified by J3863: PR #1367 / 63265bea07 on origin/main' --git, then verify and close J3115 so J3119 can start; then finish J3863. No upload, schedule or spend.",
       "history": [
         {
           "at": "2026-11-27T07:34Z",
@@ -355377,6 +355377,11 @@
           "at": "2026-11-27T07:35Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: Condition proven; J3115 reopen refused for worker (Chief-only); parking for Chief"
+        },
+        {
+          "at": "2026-11-27T07:36Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3115 condition VERIFIED SATISFIED. PR #1367 merged 2026-11-27T06:49:22Z (owner repo, no fork, base main, checks green); merge 63265bea07 and candidate 40c6ca5114 (Codex <>, tree 3bc6283b) are on origin/main; all 9 ruling/package files unchanged since. Ben v02 approval 18 Nov 22:16Z and J3115 exact-file PASS stand per J3855. jobs.py reopen J3115 refused for a worker (only the elected Chief may resume). Chief run: jobs.py reopen J3115 --agent codex --note 'publication verified by J3863: PR #1367 / 63265bea07 on origin/main' --git, then verify and close J3115 so J3119 can start; then finish J3863. No upload, schedule or spend."
         }
       ],
       "remaining_action": "Elected Chief: reopen and close J3115 (condition verified)",
