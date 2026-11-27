@@ -1151,6 +1151,27 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
     log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
 
 
+def do_publish_handoff(job: dict, agent: str, at: dt.datetime) -> None:
+    """Ben's refused-push exception: publication only, pinned to the Mini."""
+    import shlex
+    prefix = "publish via Claude Code:"
+    if agent != "relay" or job.get("status") != "blocked" or not str(job.get("result", "")).startswith(prefix):
+        raise ValueError("Publication handoff requires a blocked refused push and relay identity")
+    parts = shlex.split(job["result"][len(prefix):].strip())
+    if len(parts) != 2 or not pathlib.Path(parts[0]).is_absolute() or parts[1].startswith("-") or parts[1] in ("main", "HEAD"):
+        raise ValueError("Publication handoff requires an absolute worktree and named non-main branch")
+    hold = job.get("hold") or {}
+    if hold and (hold.get("type") != "input" or hold.get("condition") != job["result"]):
+        raise ValueError("Publication handoff cannot release an unrelated hold")
+    worktree, branch = parts
+    do_reroute(job, agent, "claudecode", "mini-claude-opus-5-5", job["result"], at)
+    job.update(mini_only=True, publish_via_claude={"worktree": worktree, "branch": branch},
+               remaining_action=f"Review diff for private data, then publish via Claude Code: {shlex.quote(worktree)} {shlex.quote(branch)}")
+    job.pop("hold", None)
+    job.pop("open_claim", None)
+    job["body"] = job.get("body", "") + "\n\nPublication handoff: review the whole diff for private data before pushing this branch and opening a PR to main. Merge only with green checks and the required Chief authority; protected PASS/final OK, spend and irreversible calls retain their existing gates. Park any private diff for Chief."
+
+
 def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     """Undo a reroute once the original agent is back (Ben, 14 Oct 2026: "when you're back online, it switches back
     to you"): only a job no stand-in has started (still open) goes back to what it was before."""
@@ -1485,6 +1506,7 @@ def main(argv=None) -> int:
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
+            p.add_argument("--publish-via-claude", action="store_true", help="relay-only refused-push publication handoff")
             p.add_argument("--open", action="store_true", help="do not pin for=: any worker whose lane fits may claim")
     aw = sub.add_parser("awaits", help="mark a job as waiting on Ben's OK/watch: a Ready for OK card with Play + deadline")
     aw.add_argument("id")
@@ -1669,8 +1691,11 @@ def main(argv=None) -> int:
                     board_release(job, held, "blocked")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
-                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at,
-                           open_claim=bool(getattr(args, "open", False)))
+                if args.publish_via_claude:
+                    do_publish_handoff(job, args.agent or "relay", at)
+                else:
+                    do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at,
+                               open_claim=bool(getattr(args, "open", False)))
                 if held:
                     board_release(job, held, "doing")
             if on_board(job):

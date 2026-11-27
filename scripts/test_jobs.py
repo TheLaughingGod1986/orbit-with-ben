@@ -859,5 +859,43 @@ class QueueHoldsNoPrivateDetail(unittest.TestCase):
             self.assertFalse(test_email_ratchet.ADDRESS.search(jobs.scrub(line)) or test_no_private_network.ADDRESS.search(jobs.scrub(line)))
 
 
+
+class PublishHandoff(unittest.TestCase):
+    def job(self, reason="publish via Claude Code: '/tmp/film work' macbook/J9000"):
+        return {"id": "J9000", "needs": "any", "kind": "assembly", "status": "blocked", "by": "macbook",
+                "result": reason, "history": [], "hold": {"type": "input", "condition": reason}}
+
+    def test_atomic_handoff_keeps_history_dependencies_and_pins_mini(self):
+        job = self.job()
+        job["after"] = "J8999"
+        jobs.do_publish_handoff(job, "relay", T0)
+        self.assertEqual((job["status"], job["needs"], job["for"], job["model"]),
+                         ("open", "mini", "claudecode", "mini-claude-opus-5-5"))
+        self.assertTrue(job["mini_only"])
+        self.assertEqual(job["after"], "J8999")
+        self.assertNotIn("hold", job)
+        self.assertIn("publish via Claude Code:", job["history"][-1]["what"])
+        self.assertEqual(job["publish_via_claude"]["worktree"], "/tmp/film work")
+        self.assertIn("private data", job["body"])
+
+    def test_rejects_invalid_or_unrelated_holds_without_mutation(self):
+        import copy
+        for reason in ("not a refusal", "publish via Claude Code: relative branch",
+                       "publish via Claude Code: /tmp/film main", "publish via Claude Code: /tmp/film",
+                       "publish via Claude Code: /tmp/film branch extra"):
+            job = self.job(reason)
+            before = copy.deepcopy(job)
+            with self.assertRaises(ValueError):
+                jobs.do_publish_handoff(job, "relay", T0)
+            self.assertEqual(job, before)
+        for who, status, hold in (("macbook", "blocked", "input"), ("relay", "done", "input"),
+                                  ("relay", "blocked", "ben"), ("relay", "blocked", "credits")):
+            job = self.job(); job["status"] = status; job["hold"]["type"] = hold
+            before = copy.deepcopy(job)
+            with self.assertRaises(ValueError):
+                jobs.do_publish_handoff(job, who, T0)
+            self.assertEqual(job, before)
+
+
 if __name__ == "__main__":
     unittest.main()

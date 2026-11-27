@@ -577,6 +577,42 @@ class Relay(unittest.TestCase):
         finally:
             cr.queue_has_work = old_q
 
+    def test_codex_prompt_hands_refused_push_to_claude_code(self):
+        for leader in ("codex", "claude"):
+            prompt = cr.authority_prompt("codex", leader)
+            self.assertIn("publish via Claude Code: <worktree> <branch>", prompt)
+            self.assertIn("committed on a named local branch", prompt)
+        self.assertNotIn("publish via Claude Code:", cr.authority_prompt("gemini", "claude"))
+
+    def test_refused_push_is_handed_off_before_same_round_dispatch(self):
+        import jobs
+        job = {"id": "J9000", "needs": "any", "kind": "assembly", "status": "blocked",
+               "by": "macbook", "result": "publish via Claude Code: /tmp/film macbook/J9000", "history": []}
+        cr.write_json(cr.STUDIO / "jobs" / "queue.json", {"jobs": [job]})
+        def mutate(*args):
+            jobs.do_publish_handoff(job, "relay", T0)
+            cr.write_json(cr.STUDIO / "jobs" / "queue.json", {"jobs": [job]})
+            return type("Result", (), {"returncode": 0})()
+        with mock.patch.object(cr, "jobs_py", side_effect=mutate) as call:
+            self.assertEqual(cr.handoff_refused_pushes(), ["J9000"])
+            self.assertEqual(cr.handoff_refused_pushes(), [])
+            call.assert_called_once()
+        self.assertEqual(job["for"], "claudecode")
+        self.assertTrue(job["mini_only"])
+        self.assertIn("/tmp/film macbook/J9000", job["remaining_action"])
+        self.assertEqual(cr.stranded_jobs({"jobs": [job]}, set(), T0), [])
+        self.assertLess(cr.run_locked.__code__.co_names.index("handoff_refused_pushes"),
+                        cr.run_locked.__code__.co_names.index("select_dispatch"))
+
+    def test_publication_failure_is_retried_and_other_blocks_are_ignored(self):
+        cr.write_json(cr.STUDIO / "jobs" / "queue.json", {"jobs": [
+            {"id": "J9000", "status": "blocked", "result": "publish via Claude Code: /tmp/film branch"},
+            {"id": "J9001", "status": "blocked", "result": "parked for Chief"}]})
+        with mock.patch.object(cr, "jobs_py", return_value=None) as call:
+            self.assertEqual(cr.handoff_refused_pushes(), [])
+            self.assertEqual(cr.handoff_refused_pushes(), [])
+            self.assertEqual(call.call_count, 2)
+
     def test_stand_ins_are_told_to_park_protected_calls(self):
         self.assertIn("parked for Chief", cr.authority_prompt("cursor", "codex"))
         self.assertIn("No final OK or PASS, no merge", cr.authority_prompt("cursor", "codex"))
