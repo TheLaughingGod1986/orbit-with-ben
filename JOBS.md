@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3887 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3895 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3899 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
+| J3900 | any | open | – | – | assembly · J3012: preserve cancellation and descendant drain in recovery | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1387 |
 
 Recently finished:
 

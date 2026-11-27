@@ -1,5 +1,5 @@
 {
-  "next_id": 3900,
+  "next_id": 3901,
   "jobs": [
     {
       "id": "J0001",
@@ -358969,6 +358969,36 @@
         ],
         "note": "Condition unmet: J3896 done with PR #1387 at 56f80d6, but the PR is OPEN with no reviews or comments and no Chief review"
       }
+    },
+    {
+      "id": "J3900",
+      "title": "J3012: preserve cancellation and descendant drain in recovery",
+      "needs": "any",
+      "repo": "owb",
+      "body": "# J3899 — FIX\n\nActing Chief: codex, 27 November 2026. Reviewed PR #1387 at 56f80d63652c639051733a362abac8d2eecb5964 for parent J3012. Chief authority checked before ruling. Parent stays held at 3/4; no live activation or merge authorized.\n\nAll 55 existing cutover/control tests pass on the Mini. Three additional mocked probes using the existing Protocol fixture demonstrate missing safety boundaries; no live services, processes, queue, pause or marker were changed.\n\n1. **Cancellation is ignored by recovery and resume.** macbook_cutover_control.verify_install/tick never apply preflight's local cancel file or trusted thread MACBOOK-CANCEL check. With either cancellation present, an otherwise valid RESUME removes the pause and emits resumed. Require cancellation checks before every recovery/resume effect and at the final unlink boundary; preserve STATUS reporting. Add local and thread cancellation tests, including cancellation arriving during verification.\n2. **Recorded detached descendants are forgotten after supervisor exit.** The supervisor stores newly observed identities in descendants-*.json and extends only its in-memory owners list. Recovery rereads the original plan, never loads those receipts, and calls drained using only the original owners. A recorded child reparented to PID 1 with a generic Python command survives while RESUME removes the pause. Load and validate all persisted descendant identities into recovery drain checks, fail closed on corrupt evidence, and retain PID/group checks. Test RECOVER and RESUME with a surviving reparented child, then successful continuation after exit.\n\nReproduction: instantiate test_macbook_cutover_control.Protocol and call setUp; before appending control() and tick(), separately (a) write plan[\"cancel\"], (b) append an immutable trusted comment with body [Chief] MACBOOK-CANCEL J3892 coordinator=<job> <nonce>, or (c) private_write descendants-abcd.json with [{\"pid\":99901,\"pgid\":99901,\"start\":\"recorded-child\"}] and set io.processes to return that identity with ppid=1 and command=/usr/bin/python3 detached_task.py. In all three cases pause.exists() becomes False and the receipt says resumed. All adapters are mocked; use tearDown and doCleanups between cases.\n\nFollow-up: a scoped assembly worker must fix both boundaries on PR #1387 and add regression tests; Chief re-reviews the changed head before releasing J3012. Do not repeat the full migration rehearsal, token probe or prior-day notice. Preserve the original gates and require a separate live coordination child after acceptance. No Ben action or spend.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1387",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T13:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T13:10Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix recovery cancellation and detached child checks, then return for review",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix two safety checks before moving the studio machinery"
     }
   ],
   "focus": [
