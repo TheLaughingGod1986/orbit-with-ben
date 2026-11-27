@@ -354477,13 +354477,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-27T05:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T05:48Z",
-      "result": "parked for Chief: J3815 condition still unmet. Since Codex's 26 Nov 23:47Z source review (jobs/reviews/J3815/SOURCE_REVIEW.md) nobody has supplied an exact unused locked passage with a compliant opener, or a separately scoped revised opener: nothing on the thread, in the queue or in git. J3815 stays blocked. The worker cannot record the recheck (only the holder or the elected Chief can update the hold). Chief run: jobs.py wait J3815 --agent chief --condition 'No exact unused locked passage with a compliant spoken opener (named star plus question within 1.5 s, separated stems) and no separately scoped revised opener supplied; Chief editorial pick needed' --check-at '2026-11-27T12:00Z' --type input --recheck J3852 --git. Then finish J3852. Or cancel J3815 if this backlog item is exhausted for now.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T05:48Z",
@@ -354514,6 +354514,11 @@
           "at": "2026-11-27T05:51Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3815 condition still unmet. Since Codex's 26 Nov 23:47Z source review (jobs/reviews/J3815/SOURCE_REVIEW.md) nobody has supplied an exact unused locked passage with a compliant opener, or a separately scoped revised opener: nothing on the thread, in the queue or in git. J3815 stays blocked. The worker cannot record the recheck (only the holder or the elected Chief can update the hold). Chief run: jobs.py wait J3815 --agent chief --condition 'No exact unused locked passage with a compliant spoken opener (named star plus question within 1.5 s, separated stems) and no separately scoped revised opener supplied; Chief editorial pick needed' --check-at '2026-11-27T12:00Z' --type input --recheck J3852 --git. Then finish J3852. Or cancel J3815 if this backlog item is exhausted for now."
+        },
+        {
+          "at": "2026-11-27T05:57Z",
+          "by": "codex",
+          "what": "reopened: Taking the elected-Chief review to record the ruling: J3815 cancelled after verified unmet source condition."
         }
       ],
       "remaining_action": "Record that J3815's opener condition is still unmet and park for Chief",
@@ -354529,18 +354534,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-27T05:51Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3815 and its evidence",
-          "Check whether the condition is met",
-          "Record result and report"
-        ],
-        "note": "Checked thread, queue and git since 26 Nov 23:47Z: no exact unused passage or scoped revised opener supplied; condition "
-      },
       "taskKeys": [
         "OWB:029"
       ]
