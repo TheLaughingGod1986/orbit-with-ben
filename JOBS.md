@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3821 | gemini | open (after J3820) | – | – | WW2:009 sources · facts · WW2 009: independent v05 claims recheck after opening rewrite | ww2-channel#193 |
 | J3822 | any | open (after J3821) | – | – | WW2:009 script · chief · WW2 009: v05 viewer test, quality pass and Chief script lock | ww2-channel#193 |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
-| J3824 | mini | open | – | – | review · Verify condition for J3704 |  |
+| J3824 | mini | claimed | codex | 2026-11-27T02:00Z | review · Verify condition for J3704 |  |
 
 Recently finished:
 
