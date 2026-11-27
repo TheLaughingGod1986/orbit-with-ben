@@ -364094,13 +364094,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T20:12Z",
-      "eta": "2026-11-27T20:42Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T19:55Z",
-      "result": "",
+      "result": "Completed metadata-only fix on PR #1390 at 04efcac19a7e1491e9972fd9bc8b35a2322f6f35; MERGEABLE/CLEAN. 82 sources and all 138 intervals exactly reconciled, retired sources rejected, trailer record and credit ordering fixed. Package dry run and 13 privacy tests PASS. Parent J3023 records exact head and retains review/UAT handoff. No render, upload or spend.",
       "history": [
         {
           "at": "2026-11-27T19:55Z",
@@ -364131,6 +364131,11 @@
           "at": "2026-11-27T20:16Z",
           "by": "codex",
           "what": "step 4 of 4 done: Published 04efcac19a7e1491e9972fd9bc8b35a2322f6f35 to PR #1390. GitHub reports MERGEABLE/CLEAN. Package dry run PASS, 13 privacy tests PASS, diff check clean; recorded exact head on J3023."
+        },
+        {
+          "at": "2026-11-27T20:16Z",
+          "by": "codex",
+          "what": "done: Completed metadata-only fix on PR #1390 at 04efcac19a7e1491e9972fd9bc8b35a2322f6f35; MERGEABLE/CLEAN. 82 sources and all 138 intervals exactly reconciled, retired sources rejected, trailer record and credit ordering fixed. Package dry run and 13 privacy tests PASS. Parent J3023 records exact head and retains review/UAT handoff. No render, upload or spend."
         }
       ],
       "remaining_action": "Metadata correction complete; the parent job owns merge and watch-board handoff",
@@ -364152,7 +364157,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "04efcac19a7e1491e9972fd9bc8b35a2322f6f35"
     },
     {
       "id": "J3951",
