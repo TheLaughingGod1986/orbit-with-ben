@@ -1,5 +1,5 @@
 {
-  "next_id": 3902,
+  "next_id": 3903,
   "jobs": [
     {
       "id": "J0001",
@@ -359147,6 +359147,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3902",
+      "title": "OWB 064: Independent completed-cut & package QA on master v03 (PR #1390)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Independent completed-cut and upload-package QA for OWB:064 (Every Planet Explained in 12 Minutes (Mercury to Neptune)) assembled under J3023. PR #1390 (branch gemini/J3023-owb064-assembly, commit 81e0cdfc13). Exact NAS deliverables to verify: (1) master v03 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/09_Final-Export/064_every_planet_explained_master_v03.mp4 (sha256=d59057aed1590e7f6ef097513256a0548c4f9b1d7e544c4bade28aa83fef647a, 557,502,349 bytes, 1920x1080 24/1 CFR, 701.875 s, -14.4 LUFS, -1.5 dBTP; prior v01 3fb6a311 and v02 2543bb94 preserved); (2) all 6 machine gates PASS in 07_Edit-Project/full_master_v03_pack/ (clip_check, picture_qa 0 fails / 17 warned frames on picture_qa_review.jpg, polish_gate 0 fails / 5 warns, music_gate 0 warns vs 20 OWB beds, sfx_kit level, gate:episode 91.6/100) + youtube:package --dry-run PASS; (3) 37 s vertical 9:16 social trailer 11_Upload-Package/Trailer/064_every_planet_explained_trailer.mp4 (sha256=771d1f2a368ad4dbe1ee7b4cb541b0422a8d4d739ae946a8923f5ae9a4fe3cff); (4) 11_Upload-Package/PACKAGE_MANIFEST.json, panel title/description/chapters/reconciled image credits/social copy, T045 proposed/video null, R11 PIA00215 (46dc965a, 118.05-124.40 s) & PIA18033 Suomi NPP credit preserved, zero PIA00271/PIA00233; (5) 07_Edit-Project/TEACH_AND_POLISH_REVIEW_v03.md. Write independent KEEP/FIX review in jobs/reviews/<id>/REVIEW.md (do not claim audio hearing or moving-video perception unless actually demonstrated; Ben's watch supplies audio/motion review) and hand off to Chief for PASS + PR #1390 merge so J3023 can set jobs.py awaits by Fri 11 Dec 18:00 London (planned air Wed 16 Dec 18:00 London). £0 spend; no upload/schedule/test arming.",
+      "ref": "J3023",
+      "film": "064",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-27T13:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T13:51Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect PR #1390, master v03, picture_qa_review.jpg, trailer and PACKAGE_MANIFEST.json; write independent KEEP/FIX review for Chief",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "qa",
+      "plain": "Independently review OWB 064 master v03, all 6 QA gate reports, 37s trailer and upload package before Chief PASS and Ben's watch board"
     }
   ],
   "focus": [
