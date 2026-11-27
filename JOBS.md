@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3877 | mini | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3878 | mini | open | – | – | 032 edit · qa · Titan Short v03: exact-file playback QA after J3865 corrections | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
-| J3879 | any | open | – | – | review · Verify condition for J3780 |  |
+| J3879 | mini | open | – | – | review · Verify condition for J3780 |  |
 
 Recently finished:
 
