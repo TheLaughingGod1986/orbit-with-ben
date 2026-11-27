@@ -352714,10 +352714,10 @@
       "stage": "script",
       "after": "J3830",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T08:21Z",
+      "eta": "2026-11-27T10:21Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T00:44Z",
       "result": "",
@@ -352821,6 +352821,11 @@
           "at": "2026-11-27T08:18Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in published codex/J3831-chief-lock commit f960f4a, CHIEF_RULING_J3831.md: topic GO and exact v02 LOCK PASS, SHA256 0f8afe812b5c259a3c8f0a386438c9247c74dd6dc1920476f9fdb49d35e13d62. J3862 correction satisfied; 53-paragraph parity and 18492 chars verified. Resume only to finish merge and concrete follow-ups. No voice spend; all reset/live-balance, archive pixel, extra-Short and Pilot2 seven-day Rule-12 guards retained."
+        },
+        {
+          "at": "2026-11-27T08:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) lock and merge of ww2-channel PR #205 (a77f306)",
@@ -352836,7 +352841,15 @@
       },
       "open_claim": true,
       "escalated_at": "2026-11-27T03:28Z",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T08:21Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3832",
