@@ -308177,10 +308177,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T10:39Z",
+      "eta": "2026-11-27T13:39Z",
       "created_by": "refill",
       "created_at": "2026-11-22T12:47Z",
       "result": "",
@@ -308339,6 +308339,11 @@
           "at": "2026-11-27T10:38Z",
           "by": "codex",
           "what": "reopened: Chief KEEP recorded at PR1170 comment 7216105603; merged e56043d90c5aedff9d6cb95fb60230a0cab4f300. Accepted dated audit with explicit unknown metrics, legacy shelf-only and competitor coverage limits, no new B/rules/test authorization. Corrected compilation v02 asset pointer and draft ledger ID note. Reopening only to close reviewed work; follow-up records current test/cover evidence."
+        },
+        {
+          "at": "2026-11-27T10:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to review and merge PR #1170 (a7bc456b0a) and close J3365",
@@ -308355,7 +308360,15 @@
         "HOS:099"
       ],
       "escalated_at": "2026-11-25T15:52Z",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T10:39Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3366",
