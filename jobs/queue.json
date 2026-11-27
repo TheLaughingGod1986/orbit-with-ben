@@ -354654,10 +354654,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T06:28Z",
+      "eta": "2026-11-27T08:28Z",
       "created_by": "relay",
       "created_at": "2026-11-27T06:22Z",
       "result": "",
@@ -354696,6 +354696,11 @@
           "at": "2026-11-27T06:28Z",
           "by": "codex",
           "what": "reopened: Acting Chief taking the requested condition review; J3115 remains held."
+        },
+        {
+          "at": "2026-11-27T06:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record J3115 still waiting: decision a4c9c8f534 unpublished",
@@ -354713,7 +354718,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T06:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
