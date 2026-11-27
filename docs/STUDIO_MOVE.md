@@ -31,7 +31,7 @@ the unpatched tests or enable remote login as a shortcut.
 
 Eight Mini services now have matching installed/loaded argv, configured environment and observed path/interval
 fields; both remote-worker proposals have been regenerated for the final runtime path. This is not a drain or
-full effective-policy acceptance. Next: finish J3890, merge the isolation fix, reconcile remaining schedules,
+full effective-policy acceptance. Next: finish J3890, merge the isolation fix, reconcile any changed settings,
 coordinate the drain and export a **new frozen queue** through the cutover order below. No service,
 active-engine marker, pause file, board deployment, production branch, default branch or live store has switched.
 

@@ -18,7 +18,7 @@ J3890 is queued through the installed MacBook worker for local log attribution, 
 
 Read all 18 installed service definitions and loaded states. Seventeen were loaded; the unrelated multi-repo supervisor was not loaded. The malformed missed-runs XML remains loaded and was parsed only in memory after stripping comments; its source was not changed.
 
-For all eight prepared services, compared actual loaded argument arrays, each configured environment value, log paths, working directory where configured and interval where configured. All compared fields match the installed definition; no additional service-specific loaded environment entries were found. The proposals preserve every other installed key and original environment apart from explicit engine/channel path changes. This is not proof of every launchd effective policy field or a child-process drain. Calendar timers still require schedule verification during the window.
+For all eight prepared services, compared actual loaded argument arrays, each configured environment value, log paths, working directory where configured and interval where configured. All compared fields match the installed definition; no additional service-specific loaded environment entries were found. The proposals preserve every other installed key and original environment apart from explicit engine/channel path changes. This is not proof of every launchd effective policy field or a child-process drain. The three calendar schedules also match their loaded events: analytics 06:40, Buffer 07:05, and spend 08:30. Missed-runs retains its loaded 1,800-second interval and RunAtLoad flag. Recheck at the actual drain if definitions change.
 
 Sanitized exact hashes and comparisons: `RUNTIME_RECONCILIATION_2026-11-27.json`. Private helper and raw inventory remain on MiniWork as `J3012-reconcile-loaded.py`, `J3012-loaded-comparison-1127.json`, and `J3012-service-reconcile-1127.json`. No environment values or raw launchctl dump are included in this report.
 
@@ -28,4 +28,8 @@ Required scratch offload exited 0 with no eligible folders. Internal free space 
 
 ## Resume
 
-Review J3890 and merge this test-isolation fix before another MacBook rehearsal. Preserve original 3/4 progress and prior token/notice/streak evidence. Reconcile any remaining effective schedule policies, drain all writers on both machines through the runbook, export a NEW frozen queue, and perform cutover with rollback. Then prove relay, board publish, harmless tick and both slots before private thread/tick-store migration and three-channel round trips. Nothing needs Ben now; no production acceptance is claimed.
+Review J3890 and merge this test-isolation fix before another MacBook rehearsal. Preserve original 3/4 progress and prior token/notice/streak evidence. Reconcile any changed effective policies, drain all writers on both machines through the runbook, export a NEW frozen queue, and perform cutover with rollback. Then prove relay, board publish, harmless tick and both slots before private thread/tick-store migration and three-channel round trips. Nothing needs Ben now; no production acceptance is claimed.
+
+## Publication boundary
+
+Automatic approval review rejected this checkpoint push, citing an unverified remote and the instruction to leave Codex work for Claude Code publication. No retry or alternate push was attempted. The local named branch is `codex/j3012-runtime-reconcile-1127` in `/Volumes/MiniWork/scratch/J3012-runtime-reconcile-1127`. Use the authorized Claude Code review/publish handoff. This checkpoint refusal does not block unrelated migration preparation or mark J3012 complete.
