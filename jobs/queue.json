@@ -359961,9 +359961,14 @@
           "at": "2026-11-27T14:46Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Inspected 53 extracted vertical stills across all 10 opening cuts, boundaries, and end card of trailer v05; found residual stale retired entries in POOL_PROVENANCE_J3023_v02.json active_assets"
+        },
+        {
+          "at": "2026-11-27T14:48Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Verified master v03 (d59057ae), trailer v05 (e57cd79a, 24/1 CFR, start_pts 0, decode clean, ADTS+PCM identical), dry-run PASS (cat 28), LF CSV, portrait hashes/credits, privacy tests (13/13); caught 2 retired clips left in POOL_PROVENANCE active_assets + missing PIA24542 interval"
         }
       ],
-      "remaining_action": "Completing NAS hash/audio verification, provenance/credits audit, and package dry-run",
+      "remaining_action": "Reviewing full PR 1391 evidence and checking final provenance integrity before writing REVIEW.md",
       "due": "2026-12-09T18:00:00Z",
       "kind": "qa",
       "plain": "Check the repaired every-planet trailer and credits before approval",
@@ -359976,9 +359981,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-27T14:46Z",
+        "at": "2026-11-27T14:48Z",
         "by": "gemini",
         "plan": [
           "Inspect PR 1390, PR 1391, and J3909 repair evidence",
@@ -359988,7 +359993,7 @@
           "Run independent package dry-run and diff checks",
           "Write J3910 REVIEW.md, open PR, and hand off to Chief"
         ],
-        "note": "Inspected 53 extracted vertical stills across all 10 opening cuts, boundaries, and end card of trailer v05; found residu"
+        "note": "Verified master v03 (d59057ae), trailer v05 (e57cd79a, 24/1 CFR, start_pts 0, decode clean, ADTS+PCM identical), dry-run"
       },
       "taskKeys": [
         "OWB:064"
