@@ -1,5 +1,5 @@
 {
-  "next_id": 3891,
+  "next_id": 3892,
   "jobs": [
     {
       "id": "J0001",
@@ -357982,6 +357982,38 @@
           "Publish evidence and handoff"
         ]
       }
+    },
+    {
+      "id": "J3891",
+      "title": "J3012: Claude Code review and publish completed migration checkpoint",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Authorized Claude Code publication handoff under AGENTS.md, for J3012 checkpoint only. Automatic approval review rejected Codex push, directing finished work to Claude Code publication. Do not delegate this publication back to Codex or retry its refused push.\n\nWorktree /Volumes/MiniWork/scratch/J3012-runtime-reconcile-1127; branch codex/j3012-runtime-reconcile-1127. Read the whole diff against origin/main and enforce the private-data review in AGENTS.md. Changes: prevent two MacBook worker tests spawning real slot 2, plus sanitized Mini loaded service comparison and current migration handoff. 104 worker/launcher/guard tests and 13 network/address checks passed. No production code changed. Open PR with current final diff and validation; merge only under the existing authorized publishing rules with green checks. Record commit and PR on this job and J3012 thread. This does not authorize live migration, production services or private-store switch. J3012 stays 3/4 and continues through J3890 machine-local reconciliation.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T11:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T11:37Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "J3012: Claude Code review and publish completed migration checkpoint",
+      "due": "2026-11-27T18:00:00Z",
+      "for": "claudecode",
+      "kind": "assembly",
+      "plain": "Publish the checked studio migration fixes and handover notes",
+      "mini_only": true
     }
   ],
   "focus": [
