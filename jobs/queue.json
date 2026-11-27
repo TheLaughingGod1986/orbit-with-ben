@@ -272694,10 +272694,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T11:48Z",
+      "eta": "2026-11-27T15:48Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -273901,6 +273901,11 @@
           "at": "2026-11-27T11:39Z",
           "by": "codex",
           "what": "released: Clean checkpoint d7b38e7696 at /Volumes/MiniWork/scratch/J3012-runtime-reconcile-1127, branch codex/j3012-runtime-reconcile-1127. Preserve 3/4. Fixed two loop tests that could start a real slot; 104 runtime and 13 safety tests pass. Mini eight loaded configurations and three calendar timers match; both remote proposals staged, runtime ignored links staged. J3890 is completing MacBook-local heartbeat attribution and loaded readiness. J3891 is authorized Claude Code review/publication after automatic review refused this checkpoint push; do not retry Codex push or stop other migration work on it. Next review J3890, merge fix, coordinate both-machine drain, NEW frozen queue export and runbook cutover/acceptance. No live switch, pause, activation marker, deployment or store change. Full coordinated move exceeds this bounded run; no Ben action."
+        },
+        {
+          "at": "2026-11-27T11:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review MacBook readiness, publish the test fix, then carry out the coordinated studio move",
