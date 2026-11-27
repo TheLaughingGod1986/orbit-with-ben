@@ -1,5 +1,5 @@
 {
-  "next_id": 3928,
+  "next_id": 3929,
   "jobs": [
     {
       "id": "J0001",
@@ -361281,6 +361281,52 @@
         "type": "date",
         "condition": "WW2 004 goes public at 2026-12-01 17:00 London",
         "check_at": "2026-12-01T17:05:00Z",
+        "release": "auto"
+      }
+    },
+    {
+      "id": "J3928",
+      "title": "FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 27 Nov: \"can we run a full audit ... if we need shorts, if they help drive traffic to the long\").** Public counts can't answer that; only Studio can. At 16:00Z on 27 Nov the U-boat Short ZCnSldSJzME had 368 views (about 105 an hour, 14 likes) while its long qfc6EBStOfo had gone from 38 to 40. The Mulberry Short NoQQqrW2meM had 55 views in 28 h while pilot 1 went from 37 to 40, its usual pace.\n\n**Do (Mini, Studio on 9223, Field Order History; read only, never play a public video), at 48 h after each Short went live:**\n1. **Each Short** (ZCnSldSJzME, NoQQqrW2meM): views; \"Viewed vs swiped away\" %; average view duration and % viewed; likes; subscribers gained; and the **Related video** card clicks or \"views on the related video\", if Studio shows them.\n2. **Each long** (qfc6EBStOfo, ek9F61FVYqY): Traffic sources since each Short went live. Record the views that came from Shorts, Related video, Suggested, Search and Browse, plus the long's total views over the same window.\n3. **Verdict:** viewers each Short sent to its long. Compare against rule 1's bar of 10+ viewers within 7 days for a second Short. Add a LEARNINGS line: did the Short feed the long, and did it bring subscribers?\n4. Record it in `02_Video-Projects/00{1,2}_*/12_Analytics/SHORT_FEED_48H.md`, one ww2-channel PR.\n\n£0. No edits in Studio.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 25,
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-27T16:27Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-27T16:27Z",
+      "result": "Waiting for: 48 hours after the U-boat Short went live (27 Nov 12:30)",
+      "history": [
+        {
+          "at": "2026-11-27T16:27Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-27T16:27Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: 48 hours after the U-boat Short went live (27 Nov 12:30)"
+        },
+        {
+          "at": "2026-11-27T16:27Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-29T12:35:00Z"
+        }
+      ],
+      "remaining_action": "Read Studio: views each Short sent to its long, and subscribers",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "48 hours after the U-boat Short went live (27 Nov 12:30)",
+        "check_at": "2026-11-29T12:35:00Z",
         "release": "auto"
       }
     }
