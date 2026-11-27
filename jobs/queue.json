@@ -360682,11 +360682,16 @@
           "at": "2026-11-27T15:58Z",
           "by": "codex",
           "what": "reopened: Taking assigned Chief review to record FIX; original production J3903 remains held with J3922 repair and J3923 QA."
+        },
+        {
+          "at": "2026-11-27T15:59Z",
+          "by": "codex",
+          "what": "remaining role: Chief ruling on completed QA, not a new media QA run; specialist history retained"
         }
       ],
-      "remaining_action": "Parked for elected Chief (codex) FIX ruling on PR #1399 (review in PR #1400)",
+      "remaining_action": "Record the Chief FIX and repair handoff; completed worker QA evidence is preserved",
       "due": "2026-12-13T18:00:00Z",
-      "kind": "qa",
+      "kind": "chief",
       "plain": "Independently QA OWB 064 Short 1 Test A v02 (PR #1399) before Chief PASS and Ben UAT",
       "rerouted_from": {
         "needs": "mini",
@@ -360695,7 +360700,6 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
       "taskKeys": [
         "OWB:064"
       ]
