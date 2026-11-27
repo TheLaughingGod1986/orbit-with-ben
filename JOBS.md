@@ -106,7 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3874 | any | open | – | – | 009 edit · chief · HOS 009: resolve short-loop gate incompatibility |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3878 | mini | open | – | – | 032 edit · qa · Titan Short v03: exact-file playback QA after J3865 corrections | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
-| J3879 | mini | claimed | gemini | 2026-11-27T11:17Z | review · Verify condition for J3780 |  |
+| J3879 | mini | blocked | gemini | – | review · Verify condition for J3780 |  |
 | J3880 | mini | open (after J3877) | – | – | studio · J3877 corrections: Franklin pinned comment, paid promotion and records |  |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 
