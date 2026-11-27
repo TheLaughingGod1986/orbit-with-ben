@@ -357945,19 +357945,27 @@
           "at": "2026-11-27T11:34Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:35Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Explain the early heartbeat and reconcile both MacBook worker settings",
+      "remaining_action": "Investigate rehearsal heartbeat and current worker state",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Check both MacBook workers are ready for the studio move",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-27T11:34Z",
+        "at": "2026-11-27T11:35Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Trace rehearsal heartbeat",
+          "Reconcile worker readiness",
+          "Publish evidence and handoff"
+        ]
       }
     }
   ],
