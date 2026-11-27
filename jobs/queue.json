@@ -353094,9 +353094,14 @@
           "at": "2026-11-27T07:44Z",
           "by": "relay",
           "what": "condition verification queued: J3867"
+        },
+        {
+          "at": "2026-11-27T08:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T13:50:00Z"
         }
       ],
-      "remaining_action": "Publish the finished script review through Claude Code",
+      "remaining_action": "Obtain explicit authorization for the blocked private-repository push, then publish the script lock",
       "due": "2026-11-30T18:00:00Z",
       "kind": "chief",
       "plain": "Review the corrected Operation Pedestal script before recording",
@@ -353117,9 +353122,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3834-review codex/J3834-v06-lock. Finished review commit d734610; clean tree and channel_check PASS; hashes and 37-block parity verified. Automatic approval review rejected public push as disclosure of unpublished film content. Apply the standing privacy review before any publication; no bypass of that review. PR200 and PR203 merged into main. Local exact-version script PASS/lock is not yet published; J3838 remains dependent on J3834 and date-held until 2026-11-30T10:50:00Z with live credit checks. After approved publication, mark final progress step and complete J3834. No voice or upload.",
-        "check_at": "2026-11-27T08:44:25+00:00",
-        "recheck_task": "J3867"
+        "condition": "J3867 Chief ruling: publication condition remains unmet. GitHub confirms ww2-channel PRIVATE; five-file d734610 diff reviewed with no prohibited private data and channel_check passes. Automatic approval review nevertheless rejected the exact push because trusted authorization for this payload, destination and direct-push side effect was not explicit. Request user approval to push d734610 on codex/J3834-v06-lock to TheLaughingGod1986/ww2-channel. Do not retry or delegate around rejection. After approval publish via reviewed PR to main, verify merge and hashes, then finish J3834. J3838 dependency and 30 Nov 10:50 UTC date/live-credit gates unchanged.",
+        "check_at": "2026-11-27T13:50:00Z",
+        "last_recheck": "J3867",
+        "checked_at": "2026-11-27T08:04:09+00:00",
+        "checked_by": "codex"
       }
     },
     {
