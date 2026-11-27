@@ -272704,13 +272704,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-27T12:21Z",
-      "eta": "2026-11-27T16:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "",
+      "result": "Waiting for: J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved.",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273951,9 +273951,19 @@
           "at": "2026-11-27T12:29Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR1382 and corrected PR1385 merged; 66 focused tests and final CI green. J3896 implements missing remote result/resume/recovery path; live activation is not authorized until that review passes."
+        },
+        {
+          "at": "2026-11-27T12:29Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved."
+        },
+        {
+          "at": "2026-11-27T12:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T13:00:00Z"
         }
       ],
-      "remaining_action": "Complete the remote resume controls, then move and verify the studio engine",
+      "remaining_action": "Review the remote handoff controls and complete the studio move",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273983,6 +273993,11 @@
           "Move the engine and prove live operation"
         ],
         "note": "PR1382 and corrected PR1385 merged; 66 focused tests and final CI green. J3896 implements missing remote result/resume/r"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3896 delivers and Chief reviews a tested remote result, explicit resume and expired-supervisor recovery route. PR1385 preparation is merged at 6eb2566a78; local-only results and retained worker pause currently leave the Mini unable to complete handoff without SSH. Preserve 3/4. No live activation before this gap is resolved.",
+        "check_at": "2026-11-27T13:00:00Z"
       }
     },
     {
