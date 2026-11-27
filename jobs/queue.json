@@ -355727,25 +355727,29 @@
           "at": "2026-11-27T08:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T08:17Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3865; read J3856 REVIEW.md and PR #1366 head 1a50bad01d."
         }
       ],
-      "remaining_action": "Detached tmux J3865-v03-render building v03 master, running 7 gates, and copying to NAS if all pass",
+      "remaining_action": "Starting bounded external search of official NASA/JPL/Cassini sources for S03 moving Titan north-polar footage",
       "kind": "assembly",
       "plain": "Correct the Cassini pictures and enlarge the ocean explanation in the Titan Short",
       "progress": {
-        "step": 4,
-        "of": 6,
-        "at": "2026-11-27T08:08Z",
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-27T08:17Z",
         "by": "gemini",
         "plan": [
-          "Read J3856 review and v02 build",
-          "Search official NASA/JPL Cassini moving footage for S03 (max 3 deep candidates)",
-          "Verify S03 candidate rights/motion/crop or prepare sourced fallback",
-          "Redesign S08 graphic with locked spoken words at 67-73px and check S04",
-          "Assemble v03 master beside v01/v02 on NAS and run all 7 gates",
-          "Inspect stills/warnings, update PR #1366, post report and park for Chief"
+          "Search official NASA/JPL/Cassini moving Titan footage",
+          "Inspect v02 script and redesign S08 graphic",
+          "Assemble v03 master beside v01/v02 on NAS",
+          "Run seven fresh gates and inspect stills",
+          "Update PR 1366 and park for Chief review"
         ],
-        "note": "Fixed S08 bars trigger with curved planetary crust at 68px (11.2% of 608px); launched detached full build in tmux J3865-"
+        "note": "Claimed J3865; read J3856 REVIEW.md and PR #1366 head 1a50bad01d."
       },
       "taskKeys": [
         "OWB:032"
