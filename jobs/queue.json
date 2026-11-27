@@ -282300,23 +282300,28 @@
           "at": "2026-11-27T00:13Z",
           "by": "codex",
           "what": "step 1 of 3 done: Viewed all three full-size thumbnails and the 168 px sheet; 12 NAS artifacts match builder hashes; description URLs and credits preserved."
+        },
+        {
+          "at": "2026-11-27T00:14Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All eight media/source hashes match; three thumbnail scores PASS; episode score 95.8; dry run ok=true; Ben long approval recorded in J3119."
         }
       ],
-      "remaining_action": "Finish package checks and record the Pluto packaging decision",
+      "remaining_action": "Publish the packaging ruling and upload handoff",
       "due": "2026-12-08T18:00:00Z",
       "kind": "chief",
       "plain": "Check the corrected Pluto thumbnails and description before arranging delivery",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T00:13Z",
+        "at": "2026-11-27T00:14Z",
         "by": "codex",
         "plan": [
           "Verify rebuilt files",
           "Review packaging and gates",
           "Record decision and handoff"
         ],
-        "note": "Viewed all three full-size thumbnails and the 168 px sheet; 12 NAS artifacts match builder hashes; description URLs and "
+        "note": "All eight media/source hashes match; three thumbnail scores PASS; episode score 95.8; dry run ok=true; Ben long approval"
       },
       "taskKeys": [
         "OWB:034"
