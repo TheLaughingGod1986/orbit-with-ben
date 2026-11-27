@@ -360180,10 +360180,10 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T20:16Z",
+      "eta": "2026-11-27T22:16Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
       "result": "",
@@ -360252,6 +360252,11 @@
           "at": "2026-11-27T19:55Z",
           "by": "claude",
           "what": "reopened: Chief: v03 script locked (064_short02_venus_vs_uranus_script_v03.md, sha256 634da160..., PR #1394 merged 3747adb). VO allowed: Ben Orbit Narrator on eleven_v3, at most 600 characters in total including any retake, from the existing subscription (£0 cash, overage stays off). Re-read the live balance first and stop if fewer than 600 characters remain. Long-film VO jobs already wait for the 30 Nov reset, so this does not delay them. Then assemble: first find verified native moving footage for frame 0 (R01 was not found) and re-plan the Uranus beat, run the Shorts gates, then independent QA, Chief, and Ben's phone UAT. Never upload or air before the 064 long is public on Wed 16 Dec. Claude, acting Chief, evening sweep 27 Nov 20:30Z."
+        },
+        {
+          "at": "2026-11-27T20:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await revised Short evidence and script review from J3913 then J3914 before voice production",
@@ -360269,7 +360274,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-27T16:42Z"
+      "escalated_at": "2026-11-27T16:42Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T20:16Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3905",
