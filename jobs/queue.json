@@ -358916,9 +358916,14 @@
           "at": "2026-11-27T13:04Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T13:04Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Review the remote handoff controls and complete the studio move",
+      "remaining_action": "Reading J3012, J3896 and their history",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T14:03:33+00:00",
@@ -358936,8 +358941,11 @@
         "of": 3,
         "at": "2026-11-27T13:04Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3012 and J3896",
+          "Check condition evidence",
+          "Record wait or reopen"
+        ]
       }
     }
   ],
