@@ -354477,10 +354477,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-27T05:57Z",
+      "eta": "2026-11-27T07:57Z",
       "created_by": "relay",
       "created_at": "2026-11-27T05:48Z",
       "result": "",
@@ -354519,6 +354519,11 @@
           "at": "2026-11-27T05:57Z",
           "by": "codex",
           "what": "reopened: Taking the elected-Chief review to record the ruling: J3815 cancelled after verified unmet source condition."
+        },
+        {
+          "at": "2026-11-27T05:57Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record that J3815's opener condition is still unmet and park for Chief",
@@ -354536,7 +354541,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T05:57Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
