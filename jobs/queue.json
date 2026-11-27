@@ -351447,9 +351447,14 @@
           "at": "2026-11-27T00:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:19Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 034 thumbs handoff and records the next owner/action",
+      "remaining_action": "Check the Pluto thumbnail reviews and resolve the missing decision",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -351460,11 +351465,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-27T00:18Z",
+        "at": "2026-11-27T00:19Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check thumbnail evidence",
+          "Resolve review state",
+          "Record the outcome"
+        ]
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J3820",
