@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3837 | mini | blocked | macbook | – | review · Verify condition for J3831 |  |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3839 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
-| J3840 | mini | claimed | gemini | 2026-11-27T03:41Z | review · Verify condition for J3756 |  |
+| J3840 | mini | blocked | gemini | – | review · Verify condition for J3756 |  |
 | J3841 | mini | open | – | – | review · Verify condition for J3781 |  |
 
 Recently finished:
