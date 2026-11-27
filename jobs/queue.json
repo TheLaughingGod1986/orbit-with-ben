@@ -358183,9 +358183,14 @@
           "at": "2026-11-27T11:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:55Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3893 to verify J2537 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "remaining_action": "Inspect J2537, prior verification history, and owner comments since 2026-11-24T11:54Z",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -358203,8 +358208,12 @@
         "of": 3,
         "at": "2026-11-27T11:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J2537 and approval history",
+          "Check new owner comments and desk rulings",
+          "Update J2537 wait and finish J3893"
+        ],
+        "note": "Claimed J3893 to verify J2537 waiting condition"
       }
     },
     {
