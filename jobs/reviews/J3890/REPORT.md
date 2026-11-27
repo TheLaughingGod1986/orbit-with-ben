@@ -50,3 +50,5 @@ Policy stays mains-only, two slots, default round-the-clock, slot 1 background w
 6. With slots paused, verify installed and loaded roots, guard refusal from old engines and checks from both new slot contexts. Resume in the runbook's order; prove one controlled task per slot uses its own engine/content roots, lock and heartbeat, then verify relay/board/tick and rollback evidence. J3012 stays 3/4 until its own acceptance is complete.
 
 This is a reviewable handoff design, not an installed unattended coordinator. The unresolved historical heartbeat origin and the need to implement/review that external installer handoff are explicit remaining work for Chief. No Ben action is required.
+
+Validation for this evidence-only change: proposal `plutil -lint` and `git diff --check` passed; 8 email-ratchet and 5 private-network tests passed. The unsafe worker suite was not rerun.
