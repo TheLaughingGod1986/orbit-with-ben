@@ -364111,23 +364111,29 @@
           "at": "2026-11-27T20:12Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T20:13Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Merged current main without conflicts; current queue and film status retained, both ledger sides preserved; remaining diff is film assembly and J3909 evidence only."
         }
       ],
-      "remaining_action": "Correcting the film’s source records and preparing its review branch",
+      "remaining_action": "Reconciling all source intervals against the final cut list",
       "due": "2026-11-29T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T20:12Z",
+        "at": "2026-11-27T20:13Z",
         "by": "codex",
         "plan": [
           "Merge current main",
           "Correct provenance intervals",
           "Tidy package records",
           "Validate and publish branch"
-        ]
+        ],
+        "note": "Merged current main without conflicts; current queue and film status retained, both ledger sides preserved; remaining di"
       },
       "taskKeys": [
         "OWB:064"
