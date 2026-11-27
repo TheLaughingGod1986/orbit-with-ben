@@ -361536,9 +361536,14 @@
           "at": "2026-11-27T16:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:49Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3929; beginning verification of J3883 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Publishing verified completion records and the assembly handoff",
+      "remaining_action": "Inspect J3883 job record, git branch codex/J3883-integration, PRs, and Claude Code publish status",
       "kind": "review",
       "recheck_of": "J3883",
       "due": "2026-11-27T16:10:00+00:00",
@@ -361553,12 +361558,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T16:48Z",
+        "of": 4,
+        "at": "2026-11-27T16:49Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3883 state and git branch",
+          "Verify publish/merge and downstream jobs",
+          "Update J3883 wait or reopen state and finish J3929",
+          "Post verification report to studio thread"
+        ],
+        "note": "Claimed J3929; beginning verification of J3883 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3930",
