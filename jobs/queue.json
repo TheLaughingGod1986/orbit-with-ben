@@ -274818,9 +274818,14 @@
           "at": "2026-11-27T13:46Z",
           "by": "gemini",
           "what": "step 4 of 7 done: Master v03 muxed & checksum-verified on studio-live (d59057ae, 557.5 MB; v01 & v02 preserved); picture_qa finished, polish_gate/music_gate/sfx_level completing now"
+        },
+        {
+          "at": "2026-11-27T13:53Z",
+          "by": "gemini",
+          "what": "step 6 of 7 done: Master v03 verified on studio-live (d59057ae, 557.5 MB; v01/v02 preserved), all 6 gates + package dry-run PASS, 37s trailer (771d1f2a), PR #1390 open, queued J3902 QA & J3903/J3904 Shorts"
         }
       ],
-      "remaining_action": "Finish remaining v03 QA gates, inspect spot-check frames, write upload manifest, run gate:episode & dry-run, push PR, queue QA & companion Shorts",
+      "remaining_action": "Wait for QA J3902 and Chief merge of PR #1390, then put master v03 on Ben's watch board (jobs.py awaits) by 11 Dec",
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board",
@@ -274828,9 +274833,9 @@
         "OWB:064"
       ],
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 7,
-        "at": "2026-11-27T13:46Z",
+        "at": "2026-11-27T13:53Z",
         "by": "gemini",
         "plan": [
           "Build v02 synchronized cuts, pool and provenance",
@@ -274841,7 +274846,7 @@
           "Prepare upload package, trailer and listing",
           "Queue completed-cut QA and companion Shorts follow-ups"
         ],
-        "note": "Master v03 muxed & checksum-verified on studio-live (d59057ae, 557.5 MB; v01 & v02 preserved); picture_qa finished, poli"
+        "note": "Master v03 verified on studio-live (d59057ae, 557.5 MB; v01/v02 preserved), all 6 gates + package dry-run PASS, 37s trai"
       }
     },
     {
