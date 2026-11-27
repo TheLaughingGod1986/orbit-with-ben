@@ -273941,9 +273941,14 @@
           "at": "2026-11-27T12:22Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming existing 3/4 plan; inspecting MacBook verification and merged runtime reconciliation before any drain."
+        },
+        {
+          "at": "2026-11-27T12:26Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Reviewed PR1385; fixed channel ratchet and missing parentless-root check at 0a01b8fe32. 66 focused checks pass; PR1382 handoff documentation merged. Waiting for corrected PR CI before coordination."
         }
       ],
-      "remaining_action": "Verify both machines and finish the studio move with rollback and live checks",
+      "remaining_action": "Finish the coordinated studio move and verify both machines and the board",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273964,7 +273969,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T12:22Z",
+        "at": "2026-11-27T12:26Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273972,7 +273977,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Resuming existing 3/4 plan; inspecting MacBook verification and merged runtime reconciliation before any drain."
+        "note": "Reviewed PR1385; fixed channel ratchet and missing parentless-root check at 0a01b8fe32. 66 focused checks pass; PR1382 h"
       }
     },
     {
