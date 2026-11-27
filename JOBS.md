@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3883 | mini | blocked | codex | – | 064 thumbs · chief · OWB 064: Integrate corrected packaging and release assembly only after formal review | J3882 |
-| J3884 | mini | claimed | gemini | 2026-11-27T12:41Z | 004 thumbs · studio · J3365 follow-up: read HOS 004 and 007 finished tests and compilation selected cover |  |
+| J3884 | mini | blocked | gemini | – | 004 thumbs · studio · J3365 follow-up: read HOS 004 and 007 finished tests and compilation selected cover |  |
 | J3885 | macbook | claimed | macbook | 2026-11-27T12:48Z | assembly · J3012: stage both MacBook engine clones and verify the cutover launcher | J3012 |
 
 Recently finished:
