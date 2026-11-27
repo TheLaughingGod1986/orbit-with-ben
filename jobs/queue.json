@@ -273991,9 +273991,14 @@
           "at": "2026-11-27T21:56Z",
           "by": "relay",
           "what": "condition verification queued: J3961"
+        },
+        {
+          "at": "2026-11-27T22:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T04:10:00Z"
         }
       ],
-      "remaining_action": "Review corrected recovery controls after J3900, then coordinate the studio move",
+      "remaining_action": "Complete live migration and operational proof through J3962",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -274026,12 +274031,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3900 corrects PR1387 cancellation and persisted-descendant drain failures; elected Chief reviews changed head and regression evidence before a separate live coordination child. J3899 FIX at comment 7219162024; preserve 3/4 and all existing gates. No live activation.",
-        "check_at": "2026-11-27T22:56:44+00:00",
-        "last_recheck": "J3899",
-        "checked_at": "2026-11-27T13:11:30+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3961"
+        "condition": "J3961 KEEP: PR1389 head 5631f820b reviewed and merged; 62 mocked tests pass. J3962 owns separate live coordination and relay, board, tick and both-slot proof. Preserve parent 3/4 and all gates; no activation in verification.",
+        "check_at": "2026-11-28T04:10:00Z",
+        "last_recheck": "J3961",
+        "checked_at": "2026-11-27T22:07:52+00:00",
+        "checked_by": "codex"
       }
     },
     {
