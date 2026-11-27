@@ -354627,9 +354627,14 @@
           "at": "2026-11-27T06:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Short PASS (032 Short #2 dry_desert_two_oceans v01, 26.90s, 7/7 gates PASS, NAS sha256 07ef33e02198, PR #1366, #99 posted)"
+        },
+        {
+          "at": "2026-11-27T06:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief Short PASS and PR #1366 review",
+      "remaining_action": "Waiting for the Titan Short picture corrections in J3856, then review the new cut",
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "progress": {
@@ -354648,7 +354653,12 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX: v01 is not approved. J3856 must repair the still-zoom bridge, Earth/unsourced depth bars and early payoff, and S04 image boundary, then deliver v02 with fresh gates for exact-file review. PR 1366 remains unmerged.",
+        "check_at": "2026-11-28T06:45:00Z"
+      }
     },
     {
       "id": "J3854",
