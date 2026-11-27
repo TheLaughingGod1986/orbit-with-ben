@@ -360344,13 +360344,13 @@
       "stage": "script",
       "after": "J3913",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-27T15:07Z",
-      "eta": "2026-11-27T17:07Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T14:57Z",
-      "result": "",
+      "result": "FIX (one word). J3912 ruling published: PR #1396 merged d18b5d4386 (diff read, nothing private; no checks apply to jobs/**). Gemini argon 0 flags + direct URL check: C1-C9 hold verbatim (064_short02_QUOTECHECK_v02.md on PR #1394 at ca9429fd55). Duration resolved to 16-19 s (v02b); v02 retired. Flag: v02b drops NASA's 'true' in 'no true surface'. Ruling in jobs/reviews/J3914/REVIEW.md (PR #1397 merged). Queued J3916 writer fix -> J3917 lock + bounded VO review. Not locked; no VO decision; J3904 hold kept (next check 2026-11-28T14:45Z; recording the recheck on J3904 is for the Chief). Assembly also needs verified native frame-0 footage (R01 not found) and no Veo clips shown as real on the Uranus beats. No spend/upload/schedule.",
       "history": [
         {
           "at": "2026-11-27T14:57Z",
@@ -360386,6 +360386,11 @@
           "at": "2026-11-27T15:10Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: PR #1396 merged (d18b5d4386). Direct quote check: C1-C9 hold verbatim on live NASA pages; one flag: v02b drops 'true' from 'no true surface'"
+        },
+        {
+          "at": "2026-11-27T15:13Z",
+          "by": "claudecode",
+          "what": "done: FIX (one word). J3912 ruling published: PR #1396 merged d18b5d4386 (diff read, nothing private; no checks apply to jobs/**). Gemini argon 0 flags + direct URL check: C1-C9 hold verbatim (064_short02_QUOTECHECK_v02.md on PR #1394 at ca9429fd55). Duration resolved to 16-19 s (v02b); v02 retired. Flag: v02b drops NASA's 'true' in 'no true surface'. Ruling in jobs/reviews/J3914/REVIEW.md (PR #1397 merged). Queued J3916 writer fix -> J3917 lock + bounded VO review. Not locked; no VO decision; J3904 hold kept (next check 2026-11-28T14:45Z; recording the recheck on J3904 is for the Chief). Assembly also needs verified native frame-0 footage (R01 not found) and no Veo clips shown as real on the Uranus beats. No spend/upload/schedule."
         }
       ],
       "remaining_action": "Waiting on Gemini claim check; then record ruling",
@@ -360416,7 +360421,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "d18b5d4386"
     },
     {
       "id": "J3915",
