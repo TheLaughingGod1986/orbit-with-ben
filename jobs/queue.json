@@ -1,5 +1,5 @@
 {
-  "next_id": 3852,
+  "next_id": 3853,
   "jobs": [
     {
       "id": "J0001",
@@ -351337,6 +351337,11 @@
           "at": "2026-11-26T23:47Z",
           "by": "codex",
           "what": "blocked: Source brief FIX: no unused compliant spoken opener established in screened locked sources; exact passage or separately scoped revised opener required. No cut or gate PASS. Local evidence in MiniWork J3815-source-audit branch codex/J3815-source-audit; public audit push rejected by automatic approval review."
+        },
+        {
+          "at": "2026-11-27T05:48Z",
+          "by": "relay",
+          "what": "condition verification queued: J3852"
         }
       ],
       "remaining_action": "Correct the source brief with an unused compliant spoken opener before building",
@@ -351360,7 +351365,8 @@
       "hold": {
         "type": "input",
         "condition": "Source brief FIX: no unused compliant spoken opener established in screened locked sources; exact passage or separately scoped revised opener required. No cut or gate PASS. Local evidence in MiniWork J3815-source-audit branch codex/J3815-source-audit; public audit push rejected by automatic approval review.",
-        "check_at": "2026-11-27T05:47:13+00:00"
+        "check_at": "2026-11-27T06:48:20+00:00",
+        "recheck_task": "J3852"
       }
     },
     {
@@ -354447,6 +354453,37 @@
         "HOS:013"
       ],
       "escalated_at": "2026-11-27T05:46Z"
+    },
+    {
+      "id": "J3852",
+      "title": "Verify condition for J3815",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3815: Source brief FIX: no unused compliant spoken opener established in screened locked sources; exact passage or separately scoped revised opener required. No cut or gate PASS. Local evidence in MiniWork J3815-source-audit branch codex/J3815-source-audit; public audit push rejected by automatic approval review.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3815 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-27T05:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T05:48Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Correct the source brief with an unused compliant spoken opener before building",
+      "kind": "review",
+      "recheck_of": "J3815",
+      "due": "2026-11-27T06:48:20+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
