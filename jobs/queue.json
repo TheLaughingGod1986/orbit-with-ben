@@ -363640,7 +363640,7 @@
       "stage": "upload",
       "after": "J3921",
       "eta_min": 120,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
@@ -363652,12 +363652,28 @@
           "at": "2026-11-27T19:02Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T19:04Z",
+          "by": "codex",
+          "what": "Chief initializes scheduled follow-up hold; no production claim or work performed"
+        },
+        {
+          "at": "2026-11-27T19:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-12-05T17:05:00Z"
         }
       ],
-      "remaining_action": "Confirm the Mosquito film is public and pin its approved comment",
+      "remaining_action": "Check the Mosquito release and pin its approved comment",
       "due": "2026-12-05T18:00:00Z",
       "kind": "studio",
-      "plain": "Check the Mosquito film after release and pin its discussion question"
+      "plain": "Check the Mosquito film after release and pin its discussion question",
+      "hold": {
+        "type": "date",
+        "condition": "Scheduled check time 2026-12-05T17:05:00Z has arrived; verify publication and data availability when executing",
+        "check_at": "2026-12-05T17:05:00Z",
+        "release": "auto"
+      }
     },
     {
       "id": "J3947",
@@ -363670,7 +363686,7 @@
       "stage": "upload",
       "after": "J3921",
       "eta_min": 120,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
@@ -363682,12 +363698,28 @@
           "at": "2026-11-27T19:02Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T19:04Z",
+          "by": "codex",
+          "what": "Chief initializes scheduled follow-up hold; no production claim or work performed"
+        },
+        {
+          "at": "2026-11-27T19:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-12-07T17:05:00Z"
         }
       ],
-      "remaining_action": "Read the first two days of Mosquito audience results",
+      "remaining_action": "Read the Mosquito audience results and queue its rules review",
       "due": "2026-12-07T18:00:00Z",
       "kind": "studio",
-      "plain": "Measure how new viewers respond to the Mosquito film after two days"
+      "plain": "Measure how new viewers respond to the Mosquito film after two days",
+      "hold": {
+        "type": "date",
+        "condition": "Scheduled check time 2026-12-07T17:05:00Z has arrived; verify publication and data availability when executing",
+        "check_at": "2026-12-07T17:05:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
