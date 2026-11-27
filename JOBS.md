@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3841 | mini | blocked | gemini | – | review · Verify condition for J3781 |  |
 | J3846 | any | open | – | – | chief · J3844 follow-up: review HOS PR 802 records |  |
 | J3851 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
+| J3853 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 
 Recently finished:
 
