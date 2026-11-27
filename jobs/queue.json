@@ -351793,9 +351793,14 @@
           "at": "2026-11-27T00:04Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-27T00:15Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: API readback OK (Public, HD processed, not Made for Kids, description exact match); restarted frozen HOS Studio Chrome 9460 via launchd and scraping Studio pages"
         }
       ],
-      "remaining_action": "Inspecting YqCWYlv_LCY in HOS Studio (CDP 9222) and comparing with upload package",
+      "remaining_action": "Reading YqCWYlv_LCY details and 6h analytics in HOS Studio (CDP 9460)",
       "due": "2026-11-27T02:03:00Z",
       "kind": "studio",
       "launch": "YqCWYlv_LCY@6",
@@ -351803,14 +351808,15 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-27T00:04Z",
+        "at": "2026-11-27T00:15Z",
         "by": "gemini",
         "plan": [
           "Check Studio video status and package match",
           "Read 6h Analytics figures",
           "Record figures and run judge",
           "Finish or park for Chief and report"
-        ]
+        ],
+        "note": "API readback OK (Public, HD processed, not Made for Kids, description exact match); restarted frozen HOS Studio Chrome 9"
       },
       "taskKeys": [
         "HOS:008"
