@@ -351819,9 +351819,14 @@
           "at": "2026-11-27T00:08Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-27T00:09Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Checked 00:10Z: ww2 main pulled, no NARRATION_v05; PRs #195 and #196 both OPEN, unmerged, no comments"
         }
       ],
-      "remaining_action": "Check whether a v05 narration has been merged on WW2 main",
+      "remaining_action": "Chief records J3821 wait (worker may not record --recheck)",
       "kind": "review",
       "recheck_of": "J3821",
       "due": "2026-11-27T01:07:47+00:00",
@@ -351835,16 +351840,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-27T00:08Z",
+        "at": "2026-11-27T00:09Z",
         "by": "claudecode",
         "plan": [
           "Read J3821 and its precondition",
           "Check WW2 main and PRs #195/#196",
           "Reopen or re-wait J3821"
-        ]
-      }
+        ],
+        "note": "Checked 00:10Z: ww2 main pulled, no NARRATION_v05; PRs #195 and #196 both OPEN, unmerged, no comments"
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     }
   ],
   "focus": [
