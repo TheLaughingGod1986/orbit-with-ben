@@ -390,17 +390,28 @@ class AllAgents(unittest.TestCase):
         import tempfile
         seq = iter(["ran", "ran", "idle"])
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
-                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one:
+                mock.patch.dict(os.environ), \
+                mock.patch.object(mw, "start_other_slots") as slots, \
+                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one, \
+                mock.patch.object(mw.subprocess, "Popen") as popen:
             self.assertEqual(mw.run(), 0)
             self.assertEqual(one.call_count, 3)
+            slots.assert_called_once_with()
+            popen.assert_not_called()
 
     def test_run_stops_at_its_loop_budget(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
                 mock.patch.dict(os.environ, {"MACBOOK_LOOP_MIN": "0"}), \
-                mock.patch.object(mw, "run_one", return_value="ran") as one:
+                mock.patch.object(mw, "start_other_slots") as slots, \
+                mock.patch.object(mw, "log") as log, \
+                mock.patch.object(mw, "run_one", return_value="ran") as one, \
+                mock.patch.object(mw.subprocess, "Popen") as popen:
             self.assertEqual(mw.run(), 0)
             self.assertEqual(one.call_count, 1)
+            slots.assert_called_once_with()
+            popen.assert_not_called()
+            log.assert_called_once()
 
     def test_checkouts_are_the_workers_own_never_bens(self):
         # Whichever slot runs this test (J2235 F-01c: it failed inside slot 2), the checkout is that slot's own folder.

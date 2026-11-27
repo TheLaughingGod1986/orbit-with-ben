@@ -1,0 +1,139 @@
+{
+  "scope": "Read-only eight staged Mini services; no claim of child drain or every launchd policy field",
+  "services": [
+    {
+      "label": "com.hos.desk",
+      "loaded_read": true,
+      "source_sha256": "712df6ad03f37c4f3ecf456d9a23ba7d1a1c305602600fadc79bbeb64a9bb0f0",
+      "proposal_sha256": "cde951118250816107c90e78931eaafb3bccd2e42e6e4f6dfcbb5055b2ec7e03",
+      "argv_equal": true,
+      "configured_env_count": 5,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "WorkingDirectory": true,
+        "StandardOutPath": true,
+        "StandardErrorPath": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "com.owb.ai-spend-daily",
+      "loaded_read": true,
+      "source_sha256": "2955bcde13a2ff6e7d165378ea69b30f6cb0ec59d29c7c8b83f3f1d809f7d857",
+      "proposal_sha256": "1717301d81b7d5ebd1f9735ea79c910f4b96a2f6b59f079ea2ce7f029b0111ee",
+      "argv_equal": true,
+      "configured_env_count": 0,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "com.owb.board-publish",
+      "loaded_read": true,
+      "source_sha256": "cc5ef57e87b63d8626be7f357f5e4b243bb97294ff0a934156a8ba6d13ac553e",
+      "proposal_sha256": "13262f7a9bdff2ce352bda202b8cf4c7cf570fe913544d4f9145fefb77ebab8f",
+      "argv_equal": true,
+      "configured_env_count": 2,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "WorkingDirectory": true,
+        "StandardOutPath": true,
+        "StandardErrorPath": true,
+        "StartInterval": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "com.owb.chief-relay",
+      "loaded_read": true,
+      "source_sha256": "15d4c27a65dbf274aac5fc633cebe7df354b1310bc2154e4d647bb2ccc35c992",
+      "proposal_sha256": "745e75f5490368a114188f71dcbb2179ab666cf626c180d121704dffb2eab50e",
+      "argv_equal": true,
+      "configured_env_count": 3,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true,
+        "StartInterval": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "com.owb.missed-runs",
+      "loaded_read": true,
+      "source_sha256": "07cb9024f2c00231faa60e3e1a5e54569388bf8f4eb141ad3c05a82b17edd177",
+      "proposal_sha256": "fa06a639c0ec61724e232bc75451e1b47e7cbd63cdfa02c56a4b2969578e74fb",
+      "argv_equal": true,
+      "configured_env_count": 0,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true,
+        "StartInterval": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "com.owb.tab-janitor",
+      "loaded_read": true,
+      "source_sha256": "b64d03489a4cb3e00d52fdaf5d5c3db8cdf745ff226ab03e659f8a270340c51e",
+      "proposal_sha256": "69d2f8399aaff7743180485a49334bbf1585776d626082e118105011e057faf3",
+      "argv_equal": true,
+      "configured_env_count": 0,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true,
+        "StartInterval": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "dev.orbit.analytics-snapshot",
+      "loaded_read": true,
+      "source_sha256": "cbc2b105f8e14fc4a99eb6de7cefce614ef39f663b4edbbea5a4eee03235b0dd",
+      "proposal_sha256": "dcd02713d241ba3b9a04013dfc240c83994aaa64a13f53504bbd34c1d3874dcd",
+      "argv_equal": true,
+      "configured_env_count": 0,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    },
+    {
+      "label": "dev.orbit.buffer-check",
+      "loaded_read": true,
+      "source_sha256": "0b9be3e7dc3601d463e1aacfb9f0ccf44c1ebf6a3ff780bcaf9900da7405d576",
+      "proposal_sha256": "f384a54dd64cfb92122bea1a788ee4442cc01c8c3414b961af387f1e781739d7",
+      "argv_equal": true,
+      "configured_env_count": 0,
+      "configured_env_equal": true,
+      "extra_loaded_env_count": 0,
+      "policy_equal": {
+        "StandardOutPath": true,
+        "StandardErrorPath": true
+      },
+      "proposal_other_settings_equal": true,
+      "proposal_old_env_preserved": true
+    }
+  ]
+}
