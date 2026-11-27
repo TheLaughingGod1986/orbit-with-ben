@@ -360282,9 +360282,14 @@
           "at": "2026-11-27T20:34Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Built 064_short02_venus_vs_uranus_v01.mp4 (18.375s / 441f 24fps CFR, sha256 4eb7d94377...); all 7 automated gates PASS on local and canonical NAS master (gate_shorts_open, thumb_preview x2, sfx_kit level, music_gate, polish_gate, picture_qa); -14.00 LUFS / -2.00 dBTP; 0/37 padded frames"
+        },
+        {
+          "at": "2026-11-27T20:37Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Fresh decoded faster-whisper ASR on canonical NAS mp4 + vo stem matched locked v03 script verbatim (35/35 spoken words, 0 dropped); inspected all 8 shots + picture_qa_review.jpg + cover/frame0 previews; cleaned temporary scratch renders"
         }
       ],
-      "remaining_action": "Inspect rendered contact sheets, run fresh decoded ASR verification, and check NAS gate reports",
+      "remaining_action": "Commit evidence/manifest in clean worktree, open PR, queue independent QA, and park J3904 cleanly",
       "due": "2026-12-13T18:00:00Z",
       "kind": "script",
       "plain": "Draft and package OWB 064 companion Short 2 from the locked concept sheet (Venus 464°C vs Uranus −224°C) with existing gates and no extra spend",
@@ -360301,9 +360306,9 @@
       ],
       "escalated_at": "2026-11-27T16:42Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-27T20:34Z",
+        "at": "2026-11-27T20:37Z",
         "by": "gemini",
         "plan": [
           "Check ElevenLabs balance & record locked v03 VO",
@@ -360312,7 +360317,7 @@
           "Run all Shorts/picture/polish/music/SFX/ASR gates",
           "Copy verified master to NAS, open PR & queue QA"
         ],
-        "note": "Built 064_short02_venus_vs_uranus_v01.mp4 (18.375s / 441f 24fps CFR, sha256 4eb7d94377...); all 7 automated gates PASS o"
+        "note": "Fresh decoded faster-whisper ASR on canonical NAS mp4 + vo stem matched locked v03 script verbatim (35/35 spoken words, "
       }
     },
     {
