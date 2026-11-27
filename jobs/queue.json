@@ -354271,9 +354271,14 @@
           "at": "2026-11-27T03:35Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: J3847 done (codex). J3849 work finished by gemini; its only open gate is Chief review+merge of HOS PR #810, which gh shows OPEN, not merged, no review (27 Nov 03:3xZ)."
+        },
+        {
+          "at": "2026-11-27T03:35Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Predecessor J3847 done. J3849 gate unmet: HOS PR #810 OPEN, mergedAt null, no review. jobs.py wait --recheck refused for worker (holder/Chief only)."
         }
       ],
-      "remaining_action": "Record the unmet gate and park the hold update for Chief",
+      "remaining_action": "Chief: review/merge HOS PR #810, then update J3849 hold",
       "kind": "review",
       "recheck_of": "J3849",
       "due": "2026-11-27T04:33:06+00:00",
@@ -354287,7 +354292,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-27T03:35Z",
         "by": "claudecode",
@@ -354296,7 +354301,7 @@
           "Check HOS PR 810 live state",
           "Record finding and park for Chief"
         ],
-        "note": "J3847 done (codex). J3849 work finished by gemini; its only open gate is Chief review+merge of HOS PR #810, which gh sho"
+        "note": "Predecessor J3847 done. J3849 gate unmet: HOS PR #810 OPEN, mergedAt null, no review. jobs.py wait --recheck refused for"
       }
     }
   ],
