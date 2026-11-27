@@ -354567,13 +354567,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T05:59Z",
-      "eta": "2026-11-27T07:59Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-27T05:58Z",
-      "result": "",
+      "result": "parked for Chief: Short PASS (032 Short #2 dry_desert_two_oceans v01, 26.90s, 7/7 gates PASS, NAS sha256 07ef33e02198, PR #1366, #99 posted)",
       "history": [
         {
           "at": "2026-11-27T05:58Z",
@@ -354609,6 +354609,11 @@
           "at": "2026-11-27T06:21Z",
           "by": "gemini",
           "what": "step 5 of 5 done: PR #1366 opened, #99 report posted, 7/7 gates PASS on NAS 032_short_dry_desert_two_oceans_v01.mp4 (sha256 07ef33e02198)"
+        },
+        {
+          "at": "2026-11-27T06:22Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Short PASS (032 Short #2 dry_desert_two_oceans v01, 26.90s, 7/7 gates PASS, NAS sha256 07ef33e02198, PR #1366, #99 posted)"
         }
       ],
       "remaining_action": "Parked for Chief Short PASS and PR #1366 review",
