@@ -364637,9 +364637,14 @@
           "at": "2026-11-27T20:40Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T20:40Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
+      "remaining_action": "Reading J3904 history and evidence",
       "kind": "review",
       "recheck_of": "J3904",
       "due": "2026-11-27T21:39:24+00:00",
@@ -364657,9 +364662,15 @@
         "of": 3,
         "at": "2026-11-27T20:40Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3904 record",
+          "Check predecessor and gates",
+          "Reopen or re-wait J3904"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
