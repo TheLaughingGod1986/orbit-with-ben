@@ -1,5 +1,5 @@
 {
-  "next_id": 3872,
+  "next_id": 3873,
   "jobs": [
     {
       "id": "J0001",
@@ -356124,6 +356124,39 @@
       "remaining_action": "Recut the opener and ending, add the sound cue and verify the new cut",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short"
+    },
+    {
+      "id": "J3872",
+      "title": "HOS 009: watch and listen to repaired Newton apple Short",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow J3871 no-spend repair of HOS 009 apple Short. Read J3864 FIX ruling, J3816 failed-v02 evidence and new version hashes/receipts. Check unmodified opening/picture/polish/music/VO/SFX checks PASS; actually perceive the exact new cut in motion with audio, inspect phone framing and score OPEN/LENGTH/LOOP/CAPTION/TOPIC/FACEBOOK. Required audio_input and moving_video_input must be demonstrated by the session. If absent, record a typed capability hold naming actual tested inputs; never infer heard/watched from stills, ASR or ffmpeg. Write KEEP or FIX with precise defects and evidence, post on HOS desk. Keep J3816 held until exact-version Short PASS is recorded under channel rules. No upload, spending or schedule changes; Ben watch only after review passes. Check Chief status for any protected decision. Existing long and approved Shorts remain unchanged.",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3871",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T08:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T08:27Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the exact repaired cut and record Short KEEP or FIX",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the repaired Newton apple Short before Ben watches it"
     }
   ],
   "focus": [
