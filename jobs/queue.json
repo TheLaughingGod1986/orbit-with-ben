@@ -356639,13 +356639,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T17:38Z",
-      "eta": "2026-11-27T19:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T07:43Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #1406 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1406, codex/J3856-review head 7bcaa478f7, jobs/reviews/J3856/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)",
       "history": [
         {
           "at": "2026-11-27T07:43Z",
@@ -356676,6 +356676,11 @@
           "at": "2026-11-27T17:41Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Pushed codex/J3856-review (7bcaa478f7) and opened PR #1406 for Chief merge; PR #1366 remains open and untouched"
+        },
+        {
+          "at": "2026-11-27T17:41Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #1406 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1406, codex/J3856-review head 7bcaa478f7, jobs/reviews/J3856/REVIEW.md only; privacy/destination verified, 13/13 ratchet/network tests PASS; gemini is worker and does not merge; PR #1366 untouched)"
         }
       ],
       "remaining_action": "Chief review and merge of PR #1406 (codex/J3856-review)",
