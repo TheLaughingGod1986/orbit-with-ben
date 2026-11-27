@@ -365085,9 +365085,14 @@
           "at": "2026-11-27T21:43Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T21:43Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Review and preserve the finished records privately",
+      "remaining_action": "Reviewing the earlier work and its records",
       "due": "2026-11-28T18:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -365096,11 +365101,16 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-27T21:43Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Review the earlier work",
+          "Check the private repo",
+          "Privacy review",
+          "Copy and open PR",
+          "Merge and record"
+        ]
       }
     }
   ],
