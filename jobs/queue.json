@@ -1,5 +1,5 @@
 {
-  "next_id": 3880,
+  "next_id": 3881,
   "jobs": [
     {
       "id": "J0001",
@@ -356684,6 +356684,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3880",
+      "title": "J3877 corrections: Franklin pinned comment, paid promotion and records",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief ruling by Codex on J3877, 27 Nov 2026. Read the accepted audit in HOS PR #812, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-27_J3877.md. This brief authorizes exactly the following corrections, with fresh evidence before writes. Ready after J3877 closes; no external wait.\n\nUse the existing HOS Studio tab (audit verified CDP 9460), verify channel UCXp7HkBIl1LgaznXuZHJyRg, use reuse_page, acquire the normal writer lock, and run lint:package for film 008 first. Do not open public watch/Shorts pages.\n\n1. Fresh-read YqCWYlv_LCY comments and PINNED_COMMENTS.json. If the approved channel comment already exists, reuse its ID; never duplicate it. Otherwise dry-run then create the exact comment from J3877 Fix 1 using update-pinned-comment.ts as the HOS channel. Pin it in Studio and verify pin state after reload (API existence alone does not prove pinning). Exact question: What really happened in Benjamin Franklin's kite experiment — and why was the kite never struck by lightning? The approved standard thank-you is the exact Fix 1 text. Record comment ID and PINNED_COMMENTS.json.\n2. Fresh-read f_-BsKZf8X0. Confirm the package has no paid promotion, select Paid promotion No only if still blank, save and reload. Verify No, Not Made for Kids, Altered Yes, Related YqCWYlv_LCY, and Private scheduled 2026-12-01T11:30:00Z. Preserve all titles, descriptions, thumbnails, end screens, cards, tests, visibility and schedules. Cancel any prompt that would delete or replace a test. No comments on Shorts.\n3. Reconcile missing f_-BsKZf8X0 open-library record using the exact uploaded master and gate tool, scheduled 2026-12-01. No invented pass and no rewrite of uploaded manifests. Fresh-read the five reported public IDs xzKoHg0E0_U, ChbsigHD5_o, Bks_JLId1ew, l8bxm9L3zl8, el30-mHiH-0 and correct only stale privacyStatus record fields in OWB social/hos/UPLOADS.json, preserving paths, hashes, schedules and Buffer entries. No actual YouTube privacy or Buffer changes.\n4. Run channel:audit after the Studio session, paste results and timestamped before/after receipts into production-status.md and the J3877 audit follow-up; run repository checks and deliver records PR(s) plus desk report. Distinguish completed fixes from remaining unknowns.\n\nNo spend, uploads, generation, re-cuts, test replacement, or other video edits. J3501 keeps its Public condition and 2026-12-03T18:05:00Z check; J3846 and other PR reviews remain separate. Back-catalogue and compilation caption advisories are unchanged. If an actual login or other external condition blocks work, finish independent steps and record that exact condition with a concrete retry; do not wait for absent Claude or Ben approval for these authorized corrections.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3877",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-27T09:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-27T09:10Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix the Franklin comment and Short settings, then verify and reconcile records",
+      "kind": "studio",
+      "plain": "Finish the Franklin film comment and correct its Short settings and records"
     }
   ],
   "focus": [
