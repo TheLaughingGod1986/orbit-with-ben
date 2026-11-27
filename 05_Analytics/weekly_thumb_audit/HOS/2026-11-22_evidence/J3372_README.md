@@ -22,6 +22,8 @@ The attached **Title and thumbnail** report for `VbPubYd6Fbs` ran **5 November 2
 - First / A: **The Willow Tree That Was Made of Air**, **WOOD FROM SKY?**; visible to all viewers.
 - Second / B: **Where Does a Tree's Weight Come From?**, **DO PLANTS EAT SOIL?**.
 
+Historical collection note: T044 below was the original draft ID; the integrated ledger uses **T046**, preserving T044 for OWB 034 and T045 for OWB 064.
+
 No existing ledger row for this video was found. **T044** records the finished inconclusive test, null shares and no winner. Both makers are recorded as Gemini from the HOS J0869 THUMBS_INDEX_v01.json, with its exact existing asset hashes. The separate 28-day 70-impression / 4.3% CTR row is not an experiment outcome. The attached finished test remains intact.
 
 ## Current titles and attached tests
