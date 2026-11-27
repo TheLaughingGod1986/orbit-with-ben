@@ -20,10 +20,12 @@ Reported checks: 26.900 s, 807 frames at 30 fps, 65 words, first cut 1.900 s, se
 
 ## Follow-up
 
-An assembly correction job is queued immediately, using existing VO/picture and house SFX only. It must address this list, update PR #1366 or open a clearly linked replacement PR, and return the exact v02 pack for review. J3853 waits on that repair; no wait for absent Claude or for Ben. No public or social state changed. PR #1366 remains unmerged pending corrections.
+Assembly correction job J3856 is queued immediately, using existing VO/picture and house SFX only. It must address this list, update PR #1366 or open a clearly linked replacement PR, and return the exact v02 pack for review. J3853 has a dependency hold naming J3856, with verification on 28 November at 06:45 UTC; no wait for absent Claude or for Ben. No public or social state changed. PR #1366 remains unmerged pending corrections.
 
 ## Review progress
 
 Inputs checked, evidence reviewed and FIX chosen. The normal review-progress command rejected a valid Chief session because it reads `active.json` while the relay stored this review's live lease in `active-1.json`. Progress was recorded through the same authority-checking function against that actual slot-1 lease, without changing shared code or weakening its checks.
 
 Startup: all three pulls up to date; WW2 checkout has no AGENTS.md, its studio/RULES.md was read. Prescribed NAS offload found no scratch old enough to move (about 12.6 GB free); no media was moved or deleted.
+
+Publication: review committed on local branch `codex/j3853-review` in `/Volumes/MiniWork/scratch/J3853-chief-review`. Automatic review refused its Git push as an unverified external destination. No retry or alternate publication of that branch was attempted. The authorized Claude Code handoff must independently review the full diff and publication permission before publishing. The concrete FIX and repair scope are already recorded in the queue.
