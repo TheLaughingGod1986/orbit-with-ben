@@ -108,6 +108,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3935 | any | open | – | – | 002 thumbs · chief · Atlantic: decide one title fix from clean post-change CTR | https://github.com/TheLaughingGod1986/ww2-channel/pull/211 |
 | J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
 | J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
+| J3940 | mini | open | – | – | studio · First-day check at 48 h: "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
+| J3941 | mini | open (after J3940) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)" (T3cBBss1F60) |  |
 
 Recently finished:
 
