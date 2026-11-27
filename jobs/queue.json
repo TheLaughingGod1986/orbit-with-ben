@@ -354739,6 +354739,11 @@
           "at": "2026-11-27T07:42Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:45:00Z"
+        },
+        {
+          "at": "2026-11-27T08:48Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Waiting for J3865 Titan Short corrections and exact-file review",
@@ -354765,7 +354770,8 @@
         "type": "dependency",
         "condition": "Chief FIX remains: v01 and v02 are not approved. J3865 must deliver corrected v03 and exact-file review must pass before UAT. J3856 review found Dragonfly depicted as Cassini and undersized, non-spoken depth labeling. No upload or scheduling.",
         "check_at": "2026-11-28T06:45:00Z"
-      }
+      },
+      "escalated_at": "2026-11-27T08:48Z"
     },
     {
       "id": "J3854",
