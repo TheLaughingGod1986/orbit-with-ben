@@ -300359,9 +300359,14 @@
           "at": "2026-11-27T19:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T19:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3309; verified B_v03 SHA-256 matches 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba and J3307/J3382 are done"
         }
       ],
-      "remaining_action": "After Ben signs back into Orbit Studio :9223, run fresh read-only T004 check on rVqgtkBV3jc and arm T042",
+      "remaining_action": "Verify B_v03 hash, J3307/J3382 dependencies, and fresh read-only Studio state for rVqgtkBV3jc",
       "kind": "studio",
       "plain": "Start T042 thumbnail A/B test on OWB 024 (rVqgtkBV3jc) after Chief approval",
       "taskKeys": [
@@ -300369,11 +300374,16 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T19:33Z",
+        "of": 4,
+        "at": "2026-11-27T19:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify file hash and read-only Studio T004 state",
+          "Arm T042 thumbnail test in Studio and verify reload",
+          "Update THUMB_LEDGER.json and open PR",
+          "Post Studio thread report and finish J3309"
+        ],
+        "note": "Claimed J3309; verified B_v03 SHA-256 matches 0e643ed49990a38cfd8054dfdf9ea7e991805a43b0eb8f7c041a07bcd5192bba and J3307"
       }
     },
     {
