@@ -356666,9 +356666,14 @@
           "at": "2026-11-27T09:24Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3878; verified NAS master SHA256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 and tested native read_file video/mp4 playback"
+        },
+        {
+          "at": "2026-11-27T09:26Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Recorded audio_input+moving_video_input capability; directly played full 26.9s v03 MP4 and isolated VO/bed/SFX WAV stems via read_file"
         }
       ],
-      "remaining_action": "Verify session audio/video capabilities and inspect exact v03 NAS master",
+      "remaining_action": "Complete full perceptual playback QA and check loop/caption/graphic edge cases",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
@@ -356684,9 +356689,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-27T09:24Z",
+        "at": "2026-11-27T09:26Z",
         "by": "gemini",
         "plan": [
           "Verify tools & exact v03 master",
@@ -356694,7 +356699,7 @@
           "Cross-check gates, stills, captions & PR 1366",
           "Write QA report & park for Chief decision"
         ],
-        "note": "Claimed J3878; verified NAS master SHA256 5b5703855c18a7fea0a8e502ba394ca7af0bb6abeda9f66f6e46229b0bacfe13 and tested na"
+        "note": "Recorded audio_input+moving_video_input capability; directly played full 26.9s v03 MP4 and isolated VO/bed/SFX WAV stems"
       },
       "taskKeys": [
         "OWB:032"
