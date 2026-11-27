@@ -36,10 +36,18 @@
       "ruling": "PASS"
     },
     "edit": {
-      "state": "review",
+      "state": "doing",
       "ref": "J3902"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "edit",
+      "by": "gemini",
+      "at": "2026-11-27T14:40Z",
+      "eta": "2026-11-27T16:39Z",
+      "note": "J3910 OWB 064: Independently recheck J3909 trailer and package corrections"
+    }
+  ],
   "next": "J3902 ruled master v03 KEEP, package FIX. J3909 repairs trailer framing and credits; J3910 independently rechecks before Chief merge of revised PR1390 and J3023 Ben-watch handoff."
 }
