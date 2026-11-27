@@ -362929,20 +362929,29 @@
           "at": "2026-11-27T18:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T18:06Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Read the long's Studio numbers 48 h after it went live, record them and give the verdict",
+      "remaining_action": "Inspecting Studio Content and upload package for T3cBBss1F60",
       "due": "2026-11-27T20:04:00Z",
       "kind": "studio",
       "launch": "T3cBBss1F60@48",
       "plain": "Check how \"What Would Happen If You Landed on Titan? (Seas of Liquid Ga\" is doing 48 hours after it went live",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T18:05Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T18:06Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect upload package & Studio Content",
+          "Read 48h Studio Analytics",
+          "Record reading & run judge",
+          "Commit PR, finish job & post report"
+        ]
       }
     },
     {
