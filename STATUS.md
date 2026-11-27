@@ -87,7 +87,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
-| 034 | thumbs | codex | 2026-11-27T00:20Z | 2026-11-27T00:30Z | - |
 | 064 | picture | gemini | 2026-11-25T14:17Z | 2026-11-25T16:16Z | J3022 OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film |
 | 064 | thumbs | gemini | 2026-11-27T00:19Z | 2026-11-27T02:18Z | J3818 OWB 064: Exact-file review of J3719_v02 thumbnails, SHOT_LIST_v02 opening/R09 fixes & packaging lock |
 
