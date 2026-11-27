@@ -353967,13 +353967,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-27T03:08Z",
-      "eta": "2026-11-27T05:08Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T02:36Z",
-      "result": "",
+      "result": "Chief review ACCEPT: PR808 merged 5f3c0a83; independent 31/31 tests and live audit 80 videos, 44 public, zero errors. J3849 refreshes inventory after J3847. Review steps 1 inputs/authority, 2 evidence/tests/ruling, 3 merge/desk ruling/follow-up recorded separately; review-progress unavailable due missing active lease. Priority raised only to close assigned completed review past plan pacing. No YouTube writes. Desk 7208728184.",
       "history": [
         {
           "at": "2026-11-27T02:36Z",
@@ -354029,6 +354029,11 @@
           "at": "2026-11-27T03:08Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T03:08Z",
+          "by": "codex",
+          "what": "done: Chief review ACCEPT: PR808 merged 5f3c0a83; independent 31/31 tests and live audit 80 videos, 44 public, zero errors. J3849 refreshes inventory after J3847. Review steps 1 inputs/authority, 2 evidence/tests/ruling, 3 merge/desk ruling/follow-up recorded separately; review-progress unavailable due missing active lease. Priority raised only to close assigned completed review past plan pacing. No YouTube writes. Desk 7208728184."
         }
       ],
       "remaining_action": "Parked for elected Chief review and merge of HOS PR #808",
@@ -354043,7 +354048,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/issues/694#issuecomment-7208728184"
     },
     {
       "id": "J3848",
