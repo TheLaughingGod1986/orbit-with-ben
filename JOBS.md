@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3819 | mini | blocked | codex | – | chief · Chief: resolve 034 thumbs orphan-review |  |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
 | J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
-| J3831 | mini | open (after J3830) | – | – | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
+| J3831 | mini | claimed | macbook-2 | 2026-11-27T09:40Z | WW2:016 script · review · WW2 film 016: Battle of the Bulge topic/archive review, Rule-6 viewer test (300w + 1,200w) & v02 lock (PR #197) | ww2-channel#197 |
 | J3834 | any | blocked | codex | – | WW2:009 script · chief · WW2 009: v06 viewer test and Chief script decision | ww2-channel#198 |
 | J3836 | mini | blocked | gemini | – | review · Verify condition for J3704 |  |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
