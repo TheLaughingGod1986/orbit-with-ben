@@ -358153,19 +358153,28 @@
           "at": "2026-11-27T11:55Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T11:56Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Build and test the detached installer handoff for the studio move",
+      "remaining_action": "Build and test the external cutover helper",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Prepare the MacBook to switch studio engines safely after its workers finish",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T11:55Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T11:56Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read handoff boundaries",
+          "Build guarded helper",
+          "Test mocked handoff",
+          "Publish review and return main"
+        ]
       }
     },
     {
