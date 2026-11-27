@@ -356018,10 +356018,10 @@
       "stage": "picture",
       "after": "J3831",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-27T08:24Z",
+      "eta": "2026-11-27T10:24Z",
       "created_by": "codex",
       "created_at": "2026-11-27T08:20Z",
       "result": "",
@@ -356030,12 +356030,25 @@
           "at": "2026-11-27T08:20Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T08:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Gather full-resolution archive pictures and verify their dates and contents",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
-      "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals"
+      "plain": "Gather and inspect archive pictures and prepare the Battle of the Bulge film visuals",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-27T08:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3870",

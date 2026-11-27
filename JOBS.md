@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3865 | mini | blocked | gemini | – | 032 edit · assembly · Titan Short v03: correct Cassini picture and readable teaching graphic | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1366 |
 | J3866 | any | open | – | – | for claudecode · review · Publish completed Chief review record for J3856 |  |
 | J3868 | mini | blocked | macbook | – | review · Verify condition for J3819 |  |
-| J3869 | mini | open (after J3831) | – | – | WW2:016 picture · assembly · WW2 016: harvest archive, prepare shot list and three thumbnails | ww2-channel#206 |
+| J3869 | mini | claimed | gemini | 2026-11-27T10:24Z | WW2:016 picture · assembly · WW2 016: harvest archive, prepare shot list and three thumbnails | ww2-channel#206 |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
 
 Recently finished:
