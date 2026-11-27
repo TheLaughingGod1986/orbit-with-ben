@@ -352581,9 +352581,14 @@
           "at": "2026-11-27T00:57Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T00:57Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done: Claimed; v05 sha check next"
         }
       ],
-      "remaining_action": "Correcting the towing claim, opening timing and crowded totals",
+      "remaining_action": "Reading v05 viewer test and narration",
       "due": "2026-11-29T18:00:00Z",
       "kind": "script",
       "plain": "Fix the remaining towing claim and crowded numbers in the Operation Pedestal script",
@@ -352597,12 +352602,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-27T00:57Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read v05 review and script",
+          "Write v06 narration and SCRIPT",
+          "Validate hash, parity, chars, timing",
+          "Commit, status, report"
+        ],
+        "note": "Claimed; v05 sha check next"
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     },
     {
       "id": "J3833",
