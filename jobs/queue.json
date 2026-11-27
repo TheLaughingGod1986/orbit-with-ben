@@ -361228,20 +361228,35 @@
           "at": "2026-11-27T16:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T16:56Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
         }
       ],
-      "remaining_action": "Repair all four narration segments and prove complete speech in the new cut",
+      "remaining_action": "Inspecting PR 1400 review, v02 builder, and NAS locked inputs",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Restore the missing narration in the first planets Short",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-27T16:55Z",
+        "of": 6,
+        "at": "2026-11-27T16:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR 1400 review, v02 builder, and NAS assets",
+          "Build v03 builder with audio seek/fade fix and regression check",
+          "Generate immutable v03 master/stems reusing v02 video and verify speech",
+          "Checksum-copy v03 master/stems to NAS preserving v01/v02",
+          "Run 7 gates, canonical 13-bed MP3 check, and package dry-run",
+          "Commit v03 artifacts on PR 1399 branch, push, and report"
+        ],
+        "note": "Claimed J3922; creating clean worktree on PR #1399 branch under STUDIO_SCRATCH"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3923",
