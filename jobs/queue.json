@@ -353339,6 +353339,11 @@
           "at": "2026-11-27T01:40Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-27T01:40Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-27T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
@@ -353348,7 +353353,15 @@
         "moving_video_input"
       ],
       "due": "2026-11-27T02:40:34+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3841",
