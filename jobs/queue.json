@@ -355276,9 +355276,14 @@
           "at": "2026-11-27T07:32Z",
           "by": "codex",
           "what": "step 2 of 3 done: Verified exact hash, 18488 characters, 53 matching narration paragraphs, sources/archive fixes and final-file read. Closing convoy line must be corrected before lock."
+        },
+        {
+          "at": "2026-11-27T07:33Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Ruling recorded via parent wait --recheck J3862 and reopen. PR1368 merged. J3831 owns immediate closing-line correction and final lock review; original production holds remain."
         }
       ],
-      "remaining_action": "Record readiness ruling and assign remaining correction to the original script review",
+      "remaining_action": "Review complete; original script review resumes with required closing-line fix",
       "kind": "review",
       "recheck_of": "J3831",
       "due": "2026-11-27T08:05:46+00:00",
@@ -355292,16 +355297,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-27T07:32Z",
+        "at": "2026-11-27T07:33Z",
         "by": "codex",
         "plan": [
           "Check inputs and authority",
           "Verify corrected evidence",
           "Record ruling and follow-up"
         ],
-        "note": "Verified exact hash, 18488 characters, 53 matching narration paragraphs, sources/archive fixes and final-file read. Clos"
+        "note": "Ruling recorded via parent wait --recheck J3862 and reopen. PR1368 merged. J3831 owns immediate closing-line correction "
       },
       "taskKeys": [
         "WW2:016"
