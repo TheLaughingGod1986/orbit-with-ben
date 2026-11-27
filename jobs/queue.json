@@ -359711,19 +359711,28 @@
           "at": "2026-11-27T14:18Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-27T14:20Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Repair trailer framing and package records for independent recheck",
+      "remaining_action": "Checking trailer sources and repair requirements",
       "due": "2026-12-08T18:00:00Z",
       "kind": "assembly",
       "plain": "Fix the every-planet trailer framing and complete its picture credits",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T14:18Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-27T14:20Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs",
+          "Repair trailer and package",
+          "Verify evidence",
+          "Publish repair"
+        ]
       }
     },
     {
