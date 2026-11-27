@@ -273846,9 +273846,14 @@
           "at": "2026-11-27T10:48Z",
           "by": "codex",
           "what": "step 3 of 4 done: Both detached checks passed: 1606 future-identity tests, 6 skips. Published verified private root rehearsal eda81876 and staged clean Mini runtime clone; MacBook staging is J3885 because existing SSH is unavailable. No live switch."
+        },
+        {
+          "at": "2026-11-27T10:51Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Published root rehearsal eda81876; clean Mini runtime staged; eight final-path proposals lint clean; all 17 installed plist backups still match. J3885 is claimed on the MacBook. Evidence PR 1375 at 5dcbb24c; live operation remains on Orbit."
         }
       ],
-      "remaining_action": "Finish MacBook staging, then coordinate the two-machine drain and live switch",
+      "remaining_action": "Read J3885 MacBook readiness, then freeze fresh source and execute the coordinated cutover",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273869,7 +273874,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-27T10:48Z",
+        "at": "2026-11-27T10:51Z",
         "by": "codex",
         "plan": [
           "Inspect the split and machine paths",
@@ -273877,7 +273882,7 @@
           "Rehearse and verify access",
           "Move the engine and prove live operation"
         ],
-        "note": "Both detached checks passed: 1606 future-identity tests, 6 skips. Published verified private root rehearsal eda81876 and"
+        "note": "Published root rehearsal eda81876; clean Mini runtime staged; eight final-path proposals lint clean; all 17 installed pl"
       }
     },
     {
