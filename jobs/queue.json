@@ -366591,9 +366591,14 @@
           "at": "2026-11-28T03:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3975; inspecting prior HOS live-listing audits and open PRs"
+        },
+        {
+          "at": "2026-11-28T03:35Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: channel:audit PASS (80 videos, 0 errors, 45 public = channel videoCount); verified J3877/J3880/J3959 baselines and CDP 9460 active"
         }
       ],
-      "remaining_action": "Pull live HOS metadata, check prior J3959/J3877 audit state, and run channel:audit",
+      "remaining_action": "Run live YouTube Data API audit, chapter/source/link verification, and read-only Studio CDP 9460 sweep",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -366605,9 +366610,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-28T03:34Z",
+        "at": "2026-11-28T03:35Z",
         "by": "gemini",
         "plan": [
           "Pull HOS live metadata and run channel:audit",
@@ -366615,8 +366620,13 @@
           "Recheck source URLs and prior open items",
           "Write HOS audit report, open PR, and park/report"
         ],
-        "note": "Claimed J3975; inspecting prior HOS live-listing audits and open PRs"
-      }
+        "note": "channel:audit PASS (80 videos, 0 errors, 45 public = channel videoCount); verified J3877/J3880/J3959 baselines and CDP 9"
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [
