@@ -31,12 +31,12 @@ def evidence(item):
 
 def probe(path):
     return json.loads(subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0',
-        '-show_entries', 'stream=width,height,avg_frame_rate:format=duration', '-of', 'json', str(path)],
+        '-show_entries', 'stream=width,height,avg_frame_rate,sample_aspect_ratio:format=duration', '-of', 'json', str(path)],
         capture_output=True, check=True, timeout=30).stdout)
 
 
-def frame(path, time, crop=None):
-    filters = []
+def frame(path, time, crop=None, recipe=None):
+    filters = list(recipe or [])
     if crop:
         x, y, w, h = crop
         filters.append(f'crop={w}:{h}:{x}:{y}')
@@ -47,6 +47,60 @@ def frame(path, time, crop=None):
     if len(raw) != 96 * 170:
         raise ValueError('source/render frame unavailable')
     return raw
+
+
+def integers(value, length, name):
+    if not isinstance(value, list) or len(value) != length or any(type(n) is not int for n in value):
+        raise ValueError(f'{name} must contain integer pixels')
+    return value
+
+
+def scale_before_crop(framing, stream):
+    """Version 2 has one fixed operation order, with no implicit parameters."""
+    if set(framing) != {'operations', 'output', 'portrait_width'}:
+        raise ValueError('unexpected or missing version 2 framing fields')
+    ops = framing['operations']
+    fields = [{'op','width','height','interpolation'}, {'op','x','y','width','height'},
+              {'op','num','den'}, {'op','num','den'}]
+    if not isinstance(ops, list) or len(ops) != 4:
+        raise ValueError('scale, crop, setsar, fps operations required in order')
+    for op, name, keys in zip(ops, ('scale','crop','setsar','fps'), fields):
+        if not isinstance(op, dict) or set(op) != keys or op['op'] != name:
+            raise ValueError('invalid operation fields or order')
+        if any(type(v) is not int for k,v in op.items() if k not in ('op','interpolation')):
+            raise ValueError('operation parameters must be integers')
+    scale, crop, sar, fps = ops
+    sw, sh = scale['width'], scale['height']
+    iw, ih = stream['width'], stream['height']
+    if min(sw, sh) <= 0 or sw * ih != sh * iw or sw * 100 > iw * 235:
+        raise ValueError('scale must be uniform and at most 2.35x')
+    if scale['interpolation'] != 'lanczos':
+        raise ValueError('only explicit lanczos interpolation is supported')
+    x,y,w,h = (crop[k] for k in ('x','y','width','height'))
+    output = integers(framing['output'], 2, 'output')
+    if min(x,y) < 0 or min(w,h) <= 0 or x+w > sw or y+h > sh:
+        raise ValueError('crop outside scaled source bounds')
+    if output != [w,h] or any(n <= 0 or n % 2 for n in output):
+        raise ValueError('output must equal crop and contain positive even dimensions')
+    rule = framing['portrait_width']
+    if rule == 'exact':
+        if w * 16 != h * 9:
+            raise ValueError('output must be exact portrait 9:16')
+    elif rule == 'nearest_even':
+        # Integer arithmetic: nearest even width, exact ties toward the larger width.
+        nearest = 2 * ((h * 9 + 16) // 32)
+        if w != nearest or abs(w * 16 - h * 9) > 16:
+            raise ValueError('output width must be nearest even to height * 9/16')
+    else:
+        raise ValueError('explicit exact or nearest_even portrait width rule required')
+    if sar != {'op':'setsar','num':1,'den':1}:
+        raise ValueError('square sample aspect 1:1 required')
+    if stream.get('sample_aspect_ratio') != '1:1':
+        raise ValueError('square source pixels required')
+    if min(fps['num'],fps['den']) <= 0:
+        raise ValueError('positive rational output fps required')
+    return output, [f'scale={sw}:{sh}:flags=lanczos', f'crop={w}:{h}:{x}:{y}',
+                    'setsar=1/1', f"fps={fps['num']}/{fps['den']}"]
 
 
 def shorts_band():
@@ -71,8 +125,8 @@ def validate(cuts, declaration, video=None):
                   pending=['rendered pixel/loop checks', 'human moving/phone and audio review'])
     try:
         d = declaration
-        if type(d['version']) is not int or d['version'] != 1 or d['format'] != 'short':
-            raise ValueError('only version 1 prescribed Shorts are supported')
+        if type(d['version']) is not int or d['version'] not in (1, 2) or d['format'] != 'short':
+            raise ValueError('only version 1 or 2 prescribed Shorts are supported')
         if set(d) != {'version','format','cut','duration','last_vo_word','source','words','vo','prescription','source_in','source_out','framing'}:
             raise ValueError('missing or unexpected terminal-loop declaration fields')
         if type(d['cut']) is not int or d['cut'] != len(cuts) - 1 or d['cut'] < 2:
@@ -120,19 +174,32 @@ def validate(cuts, declaration, video=None):
             raise ValueError('invalid probed source duration')
         # This intentionally small recipe admits no unmodelled filters/speed/flip.
         for c in (first, tail):
-            if set(c['framing']) != {'offset', 'crop', 'output'}:
+            if set(c['framing']) != ({'offset', 'crop', 'output'} if d['version'] == 1 else
+                                     {'offset', 'operations', 'output', 'portrait_width'}):
                 raise ValueError('explicit offset, crop and output framing required')
         if {a: b for a, b in first['framing'].items() if a != 'offset'} != d['framing'] or \
            {a: b for a, b in tail['framing'].items() if a != 'offset'} != d['framing']:
             raise ValueError('opening and return framing must match declaration')
-        crop, output = d['framing']['crop'], d['framing']['output']
-        if len(crop) != 4 or len(output) != 2 or any(type(n) is not int for n in crop + output):
-            raise ValueError('crop/output must contain integer pixels')
-        x, y, w, h = crop
-        if min(x, y) < 0 or min(w, h, *output) <= 0 or x+w > stream['width'] or y+h > stream['height']:
-            raise ValueError('crop/output outside source bounds')
-        if output[0] * 16 != output[1] * 9:
-            raise ValueError('output must be portrait 9:16')
+        if d['version'] == 2:
+            expected = json.dumps(d['framing'], sort_keys=True, allow_nan=False)
+            for row in (first, tail):
+                actual = {k:v for k,v in row['framing'].items() if k != 'offset'}
+                if json.dumps(actual, sort_keys=True, allow_nan=False) != expected:
+                    raise ValueError('opening and return recipe types/values must match exactly')
+        recipe = None
+        crop = None
+        if d['version'] == 2:
+            output, recipe = scale_before_crop(d['framing'], stream)
+        else:
+            if set(d['framing']) != {'crop', 'output'}:
+                raise ValueError('unexpected version 1 framing fields')
+            crop = integers(d['framing']['crop'], 4, 'crop')
+            output = integers(d['framing']['output'], 2, 'output')
+            x, y, w, h = crop
+            if min(x, y) < 0 or min(w, h, *output) <= 0 or x+w > stream['width'] or y+h > stream['height']:
+                raise ValueError('crop/output outside source bounds')
+            if output[0] * 16 != output[1] * 9:
+                raise ValueError('output must be portrait 9:16')
         start, end = number(d['source_in']), number(d['source_out'])
         if start < 0 or end > bound or end <= start or abs(end-start-length) > 1e-6:
             raise ValueError('source interval outside bounds or duration mismatch')
@@ -158,7 +225,7 @@ def validate(cuts, declaration, video=None):
                     max(0.0, first['timeline_out'] - 1/fps)),
                    (start, tail['timeline_in']),
                    (max(start, end - 1/fps), tail['timeline_out'] - min(length, 1/fps))]
-        frame_hashes = [hashlib.sha256(frame(src, t, crop)).hexdigest() for t, _ in samples]
+        frame_hashes = [hashlib.sha256(frame(src, t, crop, recipe)).hexdigest() for t, _ in samples]
         result['evidence'] = dict(source=str(src), sha256=digest(src), source_in=start, source_out=end,
             opening_source_in=opening_start, opening_source_out=opening_end,
             source_duration=bound, framing=d['framing'], last_vo_word=last_word,
@@ -168,9 +235,14 @@ def validate(cuts, declaration, video=None):
             render = probe(video); rs = render['streams'][0]
             if [rs['width'], rs['height']] != output or abs(number(float(render['format']['duration']))-duration) > .05:
                 raise ValueError('rendered dimensions/duration disagree with Short contract')
+            if d['version'] == 2:
+                declared_fps = d['framing']['operations'][3]
+                rn, rd = map(int, rs['avg_frame_rate'].split('/'))
+                if min(rn, rd) <= 0 or rn * declared_fps['den'] != rd * declared_fps['num'] or rs.get('sample_aspect_ratio') != '1:1':
+                    raise ValueError('rendered fps/SAR disagree with explicit recipe')
             errors = []
             for source_t, render_t in samples:
-                expected = frame(src, source_t, crop)
+                expected = frame(src, source_t, crop, recipe)
                 actual = frame(video, render_t)
                 mae = sum(abs(a-b) for a,b in zip(expected, actual)) / len(actual)
                 errors.append(round(mae, 4))
