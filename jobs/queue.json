@@ -365967,9 +365967,14 @@
           "at": "2026-11-28T01:01Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Recorded unmet capability hold on J3756 (--type capability --requires moving_video_input --recheck J3967, next check 2026-11-28T08:15:00Z)."
+        },
+        {
+          "at": "2026-11-28T01:02Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Posted OWB #1353 (#7231376790) and HOS #694 (#7231377280) verification reports; closing J3967."
         }
       ],
-      "remaining_action": "Post verification reports on OWB #1353 and HOS #694 and finish J3967",
+      "remaining_action": "Complete J3967",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -365986,9 +365991,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-28T01:01Z",
+        "at": "2026-11-28T01:02Z",
         "by": "gemini",
         "plan": [
           "Probe session media capabilities",
@@ -365996,7 +366001,7 @@
           "Update J3756 wait state and close J3967",
           "Post verification report on studio thread"
         ],
-        "note": "Recorded unmet capability hold on J3756 (--type capability --requires moving_video_input --recheck J3967, next check 202"
+        "note": "Posted OWB #1353 (#7231376790) and HOS #694 (#7231377280) verification reports; closing J3967."
       },
       "taskKeys": [
         "HOS:013"
