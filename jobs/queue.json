@@ -357603,9 +357603,14 @@
           "at": "2026-11-28T00:31Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T06:00:00Z"
+        },
+        {
+          "at": "2026-11-28T00:36Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:00:00Z"
         }
       ],
-      "remaining_action": "Waiting for the crop-and-loop contract decision and publication of the recheck evidence",
+      "remaining_action": "Waiting for the shared framing-check fix before rechecking the unchanged apple Short",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
       "taskKeys": [
@@ -357625,7 +357630,7 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3969 must resolve the actual scale-before-crop and codec-rounded portrait contract; exact v04 still picture FAIL. Publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c938. Prior public push rejection remains; do not retry Codex push. Five other gates PASS. J3816 held, J3872 dependent; no media edit, PASS, UAT or upload.",
+        "condition": "J3969 ruled for explicit scale-before-crop support in separate core job J3972. Keep exact v04 picture FAIL until both J3972 code PRs are reviewed and merged, then rerun the unchanged video hash 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac with truthful new declaration. J3816 held; J3872 dependent. Recheck evidence publication via designated Claude Code is in progress under J3969; no Codex push retry.",
         "check_at": "2026-11-28T06:00:00Z"
       }
     },
