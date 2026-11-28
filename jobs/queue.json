@@ -367210,16 +367210,21 @@
           "at": "2026-11-28T06:48Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Read Field Order History Lifetime Overview at 2026-11-28T06:47:55Z (18 Nov - 26 Nov 2026): total subscribers = 1 (+1), watch time = 5.0 hours (Views 129)"
+        },
+        {
+          "at": "2026-11-28T06:49Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Imported studio_read_channel_totals_2026-11-28.json via field-order-studio-import.ts; board.json/studio_read.json updated; 22/22 field-order tests PASS"
         }
       ],
-      "remaining_action": "Import dated Studio read via field-order-studio-import.ts and verify rebuilt analytics in clean worktree",
+      "remaining_action": "Commit, push branch, open PR, park J3981 for Chief review/merge, and post thread report",
       "due": "2026-11-28T06:40:47Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-28T06:48Z",
+        "at": "2026-11-28T06:49Z",
         "by": "gemini",
         "plan": [
           "Verify Studio tab and channel identity",
@@ -367227,7 +367232,7 @@
           "Import dated read in clean worktree",
           "Push branch, open PR, park for Chief"
         ],
-        "note": "Read Field Order History Lifetime Overview at 2026-11-28T06:47:55Z (18 Nov - 26 Nov 2026): total subscribers = 1 (+1), w"
+        "note": "Imported studio_read_channel_totals_2026-11-28.json via field-order-studio-import.ts; board.json/studio_read.json update"
       }
     },
     {
