@@ -1,5 +1,5 @@
 {
-  "next_id": 3971,
+  "next_id": 3972,
   "jobs": [
     {
       "id": "J0001",
@@ -366066,6 +366066,38 @@
         "kind": "orphan-review",
         "signature": "07f5bd36988bdc1b6f02"
       }
+    },
+    {
+      "id": "J3971",
+      "title": "Copy the three B-29 launch thumbnails to a review branch so Claude can show Ben",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 28 Nov ~00:30: \"Can I see the three B-29 thumbnails?\").** The three launch thumbnails live only on the NAS, and YouTube won't serve them until the film goes public at 17:00. The cloud Claude session can't read the NAS.\n\n**Do (Mini, 5 minutes):**\n1. From `/Volumes/data/studio-live/ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/10_Thumbnail/`, copy these four files: `ww2_003_thumb_A_3_billion_v01.jpg` (sha256 d7068190...), `ww2_003_thumb_B_factory_notext_v01.jpg` (f916a4b9...), `ww2_003_thumb_C_engine_fires_v01.jpg` (2c584ab9...) and `ww2_003_thumbs_phone_sheet_v01.jpg`. Check the three hashes first.\n2. In a clean ww2-channel worktree, create branch `review/b29-thumbs-for-ben` from main and add them under `review/b29/`, nothing else. Push the branch. **Open no PR and never merge it**: it is a viewing copy for the Chief to send Ben, deleted afterwards.\n3. Finish with the branch head. £0; no YouTube changes.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 5,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-28T00:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T00:35Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Push the 3 B-29 thumbnail JPEGs + phone sheet to ww2-channel branch review/b29-thumbs-for-ben (no PR)",
+      "due": "2026-11-28T02:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "for": "gemini",
+      "urgent": 6
     }
   ],
   "focus": [
