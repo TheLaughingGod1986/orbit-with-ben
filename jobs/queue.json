@@ -367593,9 +367593,14 @@
           "at": "2026-11-28T07:59Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-28T08:03Z",
+          "by": "claudecode",
+          "what": "step 4 of 5 done: Same 10-video window as J3973 PR #1423 (02:05Z); all 10 descriptions match manifests/J3253 exactly at 08:1xZ; 15 source URLs same as before (12x200, 3 known WAF 403); no listing edits since 02:00Z"
         }
       ],
-      "remaining_action": "Listing the last 10 live videos",
+      "remaining_action": "Writing recheck record and opening PR",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -367607,9 +367612,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-28T07:59Z",
+        "at": "2026-11-28T08:03Z",
         "by": "claudecode",
         "plan": [
           "List last 10 live videos",
@@ -367617,8 +367622,14 @@
           "Check sources + end screens",
           "Check Shorts Related",
           "Write fix list + report"
-        ]
-      }
+        ],
+        "note": "Same 10-video window as J3973 PR #1423 (02:05Z); all 10 descriptions match manifests/J3253 exactly at 08:1xZ; 15 source "
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [
