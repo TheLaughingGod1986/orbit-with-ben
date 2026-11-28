@@ -367663,13 +367663,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T08:07Z",
-      "eta": "2026-11-28T10:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T08:05Z",
-      "result": "",
+      "result": "Condition NOT met; J3816 kept blocked, next verification 2026-11-28T16:00Z. J3874 is ruled and J3965 (HOS PR816) is merged, but J3871 is still blocked: the exact v04 fails the picture check on the scale-before-crop/codec-rounded contract and waits on J3969/J3972 (HOS PR822 open, CI green, not merged). J3872 review not started. PRs 811/814/820 still draft. No upload, UAT or spend.",
       "history": [
         {
           "at": "2026-11-28T08:05Z",
@@ -367695,6 +367695,11 @@
           "at": "2026-11-28T08:07Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: J3874 done (Chief ruling 00:10Z, J3965/HOS PR816 merged), but J3871 still blocked: exact v04 picture FAIL on scale-before-crop/codec-rounded contract, waiting J3969->J3972 (HOS PR822 open, CI green, not merged). J3872 open, not started. PRs 811/814/820 draft. Nothing on HOS main for this Short."
+        },
+        {
+          "at": "2026-11-28T08:08Z",
+          "by": "claudecode",
+          "what": "done: Condition NOT met; J3816 kept blocked, next verification 2026-11-28T16:00Z. J3874 is ruled and J3965 (HOS PR816) is merged, but J3871 is still blocked: the exact v04 fails the picture check on the scale-before-crop/codec-rounded contract and waits on J3969/J3972 (HOS PR822 open, CI green, not merged). J3872 review not started. PRs 811/814/820 still draft. No upload, UAT or spend."
         }
       ],
       "remaining_action": "Record the unmet condition on J3816 and finish",
