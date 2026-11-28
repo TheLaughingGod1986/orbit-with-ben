@@ -352289,6 +352289,11 @@
           "at": "2026-11-28T08:05Z",
           "by": "relay",
           "what": "condition verification queued: J3986"
+        },
+        {
+          "at": "2026-11-28T08:08Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T16:00:00Z"
         }
       ],
       "remaining_action": "Await the queued apple Short repair and capable review",
@@ -352311,13 +352316,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "HOS 009 apple Short not repaired and passed: J3874 loop-gate ruling still open (picture_qa terminal reuse vs 22-27s terminal_loop contract on a 16-19s Short); repair J3871 blocked on it (v04 picture FAIL terminal reuse); capable exact-version review J3872 not started. PRs 811 and 814 still draft, nothing on HOS main. No UAT, upload or spend.",
-        "check_at": "2026-11-28T09:05:09+00:00",
-        "last_recheck": "J3954",
-        "checked_at": "2026-11-27T20:01:31+00:00",
-        "checked_by": "claudecode",
-        "recheck_task": "J3986"
+        "type": "input",
+        "condition": "HOS 009 apple Short not repaired and passed: J3874 ruled and J3965 (HOS PR816) merged, but J3871 still blocked with exact v04 picture FAIL on scale-before-crop and codec-rounded portrait contract; waits J3969/J3972 (HOS PR822 open, CI green, unmerged), then unchanged v04 gate rerun. Exact-version watch-and-listen review J3872 not started (needs audio_input + moving_video_input). PRs 811/814/820 still draft. No Short PASS, UAT, upload or spend.",
+        "check_at": "2026-11-28T16:00:00Z",
+        "last_recheck": "J3986",
+        "checked_at": "2026-11-28T08:08:04+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
