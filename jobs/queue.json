@@ -365731,18 +365731,27 @@
           "at": "2026-11-28T00:12Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:12Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Delegated-Chief claim for mini Chief jobs when the elected Chief can't run on the Mini; tests; PR",
+      "remaining_action": "Reading the Chief claim path",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-28T00:12Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read claim path",
+          "Code delegated Chief",
+          "Tests + full suite",
+          "Open PR"
+        ]
       }
     },
     {
