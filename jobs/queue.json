@@ -367477,16 +367477,21 @@
           "at": "2026-11-28T07:04Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-28T07:06Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: CDP sessions checked: OWB signed in on 9224 (UC_esArsDKd3GJvOkeO0DUog), HOS signed in on 9460 (UCXp7HkBIl1LgaznXuZHJyRg); 9223 currently holds WW2 (UCu94mInMFosxu3W0H6jlI6Q)."
         }
       ],
-      "remaining_action": "Checking Studio CDP sessions on ports 9223 and 9460",
+      "remaining_action": "Probing Studio analytics get_screen API on OWB (9224) and HOS (9460)",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-28T07:04Z",
+        "at": "2026-11-28T07:06Z",
         "by": "gemini",
         "plan": [
           "Check Studio CDP sessions",
@@ -367494,7 +367499,8 @@
           "Read HOS Studio metrics",
           "Run reach, report and publish",
           "Commit, push and complete job"
-        ]
+        ],
+        "note": "CDP sessions checked: OWB signed in on 9224 (UC_esArsDKd3GJvOkeO0DUog), HOS signed in on 9460 (UCXp7HkBIl1LgaznXuZHJyRg)"
       }
     }
   ],
