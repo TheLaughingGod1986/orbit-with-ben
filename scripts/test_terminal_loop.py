@@ -292,4 +292,173 @@ class TerminalLoop(unittest.TestCase):
             self.assertEqual([r['row'] for r in rows if r['fail']],body+['loop_tail'])
 
 
+class ScaleBeforeCrop(TerminalLoop):
+    """Exercise the v2 contract as well as all inherited v1 protections."""
+
+    def v2_recipe(self, actual=False):
+        c,d=self.setup_recipe()
+        if actual:
+            source=self.root/'wide.mp4'
+            if not source.exists():
+                subprocess.run(['ffmpeg','-v','error','-f','lavfi','-i',
+                    'testsrc2=size=1280x720:rate=30','-t','4','-c:v','libx264',
+                    '-preset','ultrafast','-crf','12','-pix_fmt','yuv420p',str(source)],check=True)
+            for row in (c[0],c[-1]): row['source']=str(source)
+            d['source']=dict(path=str(source),sha256=loop.digest(source))
+            sw,sh,x,w,h=3008,1692,1028,952,1692
+        else:
+            sw,sh,x,w,h=180,320,0,180,320
+        f=dict(operations=[dict(op='scale',width=sw,height=sh,interpolation='lanczos'),
+                           dict(op='crop',x=x,y=0,width=w,height=h),
+                           dict(op='setsar',num=1,den=1),dict(op='fps',num=30,den=1)],
+               output=[w,h],portrait_width='nearest_even')
+        d.update(version=2,framing=f)
+        for row in (c[0],c[-1]):
+            row['framing']={'offset':row['framing']['offset'],**copy.deepcopy(f)}
+        return c,d
+
+    def match_rows(self,c,d):
+        for row in (c[0],c[-1]):
+            row['framing']={'offset':row['framing']['offset'],**copy.deepcopy(d['framing'])}
+
+    def test_v2_allowlist_and_bounds(self):
+        cases={
+            'order':lambda f:f['operations'].reverse(),
+            'interpolation':lambda f:f['operations'][0].update(interpolation='bilinear'),
+            'nonuniform':lambda f:f['operations'][0].update(width=182),
+            'excessive scale':lambda f:f['operations'][0].update(width=270,height=480),
+            'outside crop':lambda f:f['operations'][1].update(x=1),
+            'negative crop':lambda f:f['operations'][1].update(x=-1),
+            'output mismatch':lambda f:f.update(output=[178,320]),
+            'not nearest even':lambda f:(f['operations'][1].update(width=178),f.update(output=[178,320])),
+            'odd size':lambda f:(f['operations'][1].update(width=179),f.update(output=[179,320])),
+            'wrong SAR':lambda f:f['operations'][2].update(num=2),
+            'zero fps':lambda f:f['operations'][3].update(num=0),
+            'boolean fps':lambda f:f['operations'][3].update(num=True),
+            'NaN scale':lambda f:f['operations'][0].update(width=float('nan')),
+            'inf crop':lambda f:f['operations'][1].update(x=float('inf')),
+            'float crop':lambda f:f['operations'][1].update(x=0.),
+            'missing fps':lambda f:f['operations'].pop(),
+            'missing flag':lambda f:f['operations'][0].pop('interpolation'),
+            'arbitrary filter':lambda f:f.update(filter='hflip'),
+            'extra operation':lambda f:f['operations'].append(dict(op='hflip')),
+            'extra parameter':lambda f:f['operations'][0].update(speed=2),
+            'missing width rule':lambda f:f.pop('portrait_width'),
+            'percentage tolerance':lambda f:f.update(portrait_width='tolerance'),
+        }
+        for name,edit in cases.items():
+            with self.subTest(name=name):
+                c,d=self.v2_recipe(); edit(d['framing']); self.match_rows(c,d)
+                r=loop.validate(c,d)
+                self.assertIsNone(r['eligible_cut'],r)
+                self.assertTrue(r['errors'])
+        for rule in ('exact','nearest_even'):
+            c,d=self.v2_recipe(); d['framing']['portrait_width']=rule; self.match_rows(c,d)
+            self.assertEqual(loop.validate(c,d)['status'],'source_preflight')
+
+    def test_v2_evidence_timeline_and_reuse_protections(self):
+        for mode in ('overlap','undeclared','second','body','offset','hash','VO','changed framing'):
+            with self.subTest(mode=mode):
+                c,d=self.v2_recipe()
+                if mode=='overlap': c[0]['framing']['offset']=.5
+                if mode=='undeclared': c[-1].pop('role')
+                if mode=='second': c[1]['role']='prescribed_terminal_loop'
+                if mode=='body':
+                    c.insert(2,copy.deepcopy(c[0]));c[1]['timeline_out']=15
+                    c[2].update(timeline_in=15,timeline_out=17);d['cut']=3
+                if mode=='offset': c[-1]['framing']['offset']=.1
+                if mode=='hash': d['source']['sha256']='0'*64
+                if mode=='VO': d['last_vo_word']=17.1
+                if mode=='changed framing': c[-1]['framing']['operations'][1]['x']=1
+                r=loop.validate(c,d)
+                if mode=='body':
+                    self.assertTrue(any(row['fail'] for row in qa.source_checks(c,{},r)))
+                else: self.assertIsNone(r['eligible_cut'],r)
+        c,d=self.v2_recipe();r=loop.validate(c,d)
+        self.assertEqual(qa.reuse_checks(c,r['eligible_cut'])[2][0],[])
+        self.assertTrue(qa.reuse_checks(c)[2][0])
+
+    def test_actual_recipe_rendered_correspondence_and_inverse_difference(self):
+        c,d=self.v2_recipe(actual=True);src=Path(d['source']['path'])
+        output,filters=loop.scale_before_crop(d['framing'],loop.probe(src)['streams'][0])
+        expected=loop.frame(src,1,recipe=filters)
+        inverse=loop.frame(src,1,crop=[437,0,405,720])
+        self.assertNotEqual(expected,inverse,'rounded inverse is a different resampling operation')
+        good=self.root/'v2_good.mp4'
+        subprocess.run(['ffmpeg','-v','error','-y','-i',str(src),'-filter_complex',
+            '[0:v]split=2[a][b];[a]trim=start=1:duration=2,setpts=PTS-STARTPTS,'+
+            ','.join(filters)+',tpad=stop_mode=clone:stop_duration=15[x];'
+            '[b]trim=duration=1,setpts=PTS-STARTPTS,'+','.join(filters)+
+            '[y];[x][y]concat=n=2:v=1:a=0',
+            '-c:v','libx264','-preset','ultrafast','-crf','12','-pix_fmt','yuv420p',str(good)],check=True)
+        r=loop.validate(c,d,good)
+        self.assertEqual(r['status'],'rendered_correspondence',r)
+        for name,edit in {
+            'offset':lambda c,d:c[0]['framing'].update(offset=1.5),
+            'crop':lambda c,d:d['framing']['operations'][1].update(x=0),
+            'fps':lambda c,d:d['framing']['operations'][3].update(num=25),
+            'scale':lambda c,d:d['framing']['operations'][0].update(width=2944,height=1656),
+        }.items():
+            with self.subTest(name=name):
+                badc,badd=copy.deepcopy(c),copy.deepcopy(d);edit(badc,badd);self.match_rows(badc,badd)
+                self.assertIsNone(loop.validate(badc,badd,good)['eligible_cut'])
+        original_probe=loop.probe
+        for change in ({'sample_aspect_ratio':'2:1'}, {'avg_frame_rate':'25/1'},
+                       {'width':950}, {'avg_frame_rate':'0/0'}):
+            def changed_probe(path):
+                info=original_probe(path)
+                if Path(path)==good: info['streams'][0].update(change)
+                return info
+            with self.subTest(render_probe=change), patch.object(loop,'probe',side_effect=changed_probe):
+                self.assertIsNone(loop.validate(c,d,good)['eligible_cut'])
+        # Type equality is strict even where Python considers True == 1.
+        c,d=self.v2_recipe();c[-1]['framing']['operations'][2]['num']=True
+        self.assertIsNone(loop.validate(c,d)['eligible_cut'])
+        # No aspect tolerance: 950 is even and close, but not nearest-even.
+        c,d=self.v2_recipe(actual=True)
+        d['framing']['output'][0]=950;d['framing']['operations'][1]['width']=950;self.match_rows(c,d)
+        self.assertIsNone(loop.validate(c,d)['eligible_cut'])
+
+    def test_v2_render_fractional_timing_and_fps(self):
+        c,d=self.v2_recipe()
+        rate=30000/1001
+        opening=24/rate;tail=27/rate;duration=540/rate
+        c[0]['timeline_out']=opening;c[0]['framing']['offset']=tail
+        c[1].update(timeline_in=opening,timeline_out=duration-tail)
+        c[-1].update(timeline_in=duration-tail,timeline_out=duration)
+        d.update(duration=duration,source_out=tail)
+        d['framing']['operations'][3].update(num=30000,den=1001);self.match_rows(c,d)
+        _,filters=loop.scale_before_crop(d['framing'],loop.probe(self.src)['streams'][0])
+        good=self.root/'fractional.mp4'
+        # 24 opening, 489 body and 27 return frames at 30000/1001 fps.
+        subprocess.run(['ffmpeg','-v','error','-y','-i',str(self.src),'-filter_complex',
+            '[0:v]split=2[a][b];[a]trim=start='+str(tail)+',setpts=PTS-STARTPTS,'+
+            ','.join(filters)+',trim=end_frame=24,tpad=stop_mode=clone:stop=489[x];'
+            '[b]setpts=PTS-STARTPTS,'+','.join(filters)+',trim=end_frame=27[y];'
+            '[x][y]concat=n=2:v=1:a=0',
+            '-c:v','libx264','-preset','ultrafast','-crf','12',str(good)],check=True)
+        r=loop.validate(c,d,good)
+        self.assertEqual(r['status'],'rendered_correspondence',r)
+
+    def test_v2_ties_source_sar_and_fractional_boundaries(self):
+        # Fixed-height tie at width 9: nearest-even exact tie chooses 10.
+        stream=dict(width=90,height=160,sample_aspect_ratio='1:1')
+        c,d=self.v2_recipe();f=d['framing']
+        f['operations'][1].update(width=10,height=16);f['output']=[10,16]
+        self.assertEqual(loop.scale_before_crop(f,stream)[0],[10,16])
+        f['operations'][1]['width']=8;f['output'][0]=8
+        self.assertRaises(ValueError,loop.scale_before_crop,f,stream)
+        c,d=self.v2_recipe()
+        self.assertRaises(ValueError,loop.scale_before_crop,d['framing'],dict(stream,sample_aspect_ratio='2:1'))
+        # Rational fps and fractional pre-roll bounds are represented without rounding.
+        for length in (1/30, 1001/30000, .9):
+            c,d=self.v2_recipe(); c[0]['framing']['offset']=length
+            c[1]['timeline_out']=18-length;c[-1]['timeline_in']=18-length
+            d.update(source_out=length)
+            d['framing']['operations'][3].update(num=30000,den=1001);self.match_rows(c,d)
+            r=loop.validate(c,d);self.assertEqual(r['status'],'source_preflight',r)
+            d['source_out']=length+1e-4
+            self.assertIsNone(loop.validate(c,d)['eligible_cut'])
+
+
 if __name__=='__main__': unittest.main()
