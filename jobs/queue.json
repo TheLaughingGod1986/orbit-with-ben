@@ -365953,9 +365953,14 @@
           "at": "2026-11-28T00:59Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still returns only 8 discrete 1-fps integer-second stills (00:00..00:07) on P01_03a_unlabelled_birds_t2.mp4; recorded honest capabilities."
+        },
+        {
+          "at": "2026-11-28T01:01Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), codex/claudecode/cursor capabilities available=[], claude down until 07:50Z, Grok down, and zero new 013 playback evidence or lane resolution on HOS #694, OWB #1353, or PRs."
         }
       ],
-      "remaining_action": "Verify J3756/J3178 history, HOS #694, OWB #954, open/merged PRs, and NAS SHA-256 hashes",
+      "remaining_action": "Record unmet capability wait on J3756 (--recheck J3967) and close J3967",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -365972,9 +365977,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:59Z",
+        "at": "2026-11-28T01:01Z",
         "by": "gemini",
         "plan": [
           "Probe session media capabilities",
@@ -365982,7 +365987,7 @@
           "Update J3756 wait state and close J3967",
           "Post verification report on studio thread"
         ],
-        "note": "Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still returns only 8 di"
+        "note": "Verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (4"
       },
       "taskKeys": [
         "HOS:013"
