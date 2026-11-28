@@ -367752,13 +367752,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T08:46Z",
-      "eta": "2026-11-28T10:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T08:45Z",
-      "result": "",
+      "result": "Condition NOT met; J3904 stays blocked. Checked 2026-11-28 ~08:47Z: PR #1416 (head f67c2dcb) and QA PR #1417 (head 20862578) both OPEN, 0 reviews, 0 comments, unmerged; no Chief ruling on #99 or in git since 02:46Z. Length flag still open for Chief: master 18.375 s / 35 words vs 22 s floor and 55-65 words. Wait recorded on J3904 (type input, recheck J3987), next check 2026-11-28T14:45Z.",
       "history": [
         {
           "at": "2026-11-28T08:45Z",
@@ -367789,6 +367789,11 @@
           "at": "2026-11-28T08:48Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: J3904 kept blocked; wait recorded with recheck J3987, next check 2026-11-28T14:45Z"
+        },
+        {
+          "at": "2026-11-28T08:48Z",
+          "by": "claudecode",
+          "what": "done: Condition NOT met; J3904 stays blocked. Checked 2026-11-28 ~08:47Z: PR #1416 (head f67c2dcb) and QA PR #1417 (head 20862578) both OPEN, 0 reviews, 0 comments, unmerged; no Chief ruling on #99 or in git since 02:46Z. Length flag still open for Chief: master 18.375 s / 35 words vs 22 s floor and 55-65 words. Wait recorded on J3904 (type input, recheck J3987), next check 2026-11-28T14:45Z."
         }
       ],
       "remaining_action": "Finished",
