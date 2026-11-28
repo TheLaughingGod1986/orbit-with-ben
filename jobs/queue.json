@@ -367178,13 +367178,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-28T06:42Z",
-      "eta": "2026-11-28T08:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-28T06:40Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #1424 (Field Order History channel totals read 2026-11-28: subscribers=1, watchHours=5.0 at 2026-11-28T06:47:55Z; commit a7b4b47435)",
       "history": [
         {
           "at": "2026-11-28T06:40Z",
@@ -367220,6 +367220,11 @@
           "at": "2026-11-28T06:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Pushed gemini/J3981-foh-channel-totals-2026-11-28 (a7b4b47435), opened PR #1424, removed temp worktree"
+        },
+        {
+          "at": "2026-11-28T06:50Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #1424 (Field Order History channel totals read 2026-11-28: subscribers=1, watchHours=5.0 at 2026-11-28T06:47:55Z; commit a7b4b47435)"
         }
       ],
       "remaining_action": "Waiting for Chief review and merge of PR #1424",
