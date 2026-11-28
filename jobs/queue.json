@@ -358446,16 +358446,21 @@
           "at": "2026-11-28T09:02Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-28T09:11Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified OWB Studio Comments on CDP 9223 (switched from FOH to UC_esArsDKd3GJvOkeO0DUog): Published Unresponded = 0, Published Newest checked through 1 month ago, Held = 0. Both in-window viewer comments already in COMMENT_REPLIES.jsonl (3 rows unchanged). 0 replies posted, 0 held drafts."
         }
       ],
-      "remaining_action": "Read existing COMMENT_REPLIES.jsonl and inspect YouTube Studio comments on CDP 9223",
+      "remaining_action": "Queue tomorrow's daily comment check for 2026-11-29 09:00 London and post studio thread summary",
       "due": "2026-11-28T20:00:00Z",
       "kind": "studio",
       "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-28T09:02Z",
+        "at": "2026-11-28T09:11Z",
         "by": "gemini",
         "plan": [
           "Inspect Studio comments and log",
@@ -358463,7 +358468,8 @@
           "Post approved replies and log",
           "Commit log and queue tomorrow",
           "Post summary and close job"
-        ]
+        ],
+        "note": "Verified OWB Studio Comments on CDP 9223 (switched from FOH to UC_esArsDKd3GJvOkeO0DUog): Published Unresponded = 0, Pub"
       }
     },
     {
