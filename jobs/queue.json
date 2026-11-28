@@ -353238,13 +353238,13 @@
       "stage": "thumbs",
       "after": "J3115",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T00:04Z",
-      "eta": "2026-11-28T02:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T00:25Z",
-      "result": "",
+      "result": "Reconciled OWB:034 thumbs stage to done (ref jobs/reviews/J3115/REVIEW.md) after independently verifying J3115 done (7f69bd3b4f), authorized PR #1367 merged (63265bea07 / 40c6ca5114) on origin/main with rejected candidates a4c9c8f534 and 6b85fc0248 absent, all 8/8 NAS SHA-256 hashes matching HASH_CHECK.json and current manifests (A 8f567360, B 3b17f4c7, C c23a7420, v02 master e5a886dfef20, trailer 01701660d2fc), and J3819 already closed done in 7f69bd3b4f. Preserved 034 upload (review), J3119 (open), Ben long-v02 approval (18 Nov 22:16Z, J2868), T044 (proposed), Shorts J3066/J3065 public-parent holds and J3123 slot dates. Zero handoff findings; GBP 0; no platform writes or media re-review.",
       "history": [
         {
           "at": "2026-11-27T00:25Z",
@@ -353280,6 +353280,11 @@
           "at": "2026-11-28T00:10Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted studio thread report; 034 thumbs done (ref jobs/reviews/J3115/REVIEW.md), zero workflow_handoffs findings"
+        },
+        {
+          "at": "2026-11-28T00:10Z",
+          "by": "gemini",
+          "what": "done: Reconciled OWB:034 thumbs stage to done (ref jobs/reviews/J3115/REVIEW.md) after independently verifying J3115 done (7f69bd3b4f), authorized PR #1367 merged (63265bea07 / 40c6ca5114) on origin/main with rejected candidates a4c9c8f534 and 6b85fc0248 absent, all 8/8 NAS SHA-256 hashes matching HASH_CHECK.json and current manifests (A 8f567360, B 3b17f4c7, C c23a7420, v02 master e5a886dfef20, trailer 01701660d2fc), and J3819 already closed done in 7f69bd3b4f. Preserved 034 upload (review), J3119 (open), Ben long-v02 approval (18 Nov 22:16Z, J2868), T044 (proposed), Shorts J3066/J3065 public-parent holds and J3123 slot dates. Zero handoff findings; GBP 0; no platform writes or media re-review."
         }
       ],
       "remaining_action": "Done",
@@ -353309,7 +353314,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J3115/REVIEW.md"
     },
     {
       "id": "J3829",
