@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3971.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -96,11 +96,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3968 | mini | open | – | – | review · Verify condition for J3781 |  |
 | J3969 | any | claimed | codex | 2026-11-28T02:32Z | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
 | J3970 | mini | open | – | – | chief · Chief: resolve 034 upload orphan-review |  |
-| J3971 | mini | open | – | – | WW2:003 thumbs · for gemini · studio · Copy the three B-29 launch thumbnails to a review branch so Claude can show Ben |  |
 | J3972 | mini | open | – | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
 
 Recently finished:
 
+- J3971 cancelled: Copy the three B-29 launch thumbnails to a review branch so Claude can show Ben ()
 - J3965 done: Gates: Shorts loop contract follows the channel's Shorts band; picture_qa allows only the declared loop return (J3874) (Implemented and merged J3874 gate ruling: OWB PR1420 (55766a3c9c), HOS PR816 (a5a8d27f97), all required CI green. Channel DUR_BAND is authoritative; only validated final non-overlapping native pre-roll exempts opening SAME_STRETCH. Twenty-seven gate regressions pass per channel; HOS scripts65/tools94/tests370 pass (six skips in tests); OWB tools96/audio21 pass (one skip); CI scripts1675 pass. J3871 reopened for exact unmodified v04 rerun, no Short approval or publishing. Supplemental slow local OWB scripts suite uses temp HOME and remains detached: /Volumes/MiniWork/scratch/J3965-tests/scripts.log; scripts.done = 0 pass, 1 failed, 2 process ended without summary. No spend or media change.)
 - J3963 done: Verify condition for J3760 (Condition unmet: Flow tab 998B0717 on CDP 9222 still unresponsive at 23:28Z (websocket opens, Page.getFrameTree and Runtime.evaluate time out at 15 s). J3760 kept waiting, recheck 2026-11-28T06:00Z. Read-only probe, no Create, 0 credits.)
 - J3961 done: Verify condition for J3012 (Chief KEEP of PR1389 exact head 5631f820b: independently reviewed cancellation and persisted-descendant boundaries; 62 mocked tests pass. Merged PR1389 at 42e9bb1483 and historical verification PR1418. J3962 queued for separate elected-Chief live coordination and operational proof. Parent J3012 remains held at 3/4, last_recheck J3961, next check 2026-11-28T04:10Z. No live activation or spend.)
@@ -110,4 +110,3 @@ Recently finished:
 - J3955 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (19 OWB + 8 HOS longs and 131 Shorts (95 OWB + 36 HOS) read cleanly from Studio CDP 9223/9460 (commit 19c9923533); CTR hits vs 4%: OWB 4/19 (h8HGfyShEHI 5.3%, -jmMROGoZCM 4.9%, Js6EQJ8qDi8 4.4%, c5AdqQsnnys 4.3%), HOS 4/8 (wwcjcFfC-5M 17.6%, ETynHpIYLeY 6.9%, _C92tIJCk8A 6.5%, VbPubYd6Fbs 4.6%))
 - J3954 done: Verify condition for J3816 (Verified NOT satisfied: J3874 loop-gate ruling still open; repair J3871 blocked on it (v04 picture FAIL terminal reuse); review J3872 not started; HOS PRs 811 and 814 still open drafts, no repaired Short on HOS main. J3816 kept blocked with dependency wait, recheck J3954, next check 2026-11-28T08:00Z. No UAT, upload or spend.)
 - J3953 cancelled: Publish J3933 Atlantic CTR records: push 2247174860 (codex/J3933) to orbit-with-ben and open the PR (parked for Chief: TheLaughingGod1986/orbit-with-ben is PUBLIC (isPrivate: false, visibility: PUBLIC), triggering J3953's explicit stop condition (if it is public, stop and park for the Chief). Other checks on /Volumes/MiniWork/scratch/J3933-records passed: origin is orbit-with-ben, HEAD on codex/J3933 is 2247174860b35e44dcae4c7c48016dccf5f9bfd7, tree clean, 1 commit ahead of origin/main adding channels/ww2/05_Analytics/packaging/qfc6EBStOfo_2026-11-27_J3933.{json,md} (105 insertions), diff privacy grep clean. Note: TheLaughingGod1986/ww2-channel is PRIVATE. No push, PR, edit, or YouTube write performed. Chief to decide whether to authorise pushing to public orbit-with-ben or redirect to private ww2-channel.)
-- J3952 cancelled: Publish two HOS Short evidence branches as drafts: codex/J3816 (2922143e) and codex/J3871 (c8c3372e) (parked for Chief: history-of-science is PUBLIC (isPrivate=false, triggering J3952 brief stop-and-park guard), and both branches/draft PRs are already published on origin: codex/J3816 @ 2922143e -> open draft PR 811 (J3864), codex/J3871 @ c8c3372e -> open draft PR 814 (J3911), both already recorded in J3816/J3871 holds. Worktrees clean, privacy grep clean (0 emails/tokens/keys/IPs). Zero pushes or PR edits made; Chief to close/cancel J3952.)
