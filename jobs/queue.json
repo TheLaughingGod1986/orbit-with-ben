@@ -353260,9 +353260,14 @@
           "at": "2026-11-28T00:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:05Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify the published Pluto packaging decision and update the thumbnail status",
+      "remaining_action": "Verify J3115 published exact-file ruling on main and inspect current 034 manifests and hashes",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Update the Pluto thumbnail status once its packaging review is published",
@@ -353276,12 +353281,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T00:04Z",
+        "of": 4,
+        "at": "2026-11-28T00:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify J3115 published ruling on main",
+          "Compare published hashes against current 034 files",
+          "Reconcile 034 thumbs board state and J3819",
+          "Post studio thread report and finish J3828"
+        ]
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J3829",
