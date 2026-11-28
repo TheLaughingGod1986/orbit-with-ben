@@ -365469,13 +365469,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-27T23:55Z",
-      "eta": "2026-11-28T01:55Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T23:54Z",
-      "result": "",
+      "result": "Waiting for: waiting for OWB:064 to be scheduled (PR #1390 / J3023 not yet merged, Ben-watched, or on YouTube; zero YouTube ID/publishAt) and Chief merge of PR #1419 (88a4c2e9cd, finalized 064 Short 1 v03 listing package)",
       "history": [
         {
           "at": "2026-11-27T23:54Z",
@@ -365511,9 +365511,19 @@
           "at": "2026-11-28T00:01Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified exact NAS hashes (mp4 538464b9, cover 0e5b9937, srt a61a7370), listing_package.inspect complete=true (0 missing), and youtube:package --dry-run PASS with gate_shorts_open PASS for 2026-12-23T11:30:00.000Z (no live upload performed)."
+        },
+        {
+          "at": "2026-11-28T00:03Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: waiting for OWB:064 to be scheduled (PR #1390 / J3023 not yet merged, Ben-watched, or on YouTube; zero YouTube ID/publishAt) and Chief merge of PR #1419 (88a4c2e9cd, finalized 064 Short 1 v03 listing package)"
+        },
+        {
+          "at": "2026-11-28T00:03Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-29T00:00:00Z"
         }
       ],
-      "remaining_action": "Open pull request for Chief merge and park J3964 waiting for OWB:064 long to be scheduled",
+      "remaining_action": "After Chief merges PR #1419 and OWB:064 long has a confirmed YouTube ID and publishAt, add the long URL to description line 1 and relatedVideoId, confirm publishAt > long publishAt, upload v03 Private via youtube:package, read back, and record in UPLOADS.json",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -365549,7 +365559,12 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "waiting for OWB:064 to be scheduled (PR #1390 / J3023 not yet merged, Ben-watched, or on YouTube; zero YouTube ID/publishAt) and Chief merge of PR #1419 (88a4c2e9cd, finalized 064 Short 1 v03 listing package)",
+        "check_at": "2026-11-29T00:00:00Z"
+      }
     },
     {
       "id": "J3965",
