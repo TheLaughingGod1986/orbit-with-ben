@@ -366212,16 +366212,21 @@
           "at": "2026-11-28T00:49Z",
           "by": "codex",
           "what": "step 2 of 4 done: Final targeted regressions 47/47 PASS in OWB and HOS; HOS check_all PASS; OWB suite two groups finished green, remaining group still running. Heads: OWB 4a31f3835a, HOS e05d7ad5."
+        },
+        {
+          "at": "2026-11-28T00:53Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Validation finished: final targeted 47/47 in both repos, HOS check_all PASS. OWB full CI partition 1812 tests: only two pre-existing upcoming-fixture failures, reproduced on original checkout; 14 skips. Code committed and both worktrees clean."
         }
       ],
-      "remaining_action": "Waiting for the remaining CI test group before handing publication to Claude Code",
+      "remaining_action": "Claude Code must review privacy, publish both code branches and open separate Chief-review pull requests",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the loop check verify the Newton apple Short’s actual framing",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-28T00:49Z",
+        "at": "2026-11-28T00:53Z",
         "by": "codex",
         "plan": [
           "Inspect contract and regressions",
@@ -366229,7 +366234,7 @@
           "Run gates and sync shared code",
           "Commit and submit for review"
         ],
-        "note": "Final targeted regressions 47/47 PASS in OWB and HOS; HOS check_all PASS; OWB suite two groups finished green, remaining"
+        "note": "Validation finished: final targeted 47/47 in both repos, HOS check_all PASS. OWB full CI partition 1812 tests: only two "
       },
       "taskKeys": [
         "HOS:009"
