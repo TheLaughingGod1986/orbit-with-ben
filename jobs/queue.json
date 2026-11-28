@@ -283041,9 +283041,14 @@
           "at": "2026-11-28T00:18Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3119; J3115 Chief packaging PASS confirmed"
+        },
+        {
+          "at": "2026-11-28T00:20Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified master v02 (e5a886df), trailer (01701660), and J3105_v02 thumbnails A/B/C hashes; gate:episode PASS (95.8/100); dry-run PASS; confirmed no duplicate Pluto long on YouTube"
         }
       ],
-      "remaining_action": "Verifying master v02 hash, J3115 thumbnails, manifest, and running release gates",
+      "remaining_action": "Uploading Pluto long master v02 Private scheduled 2026-12-13T18:00:00Z via youtube:package",
       "due": "2026-12-11T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -283060,9 +283065,9 @@
         "okAt": "2026-11-18T22:16Z"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-28T00:18Z",
+        "at": "2026-11-28T00:20Z",
         "by": "gemini",
         "plan": [
           "Verify master, thumbnails, manifest, and gates",
@@ -283070,7 +283075,7 @@
           "Configure Studio captions, disclosure, playlist, end screen, and T044",
           "Update status, thumb ledger, Short notes, and post report"
         ],
-        "note": "Claimed J3119; J3115 Chief packaging PASS confirmed"
+        "note": "Verified master v02 (e5a886df), trailer (01701660), and J3105_v02 thumbnails A/B/C hashes; gate:episode PASS (95.8/100);"
       },
       "taskKeys": [
         "OWB:034"
