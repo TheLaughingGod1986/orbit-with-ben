@@ -4,6 +4,7 @@ Schema and limits: STUDIO_PLAYBOOK.md, Picture QA terminal-loop contract.
 All file references are actual local inputs, not attestations that a check passed.
 """
 import hashlib
+import importlib.util
 import json
 import math
 import subprocess
@@ -48,6 +49,18 @@ def frame(path, time, crop=None):
     return raw
 
 
+def shorts_band():
+    """Read this checkout's open gate, the channel's single duration authority."""
+    path = Path(__file__).resolve().parents[1] / '00_Brand/Channel-Setup/tools/gate_shorts_open.py'
+    spec = importlib.util.spec_from_file_location('_terminal_loop_open_gate', path)
+    gate = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(gate)
+    low, high = map(number, gate.DUR_BAND)
+    if low <= 0 or high < low:
+        raise ValueError('invalid channel Shorts duration band')
+    return low, high
+
+
 def validate(cuts, declaration, video=None):
     """Return a structured result; invalid declarations never confer an exemption.
 
@@ -69,8 +82,9 @@ def validate(cuts, declaration, video=None):
             raise ValueError('only final row may have prescribed_terminal_loop role')
         k = d['cut']; first, tail = cuts[0], cuts[k]
         duration = number(d['duration'])
-        if not 22 <= duration <= 27:
-            raise ValueError('Short duration must be 22–27 seconds')
+        low, high = shorts_band()
+        if not low <= duration <= high:
+            raise ValueError(f'Short duration must be {low:g}–{high:g} seconds')
         previous = 0
         for c in cuts:
             a, b = number(c['timeline_in']), number(c['timeline_out'])
@@ -122,22 +136,31 @@ def validate(cuts, declaration, video=None):
         start, end = number(d['source_in']), number(d['source_out'])
         if start < 0 or end > bound or end <= start or abs(end-start-length) > 1e-6:
             raise ValueError('source interval outside bounds or duration mismatch')
-        if number(first['framing']['offset']) != start or number(tail['framing']['offset']) != start:
-            raise ValueError('source interval must return to actual opening offset')
-        if start + first['timeline_out'] > bound:
+        opening_start = number(first['framing']['offset'])
+        opening_end = opening_start + first['timeline_out']
+        if number(tail['framing']['offset']) != start:
+            raise ValueError('source interval must match actual tail offset')
+        if opening_start < 0 or opening_end > bound:
             raise ValueError('opening interval outside source bounds')
+        if start < opening_end and opening_start < end:
+            raise ValueError('terminal source window overlaps opening')
+        if abs(end - opening_start) > 1e-6:
+            raise ValueError('terminal pre-roll must end at opening source offset')
         # Decode both ends of the explicit interval, not just a caller's metadata.
         fps_n, fps_d = map(float, stream['avg_frame_rate'].split('/'))
         fps = fps_n / fps_d
         if not math.isfinite(fps) or fps <= 0:
             raise ValueError('invalid source frame rate')
-        sample_end = max(start, end - 1/fps)
-        samples = [(start, 0.0, tail['timeline_in']),
-                   (sample_end, sample_end-start, tail['timeline_in']+sample_end-start)]
-        frame_hashes = []
-        for source_t, _, _ in samples:
-            frame_hashes.append(hashlib.sha256(frame(src, source_t, crop)).hexdigest())
+        # The tail is native pre-roll immediately before frame zero, not a replay.
+        # Check each window against its own source frames.
+        samples = [(opening_start, 0.0),
+                   (max(opening_start, opening_end - 1/fps),
+                    max(0.0, first['timeline_out'] - 1/fps)),
+                   (start, tail['timeline_in']),
+                   (max(start, end - 1/fps), tail['timeline_out'] - min(length, 1/fps))]
+        frame_hashes = [hashlib.sha256(frame(src, t, crop)).hexdigest() for t, _ in samples]
         result['evidence'] = dict(source=str(src), sha256=digest(src), source_in=start, source_out=end,
+            opening_source_in=opening_start, opening_source_out=opening_end,
             source_duration=bound, framing=d['framing'], last_vo_word=last_word,
             words_sha256=digest(words_path), prescription_sha256=digest(prescription),
             source_sample_sha256=frame_hashes)
@@ -146,14 +169,13 @@ def validate(cuts, declaration, video=None):
             if [rs['width'], rs['height']] != output or abs(number(float(render['format']['duration']))-duration) > .05:
                 raise ValueError('rendered dimensions/duration disagree with Short contract')
             errors = []
-            for source_t, opening_t, tail_t in samples:
+            for source_t, render_t in samples:
                 expected = frame(src, source_t, crop)
-                for t in (opening_t, tail_t):
-                    actual = frame(video, t)
-                    mae = sum(abs(a-b) for a,b in zip(expected, actual)) / len(actual)
-                    errors.append(round(mae, 4))
-                    if mae > 8:
-                        raise ValueError(f'rendered opening/return correspondence failed at {t:g}s (MAE {mae:.2f})')
+                actual = frame(video, render_t)
+                mae = sum(abs(a-b) for a,b in zip(expected, actual)) / len(actual)
+                errors.append(round(mae, 4))
+                if mae > 8:
+                    raise ValueError(f'rendered opening/return correspondence failed at {render_t:g}s (MAE {mae:.2f})')
             result['evidence']['rendered_frame_mae'] = errors
             result['evidence']['render_sha256'] = digest(video)
             result['pending'] = ['human moving/phone and audio review; samples do not establish seamless motion']
