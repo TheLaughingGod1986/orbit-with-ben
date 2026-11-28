@@ -366187,16 +366187,21 @@
           "at": "2026-11-28T00:44Z",
           "by": "codex",
           "what": "step 1 of 4 done: Corrected film link to Newton HOS009. Actual 952x1692 synthetic rendered correspondence and inverse-crop difference verified; completing boundary negatives."
+        },
+        {
+          "at": "2026-11-28T00:45Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Strict v2 recipe and schema documentation implemented; actual-size render, v1 negatives and fractional 30000/1001 render tests pass. Shared core synced to isolated HOS worktree."
         }
       ],
-      "remaining_action": "Completing frame-rate boundary tests and schema documentation",
+      "remaining_action": "Running the CI Python suite and HOS required checks",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the loop check verify the Newton apple Short’s actual framing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:44Z",
+        "at": "2026-11-28T00:45Z",
         "by": "codex",
         "plan": [
           "Inspect contract and regressions",
@@ -366204,7 +366209,7 @@
           "Run gates and sync shared code",
           "Commit and submit for review"
         ],
-        "note": "Corrected film link to Newton HOS009. Actual 952x1692 synthetic rendered correspondence and inverse-crop difference veri"
+        "note": "Strict v2 recipe and schema documentation implemented; actual-size render, v1 negatives and fractional 30000/1001 render"
       },
       "taskKeys": [
         "HOS:009"
