@@ -366234,9 +366234,14 @@
           "at": "2026-11-28T06:41Z",
           "by": "relay",
           "what": "condition verification queued: J3982"
+        },
+        {
+          "at": "2026-11-28T06:45Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T14:30:00Z"
         }
       ],
-      "remaining_action": "Publish the reviewed evidence and ruling through a permission-enabled Claude Code session",
+      "remaining_action": "Chief: close J3969 and decide on merging HOS PR820/821",
       "kind": "chief",
       "plain": "Decide how to check the Newton apple Short’s existing crop and loop",
       "progress": {
@@ -366256,9 +366261,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c93831348f3c01baf91d33f561f6cc9fa6a9; also /Volumes/MiniWork/scratch/J3969-ruling codex/J3969-ruling at eafc150e. Ruling complete and posted HOS desk 7231090237; J3972 queued; J3871 held for its merged changes. Independent Claude Code privacy review passed original heads, but both pushes were blocked as requires approval and it could not ask non-interactively. No pushes or PRs. Needs permission-enabled designated publisher, fresh review of final ruling branch, normal pushes and DRAFT PRs only. Prior Codex public-push rejection remains; do not retry or bypass either permission layer. Log /Volumes/MiniWork/scratch/J3969-publish.log. PR811/814 stay draft; J3816 held; no Short PASS/UAT/upload.",
-        "check_at": "2026-11-28T07:41:24+00:00",
-        "recheck_task": "J3982"
+        "condition": "Publication done (J3982): codex/J3871-recheck@0511c938 and codex/J3969-ruling@eafc150e pushed; draft HOS PR820/PR821 open. Only remaining: elected Chief resumes and closes J3969 and rules on merging 820/821 (worker reopen refused by the Chief-authority gate)",
+        "check_at": "2026-11-28T14:30:00Z",
+        "last_recheck": "J3982",
+        "checked_at": "2026-11-28T06:45:45+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
