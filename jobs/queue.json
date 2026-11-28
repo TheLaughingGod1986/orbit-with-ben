@@ -283036,9 +283036,14 @@
           "at": "2026-11-28T00:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:18Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3119; J3115 Chief packaging PASS confirmed"
         }
       ],
-      "remaining_action": "Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test",
+      "remaining_action": "Verifying master v02 hash, J3115 thumbnails, manifest, and running release gates",
       "due": "2026-12-11T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -283056,12 +283061,20 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T00:17Z",
+        "of": 4,
+        "at": "2026-11-28T00:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify master, thumbnails, manifest, and gates",
+          "Upload Pluto long Private scheduled 13 Dec 18:00Z",
+          "Configure Studio captions, disclosure, playlist, end screen, and T044",
+          "Update status, thumb ledger, Short notes, and post report"
+        ],
+        "note": "Claimed J3119; J3115 Chief packaging PASS confirmed"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J3120",
