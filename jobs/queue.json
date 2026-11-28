@@ -365666,15 +365666,20 @@
           "at": "2026-11-28T00:11Z",
           "by": "codex",
           "what": "step 2 of 4 done: PRs OWB 1420 and HOS 816 are open. Correcting prior progress count: core sync is complete, but the full OWB scripts suite and CI are still running, so validation step is not yet finished. No gate failures waived."
+        },
+        {
+          "at": "2026-11-28T00:15Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Both exact heads merged after all required CI passed: OWB PR1420 merge 55766a3c9c; HOS PR816 merge a5a8d27f97. J3871 reopened only to re-run unmodified v04; no Short approval or media change. Supplemental local OWB full scripts run still active."
         }
       ],
-      "remaining_action": "Checking final full-suite and CI results on the two published pull requests",
+      "remaining_action": "Recording merged gate fixes and the unchanged-cut recheck handoff",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-28T00:11Z",
+        "at": "2026-11-28T00:15Z",
         "by": "codex",
         "plan": [
           "Inspect gate contracts",
@@ -365682,7 +365687,7 @@
           "Run suites and sync core",
           "Publish changes and reopen repair"
         ],
-        "note": "PRs OWB 1420 and HOS 816 are open. Correcting prior progress count: core sync is complete, but the full OWB scripts suit"
+        "note": "Both exact heads merged after all required CI passed: OWB PR1420 merge 55766a3c9c; HOS PR816 merge a5a8d27f97. J3871 reo"
       },
       "taskKeys": [
         "HOS:009"
