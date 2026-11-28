@@ -346657,13 +346657,13 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-27T16:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "Waiting for: Existing Flow tab on CDP 9222 must respond to browser/page inspection so studio Ultra account hash, live balance and 100-credit Quality price can be verified. On 27 Nov 16:30Z HTTP discovery responded but Playwright attachment timed out after websocket connection and direct Runtime.evaluate timed out. No Create clicked; only row 63 remains, row 49 already archived. Reuse /Volumes/MiniWork/scratch/J3760-hos and existing hos013-retake2 ledger; never remint row 49.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -346759,6 +346759,11 @@
           "at": "2026-11-28T06:00Z",
           "by": "relay",
           "what": "condition verification queued: J3979"
+        },
+        {
+          "at": "2026-11-28T06:13Z",
+          "by": "codex",
+          "what": "reopened: J3979 Chief ruling 28 Nov 06:14Z: browser-access condition MET. Independently activated existing Flow tab (and frozen detailed.com tab), attached Playwright and got Runtime response in 38 ms; read_live_balance verified studio account SHA and Ultra, 22600 credits. Dry-run --floor 3000 PASS with exact J3759 still hashes and pinned scope, zero Create clicks. Resume existing /Volumes/MiniWork/scratch/J3760-hos and hos013-retake2 ledger: row 63 take 3 ONLY, max 100 remaining credits / 200 total; never remint archived row 49. Retain six-step plan at 2/6. Before Create re-read live account/balance, reconcile pending charges and reservations (dry-run liability 1000), verify Quality price 100, floor 3000 and cutoff strictly before 2026-12-05T00:00:00Z. Live price was not certified by this review. Existing still PASS/dependency J3759 retained; no new spending or KEEP approval. If browser freezes, activate existing tab before attach; do not create duplicate tabs."
         }
       ],
       "remaining_action": "Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
@@ -346767,31 +346772,7 @@
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
       "taskKeys": [
         "HOS:013"
-      ],
-      "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-11-27T16:31Z",
-        "by": "codex",
-        "plan": [
-          "Verify still approvals",
-          "Build and dry-run guarded runner",
-          "Finish remaining video take",
-          "Archive clips and sheets",
-          "Validate film records",
-          "Submit evidence for review"
-        ],
-        "note": "Resume dry-run PASS: board, prompts and both approved still hashes match; 0 credits and 0 Create clicks. CDP HTTP respon"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Flow tab 998B0717 (flow.google.com/?pli=1) on CDP 9222 renderer still unresponsive at 27 Nov 23:28Z: /json/version and /json/list answer, page websocket opens in 0.01 s, but Page.getFrameTree and a read-only Runtime.evaluate both time out at 15 s. A Google accountchooser page (2B8360B3) is also open in that browser. Account hash, balance and Quality price unverifiable. No Create clicked; row 49 archived, only row 63 remains (100 cr, must submit before 5 Dec 00:00Z).",
-        "check_at": "2026-11-28T07:00:35+00:00",
-        "last_recheck": "J3963",
-        "checked_at": "2026-11-27T23:28:48+00:00",
-        "checked_by": "claudecode",
-        "recheck_task": "J3979"
-      }
+      ]
     },
     {
       "id": "J3761",
