@@ -366951,9 +366951,14 @@
           "at": "2026-11-28T06:01Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T06:01Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Verify Flow browser responds, then finish the remaining Darwin book shot within its approved 100 credits",
+      "remaining_action": "Read J3760 history and probe the Flow tab",
       "kind": "review",
       "recheck_of": "J3760",
       "due": "2026-11-28T07:00:35+00:00",
@@ -366971,8 +366976,11 @@
         "of": 3,
         "at": "2026-11-28T06:01Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3760 history",
+          "Probe Flow tab on CDP 9222",
+          "Record result on J3760"
+        ]
       }
     },
     {
