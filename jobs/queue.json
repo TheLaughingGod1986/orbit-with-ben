@@ -348779,6 +348779,11 @@
           "at": "2026-11-28T09:01Z",
           "by": "relay",
           "what": "condition verification queued: J3988"
+        },
+        {
+          "at": "2026-11-28T09:17Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T15:30:00Z"
         }
       ],
       "remaining_action": "Listen independently to both Shorts voiceovers, then rule and merge if passed",
@@ -348802,15 +348807,14 @@
       },
       "hold": {
         "type": "capability",
-        "condition": "Independent non-producer reviewer with demonstrated audio_input must directly hear both HOS 128 Shorts tight masters (S01_v03_tight including tenfold/joins, S02_v03b_tight). Verified 27 Nov 18:56-18:58Z: codex (elected Chief), claudecode, and cursor (down until 4 Dec) have capabilities available=[]; claude is down until 27 Nov 21:50Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56Z relay probe PASS 1.00 + 18:58Z direct read_file probe) but authored J3671/HOS PR #797 and is barred by the non-producer guard. PR #797 (a855da7475, 6/6 CI green, 0 comments) and all 5 script/NAS hashes remain intact.",
-        "check_at": "2026-11-28T10:01:17+00:00",
+        "condition": "Independent non-producer reviewer with demonstrated audio_input must directly hear both HOS 128 Shorts tight masters (S01_v03_tight including tenfold/joins, S02_v03b_tight). Verified 28 Nov 09:14-09:17Z (J3988): codex (elected Chief, UP, 08:45:50Z probe) and claudecode (UP, 08:50:52Z probe) have capabilities available=[] (audio FAIL 0.00); cursor is down until 2026-12-04T02:42:04Z (available=[]); claude is down until 2026-11-28T12:50:00Z with no Mini audio_input probe; grok (UP) has no demonstrated audio_input. gemini has verified audio_input (08:45:34Z relay probe PASS 1.00 + 09:16Z direct read_file session probe) but authored J3671/HOS PR #797 and is barred by the non-producer guard. PR #797 (a855da7475, OPEN/MERGEABLE/CLEAN, 6/6 applicable CI green, 0 comments, zero media), all 5 script/NAS SHA-256 hashes, and HOS:128 status.json remain intact; zero new desk/thread rulings.",
+        "check_at": "2026-11-28T15:30:00Z",
         "requires": [
           "audio_input"
         ],
-        "last_recheck": "J3942",
-        "checked_at": "2026-11-27T18:59:27+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3988"
+        "last_recheck": "J3988",
+        "checked_at": "2026-11-28T09:17:39+00:00",
+        "checked_by": "gemini"
       },
       "required_capabilities": [
         "audio_input"
