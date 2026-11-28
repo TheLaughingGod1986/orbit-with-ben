@@ -368625,9 +368625,14 @@
           "at": "2026-11-28T12:20Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-28T12:21Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J3760, J3757, J3759, J3931, J3963, J3979 history, hos013-retake2 ledger, and RETAKE2_RECEIPT.json"
         }
       ],
-      "remaining_action": "Reading J3760 full job record, history, and related HOS 013 approvals",
+      "remaining_action": "Checking OWB thread #99, HOS desk #180/#694, jobs.py reopen rules, and runner/Flow status",
       "kind": "review",
       "recheck_of": "J3760",
       "due": "2026-11-28T13:18:25+00:00",
@@ -368641,16 +368646,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-28T12:20Z",
+        "at": "2026-11-28T12:21Z",
         "by": "gemini",
         "plan": [
           "Read J3760 history and approval chain",
           "Check HOS desk, thread, and NAS/runner receipts",
           "Verify condition and gate validity",
           "Update J3760, complete J3996, and report"
-        ]
+        ],
+        "note": "Read J3760, J3757, J3759, J3931, J3963, J3979 history, hos013-retake2 ledger, and RETAKE2_RECEIPT.json"
       },
       "taskKeys": [
         "HOS:013"
