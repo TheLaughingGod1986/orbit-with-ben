@@ -360606,6 +360606,11 @@
           "at": "2026-11-28T02:45Z",
           "by": "relay",
           "what": "condition verification queued: J3974"
+        },
+        {
+          "at": "2026-11-28T02:46Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T08:45:00Z"
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
@@ -360640,12 +360645,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Predecessor J3902 is done, but J3904 is not yet clear: (1) independent audio+moving-video QA J3957 is open and unclaimed, no KEEP/FIX; (2) PR #1416 (head f67c2dcb) is OPEN with no elected-Chief ruling or merge. Flag for Chief: master 064_short02_venus_vs_uranus_v01.mp4 runs 18.375 s / 35 spoken words, below the 22 s floor and 55-65 words for new Shorts (studio/RULES.md; brief says 22-27 s). Reopen only after J3957 KEEP and Chief ruling on PR #1416.",
-        "check_at": "2026-11-28T03:45:13+00:00",
-        "last_recheck": "J3958",
-        "checked_at": "2026-11-27T20:41:08+00:00",
-        "checked_by": "claudecode",
-        "recheck_task": "J3974"
+        "condition": "J3957 QA is now parked with KEEP recommended (PR #1417, head 20862578, by Gemini, the same model family that built J3904), but PR #1416 (head f67c2dcb) and PR #1417 are both OPEN with no elected-Chief ruling, review or merge as of 2026-11-28T02:46Z. Flag for Chief: master 064_short02_venus_vs_uranus_v01.mp4 runs 18.375 s / 35 spoken words, below the 22 s floor and 55-65 words for new Shorts (studio/RULES.md; brief says 22-27 s). Reopen only after a Chief ruling on PR #1416 that covers the length.",
+        "check_at": "2026-11-28T08:45:00Z",
+        "last_recheck": "J3974",
+        "checked_at": "2026-11-28T02:46:58+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
