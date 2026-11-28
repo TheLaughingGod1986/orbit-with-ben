@@ -346657,13 +346657,13 @@
       "stage": "picture",
       "after": "J3759",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-28T06:15Z",
-      "eta": "2026-11-28T08:15Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:48Z",
-      "result": "",
+      "result": "Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed.",
       "history": [
         {
           "at": "2026-11-25T23:48Z",
@@ -346784,6 +346784,11 @@
           "at": "2026-11-28T06:18Z",
           "by": "codex",
           "what": "step 2 of 6 done: Resume dry-run PASS: approved board, prompt and still hashes verified; zero Create clicks. Automatic approval review rejected detached live generation because 100-credit authorization was only in job/tool output. No process started and no credit spent this session. Scratch offload completed: nothing old enough to move, about 9.9 GB free."
+        },
+        {
+          "at": "2026-11-28T06:18Z",
+          "by": "codex",
+          "what": "blocked: Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed."
         }
       ],
       "remaining_action": "Generate the remaining book clip after submission approval",
@@ -346807,6 +346812,11 @@
           "Publish receipts for review"
         ],
         "note": "Resume dry-run PASS: approved board, prompt and still hashes verified; zero Create clicks. Automatic approval review rej"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed.",
+        "check_at": "2026-11-28T12:18:18+00:00"
       }
     },
     {
