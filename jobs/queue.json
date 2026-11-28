@@ -367246,9 +367246,14 @@
           "at": "2026-11-28T06:43Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T06:43Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publish the reviewed evidence and ruling through a permission-enabled Claude Code session",
+      "remaining_action": "Reading J3969 history and the publish log",
       "kind": "review",
       "recheck_of": "J3969",
       "due": "2026-11-28T07:41:24+00:00",
@@ -367266,8 +367271,11 @@
         "of": 3,
         "at": "2026-11-28T06:43Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3969 history and evidence",
+          "Check publish condition",
+          "Reopen or re-wait J3969"
+        ]
       }
     }
   ],
