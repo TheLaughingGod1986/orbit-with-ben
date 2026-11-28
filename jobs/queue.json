@@ -365624,13 +365624,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-28T00:00Z",
-      "eta": "2026-11-28T01:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-27T23:59Z",
-      "result": "",
+      "result": "Implemented and merged J3874 gate ruling: OWB PR1420 (55766a3c9c), HOS PR816 (a5a8d27f97), all required CI green. Channel DUR_BAND is authoritative; only validated final non-overlapping native pre-roll exempts opening SAME_STRETCH. Twenty-seven gate regressions pass per channel; HOS scripts65/tools94/tests370 pass (six skips in tests); OWB tools96/audio21 pass (one skip); CI scripts1675 pass. J3871 reopened for exact unmodified v04 rerun, no Short approval or publishing. Supplemental slow local OWB scripts suite uses temp HOME and remains detached: /Volumes/MiniWork/scratch/J3965-tests/scripts.log; scripts.done = 0 pass, 1 failed, 2 process ended without summary. No spend or media change.",
       "history": [
         {
           "at": "2026-11-27T23:59Z",
@@ -365681,6 +365681,11 @@
           "at": "2026-11-28T00:16Z",
           "by": "codex",
           "what": "step 4 of 4 done: All required CI green (OWB scripts 1675 tests plus tools/audio); both PRs merged and J3871 reopened with corrected remaining action. All targeted and HOS local suites pass. Supplemental slow OWB temp-HOME scripts run remains detached; log /Volumes/MiniWork/scratch/J3965-tests/scripts.log and scripts.done record its eventual result."
+        },
+        {
+          "at": "2026-11-28T00:16Z",
+          "by": "codex",
+          "what": "done: Implemented and merged J3874 gate ruling: OWB PR1420 (55766a3c9c), HOS PR816 (a5a8d27f97), all required CI green. Channel DUR_BAND is authoritative; only validated final non-overlapping native pre-roll exempts opening SAME_STRETCH. Twenty-seven gate regressions pass per channel; HOS scripts65/tools94/tests370 pass (six skips in tests); OWB tools96/audio21 pass (one skip); CI scripts1675 pass. J3871 reopened for exact unmodified v04 rerun, no Short approval or publishing. Supplemental slow local OWB scripts suite uses temp HOME and remains detached: /Volumes/MiniWork/scratch/J3965-tests/scripts.log; scripts.done = 0 pass, 1 failed, 2 process ended without summary. No spend or media change."
         }
       ],
       "remaining_action": "Gate fixes merged; the unchanged Newton apple Short is ready for its recheck",
@@ -365701,7 +365706,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1420"
     },
     {
       "id": "J3966",
