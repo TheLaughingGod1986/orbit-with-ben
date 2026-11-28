@@ -366747,18 +366747,26 @@
           "at": "2026-11-28T03:57Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T03:58Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Add paid-promotion reporting and focused tests to the channel audit",
+      "remaining_action": "Inspecting the HOS audit and contract conventions",
       "kind": "assembly",
       "plain": "Make the History of Science audit report unexpected paid-promotion labels",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-28T03:57Z",
+        "at": "2026-11-28T03:58Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect audit",
+          "Add sponsorship checks and tests",
+          "Verify and open PR"
+        ]
       }
     }
   ],
