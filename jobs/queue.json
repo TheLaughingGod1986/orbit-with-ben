@@ -365676,15 +365676,20 @@
           "at": "2026-11-28T00:15Z",
           "by": "codex",
           "what": "step 3 of 4 done: Both exact heads merged after all required CI passed: OWB PR1420 merge 55766a3c9c; HOS PR816 merge a5a8d27f97. J3871 reopened only to re-run unmodified v04; no Short approval or media change. Supplemental local OWB full scripts run still active."
+        },
+        {
+          "at": "2026-11-28T00:16Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: All required CI green (OWB scripts 1675 tests plus tools/audio); both PRs merged and J3871 reopened with corrected remaining action. All targeted and HOS local suites pass. Supplemental slow OWB temp-HOME scripts run remains detached; log /Volumes/MiniWork/scratch/J3965-tests/scripts.log and scripts.done record its eventual result."
         }
       ],
-      "remaining_action": "Recording merged gate fixes and the unchanged-cut recheck handoff",
+      "remaining_action": "Gate fixes merged; the unchanged Newton apple Short is ready for its recheck",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-28T00:15Z",
+        "at": "2026-11-28T00:16Z",
         "by": "codex",
         "plan": [
           "Inspect gate contracts",
@@ -365692,7 +365697,7 @@
           "Run suites and sync core",
           "Publish changes and reopen repair"
         ],
-        "note": "Both exact heads merged after all required CI passed: OWB PR1420 merge 55766a3c9c; HOS PR816 merge a5a8d27f97. J3871 reo"
+        "note": "All required CI green (OWB scripts 1675 tests plus tools/audio); both PRs merged and J3871 reopened with corrected remai"
       },
       "taskKeys": [
         "HOS:009"
