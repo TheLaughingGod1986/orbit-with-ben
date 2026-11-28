@@ -368431,9 +368431,14 @@
           "at": "2026-11-28T12:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T12:05Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3994; starting verification of J3611 waiting condition for HOS 010 long readiness"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule",
+      "remaining_action": "Check HOS 010 long production status, active jobs, and live YouTube channel state",
       "kind": "review",
       "recheck_of": "J3611",
       "mini_only": true,
@@ -368452,9 +368457,16 @@
         "of": 3,
         "at": "2026-11-28T12:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check HOS 010 status, queue and YouTube",
+          "Verify J3611 condition and approvals",
+          "Update J3611, finish J3994 and report"
+        ],
+        "note": "Claimed J3994; starting verification of J3611 waiting condition for HOS 010 long readiness"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     }
   ],
   "focus": [
