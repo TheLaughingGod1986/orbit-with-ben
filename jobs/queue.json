@@ -366690,19 +366690,34 @@
           "at": "2026-11-28T03:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T03:55Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Verify and correct the eleven paid-promotion labels, then record the saved settings",
+      "remaining_action": "Verify sponsorship records, run lint:package, and inspect Studio CDP 9460",
       "kind": "studio",
       "plain": "Correct the paid-promotion labels on eleven older History of Science videos",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-28T03:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify records & lint:package",
+          "Clear Paid promotion flags in Studio",
+          "Verify via API & channel:audit",
+          "Update records & open PR",
+          "Post desk report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     },
     {
       "id": "J3977",
