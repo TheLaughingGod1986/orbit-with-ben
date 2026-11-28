@@ -367375,13 +367375,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T07:00Z",
-      "eta": "2026-11-28T09:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T06:59Z",
-      "result": "",
+      "result": "J3972 publish condition met: Claude Code privacy-reviewed both diffs (clean), pushed codex/J3972-scale-before-crop in both repos and opened OWB PR #1425 + HOS PR #822 (cross-linked, merge clean, not merged). Reopen refused (only the elected Chief may release a verified hold), so J3972 stays blocked waiting on elected-Chief code review/merge of both PRs, recheck 2026-11-28T15:00Z.",
       "history": [
         {
           "at": "2026-11-28T06:59Z",
@@ -367407,6 +367407,11 @@
           "at": "2026-11-28T07:01Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: J3972 not yet published: no remote branch or PR in either repo. Privacy review of both diffs clean (code/tests/docs/hashes only); both merge clean into main."
+        },
+        {
+          "at": "2026-11-28T07:02Z",
+          "by": "claudecode",
+          "what": "done: J3972 publish condition met: Claude Code privacy-reviewed both diffs (clean), pushed codex/J3972-scale-before-crop in both repos and opened OWB PR #1425 + HOS PR #822 (cross-linked, merge clean, not merged). Reopen refused (only the elected Chief may release a verified hold), so J3972 stays blocked waiting on elected-Chief code review/merge of both PRs, recheck 2026-11-28T15:00Z."
         }
       ],
       "remaining_action": "Push both J3972 branches, open code PRs, recheck J3972",
@@ -367436,7 +367441,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "OWB#1425,HOS#822"
     },
     {
       "id": "J3984",
