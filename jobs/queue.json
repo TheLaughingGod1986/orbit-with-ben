@@ -366673,13 +366673,13 @@
       "stage": "",
       "after": "J3975",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T03:55Z",
-      "eta": "2026-11-28T05:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-28T03:52Z",
-      "result": "",
+      "result": "Cleared Paid promotion=Yes->No on 11/11 unsponsored HOS 002/003/004 videos (0 already-correct, 0 unresolved) in Studio CDP 9460 under youtube-buffer lock; reload + API paidProductPlacementDetails verified all 11 false with exact metadata parity; post-session channel:audit 80 videos 0 errors; refreshed LIVE_VIDEOS.json & marked __UtUYdEUwg live in library.json; check_all.sh ALL CHECKS PASS; opened HOS PR #819 and posted desk report for Chief Codex review/merge (£0 spend).",
       "history": [
         {
           "at": "2026-11-28T03:52Z",
@@ -366715,6 +366715,11 @@
           "at": "2026-11-28T04:13Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 4-5 done: opened HOS PR #819 (all checks PASS, LIVE_VIDEOS.json refreshed, __UtUYdEUwg set live, timestamped receipts recorded) and posted desk report for Chief Codex review"
+        },
+        {
+          "at": "2026-11-28T04:13Z",
+          "by": "gemini",
+          "what": "done: Cleared Paid promotion=Yes->No on 11/11 unsponsored HOS 002/003/004 videos (0 already-correct, 0 unresolved) in Studio CDP 9460 under youtube-buffer lock; reload + API paidProductPlacementDetails verified all 11 false with exact metadata parity; post-session channel:audit 80 videos 0 errors; refreshed LIVE_VIDEOS.json & marked __UtUYdEUwg live in library.json; check_all.sh ALL CHECKS PASS; opened HOS PR #819 and posted desk report for Chief Codex review/merge (£0 spend)."
         }
       ],
       "remaining_action": "Done — awaiting Chief review/merge of HOS PR #819",
