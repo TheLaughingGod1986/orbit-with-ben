@@ -367487,16 +367487,21 @@
           "at": "2026-11-28T07:13Z",
           "by": "gemini",
           "what": "step 2 of 5 done: HOS Studio read complete on 9460: 8/8 longs + 37/37 Shorts (0 errors, 0 omitted); OWB read running on 9224."
+        },
+        {
+          "at": "2026-11-28T07:14Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: OWB Studio read complete on 9224: 19/19 longs + 96/96 Shorts (0 errors, 0 omitted). Total: 19 OWB + 8 HOS longs, 133 Shorts."
         }
       ],
-      "remaining_action": "Finishing OWB lifetime Studio read on port 9224 (19 longs + 96 Shorts)",
+      "remaining_action": "Writing studio_ctr.json, running studio_reach.py morning, rebuilding analytics report and publishing board",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-28T07:13Z",
+        "at": "2026-11-28T07:14Z",
         "by": "gemini",
         "plan": [
           "Check Studio CDP sessions",
@@ -367505,7 +367510,7 @@
           "Run reach, report and publish",
           "Commit, push and complete job"
         ],
-        "note": "HOS Studio read complete on 9460: 8/8 longs + 37/37 Shorts (0 errors, 0 omitted); OWB read running on 9224."
+        "note": "OWB Studio read complete on 9224: 19/19 longs + 96/96 Shorts (0 errors, 0 omitted). Total: 19 OWB + 8 HOS longs, 133 Sho"
       }
     }
   ],
