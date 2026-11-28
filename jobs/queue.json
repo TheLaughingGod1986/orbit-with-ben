@@ -1,5 +1,5 @@
 {
-  "next_id": 3978,
+  "next_id": 3979,
   "jobs": [
     {
       "id": "J0001",
@@ -273996,6 +273996,11 @@
           "at": "2026-11-27T22:07Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-28T04:10:00Z"
+        },
+        {
+          "at": "2026-11-28T04:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J3978"
         }
       ],
       "remaining_action": "Complete live migration and operational proof through J3962",
@@ -274032,10 +274037,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J3961 KEEP: PR1389 head 5631f820b reviewed and merged; 62 mocked tests pass. J3962 owns separate live coordination and relay, board, tick and both-slot proof. Preserve parent 3/4 and all gates; no activation in verification.",
-        "check_at": "2026-11-28T04:10:00Z",
+        "check_at": "2026-11-28T05:14:12+00:00",
         "last_recheck": "J3961",
         "checked_at": "2026-11-27T22:07:52+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3978"
       }
     },
     {
@@ -366809,6 +366815,37 @@
           "Verify and open PR"
         ]
       }
+    },
+    {
+      "id": "J3978",
+      "title": "Verify condition for J3012",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3012: J3961 KEEP: PR1389 head 5631f820b reviewed and merged; 62 mocked tests pass. J3962 owns separate live coordination and relay, board, tick and both-slot proof. Preserve parent 3/4 and all gates; no activation in verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3012 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T04:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T04:14Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete live migration and operational proof through J3962",
+      "kind": "review",
+      "recheck_of": "J3012",
+      "due": "2026-11-27T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
