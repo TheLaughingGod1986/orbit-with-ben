@@ -367057,9 +367057,14 @@
           "at": "2026-11-28T06:05Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified UNMET: J3972 blocked at 3/4 (OWB 4a31f3835a, HOS e05d7ad5 unpushed; 0 PRs/merges); J3969 blocked at 2/3 (0511c938, eafc150e unpushed); NAS v04 SHA-256 unchanged (3e21b51f...dac)"
+        },
+        {
+          "at": "2026-11-28T06:06Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded UNMET dependency hold on J3871 (--recheck J3980, next check 2026-11-28T10:00:00Z); exact v04 remains picture FAIL"
         }
       ],
-      "remaining_action": "Recording UNMET dependency hold on J3871, closing J3980, and posting verification report",
+      "remaining_action": "Post OWB studio thread report and finish J3980",
       "kind": "review",
       "recheck_of": "J3871",
       "due": "2026-11-28T07:00:35+00:00",
@@ -367073,16 +367078,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-28T06:05Z",
+        "at": "2026-11-28T06:06Z",
         "by": "gemini",
         "plan": [
           "Inspect J3871, J3969, J3972 and related publish jobs/PRs",
           "Verify whether both J3972 code PRs are reviewed and merged",
           "Update J3871 wait/reopen state, report, and close J3980"
         ],
-        "note": "Verified UNMET: J3972 blocked at 3/4 (OWB 4a31f3835a, HOS e05d7ad5 unpushed; 0 PRs/merges); J3969 blocked at 2/3 (0511c9"
+        "note": "Recorded UNMET dependency hold on J3871 (--recheck J3980, next check 2026-11-28T10:00:00Z); exact v04 remains picture FA"
       },
       "taskKeys": [
         "HOS:009"
