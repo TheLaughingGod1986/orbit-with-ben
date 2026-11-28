@@ -77,7 +77,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
-| J3881 | mini | claimed | gemini | 2026-11-28T11:02Z | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3904 | mini | blocked | gemini | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
 | J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
 | J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
