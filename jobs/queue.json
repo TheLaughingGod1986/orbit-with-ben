@@ -365736,22 +365736,28 @@
           "at": "2026-11-28T00:12Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-28T00:14Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: delegated_from() in chief_relay; elected_for, claim log and can_any_mini_claim use it"
         }
       ],
-      "remaining_action": "Reading the Chief claim path",
+      "remaining_action": "Write tests and run the full suite",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:12Z",
+        "at": "2026-11-28T00:14Z",
         "by": "claudecode",
         "plan": [
           "Read claim path",
           "Code delegated Chief",
           "Tests + full suite",
           "Open PR"
-        ]
+        ],
+        "note": "delegated_from() in chief_relay; elected_for, claim log and can_any_mini_claim use it"
       }
     },
     {
