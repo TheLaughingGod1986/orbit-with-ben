@@ -360755,6 +360755,11 @@
           "at": "2026-11-28T09:50Z",
           "by": "claudecode",
           "what": "step 0 of 3 done: Chief PASS 09:47Z; only remaining step is the watch card"
+        },
+        {
+          "at": "2026-11-28T09:51Z",
+          "by": "claudecode",
+          "what": "waits on Ben: Watch OWB 064 Short 2, Why Is Venus 464°C While Uranus Drops to −224°C? (18 s), before it is uploaded (by 2026-12-14 18:00 London)"
         }
       ],
       "remaining_action": "Registering Ben's phone watch card for Short 2 v01",
@@ -360784,6 +360789,16 @@
           "Report and finish"
         ],
         "note": "Chief PASS 09:47Z; only remaining step is the watch card"
+      },
+      "awaits_ben": {
+        "what": "Watch OWB 064 Short 2, Why Is Venus 464°C While Uranus Drops to −224°C? (18 s), before it is uploaded",
+        "file": "OWB UAT/064_short02_venus_vs_uranus_v01.mp4",
+        "version": "v01",
+        "due": "2026-12-14T18:00Z",
+        "ifNot": "Short 2 is not uploaded or scheduled; it also waits for the 064 long to be public on Wed 16 Dec 18:00",
+        "title": "Why Is Venus 464°C While Uranus Drops to −224°C?",
+        "number": "064 Short 2",
+        "type": "short"
       }
     },
     {
