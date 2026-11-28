@@ -366586,9 +366586,14 @@
           "at": "2026-11-28T03:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T03:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3975; inspecting prior HOS live-listing audits and open PRs"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Pull live HOS metadata, check prior J3959/J3877 audit state, and run channel:audit",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -366601,11 +366606,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T03:33Z",
+        "of": 4,
+        "at": "2026-11-28T03:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Pull HOS live metadata and run channel:audit",
+          "Audit chapters, sources, end screens, and Related",
+          "Recheck source URLs and prior open items",
+          "Write HOS audit report, open PR, and park/report"
+        ],
+        "note": "Claimed J3975; inspecting prior HOS live-listing audits and open PRs"
       }
     }
   ],
