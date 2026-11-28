@@ -366596,9 +366596,14 @@
           "at": "2026-11-28T03:35Z",
           "by": "gemini",
           "what": "step 1 of 4 done: channel:audit PASS (80 videos, 0 errors, 45 public = channel videoCount); verified J3877/J3880/J3959 baselines and CDP 9460 active"
+        },
+        {
+          "at": "2026-11-28T03:42Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Live API (80/80, 0 errors; 10/10 chapters exact; 39/39 YT links valid; 8/8 S1-S4 HTTP 200) and read-only Studio CDP 9460 sweep complete. J3880 fixes (YqCWYlv_LCY comment + f_-BsKZf8X0 Paid promo No) & __UtUYdEUwg Public confirmed. NEW LIVE FINDING: 11 public 002/003/004 videos (3 longs + 8 Shorts) have Paid promotion=Yes (API hasPaidProductPlacement=true, Studio confirmed on 5/5 sampled) with zero paid promotion/affiliate links."
         }
       ],
-      "remaining_action": "Run live YouTube Data API audit, chapter/source/link verification, and read-only Studio CDP 9460 sweep",
+      "remaining_action": "Write 2026-11-28_J3975.md audit report in a clean HOS worktree, verify check_all.sh, open PR, and park for Chief",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -366610,9 +366615,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T03:35Z",
+        "at": "2026-11-28T03:42Z",
         "by": "gemini",
         "plan": [
           "Pull HOS live metadata and run channel:audit",
@@ -366620,9 +366625,12 @@
           "Recheck source URLs and prior open items",
           "Write HOS audit report, open PR, and park/report"
         ],
-        "note": "channel:audit PASS (80 videos, 0 errors, 45 public = channel videoCount); verified J3877/J3880/J3959 baselines and CDP 9"
+        "note": "Live API (80/80, 0 errors; 10/10 chapters exact; 39/39 YT links valid; 8/8 S1-S4 HTTP 200) and read-only Studio CDP 9460"
       },
       "taskKeys": [
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
         "HOS:008",
         "HOS:009",
         "HOS:099"
