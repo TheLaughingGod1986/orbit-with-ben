@@ -365639,15 +365639,20 @@
           "at": "2026-11-28T00:06Z",
           "by": "codex",
           "what": "step 2 of 4 done: Gate regressions pass (15 terminal-loop and 12 picture tests); tools 96 PASS, audio 21 PASS with one skip. System disk 7.7GB: required NAS offload ran and found no eligible old scratch; all new work stays on MiniWork. Full scripts suite remains active."
+        },
+        {
+          "at": "2026-11-28T00:08Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Both core locks pass; all 27 gate tests pass in each channel, HOS full scripts 65 and tools 94 pass; OWB tools 96 and audio 21 pass (one skip), core/security 21 pass. New shared files identical. Preserved two pre-existing HOS upload-file divergences rather than alter upload behavior."
         }
       ],
-      "remaining_action": "Waiting for the full scripts suite before publishing the tested gate fixes",
+      "remaining_action": "Preparing the two gate-fix pull requests while the last full-suite run finishes",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-28T00:06Z",
+        "at": "2026-11-28T00:08Z",
         "by": "codex",
         "plan": [
           "Inspect gate contracts",
@@ -365655,7 +365660,7 @@
           "Run suites and sync core",
           "Publish changes and reopen repair"
         ],
-        "note": "Gate regressions pass (15 terminal-loop and 12 picture tests); tools 96 PASS, audio 21 PASS with one skip. System disk 7"
+        "note": "Both core locks pass; all 27 gate tests pass in each channel, HOS full scripts 65 and tools 94 pass; OWB tools 96 and au"
       },
       "taskKeys": [
         "HOS:009"
