@@ -366155,10 +366155,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-28T00:40Z",
+      "eta": "2026-11-28T02:40Z",
       "created_by": "codex",
       "created_at": "2026-11-28T00:35Z",
       "result": "",
@@ -366167,12 +366167,25 @@
           "at": "2026-11-28T00:35Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T00:40Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implement and test the explicit framing contract, then submit both shared-code changes for review",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
-      "plain": "Make the loop check verify the Newton apple Short’s actual framing"
+      "plain": "Make the loop check verify the Newton apple Short’s actual framing",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-28T00:40Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
