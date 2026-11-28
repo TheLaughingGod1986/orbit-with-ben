@@ -367891,13 +367891,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T09:14Z",
-      "eta": "2026-11-28T11:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T09:01Z",
-      "result": "",
+      "result": "Condition UNMET for J3780 (HOS:128 Shorts S01/S02 VO independent non-producer listen). Live 28 Nov 09:14-09:17Z checks: codex (elected Chief, UP, 08:45:50Z probe) and claudecode (UP, 08:50:52Z probe) have capabilities available=[] (audio FAIL 0.00); cursor down until 2026-12-04T02:42:04Z (available=[]); claude down until 2026-11-28T12:50:00Z with no Mini audio_input probe; grok (UP) has no demonstrated audio_input. gemini has verified audio_input (08:45:34Z relay probe PASS 1.00 + 09:16Z direct read_file session probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671/HOS PR #797 and is barred by the non-producer guard. Freshly verified: HOS PR #797 OPEN/MERGEABLE/CLEAN (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, 33 files, zero media); 5/5 SHA-256 hashes match (SHORTS_SCRIPTS_v03.md + both tight WAV/MP3 masters); HOS:128 status.json unchanged (J3670 waits for Mon 30 Nov 10:50Z ElevenLabs reset); zero new desk/thread rulings. Recorded typed capability wait on J3780 (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z). Reports posted: HOS desk #694 (#7237151972) and OWB thread #1353 (#7237155055). £0 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-28T09:01Z",
@@ -367933,6 +367933,11 @@
           "at": "2026-11-28T09:18Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded J3780 wait (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z); posted HOS #694 (#7237151972) & OWB #1353 (#7237155055)"
+        },
+        {
+          "at": "2026-11-28T09:18Z",
+          "by": "gemini",
+          "what": "done: Condition UNMET for J3780 (HOS:128 Shorts S01/S02 VO independent non-producer listen). Live 28 Nov 09:14-09:17Z checks: codex (elected Chief, UP, 08:45:50Z probe) and claudecode (UP, 08:50:52Z probe) have capabilities available=[] (audio FAIL 0.00); cursor down until 2026-12-04T02:42:04Z (available=[]); claude down until 2026-11-28T12:50:00Z with no Mini audio_input probe; grok (UP) has no demonstrated audio_input. gemini has verified audio_input (08:45:34Z relay probe PASS 1.00 + 09:16Z direct read_file session probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671/HOS PR #797 and is barred by the non-producer guard. Freshly verified: HOS PR #797 OPEN/MERGEABLE/CLEAN (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, 33 files, zero media); 5/5 SHA-256 hashes match (SHORTS_SCRIPTS_v03.md + both tight WAV/MP3 masters); HOS:128 status.json unchanged (J3670 waits for Mon 30 Nov 10:50Z ElevenLabs reset); zero new desk/thread rulings. Recorded typed capability wait on J3780 (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z). Reports posted: HOS desk #694 (#7237151972) and OWB thread #1353 (#7237155055). £0 / 0 credits spent."
         }
       ],
       "remaining_action": "Closing J3988 after recording unmet J3780 capability wait and posting reports",
@@ -367965,7 +367970,8 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "done_ref": "HOS #694 #7237151972, OWB #1353 #7237155055"
     },
     {
       "id": "J3989",
