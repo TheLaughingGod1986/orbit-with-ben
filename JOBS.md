@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
 | J3816 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
-| J3828 | mini | open (after J3115) | – | – | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
+| J3828 | mini | claimed | gemini | 2026-11-28T02:04Z | 034 thumbs · review · 034 Pluto: reconcile thumbnail stage after published packaging review | J3827,J3819,J3115 |
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
