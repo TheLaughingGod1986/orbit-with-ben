@@ -366400,9 +366400,14 @@
           "at": "2026-11-28T01:54Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Identified top live window via API (new entry aAUgIGEuPwQ); verifying full uploads playlist page depth and descriptions"
+        },
+        {
+          "at": "2026-11-28T01:56Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Live API metadata, parent-long checks, pinned comments, and all 20 external source URLs verified across the 10 public videos"
         }
       ],
-      "remaining_action": "Fetching full live YouTube API metadata, descriptions, pinned comments, and source link statuses for the last 10 live OWB videos",
+      "remaining_action": "Auditing YouTube Studio (CDP 9223, read-only) for end screens on both longs and Related pills on all 8 Shorts, plus package manifest diffs",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -366414,9 +366419,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-28T01:54Z",
+        "at": "2026-11-28T01:56Z",
         "by": "gemini",
         "plan": [
           "Identify last 10 live OWB videos",
@@ -366425,7 +366430,7 @@
           "Check chapters against cuts and sources",
           "Write fix list, commit PR, report and block or close"
         ],
-        "note": "Identified top live window via API (new entry aAUgIGEuPwQ); verifying full uploads playlist page depth and descriptions"
+        "note": "Live API metadata, parent-long checks, pinned comments, and all 20 external source URLs verified across the 10 public vi"
       },
       "taskKeys": [
         "OWB:026",
