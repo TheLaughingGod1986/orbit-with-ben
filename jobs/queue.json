@@ -283014,13 +283014,13 @@
       "stage": "upload",
       "after": "J3115",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T00:17Z",
-      "eta": "2026-11-28T02:17Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-19T07:58Z",
-      "result": "",
+      "result": "Uploaded OWB 034 Pluto long master v02 (sha256 e5a886df) as NEW Private scheduled video jaAIgi5WuSM for Sun 13 Dec 2026 18:00Z. Verified thumbnail A set, en-GB language+captions serving, Altered content Yes, Not Made for Kids, Real Worlds playlist PLdoEpeiktw_Y, End Screen (Subscribe + oASsmqZfWU4), 3-way thumbnail-only T044 armed (Ineligible until air), Buffer deferred (>7d). Pinned comment waits until Public on 13 Dec 18:00Z; Shorts J3066/J3065 public-parent holds preserved with relatedVideoId jaAIgi5WuSM in PR.",
       "history": [
         {
           "at": "2026-11-19T07:58Z",
@@ -283061,6 +283061,11 @@
           "at": "2026-11-28T00:33Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Uploaded jaAIgi5WuSM Private scheduled 2026-12-13T18:00:00Z, set en-GB language+captions, Real Worlds PLdoEpeiktw_Y, End Screen (Subscribe + Uranus oASsmqZfWU4), armed 3-way thumbnail-only T044, and prepared records PR"
+        },
+        {
+          "at": "2026-11-28T00:33Z",
+          "by": "gemini",
+          "what": "done: Uploaded OWB 034 Pluto long master v02 (sha256 e5a886df) as NEW Private scheduled video jaAIgi5WuSM for Sun 13 Dec 2026 18:00Z. Verified thumbnail A set, en-GB language+captions serving, Altered content Yes, Not Made for Kids, Real Worlds playlist PLdoEpeiktw_Y, End Screen (Subscribe + oASsmqZfWU4), 3-way thumbnail-only T044 armed (Ineligible until air), Buffer deferred (>7d). Pinned comment waits until Public on 13 Dec 18:00Z; Shorts J3066/J3065 public-parent holds preserved with relatedVideoId jaAIgi5WuSM in PR."
         }
       ],
       "remaining_action": "Publishing PR with upload/Studio records and posting thread readback",
@@ -283094,7 +283099,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "jaAIgi5WuSM"
     },
     {
       "id": "J3120",
