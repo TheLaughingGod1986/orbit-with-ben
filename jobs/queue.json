@@ -368453,9 +368453,14 @@
           "at": "2026-11-28T12:07Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified J3611 records intact: NAS master SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59 matches UPLOADS.json (private/no publishAt, no invented long), BUFFER_POSTS.json held, shorts_open_library retired, lint:package PASS; condition UNMET (no HOS 010 long uploaded)"
+        },
+        {
+          "at": "2026-11-28T12:08Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Updated J3611 wait hold (--recheck J3994, --type input, --check-at 2026-12-12T09:00:00Z)"
         }
       ],
-      "remaining_action": "Record unmet condition hold on J3611 (--recheck J3994), finish J3994, and post report",
+      "remaining_action": "Finish J3994 and post verification report",
       "kind": "review",
       "recheck_of": "J3611",
       "mini_only": true,
@@ -368470,16 +368475,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-28T12:07Z",
+        "at": "2026-11-28T12:08Z",
         "by": "gemini",
         "plan": [
           "Check HOS 010 status, queue and YouTube",
           "Verify J3611 condition and approvals",
           "Update J3611, finish J3994 and report"
         ],
-        "note": "Verified J3611 records intact: NAS master SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59 match"
+        "note": "Updated J3611 wait hold (--recheck J3994, --type input, --check-at 2026-12-12T09:00:00Z)"
       },
       "taskKeys": [
         "HOS:010"
