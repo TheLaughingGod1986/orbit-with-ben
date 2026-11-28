@@ -368647,9 +368647,14 @@
           "at": "2026-11-28T12:24Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Zero-browser dry-run PASS (0 cr, 0 Create clicks, hashes verified); condition UNMET (no new explicit approval since 06:18Z)"
+        },
+        {
+          "at": "2026-11-28T12:25Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Recorded J3760 wait (--recheck J3996, next 2026-11-28T18:25:00Z) and posted OWB #7239214985 + HOS #7239215464"
         }
       ],
-      "remaining_action": "Recording J3760 wait (--recheck J3996), posting OWB/HOS reports, and closing J3996",
+      "remaining_action": "Verification complete",
       "kind": "review",
       "recheck_of": "J3760",
       "due": "2026-11-28T13:18:25+00:00",
@@ -368663,9 +368668,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-28T12:24Z",
+        "at": "2026-11-28T12:25Z",
         "by": "gemini",
         "plan": [
           "Read J3760 history and approval chain",
@@ -368673,7 +368678,7 @@
           "Verify condition and gate validity",
           "Update J3760, complete J3996, and report"
         ],
-        "note": "Zero-browser dry-run PASS (0 cr, 0 Create clicks, hashes verified); condition UNMET (no new explicit approval since 06:1"
+        "note": "Recorded J3760 wait (--recheck J3996, next 2026-11-28T18:25:00Z) and posted OWB #7239214985 + HOS #7239215464"
       },
       "taskKeys": [
         "HOS:013"
