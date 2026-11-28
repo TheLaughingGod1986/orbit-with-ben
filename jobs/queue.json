@@ -358461,16 +358461,21 @@
           "at": "2026-11-28T09:11Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Verified OWB Studio Comments on CDP 9223 (switched from FOH to UC_esArsDKd3GJvOkeO0DUog): Published Unresponded = 0, Published Newest checked through 1 month ago, Held = 0. Both in-window viewer comments already in COMMENT_REPLIES.jsonl (3 rows unchanged). 0 replies posted, 0 held drafts."
+        },
+        {
+          "at": "2026-11-28T09:13Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Queued tomorrow's run J3990; COMMENT_REPLIES.jsonl unchanged (3 rows, no PR needed)."
         }
       ],
-      "remaining_action": "Queue tomorrow's daily comment check for 2026-11-29 09:00 London and post studio thread summary",
+      "remaining_action": "Close J3881, apply release-at-time date hold to J3990 for 2026-11-29T09:00:00Z, and post studio thread summary",
       "due": "2026-11-28T20:00:00Z",
       "kind": "studio",
       "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-28T09:11Z",
+        "at": "2026-11-28T09:13Z",
         "by": "gemini",
         "plan": [
           "Inspect Studio comments and log",
@@ -358479,7 +358484,7 @@
           "Commit log and queue tomorrow",
           "Post summary and close job"
         ],
-        "note": "Verified OWB Studio Comments on CDP 9223 (switched from FOH to UC_esArsDKd3GJvOkeO0DUog): Published Unresponded = 0, Pub"
+        "note": "Queued tomorrow's run J3990; COMMENT_REPLIES.jsonl unchanged (3 rows, no PR needed)."
       }
     },
     {
