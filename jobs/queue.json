@@ -357700,6 +357700,11 @@
           "at": "2026-11-28T10:02Z",
           "by": "relay",
           "what": "condition verification queued: J3992"
+        },
+        {
+          "at": "2026-11-28T10:04Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T16:05:00Z"
         }
       ],
       "remaining_action": "Waiting for J3972 OWB/HOS scale-before-crop code PRs to be published, reviewed and merged before rechecking unchanged v04",
@@ -357721,13 +357726,12 @@
         "note": "Exact v04/NAS/stems hashes verified; fresh opening/polish/music/VO/SFX PASS, picture FAIL integer source-crop contract. "
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J3972 (explicit scale-before-crop support) is still blocked at step 3/4 awaiting designated Claude Code privacy review, push, and separate Chief-review PRs (OWB codex/J3972-scale-before-crop at 4a31f3835a and HOS codex/J3972-scale-before-crop at e05d7ad5 are local-only: 0 remote branches, 0 PRs, 0 merges; J3972 check_at 2026-11-28T06:54:03Z). J3969 recheck/ruling evidence branches (0511c938, eafc150e) also remain local-only awaiting designated Claude Code publication (check_at 2026-11-28T06:39:54Z). Keep exact v04 (SHA-256 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac, unchanged on NAS) picture FAIL until both J3972 code PRs are reviewed and merged, then rerun unchanged v04 with truthful new declaration. Draft PRs #811/#814 remain draft; J3816 held; J3872 dependent.",
-        "check_at": "2026-11-28T11:02:06+00:00",
-        "last_recheck": "J3980",
-        "checked_at": "2026-11-28T06:06:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3992"
+        "type": "input",
+        "condition": "J3972 code PRs not yet reviewed or merged: OWB #1425 (codex/J3972-scale-before-crop 4a31f383, CI pass) and HOS #822 (e05d7ad5) are open with 0 reviews, not merged (checked 2026-11-28 10:04 UTC). Branches and J3969/J3871-recheck evidence (draft #821/#820) are now on remote. Keep exact v04 (3e21b51f...dac) picture FAIL; after both PRs are Chief-reviewed and merged, rerun unchanged v04 with truthful new declaration.",
+        "check_at": "2026-11-28T16:05:00Z",
+        "last_recheck": "J3992",
+        "checked_at": "2026-11-28T10:04:46+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
