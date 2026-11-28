@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J3501, J3704, J3559, J3790, J3981.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3704, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -94,11 +94,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3969 | any | blocked | codex | – | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
 | J3970 | mini | open | – | – | chief · Chief: resolve 034 upload orphan-review |  |
 | J3972 | mini | blocked | codex | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
-| J3981 | mini | claimed | codex | 2026-11-28T08:58Z | for codex · studio · `gpt-6.1-sol` · Field Order History channel totals read 2026-11-28 |  |
 
 Recently finished:
 
 - J3982 done: Verify condition for J3969 (J3969 publication condition met: both branches pushed normally at the reviewed SHAs; draft HOS PR820 (J3871 recheck) and PR821 (J3969 ruling). The worker reopen was refused by the Chief gate, so J3969 is recorded via wait --recheck J3982 for Chief to close and decide merging. No PASS/UAT/upload/spend.)
+- J3981 done: Field Order History channel totals read 2026-11-28 (Chief KEEP/PASS: dated Gemini Lifetime evidence matches four-file diff; 22/22 tests pass; strict importer reproduces output. PR1424 merged c24b89a8d94e452226d2492c95aac2e0d919e6c5. Totals 1 subscriber, 5.0 all-watch-time hours at 2026-11-28T06:47:55Z (data through 26 Nov); eligible hours and video windows preserved. Ruling PR1424 comment 7235603647. Follow-up existing automatic daily read 2026-11-29T06:40Z; no external hold or duplicate job.)
 - J3980 done: Verify condition for J3871 (Condition UNMET for J3871 (HOS:009 Newton apple Short): J3972 is still blocked at 3/4 awaiting designated Claude Code publication, Chief review, and merge of both OWB (4a31f3835a) and HOS (e05d7ad5) scale-before-crop code PRs (0 remote branches, 0 PRs, 0 merges as of 2026-11-28T06:05Z); J3969 recheck/ruling branches (0511c938, eafc150e) also remain local-only. Exact NAS v04 SHA-256 verified unchanged (3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac) and remains picture FAIL; draft PRs #811/#814, J3816 hold, and J3872 dependency preserved. Recorded updated dependency hold on J3871 with --recheck J3980 and next check 2026-11-28T10:00:00Z; no media edit, spend, upload, or schedule change.)
 - J3979 done: Verify condition for J3760 (Chief condition review complete: browser access independently verified and J3760 reopened with concrete remaining-shot instructions and all original gates intact. No generation or spend. Evidence committed locally on codex/J3979-review (1df4ae33e0); automatic approval review rejected publishing that evidence branch. No unrelated holds changed.)
 - J3978 done: Verify condition for J3012 (Condition UNMET for J3012: PR1389 (42e9bb1483) and J3961 KEEP remain merged/done, but J3962 (elected-Chief live coordination and relay/board/tick/both-slot proof) is still open and unclaimed, studio remote has no main branch (rehearsal/j3012-20261127 only), and Mini launchd still runs from orbit-with-ben. J3012 kept blocked at 3/4 with --recheck J3978 and next check 2026-11-28T10:20:00Z; all original gates and Ben approvals preserved; no live activation, spend, or YouTube/Buffer change.)
@@ -107,4 +107,3 @@ Recently finished:
 - J3975 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Chief review complete: bounded audit accepted; PR817 merged a81da26ee69cbf25ad66e9b54dc778d04c1ca7ac with green checks. Desk ruling 7233479245 authorizes eleven paid-promotion corrections after fresh package/non-sponsorship and Studio checks. Follow-ups J3976 (Studio corrections and Franklin record refresh) and J3977 (read-only audit coverage), both after this completed review. Root cause remains inference; no complete Studio-finish PASS from Edit controls or API comment existence. J3501 hold/date and other advisories unchanged. No YouTube/Buffer edits or spend.)
 - J3974 done: Verify condition for J3904 (Condition for J3904 not met: J3957 now parked with KEEP recommended (PR #1417, Gemini), but PR #1416 and #1417 are OPEN with no Chief ruling, review or merge at 02:46Z. J3904 kept blocked; wait recorded with recheck J3974, next check 2026-11-28T08:45Z. 18.375 s / 35-word length vs the 22 s floor still flagged for Chief.)
 - J3973 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J3971 cancelled: Copy the three B-29 launch thumbnails to a review branch so Claude can show Ben ()
