@@ -1,5 +1,5 @@
 {
-  "next_id": 3992,
+  "next_id": 3993,
   "jobs": [
     {
       "id": "J0001",
@@ -357695,6 +357695,11 @@
           "at": "2026-11-28T06:06Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T10:00:00Z"
+        },
+        {
+          "at": "2026-11-28T10:02Z",
+          "by": "relay",
+          "what": "condition verification queued: J3992"
         }
       ],
       "remaining_action": "Waiting for J3972 OWB/HOS scale-before-crop code PRs to be published, reviewed and merged before rechecking unchanged v04",
@@ -357718,10 +357723,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J3972 (explicit scale-before-crop support) is still blocked at step 3/4 awaiting designated Claude Code privacy review, push, and separate Chief-review PRs (OWB codex/J3972-scale-before-crop at 4a31f3835a and HOS codex/J3972-scale-before-crop at e05d7ad5 are local-only: 0 remote branches, 0 PRs, 0 merges; J3972 check_at 2026-11-28T06:54:03Z). J3969 recheck/ruling evidence branches (0511c938, eafc150e) also remain local-only awaiting designated Claude Code publication (check_at 2026-11-28T06:39:54Z). Keep exact v04 (SHA-256 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac, unchanged on NAS) picture FAIL until both J3972 code PRs are reviewed and merged, then rerun unchanged v04 with truthful new declaration. Draft PRs #811/#814 remain draft; J3816 held; J3872 dependent.",
-        "check_at": "2026-11-28T10:00:00Z",
+        "check_at": "2026-11-28T11:02:06+00:00",
         "last_recheck": "J3980",
         "checked_at": "2026-11-28T06:06:01+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3992"
       }
     },
     {
@@ -368210,6 +368216,37 @@
         "HOS:009"
       ],
       "done_ref": "history-of-science#823"
+    },
+    {
+      "id": "J3992",
+      "title": "Verify condition for J3871",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3871: J3972 (explicit scale-before-crop support) is still blocked at step 3/4 awaiting designated Claude Code privacy review, push, and separate Chief-review PRs (OWB codex/J3972-scale-before-crop at 4a31f3835a and HOS codex/J3972-scale-before-crop at e05d7ad5 are local-only: 0 remote branches, 0 PRs, 0 merges; J3972 check_at 2026-11-28T06:54:03Z). J3969 recheck/ruling evidence branches (0511c938, eafc150e) also remain local-only awaiting designated Claude Code publication (check_at 2026-11-28T06:39:54Z). Keep exact v04 (SHA-256 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac, unchanged on NAS) picture FAIL until both J3972 code PRs are reviewed and merged, then rerun unchanged v04 with truthful new declaration. Draft PRs #811/#814 remain draft; J3816 held; J3872 dependent.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3871 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T10:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T10:02Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Waiting for J3972 OWB/HOS scale-before-crop code PRs to be published, reviewed and merged before rechecking unchanged v04",
+      "kind": "review",
+      "recheck_of": "J3871",
+      "due": "2026-11-28T11:02:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
