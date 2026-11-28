@@ -1,5 +1,5 @@
 {
-  "next_id": 3988,
+  "next_id": 3989,
   "jobs": [
     {
       "id": "J0001",
@@ -348764,6 +348764,11 @@
           "at": "2026-11-27T18:59Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
+        },
+        {
+          "at": "2026-11-28T09:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3988"
         }
       ],
       "remaining_action": "Listen independently to both Shorts voiceovers, then rule and merge if passed",
@@ -348788,13 +348793,14 @@
       "hold": {
         "type": "capability",
         "condition": "Independent non-producer reviewer with demonstrated audio_input must directly hear both HOS 128 Shorts tight masters (S01_v03_tight including tenfold/joins, S02_v03b_tight). Verified 27 Nov 18:56-18:58Z: codex (elected Chief), claudecode, and cursor (down until 4 Dec) have capabilities available=[]; claude is down until 27 Nov 21:50Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56Z relay probe PASS 1.00 + 18:58Z direct read_file probe) but authored J3671/HOS PR #797 and is barred by the non-producer guard. PR #797 (a855da7475, 6/6 CI green, 0 comments) and all 5 script/NAS hashes remain intact.",
-        "check_at": "2026-11-28T09:00:00Z",
+        "check_at": "2026-11-28T10:01:17+00:00",
         "requires": [
           "audio_input"
         ],
         "last_recheck": "J3942",
         "checked_at": "2026-11-27T18:59:27+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3988"
       },
       "required_capabilities": [
         "audio_input"
@@ -358398,13 +358404,13 @@
       "stage": "",
       "after": "J3769",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T09:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T09:14Z",
-      "result": "Waiting for: Next daily Orbit With Ben comment check window (28 Nov 2026 09:00 London)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T09:14Z",
@@ -358425,26 +358431,17 @@
           "at": "2026-11-27T09:16Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
+        },
+        {
+          "at": "2026-11-28T09:01Z",
+          "by": "relay",
+          "what": "reopened: its start time 2026-11-28T09:00:00Z has come (release-at-time hold)"
         }
       ],
       "remaining_action": "Reply to new viewer comments on Orbit With Ben (daily)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "studio",
-      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-27T09:16Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Next daily Orbit With Ben comment check window (28 Nov 2026 09:00 London)",
-        "check_at": "2026-11-28T09:00:00Z",
-        "release": "auto"
-      }
+      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks"
     },
     {
       "id": "J3882",
@@ -367824,6 +367821,40 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3988",
+      "title": "Verify condition for J3780",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3780: Independent non-producer reviewer with demonstrated audio_input must directly hear both HOS 128 Shorts tight masters (S01_v03_tight including tenfold/joins, S02_v03b_tight). Verified 27 Nov 18:56-18:58Z: codex (elected Chief), claudecode, and cursor (down until 4 Dec) have capabilities available=[]; claude is down until 27 Nov 21:50Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56Z relay probe PASS 1.00 + 18:58Z direct read_file probe) but authored J3671/HOS PR #797 and is barred by the non-producer guard. PR #797 (a855da7475, 6/6 CI green, 0 comments) and all 5 script/NAS hashes remain intact.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3780 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T09:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T09:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Listen independently to both Shorts voiceovers, then rule and merge if passed",
+      "kind": "review",
+      "recheck_of": "J3780",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "due": "2026-11-28T10:01:17+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
