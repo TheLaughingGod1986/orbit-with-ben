@@ -366710,15 +366710,20 @@
           "at": "2026-11-28T04:10Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 3 done: post-session API confirms all 11 videos hasPaidProductPlacement=false (title/desc/tags/privacy/MFK/comments unchanged) and __UtUYdEUwg Public; post-session channel:audit 80 videos, 0 errors"
+        },
+        {
+          "at": "2026-11-28T04:13Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Step 4-5 done: opened HOS PR #819 (all checks PASS, LIVE_VIDEOS.json refreshed, __UtUYdEUwg set live, timestamped receipts recorded) and posted desk report for Chief Codex review"
         }
       ],
-      "remaining_action": "Refresh LIVE_VIDEOS.json, update __UtUYdEUwg open-library status, write receipts and open clean-worktree PR",
+      "remaining_action": "Done — awaiting Chief review/merge of HOS PR #819",
       "kind": "studio",
       "plain": "Correct the paid-promotion labels on eleven older History of Science videos",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-28T04:10Z",
+        "at": "2026-11-28T04:13Z",
         "by": "gemini",
         "plan": [
           "Verify records & lint:package",
@@ -366727,7 +366732,7 @@
           "Update records & open PR",
           "Post desk report"
         ],
-        "note": "Step 3 done: post-session API confirms all 11 videos hasPaidProductPlacement=false (title/desc/tags/privacy/MFK/comments"
+        "note": "Step 4-5 done: opened HOS PR #819 (all checks PASS, LIVE_VIDEOS.json refreshed, __UtUYdEUwg set live, timestamped receip"
       },
       "taskKeys": [
         "HOS:002",
