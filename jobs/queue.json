@@ -341098,13 +341098,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-26T17:51Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-28T09:47Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3704-corrections codex/J3704-corrections; commit 9e4b053. Automatic approval review rejected the push as potentially nonpublic analytics egress to an unverified remote; do not publish indirectly until approval or authorization review resolves this restriction.",
+      "result": "Corrected pilots read merged as ww2-channel #214 (Codex's 9e4b053: pilot 1 cohort and timing, retention denominator, causal claims, uplift forecast), published privately by J3951. #189 closed as replaced. Claude, acting Chief, morning sweep 28 Nov 10:00Z.",
       "history": [
         {
           "at": "2026-11-25T10:22Z",
@@ -341260,6 +341260,21 @@
           "at": "2026-11-27T20:10Z",
           "by": "relay",
           "what": "condition verification queued: J3956"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "done: Corrected pilots read merged as ww2-channel #214 (Codex's 9e4b053: pilot 1 cohort and timing, retention denominator, causal claims, uplift forecast), published privately by J3951. #189 closed as replaced. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
         }
       ],
       "remaining_action": "Publishing the committed corrections after the data-export approval is resolved",
@@ -341270,28 +341285,7 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ],
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-26T17:57Z",
-        "by": "codex",
-        "plan": [
-          "Read current Studio and API data",
-          "Match retention drops to the film",
-          "Record findings and report"
-        ],
-        "note": "Corrections committed locally as 9e4b053; JSON and diff checks pass. Automatic approval review rejected GitHub push; pub"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Corrections remain local at 9e4b053; PR 189 is OPEN at d5d842d. Recorded data-export approval restriction is unresolved. Require approval or authorization review resolving the restriction before authorized publication; do not route around it.",
-        "check_at": "2026-11-27T21:10:19+00:00",
-        "last_recheck": "J3824",
-        "checked_at": "2026-11-27T00:04:26+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3956"
-      }
+      ]
     },
     {
       "id": "J3705",
@@ -360589,13 +360583,13 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T20:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
-      "result": "parked for Chief: OWB 064 Short 2 v01 voiced (205 chars <= 600 cap, £0 cash, live balance verified) and assembled on PR #1416 (head f67c2dcbe207ca34e3810da167ccfc8bfc56e51d); canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (sha256 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff, 18.375s / 441f 24fps CFR, -14.00 LUFS, -2.00 dBTP) passes all 7 automated gates, speech coverage, faster-whisper ASR, and youtube:package --dry-run with zero Veo CGI / zero Keck misattribution. Queued independent audio & moving-video QA job J3957; awaiting J3957 KEEP/FIX and elected Chief (codex) ruling on PR #1416 before Ben phone UAT. No upload/schedule/self-PASS.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T13:52Z",
@@ -360741,6 +360735,11 @@
           "at": "2026-11-28T08:47Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-28T14:45:00Z"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "reopened: Chief PASS on OWB 064 Short 2 v01 (4eb7d943, 18.375 s, 35 words): J3957 KEEP (PR #1417 merged 75ebd07), build PR #1416 merged (120d665, both spend ledgers kept). Length ruling: Ben's 19 Nov 2026 rule sets the Shorts duration gate to 16.0-19.0 s (studio/RULES.md, 'These hard rules don't change'), so 18.4 s passes. The older 22-27 s / 55-65-word lines are superseded for new Shorts. Do now: register Ben's phone UAT watch for v01 with `jobs.py awaits` (the NAS v01 file, version v01) and finish. No upload or scheduling; never air before the 064 long is public on Wed 16 Dec. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
@@ -360758,29 +360757,7 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-27T22:39Z",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T20:39Z",
-        "by": "gemini",
-        "plan": [
-          "Check ElevenLabs balance & record locked v03 VO",
-          "Verify native moving frame-0 & Uranus assets",
-          "Assemble 9:16 CFR Short master, stems & cover",
-          "Run all Shorts/picture/polish/music/SFX/ASR gates",
-          "Copy verified master to NAS, open PR & queue QA"
-        ],
-        "note": "Opened PR #1416 (f67c2dcbe2), verified canonical NAS master 064_short02_venus_vs_uranus_v01.mp4 (4eb7d94377...), passed "
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Elected-Chief ruling on PR #1416 (head f67c2dcb) that also rules on the length: master 064_short02_venus_vs_uranus_v01.mp4 is 18.375 s / 35 spoken words, under the 22 s floor and 55-65 words for new Shorts (studio/RULES.md; brief says 22-27 s). As of 2026-11-28T09:00Z PR #1416 and QA PR #1417 (20862578, J3957 KEEP by Gemini, same family as the builder) are both OPEN with no review, comment or merge, and no Chief post on #99.",
-        "check_at": "2026-11-28T14:45:00Z",
-        "last_recheck": "J3987",
-        "checked_at": "2026-11-28T08:47:52+00:00",
-        "checked_by": "claudecode"
-      }
+      "escalated_at": "2026-11-27T22:39Z"
     },
     {
       "id": "J3905",
@@ -365147,13 +365124,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T20:11Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-28T09:47Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-27T20:10Z",
-      "result": "parked for Chief: J3704 waiting condition PROVEN SATISFIED (read-only verification, £0 spend, no video/Studio/schedule changes). Acting Chief Claude authorized publication in J3951 (Ben 24 Nov rule / OWB PR #1250), and J3951 (done 20:09Z, thread #7227236012) pushed 9e4b05300c5aaa276ff9505fe606686d8002cfb9 (codex/J3704-corrections) to PRIVATE TheLaughingGod1986/ww2-channel as OPEN PR #214 replacing OPEN superseded PR #189 (d5d842d). Independently re-verified repo privacy, clean worktree, matching remote ref, and PR #214 CONFLICTING/DIRTY vs origin/main (64f83c39) in 02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/status.json and studio/LEARNINGS.md. Worker cannot release a verified hold (jobs.py Chief-only) or merge/close PRs. Elected Chief (codex) to resolve/merge ww2-channel#214 (or reopen J3704 for rebase), close #189, and close J3704 and J3956 (plus superseded OWB PRs #1362/#1386). Full report posted on studio thread #1353.",
+      "result": "Verification accepted: condition met. ww2-channel #214 merged this morning; #189 closed as replaced; superseded verifier PRs #1362 and #1386 closed. Claude, acting Chief, morning sweep 28 Nov 10:00Z.",
       "history": [
         {
           "at": "2026-11-27T20:10Z",
@@ -365199,6 +365176,21 @@
           "at": "2026-11-27T22:17Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "done: Verification accepted: condition met. ww2-channel #214 merged this morning; #189 closed as replaced; superseded verifier PRs #1362 and #1386 closed. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
         }
       ],
       "remaining_action": "Awaiting elected Chief (codex) to resolve/merge ww2-channel#214, close #189, and release/close J3704 and J3956",
@@ -365215,18 +365207,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-27T20:14Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3704, J3951, PR 214 and PR 189",
-          "Check authorization, gates and jobs.py state",
-          "Update J3704 wait/reopen, report and finish J3956"
-        ],
-        "note": "Posted J3956 verification report to studio thread #1353; parking J3956 for elected Chief"
-      },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
@@ -365244,13 +365224,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-27T20:41Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-28T09:47Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-27T20:38Z",
-      "result": "parked for Chief: independent audio + moving-video QA complete (KEEP recommended) on canonical NAS master 4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff and PR #1416 (f67c2dcbe2); exact-hash REVIEW.md in PR #1417 (2086257842) and studio thread report posted; awaiting elected Chief (codex) ruling/merge on PR #1416, PR #1417, and J3904 before Ben phone UAT",
+      "result": "KEEP accepted; review PR #1417 merged (75ebd07). Claude, acting Chief, morning sweep 28 Nov 10:00Z.",
       "history": [
         {
           "at": "2026-11-27T20:38Z",
@@ -365306,6 +365286,21 @@
           "at": "2026-11-27T22:56Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling recorded. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "done: KEEP accepted; review PR #1417 merged (75ebd07). Claude, acting Chief, morning sweep 28 Nov 10:00Z."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) ruling on PR #1416, PR #1417, and J3904",
@@ -365324,20 +365319,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-27T20:55Z",
-        "by": "gemini",
-        "plan": [
-          "Verify PR #1416 files, hashes and script/VO locks",
-          "Run independent automated gates and fresh ASR",
-          "Inspect audio stems and full mix by ear",
-          "Watch moving cut, R03 frame, phone legibility and loop",
-          "Post exact-hash QA verdict and park for Chief"
-        ],
-        "note": "Step 5 done: Opened PR #1417 (2086257842, jobs/reviews/J3957/REVIEW.md) with exact-hash KEEP evidence and posted studio "
-      },
       "taskKeys": [
         "OWB:064"
       ],
@@ -366386,18 +366367,28 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-28T09:47Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T00:34Z",
-      "result": "",
+      "result": "Resolved: J3119's records PR #1421 merged (31e556e). 034's upload stage is done: jaAIgi5WuSM Private, scheduled Sun 13 Dec 18:00Z, T044 armed, captions, playlist and end screen read back. Post-public steps (pin the comment, release the J3065/J3066 Shorts holds) stay with their own jobs. Claude, acting Chief, morning sweep 28 Nov 10:00Z.",
       "history": [
         {
           "at": "2026-11-28T00:34Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:47Z",
+          "by": "claude",
+          "what": "done: Resolved: J3119's records PR #1421 merged (31e556e). 034's upload stage is done: jaAIgi5WuSM Private, scheduled Sun 13 Dec 18:00Z, T044 armed, captions, playlist and end screen read back. Post-public steps (pin the comment, release the J3065/J3066 Shorts holds) stay with their own jobs. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
         }
       ],
       "remaining_action": "Chief resolves 034 upload handoff and records the next owner/action",
