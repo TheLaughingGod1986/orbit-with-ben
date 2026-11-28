@@ -366961,9 +366961,14 @@
           "at": "2026-11-28T06:04Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Flow tab 998B0717 was a frozen background tab: activating it via /json/activate made Runtime.evaluate answer in 2 ms; Playwright attach then also needed the frozen detailed.com tab woken. Runner's read_live_balance guard PASS (account sha + ULTRA), balance 22,600 cr."
+        },
+        {
+          "at": "2026-11-28T06:05Z",
+          "by": "claudecode",
+          "what": "step 3 of 3 done: Condition met; worker reopen refused, parked for Chief with exact command"
         }
       ],
-      "remaining_action": "Reopen J3760 with evidence and finish this check",
+      "remaining_action": "Chief: reopen J3760 (condition met)",
       "kind": "review",
       "recheck_of": "J3760",
       "due": "2026-11-28T07:00:35+00:00",
@@ -366977,16 +366982,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-28T06:04Z",
+        "at": "2026-11-28T06:05Z",
         "by": "claudecode",
         "plan": [
           "Read J3760 history",
           "Probe Flow tab on CDP 9222",
           "Record result on J3760"
         ],
-        "note": "Flow tab 998B0717 was a frozen background tab: activating it via /json/activate made Runtime.evaluate answer in 2 ms; Pl"
+        "note": "Condition met; worker reopen refused, parked for Chief with exact command"
       },
       "taskKeys": [
         "HOS:013"
