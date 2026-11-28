@@ -30,9 +30,16 @@ Never deletes anything on the NAS, and never writes into a verified copy (one wi
 when the share is not mounted (writing into an unmounted /Volumes/data would land on the Mini disk). Dry run unless
 --apply.
 
+The Mini's working SSD is swept the same way (Ben, 16 Nov 2026: scratch moved to /Volumes/MiniWork on 9 Nov and
+nothing cleared it; 140 GiB in 2,652 folders a week later). --root names the scratch folder to sweep and free space
+is then measured on that folder's own volume. --worktrees first removes finished git worktrees from it, which need
+no NAS copy: registered, untouched for --min-age-h, nothing uncommitted, nothing git ignores except tool caches (so
+no render or media file goes with it), and HEAD on a remote branch. Plain `git worktree remove`, never --force.
+
   python3 scripts/nas_offload.py                 # what it would move
   python3 scripts/nas_offload.py --apply         # move it
   python3 scripts/nas_offload.py --apply --json  # the relay's call
+  python3 scripts/nas_offload.py --root /Volumes/MiniWork/scratch --worktrees --target-gb 100 --min-age-h 48
 """
 from __future__ import annotations
 
@@ -65,6 +72,10 @@ RSYNC_TRIES = 3
 # System and tool folders in /private/tmp that are never render scratch.
 SKIP_PREFIXES = ("com.apple", "launchd", "tmux", "powerlog", "ollama", "pip-", "npm-", "node-compile", "claude",
                  "codex", "gemini", "cursor", "playwright", "pytest", "_MEI", ".", "boost_interprocess")
+# Ignored files a finished worktree may hold and lose: tool caches only, never a render (--worktrees).
+WORKTREE_CACHE = re.compile(r"(^|/)(node_modules|__pycache__|\.pytest_cache|\.ruff_cache|\.mypy_cache|\.next|\.turbo)/?$"
+                            r"|(^|/)\.DS_Store$|\.pyc$")
+GIT_S = 120
 # Scheduled-Short export paths that a 'superseded' sweep must never offload before the Short airs (J1320).
 SCHEDULED_SHORT_KEEP_PATHS = (
     "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
@@ -179,6 +190,67 @@ def candidates(root: pathlib.Path, min_age_h: float, min_mb: int, now: float) ->
         rows.append({"path": str(c), "mb": size // (1024 * 1024), "age_h": round(age_h, 1)})
     # Oldest first: it is the closest to macOS's purge and the least likely to be wanted again.
     return sorted(rows, key=lambda r: -r["age_h"])
+
+
+def _git(where: pathlib.Path, *args: str, timeout: int = GIT_S):
+    # GIT_OPTIONAL_LOCKS=0: a status check must not rewrite the index of a worktree it is only looking at.
+    try:
+        return subprocess.run(["git", "-C", str(where), *args], capture_output=True, text=True, timeout=timeout,
+                              env=dict(os.environ, GIT_OPTIONAL_LOCKS="0"))
+    except (subprocess.TimeoutExpired, OSError):
+        return None
+
+
+def finished_worktree(c: pathlib.Path) -> tuple[pathlib.Path | None, str]:
+    """(its main checkout, "") when this git worktree holds nothing that is not on the remote; else (None, why)."""
+    common = _git(c, "rev-parse", "--git-common-dir")
+    if not common or common.returncode or not common.stdout.strip():
+        return None, "not a working git worktree"
+    main = (c / common.stdout.strip()).resolve().parent
+    st = _git(c, "status", "--porcelain", "--ignored")
+    if not st or st.returncode:
+        return None, "git status failed"
+    lines = [ln for ln in st.stdout.splitlines() if ln.strip()]
+    if any(not ln.startswith("!!") for ln in lines):
+        return None, "uncommitted changes"
+    if any(not WORKTREE_CACHE.search(ln[3:].strip('"')) for ln in lines):
+        return None, "files git ignores (may be renders)"
+    pushed = _git(c, "branch", "-r", "--contains", "HEAD")
+    if not pushed or pushed.returncode or not pushed.stdout.strip():
+        return None, "HEAD is on no remote branch"
+    return main, ""
+
+
+def drop_finished_worktrees(root: pathlib.Path, min_age_h: float, now: float, apply: bool) -> dict:
+    """Remove (or, in a dry run, count) finished git worktrees directly under `root`. A worktree has a .git FILE; a
+    full clone (a .git folder) is left to the NAS copy. Never --force: git itself refuses a worktree with changes."""
+    out = {"removed": [], "would": [], "kept": 0}
+    if not root.is_dir():
+        return out
+    uid = os.getuid()
+    for c in sorted(root.iterdir()):
+        try:
+            if c.is_symlink() or not c.is_dir() or c.stat().st_uid != uid or not (c / ".git").is_file():
+                continue
+        except OSError:
+            continue
+        size, newest = scan(c)
+        if (now - newest) / 3600 < min_age_h:
+            continue
+        main, why = finished_worktree(c)
+        row = {"path": str(c), "mb": size // (1024 * 1024)}
+        if not main:
+            out["kept"] += 1
+            continue
+        if not apply:
+            out["would"].append(row)
+            continue
+        r = _git(main, "worktree", "remove", str(c), timeout=600)
+        if r and not r.returncode and not c.exists():
+            out["removed"].append(row)
+        else:
+            out["kept"] += 1
+    return out
 
 
 def sha256(p: pathlib.Path) -> str:
@@ -304,12 +376,19 @@ def in_window(t: dt.datetime) -> bool:
 def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: float = 24, min_mb: int = 200,
             root: pathlib.Path = SCRATCH_ROOT, nas: pathlib.Path = NAS_MOUNT, check_mount: bool = True,
             free=free_mb, clock=dt.datetime.now, lock: pathlib.Path = LOCK,
-            stage: pathlib.Path | None = STAGE_MOUNT) -> dict:
+            stage: pathlib.Path | None = STAGE_MOUNT, worktrees: bool = False) -> dict:
     now = dt.datetime.now(dt.timezone.utc)
-    rep = {"before_mb": free(), "target_mb": int(target_gb * 1024), "moved": [], "kept": [], "would": [], "nas": "ok"}
+    rep = {"before_mb": free(), "target_mb": int(target_gb * 1024), "moved": [], "kept": [], "would": [], "nas": "ok",
+           "root": str(root)}
     rep["after_mb"] = rep["before_mb"]
     if rep["before_mb"] >= rep["target_mb"]:
         return rep
+    if worktrees:
+        # Before anything goes to the NAS, and at any hour (it never touches the NAS): finished worktrees just go.
+        rep["worktrees"] = drop_finished_worktrees(root, min_age_h, now.timestamp(), apply)
+        rep["after_mb"] = free()
+        if rep["after_mb"] >= rep["target_mb"]:
+            return rep
     day_ok = lambda: in_window(clock()) or free() < DAY_MIN_GB * 1024  # noqa: E731
     if not day_ok():
         # Not even the NAS check (it writes a probe file): any touch spins the NAS drives up.
@@ -375,11 +454,26 @@ def _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free
     return rep
 
 
+def _worktrees_said(rep: dict) -> str:
+    wt = rep.get("worktrees") or {}
+    if wt.get("removed"):
+        return f" Removed {len(wt['removed'])} finished worktree(s), {sum(r['mb'] for r in wt['removed']):,} MB."
+    if wt.get("would"):
+        return f" Would remove {len(wt['would'])} finished worktree(s), {sum(r['mb'] for r in wt['would']):,} MB."
+    return ""
+
+
 def summary(rep: dict) -> str:
+    return _summary(rep) + _worktrees_said(rep)
+
+
+def _summary(rep: dict) -> str:
     if rep["nas"] != "ok":
         return f"NAS offload skipped: {rep['nas']} ({rep['before_mb']:,} MB free)."
     if rep["before_mb"] >= rep["target_mb"]:
         return f"{rep['before_mb']:,} MB free: no offload needed."
+    if (rep.get("worktrees") or {}).get("removed") and rep["after_mb"] >= rep["target_mb"] and not rep["moved"]:
+        return f"NAS offload not needed after the worktrees went. {rep['before_mb']:,} -> {rep['after_mb']:,} MB free."
     if rep.get("wait"):
         would = (f" Would move {len(rep['would'])} folder(s), {sum(r['mb'] for r in rep['would']):,} MB."
                  if rep["would"] else "")
@@ -395,7 +489,7 @@ def summary(rep: dict) -> str:
         parts.append(f"kept {len(rep['kept'])} on the Mini: " + "; ".join(f"{pathlib.Path(r['path']).name} ({r['why']})"
                                                                          for r in rep["kept"][:3]))
     if not parts:
-        parts.append("nothing in /private/tmp old enough to move")
+        parts.append(f"nothing in {rep.get('root') or SCRATCH_ROOT} old enough to move")
     return f"NAS offload: {'; '.join(parts)}. {rep['before_mb']:,} -> {rep['after_mb']:,} MB free."
 
 
@@ -405,9 +499,22 @@ def main(argv=None) -> int:
     ap.add_argument("--target-gb", type=float, default=20, help="stop once this much is free (default 20)")
     ap.add_argument("--max-gb", type=float, default=60, help="move at most this much per run (default 60)")
     ap.add_argument("--min-age-h", type=float, default=24, help="only folders untouched this long (default 24)")
+    ap.add_argument("--min-mb", type=int, default=200, help="only folders at least this big (default 200)")
+    ap.add_argument("--root", type=pathlib.Path, default=SCRATCH_ROOT,
+                    help="scratch folder to sweep (default /private/tmp); free space is measured on its volume")
+    ap.add_argument("--worktrees", action="store_true", help="first remove finished git worktrees from --root")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
-    rep = offload(a.apply, a.target_gb, a.max_gb, a.min_age_h)
+    if a.root != SCRATCH_ROOT:
+        # Never sweep a folder that is not there or sits on the Mini's own disk under another name (an unplugged SSD).
+        if not a.root.is_dir() or os.stat(a.root).st_dev == os.stat(HOME).st_dev:
+            print(json.dumps({"error": f"{a.root} is not a folder on its own volume"}) if a.json
+                  else f"{a.root} is not a folder on its own volume: nothing done.")
+            return 2
+        rep = offload(a.apply, a.target_gb, a.max_gb, a.min_age_h, a.min_mb, root=a.root,
+                      free=lambda: free_mb(a.root), worktrees=a.worktrees)
+    else:
+        rep = offload(a.apply, a.target_gb, a.max_gb, a.min_age_h, a.min_mb, worktrees=a.worktrees)
     print(json.dumps(rep, indent=1) if a.json else summary(rep))
     return 1 if rep["kept"] else 0
 
