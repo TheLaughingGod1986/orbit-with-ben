@@ -367455,13 +367455,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T07:03Z",
-      "eta": "2026-11-28T07:48Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-28T07:01Z",
-      "result": "",
+      "result": "19 OWB + 8 HOS longs and 133 Shorts (96 OWB + 37 HOS, 0 errors, 0 omitted) read from Studio (OWB CDP 9224, HOS CDP 9460; note 9223 currently holds WW2 UCu94mInMFosxu3W0H6jlI6Q), commit 75483cebf3; CTR hits vs 4%: OWB 4/19 (h8HGfyShEHI 5.3%/95, -jmMROGoZCM 4.9%/61, Js6EQJ8qDi8 4.4%/252, c5AdqQsnnys 4.3%/47), HOS 4/8 (wwcjcFfC-5M 15.8%/19, _C92tIJCk8A 6.7%/45, ETynHpIYLeY 6.2%/64, VbPubYd6Fbs 5.4%/92); studio_reach.py morning ran (28 Nov no-op); analytics-report.ts + board_publish.py complete.",
       "history": [
         {
           "at": "2026-11-28T07:01Z",
@@ -367497,6 +367497,11 @@
           "at": "2026-11-28T07:15Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed 75483cebf3 to main, ran studio_reach.py morning (non-1st no-op), rebuilt analytics reports and published board/tracker."
+        },
+        {
+          "at": "2026-11-28T07:16Z",
+          "by": "gemini",
+          "what": "done: 19 OWB + 8 HOS longs and 133 Shorts (96 OWB + 37 HOS, 0 errors, 0 omitted) read from Studio (OWB CDP 9224, HOS CDP 9460; note 9223 currently holds WW2 UCu94mInMFosxu3W0H6jlI6Q), commit 75483cebf3; CTR hits vs 4%: OWB 4/19 (h8HGfyShEHI 5.3%/95, -jmMROGoZCM 4.9%/61, Js6EQJ8qDi8 4.4%/252, c5AdqQsnnys 4.3%/47), HOS 4/8 (wwcjcFfC-5M 15.8%/19, _C92tIJCk8A 6.7%/45, ETynHpIYLeY 6.2%/64, VbPubYd6Fbs 5.4%/92); studio_reach.py morning ran (28 Nov no-op); analytics-report.ts + board_publish.py complete."
         }
       ],
       "remaining_action": "All steps complete; closing J3984",
