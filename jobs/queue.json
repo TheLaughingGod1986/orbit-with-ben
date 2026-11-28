@@ -365943,9 +365943,14 @@
           "at": "2026-11-28T00:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:59Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3967 (recheck of J3756 for HOS 013); starting direct capability probe and fresh state verification."
         }
       ],
-      "remaining_action": "Verify readiness: Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
+      "remaining_action": "Probe actual session media capabilities and verify J3756 waiting condition",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -365963,12 +365968,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T00:58Z",
+        "of": 4,
+        "at": "2026-11-28T00:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Probe session media capabilities",
+          "Check J3756, J3178, desk, thread, PRs and NAS hashes",
+          "Update J3756 wait state and close J3967",
+          "Post verification report on studio thread"
+        ],
+        "note": "Claimed J3967 (recheck of J3756 for HOS 013); starting direct capability probe and fresh state verification."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3968",
