@@ -134,9 +134,10 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
+| [Why Was Franklin's Kite Experiment So Dangerous?](https://youtu.be/__UtUYdEUwg) | 20 h (early) | 3 | 0.0% | too few to judge | - | no read |
 | [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 5 d | 551 | 27.0% | MISS | 64.0% | WATCH |
-| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 6 d | 93 | 55.4% | too few to judge | 85.0% | too few to judge |
-| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 7 d | 32 | 38.5% | too few to judge | - | no read |
+| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 6 d | 96 | 56.9% | too few to judge | 85.0% | too few to judge |
+| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 7 d | 33 | 38.5% | too few to judge | - | no read |
 | [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 9 d | 5 | 100.0% | too few to judge | - | no read |
 | [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 10 d | 4 | 100.0% | too few to judge | - | no read |
 | [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 11 d | 266 | 55.8% | WATCH | 63.0% | WATCH |
