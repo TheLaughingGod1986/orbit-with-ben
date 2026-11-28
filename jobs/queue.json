@@ -1,5 +1,5 @@
 {
-  "next_id": 3967,
+  "next_id": 3969,
   "jobs": [
     {
       "id": "J0001",
@@ -346217,6 +346217,11 @@
           "at": "2026-11-27T14:07Z",
           "by": "relay",
           "what": "condition verification queued: J3906"
+        },
+        {
+          "at": "2026-11-28T00:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J3967"
         }
       ],
       "remaining_action": "Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
@@ -346245,14 +346250,14 @@
       "hold": {
         "type": "capability",
         "condition": "J3789 acting-Chief ruling (OWB PR #1343 merged, commit 8264b0f3bf, jobs/reviews/J3789/REVIEW.md): condition unmet. Direct read_file probe on NAS take-2 clip P01_03a_unlabelled_birds_t2.mp4 (7.917s, 24 fps, used 0.00-4.00s) in agy 1.5.18 on Gemini 4 Neon (High) still returns only 8 discrete 1-fps integer-second static frames (00:00..00:07), not continuous 24-fps moving-video playback required by HOS Playbook s5 / desk #7019983519 / J3178 / J3756 (audio_input and image_input demonstrated; relay 11:46:51Z 2-second colour-block probe false-positives from 1-fps stills). Codex (usage limit Nov 27), Claude Code (Fable limit Dec 2), and Cursor (11:55:32Z probe) all have available=[]; Claude returns 2026-11-26T12:50:00Z (cloud-only); Grok Bot UP last in chain with no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 hashes match History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json (keep=false / PENDING_REVIEW); zero new continuous-playback evidence or Claude/Ben playback-lane resolution on HOS #694, OWB #954, or open PRs. Keep J3756 held pending continuous 24-fps moving_video_input review of take-2 rows 3, 10, 24, 28, 47, 54 alongside J3178 (rows 56-62, 64-66); no playback PASS claimed, no minting or assembly authorised.",
-        "check_at": "2026-11-27T15:07:27+00:00",
+        "check_at": "2026-11-28T01:11:14+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J3789",
         "checked_at": "2026-11-26T12:09:01+00:00",
         "checked_by": "gemini",
-        "recheck_task": "J3906"
+        "recheck_task": "J3967"
       }
     },
     {
@@ -348835,6 +348840,11 @@
           "at": "2026-11-27T14:07Z",
           "by": "relay",
           "what": "condition verification queued: J3907"
+        },
+        {
+          "at": "2026-11-28T00:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J3968"
         }
       ],
       "remaining_action": "Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
@@ -348869,11 +348879,11 @@
       "hold": {
         "type": "capability",
         "condition": "Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly.",
-        "check_at": "2026-11-27T15:07:27+00:00",
+        "check_at": "2026-11-28T01:11:14+00:00",
         "requires": [
           "audio_input"
         ],
-        "recheck_task": "J3907"
+        "recheck_task": "J3968"
       },
       "required_capabilities": [
         "audio_input"
@@ -365721,6 +365731,74 @@
       "remaining_action": "Delegated-Chief claim for mini Chief jobs when the elected Chief can't run on the Mini; tests; PR",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J3967",
+      "title": "Verify condition for J3756",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3756: J3789 acting-Chief ruling (OWB PR #1343 merged, commit 8264b0f3bf, jobs/reviews/J3789/REVIEW.md): condition unmet. Direct read_file probe on NAS take-2 clip P01_03a_unlabelled_birds_t2.mp4 (7.917s, 24 fps, used 0.00-4.00s) in agy 1.5.18 on Gemini 4 Neon (High) still returns only 8 discrete 1-fps integer-second static frames (00:00..00:07), not continuous 24-fps moving-video playback required by HOS Playbook s5 / desk #7019983519 / J3178 / J3756 (audio_input and image_input demonstrated; relay 11:46:51Z 2-second colour-block probe false-positives from 1-fps stills). Codex (usage limit Nov 27), Claude Code (Fable limit Dec 2), and Cursor (11:55:32Z probe) all have available=[]; Claude returns 2026-11-26T12:50:00Z (cloud-only); Grok Bot UP last in chain with no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 hashes match History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json (keep=false / PENDING_REVIEW); zero new continuous-playback evidence or Claude/Ben playback-lane resolution on HOS #694, OWB #954, or open PRs. Keep J3756 held pending continuous 24-fps moving_video_input review of take-2 rows 3, 10, 24, 28, 47, 54 alongside J3178 (rows 56-62, 64-66); no playback PASS claimed, no minting or assembly authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3756 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T00:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T00:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
+      "kind": "review",
+      "recheck_of": "J3756",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-28T01:11:14+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3968",
+      "title": "Verify condition for J3781",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3781: Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3781 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T00:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T00:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
+      "kind": "review",
+      "recheck_of": "J3781",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "due": "2026-11-28T01:11:14+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
