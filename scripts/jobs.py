@@ -825,10 +825,11 @@ def can_any_mini_claim(data, job, at, memo: dict | None = None):
 
     role = workflow.role_job(job)
     chain = chief_relay.job_chain(job) if role else None
-    chief = once(("chief", chain), lambda: chief_relay.acting(at, chain)[1]) if role else ""
-    # J3966: a cloud Chief's Mini role job is claimable by its delegated Chief on the Mini.
-    delegate = once(("delegate", chain, job.get("needs")), lambda: next(
-        (a for a in routing.MINI_WORKERS if chief_relay.delegated_from(a, at, job)), "")) if role else ""
+    acted = once(("chief", chain), lambda: chief_relay.acting(at, chain)) if role else None
+    chief = acted[1] if role else ""
+    # J3966: a cloud Chief's Mini role job is claimable by its delegated Chief on the Mini (same acting() result).
+    delegate = once(("delegate", chain, job.get("needs")),
+                    lambda: chief_relay.delegate_for(at, job, acted)[0]) if role else ""
     actors = [chief, delegate] if role else [job["for"]] if job.get("for") else routing.MINI_WORKERS
     execution = once("execution", lambda: chief_relay.current_execution(at))
     capabilities = once("capabilities", chief_relay.worker_capabilities)
