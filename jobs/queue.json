@@ -366172,20 +366172,32 @@
           "at": "2026-11-28T00:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:41Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Implement and test the explicit framing contract, then submit both shared-code changes for review",
+      "remaining_action": "Checking the terminal-return validator and existing tests",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the loop check verify the Newton apple Short’s actual framing",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T00:40Z",
+        "of": 4,
+        "at": "2026-11-28T00:41Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect contract and regressions",
+          "Implement explicit framing recipe",
+          "Run gates and sync shared code",
+          "Commit and submit for review"
+        ]
+      },
+      "taskKeys": [
+        "HOS:003"
+      ]
     }
   ],
   "focus": [
