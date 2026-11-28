@@ -1,0 +1,226 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01.mp4",
+  "edge_floor": 0.022,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "R03",
+      "cut": 2,
+      "t": 6.19,
+      "source": "svs20390_Shot8_4k.mp4",
+      "why": [
+        "low detail: edge density 0.0211 < film p5 0.0220"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "svs14095_14095_ParkerVenus_YouTube_NoText_NoMusic.mp4",
+      "t": 0.88,
+      "std": 49.75,
+      "mean": 110.83,
+      "p95": 207.0,
+      "edge": 0.0488,
+      "hf": 15.3,
+      "lf": 41.45,
+      "std8": 43.5,
+      "edge8": 0.1345,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "R02",
+      "source": "AIA171VenusTransit_HD1080.mp4",
+      "t": 2.98,
+      "std": 42.44,
+      "mean": 91.44,
+      "p95": 166.0,
+      "edge": 0.0625,
+      "hf": 12.47,
+      "lf": 36.09,
+      "std8": 38.15,
+      "edge8": 0.3669,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "R03",
+      "source": "svs20390_Shot8_4k.mp4",
+      "t": 6.19,
+      "std": 38.75,
+      "mean": 109.96,
+      "p95": 157.0,
+      "edge": 0.0211,
+      "hf": 7.69,
+      "lf": 37.12,
+      "std8": 37.26,
+      "edge8": 0.0443,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0211 < film p5 0.0220"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "R04",
+      "source": "weic2332a_hires.jpg",
+      "t": 9.31,
+      "std": 73.5,
+      "mean": 119.12,
+      "p95": 246.0,
+      "edge": 0.0429,
+      "hf": 17.05,
+      "lf": 67.25,
+      "std8": 68.96,
+      "edge8": 0.3075,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.176,
+        "reversals": 0,
+        "frames": 34,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "R05",
+      "source": "PIA01488.jpg",
+      "t": 11.25,
+      "std": 70.56,
+      "mean": 97.94,
+      "p95": 230.0,
+      "edge": 0.1507,
+      "hf": 18.7,
+      "lf": 64.38,
+      "std8": 65.89,
+      "edge8": 0.19,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.002,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 17,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "R06",
+      "source": "svs14095_WISPR_Magellan_3rdFlyby.mp4",
+      "t": 13.46,
+      "std": 66.01,
+      "mean": 125.88,
+      "p95": 243.0,
+      "edge": 0.0656,
+      "hf": 16.97,
+      "lf": 59.17,
+      "std8": 61.0,
+      "edge8": 0.1884,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "R07",
+      "source": "PIA00215.jpg",
+      "t": 16.19,
+      "std": 51.24,
+      "mean": 104.34,
+      "p95": 209.0,
+      "edge": 0.8014,
+      "hf": 33.4,
+      "lf": 31.22,
+      "std8": 33.93,
+      "edge8": 0.3448,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 42,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "R08_loop",
+      "source": "frame0_return_064_short02_venus_vs_uranus_v01.mp4",
+      "t": 17.94,
+      "std": 43.34,
+      "mean": 81.14,
+      "p95": 165.0,
+      "edge": 0.0238,
+      "hf": 7.02,
+      "lf": 42.31,
+      "std8": 42.55,
+      "edge8": 0.0288,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
