@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3970 | mini | open | – | – | chief · Chief: resolve 034 upload orphan-review |  |
 | J3972 | mini | blocked | codex | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
 | J3979 | mini | claimed | claudecode | 2026-11-28T08:01Z | review · Verify condition for J3760 |  |
-| J3980 | mini | open | – | – | review · Verify condition for J3871 |  |
+| J3980 | mini | claimed | gemini | 2026-11-28T08:02Z | review · Verify condition for J3871 |  |
 
 Recently finished:
 
