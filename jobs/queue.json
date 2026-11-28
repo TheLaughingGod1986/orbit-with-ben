@@ -366062,9 +366062,14 @@
           "at": "2026-11-28T01:06Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified live relay (Chief Codex, claude down until 07:50Z, grok down, cursor down until 4 Dec), capabilities (codex & claudecode available=[] on 00:54Z/00:55Z probes; gemini has audio_input but authored J3679), PR #799 MERGED, PR #798 OPEN/CLEAN 6/6 CI, 10/10 NAS + script SHA-256 match, Codex scratch ea0c93d8 intact"
+        },
+        {
+          "at": "2026-11-28T01:06Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded typed capability wait on J3781 (--type capability --requires audio_input --recheck J3968 --check-at 2026-11-28T09:00:00Z)"
         }
       ],
-      "remaining_action": "Record typed capability wait on J3781 (--recheck J3968), post desk/thread reports, and close J3968",
+      "remaining_action": "Post HOS desk #694 and OWB studio thread reports, then close J3968 as done",
       "kind": "review",
       "recheck_of": "J3781",
       "required_capabilities": [
@@ -366081,7 +366086,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-28T01:06Z",
         "by": "gemini",
@@ -366090,7 +366095,7 @@
           "Verify non-producer audio_input condition & update J3781 wait",
           "Post HOS desk & studio thread reports and close J3968"
         ],
-        "note": "Verified live relay (Chief Codex, claude down until 07:50Z, grok down, cursor down until 4 Dec), capabilities (codex & c"
+        "note": "Recorded typed capability wait on J3781 (--type capability --requires audio_input --recheck J3968 --check-at 2026-11-28T"
       },
       "taskKeys": [
         "HOS:136"
