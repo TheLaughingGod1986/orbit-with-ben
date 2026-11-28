@@ -366202,16 +366202,21 @@
           "at": "2026-11-28T00:47Z",
           "by": "codex",
           "what": "step 2 of 4 done: OWB 4a31f3835a and HOS 57ef34b2 committed; 47 targeted tests pass in each. HOS check_all PASS. Public push rejected by automatic review; designated Claude Code publication required after final checks."
+        },
+        {
+          "at": "2026-11-28T00:49Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Final targeted regressions 47/47 PASS in OWB and HOS; HOS check_all PASS; OWB suite two groups finished green, remaining group still running. Heads: OWB 4a31f3835a, HOS e05d7ad5."
         }
       ],
-      "remaining_action": "Completing CI-suite validation and preparing the publication handoff",
+      "remaining_action": "Waiting for the remaining CI test group before handing publication to Claude Code",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the loop check verify the Newton apple Short’s actual framing",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:47Z",
+        "at": "2026-11-28T00:49Z",
         "by": "codex",
         "plan": [
           "Inspect contract and regressions",
@@ -366219,7 +366224,7 @@
           "Run gates and sync shared code",
           "Commit and submit for review"
         ],
-        "note": "OWB 4a31f3835a and HOS 57ef34b2 committed; 47 targeted tests pass in each. HOS check_all PASS. Public push rejected by a"
+        "note": "Final targeted regressions 47/47 PASS in OWB and HOS; HOS check_all PASS; OWB suite two groups finished green, remaining"
       },
       "taskKeys": [
         "HOS:009"
