@@ -368350,9 +368350,14 @@
           "at": "2026-11-28T12:02Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T12:02Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule",
+      "remaining_action": "Check whether HOS 010 long has a real upload id and confirmed air date",
       "kind": "review",
       "recheck_of": "J3610",
       "mini_only": true,
@@ -368371,9 +368376,15 @@
         "of": 3,
         "at": "2026-11-28T12:02Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3610 and evidence",
+          "Check HOS 010 upload and air date",
+          "Reopen or re-wait J3610"
+        ]
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3994",
