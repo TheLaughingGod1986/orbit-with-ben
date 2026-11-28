@@ -367231,13 +367231,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T06:43Z",
-      "eta": "2026-11-28T08:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T06:41Z",
-      "result": "",
+      "result": "J3969 publication condition met: both branches pushed normally at the reviewed SHAs; draft HOS PR820 (J3871 recheck) and PR821 (J3969 ruling). The worker reopen was refused by the Chief gate, so J3969 is recorded via wait --recheck J3982 for Chief to close and decide merging. No PASS/UAT/upload/spend.",
       "history": [
         {
           "at": "2026-11-28T06:41Z",
@@ -367263,6 +367263,11 @@
           "at": "2026-11-28T06:45Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Condition met: this permission-enabled Claude Code session re-reviewed the final heads, pushed codex/J3871-recheck@0511c938 and codex/J3969-ruling@eafc150e normally, and opened draft PRs 820 and 821"
+        },
+        {
+          "at": "2026-11-28T06:45Z",
+          "by": "claudecode",
+          "what": "done: J3969 publication condition met: both branches pushed normally at the reviewed SHAs; draft HOS PR820 (J3871 recheck) and PR821 (J3969 ruling). The worker reopen was refused by the Chief gate, so J3969 is recorded via wait --recheck J3982 for Chief to close and decide merging. No PASS/UAT/upload/spend."
         }
       ],
       "remaining_action": "Reopening J3969 with publication receipts",
@@ -367292,7 +367297,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "HOS PR820,PR821"
     }
   ],
   "focus": [
