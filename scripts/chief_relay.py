@@ -768,13 +768,39 @@ def is_elected_chief(agent: str, at: dt.datetime, repo: str | None = None) -> bo
     return bool(agent and acting(at, repo)[1] == agent)
 
 
+# J3966 (Ben, 27 Nov 2026 23:54: "Nothing running"): Claude is elected while its heartbeat is fresh, but it is a cloud
+# session and never claims a Mini job, so the Mini's Chief jobs waited for the twice-daily cloud sweep. The `needs` a
+# Chief outside the Mini can run itself; an elected Chief not listed here runs every job its claim path allows.
+CHIEF_RUNS = {"claude": {"cloud", "any"}}
+DELEGABLE_NEEDS = {"mini", "gemini"}
+
+
+def delegated_from(agent: str, at: dt.datetime, job: dict | None) -> str:
+    """The elected Chief that `agent` stands in for on this one role job, or "".
+
+    When the elected Chief for the job's chain cannot run the job's `needs` (Claude for a Mini job), the first agent
+    below it in the same chain that is up on the Mini is the delegated Chief for that job only: the Chief's authority
+    for it (claim, PASS, merge, close) and nothing more. Ben's gates and the Never list are unchanged."""
+    if not agent or not job or not workflow.role_job(job) or job.get("needs") not in DELEGABLE_NEEDS:
+        return ""
+    order = chain(job_chain(job))
+    rows, elected = acting(at, job_chain(job))
+    if not elected or elected not in CHIEF_RUNS or job.get("needs") in CHIEF_RUNS[elected]:
+        return ""
+    # Below the elected Chief in the chain; a Chief named by Ben's override from outside the chain sits ahead of it all.
+    below = order[order.index(elected) + 1:] if elected in order else order
+    up = {a for a, ok, _ in rows[:len(order)] if ok}
+    stand_in = next((a for a in below if a in up and a in routing.MINI_WORKERS), None)
+    return elected if stand_in == agent else ""
+
+
 def elected_for(agent: str, at: dt.datetime, job: dict | None) -> bool:
-    """True when `agent` is the Chief for this job's channel.
+    """True when `agent` is the Chief for this job's channel, or its delegated Chief for this job (delegated_from).
     A home-channel job calls the two-argument check, so existing stand-ins keep working."""
     slug = job_chain(job)
-    if not slug:
-        return is_elected_chief(agent, at)
-    return is_elected_chief(agent, at, slug)
+    if (is_elected_chief(agent, at, slug) if slug else is_elected_chief(agent, at)):
+        return True
+    return bool(delegated_from(agent, at, job))
 
 
 def chief_fingerprint(job: dict) -> str:

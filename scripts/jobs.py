@@ -826,10 +826,14 @@ def can_any_mini_claim(data, job, at, memo: dict | None = None):
     role = workflow.role_job(job)
     chain = chief_relay.job_chain(job) if role else None
     chief = once(("chief", chain), lambda: chief_relay.acting(at, chain)[1]) if role else ""
-    actors = [chief] if role else [job["for"]] if job.get("for") else routing.MINI_WORKERS
+    # J3966: a cloud Chief's Mini role job is claimable by its delegated Chief on the Mini.
+    delegate = once(("delegate", chain, job.get("needs")), lambda: next(
+        (a for a in routing.MINI_WORKERS if chief_relay.delegated_from(a, at, job)), "")) if role else ""
+    actors = [chief, delegate] if role else [job["for"]] if job.get("for") else routing.MINI_WORKERS
     execution = once("execution", lambda: chief_relay.current_execution(at))
     capabilities = once("capabilities", chief_relay.worker_capabilities)
-    return any(actor and workflow.claimable(job, data["jobs"], at, actor, chief, MINI_NEEDS, execution, capabilities)
+    return any(actor and workflow.claimable(job, data["jobs"], at, actor, actor if role else chief, MINI_NEEDS,
+                                            execution, capabilities)
                for actor in actors)
 
 
@@ -957,8 +961,10 @@ def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int
     if job.get("by") == agent and job["status"] == "claimed":
         return job
     took, prev = stalled(job, at), job.get("by", "")
+    delegate = chief_relay.delegated_from(agent, at, job)
     job.update(status="claimed", by=agent, since=studio.iso(at), eta=studio.iso(at + dt.timedelta(minutes=eta_min or job.get("eta_min") or DEFAULT_ETA)))
-    log(job, at, agent, f"claimed (took over a stalled claim by {prev})" if took else "claimed")
+    line = f"claimed (took over a stalled claim by {prev})" if took else "claimed"
+    log(job, at, agent, line + (f"; delegated_from: {delegate}" if delegate else ""))
     return job
 
 
