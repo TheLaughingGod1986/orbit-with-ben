@@ -361,14 +361,30 @@ class AllAgents(unittest.TestCase):
         self.assertEqual(c[1:3], ["-p", "P"])                                  # the prompt stays straight after -p
         self.assertLess(c.index("--disallowedTools"), c.index("--add-dir"))    # both lists come before the folders
         self.assertFalse(set(c[c.index("--allowedTools") + 1].split(",")) & set(denied))   # never both allowed and refused
-        for rule in denied:                                                    # each is one plain "starts with" rule
+        shell = [r for r in denied if r.startswith("Bash(")]
+        for rule in shell:                                                     # each is one plain "starts with" rule
             self.assertRegex(rule, r"^Bash\([a-z][a-z -]*[a-z]:\*\)$")
-        starts = [r[len("Bash("):-len(":*)")] for r in denied]
+        starts = [r[len("Bash("):-len(":*)")] for r in shell]
         for cmd in ("git push -u origin macbook/J1234", "git push origin macbook/J1234", "git push",
                     "gh pr create --title x", "gh pr view 1", "gh pr checks 1"):   # what a job really runs
             self.assertFalse(any(cmd.startswith(s) for s in starts), cmd)
         for agent, cmd in others.items():                                      # the other agents' commands are as they were
             self.assertNotIn("--disallowedTools", cmd or [], agent)
+
+    def test_unattended_claude_cannot_merge_through_the_github_connector(self):
+        # The repo's .claude/settings.json allows mcp__github__merge_pull_request (the Chief's sessions), and a worker
+        # run in the clone reads it: the worker's own refusal list has to name the connector's merge route too.
+        import json
+        project = json.loads((pathlib.Path(__file__).resolve().parent.parent / ".claude" / "settings.json").read_text())
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+        denied = c[c.index("--disallowedTools") + 1].split(",")
+        for tool in ("mcp__github__merge_pull_request", "mcp__github__enable_pr_auto_merge",
+                     "mcp__github__pull_request_review_write"):
+            self.assertIn(tool, denied)
+        merge_routes = [t for t in project["permissions"]["allow"] if t.startswith("mcp__") and "merge" in t]
+        for tool in merge_routes:                     # any merge tool the project allows is refused to the worker
+            self.assertIn(tool, denied)
 
     def test_the_brief_says_never_merge_and_never_push_to_main(self):
         p = mw.brief("J1", "m", 25)
