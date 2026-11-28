@@ -283014,10 +283014,10 @@
       "stage": "upload",
       "after": "J3115",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-28T00:17Z",
+      "eta": "2026-11-28T02:17Z",
       "created_by": "claude",
       "created_at": "2026-11-19T07:58Z",
       "result": "",
@@ -283031,6 +283031,11 @@
           "at": "2026-11-19T07:58Z",
           "by": "claude",
           "what": "approved by Ben: Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified) v02 (asked in J2868)"
+        },
+        {
+          "at": "2026-11-28T00:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test",
@@ -283048,6 +283053,14 @@
         "channel": "OWB",
         "job": "J2868",
         "okAt": "2026-11-18T22:16Z"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-28T00:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
