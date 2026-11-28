@@ -367193,7 +367193,7 @@
     {
       "id": "J3982",
       "title": "Verify condition for J3969",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J3969: publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c93831348f3c01baf91d33f561f6cc9fa6a9; also /Volumes/MiniWork/scratch/J3969-ruling codex/J3969-ruling at eafc150e. Ruling complete and posted HOS desk 7231090237; J3972 queued; J3871 held for its merged changes. Independent Claude Code privacy review passed original heads, but both pushes were blocked as requires approval and it could not ask non-interactively. No pushes or PRs. Needs permission-enabled designated publisher, fresh review of final ruling branch, normal pushes and DRAFT PRs only. Prior Codex public-push rejection remains; do not retry or bypass either permission layer. Log /Volumes/MiniWork/scratch/J3969-publish.log. PR811/814 stay draft; J3816 held; no Short PASS/UAT/upload.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3969 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -367213,13 +367213,26 @@
           "at": "2026-11-28T06:41Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T06:41Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-28T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Publish the reviewed evidence and ruling through a permission-enabled Claude Code session",
       "kind": "review",
       "recheck_of": "J3969",
       "due": "2026-11-28T07:41:24+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
