@@ -95,6 +95,21 @@ def offset(c: dict):
 def reuse_checks(cuts: list, intentional_return: int | None = None, identities=None) -> dict:
     """{cut index: (fails, warns)} for reuse, counted in appearances (see the docstring)."""
     out = {k: ([], []) for k in range(len(cuts))}
+    # The validator grants eligibility; enforce the final-row/non-overlap limits
+    # here as well so a bare index cannot exempt an overlapping or body repeat.
+    if intentional_return is not None:
+        k = intentional_return
+        roles = [i for i, c in enumerate(cuts) if c.get('role')]
+        valid = (type(k) is int and k == len(cuts) - 1 and k >= 2
+                 and roles == [k] and cuts[k].get('role') == 'prescribed_terminal_loop')
+        if valid:
+            a, opening = offset(cuts[k]), offset(cuts[0])
+            valid = all(type(t) in (int, float) and math.isfinite(t) and t >= 0 for t in (a, opening))
+            if valid:
+                end = a + cuts[k]['timeline_out'] - cuts[k]['timeline_in']
+                valid = end <= opening + 1e-6
+        if not valid:
+            intentional_return = None
     runs = []                                         # [source, [cut indices]]
     for k, c in enumerate(cuts):
         c = dict(c, source=(identities or {}).get(k, c["source"]))
@@ -129,7 +144,9 @@ def reuse_checks(cuts: list, intentional_return: int | None = None, identities=N
             if any(a < e - SLACK and s < b - SLACK for s, e, _ in mine):
                 out[k][0].append("reuse: replays frames this run has just shown")
             same = [t for s, e, t in shown if abs(a - s) < SAME_STRETCH or (a < e - SLACK and s < b - SLACK)]
-            if same and k != intentional_return:
+            opening_time = (cuts[0]['timeline_in'] + cuts[0]['timeline_out']) / 2
+            only_opening = all(t == opening_time for t in same)
+            if same and (k != intentional_return or not only_opening):
                 out[k][0].append(f"reuse: same stretch as {mmss(same[0])} (give it a new stretch, or a new render)")
             mine.append((a, b, (c["timeline_in"] + c["timeline_out"]) / 2))
         shown += mine

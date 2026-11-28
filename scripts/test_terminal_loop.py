@@ -22,7 +22,7 @@ class TerminalLoop(unittest.TestCase):
                         '-t','4','-c:v','libx264','-pix_fmt','yuv420p',str(cls.src)],check=True)
         cls.vo = cls.root/'vo.txt'; cls.vo.write_text('locked VO synthetic bytes')
         cls.words = cls.root/'words.json'
-        cls.words.write_text(json.dumps({'vo_sha256':loop.digest(cls.vo), 'words':[{'end':22.5}]}))
+        cls.words.write_text(json.dumps({'vo_sha256':loop.digest(cls.vo), 'words':[{'end':16.5}]}))
         cls.rule = cls.root/'prescription.md'; cls.rule.write_text('Synthetic prescribed terminal return.')
 
     @classmethod
@@ -36,10 +36,11 @@ class TerminalLoop(unittest.TestCase):
                         framing=copy.deepcopy(framing),upscale=1.,video=True,spoken='')
         body = self.root/'other.mp4'
         body.write_bytes(b'distinct synthetic body identity')
-        cuts=[cut(0,2,self.src,'open'),cut(2,23,body,'body'),cut(23,24,self.src,'tail')]
+        cuts=[cut(0,2,self.src,'open'),cut(2,17,body,'body'),cut(17,18,self.src,'tail')]
         cuts[-1]['role']='prescribed_terminal_loop'
+        cuts[0]['framing']['offset']=1.
         ev=lambda p:dict(path=str(p),sha256=loop.digest(p))
-        d=dict(version=1,format='short',cut=2,duration=24,last_vo_word=22.5,
+        d=dict(version=1,format='short',cut=2,duration=18,last_vo_word=16.5,
                source=ev(self.src),words=ev(self.words),vo=ev(self.vo),prescription=ev(self.rule),
                source_in=0.,source_out=1.,framing={k:v for k,v in framing.items() if k!='offset'})
         return cuts,d
@@ -53,6 +54,55 @@ class TerminalLoop(unittest.TestCase):
         self.assertIn('rendered pixel/loop checks',r['pending'])
         self.assertEqual(len(qa.source_checks(cuts,{},r)),3)
 
+    def test_channel_duration_boundaries_and_single_authority(self):
+        for duration in (15, 16, 17.1, 18, 19, 20):
+            with self.subTest(duration=duration):
+                c,d=self.setup_recipe()
+                c[1]['timeline_out']=duration-1
+                c[-1].update(timeline_in=duration-1,timeline_out=duration)
+                words=self.root/'band_words.json'
+                words.write_text(json.dumps({'vo_sha256':loop.digest(self.vo),'words':[{'end':duration-1.5}]}))
+                d.update(duration=duration,last_vo_word=duration-1.5,
+                         words=dict(path=str(words),sha256=loop.digest(words)))
+                self.assertEqual(loop.validate(c,d)['eligible_cut'] is not None, 16 <= duration <= 19)
+        # A channel still using its former band supplies it through the open gate.
+        with patch.object(loop,'shorts_band',return_value=(22,27)):
+            c,d=self.setup_recipe()
+            self.assertIsNone(loop.validate(c,d)['eligible_cut'])
+
+    def test_fractional_pre_roll_join_is_not_rounding_overlap(self):
+        c,d=self.setup_recipe()
+        c[0]['framing']['offset']=.9
+        c[0]['timeline_out']=.8
+        c[1].update(timeline_in=.8,timeline_out=16.2)
+        c[-1].update(timeline_in=16.2,timeline_out=17.1)
+        words=self.root/'fractional_words.json'
+        words.write_text(json.dumps({'vo_sha256':loop.digest(self.vo),'words':[{'end':16.}]}))
+        d.update(duration=17.1,last_vo_word=16.,source_out=.9,
+                 words=dict(path=str(words),sha256=loop.digest(words)))
+        r=loop.validate(c,d)
+        self.assertEqual(r['eligible_cut'],2,r)
+        self.assertEqual(qa.source_checks(c,{},r)[-1]['fail'],[])
+
+    def test_overlapping_undeclared_second_and_body_returns_fail(self):
+        for mode in ('overlap', 'undeclared', 'second', 'body'):
+            with self.subTest(mode=mode):
+                c,d=self.setup_recipe()
+                if mode == 'overlap': c[0]['framing']['offset']=.5
+                if mode == 'undeclared': c[-1].pop('role')
+                if mode == 'second': c[1]['role']='prescribed_terminal_loop'
+                if mode == 'body':
+                    c.insert(2,copy.deepcopy(c[0]))
+                    c[1]['timeline_out']=15
+                    c[2].update(timeline_in=15,timeline_out=17,row='body_repeat')
+                    d['cut']=3
+                r=loop.validate(c,d)
+                rows=qa.source_checks(c,{},r)
+                self.assertTrue(any(row['fail'] for row in rows))
+                if mode != 'body':
+                    self.assertIsNone(r['eligible_cut'])
+                    self.assertTrue(qa.reuse_checks(c,len(c)-1)[len(c)-1][0])
+
     def test_invalid_contracts_fail_closed(self):
         cases = {
           'extra return':lambda c,d:d.update(returns=[0,2]),
@@ -61,17 +111,17 @@ class TerminalLoop(unittest.TestCase):
           'multiple roles':lambda c,d:c[0].update(role='prescribed_terminal_loop'),
           'no role':lambda c,d:c[-1].pop('role'),
           'false role':lambda c,d:c[-1].update(role='body'),
-          'over one second':lambda c,d:(c[-1].update(timeline_in=22.9), c[1].update(timeline_out=22.9)),
-          'VO overlap':lambda c,d:d.update(last_vo_word=23.1),
+          'over one second':lambda c,d:(c[-1].update(timeline_in=16.9), c[1].update(timeline_out=16.9)),
+          'VO overlap':lambda c,d:d.update(last_vo_word=17.1),
           'wrong hash':lambda c,d:d['source'].update(sha256='0'*64),
           'wrong source':lambda c,d:c[-1].update(source=__file__),
           'framing mismatch':lambda c,d:c[-1]['framing'].update(crop=[1,0,89,160]),
           'missing framing':lambda c,d:c[-1]['framing'].pop('crop'),
           'missing evidence':lambda c,d:d.pop('prescription'),
           'wrong word hash':lambda c,d:d['words'].update(sha256='0'*64),
-          'under 22 seconds':lambda c,d:d.update(duration=21),
+          'under channel band':lambda c,d:d.update(duration=15),
           'wrong duration':lambda c,d:d.update(duration=60),
-          'duration mismatch':lambda c,d:d.update(duration=25),
+          'duration mismatch':lambda c,d:d.update(duration=17.5),
           'negative offset':lambda c,d:d.update(source_in=-1),
           'out of range':lambda c,d:d.update(source_out=40),
           'bad interval':lambda c,d:d.update(source_out=.5),
@@ -110,8 +160,8 @@ class TerminalLoop(unittest.TestCase):
     def test_optin_body_alias_still_repeats(self):
         c,d=self.setup_recipe()
         alias=self.root/'copy.mp4'; alias.write_bytes(self.src.read_bytes())
-        c.insert(2,copy.deepcopy(c[0])); c[1]['timeline_out']=21
-        c[2].update(timeline_in=21,timeline_out=23,source=str(alias),row='body_repeat')
+        c.insert(2,copy.deepcopy(c[0])); c[1]['timeline_out']=15
+        c[2].update(timeline_in=15,timeline_out=17,source=str(alias),row='body_repeat')
         d['cut']=3
         r=loop.validate(c,d)
         rows=qa.source_checks(c,{},r)
@@ -142,6 +192,7 @@ class TerminalLoop(unittest.TestCase):
         for bad in ('missing', None, float('nan'), float('inf'), -1, True, 'zero'):
             with self.subTest(offset=bad):
                 c,d=self.setup_recipe()
+                c[0]['framing']['offset']=0.
                 # All adjacent rows use identical footage. The terminal return
                 # must still fail within-run replay against the opening.
                 c[1]['source']=str(self.src)
@@ -166,7 +217,7 @@ class TerminalLoop(unittest.TestCase):
         self.assertEqual(qa.source_checks(c,{})[1]['fail'],[])
 
     def test_alignment_and_bounds(self):
-        for end in (23.1, float('nan'), -1):
+        for end in (17.1, float('nan'), -1):
             c,d=self.setup_recipe()
             p=self.root/'bad_words.json'
             p.write_text(json.dumps({'vo_sha256':loop.digest(self.vo),'words':[{'end':end}]}))
@@ -177,17 +228,18 @@ class TerminalLoop(unittest.TestCase):
 
     def test_real_render_correspondence_and_wrong_picture(self):
         c,d=self.setup_recipe(); render=self.root/'render.mp4'
-        # Real source repeated for synthetic 24s output: only sample correspondence
+        # Real source repeated for synthetic 18s output: only sample correspondence
         # is under test here, not all-body QA or production approval.
         subprocess.run(['ffmpeg','-v','error','-y','-stream_loop','-1','-i',str(self.src),
-                        '-t','24','-vf',"setpts=PTS-STARTPTS",'-c:v','libx264',str(render)],check=True)
-        # Tail at 23s in a 4s repeating source is wrong and must fail.
+                        '-t','18','-vf',"setpts=PTS-STARTPTS",'-c:v','libx264',str(render)],check=True)
+        # Tail at 17s in a 4s repeating source is wrong and must fail.
         self.assertIsNone(loop.validate(c,d,render)['eligible_cut'])
         good=self.root/'good.mp4'
         subprocess.run(['ffmpeg','-v','error','-y','-i',str(self.src),'-filter_complex',
-          '[0:v]split[a][b];[a]trim=duration=1,setpts=PTS-STARTPTS,loop=loop=22:size=25:start=0[x];'
-          '[b]trim=duration=1,setpts=PTS-STARTPTS[y];[x][y]concat=n=2:v=1:a=0',
-          '-t','24','-c:v','libx264',str(good)],check=True)
+          '[0:v]split=3[a][b][c];[a]trim=start=1:duration=2,setpts=PTS-STARTPTS[x];'
+          '[c]trim=duration=1,setpts=PTS-STARTPTS,loop=loop=14:size=25:start=0[z];'
+          '[b]trim=duration=1,setpts=PTS-STARTPTS[y];[x][z][y]concat=n=3:v=1:a=0',
+          '-t','18','-c:v','libx264',str(good)],check=True)
         r=loop.validate(c,d,good)
         self.assertEqual(r['status'],'rendered_correspondence',r)
         self.assertIn('samples do not establish seamless motion',r['pending'][0])
@@ -212,7 +264,7 @@ class TerminalLoop(unittest.TestCase):
             self.assertEqual([c[k]['row'] for k,v in qa.reuse_checks(c).items() if v[0]],body+['loop_tail'])
             # A completed evidence contract may classify ONLY the final loop.
             # Original fixture has no crop/alignment contract and is not approved.
-            self.assertEqual([c[k]['row'] for k,v in qa.reuse_checks(c,len(c)-1).items() if v[0]],body)
+            self.assertEqual([c[k]['row'] for k,v in qa.reuse_checks(c,len(c)-1).items() if v[0]],body+['loop_tail'])
             self.assertEqual(loop.validate(c,{})['status'],'invalid')
             # Complete only synthetic framing/alignment/source evidence to exercise
             # structural eligibility, without certifying the real production crop.
@@ -229,11 +281,15 @@ class TerminalLoop(unittest.TestCase):
             for row in (completed[0],completed[-1]):
                 row['framing']=dict(offset=0.,**d['framing'])
             completed[-1]['role']='prescribed_terminal_loop'
-            d.update(cut=len(completed)-1,duration=completed[-1]['timeline_out'])
-            result=loop.validate(completed,d)
+            completed[0]['framing']['offset']=1.
+            length=completed[-1]['timeline_out']-completed[-1]['timeline_in']
+            completed[-1]['framing']['offset']=1.-length
+            d.update(cut=len(completed)-1,duration=completed[-1]['timeline_out'],source_in=1.-length,source_out=1.)
+            with patch.object(loop,'shorts_band',return_value=(22,27)):
+                result=loop.validate(completed,d)
             self.assertEqual(result['eligible_cut'],len(completed)-1,result)
             rows=qa.source_checks(completed,{},result)
-            self.assertEqual([r['row'] for r in rows if r['fail']],body)
+            self.assertEqual([r['row'] for r in rows if r['fail']],body+['loop_tail'])
 
 
 if __name__=='__main__': unittest.main()
