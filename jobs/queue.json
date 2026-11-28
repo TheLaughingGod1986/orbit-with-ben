@@ -360583,10 +360583,10 @@
       "stage": "script",
       "after": "J3902",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-28T09:49Z",
+      "eta": "2026-11-28T11:49Z",
       "created_by": "gemini",
       "created_at": "2026-11-27T13:52Z",
       "result": "",
@@ -360740,6 +360740,11 @@
           "at": "2026-11-28T09:47Z",
           "by": "claude",
           "what": "reopened: Chief PASS on OWB 064 Short 2 v01 (4eb7d943, 18.375 s, 35 words): J3957 KEEP (PR #1417 merged 75ebd07), build PR #1416 merged (120d665, both spend ledgers kept). Length ruling: Ben's 19 Nov 2026 rule sets the Shorts duration gate to 16.0-19.0 s (studio/RULES.md, 'These hard rules don't change'), so 18.4 s passes. The older 22-27 s / 55-65-word lines are superseded for new Shorts. Do now: register Ben's phone UAT watch for v01 with `jobs.py awaits` (the NAS v01 file, version v01) and finish. No upload or scheduling; never air before the 064 long is public on Wed 16 Dec. Claude, acting Chief, morning sweep 28 Nov 10:00Z."
+        },
+        {
+          "at": "2026-11-28T09:49Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
@@ -360757,7 +360762,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-27T22:39Z"
+      "escalated_at": "2026-11-27T22:39Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-28T09:49Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3905",
