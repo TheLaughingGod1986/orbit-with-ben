@@ -348901,9 +348901,14 @@
           "at": "2026-11-28T00:11Z",
           "by": "relay",
           "what": "condition verification queued: J3968"
+        },
+        {
+          "at": "2026-11-28T01:06Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T09:00:00Z"
         }
       ],
-      "remaining_action": "Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
+      "remaining_action": "Complete independent non-producer audio_input listen on HOS 136 Shorts S01/S02 tight masters, resolve S01 proved/prove delivery, rule KEEP/RETAKE, and merge HOS PR #798 only if approved",
       "due": "2026-12-05T18:00:00Z",
       "for": "codex",
       "kind": "chief",
@@ -348934,12 +348939,14 @@
       },
       "hold": {
         "type": "capability",
-        "condition": "Independent non-producer Chief/reviewer must actually hear S01/S02 tight masters and resolve S01 proved/prove delivery; session tool inspection found no demonstrated audio_input. PR 799 merged; fresh mechanical checks PASS. Review retained locally at /Volumes/MiniWork/scratch/J3781-hos branch codex/J3781-evidence commit ea0c93d8; evidence push rejected by automatic approval review and must not be routed indirectly.",
-        "check_at": "2026-11-28T01:11:14+00:00",
+        "condition": "Independent non-producer Chief/reviewer with demonstrated audio_input must directly hear HOS 136 Shorts tight masters (S01_v02_tight including proved/prove delivery, optional S01_v02b comparison, and S02_v02_tight). Verified 28 Nov 01:04-01:06Z (J3968): codex (elected Chief) and claudecode have capabilities available=[] (00:54Z/00:55Z relay probes audio FAIL); claude is down until 2026-11-28T07:50:00Z with no Mini audio_input probe; grok is down (78 h) with no demonstrated audio_input; cursor is down until 2026-12-04T02:42:04Z (available=[]). gemini has verified audio_input (00:54Z relay probe PASS 1.00 + 01:05Z direct read_file probe) but authored J3679 / HOS PRs #798 & #799 and is barred by the non-producer guard. PR #799 merged (b6a9d05e); PR #798 (17672ae226, OPEN/CLEAN, 6/6 CI green, 0 comments), 10/10 NAS audio + script hashes, and local Codex review commit ea0c93d8 at /Volumes/MiniWork/scratch/J3781-hos remain intact.",
+        "check_at": "2026-11-28T09:00:00Z",
         "requires": [
           "audio_input"
         ],
-        "recheck_task": "J3968"
+        "last_recheck": "J3968",
+        "checked_at": "2026-11-28T01:06:46+00:00",
+        "checked_by": "gemini"
       },
       "required_capabilities": [
         "audio_input"
