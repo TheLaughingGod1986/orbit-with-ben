@@ -366045,9 +366045,14 @@
           "at": "2026-11-28T01:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T01:05Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J3968 condition verification for J3781 (HOS:136 Shorts S01/S02 VO)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete independent listening and the Trinity Shorts voice ruling; merge take records only if approved",
+      "remaining_action": "Verify whether an independent non-producer Chief/reviewer has demonstrated audio_input or ruled on HOS 136 Shorts S01/S02 VO (J3781 / PR #798)",
       "kind": "review",
       "recheck_of": "J3781",
       "required_capabilities": [
@@ -366066,11 +366071,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-28T01:04Z",
+        "at": "2026-11-28T01:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3781 history, capabilities, PR #798 & NAS hashes",
+          "Verify non-producer audio_input condition & update J3781 wait",
+          "Post HOS desk & studio thread reports and close J3968"
+        ],
+        "note": "Starting J3968 condition verification for J3781 (HOS:136 Shorts S01/S02 VO)"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3969",
