@@ -367482,16 +367482,21 @@
           "at": "2026-11-28T07:06Z",
           "by": "gemini",
           "what": "step 1 of 5 done: CDP sessions checked: OWB signed in on 9224 (UC_esArsDKd3GJvOkeO0DUog), HOS signed in on 9460 (UCXp7HkBIl1LgaznXuZHJyRg); 9223 currently holds WW2 (UCu94mInMFosxu3W0H6jlI6Q)."
+        },
+        {
+          "at": "2026-11-28T07:13Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: HOS Studio read complete on 9460: 8/8 longs + 37/37 Shorts (0 errors, 0 omitted); OWB read running on 9224."
         }
       ],
-      "remaining_action": "Probing Studio analytics get_screen API on OWB (9224) and HOS (9460)",
+      "remaining_action": "Finishing OWB lifetime Studio read on port 9224 (19 longs + 96 Shorts)",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-28T07:06Z",
+        "at": "2026-11-28T07:13Z",
         "by": "gemini",
         "plan": [
           "Check Studio CDP sessions",
@@ -367500,7 +367505,7 @@
           "Run reach, report and publish",
           "Commit, push and complete job"
         ],
-        "note": "CDP sessions checked: OWB signed in on 9224 (UC_esArsDKd3GJvOkeO0DUog), HOS signed in on 9460 (UCXp7HkBIl1LgaznXuZHJyRg)"
+        "note": "HOS Studio read complete on 9460: 8/8 longs + 37/37 Shorts (0 errors, 0 omitted); OWB read running on 9224."
       }
     }
   ],
