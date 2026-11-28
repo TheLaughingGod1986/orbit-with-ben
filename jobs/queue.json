@@ -368116,9 +368116,14 @@
           "at": "2026-11-28T09:34Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-28T09:35Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Baseline J3975 (03:55Z today, full live audit); fixes J3976/J3977 marked done"
         }
       ],
-      "remaining_action": "Listing HOS live and scheduled videos",
+      "remaining_action": "Reading live listings via Data API",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -368130,17 +368135,22 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-28T09:34Z",
+        "at": "2026-11-28T09:35Z",
         "by": "claudecode",
         "plan": [
           "List HOS live+scheduled videos",
           "Read listings via Data API",
           "Compare to repo listing files",
           "Write fix list + park/finish"
-        ]
-      }
+        ],
+        "note": "Baseline J3975 (03:55Z today, full live audit); fixes J3976/J3977 marked done"
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
