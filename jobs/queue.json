@@ -366412,6 +366412,11 @@
           "at": "2026-11-28T06:59Z",
           "by": "relay",
           "what": "condition verification queued: J3983"
+        },
+        {
+          "at": "2026-11-28T07:01Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T15:00:00Z"
         }
       ],
       "remaining_action": "Claude Code must review privacy, publish both code branches and open separate Chief-review pull requests",
@@ -366436,9 +366441,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3972-scale-before-crop codex/J3972-scale-before-crop at 4a31f3835a; /Volumes/MiniWork/scratch/J3972-hos codex/J3972-scale-before-crop at e05d7ad5. Implementation and validation finished. Full privacy review, normal pushes, separate code PRs and elected-Chief review remain. Automatic review rejected Codex public push; no retries or indirect publication. Report /Volumes/MiniWork/scratch/J3972-report.md. Final targeted 47/47 both repos; HOS check_all PASS; OWB 1812-test suite only two unchanged test_gate_upcoming failures reproduced on baseline, 14 skips. J3871 remains held until both code PRs merge; production v04 unchanged and picture FAIL, J3816 held, J3872 dependencies retained. No media PASS/UAT/upload.",
-        "check_at": "2026-11-28T07:59:26+00:00",
-        "recheck_task": "J3983"
+        "condition": "Publish step done by Claude Code (J3983): branches pushed, OWB PR #1425 and HOS PR #822 open and merging cleanly. Still unmet: elected-Chief code review and merge of both PRs (J3969); then the Chief releases this hold and J3871 reruns the same v04 hash.",
+        "check_at": "2026-11-28T15:00:00Z",
+        "last_recheck": "J3983",
+        "checked_at": "2026-11-28T07:01:47+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
