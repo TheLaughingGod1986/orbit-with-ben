@@ -366480,13 +366480,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T02:45Z",
-      "eta": "2026-11-28T04:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T02:45Z",
-      "result": "",
+      "result": "Condition for J3904 not met: J3957 now parked with KEEP recommended (PR #1417, Gemini), but PR #1416 and #1417 are OPEN with no Chief ruling, review or merge at 02:46Z. J3904 kept blocked; wait recorded with recheck J3974, next check 2026-11-28T08:45Z. 18.375 s / 35-word length vs the 22 s floor still flagged for Chief.",
       "history": [
         {
           "at": "2026-11-28T02:45Z",
@@ -366517,6 +366517,11 @@
           "at": "2026-11-28T02:47Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: J3904 kept blocked: wait recorded with --recheck J3974, next check 2026-11-28T08:45Z"
+        },
+        {
+          "at": "2026-11-28T02:47Z",
+          "by": "claudecode",
+          "what": "done: Condition for J3904 not met: J3957 now parked with KEEP recommended (PR #1417, Gemini), but PR #1416 and #1417 are OPEN with no Chief ruling, review or merge at 02:46Z. J3904 kept blocked; wait recorded with recheck J3974, next check 2026-11-28T08:45Z. 18.375 s / 35-word length vs the 22 s floor still flagged for Chief."
         }
       ],
       "remaining_action": "None; J3904 re-waited to 08:45Z",
