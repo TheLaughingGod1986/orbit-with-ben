@@ -367016,9 +367016,14 @@
           "at": "2026-11-28T06:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T06:03Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J3980 condition verification for J3871 (HOS:009)"
         }
       ],
-      "remaining_action": "Verify readiness: Waiting for the shared framing-check fix before rechecking the unchanged apple Short",
+      "remaining_action": "Inspecting J3871, J3969, J3972, related jobs, and OWB/HOS PR merge status",
       "kind": "review",
       "recheck_of": "J3871",
       "due": "2026-11-28T07:00:35+00:00",
@@ -367034,11 +367039,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-28T06:02Z",
+        "at": "2026-11-28T06:03Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3871, J3969, J3972 and related publish jobs/PRs",
+          "Verify whether both J3972 code PRs are reviewed and merged",
+          "Update J3871 wait/reopen state, report, and close J3980"
+        ],
+        "note": "Started J3980 condition verification for J3871 (HOS:009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
