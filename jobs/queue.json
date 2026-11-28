@@ -367566,13 +367566,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T07:59Z",
-      "eta": "2026-11-28T08:59Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-28T07:58Z",
-      "result": "",
+      "result": "Read-only recheck of the last 10 live OWB videos (same window as J3973 PR #1423): 10/10 pass, 0 live fixes. All 10 descriptions match manifests/description files exactly (AR1/AR2 differ only by the Chief-approved J3253 line); all public, MFK false; 15 source URLs 12x200 + 3 known WAF 403s; end screens/Related not re-read in Studio as no job touched listings since J3973's 02:01Z Studio read. Wrote 05_Analytics/live_fixes/2026-11-28_recheck.md, PR #1427. Notes for Chief: superseded open listing PRs #1336 #1341 #1364 #1371 #1415; backlog refill repeats this job ~4x/day on unchanged windows. Nothing changed in Studio/API/Buffer, no public pages opened, GBP 0.",
       "history": [
         {
           "at": "2026-11-28T07:58Z",
@@ -367603,6 +367603,11 @@
           "at": "2026-11-28T08:04Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: PR #1427 opened: 05_Analytics/live_fixes/2026-11-28_recheck.md"
+        },
+        {
+          "at": "2026-11-28T08:04Z",
+          "by": "claudecode",
+          "what": "done: Read-only recheck of the last 10 live OWB videos (same window as J3973 PR #1423): 10/10 pass, 0 live fixes. All 10 descriptions match manifests/description files exactly (AR1/AR2 differ only by the Chief-approved J3253 line); all public, MFK false; 15 source URLs 12x200 + 3 known WAF 403s; end screens/Related not re-read in Studio as no job touched listings since J3973's 02:01Z Studio read. Wrote 05_Analytics/live_fixes/2026-11-28_recheck.md, PR #1427. Notes for Chief: superseded open listing PRs #1336 #1341 #1364 #1371 #1415; backlog refill repeats this job ~4x/day on unchanged windows. Nothing changed in Studio/API/Buffer, no public pages opened, GBP 0."
         }
       ],
       "remaining_action": "Done",
@@ -367634,7 +367639,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "PR #1427"
     }
   ],
   "focus": [
