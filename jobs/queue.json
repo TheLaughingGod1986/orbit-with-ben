@@ -366067,9 +366067,14 @@
           "at": "2026-11-28T01:06Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Recorded typed capability wait on J3781 (--type capability --requires audio_input --recheck J3968 --check-at 2026-11-28T09:00:00Z)"
+        },
+        {
+          "at": "2026-11-28T01:07Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Posted HOS desk #694 and OWB studio thread reports; closing J3968"
         }
       ],
-      "remaining_action": "Post HOS desk #694 and OWB studio thread reports, then close J3968 as done",
+      "remaining_action": "None — closing J3968 as done after posting HOS desk and OWB thread reports",
       "kind": "review",
       "recheck_of": "J3781",
       "required_capabilities": [
@@ -366086,16 +366091,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-28T01:06Z",
+        "at": "2026-11-28T01:07Z",
         "by": "gemini",
         "plan": [
           "Check J3781 history, capabilities, PR #798 & NAS hashes",
           "Verify non-producer audio_input condition & update J3781 wait",
           "Post HOS desk & studio thread reports and close J3968"
         ],
-        "note": "Recorded typed capability wait on J3781 (--type capability --requires audio_input --recheck J3968 --check-at 2026-11-28T"
+        "note": "Posted HOS desk #694 and OWB studio thread reports; closing J3968"
       },
       "taskKeys": [
         "HOS:136"
