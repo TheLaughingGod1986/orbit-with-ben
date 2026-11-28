@@ -1,5 +1,5 @@
 {
-  "next_id": 3969,
+  "next_id": 3970,
   "jobs": [
     {
       "id": "J0001",
@@ -365942,6 +365942,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3969",
+      "title": "HOS 009: rule on actual scaled-crop loop contract after v04 rerun",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3871 exact unchanged v04 rerun after merged J3965 remains FAIL. This is a request for a separate Chief gate ruling, not permission for another render or gate waiver. Read HOS codex/J3871-recheck, 10_Shorts/J3871/v04/recheck_20261128/REPORT.md and receipts. Existing draft PRs 811/814 stay draft, J3816 held, J3872 dependent.\nActual source 1280x720. Existing build uses scale=3008:1692:flags=lanczos,crop=952:1692:1028:0 then fps=30. Source-space crop is [1028/2.35,0,952/2.35,720], so truthful declaration fails terminal_loop with crop/output must contain integer pixels. Independent next restriction: output 952x1692 is codec-rounded portrait, not exact integer 9:16 (952*16=15232;1692*9=15228). No rounded or invented source crop was submitted as eligible. Opening [0.9,1.7), tail [0,0.9), 17.1s, last word 15.78s remain unchanged. Video SHA256 3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac.\nRule on whether to support the actual deterministic scale-before-crop recipe and codec rounding in a separate tested core PR, or explicitly authorise a new conforming edit. Retain hash/interval/real rendered correspondence checks and all negative overlap/repeat protections. Do not treat the sampled contract as audio/motion KEEP. No spending, upload, UAT or Short PASS.\nAlso publish final text-only rerun evidence via designated Claude Code route: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck. Prior public push rejection on J3871 remains in force; Codex must not retry or bypass it. Preserve draft ancestry from PR811 via PR814; new rerun branch merges the prior draft and current main.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-28T00:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T00:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the exact crop incompatibility and choose a safe next step",
+      "kind": "chief",
+      "plain": "Decide how to check the Newton apple Short’s existing crop and loop"
     }
   ],
   "focus": [
