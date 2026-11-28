@@ -365547,10 +365547,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-28T00:00Z",
+      "eta": "2026-11-28T01:00Z",
       "created_by": "claude",
       "created_at": "2026-11-27T23:59Z",
       "result": "",
@@ -365559,11 +365559,24 @@
           "at": "2026-11-27T23:59Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T00:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Change terminal_loop.py band + picture_qa loop-return exception with tests; core sync",
       "due": "2026-11-30T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-28T00:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
