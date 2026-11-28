@@ -368250,9 +368250,14 @@
           "at": "2026-11-28T10:04Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T10:04Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Waiting for J3972 OWB/HOS scale-before-crop code PRs to be published, reviewed and merged before rechecking unchanged v04",
+      "remaining_action": "Checking whether J3972 code PRs are reviewed and merged",
       "kind": "review",
       "recheck_of": "J3871",
       "due": "2026-11-28T11:02:06+00:00",
@@ -368270,8 +368275,11 @@
         "of": 3,
         "at": "2026-11-28T10:04Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3871 and J3972 state",
+          "Check branches, PRs and merges",
+          "Record wait or reopen and finish"
+        ]
       }
     }
   ],
