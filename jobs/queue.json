@@ -368089,13 +368089,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-28T09:34Z",
-      "eta": "2026-11-28T10:34Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-28T09:33Z",
-      "result": "",
+      "result": "No live fixes. Live API 09:35Z: 51 active (45 public + 6 scheduled), paid=false on all 51 (J3976 holds), 0 /go/, 8/8 sources 200, channel:audit 80/0 errors. Note: HOS PR #823 (records only, needs Chief merge)",
       "history": [
         {
           "at": "2026-11-28T09:33Z",
@@ -368131,6 +368131,11 @@
           "at": "2026-11-28T09:37Z",
           "by": "claudecode",
           "what": "step 4 of 4 done: No live fixes; note in HOS PR #823"
+        },
+        {
+          "at": "2026-11-28T09:37Z",
+          "by": "claudecode",
+          "what": "done: No live fixes. Live API 09:35Z: 51 active (45 public + 6 scheduled), paid=false on all 51 (J3976 holds), 0 /go/, 8/8 sources 200, channel:audit 80/0 errors. Note: HOS PR #823 (records only, needs Chief merge)"
         }
       ],
       "remaining_action": "Done; awaiting Chief merge of HOS PR #823",
@@ -368160,7 +368165,8 @@
       "taskKeys": [
         "HOS:008",
         "HOS:009"
-      ]
+      ],
+      "done_ref": "history-of-science#823"
     }
   ],
   "focus": [
