@@ -346274,9 +346274,14 @@
           "at": "2026-11-28T00:11Z",
           "by": "relay",
           "what": "condition verification queued: J3967"
+        },
+        {
+          "at": "2026-11-28T01:01Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T08:15:00Z"
         }
       ],
-      "remaining_action": "Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
+      "remaining_action": "Complete genuine continuous 24-fps moving_video_input playback review of 6 visually clean HOS 013 take-2 retake plates (rows 3, 10, 24, 28, 47, 54) alongside J3178 (rows 56-62, 64-66), or resolve the playback lane with Claude/Ben",
       "due": "2026-12-03T18:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -346301,15 +346306,14 @@
       },
       "hold": {
         "type": "capability",
-        "condition": "J3789 acting-Chief ruling (OWB PR #1343 merged, commit 8264b0f3bf, jobs/reviews/J3789/REVIEW.md): condition unmet. Direct read_file probe on NAS take-2 clip P01_03a_unlabelled_birds_t2.mp4 (7.917s, 24 fps, used 0.00-4.00s) in agy 1.5.18 on Gemini 4 Neon (High) still returns only 8 discrete 1-fps integer-second static frames (00:00..00:07), not continuous 24-fps moving-video playback required by HOS Playbook s5 / desk #7019983519 / J3178 / J3756 (audio_input and image_input demonstrated; relay 11:46:51Z 2-second colour-block probe false-positives from 1-fps stills). Codex (usage limit Nov 27), Claude Code (Fable limit Dec 2), and Cursor (11:55:32Z probe) all have available=[]; Claude returns 2026-11-26T12:50:00Z (cloud-only); Grok Bot UP last in chain with no verified 24-fps moving_video_input. Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 hashes match History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json (keep=false / PENDING_REVIEW); zero new continuous-playback evidence or Claude/Ben playback-lane resolution on HOS #694, OWB #954, or open PRs. Keep J3756 held pending continuous 24-fps moving_video_input review of take-2 rows 3, 10, 24, 28, 47, 54 alongside J3178 (rows 56-62, 64-66); no playback PASS claimed, no minting or assembly authorised.",
-        "check_at": "2026-11-28T01:11:14+00:00",
+        "condition": "J3967 verification (2026-11-28T00:59Z, worker gemini, PR #1401 verifier wait-update): condition UNMET. Direct read_file probe on NAS take-2 clip P01_03a_unlabelled_birds_t2.mp4 (7.917s, 24 fps, used 0.00-4.00s) in agy 1.5.18 on Gemini 4 Neon (High) still returns only 8 discrete 1-fps integer-second static frames (00:00..00:07), not continuous 24-fps moving-video playback required by HOS Playbook s5 / desk #7019983519 / J3178 / J3756 (audio_input and image_input demonstrated and recorded via chief_relay.py capabilities; relay 00:54:32Z 2-second colour-block probe false-positives moving_video_input from 1-fps stills). Codex (Chief, UP, 00:54:46Z probe), Claude Code (UP, 00:55:37Z probe), and Cursor (down until 2026-12-04T02:42:04Z, 27 Nov 02:40:54Z probe) all have available=[]; Claude down until 2026-11-28T07:50:00Z (cloud-only); Grok Bot down (no verified 24-fps moving_video_input). Freshly verified 6/6 archive_v01_retake1 NAS SHA-256 hashes match History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json (keep=false / PENDING_REVIEW); J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); zero new continuous-playback evidence or Claude/Ben playback-lane resolution on HOS #694 (through #7231277694), OWB #1353, or PRs (open J3807 #1347, J3840 #1363, J3906 #1392 unmerged). Keep J3756 held pending continuous 24-fps moving_video_input review of take-2 rows 3, 10, 24, 28, 47, 54 alongside J3178 (rows 56-62, 64-66); no playback PASS claimed, no minting or assembly authorised.",
+        "check_at": "2026-11-28T08:15:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "last_recheck": "J3789",
-        "checked_at": "2026-11-26T12:09:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3967"
+        "last_recheck": "J3967",
+        "checked_at": "2026-11-28T01:01:50+00:00",
+        "checked_by": "gemini"
       }
     },
     {
