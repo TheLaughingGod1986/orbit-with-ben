@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
 | J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
-| J3871 | mini | open | – | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
+| J3871 | mini | claimed | codex | 2026-11-28T02:27Z | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
 | J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
 | J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
 | J3881 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
