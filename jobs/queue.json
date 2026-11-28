@@ -365962,9 +365962,14 @@
           "at": "2026-11-28T01:01Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), codex/claudecode/cursor capabilities available=[], claude down until 07:50Z, Grok down, and zero new 013 playback evidence or lane resolution on HOS #694, OWB #1353, or PRs."
+        },
+        {
+          "at": "2026-11-28T01:01Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Recorded unmet capability hold on J3756 (--type capability --requires moving_video_input --recheck J3967, next check 2026-11-28T08:15:00Z)."
         }
       ],
-      "remaining_action": "Record unmet capability wait on J3756 (--recheck J3967) and close J3967",
+      "remaining_action": "Post verification reports on OWB #1353 and HOS #694 and finish J3967",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -365981,7 +365986,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
         "at": "2026-11-28T01:01Z",
         "by": "gemini",
@@ -365991,7 +365996,7 @@
           "Update J3756 wait state and close J3967",
           "Post verification report on studio thread"
         ],
-        "note": "Verified 6/6 archive_v01_retake1 NAS SHA-256 matches (keep=false / PENDING_REVIEW), J2529 REVIEW_STATE.json unchanged (4"
+        "note": "Recorded unmet capability hold on J3756 (--type capability --requires moving_video_input --recheck J3967, next check 202"
       },
       "taskKeys": [
         "HOS:013"
