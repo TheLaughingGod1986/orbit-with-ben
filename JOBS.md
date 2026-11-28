@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3969 | any | claimed | codex | 2026-11-28T02:32Z | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
 | J3970 | mini | open | – | – | chief · Chief: resolve 034 upload orphan-review |  |
 | J3971 | mini | open | – | – | WW2:003 thumbs · for gemini · studio · Copy the three B-29 launch thumbnails to a review branch so Claude can show Ben |  |
+| J3972 | mini | open | – | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
 
 Recently finished:
 
