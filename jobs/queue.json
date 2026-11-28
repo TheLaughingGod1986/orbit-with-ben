@@ -346834,9 +346834,14 @@
           "at": "2026-11-28T12:18Z",
           "by": "relay",
           "what": "condition verification queued: J3996"
+        },
+        {
+          "at": "2026-11-28T12:24Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T18:25:00Z"
         }
       ],
-      "remaining_action": "Generate the remaining book clip after submission approval",
+      "remaining_action": "Obtain explicit submission approval or Chief reroute off Codex, then mint only row 63 take 3 (100 cr max, before 5 Dec)",
       "due": "2026-12-02T18:00:00Z",
       "kind": "video",
       "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS",
@@ -346860,9 +346865,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed.",
-        "check_at": "2026-11-28T13:18:25+00:00",
-        "recheck_task": "J3996"
+        "condition": "Unmet at 2026-11-28T12:24Z (J3996): no new explicit user approval since 06:18Z across OWB #1353, HOS #694, OWB #219 or open PRs after Codex automatic approval review rejected live row 63 take-3 submission (authorization for up to 100 Flow subscription credits was only in job/tool output). Original Chief PASS gates (J3757 PR #792, J3759 #7180256469, J3979), clean scratch runner (/Volumes/MiniWork/scratch/J3760-hos @ 36b62703), dry-run --floor 3000 PASS (0 cr, balance 22600, headroom 21600 >= 3000, cutoff < 2026-12-05T00:00:00Z), and archived row 49 (b0b6c361..., 100/200 cr, keep false — never remint) remain intact. Note for elected Chief: under AGENTS.md Flow subscription spend inside written Chief rules needs no Ben sign-off; Chief may reopen and reroute J3760 off Codex to gemini or claudecode before 5 Dec 00:00Z, or await explicit approval.",
+        "check_at": "2026-11-28T18:25:00Z",
+        "last_recheck": "J3996",
+        "checked_at": "2026-11-28T12:24:22+00:00",
+        "checked_by": "gemini"
       }
     },
     {
