@@ -357562,9 +357562,14 @@
           "at": "2026-11-28T00:27Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T00:27Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Re-run the unchanged Newton apple Short through the corrected picture and opening checks",
+      "remaining_action": "Repairing the Newton apple Short opening, loop and sound",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
       "taskKeys": [
@@ -357575,8 +357580,11 @@
         "of": 3,
         "at": "2026-11-28T00:27Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect sources and failed checks",
+          "Repair and render new cut",
+          "Run checks and record handoff"
+        ]
       }
     },
     {
