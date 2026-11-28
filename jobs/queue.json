@@ -365617,15 +365617,20 @@
           "at": "2026-11-28T00:02Z",
           "by": "codex",
           "what": "step 1 of 4 done: Read J3874 ruling: v04 tail source 0-0.9 precedes opening 0.9-1.7; old validator incorrectly required identical offsets. Corrected film link to HOS 009."
+        },
+        {
+          "at": "2026-11-28T00:04Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Fourteen terminal-loop tests pass, including native pre-roll rendered correspondence and negative duration/reuse cases. Core files and lock synced into clean HOS worktree; full scripts/tools/audio suites started with temporary HOME."
         }
       ],
-      "remaining_action": "Implementing the channel duration band and non-overlapping terminal pre-roll contract",
+      "remaining_action": "Running full regression suites and verifying identical core files in both channels",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:02Z",
+        "at": "2026-11-28T00:04Z",
         "by": "codex",
         "plan": [
           "Inspect gate contracts",
@@ -365633,7 +365638,7 @@
           "Run suites and sync core",
           "Publish changes and reopen repair"
         ],
-        "note": "Read J3874 ruling: v04 tail source 0-0.9 precedes opening 0.9-1.7; old validator incorrectly required identical offsets."
+        "note": "Fourteen terminal-loop tests pass, including native pre-roll rendered correspondence and negative duration/reuse cases. "
       },
       "taskKeys": [
         "HOS:009"
