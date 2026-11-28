@@ -366849,9 +366849,14 @@
           "at": "2026-11-28T04:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T04:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Complete live migration and operational proof through J3962",
+      "remaining_action": "Inspect J3012, J3961, J3962 queue records, PRs, and live studio migration state",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T18:00:00+00:00",
@@ -366869,8 +366874,11 @@
         "of": 3,
         "at": "2026-11-28T04:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3012, J3961, J3962 records and history",
+          "Verify J3012 waiting condition and live state",
+          "Update J3012 wait/reopen, finish J3978, and report"
+        ]
       }
     }
   ],
