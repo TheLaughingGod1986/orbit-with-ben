@@ -362673,15 +362673,20 @@
           "at": "2026-11-28T07:22Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-28T07:22Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Privacy read clean: 3 new files under jobs/reviews/J3918, no secrets/emails/addresses/media; email-ratchet + private-network tests OK; diff check clean"
         }
       ],
-      "remaining_action": "read the J3918 evidence diff for private material",
+      "remaining_action": "push branch and open the evidence PR",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the completed review of the first planets Short after checking privacy",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-28T07:22Z",
         "by": "claudecode",
@@ -362690,7 +362695,8 @@
           "Push and open PR",
           "Merge when green",
           "Record link on J3918"
-        ]
+        ],
+        "note": "Privacy read clean: 3 new files under jobs/reviews/J3918, no secrets/emails/addresses/media; email-ratchet + private-net"
       },
       "taskKeys": [
         "OWB:064"
