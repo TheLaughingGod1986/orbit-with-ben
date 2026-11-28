@@ -367825,7 +367825,7 @@
     {
       "id": "J3988",
       "title": "Verify condition for J3780",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J3780: Independent non-producer reviewer with demonstrated audio_input must directly hear both HOS 128 Shorts tight masters (S01_v03_tight including tenfold/joins, S02_v03b_tight). Verified 27 Nov 18:56-18:58Z: codex (elected Chief), claudecode, and cursor (down until 4 Dec) have capabilities available=[]; claude is down until 27 Nov 21:50Z with no Mini audio_input probe; grok has no demonstrated audio_input. gemini has verified audio_input (18:56Z relay probe PASS 1.00 + 18:58Z direct read_file probe) but authored J3671/HOS PR #797 and is barred by the non-producer guard. PR #797 (a855da7475, 6/6 CI green, 0 comments) and all 5 script/NAS hashes remain intact.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3780 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -367845,6 +367845,11 @@
           "at": "2026-11-28T09:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T09:01Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-28T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Listen independently to both Shorts voiceovers, then rule and merge if passed",
@@ -367854,7 +367859,15 @@
         "audio_input"
       ],
       "due": "2026-11-28T10:01:17+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
