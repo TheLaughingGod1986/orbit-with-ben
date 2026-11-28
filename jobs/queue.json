@@ -357454,13 +357454,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-27T08:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:27Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-hos codex/J3871 (c8c3372e). Text-only repair evidence ready for designated publication as draft; keep PR 811 draft and do not merge as approved. J3871 remains incomplete pending J3874 loop-gate review: v04 Open/Polish/Music/VO/SFX PASS, picture FAIL terminal reuse; J3872 stays dependent and J3816 held. No Short PASS/UAT/upload/spend. Automatic approval rejected public push as sensitive egress to an unverified remote and directed Claude Code route; do not retry Codex push.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-27T08:27Z",
@@ -357511,34 +357511,19 @@
           "at": "2026-11-27T23:59Z",
           "by": "claude",
           "what": "hold updated: waits on J3965. Claude, acting Chief, 28 Nov 00:10Z (Ben 23:54: 'Nothing running'; Codex, the Mini's Chief, last acted 22:14Z)."
+        },
+        {
+          "at": "2026-11-28T00:14Z",
+          "by": "codex",
+          "what": "reopened: J3965 gate changes merged: OWB PR1420 and HOS PR816, all CI green. Resume only the exact unchanged v04 gate rerun with a truthful retained terminal pre-roll contract; no media edit, Short PASS, UAT, spend or upload is authorized by this reopen. J3872 review remains dependent on repair completion."
         }
       ],
       "remaining_action": "Resolve the terminal-loop gate conflict before approval review",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-27T08:37Z",
-        "by": "codex",
-        "plan": [
-          "Inspect source edit and gate contracts",
-          "Repair and verify new cut",
-          "Record evidence and hand off review"
-        ],
-        "note": "V04 safely copied and hash-verified on NAS. Open PASS 1.91; polish/music/VO/SFX PASS; picture still FAIL solely terminal"
-      },
       "taskKeys": [
         "HOS:009"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3965 merges the J3874-authorised gate changes (channel Shorts band in terminal_loop.py; declared loop return exempt from SAME_STRETCH), then v04 re-runs both gates unmodified.",
-        "check_at": "2026-11-28T06:00:00Z",
-        "last_recheck": "J3934",
-        "checked_at": "2026-11-27T17:58:08+00:00",
-        "checked_by": "claudecode"
-      }
+      ]
     },
     {
       "id": "J3872",
