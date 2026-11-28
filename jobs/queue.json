@@ -367020,13 +367020,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-28T06:02Z",
-      "eta": "2026-11-28T08:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T06:00Z",
-      "result": "",
+      "result": "Condition UNMET for J3871 (HOS:009 Newton apple Short): J3972 is still blocked at 3/4 awaiting designated Claude Code publication, Chief review, and merge of both OWB (4a31f3835a) and HOS (e05d7ad5) scale-before-crop code PRs (0 remote branches, 0 PRs, 0 merges as of 2026-11-28T06:05Z); J3969 recheck/ruling branches (0511c938, eafc150e) also remain local-only. Exact NAS v04 SHA-256 verified unchanged (3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac) and remains picture FAIL; draft PRs #811/#814, J3816 hold, and J3872 dependency preserved. Recorded updated dependency hold on J3871 with --recheck J3980 and next check 2026-11-28T10:00:00Z; no media edit, spend, upload, or schedule change.",
       "history": [
         {
           "at": "2026-11-28T06:00Z",
@@ -367062,6 +367062,11 @@
           "at": "2026-11-28T06:06Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded UNMET dependency hold on J3871 (--recheck J3980, next check 2026-11-28T10:00:00Z); exact v04 remains picture FAIL"
+        },
+        {
+          "at": "2026-11-28T06:06Z",
+          "by": "gemini",
+          "what": "done: Condition UNMET for J3871 (HOS:009 Newton apple Short): J3972 is still blocked at 3/4 awaiting designated Claude Code publication, Chief review, and merge of both OWB (4a31f3835a) and HOS (e05d7ad5) scale-before-crop code PRs (0 remote branches, 0 PRs, 0 merges as of 2026-11-28T06:05Z); J3969 recheck/ruling branches (0511c938, eafc150e) also remain local-only. Exact NAS v04 SHA-256 verified unchanged (3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac) and remains picture FAIL; draft PRs #811/#814, J3816 hold, and J3872 dependency preserved. Recorded updated dependency hold on J3871 with --recheck J3980 and next check 2026-11-28T10:00:00Z; no media edit, spend, upload, or schedule change."
         }
       ],
       "remaining_action": "Post OWB studio thread report and finish J3980",
