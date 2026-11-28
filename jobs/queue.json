@@ -368545,9 +368545,14 @@
           "at": "2026-11-28T12:19Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-28T12:19Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: J3962 open/unclaimed (only history: added 27 Nov 22:07Z); studio remote heads = macbook-heartbeat-2 + 3 rehearsal/j3012 branches, no main; com.owb.chief-relay and board-publish plists run from orbit-with-ben; PR1389 MERGED 42e9bb1483 (ancestor of origin/main); J3961 done by codex"
         }
       ],
-      "remaining_action": "Checking J3012's waiting condition",
+      "remaining_action": "Recording J3012's wait and finishing this check",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T18:00:00+00:00",
@@ -368561,7 +368566,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
         "at": "2026-11-28T12:19Z",
         "by": "claudecode",
@@ -368569,7 +368574,8 @@
           "Read J3012 and J3962 state",
           "Check studio remote, launchd, PR1389, J3961",
           "Record wait and finish"
-        ]
+        ],
+        "note": "J3962 open/unclaimed (only history: added 27 Nov 22:07Z); studio remote heads = macbook-heartbeat-2 + 3 rehearsal/j3012 "
       }
     },
     {
