@@ -357567,24 +357567,30 @@
           "at": "2026-11-28T00:27Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-28T00:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Recovered resume history: v04 already built; J3965 merged. Exact rerun only, no render or media change."
         }
       ],
-      "remaining_action": "Repairing the Newton apple Short opening, loop and sound",
+      "remaining_action": "Rechecking the unchanged Newton apple Short with the corrected loop contract",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
       "taskKeys": [
         "HOS:009"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-28T00:27Z",
+        "at": "2026-11-28T00:28Z",
         "by": "codex",
         "plan": [
-          "Inspect sources and failed checks",
-          "Repair and render new cut",
-          "Run checks and record handoff"
-        ]
+          "Verify existing v04 and merged gate ruling",
+          "Run exact-file gate checks",
+          "Commit receipts and hand off for review"
+        ],
+        "note": "Recovered resume history: v04 already built; J3965 merged. Exact rerun only, no render or media change."
       }
     },
     {
