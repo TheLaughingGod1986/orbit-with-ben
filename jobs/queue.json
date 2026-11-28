@@ -1,5 +1,5 @@
 {
-  "next_id": 3989,
+  "next_id": 3990,
   "jobs": [
     {
       "id": "J0001",
@@ -322483,18 +322483,28 @@
       "stage": "script",
       "after": "J3498",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-28T09:12Z",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T10:28Z",
-      "result": "",
+      "result": "WW2:011 script locked v02 (ww2-channel PR #216, merged). All six J3498 claims fixes applied (C05, C09, C16, C17, C18, C29) and four figure runs cut. Rule 6 300-word read PASS; the ~1,200-word read finds no background turn. 2,974 words, 18,863 characters, SHA-256 ee9d680f. Topic GO: 'p-51 mustang' ~75,100 searches a month (vidIQ 28 Nov); title 'P-51 Mustang: Why It Needed a British Engine'. Air Thu 17 Dec 17:00 London; Ben's watch Mon 14 Dec. VO queued as J3989, not before 2 Dec 12:00. £0. Claude, acting Chief.",
       "history": [
         {
           "at": "2026-11-24T10:28Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T09:12Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:12Z",
+          "by": "claude",
+          "what": "done: WW2:011 script locked v02 (ww2-channel PR #216, merged). All six J3498 claims fixes applied (C05, C09, C16, C17, C18, C29) and four figure runs cut. Rule 6 300-word read PASS; the ~1,200-word read finds no background turn. 2,974 words, 18,863 characters, SHA-256 ee9d680f. Topic GO: 'p-51 mustang' ~75,100 searches a month (vidIQ 28 Nov); title 'P-51 Mustang: Why It Needed a British Engine'. Air Thu 17 Dec 17:00 London; Ben's watch Mon 14 Dec. VO queued as J3989, not before 2 Dec 12:00. £0. Claude, acting Chief."
         }
       ],
       "remaining_action": "WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
@@ -367897,6 +367907,52 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3989",
+      "title": "WW2 film 011: narration in Ben's voice (P-51 Mustang, after the 7-day reads)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**HARD GUARD: no ElevenLabs credits before the 30 Nov 10:50Z reset.** This job holds until 2 Dec 12:00, after both pilots' 7-day reads (J3605, 1 Dec; J3706, 2 Dec). If either read changes a script rule in studio/RULES.md, park for the Chief to re-check v02 before spending. Never change or top up Ben's ElevenLabs plan. API only (`vo_take.py` / `el_client.py`). Record **only the long-film narration**.\n\n**Order after the reset:** films in air order, so 017 (Tue 8 Dec), 008 (Thu 10 Dec), 009 (Sat 12 Dec) and 010 go first, then this one (Thu 17 Dec). Check the live balance before starting. If what's left can't cover about 18.9k characters plus a retake margin, park for the Chief: don't voice half a film.\n\n**Task:** record the full narration in Ben's voice (`eleven_v3`, Ben Orbit Narrator, the same settings as the other WW2 films) for Field Order History **`WW2:011`**, *P-51 Mustang: Why It Needed a British Engine*. It airs **Thu 17 Dec 2026 17:00 London**, and Ben's watch is due **Mon 14 Dec**.\n\n**Locked source (`ww2-channel` main, PR #216, J3499):**\n- `02_Video-Projects/011_P51-Mustang-Rolls-Royce-Merlin-Engine/01_Script/NARRATION_v02.txt`: 2,974 words, 18,863 characters, SHA-256 `ee9d680fa09d76d0d0658cebfbf7e375c17a9ff0fb9df1f06832c91292858511`. Check the hash before spending.\n- Matches `01_Script/SCRIPT.md` v02 (46/46 paragraphs) with all six J3498 claims fixes applied.\n\n**Then:** the word-level SRT (`words.srt`) and take QA. Check for clipped words and mispronunciations of Kindelberger, Schmued, Meredith, Challier, Hucknall, Rotol, Schweinfurt, Regensburg, Galland and Kepner. Put the files on the NAS, update `status.json`'s vo stage, and open one ww2-channel PR. Queue picture/assembly next so Ben can watch by Mon 14 Dec.\n\n£0 beyond the monthly plan's credits (Ben, 27 Nov 2026: \"Voice credits are fine, keep going until we run out and I'll top up\").",
+      "ref": "",
+      "film": "WW2:011",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-28T09:12Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-28T09:12Z",
+      "result": "Waiting for: After the 30 Nov ElevenLabs reset and both pilots' 7-day reads (J3605 1 Dec, J3706 2 Dec)",
+      "history": [
+        {
+          "at": "2026-11-28T09:12Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-28T09:12Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: After the 30 Nov ElevenLabs reset and both pilots' 7-day reads (J3605 1 Dec, J3706 2 Dec)"
+        },
+        {
+          "at": "2026-11-28T09:12Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-12-02T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Record WW2 011's narration in Ben's voice from the locked v02 (not before 2 Dec 12:00)",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "vo",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "After the 30 Nov ElevenLabs reset and both pilots' 7-day reads (J3605 1 Dec, J3706 2 Dec)",
+        "check_at": "2026-12-02T12:00:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
