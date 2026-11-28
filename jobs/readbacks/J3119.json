@@ -1,0 +1,86 @@
+{
+  "job": "J3119",
+  "film": "OWB:034",
+  "agent": "gemini",
+  "recorded_at": "2026-11-28T00:31:00Z",
+  "authorisation": {
+    "ben_uat_ok": "2026-11-18T22:16:00Z (tick OWB-034, J2868, long master v02)",
+    "chief_packaging_pass": "J3115 (codex, elected acting Chief, jobs/reviews/J3115/REVIEW.md)"
+  },
+  "verified_hashes": {
+    "master_v02": "e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62",
+    "trailer": "01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd",
+    "thumb_A_j3105_v02": "8f5673606c0070eda94f90b7fee7960975fe41a49415812fcd841d20a9195a42",
+    "thumb_B_j3105_v02": "3b17f4c7f131bc275d4cd7109f591ef65535db0d63bc4286e3d7a584f7b4c4f7",
+    "thumb_C_j3105_v02": "c23a742058756337b7ee56e3e2aafe526763e5cccc3369f439cefd2f6a501aa3"
+  },
+  "gates": {
+    "gate_episode": "PASS (95.8/100, pluto_frozen_heart_script_master_v03.md)",
+    "youtube_package_dry_run": "PASS (ok=true, private, 2026-12-13T18:00:00.000Z)"
+  },
+  "youtube": {
+    "videoId": "jaAIgi5WuSM",
+    "url": "https://youtu.be/jaAIgi5WuSM",
+    "title": "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)",
+    "privacyStatus": "private",
+    "publishAt": "2026-12-13T18:00:00Z",
+    "categoryId": "28",
+    "defaultLanguage": "en-GB",
+    "defaultAudioLanguage": "en-GB",
+    "madeForKids": false,
+    "selfDeclaredMadeForKids": false,
+    "alteredContentStudioRadio": "VIDEO_HAS_ALTERED_CONTENT_YES (checked=true)",
+    "uploadStatus": "processed",
+    "processingStatus": "succeeded",
+    "primaryThumbnailApi": "set (034_pluto_A_j3105_v02.jpg)",
+    "captions": {
+      "id": "AUieDaYo6bsCUGFrEpUYgXV4a6BzYGzidGU1Tg8KlzPWrUdT5YN741n2_c69VRbHLKQ",
+      "language": "en-GB",
+      "name": "English (UK)",
+      "status": "serving"
+    },
+    "playlist": {
+      "id": "PLdoEpeiktw_Y",
+      "title": "Real Worlds: Solar System, Moons and Alien Planets Explained",
+      "playlistItemId": "UExkb0VwZWlrdHdfWS45ODRDNTg0QjA4NkFBNkQy"
+    },
+    "endScreen": {
+      "verifiedAfterReload": true,
+      "window": "10:26:28 - 10:46:28",
+      "elements": [
+        "Subscribe: Orbit With Ben",
+        "Video: Why Knocked-Sideways Uranus Has 21-Year Winters (oASsmqZfWU4; airs 2026-12-09T18:00:00Z)"
+      ]
+    },
+    "testAndCompare": {
+      "ledgerId": "T044",
+      "type": "thumbnail_only",
+      "priorTestPresent": false,
+      "verifiedAfterReload": true,
+      "studioStatus": "Ineligible (scheduled Private until 2026-12-13T18:00:00Z)",
+      "arms": {
+        "A": {
+          "hook": "NITROGEN GLACIER",
+          "sha256": "8f5673606c0070eda94f90b7fee7960975fe41a49415812fcd841d20a9195a42"
+        },
+        "B": {
+          "hook": "ICE MOUNTAINS",
+          "sha256": "3b17f4c7f131bc275d4cd7109f591ef65535db0d63bc4286e3d7a584f7b4c4f7"
+        },
+        "C": {
+          "hook": "FLOWING ICE",
+          "sha256": "c23a742058756337b7ee56e3e2aafe526763e5cccc3369f439cefd2f6a501aa3"
+        }
+      }
+    }
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-12-13T18:00:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "registeredInUploadsJson": true
+  },
+  "post_public_pending": {
+    "pinned_comment": "Wait until jaAIgi5WuSM goes Public on Sun 13 Dec 2026 18:00Z; entry added to PINNED_COMMENTS.json with commentId=''.",
+    "shorts": "J3066 and J3065 public-parent holds and J3123 slot dates preserved untouched; relatedVideoId='jaAIgi5WuSM' recorded in both Short PACKAGE_MANIFEST.json files."
+  }
+}
