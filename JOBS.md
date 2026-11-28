@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3966 | mini | open | – | – | assembly · Chief claims: let the next Mini Chief take mini Chief jobs while the elected Chief is the cloud Claude |  |
 | J3967 | mini | open | – | – | review · Verify condition for J3756 |  |
 | J3968 | mini | open | – | – | review · Verify condition for J3781 |  |
-| J3969 | any | open | – | – | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
+| J3969 | any | claimed | codex | 2026-11-28T02:32Z | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
 
 Recently finished:
 
