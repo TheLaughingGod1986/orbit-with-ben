@@ -366564,13 +366564,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-28T03:53Z",
-      "eta": "2026-11-28T04:53Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-28T03:32Z",
-      "result": "",
+      "result": "Chief review complete: bounded audit accepted; PR817 merged a81da26ee69cbf25ad66e9b54dc778d04c1ca7ac with green checks. Desk ruling 7233479245 authorizes eleven paid-promotion corrections after fresh package/non-sponsorship and Studio checks. Follow-ups J3976 (Studio corrections and Franklin record refresh) and J3977 (read-only audit coverage), both after this completed review. Root cause remains inference; no complete Studio-finish PASS from Edit controls or API comment existence. J3501 hold/date and other advisories unchanged. No YouTube/Buffer edits or spend.",
       "history": [
         {
           "at": "2026-11-28T03:32Z",
@@ -366626,6 +366626,11 @@
           "at": "2026-11-28T03:53Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T03:54Z",
+          "by": "codex",
+          "what": "done: Chief review complete: bounded audit accepted; PR817 merged a81da26ee69cbf25ad66e9b54dc778d04c1ca7ac with green checks. Desk ruling 7233479245 authorizes eleven paid-promotion corrections after fresh package/non-sponsorship and Studio checks. Follow-ups J3976 (Studio corrections and Franklin record refresh) and J3977 (read-only audit coverage), both after this completed review. Root cause remains inference; no complete Studio-finish PASS from Edit controls or API comment existence. J3501 hold/date and other advisories unchanged. No YouTube/Buffer edits or spend."
         }
       ],
       "remaining_action": "Post HOS desk report and block J3975 parked for Chief: live fixes",
@@ -366654,7 +366659,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/issues/694#issuecomment-7233479245"
     },
     {
       "id": "J3976",
