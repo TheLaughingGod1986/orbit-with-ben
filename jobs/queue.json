@@ -353265,9 +353265,14 @@
           "at": "2026-11-28T00:05Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-28T00:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified J3115 done (7f69bd3b4f), PR #1367 merged (63265bea07 / 40c6ca5114) on origin/main, rejected candidates absent, J3819 already closed done, and 8/8 NAS SHA-256 hashes matching HASH_CHECK.json and manifests"
         }
       ],
-      "remaining_action": "Verify J3115 published exact-file ruling on main and inspect current 034 manifests and hashes",
+      "remaining_action": "Set 034 thumbs stage to done with J3115 ref and updated next note, verify status.json and handoffs",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Update the Pluto thumbnail status once its packaging review is published",
@@ -353280,16 +353285,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-28T00:05Z",
+        "at": "2026-11-28T00:08Z",
         "by": "gemini",
         "plan": [
           "Verify J3115 published ruling on main",
           "Compare published hashes against current 034 files",
           "Reconcile 034 thumbs board state and J3819",
           "Post studio thread report and finish J3828"
-        ]
+        ],
+        "note": "Verified J3115 done (7f69bd3b4f), PR #1367 merged (63265bea07 / 40c6ca5114) on origin/main, rejected candidates absent, "
       },
       "taskKeys": [
         "OWB:034"
