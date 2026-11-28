@@ -368111,9 +368111,14 @@
           "at": "2026-11-28T09:34Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:34Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Listing HOS live and scheduled videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -368126,11 +368131,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-28T09:34Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "List HOS live+scheduled videos",
+          "Read listings via Data API",
+          "Compare to repo listing files",
+          "Write fix list + park/finish"
+        ]
       }
     }
   ],
