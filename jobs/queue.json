@@ -367030,9 +367030,14 @@
           "at": "2026-11-28T06:03Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J3980 condition verification for J3871 (HOS:009)"
+        },
+        {
+          "at": "2026-11-28T06:04Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J3871, J3969, J3972, J3816, J3872 queue records and local worktrees; J3972 and J3969 are both blocked awaiting Claude Code publication"
         }
       ],
-      "remaining_action": "Inspecting J3871, J3969, J3972, related jobs, and OWB/HOS PR merge status",
+      "remaining_action": "Verifying J3972 code PR publication/merge state, J3969 evidence publication, and v04 hash integrity",
       "kind": "review",
       "recheck_of": "J3871",
       "due": "2026-11-28T07:00:35+00:00",
@@ -367046,16 +367051,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-28T06:03Z",
+        "at": "2026-11-28T06:04Z",
         "by": "gemini",
         "plan": [
           "Inspect J3871, J3969, J3972 and related publish jobs/PRs",
           "Verify whether both J3972 code PRs are reviewed and merged",
           "Update J3871 wait/reopen state, report, and close J3980"
         ],
-        "note": "Started J3980 condition verification for J3871 (HOS:009)"
+        "note": "Read J3871, J3969, J3972, J3816, J3872 queue records and local worktrees; J3972 and J3969 are both blocked awaiting Clau"
       },
       "taskKeys": [
         "HOS:009"
