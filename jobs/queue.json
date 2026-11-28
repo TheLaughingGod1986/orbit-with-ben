@@ -1,5 +1,5 @@
 {
-  "next_id": 3995,
+  "next_id": 3997,
   "jobs": [
     {
       "id": "J0001",
@@ -274006,6 +274006,11 @@
           "at": "2026-11-28T04:17Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T10:20:00Z"
+        },
+        {
+          "at": "2026-11-28T12:18Z",
+          "by": "relay",
+          "what": "condition verification queued: J3995"
         }
       ],
       "remaining_action": "Complete live migration and operational proof through J3962",
@@ -274042,10 +274047,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J3962 (elected-Chief live coordination and operational proof of studio engine move: relay, board, ticks and both MacBook slots) is still open and unclaimed; studio remote has no main branch and Mini launchd still runs from orbit-with-ben. PR1389 (42e9bb1483) and J3961 KEEP remain merged/done. Preserve parent 3/4 and all gates; no activation in verification.",
-        "check_at": "2026-11-28T10:20:00Z",
+        "check_at": "2026-11-28T13:18:25+00:00",
         "last_recheck": "J3978",
         "checked_at": "2026-11-28T04:17:50+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3995"
       }
     },
     {
@@ -346819,6 +346825,11 @@
           "at": "2026-11-28T06:18Z",
           "by": "codex",
           "what": "blocked: Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed."
+        },
+        {
+          "at": "2026-11-28T12:18Z",
+          "by": "relay",
+          "what": "condition verification queued: J3996"
         }
       ],
       "remaining_action": "Generate the remaining book clip after submission approval",
@@ -346846,7 +346857,8 @@
       "hold": {
         "type": "input",
         "condition": "Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed.",
-        "check_at": "2026-11-28T12:18:18+00:00"
+        "check_at": "2026-11-28T13:18:25+00:00",
+        "recheck_task": "J3996"
       }
     },
     {
@@ -368494,6 +368506,68 @@
       "taskKeys": [
         "HOS:010"
       ]
+    },
+    {
+      "id": "J3995",
+      "title": "Verify condition for J3012",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3012: J3962 (elected-Chief live coordination and operational proof of studio engine move: relay, board, ticks and both MacBook slots) is still open and unclaimed; studio remote has no main branch and Mini launchd still runs from orbit-with-ben. PR1389 (42e9bb1483) and J3961 KEEP remain merged/done. Preserve parent 3/4 and all gates; no activation in verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3012 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T12:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T12:18Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete live migration and operational proof through J3962",
+      "kind": "review",
+      "recheck_of": "J3012",
+      "due": "2026-11-27T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3996",
+      "title": "Verify condition for J3760",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3760: Automatic approval review rejected live row 63 take-3 submission: authorization for up to 100 subscription credits was only in job/tool output, not trusted user content. Needs explicit user approval to resume the existing guarded runner. No generation started or credits spent this session; row 49 already archived, never remint it. Six-step plan remains 2/6; dry-run passed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3760 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T12:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T12:18Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Generate the remaining book clip after submission approval",
+      "kind": "review",
+      "recheck_of": "J3760",
+      "due": "2026-11-28T13:18:25+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
