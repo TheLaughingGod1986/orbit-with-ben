@@ -332546,9 +332546,14 @@
           "at": "2026-11-28T12:00Z",
           "by": "relay",
           "what": "condition verification queued: J3993"
+        },
+        {
+          "at": "2026-11-28T12:03Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-12-12T09:00:00Z"
         }
       ],
-      "remaining_action": "Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule sMPlMuxK3YU, and update UPLOADS.json, BUFFER_POSTS.json and shorts_open_library together",
+      "remaining_action": "Wait for actual HOS 010 long upload id and confirmed air date, then set Related, pick unoccupied Sat/Fri/Sun/Tue 11:30 London slot after the long, schedule sMPlMuxK3YU, update UPLOADS.json, BUFFER_POSTS.json and shorts_open_library together",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
       "mini_only": true,
@@ -332569,10 +332574,12 @@
         "HOS:010"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged).",
-        "check_at": "2026-11-28T13:00:39+00:00",
-        "recheck_task": "J3993"
+        "type": "input",
+        "condition": "HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date. Checked 28 Nov 2026 13:4xZ: live channel:audit 80 videos 0 errors, no 010 long on the channel; status.json picture 12/65 plates (todo), edit/thumbnails/ben_ok todo, air parked to 4 Feb 2027 (swap reserve for 31 Dec decided by 11 Dec). sMPlMuxK3YU still Private, no publishAt. J3511 private-only finishing done by gemini 25 Nov (PR #783).",
+        "check_at": "2026-12-12T09:00:00Z",
+        "last_recheck": "J3993",
+        "checked_at": "2026-11-28T12:03:49+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
