@@ -365506,9 +365506,14 @@
           "at": "2026-11-28T00:00Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Updated 07_Upload-Package/PACKAGE_MANIFEST.json in J3964 worktree with Ben board OK (OWB-J3903), target schedule 2026-12-23T11:30:00.000Z, status awaiting_parent_long_schedule, and parent-long link/relatedVideoId completion note (v02/v03 manifests preserved untouched)."
+        },
+        {
+          "at": "2026-11-28T00:01Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified exact NAS hashes (mp4 538464b9, cover 0e5b9937, srt a61a7370), listing_package.inspect complete=true (0 missing), and youtube:package --dry-run PASS with gate_shorts_open PASS for 2026-12-23T11:30:00.000Z (no live upload performed)."
         }
       ],
-      "remaining_action": "Run youtube:package dry-run, Shorts ship gate for 2026-12-23, and privacy tests",
+      "remaining_action": "Open pull request for Chief merge and park J3964 waiting for OWB:064 long to be scheduled",
       "kind": "studio",
       "approved_from": {
         "what": "Passed cut — deliver listing package",
@@ -365530,9 +365535,9 @@
         "handled": true
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-28T00:00Z",
+        "at": "2026-11-28T00:01Z",
         "by": "gemini",
         "plan": [
           "Inspect 064 long status and v03 package",
@@ -365540,7 +365545,7 @@
           "Run dry-run, gate, and privacy checks",
           "Open PR and park waiting for 064 long"
         ],
-        "note": "Updated 07_Upload-Package/PACKAGE_MANIFEST.json in J3964 worktree with Ben board OK (OWB-J3903), target schedule 2026-12"
+        "note": "Verified exact NAS hashes (mp4 538464b9, cover 0e5b9937, srt a61a7370), listing_package.inspect complete=true (0 missing"
       },
       "taskKeys": [
         "OWB:064"
