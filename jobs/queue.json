@@ -358441,19 +358441,29 @@
           "at": "2026-11-28T09:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T09:02Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Reply to new viewer comments on Orbit With Ben (daily)",
+      "remaining_action": "Read existing COMMENT_REPLIES.jsonl and inspect YouTube Studio comments on CDP 9223",
       "due": "2026-11-28T20:00:00Z",
       "kind": "studio",
       "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-28T09:02Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect Studio comments and log",
+          "Classify comments and verify answers",
+          "Post approved replies and log",
+          "Commit log and queue tomorrow",
+          "Post summary and close job"
+        ]
       }
     },
     {
