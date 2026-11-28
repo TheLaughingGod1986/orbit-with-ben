@@ -367178,10 +367178,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-28T06:58Z",
+      "eta": "2026-11-28T08:58Z",
       "created_by": "codex",
       "created_at": "2026-11-28T06:40Z",
       "result": "",
@@ -367235,6 +367235,11 @@
           "at": "2026-11-28T06:57Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6.1-sol: Studio collection and PR merge already complete; Codex closing its Chief review. Explicit Codex lane avoids stale studio-kind Cursor pool mapping; no fresh Studio read or spend."
+        },
+        {
+          "at": "2026-11-28T06:58Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for Chief review and merge of PR #1424",
@@ -367250,7 +367255,15 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-28T06:58Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3982",
