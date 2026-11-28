@@ -366859,9 +366859,14 @@
           "at": "2026-11-28T04:16Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J3012, J3961, J3962 records and PR1389 Chief ruling 7229040274; J3962 is still open and unclaimed."
+        },
+        {
+          "at": "2026-11-28T04:17Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified UNMET: PR1389 merged (42e9bb1483) and J3961 done, but J3962 is still open/unclaimed; studio remote has no main branch and Mini launchd still runs from orbit-with-ben."
         }
       ],
-      "remaining_action": "Verify live studio repo, Mini launchd services, open PRs, and J3962 status",
+      "remaining_action": "Update J3012 hold with recheck J3978, close J3978, and post verification report to studio thread",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T18:00:00+00:00",
@@ -366875,16 +366880,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-28T04:16Z",
+        "at": "2026-11-28T04:17Z",
         "by": "gemini",
         "plan": [
           "Inspect J3012, J3961, J3962 records and history",
           "Verify J3012 waiting condition and live state",
           "Update J3012 wait/reopen, finish J3978, and report"
         ],
-        "note": "Read J3012, J3961, J3962 records and PR1389 Chief ruling 7229040274; J3962 is still open and unclaimed."
+        "note": "Verified UNMET: PR1389 merged (42e9bb1483) and J3961 done, but J3962 is still open/unclaimed; studio remote has no main "
       }
     }
   ],
