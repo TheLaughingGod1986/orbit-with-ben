@@ -368385,6 +368385,11 @@
           "at": "2026-11-28T12:00Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-28T12:00Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-28T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule",
@@ -368392,7 +368397,15 @@
       "recheck_of": "J3611",
       "mini_only": true,
       "due": "2026-11-28T13:00:39+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
