@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3957 | mini | blocked | gemini | – | 064 edit · qa · OWB 064 Short 2 (v01): Independent audio & moving-video QA review (PR #1416) | J3904 |
 | J3962 | mini | open | – | – | chief · J3012: coordinate the reviewed studio engine move and prove live operation | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274 |
 | J3964 | mini | blocked | gemini | – | studio · Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z |  |
-| J3967 | mini | open | – | – | review · Verify condition for J3756 |  |
+| J3967 | mini | claimed | gemini | 2026-11-28T02:58Z | review · Verify condition for J3756 |  |
 | J3968 | mini | open | – | – | review · Verify condition for J3781 |  |
 | J3969 | any | blocked | codex | – | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
 | J3970 | mini | open | – | – | chief · Chief: resolve 034 upload orphan-review |  |
