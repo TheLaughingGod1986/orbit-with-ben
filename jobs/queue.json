@@ -367178,13 +367178,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-28T06:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-28T06:40Z",
-      "result": "parked for Chief: review and merge PR #1424 (Field Order History channel totals read 2026-11-28: subscribers=1, watchHours=5.0 at 2026-11-28T06:47:55Z; commit a7b4b47435)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-28T06:40Z",
@@ -367225,25 +367225,17 @@
           "at": "2026-11-28T06:50Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1424 (Field Order History channel totals read 2026-11-28: subscribers=1, watchHours=5.0 at 2026-11-28T06:47:55Z; commit a7b4b47435)"
+        },
+        {
+          "at": "2026-11-28T06:56Z",
+          "by": "codex",
+          "what": "reopened: Chief KEEP recorded at PR1424 comment 7235603647; merged c24b89a8d9 after 22 passing tests and exact importer replay. Reopen only to claim and close this completed review."
         }
       ],
       "remaining_action": "Waiting for Chief review and merge of PR #1424",
       "due": "2026-11-28T06:40:47Z",
       "kind": "studio",
-      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-28T06:50Z",
-        "by": "gemini",
-        "plan": [
-          "Verify Studio tab and channel identity",
-          "Read Lifetime subscribers and watch hours",
-          "Import dated read in clean worktree",
-          "Push branch, open PR, park for Chief"
-        ],
-        "note": "Pushed gemini/J3981-foh-channel-totals-2026-11-28 (a7b4b47435), opened PR #1424, removed temp worktree"
-      }
+      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current"
     },
     {
       "id": "J3982",
