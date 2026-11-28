@@ -366395,9 +366395,14 @@
           "at": "2026-11-28T01:53Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-28T01:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Identified top live window via API (new entry aAUgIGEuPwQ); verifying full uploads playlist page depth and descriptions"
         }
       ],
-      "remaining_action": "Identifying last 10 live OWB videos from latest snapshot and YouTube API",
+      "remaining_action": "Fetching full live YouTube API metadata, descriptions, pinned comments, and source link statuses for the last 10 live OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -366409,9 +366414,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-28T01:53Z",
+        "at": "2026-11-28T01:54Z",
         "by": "gemini",
         "plan": [
           "Identify last 10 live OWB videos",
@@ -366419,8 +366424,15 @@
           "Audit Studio end screens and Related pills",
           "Check chapters against cuts and sources",
           "Write fix list, commit PR, report and block or close"
-        ]
-      }
+        ],
+        "note": "Identified top live window via API (new entry aAUgIGEuPwQ); verifying full uploads playlist page depth and descriptions"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:032",
+        "OWB:024"
+      ]
     }
   ],
   "focus": [
