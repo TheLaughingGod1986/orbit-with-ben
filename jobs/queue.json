@@ -357495,13 +357495,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-28T00:27Z",
-      "eta": "2026-11-28T02:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-27T08:27Z",
-      "result": "",
+      "result": "Waiting for: J3969 must resolve the actual scale-before-crop and codec-rounded portrait contract; exact v04 still picture FAIL. Publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c938. Prior public push rejection remains; do not retry Codex push. Five other gates PASS. J3816 held, J3872 dependent; no media edit, PASS, UAT or upload.",
       "history": [
         {
           "at": "2026-11-27T08:27Z",
@@ -357582,9 +357582,19 @@
           "at": "2026-11-28T00:31Z",
           "by": "codex",
           "what": "step 2 of 3 done: Exact v04/NAS/stems hashes verified; fresh opening/polish/music/VO/SFX PASS, picture FAIL integer source-crop contract. J3969 queued; no media change or approval."
+        },
+        {
+          "at": "2026-11-28T00:31Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3969 must resolve the actual scale-before-crop and codec-rounded portrait contract; exact v04 still picture FAIL. Publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c938. Prior public push rejection remains; do not retry Codex push. Five other gates PASS. J3816 held, J3872 dependent; no media edit, PASS, UAT or upload."
+        },
+        {
+          "at": "2026-11-28T00:31Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-28T06:00:00Z"
         }
       ],
-      "remaining_action": "Waiting for a decision on the Short’s actual crop and loop contract",
+      "remaining_action": "Waiting for the crop-and-loop contract decision and publication of the recheck evidence",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
       "taskKeys": [
@@ -357601,6 +357611,11 @@
           "Commit receipts and hand off for review"
         ],
         "note": "Exact v04/NAS/stems hashes verified; fresh opening/polish/music/VO/SFX PASS, picture FAIL integer source-crop contract. "
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3969 must resolve the actual scale-before-crop and codec-rounded portrait contract; exact v04 still picture FAIL. Publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c938. Prior public push rejection remains; do not retry Codex push. Five other gates PASS. J3816 held, J3872 dependent; no media edit, PASS, UAT or upload.",
+        "check_at": "2026-11-28T06:00:00Z"
       }
     },
     {
