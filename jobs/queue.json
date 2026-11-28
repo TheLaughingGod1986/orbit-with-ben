@@ -367928,9 +367928,14 @@
           "at": "2026-11-28T09:17Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified 5/5 SHA-256 hashes, PR #797 OPEN/MERGEABLE/CLEAN 6/6 CI green (0 comments, zero media), status.json unchanged, zero new rulings; only barred producer gemini has audio_input"
+        },
+        {
+          "at": "2026-11-28T09:18Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded J3780 wait (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z); posted HOS #694 (#7237151972) & OWB #1353 (#7237155055)"
         }
       ],
-      "remaining_action": "Recording unmet J3780 capability hold (--recheck J3988), posting HOS #694 and OWB #1353 reports, and closing J3988",
+      "remaining_action": "Closing J3988 after recording unmet J3780 capability wait and posting reports",
       "kind": "review",
       "recheck_of": "J3780",
       "required_capabilities": [
@@ -367947,16 +367952,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-28T09:17Z",
+        "at": "2026-11-28T09:18Z",
         "by": "gemini",
         "plan": [
           "Check rules, board, and J3780 history",
           "Verify reviewer audio capability, PR #797, and hashes",
           "Update J3780 wait/reopen state, close J3988, and report"
         ],
-        "note": "Verified 5/5 SHA-256 hashes, PR #797 OPEN/MERGEABLE/CLEAN 6/6 CI green (0 comments, zero media), status.json unchanged, "
+        "note": "Recorded J3780 wait (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z); posted H"
       },
       "taskKeys": [
         "HOS:128"
