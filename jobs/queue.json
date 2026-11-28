@@ -366005,13 +366005,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-28T00:32Z",
-      "eta": "2026-11-28T02:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-28T00:30Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c93831348f3c01baf91d33f561f6cc9fa6a9; also /Volumes/MiniWork/scratch/J3969-ruling codex/J3969-ruling at eafc150e. Ruling complete and posted HOS desk 7231090237; J3972 queued; J3871 held for its merged changes. Independent Claude Code privacy review passed original heads, but both pushes were blocked as requires approval and it could not ask non-interactively. No pushes or PRs. Needs permission-enabled designated publisher, fresh review of final ruling branch, normal pushes and DRAFT PRs only. Prior Codex public-push rejection remains; do not retry or bypass either permission layer. Log /Volumes/MiniWork/scratch/J3969-publish.log. PR811/814 stay draft; J3816 held; no Short PASS/UAT/upload.",
       "history": [
         {
           "at": "2026-11-28T00:30Z",
@@ -366042,6 +366042,11 @@
           "at": "2026-11-28T00:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Ruling posted on HOS desk 7231090237. Claude Code privacy review passed; both pushes blocked by its permission layer. No PR created; publication incomplete."
+        },
+        {
+          "at": "2026-11-28T00:39Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c93831348f3c01baf91d33f561f6cc9fa6a9; also /Volumes/MiniWork/scratch/J3969-ruling codex/J3969-ruling at eafc150e. Ruling complete and posted HOS desk 7231090237; J3972 queued; J3871 held for its merged changes. Independent Claude Code privacy review passed original heads, but both pushes were blocked as requires approval and it could not ask non-interactively. No pushes or PRs. Needs permission-enabled designated publisher, fresh review of final ruling branch, normal pushes and DRAFT PRs only. Prior Codex public-push rejection remains; do not retry or bypass either permission layer. Log /Volumes/MiniWork/scratch/J3969-publish.log. PR811/814 stay draft; J3816 held; no Short PASS/UAT/upload."
         }
       ],
       "remaining_action": "Publish the reviewed evidence and ruling through a permission-enabled Claude Code session",
@@ -366061,7 +366066,12 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3871-recheck codex/J3871-recheck at 0511c93831348f3c01baf91d33f561f6cc9fa6a9; also /Volumes/MiniWork/scratch/J3969-ruling codex/J3969-ruling at eafc150e. Ruling complete and posted HOS desk 7231090237; J3972 queued; J3871 held for its merged changes. Independent Claude Code privacy review passed original heads, but both pushes were blocked as requires approval and it could not ask non-interactively. No pushes or PRs. Needs permission-enabled designated publisher, fresh review of final ruling branch, normal pushes and DRAFT PRs only. Prior Codex public-push rejection remains; do not retry or bypass either permission layer. Log /Volumes/MiniWork/scratch/J3969-publish.log. PR811/814 stay draft; J3816 held; no Short PASS/UAT/upload.",
+        "check_at": "2026-11-28T06:39:54+00:00"
+      }
     },
     {
       "id": "J3970",
