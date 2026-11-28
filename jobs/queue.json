@@ -367770,9 +367770,14 @@
           "at": "2026-11-28T08:46Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T08:46Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
+      "remaining_action": "Read J3904 and check PRs 1416/1417 for a Chief ruling",
       "kind": "review",
       "recheck_of": "J3904",
       "due": "2026-11-28T09:45:42+00:00",
@@ -367790,9 +367795,15 @@
         "of": 3,
         "at": "2026-11-28T08:46Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3904 and its history",
+          "Check PR 1416/1417 for a Chief ruling",
+          "Keep J3904 waiting or reopen it, then finish"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
