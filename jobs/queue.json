@@ -366410,9 +366410,14 @@
           "at": "2026-11-28T02:01Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Completed read-only Studio CDP 9223 sweep across all 10 live public videos via reused Studio tab"
+        },
+        {
+          "at": "2026-11-28T02:03Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: All 10 live public OWB videos verified via YouTube Data API v3, HTTP checks, chapter sources, and live Studio CDP 9223 (10/10 pass, 0 live fixes needed)"
         }
       ],
-      "remaining_action": "Checking parsed Studio CDP 9223 Related pills and end screens plus long chapter timestamps against cuts",
+      "remaining_action": "Writing 05_Analytics/live_fixes/2026-11-28.md in a clean worktree, opening PR, posting thread report, and finishing J3973",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -366424,9 +366429,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-28T02:01Z",
+        "at": "2026-11-28T02:03Z",
         "by": "gemini",
         "plan": [
           "Identify last 10 live OWB videos",
@@ -366435,7 +366440,7 @@
           "Check chapters against cuts and sources",
           "Write fix list, commit PR, report and block or close"
         ],
-        "note": "Completed read-only Studio CDP 9223 sweep across all 10 live public videos via reused Studio tab"
+        "note": "All 10 live public OWB videos verified via YouTube Data API v3, HTTP checks, chapter sources, and live Studio CDP 9223 ("
       },
       "taskKeys": [
         "OWB:026",
