@@ -368540,9 +368540,14 @@
           "at": "2026-11-28T12:19Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T12:19Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Complete live migration and operational proof through J3962",
+      "remaining_action": "Checking J3012's waiting condition",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-27T18:00:00+00:00",
@@ -368560,8 +368565,11 @@
         "of": 3,
         "at": "2026-11-28T12:19Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3012 and J3962 state",
+          "Check studio remote, launchd, PR1389, J3961",
+          "Record wait and finish"
+        ]
       }
     },
     {
