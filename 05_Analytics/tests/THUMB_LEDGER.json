@@ -1802,15 +1802,15 @@
     },
     {
       "id": "T044",
-      "status": "proposed",
-      "started": null,
+      "status": "running",
+      "started": "2026-11-28",
       "channel": "owb",
       "film": "034",
-      "video": null,
+      "video": "jaAIgi5WuSM",
       "title": "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)",
-      "job": "J3114",
+      "job": "J3119",
       "result": null,
-      "note": "J3115 exact-file PASS on three J3105_v02 concepts. Fixed search-first title; thumbnail-only test. Ben long v02 OK recorded in J3119 approved_from. J3119 arms only when no test is set; remains proposed and unstarted.",
+      "note": "Armed 28 Nov 2026 (J3119, after Ben long v02 UAT OK 18 Nov 22:16Z in J2868 and Chief J3115 exact-file PASS): 3-way thumbnail-only Test & Compare in YouTube Studio on jaAIgi5WuSM (Private scheduled for 2026-12-13T18:00:00Z) with fixed 58-char search-first title 'Why Does Pluto Have a Heart? (And Why It Has Zero Craters)'. Slot 1 (A): 034_pluto_A_j3105_v02.jpg (NITROGEN GLACIER, sha256 8f567360); Slot 2 (B): 034_pluto_B_j3105_v02.jpg (ICE MOUNTAINS, sha256 3b17f4c7); Slot 3 (C): 034_pluto_C_j3105_v02.jpg (FLOWING ICE, sha256 c23a7420). No prior test existed. Reloaded Studio edit page verified 3-way split preview with Ineligible status (scheduled Private until air), fixed title, and Scheduled visibility unchanged.",
       "a": {
         "maker": "codex",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v02/034_pluto_A_j3105_v02.jpg",
@@ -1828,7 +1828,9 @@
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v02/034_pluto_C_j3105_v02.jpg",
         "sha256": "c23a742058756337b7ee56e3e2aafe526763e5cccc3369f439cefd2f6a501aa3",
         "text": "FLOWING ICE"
-      }
+      },
+      "test_type": "thumbnail_only",
+      "readBack": "2026-11-28"
     },
     {
       "id": "T045",
