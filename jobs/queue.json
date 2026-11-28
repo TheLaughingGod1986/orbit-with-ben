@@ -366050,9 +366050,14 @@
           "at": "2026-11-28T01:05Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J3968 condition verification for J3781 (HOS:136 Shorts S01/S02 VO)"
+        },
+        {
+          "at": "2026-11-28T01:06Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified live relay (Chief Codex, claude down until 07:50Z, grok down, cursor down until 4 Dec), capabilities (codex & claudecode available=[] on 00:54Z/00:55Z probes; gemini has audio_input but authored J3679), PR #799 MERGED, PR #798 OPEN/CLEAN 6/6 CI, 10/10 NAS + script SHA-256 match, Codex scratch ea0c93d8 intact"
         }
       ],
-      "remaining_action": "Verify whether an independent non-producer Chief/reviewer has demonstrated audio_input or ruled on HOS 136 Shorts S01/S02 VO (J3781 / PR #798)",
+      "remaining_action": "Record typed capability wait on J3781 (--recheck J3968), post desk/thread reports, and close J3968",
       "kind": "review",
       "recheck_of": "J3781",
       "required_capabilities": [
@@ -366069,16 +366074,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-28T01:05Z",
+        "at": "2026-11-28T01:06Z",
         "by": "gemini",
         "plan": [
           "Check J3781 history, capabilities, PR #798 & NAS hashes",
           "Verify non-producer audio_input condition & update J3781 wait",
           "Post HOS desk & studio thread reports and close J3968"
         ],
-        "note": "Starting J3968 condition verification for J3781 (HOS:136 Shorts S01/S02 VO)"
+        "note": "Verified live relay (Chief Codex, claude down until 07:50Z, grok down, cursor down until 4 Dec), capabilities (codex & c"
       },
       "taskKeys": [
         "HOS:136"
