@@ -104,11 +104,100 @@
     ]
   },
   {
+    "id": "orbit-search-2027-01",
+    "channel": "owb",
+    "title": "Orbit from January: films people search for",
+    "agreed": "2026-11-20",
+    "goal": "Long videos found through search by adults in English-speaking countries, building to thousands of views each.",
+    "why": [
+      "Our topics came from subjects big channels already own, and YouTube rarely shows a 19-subscriber channel beside them.",
+      "Space searches with real demand and weak results exist: 'space mysteries' 134,000 a month (competition 43), 'milky way' 96,000 (38), 'documentary for sleep' 123,000 (44).",
+      "Orbit's Shorts get 100 to 1,300 views each, so they keep running and test topics before a long is made."
+    ],
+    "baseline": {
+      "bestLongViews": 230,
+      "longShowingsTotal": 4050,
+      "longs": 16,
+      "readAt": "2026-11-12"
+    },
+    "steps": [
+      {
+        "id": "research",
+        "name": "First weekly search research",
+        "what": "The searches, countries, results-page gaps and small-channel breakouts for about 50 space subjects, ranked into clusters. Then every Monday.",
+        "when": "2026-12-07T09:00Z",
+        "jobs": [
+          "J3222"
+        ]
+      },
+      {
+        "id": "pick",
+        "name": "Pick January's films",
+        "what": "After the last December result: the winning kind of film plus the top search topics. One line to Ben.",
+        "when": "2026-12-30T18:00Z",
+        "jobs": [
+          "J3219",
+          "J3251"
+        ]
+      },
+      {
+        "id": "first",
+        "name": "First search-led long, in the illustrated style",
+        "what": "Sunday 10 Jan, 18:00 London. Scored on the same bar: 500 views in 14 days keeps it, under 230 drops it.",
+        "when": "2027-01-10T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 230
+        }
+      },
+      {
+        "id": "weekly",
+        "name": "Two search-led longs a week, four Shorts a week",
+        "what": "Longs on Wed 13, Sun 17, Wed 20, Sun 24, Wed 27 and Sun 31 Jan at 18:00 London, each in a cluster. Shorts four times a week at 11:30 London, from the same clusters.",
+        "when": "2027-01-13T18:00Z",
+        "jobs": []
+      },
+      {
+        "id": "terms",
+        "name": "Our own search terms",
+        "what": "Monthly read of the searches that bring viewers to Orbit; more films in the clusters that grow.",
+        "when": "2027-02-01T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "review",
+        "name": "Six-week review",
+        "what": "Keep two a week if search views are growing; if not, options to Ben.",
+        "when": "2027-02-14T18:00Z",
+        "jobs": []
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "From January, choose Orbit films by search demand: English-speaking countries, adult viewers, little competition, weak current results."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "The first January long uses the July illustrated style with the Orbit mascot, as a style test."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "Run two search-led longs a week from January (Wednesday and Sunday at 18:00 London) plus four Shorts a week."
+      }
+    ]
+  },
+  {
     "id": "ww2-launch-2026-11",
     "channel": "ww2",
     "title": "Starting our WW2 documentary channel",
     "agreed": "2026-11-17",
-    "goal": "Monetised as fast as possible, then a lot of views: two films a week, about 25 minutes now and 35-45 minutes after the voice upgrade, aiming at 1,000 subscribers and 4,000 watch hours before YouTube's bar for new channels doubles to 8,000 hours on 1 Feb 2027.",
+    "goal": "Monetised as fast as possible, then a lot of views: three films a week (Tue, Thu, Sat 17:00 London) from Sat 28 Nov 2026, about 25 minutes now (<=21,000 chars) and 35-45 minutes after the voice upgrade, aiming at 1,000 subscribers and 4,000 watch hours before YouTube's bar for new channels doubles to 8,000 hours on 1 Feb 2027.",
     "why": [
       "Why this niche (vidIQ, checked against the YouTube API, 17 Nov): WW2 Dossier, started 30 Apr 2026, passed 1,000 subscribers 13 days after its first upload and has 14,300, on 39-56 minute archive-photo films with no Shorts. 'world war 2' gets 564,442 searches a month and 'ww2 documentary' 261,896.",
       "Its own rules (channels/ww2/studio/RULES.md) and playbook (00_Brand/PLAYBOOK.md), written fresh: Ben is asked only to watch finished films; the Chief locks topics after review.",
@@ -148,98 +237,214 @@
         "id": "ww2-001",
         "name": "Pilot 1: How Britain Built Two Harbours in Secret and Floated Them to Normandy",
         "what": "Mulberry A & B artificial harbours (65 chars): 212 6,000-ton concrete caissons, floating Whale roadways, the June 1944 gale and PLUTO. IWM + US NARA photos & code maps; 4.88M / 1.94M / 973K neighbours; thumb 'BUILT IN 12 DAYS'; 25 min (~20,000 voice chars, Slot 1 of 2).",
-        "when": "",
+        "when": "2026-11-22T17:00Z",
         "film": "001",
         "jobs": [
           "J2991",
           "J2992",
           "J2993"
-        ]
+        ],
+        "youtube": {
+          "videoId": "ek9F61FVYqY",
+          "privacy": "private",
+          "publishAt": "2026-11-22T17:00:00Z"
+        }
       },
       {
         "id": "ww2-002",
         "name": "Pilot 2: How the Allies Closed the U-Boats' Safest Hunting Ground",
         "what": "Closing the Mid-Atlantic air gap in 'Black May' 1943 (64 chars): VLR B-24 Liberators, escort carriers, 10 cm radar and HF/DF sinking 43 U-boats in one month. IWM Coastal Command + US Navy photos & range-ring maps; 4.13M / 1.59M / 1.30M neighbours; 25 min (~20,000 voice chars, Slot 2 of 2).",
-        "when": "",
+        "when": "2026-11-24T17:00Z",
         "film": "002",
         "jobs": [
           "J2994",
           "J2995",
-          "J2996"
-        ]
+          "J2996",
+          "J3364",
+          "J3466"
+        ],
+        "youtube": {
+          "videoId": "qfc6EBStOfo",
+          "privacy": "private",
+          "publishAt": "2026-11-24T17:00:00Z"
+        }
       },
       {
         "id": "ww2-003",
         "name": "Pilot 3: Why America's Most Expensive WW2 Weapon Wasn't the Atomic Bomb",
         "what": "America's $3.0B bomber gamble vs the $1.9B Manhattan Project (65 chars): pressurised crew tunnels, GE analog gun computers, magnesium R-3350 fires, the snowy 'Battle of Kansas' and Tokyo's 200-mph jet stream. USAAF NARA + LoC colour archive; 4.02M / 1.96M / 1.20M neighbours; thumb '$3 BILLION GAMBLE'; 26 min (~20,800 chars — script & harvest £0 now, voice after ElevenLabs upgrade/renewal).",
-        "when": "",
+        "when": "2026-11-28T17:00Z",
         "film": "003",
         "jobs": [
           "J2997",
-          "J2998"
+          "J2998",
+          "J3205",
+          "J3370",
+          "J3371"
         ]
       },
       {
         "id": "ww2-004",
         "name": "Film 4: Why America's Submarine Torpedoes Failed for 21 Months in WW2",
         "what": "The Mark 14 torpedo scandal in the Pacific, Dec 1941 to Sep 1943 (61 chars): running 10 feet too deep, faulty magnetic exploders, crushed contact pins, and unauthorized live tests at Maui and Fremantle. US NHHC + NARA submarine archive; 1.67M / 1.43M / 1.32M neighbours.",
-        "when": "",
+        "when": "2026-12-01T17:00Z",
         "film": "004",
         "jobs": [
-          "J3000"
+          "J3000",
+          "J3429",
+          "J3430"
         ]
       },
       {
         "id": "ww2-005",
         "name": "Film 5: How an Old Destroyer Became a Bomb to Keep Tirpitz Out of the Atlantic",
         "what": "Operation Chariot at St Nazaire, March 1942 (61 chars): disguising the 1919 destroyer HMS Campbeltown with 4.25 tons of delayed-fuse explosives to deny Tirpitz the Normandie dry dock. UK IWM Admiralty + TNA files; 8.19M / 4.57M / 1.30M neighbours.",
-        "when": "",
+        "when": "2026-12-03T17:00Z",
         "film": "005",
         "jobs": [
-          "J3001"
+          "J3001",
+          "J3431",
+          "J3432"
         ]
       },
       {
         "id": "ww2-006",
         "name": "Film 6: Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa",
         "what": "The de Havilland DH.98 Mosquito (65 chars): unarmed birch-and-balsa fuselages moulded in furniture workshops, carrying a 4,000-lb Cookie bomb to Berlin at 400 mph with a 0.7% loss rate. UK IWM Air Ministry + TNA archive; 5.39M / 3.11M / 2.39M neighbours.",
-        "when": "",
+        "when": "2026-12-05T17:00Z",
         "film": "006",
         "jobs": [
-          "J3002"
+          "J3002",
+          "J3433",
+          "J3434"
         ]
       },
       {
         "id": "ww2-007",
         "name": "Film 7: How Floating Dry Docks Kept Damaged US Fleets Fighting Off Japan",
         "what": "Service Squadron 10 and Ulithi Atoll (64 chars): towing sectional floating dry docks able to lift 90,000 tons 5,000 miles west of Pearl Harbor alongside 617 anchored ships. US NHHC + NARA RG 80-G archive; 3.69M / 3.25M / 2.41M neighbours.",
-        "when": "",
+        "when": "2027-01-02T17:00Z",
         "film": "007",
-        "jobs": []
+        "jobs": [
+          "J3472",
+          "J3480",
+          "J3481"
+        ]
       },
       {
         "id": "ww2-008",
         "name": "Film 8: How One Planted Briefcase Pulled German Divisions Away From Sicily",
         "what": "Operation Mincemeat, spring 1943 (66 chars): building a complete paper life for fictitious 'Major William Martin', drifting fake invasion plans ashore from submarine HMS Seraph, and tracking Hitler's divisions via Ultra. UK TNA CAB 154 / WO 208 + IWM archive; 3.14M / 2.03M / 1.43M neighbours.",
-        "when": "",
+        "when": "2026-12-10T17:00Z",
         "film": "008",
-        "jobs": []
+        "jobs": [
+          "J3473",
+          "J3476",
+          "J3477"
+        ]
       },
       {
         "id": "ww2-009",
         "name": "Film 9: How One Wrecked Oil Tanker Saved Starving Malta in August 1942",
         "what": "Operation Pedestal and the tanker SS Ohio (62 chars): torpedoed, bombed and broken-backed, yet brought into Valletta's Grand Harbour with 11,500 tons of fuel lashed between two Royal Navy destroyers. UK IWM Admiralty + US Merchant Marine archive; 683K / 570K / 312K neighbours.",
-        "when": "",
+        "when": "2026-12-12T17:00Z",
         "film": "009",
-        "jobs": []
+        "jobs": [
+          "J3474",
+          "J3491",
+          "J3492"
+        ]
       },
       {
         "id": "ww2-010",
         "name": "Film 10: Why Britain Built Flame, Flail and Bridge Tanks After Dieppe Failed",
         "what": "79th Armoured Division's specialist assault armour (67 chars): turning the 1942 Dieppe beach disaster into Sherman Crab mine-flails, AVRE petard bunker-busters, fascines, bridges and DD swimming tanks on D-Day. UK IWM War Office + TNA WO 205 archive; 3.33M / 1.23M / 701K neighbours.",
-        "when": "",
+        "when": "2026-12-15T17:00Z",
         "film": "010",
-        "jobs": []
+        "jobs": [
+          "J3475",
+          "J3493",
+          "J3494",
+          "J3517"
+        ]
+      },
+      {
+        "id": "ww2-011",
+        "name": "Film 11: How a British Engine Made the P-51 Mustang",
+        "what": "Pairing North American Aviation's airframe with the Rolls-Royce Merlin to solve the 1943 bomber-escort range crisis. US NARA RG 342-FH + LoC FSA/OWI + UK IWM; 2.89M / 1.45M neighbours.",
+        "when": "2026-12-17T17:00Z",
+        "film": "011",
+        "jobs": [
+          "J3482",
+          "J3498"
+        ]
+      },
+      {
+        "id": "ww2-012",
+        "name": "Film 12: How America Built a Liberty Ship in Four Days",
+        "what": "Welded pre-fabrication yards building Liberty ships at speed, and the brittle-steel cracking crisis. US NARA RG 178 + LoC FSA/OWI; 4.07M neighbour.",
+        "when": "2026-12-19T17:00Z",
+        "film": "012",
+        "jobs": [
+          "J3483",
+          "J3523",
+          "J3524",
+          "J3536"
+        ]
+      },
+      {
+        "id": "ww2-013",
+        "name": "Film 13: How the WW2 Ghost Army Fooled German Generals",
+        "what": "The 23rd Headquarters Special Troops' inflatable tanks, sound trucks and fake radio traffic. US NARA RG 111-SC + UK IWM; 319K / 131K neighbours.",
+        "when": "2026-12-22T17:00Z",
+        "film": "013",
+        "jobs": [
+          "J3484",
+          "J3525",
+          "J3526",
+          "J3537"
+        ]
+      },
+      {
+        "id": "ww2-014",
+        "name": "Film 14: How the Dambusters Bouncing Bomb Worked",
+        "what": "Barnes Wallis's spinning bouncing bomb and 617 Squadron's low-level run on the Ruhr dams (Boxing Day slot; Christmas Eve skipped). UK IWM Air Ministry; 2.03M / 1.83M neighbours.",
+        "when": "2026-12-26T17:00Z",
+        "film": "014",
+        "jobs": [
+          "J3485"
+        ]
+      },
+      {
+        "id": "ww2-015",
+        "name": "Film 15: Sherman Tank: How America Kept It Fighting",
+        "what": "How the M4 Sherman's shipping limits, field repair and numbers outlasted heavier German tanks. US NARA RG 111-SC + LoC + UK IWM; 1.15M / 938K / 863K neighbours.",
+        "when": "2026-12-29T17:00Z",
+        "film": "015",
+        "jobs": [
+          "J3486"
+        ]
+      },
+      {
+        "id": "ww2-016",
+        "name": "Film 16: Battle of the Bulge, told through one narrow question",
+        "what": "Bletchley got an archive NO-GO (J3541). From the 24 Nov search research: 'battle of the bulge' 135,980 searches a month, 'battle of the bulge documentary' 8,206 at competition 38; one engineering or logistics question (Patton's 48-hour turn north, or the proximity fuze's first use on land), airing in the anniversary. US NARA RG 111 Signal Corps.",
+        "when": "2026-12-31T17:00Z",
+        "film": "016",
+        "jobs": [
+          "J3487",
+          "J3541"
+        ]
+      },
+      {
+        "id": "ww2-017",
+        "name": "Film 17: How the US Raised Pearl Harbor's Sunk Battleships",
+        "what": "From the 24 Nov search research: 'pearl harbor' 267,002 searches a month, 'pearl harbor documentary' 17,726 at competition 44, results-page gap 6 of 10; a 1,410-subscriber channel got 521,874 views on this story in Oct 2026. NHHC post-attack salvage photos + NARA RG 80-G.",
+        "when": "2026-12-08T17:00Z",
+        "film": "017",
+        "jobs": [
+          "J3543"
+        ]
       }
     ],
     "decisions": [
@@ -262,6 +467,298 @@
         "at": "2026-11-17",
         "by": "Ben",
         "text": "Its own GitHub repo, fully decoupled."
+      },
+      {
+        "at": "2026-11-21",
+        "by": "Ben",
+        "text": "Bring both pilots forward to start testing earlier: pilot 1 on Sun 22 Nov at 17:00, pilot 2 on Wed 25 Nov at 17:00 (three days apart for a clean 48-hour read on pilot 1)."
+      },
+      {
+        "at": "2026-11-23",
+        "by": "Ben",
+        "text": "Move pilot 2 (J9WGu8aPnHI) from Wed 25 Nov 17:00 to Sat 28 Nov 17:00 London (17:00Z) to fit the approved new opening on top of the archive upgrade (J3364). Films 003-006 dates unchanged."
+      },
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "Three films a week (Tue, Thu, Sat 17:00 London). Pilot 2 airs Tue 24 Nov, then Sat 28 Nov, Tue 1 Dec, Thu 3 Dec, Sat 5 Dec and so on (in chat ~09:55: \"we're not missing Saturday 28th\"). Ben's watch three days before air; a film that isn't ready skips its slot."
+      },
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "Christmas left to Claude (\"With the Dambusters film, I'll let you use your own intuition and plan it accordingly\"). Claude: skip Thu 24 Dec; Dambusters on Boxing Day Sat 26 Dec, Sherman Tue 29 Dec, Bulge Thu 31 Dec, Pearl Harbor Sat 2 Jan; films 014 and 015 to Ben's watch by Tue 22 Dec so nothing waits on him 24-27 Dec."
+      }
+    ]
+  },
+  {
+    "id": "hos-search-2027-01",
+    "channel": "hos",
+    "title": "History of Science from January: films English-speaking adults search for",
+    "agreed": "2026-11-20",
+    "goal": "Long videos found through search by adults in the US, UK, Canada and Australia, building to thousands of views each.",
+    "why": [
+      "Full HOS audit (J3223, 20 Nov): all 7 longs together got 2,185 showings and 233 settled views (best long 162 on Periodic Table; the other 6 averaged 12 views).",
+      "Audience is already adult (78.8% aged 25-54, 70.2% male), but reported Anglosphere views are 86% UK (811) with US at only 2.5% (109 lifetime; below threshold in the last 28 days) while school-cram traffic in India and SE Asia outnumbers US+CA+AU by 3.3x.",
+      "Story-first titles and health/vaccine topics failed reach, while US Education long-form pays about $3.42 mid RPM ($2.05-$5.47, vidIQ).",
+      "vidIQ + signed-out US top-10 research (J3224) found 4 clusters with 7/10-10/10 results-page gaps and sub-50k US breakouts (5x-77x): Electricity & Rivalries, Nuclear & Modern Physics, Accidental Inventions, and Breakthrough & Lost Engineering."
+    ],
+    "baseline": {
+      "bestLongViews": 162,
+      "longShowingsTotal": 2185,
+      "longs": 7,
+      "readAt": "2026-11-20"
+    },
+    "steps": [
+      {
+        "id": "ben-ok",
+        "name": "the History of Science 2027 search-led plan",
+        "what": "Ben's OK required (LEARNINGS rule 34 item 7) before any HOS rule, backlog or schedule change takes effect. Approved by Ben in chat on 24 Nov 2026: \"I'll give you okay for that. Please go ahead and start it.\"",
+        "when": "2026-11-24",
+        "needsBen": "Approve the 2027 History of Science search-led plan (4 Anglosphere adult clusters, cadence, first 4 films, and 14-day test bar) before anything changes on HOS",
+        "jobs": [
+          "J3223",
+          "J3224"
+        ]
+      },
+      {
+        "id": "dec-03-009",
+        "name": "Thu 3 Dec: HOS 009 Gravity (finished & scheduled)",
+        "what": "How Isaac Newton Proved Gravity Using the Moon (wiyfRnsTfTY) — Ben OK'd 24 Nov, API-uploaded & scheduled Thu 3 Dec 18:00 London with Shorts Fri 4 & Sat 5 Dec (OhdDVA9kWBk, 9ETHUOUH5-A); only Studio UI extras wait on Ben's login (J3501). Rotated out of active HOS WIP.",
+        "when": "2026-12-03T18:00Z",
+        "film": "009",
+        "jobs": [
+          "J3501"
+        ]
+      },
+      {
+        "id": "dec-10-skip",
+        "name": "Thu 10 Dec: skipped (first Thursday with no film — never rushed)",
+        "what": "No unfinished film can genuinely guarantee Ben's watch by Mon 7 Dec without rushing: 013 is held on J3178 continuous moving-video review of 10 plates + unmerged J2652 + 8 retakes; 011 has 0/66 Flow plates minted; 010 has 0/60 Flow plates minted; 128 waits for the Mon 30 Nov 10:50Z voice reset.",
+        "when": "2026-12-10T18:00Z",
+        "jobs": [
+          "J3734"
+        ]
+      },
+      {
+        "id": "dec-17-011",
+        "name": "Thu 17 Dec: HOS 011 Anaesthesia (VO-locked, closest unblocked film)",
+        "what": "Anesthesia: The Day Surgery Stopped Hurting — long VO locked (532.72 s, £0 new long voice), 26 free rows + rough v11 done (J2563/PR #650), v03 timing accepted (J2659), zero capability holds. Promoted into active HOS WIP; 66 Flow plates price-passed & minted on existing Flow balance; Ben's watch Mon 14 Dec.",
+        "when": "2026-12-17T18:00Z",
+        "film": "011",
+        "jobs": [
+          "J3734"
+        ]
+      },
+      {
+        "id": "dec-24-skip",
+        "name": "Thu 24 Dec: skipped (Christmas Eve)",
+        "what": "Skipped cleanly on the same basis as Field Order History (weak 24-25 Dec first-day CTR; keeps Ben's watch free 24-27 Dec).",
+        "when": "2026-12-24T18:00Z",
+        "jobs": [
+          "J3734"
+        ]
+      },
+      {
+        "id": "dec-31-013",
+        "name": "Thu 31 Dec: HOS 013 Darwin & Wallace (VO + 66 pass-1 plates done)",
+        "what": "Evolution: The Letter That Forced Darwin to Publish — long & Shorts VO locked, 66/66 pass-1 Flow plates minted (48 KEEP / 8 confirmed RETAKE / 10 capability-held in J3178), 35 free renders built (J2652). Non-producer review of J2652 + 8 retakes queued; J3178 escalated to Claude/Ben. Early Ben watch target Tue 22 Dec (hard cutoff Mon 28 Dec). Swap reserve: HOS 010 if J3178 stays blocked past 11 Dec.",
+        "when": "2026-12-31T18:00Z",
+        "film": "013",
+        "jobs": [
+          "J2529",
+          "J2652",
+          "J3178",
+          "J3734"
+        ]
+      },
+      {
+        "id": "research",
+        "name": "Weekly HOS search research",
+        "what": "Run the 8-step Anglosphere adult search method weekly (up to 75 vidIQ credits a run, US/UK/CA/AU top markets, signed-out top-10 gap, <50k subs 5x+ outliers) to keep the 4 clusters ranked and stocked. First run by Mon 7 Dec (J3497).",
+        "when": "2026-12-07T09:00Z",
+        "jobs": [
+          "J3497"
+        ]
+      },
+      {
+        "id": "first",
+        "name": "Search-led Film 1 (Thu 7 Jan): Why Do We Use AC Instead of DC? (Edison vs Tesla)",
+        "what": "Cluster 1 (Electricity & Rivalries) · Thu 7 Jan 2027, 18:00 London (Ben watch Mon 4 Jan). Project HOS:128: script v03, facts, Shorts scripts v03 locked (J3660); £0 picture plan, Flow prompt boards, package & thumb brief pre-built (J3734). First HOS film in voice queue after Mon 30 Nov 10:50Z reset (J3670/J3671). 14-day bar: 500+ keep, 162-499 one more, under 162 drop/change.",
+        "when": "2027-01-07T18:00Z",
+        "film": "128",
+        "jobs": [
+          "J3496",
+          "J3670",
+          "J3671",
+          "J3734"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-2",
+        "name": "Search-led Film 2 (Thu 14 Jan): Trinity Test Explained: Could It Ignite the Sky?",
+        "what": "Cluster 2 (Nuclear & Modern Physics) · Thu 14 Jan 2027, 18:00 London (Ben watch Mon 11 Jan). Project HOS:136: script v02, facts, Shorts scripts v02 locked (J3677); £0 picture plan, Flow prompt boards, package & thumb brief pre-built (J3734). Strictly lab physics discovery, no WW2 overlap. Second HOS film in voice queue after 30 Nov reset (J3678/J3679). Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-14T18:00Z",
+        "film": "136",
+        "jobs": [
+          "J3678",
+          "J3679",
+          "J3734"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-3",
+        "name": "Search-led Film 3 (Thu 21 Jan): Accidental Inventions: 5 Mistakes That Worked",
+        "what": "Cluster 3 (Accidental Inventions) · Thu 21 Jan 2027, 18:00 London (Ben watch Mon 18 Jan). Project HOS:137: promoted into active HOS WIP (J3734); script v02, facts, Shorts scripts v02 locked (J3687); £0 picture plan, Flow prompt boards, package & thumb brief pre-built (J3734). Third HOS film in voice queue after 30 Nov reset. Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-21T18:00Z",
+        "film": "137",
+        "jobs": [
+          "J3734"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-4",
+        "name": "Search-led Film 4 (Thu 28 Jan): Wright Brothers First Flight: The 1901 Wind Tunnel",
+        "what": "Cluster 4 (Breakthrough & Lost Engineering) · Thu 28 Jan 2027, 18:00 London (Ben watch Mon 25 Jan). Project HOS:127: script v02, facts, Shorts scripts v02 locked (J3622); #1 in next_hos — enters active WIP when HOS:011 reaches Ben's watch (Mon 14 Dec). Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-28T18:00Z",
+        "film": "127",
+        "jobs": [
+          "J3734"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "cadence",
+        "name": "Weekly cadence: 1 long + 4 Shorts a week",
+        "what": "Long every Thursday 18:00 London (7-9 min, normal publish). Four 16-19 s 3D cartoon question Shorts a week at 11:30 London (Fri, Sat, Sun, Tue): Sat & Fri promote the week's long; Sun & Tue rotate approved catalogue winners or test candidate topics.",
+        "when": "2026-12-18T11:30Z",
+        "jobs": [
+          "J3495",
+          "J3734"
+        ]
+      },
+      {
+        "id": "terms",
+        "name": "Our own search terms and Anglosphere read",
+        "what": "Monthly YouTube Analytics read of HOS search terms and US+UK+CA+AU share; double down on growing adult Anglosphere clusters and drop any cluster after ~3 films below the 162-view bar.",
+        "when": "2027-02-01T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "review",
+        "name": "Six-week review (after all four January search-led films have a 14-day read)",
+        "what": "Read 14-day views, impressions, CTR and US+UK+CA+AU share across all four January search-led longs (7, 14, 21, 28 Jan; last 14-day read ends 11 Feb). Matches studio-portfolio-2026-12 verdict date (Thu 18 Feb 2027). Keep winning clusters, cut weak ones.",
+        "when": "2027-02-18T18:00Z",
+        "jobs": []
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-20",
+        "by": "Audit (J3223)",
+        "text": "Full HOS audit completed: 4,352 settled views (94.5% Shorts, 5.4% longs), best long 162 views, 78.8% aged 25-54, US only 2.5% of lifetime views."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Proposed (J3224)",
+        "text": "Search-led research and proposed 2027 HOS plan added to the board waiting for Ben's OK (LEARNINGS rule 34 item 7). Nothing changes on HOS until Ben says yes."
+      },
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "OK to the 2027 History of Science search-led plan: the four Anglosphere adult clusters, 1 search-led long (Thu 18:00) + 4 Shorts a week, the first four January films and the 14-day test bar (500+ keep, 162-499 one more, under 162 drop or change). \"Please go ahead and start it.\" Films 008-011 and 013 stay untouched through December."
+      },
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "\"That plan is HOS test that could turn around ... definitely worth a look this week. If we can get that one queued up and working straight away.\" All four January films start this week: HOS:128 entered production on 24 Nov (HOS places 4 to 5); films 2-4 topic reviews by 26 Nov and script drafts 28 Nov-2 Dec. Air dates stay 7, 14, 21 and 28 Jan."
+      },
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "\"If we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call.\" Claude's call: Edison vs Tesla has no script yet, so it can't be made well by Thursday. 008 Franklin (finished, Chief PASS) takes Thu 26 Nov and 009 Gravity Thu 3 Dec, each after Ben's watch (J3500, J3501). The four search-led films move into December: 10, 17, 24 and 31 Dec. One that isn't ready slides a week and a finished older film (010, 011, 013) takes the Thursday. Six-week review moves to 21 Jan."
+      },
+      {
+        "at": "2026-11-25",
+        "by": "Acting Chief (gemini, J3734)",
+        "text": "Unified one HOS line-up across plan.json, status.json and film_briefs.json using what is genuinely closest to finished while voice credits sit at zero until Mon 30 Nov 10:50Z: Thu 3 Dec 009 Gravity (finished/scheduled), Thu 10 Dec SKIPPED (first Thursday with no film; never rushed), Thu 17 Dec 011 Anaesthesia (VO+26 free rows+rough done, 0 capability holds), Thu 24 Dec SKIPPED (Christmas Eve), Thu 31 Dec 013 Darwin & Wallace (VO+66 pass-1 plates done; 010 swap reserve if J3178 stays blocked), then all four search-led films in January — Thu 7 Jan 128 Edison vs Tesla, Thu 14 Jan 136 Trinity, Thu 21 Jan 137 Accidental Inventions, Thu 28 Jan 127 Wright Brothers (six-week review Thu 18 Feb). Finished 009 rotated out of WIP and 010 parked to next_hos (Thu 4 Feb / reserve) so 011 and 137 enter active HOS WIP (5/5). Stale Dec/Jan air dates cleared from unstarted 012/014/015/018."
+      }
+    ]
+  },
+  {
+    "id": "studio-portfolio-2026-12",
+    "channel": "",
+    "scope": "studio",
+    "title": "Grow what works: a monthly scorecard for every channel",
+    "agreed": "2026-11-24",
+    "goal": "Put the studio's effort where it grows subscribers and watch hours: each channel is kept, grown or faded on its own numbers, month by month.",
+    "why": [
+      "Last 30 days (24 Nov): Orbit With Ben 5 longs (typical 14 views) and 22 Shorts (typical 470), +3 subscribers, 8.6 long watch hours; History of Science 3 longs (typical 7) and 17 Shorts (typical 89), +3 subscribers, 4.1 hours; Field Order History 1 long (about 20 views on its first day), +1 subscriber.",
+      "Shorts bring views but few subscribers (Orbit about 0.3 per 1,000 Shorts views, History of Science about 1.3), and their watch time does not count towards the 4,000 hours.",
+      "Ben, 24 Nov: \"monitor the channels, and channels that are not doing too good, slowly begin to fade them out for the channels that are doing good\"; later: \"I like your idea about fading out weak channels ... let's put that plan into action\", with Orbit's and History of Science's coming tests given their chance first."
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-24",
+        "by": "Ben",
+        "text": "Schedules stay: Orbit With Ben 2 long + 4 Shorts a week, History of Science 1 long + 4 Shorts, Field Order History 3 long (Tue, Thu, Sat) from 1 Dec. A monthly scorecard decides; the weakest channel fades, but never while its own tests are running."
+      }
+    ],
+    "steps": [
+      {
+        "id": "scorecard",
+        "name": "Monthly channel scorecard on the board",
+        "what": "Per channel, last month against the month before: new subscribers, long-film watch hours, Shorts views, subscribers per 1,000 views, films made, and return per film made.",
+        "when": "2026-12-18T18:00Z",
+        "jobs": [
+          "J3490"
+        ]
+      },
+      {
+        "id": "first-review",
+        "name": "First monthly review, after the December push",
+        "what": "Verdicts for Ben, nothing changes without his yes. Shorts keep their number while the typical Short's views rise and the channel gets at least 1 new subscriber per 1,000 Shorts views; otherwise 4 a week becomes 2 or 3. The channel lowest on return per film is recommended to halve its schedule for a month, giving that effort to the top channel; last again the month after, it stops new films (nothing is deleted). Orbit With Ben and History of Science are not cut while their tests run (Orbit's December long-film tests read to 30 Dec, its search-led six-week review is 14 Feb; History of Science's search-led review is 18 Feb); their numbers are still shown.",
+        "when": "2027-01-04T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "feb-review",
+        "name": "Monthly review",
+        "what": "The same rules, every first Monday. Field Order History's own film-20 check stands.",
+        "when": "2027-02-01T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "owb-counts",
+        "name": "Orbit With Ben's channel verdict counts from its six-week review",
+        "what": "From Orbit's search-led six-week review on, the fading rule applies to Orbit.",
+        "when": "2027-02-14T18:00Z",
+        "jobs": []
+      },
+      {
+        "id": "hos-counts",
+        "name": "History of Science's channel verdict counts from its six-week review",
+        "what": "From History of Science's search-led six-week review on, the fading rule applies to it.",
+        "when": "2027-02-18T18:00Z",
+        "jobs": []
       }
     ]
   }

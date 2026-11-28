@@ -1,0 +1,37 @@
+{
+  "job": "J1272",
+  "by": "codex",
+  "checked_at": "2026-11-22T20:49:31.818586+00:00",
+  "films": [
+    "OWB:027"
+  ],
+  "video": "6bbbvfCx6zY",
+  "result": "Studio connection unavailable; task incomplete",
+  "probes": [
+    {
+      "probe": "CDP 9223 HTTP target list",
+      "result": "Responds; existing Studio tab is emwQsPxnRGM/edit"
+    },
+    {
+      "probe": "Playwright connect_over_cdp",
+      "result": "WebSocket connected, browser attachment timed out at 15000 ms"
+    },
+    {
+      "probe": "Direct existing Studio page Runtime.evaluate(document.title)",
+      "result": "WebSocketTimeoutException after 8-second timeout"
+    }
+  ],
+  "youtube_mutations_sent": false,
+  "current_public_status": "unverified",
+  "pinned_comment": "not posted or pinned in this run",
+  "end_screen": "Prior saved readback retained in J1272.json; not reverified in this run",
+  "remaining": "When existing Studio tab responds, verify channel and Public status for 6bbbvfCx6zY; inspect existing comments before posting exact approved package comment and pinning; read back persisted pin and end screen. Preserve metadata, tests, audience, privacy and schedule.",
+  "chrome": "left open; no tabs created or closed",
+  "disk_offload": {
+    "result": "nothing in /private/tmp old enough to move",
+    "free_mb": 9141,
+    "tmux": "J1272-offload",
+    "log": "~/_desk/logs/J1272-offload.log",
+    "done": "~/_desk/logs/J1272-offload.done"
+  }
+}

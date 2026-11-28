@@ -8,8 +8,9 @@ import gate_shorts_open as g  # noqa: E402
 
 class Duration(unittest.TestCase):
     def test_house_band(self):
-        self.assertEqual(g.duration_verdict(24.0), ([], []))
-        self.assertEqual(len(g.duration_verdict(33.0)[1]), 1)   # warn only
+        # Ben, 19 Nov 2026: warn band is 16.0–19.0 s inclusive (see test_gate_duration_band.py).
+        self.assertEqual(g.duration_verdict(17.0), ([], []))
+        self.assertEqual(len(g.duration_verdict(24.0)[1]), 1)   # warn only
         self.assertEqual(len(g.duration_verdict(40.0)[0]), 1)   # FAIL
         self.assertEqual(len(g.duration_verdict(55.0)[0]), 1)   # a long Short still FAILs without the flag
 

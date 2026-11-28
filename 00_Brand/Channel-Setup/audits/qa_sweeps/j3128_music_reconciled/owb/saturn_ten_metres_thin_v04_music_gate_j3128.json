@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn_ten_metres_thin_short_bed_v01.mp3",
+  "bed_sha256": "0476ead8b342e142dfc04a821152e2d95d729b4f8ea85779a9293140831a5adf",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn_ten_metres_thin_short_bed_v01_plan.json",
+  "seconds": 30.0,
+  "bpm": 133.3,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:021",
+    "export_id": "saturn_ten_metres_thin_v04",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v04_music.txt",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 29,
+    "excluded_same_film_or_self_count": 2,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.4206,
+    "max_similarity_bed": "light-speed_score_bed_v01_full.mp3",
+    "max_similarity_sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn_ten_metres_thin_short_bed_v01.mp3",
+        "name": "saturn_ten_metres_thin_short_bed_v01.mp3",
+        "sha256": "0476ead8b342e142dfc04a821152e2d95d729b4f8ea85779a9293140831a5adf",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/05_Music/saturn-rings_score_bed_v01.mp3",
+        "name": "saturn-rings_score_bed_v01.mp3",
+        "sha256": "53d005b8ba41679d85fe8832fca412c7337b5d27d7aa8ee6a0dc1a716fa1e6d9",
+        "reason": "same_film_05_music (OWB:021)"
+      }
+    ],
+    "repair_job": null
+  }
+}

@@ -43,20 +43,22 @@ class Routing(unittest.TestCase):
         """Ben, 14 Oct 2026: Codex built the new thumbnails; Codex builds them from now on."""
         self.assertEqual(routing.preferred_worker({"kind": "thumb"}), "codex")
         self.assertEqual(routing.model_for({"kind": "thumb"}, "codex"), "gpt-6-astra")
-        self.assertEqual(routing.chain("thumb")[1:], [("cursor", "cursor-grok-4-7"), ("cursor", "cursor-auto"),
-                                                      ("gemini", "gemini-agy"), routing.MINI_CLAUDE])
+        # Ben, 24 Nov 2026: Cursor is on a £20 X plan, so it comes after Gemini and Claude Code.
+        self.assertEqual(routing.chain("thumb")[1:], [("gemini", "gemini-agy"), routing.MINI_CLAUDE,
+                                                      ("cursor", "cursor-grok-4-7"), ("cursor", "cursor-auto")])
 
     def test_an_explicit_model_wins(self):
         job = {"kind": "assembly", "model": "gpt-6-astra"}
         self.assertEqual(routing.preferred_worker(job), "codex")
         self.assertEqual(routing.model_for(job, "codex"), "gpt-6-astra")
 
-    def test_claude_jobs_walk_claude_cursor_on_claude_gemini_then_codex(self):
-        """Ben, 11 Oct 2026 23:40 ("a Claude model in Cursor") and 23:47 ("we also have Gemini and Codex")."""
+    def test_claude_jobs_walk_claude_claude_code_gemini_codex_then_cursor(self):
+        """Ben, 24 Nov 2026: "Gemini, we have a lot of usage ... Claude, we have a lot of usage ... Codex ... a decent
+        amount"; Cursor shares Grok Bot's £20 X plan, so it is the last stand-in."""
         for kind in ("script", "review", "qa", "listing"):
-            self.assertEqual(routing.chain(kind), [("claude", "claude-opus-5-5"), ("cursor", "cursor-claude-opus-5-5"),
+            self.assertEqual(routing.chain(kind), [("claude", "claude-opus-5-5"), routing.MINI_CLAUDE,
                                                    ("gemini", "gemini-argon"), ("codex", "gpt-6-astra"),
-                                                   routing.MINI_CLAUDE], kind)
+                                                   ("cursor", "cursor-claude-opus-5-5")], kind)
             self.assertEqual(routing.model_for({"kind": kind}, "cursor"), "cursor-claude-opus-5-5")
             self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-argon")
             self.assertEqual(routing.model_for({"kind": kind}, "codex"), "gpt-6-astra")
@@ -65,6 +67,9 @@ class Routing(unittest.TestCase):
         self.assertEqual(routing.cli_model("cursor-claude-opus-5-5"), routing.CURSOR_CLAUDE_MODEL)
         self.assertEqual(routing.CURSOR_CLAUDE_MODEL, "claude-opus-5-5")  # Cursor's Opus 5.5 id on the Mini
         self.assertEqual(routing.cli_model("cursor-auto"), "")
+        self.assertEqual(routing.cli_model("gemini-argon"), routing.AGY_ARGON_MODEL)
+        self.assertEqual(routing.AGY_ARGON_MODEL, "gemini-4-neon-high")
+        self.assertEqual(routing.AGY_ARGON_FALLBACK, "gemini-4-argon-high")
         self.assertTrue(routing.claude_owned({"kind": "script"}))
         self.assertFalse(routing.claude_owned({"kind": "script", "model": "gpt-6-astra"}))
         self.assertFalse(routing.claude_owned({"kind": "chart"}))
@@ -79,13 +84,15 @@ class Routing(unittest.TestCase):
 
     def test_next_lane_skips_workers_that_are_down(self):
         job = {"kind": "script"}
-        self.assertEqual(routing.next_lane(job, "claude", {"cursor", "gemini", "codex"}), ("cursor", "cursor-claude-opus-5-5"))
-        self.assertEqual(routing.next_lane(job, "claude", {"gemini", "codex"}), ("gemini", "gemini-argon"))
+        # `up` is the set of Mini workers that are up.
+        self.assertEqual(routing.next_lane(job, "claude", {"claudecode", "gemini", "codex"}), routing.MINI_CLAUDE)
+        self.assertEqual(routing.next_lane(job, "claude", {"cursor", "gemini", "codex"}), ("gemini", "gemini-argon"))
         self.assertEqual(routing.next_lane(job, "gemini", {"cursor", "codex"}), ("codex", "gpt-6-astra"))
-        self.assertIsNone(routing.next_lane(job, "codex", {"cursor", "gemini", "codex"}))
+        self.assertEqual(routing.next_lane(job, "claude", {"cursor"}), ("cursor", "cursor-claude-opus-5-5"))
+        self.assertIsNone(routing.next_lane(job, "codex", {"gemini", "codex", "claudecode"}))
         self.assertEqual(routing.next_lane({"kind": "chart"}, "codex", {"cursor"}), ("cursor", "cursor-grok-4-7"))
-        self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"cursor", "gemini"}), "cursor")
-        self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"gemini"}), "gemini")
+        self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"cursor", "gemini"}), "gemini")
+        self.assertEqual(routing.preferred_worker({"kind": "chart"}, {"cursor"}), "cursor")
 
     def test_reroute_hands_a_claude_job_to_cursor_and_remembers_where_it_was(self):
         d = {"next_id": 1, "jobs": []}
@@ -102,7 +109,7 @@ class Routing(unittest.TestCase):
             jobs.do_reroute(c, "relay", "cursor", "", "", T0)
 
     def test_chief_kind_follows_the_elected_succession_chain(self):
-        self.assertEqual([a for a, _ in routing.chain("chief")], ["claude", "chief", "codex", "gemini"])
+        self.assertEqual([a for a, _ in routing.chain("chief")], ["claude", "codex", "gemini", "chief"])
 
     def test_jobs_add_carries_kind_and_model_and_refuses_invented_ones(self):
         d = {"next_id": 1, "jobs": []}
@@ -130,13 +137,21 @@ class HosPictureOnFlow(unittest.TestCase):
 class MiniClaudeCode(unittest.TestCase):
     """Ben, 9 Nov 2026: Codex and Cursor out of credit; Claude Code on the Mini (his Max 20x plan) is every worker
     chain's last resort, under its own id so the cloud Chief's election never blocks or borrows it."""
-    def test_every_worker_chain_ends_with_claude_code_on_the_mini_but_the_chief_chain_does_not(self):
+    def test_every_worker_chain_has_claude_code_ahead_of_cursor_but_the_chief_chain_does_not(self):
+        """Ben, 24 Nov 2026: Claude has a lot of usage and Cursor shares a £20 X plan, so Claude Code on the Mini
+        stands in before any Cursor lane and Cursor is last wherever it appears."""
         for kind in routing.CHAINS:
             agents = [a for a, _ in routing.chain(kind)]
             if kind == "chief":
                 self.assertNotIn("claudecode", agents)
-            else:
-                self.assertEqual(agents[-1], "claudecode", kind)
+                self.assertEqual(agents[-1], "chief")
+                continue
+            self.assertIn("claudecode", agents, kind)
+            if "cursor" in agents:
+                self.assertLess(agents.index("claudecode"), agents.index("cursor"), kind)
+                self.assertTrue(all(a == "cursor" for a in agents[agents.index("cursor"):]), kind)
+            if "chief" in agents:
+                self.assertGreater(agents.index("chief"), agents.index("claudecode"), kind)
         self.assertIn("claudecode", routing.MINI_WORKERS)
         self.assertEqual(routing.RUNS_ON["mini-claude-opus-5-5"], "claudecode")
 

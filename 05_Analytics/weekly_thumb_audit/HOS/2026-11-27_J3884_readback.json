@@ -1,0 +1,223 @@
+{
+  "job": "J3884",
+  "parent": "J3365",
+  "agent": "gemini",
+  "captured_interval_utc": {
+    "start": "2026-11-27T10:44:21Z",
+    "end": "2026-11-27T10:45:10Z"
+  },
+  "source": "Authenticated Mac mini HOS YouTube Studio browser on CDP port 9460 (existing studio.youtube.com tab via scripts/cdp_tabs.py reuse_page; zero new tabs opened). Strictly read-only DOM/network capture and screenshots; zero public watch pages played; £0 and 0 credits spent.",
+  "channel_id": "UCXp7HkBIl1LgaznXuZHJyRg",
+  "channel_verified": true,
+  "historical_context": "Accepted 22 November 2026 audit (J3365 / PR #1170) is historical; this record captures current 27 November 2026 Studio state.",
+  "hos_004_atom": {
+    "video_id": "GHZDsiH7L7A",
+    "film": "004",
+    "read_utc": "2026-11-27T10:44:31Z",
+    "visibility": "Public",
+    "current_title": "What's Inside an Atom? Mostly Empty Space",
+    "selected_cover_text": "WHAT'S REALLY INSIDE AN ATOM?",
+    "attached_test_present": false,
+    "title_experiment_present": false,
+    "thumbnail_experiment_present": false,
+    "studio_backend_videoCreatorExperiment": {
+      "experimentId": 3,
+      "state": "CREATOR_EXPERIMENT_STATE_DELETED",
+      "finishedReason": "CREATOR_EXPERIMENT_FINISHED_REASON_UNSPECIFIED",
+      "selectedArm": "CREATOR_EXPERIMENT_ARM_UNSPECIFIED",
+      "resultState": "CREATOR_EXPERIMENT_RESULT_STATE_UNSPECIFIED",
+      "winnerArm": "CREATOR_EXPERIMENT_ARM_UNSPECIFIED",
+      "resultsDisplayed": false,
+      "hasThumbnails": false,
+      "hasTitles": false
+    },
+    "window_12_to_26_nov_note": "No Studio Test & Compare report is attached. The 12-26 Nov window was STUDIO_TESTS.md Test B (before/after RELATED_VIDEO title edit applied in J0978 on 2026-11-12T00:46Z after Ben's 11 Nov OK deleted the prior 15-29 Oct J0280 inconclusive experimentId 3). No matching row exists in THUMB_LEDGER.json; none added or invented.",
+    "ledger_row_updated": null,
+    "wt_a": null,
+    "wt_b": null
+  },
+  "hos_007_vaccine": {
+    "video_id": "ETynHpIYLeY",
+    "film": "007",
+    "ledger_id": "T029",
+    "read_utc": "2026-11-27T10:44:41Z",
+    "report_opened_utc": "2026-11-27T10:44:47Z",
+    "visibility": "Public",
+    "attached_test_present": true,
+    "test_type": "Title and thumbnail",
+    "experiment_identity": {
+      "experimentId": 2,
+      "armCount": "CREATOR_EXPERIMENT_ARM_COUNT_2",
+      "hasThumbnails": true,
+      "hasTitles": true,
+      "started_at_utc": "2026-11-12T18:00:43Z",
+      "finished_at_utc": "2026-11-26T18:10:47Z",
+      "studio_display_interval": "12 November 2026 at 18:00 to 26 November 2026 at 18:10",
+      "timezone": "Europe/London (UTC on both dates)"
+    },
+    "state": "CREATOR_EXPERIMENT_STATE_FINISHED",
+    "finished_reason": "CREATOR_EXPERIMENT_FINISHED_REASON_COMPLETED",
+    "result_state": "CREATOR_EXPERIMENT_RESULT_STATE_NOT_ENOUGH_DATA",
+    "winner": "draw",
+    "winner_arm": "CREATOR_EXPERIMENT_ARM_UNSPECIFIED",
+    "selected_arm": "CREATOR_EXPERIMENT_ARM_1",
+    "verbatim_verdict": "Not enough impressions to declare a winner",
+    "variants": [
+      {
+        "slot": 1,
+        "arm": "CREATOR_EXPERIMENT_ARM_1",
+        "title": "How Was the First Vaccine Made? (And Why It's Named After a Cow)",
+        "thumbnail_hook": "THE MILKMAID'S SECRET",
+        "visible_to_all_viewers": true,
+        "watch_time_share_pct": null,
+        "watch_time_share_display": "—"
+      },
+      {
+        "slot": 2,
+        "arm": "CREATOR_EXPERIMENT_ARM_2",
+        "title": "Why Vaccines Are Named After a Cow",
+        "thumbnail_hook": "IMMUNE",
+        "visible_to_all_viewers": false,
+        "watch_time_share_pct": null,
+        "watch_time_share_display": "—"
+      }
+    ],
+    "experiment_impressions": null,
+    "experiment_ctr_a": null,
+    "experiment_ctr_b": null,
+    "verbatim_report_text": "Title and thumbnail\nA/B test report\nNot enough impressions to declare a winner\n8:52\nHow Was the First Vaccine Made? (And Why It's Named After a Cow)\nHistory of Science\nNow visible to all viewers\n—\nWatch-time share\n8:52\nWhy Vaccines Are Named After a Cow\nHistory of Science\n—\nWatch-time share\nSet this option\nTest finished. Ran from 12 November 2026 at 18:00 to 26 November 2026 at 18:10.\nNew test\nDone",
+    "attached_report_preserved": true,
+    "ledger_row_updated": "T029"
+  },
+  "hos_099_compilation": {
+    "video_id": "uAomPaOBrM8",
+    "film": "099",
+    "read_utc": "2026-11-27T10:45:04Z",
+    "visibility": "Scheduled",
+    "scheduled_publish_utc": "2026-12-10T18:00:00Z",
+    "current_title": "Experiments That Changed the World (Blood, Germs and Atoms)",
+    "attached_test_present": false,
+    "studio_backend_videoCreatorExperiment": {},
+    "package_reference": {
+      "path": "02_Video-Projects/099_Six-Experiments-Compilation/11_Upload-Package/compilation_thumb_v02.jpg",
+      "repo": "History Of Science",
+      "dimensions": "1280x720",
+      "sha256": "07f34be900d9449bbe150b1c49c1dd34aedd1c4eb8cee98eab6bd81b51d52ef4"
+    },
+    "studio_selected_cover": {
+      "local_copy": "/Users/benjaminoats/_desk/J3884/2026-11-27/uAomPaOBrM8_099_compilation_studio_img_1_20261127T104421Z.jpg",
+      "sha256": "b06c191d74cf715023a8e8d44832c4406ea8946036ba75372b50c5bb37324948",
+      "bytes": 13339,
+      "dimensions": "320x180",
+      "source": "Authenticated Studio Details thumbnail editor preview (mqdefault.jpg; no public watch page accessed)"
+    },
+    "visual_comparison": {
+      "verdict": "MATCH",
+      "method": "Direct visual inspection of package compilation_thumb_v02.jpg vs Studio Details screenshots and Studio-served selected cover JPEG, corroborated by 320x180 resized pixel comparison",
+      "corroboration_320x180": {
+        "mae_per_channel_255": 5.85,
+        "rmse_per_channel_255": 9.41,
+        "pearson_r": 0.98941
+      },
+      "visual_notes": "Identical artwork, layout, and typography: gold '6' over cream serif 'EXPERIMENTS' with ornate gold flourishes top-left; small lower-left Explorer in teal coat with glasses and compass satchel; Pasteur glass swan-neck flask with amber broth lower-centre; floating glowing gold atom over arched window upper-centre-right; tied forearm with glowing red upper vein and blue lower veins on right. Byte differences reflect standard YouTube 320x180 JPEG downscale/re-encoding."
+    }
+  },
+  "checks": {
+    "hos_channel_audit": {
+      "status": "PASS",
+      "run_utc": "2026-11-27T10:45:25Z",
+      "command": "cd 'History Of Science/07_Content-Ops' && npm run channel:audit",
+      "exit_code": 0,
+      "summary": "80 videos, 0 errors. (76 unique playlist IDs across 80 raw rows with 4 duplicate IDs + 4 direct videos.list recoveries; 44 public matching channel statistics.videoCount=44).",
+      "target_rows": {
+        "GHZDsiH7L7A": "PASS long public What's Inside an Atom? Mostly Empty Space (warn: ai-disclosure, tags.count 13)",
+        "ETynHpIYLeY": "PASS long public How Was the First Vaccine Made? (And Why It's Named After a Cow) (warn: ai-disclosure)",
+        "uAomPaOBrM8": "PASS long private 2026-12-10 18:00 UK Experiments That Changed the World (Blood, Germs and Atoms) (warn: ai-disclosure)"
+      },
+      "prisma_import_error_observed": false,
+      "code_fix_queued": false
+    },
+    "thumb_ledger_verdict": "No default yet (0 decided tests across all makers; needs 4+ decided tests and >=75% wins)."
+  },
+  "protections_preserved": {
+    "j0777_no_new_art_hold": true,
+    "finished_reports_untouched": true,
+    "studio_writes": 0,
+    "public_watch_pages_played": 0,
+    "spend_gbp": 0,
+    "spend_credits": 0
+  },
+  "screenshots_outside_git": [
+    {
+      "kind": "details_top",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/GHZDsiH7L7A_004_atom_details_20261127T104421Z.png",
+      "sha256": "4514f35b640cb52afca8fe323ce86e1c0bf1432cfe78a9fe0b674e88e087d95b",
+      "bytes": 341987,
+      "captured_utc": "2026-11-27T10:44:31Z"
+    },
+    {
+      "kind": "thumbnail_section",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/GHZDsiH7L7A_004_atom_thumbnail_section_20261127T104421Z.png",
+      "sha256": "a9e36886ae68418b6c4bc5a95d6eee8212f63a6fc10c81c392fde1d0b8197944",
+      "bytes": 237105,
+      "captured_utc": "2026-11-27T10:44:33Z"
+    },
+    {
+      "kind": "details_top",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/ETynHpIYLeY_007_vaccine_details_20261127T104421Z.png",
+      "sha256": "50d95900b2121e4d25e0dc71ef146668f6c2f7570f1da828d0389b0790ec933e",
+      "bytes": 322677,
+      "captured_utc": "2026-11-27T10:44:41Z"
+    },
+    {
+      "kind": "thumbnail_section",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/ETynHpIYLeY_007_vaccine_thumbnail_section_20261127T104421Z.png",
+      "sha256": "cdccf9fceedcf35933fe1388d4c653d5a59e1fc3c1710bf9f03ab47efaa25a2a",
+      "bytes": 276463,
+      "captured_utc": "2026-11-27T10:44:43Z"
+    },
+    {
+      "kind": "test_report_0",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/ETynHpIYLeY_007_vaccine_test_report_0_20261127T104421Z.png",
+      "sha256": "fa9adaed922f5b0d344d42aa65bb132366f9d76e4d36de43d7269621d6c508df",
+      "bytes": 281999,
+      "captured_utc": "2026-11-27T10:44:47Z"
+    },
+    {
+      "kind": "test_report_1",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/ETynHpIYLeY_007_vaccine_test_report_1_20261127T104421Z.png",
+      "sha256": "fa9adaed922f5b0d344d42aa65bb132366f9d76e4d36de43d7269621d6c508df",
+      "bytes": 281999,
+      "captured_utc": "2026-11-27T10:44:54Z"
+    },
+    {
+      "kind": "details_top",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/uAomPaOBrM8_099_compilation_details_20261127T104421Z.png",
+      "sha256": "7bd2e66427ad06e0473b418d6b1e5c5c67ce5b2ceb733daa3c51667cdfcf66fe",
+      "bytes": 344029,
+      "captured_utc": "2026-11-27T10:45:04Z"
+    },
+    {
+      "kind": "thumbnail_section",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/uAomPaOBrM8_099_compilation_thumbnail_section_20261127T104421Z.png",
+      "sha256": "7015eaddf8daffbe28e1deae699533a5839e619ba85ce88dfe1872c3fcfe13b0",
+      "bytes": 236707,
+      "captured_utc": "2026-11-27T10:45:06Z"
+    },
+    {
+      "kind": "thumbnail_editor_crop",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/uAomPaOBrM8_099_compilation_thumb_editor_crop_20261127T104421Z.png",
+      "sha256": "883ac1f8059dd257262080b55924614efa9d6e2c93ab6c87db75f72abeb0e5d7",
+      "bytes": 37857,
+      "captured_utc": "2026-11-27T10:45:06Z"
+    },
+    {
+      "kind": "uAomPaOBrM8_studio_selected_cover_jpeg",
+      "path": "/Users/benjaminoats/_desk/J3884/2026-11-27/uAomPaOBrM8_099_compilation_studio_img_1_20261127T104421Z.jpg",
+      "sha256": "b06c191d74cf715023a8e8d44832c4406ea8946036ba75372b50c5bb37324948",
+      "bytes": 13339,
+      "captured_utc": "2026-11-27T10:45:06Z",
+      "dimensions": "320x180"
+    }
+  ]
+}

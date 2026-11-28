@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v06.mp4",
+  "edge_floor": 0.0306,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_graphic",
+      "cut": 1,
+      "t": 4.9,
+      "source": "code_graphic_024_fri06_muons_v05_scale.mp4",
+      "why": [
+        "low detail: edge density 0.0282 < film p5 0.0306"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 1.5,
+      "std": 36.98,
+      "mean": 204.31,
+      "p95": 236.0,
+      "edge": 0.0378,
+      "hf": 17.23,
+      "lf": 22.66,
+      "std8": 26.54,
+      "edge8": 0.1836,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_graphic",
+      "source": "code_graphic_024_fri06_muons_v05_scale.mp4",
+      "t": 4.9,
+      "std": 32.97,
+      "mean": 92.71,
+      "p95": 163.0,
+      "edge": 0.0282,
+      "hf": 10.59,
+      "lf": 25.61,
+      "std8": 27.83,
+      "edge8": 0.153,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0282 < film p5 0.0306"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 8.7,
+      "std": 60.54,
+      "mean": 171.96,
+      "p95": 240.0,
+      "edge": 0.0535,
+      "hf": 10.62,
+      "lf": 55.7,
+      "std8": 57.41,
+      "edge8": 0.3428,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 12.5,
+      "std": 45.16,
+      "mean": 87.7,
+      "p95": 188.0,
+      "edge": 0.068,
+      "hf": 16.84,
+      "lf": 30.39,
+      "std8": 35.76,
+      "edge8": 0.2964,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 16.3,
+      "std": 27.99,
+      "mean": 55.82,
+      "p95": 103.0,
+      "edge": 0.0619,
+      "hf": 9.56,
+      "lf": 18.48,
+      "std8": 22.17,
+      "edge8": 0.2229,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_gerst",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 20.2,
+      "std": 45.11,
+      "mean": 211.48,
+      "p95": 240.0,
+      "edge": 0.0544,
+      "hf": 20.55,
+      "lf": 31.17,
+      "std8": 34.98,
+      "edge8": 0.2126,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

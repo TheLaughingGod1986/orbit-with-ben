@@ -1,6 +1,7 @@
 """J3007: embedded channels participate in reviews before a YouTube connection exists."""
 import datetime as dt
 import json
+import tempfile
 from pathlib import Path
 import unittest
 from unittest import mock
@@ -15,6 +16,30 @@ import test_board_benauth as auth
 
 
 class Prelaunch(unittest.TestCase):
+    def setUp(self):
+        # Exercise the supported embedded/prelaunch layout independently of the live channel's move.
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        channel = dict(channels.get('ww2'), local='channels/ww2', launch_state='prelaunch',
+                       youtube={'handle': '@FieldOrderHistory'},
+                       repo={'url': '', 'env': 'WW2_REPO', 'checkouts': ['ww2']},
+                       shorts={'planned_per_long': 0})  # ten film cards only, whatever the live Shorts setting
+        base = tuple(channel if c['slug'] == 'ww2' else c for c in channels._load())
+        self.enterContext(mock.patch.object(channels, 'ROOT', root))
+        original_load = channels._load
+        self.enterContext(mock.patch.object(channels, '_load',
+            side_effect=lambda *args: original_load(*args) if args else base))
+        folder = root / 'channels/ww2'
+        (folder / 'studio').mkdir(parents=True)
+        (folder / 'studio/channel.json').write_text(json.dumps(channel))
+        for number in range(1, 11):
+            film = folder / '02_Video-Projects' / f'{number:03d}_Fixture'
+            film.mkdir(parents=True)
+            (film / 'status.json').write_text(json.dumps({
+                'film': f'{number:03d}', 'title': f'Fixture {number}',
+                'stages': {'topic': {'state': 'done'}}, 'claims': []}))
+
     def test_embedded_channel_has_real_films_and_no_remote_repository(self):
         root = channels.ROOT / 'channels/ww2'
         self.assertEqual(channels.checkout('ww2'), root)
@@ -22,7 +47,9 @@ class Prelaunch(unittest.TestCase):
         self.assertEqual(channels.get('ww2')['repo']['url'], '')
         self.assertEqual(len(channel_films.films('ww2')), 10)
         doc = ks.read_documents({'ww2': root})['ww2']
-        board = vt.build_from_docs({'ww2': {'films': doc}})
+        # The fixture's ten films must not pick up current queue approval cards.
+        with mock.patch.object(vt, 'ROOT', channels.ROOT):
+            board = vt.build_from_docs({'ww2': {'films': doc}})
         films = [v for v in board['videos'] if v['channel'] == 'WW2']
         self.assertEqual(len(films), 10)
         self.assertTrue(any(v['key'] == 'WW2:001' for v in films))

@@ -1,0 +1,75 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+  "bed_sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/05_Music/owb-standalone-shorts_score_bed_v01_plan.json",
+  "seconds": 60.0,
+  "bpm": 120.0,
+  "brief_pace": "Pace: 84-96 BPM",
+  "fail": [],
+  "warn": [
+    "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+  ],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:027",
+    "export_id": "earth_equator_weight_v07",
+    "original_sidecar_path": "/Users/benjaminoats/_desk/renders/J1100-v07/S2_027_emwQsPxnRGM/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 26,
+    "excluded_same_film_or_self_count": 5,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.4457,
+    "max_similarity_bed": "light-speed_score_bed_v01_full.mp3",
+    "max_similarity_sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+        "name": "owb-standalone-shorts_score_bed_v01.mp3",
+        "sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_bed_v02_fit.wav",
+        "name": "earth-spin_score_bed_v02_fit.wav",
+        "sha256": "4d72982bad4641fd0661b7006bc52d4f95846626f2b3cbe6dcf06a3340b40545",
+        "reason": "same_film_05_music (OWB:027)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_bed_v02.mp3",
+        "name": "earth-spin_score_bed_v02.mp3",
+        "sha256": "8181f7370425aec2bfd2807073e5a543d9a41a2052e5320733107f5739bec562",
+        "reason": "same_film_05_music (OWB:027)"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_take2_straight_v01j.wav",
+        "name": "earth-spin_score_take2_straight_v01j.wav",
+        "sha256": "b263932e09ac11a2523d6d794902b9ec8a94563d87f2e13539fe947fbc5c7ba5",
+        "reason": "same_film_05_music (OWB:027)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_take2_straight_v01j.wav",
+        "name": "earth-spin_score_take2_straight_v01j.wav",
+        "sha256": "f63005243f5e140859e438305c1ec2365662d1e4511391fd9f04d7b53155c0b6",
+        "reason": "same_film_05_music (OWB:027)"
+      }
+    ],
+    "repair_job": null
+  }
+}

@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""Prepare a Mini service plist without installing or starting it.
+
+Read the installed plist to preserve its scheduling, locks, logs and local environment.
+Write only to a new, private staging file. Install during the drained cutover window.
+"""
+import argparse
+import copy
+import pathlib
+import plistlib
+import re
+
+SERVICES = {
+    'com.owb.chief-relay': ('chief_relay.py', 'run'),
+    'com.owb.board-publish': ('board_publish.py', '--quiet'),
+    'com.owb.ai-spend-daily': ('ai_spend_daily.py', '--git'),
+    'com.owb.missed-runs': ('missed_runs.py', '--post'),
+    'com.owb.tab-janitor': ('cdp_tabs.py', 'tidy'),
+}
+
+SHELL_SERVICES = {
+    'dev.orbit.buffer-check': '07_Content-Ops/launchd/buffer-check.sh',
+    'dev.orbit.analytics-snapshot': '07_Content-Ops/launchd/analytics-detached.sh',
+}
+
+
+def absolute(value):
+    path = pathlib.Path(value)
+    if not path.is_absolute():
+        raise ValueError('runtime paths must be absolute')
+    return str(path)
+
+
+def render(source, engine, python, channel_paths):
+    doc = copy.deepcopy(source)
+    desk = doc.get('Label') == 'com.hos.desk'
+    if not desk and doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
+        raise ValueError('only the relay, board publisher and supported daily services are supported')
+    engine, python = absolute(engine), absolute(python)
+    if desk:
+        # The desk belongs to its channel; only its shared-engine environment moves.
+        # Preserve the inspected poll/run policy, never turn delivery into execution.
+        old = doc.get('ProgramArguments')
+        if (not isinstance(old, list) or len(old) not in (5, 6)
+                or not all(isinstance(a, str) for a in old)
+                or old[2:4] != ['inbox', '--watch']
+                or not re.fullmatch(r'[0-9]{1,5}', old[4])
+                or not 1 <= int(old[4]) <= 86400
+                or (len(old) == 6 and old[5] != '--run')):
+            raise ValueError('desk proposal requires the reviewed inbox polling argument shape')
+        hos = absolute(channel_paths.get('HOS_REPO', ''))
+        target = pathlib.Path(hos) / '00_Brand/Channel-Setup/tools/hos_desk.py'
+        argv = [python, str(target), *old[2:]]
+    elif doc['Label'] in SHELL_SERVICES:
+        target = pathlib.Path(engine) / SHELL_SERVICES[doc['Label']]
+        argv = ['/bin/bash', str(target)]
+    else:
+        script, argument = SERVICES[doc['Label']]
+        target = pathlib.Path(engine) / 'scripts' / script
+        argv = [python, str(target), argument]
+    if not target.is_file():
+        raise ValueError('the staged engine lacks the service script')
+    if not pathlib.Path(python).is_file():
+        raise ValueError('the Python executable is missing')
+    # An argv array avoids shell expansion and login-profile path overrides.
+    doc.pop('Program', None)
+    doc['ProgramArguments'] = argv
+    doc['WorkingDirectory'] = hos if desk else engine
+    env = doc.setdefault('EnvironmentVariables', {})
+    env['STUDIO_REPO'] = engine
+    if desk:
+        env['HOS_REPO_DIR'] = hos
+    if doc['Label'] == 'dev.orbit.analytics-snapshot':
+        env['STUDIO_PYTHON'] = python
+        credential = env.get('ANALYTICS_CREDENTIAL_FILE')
+        if not credential:
+            raise ValueError('analytics proposal requires ANALYTICS_CREDENTIAL_FILE in the source environment')
+        absolute(credential)
+    for name, path in channel_paths.items():
+        if name not in ('OWB_REPO', 'HOS_REPO', 'WW2_REPO'):
+            raise ValueError('unsupported channel environment name')
+        env[name] = absolute(path)
+    return plistlib.dumps(doc, sort_keys=False)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    for name in ('source', 'engine', 'python', 'owb', 'hos', 'ww2', 'out'):
+        ap.add_argument('--' + name, required=True)
+    args = ap.parse_args()
+    data = render(plistlib.loads(pathlib.Path(args.source).read_bytes()), args.engine, args.python,
+                  {'OWB_REPO': args.owb, 'HOS_REPO': args.hos, 'WW2_REPO': args.ww2})
+    # Installed plists can hold local secrets: never echo their contents or put them in Git.
+    import os
+    fd = os.open(args.out, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    with os.fdopen(fd, 'wb') as handle:
+        handle.write(data)
+
+
+if __name__ == '__main__':
+    main()

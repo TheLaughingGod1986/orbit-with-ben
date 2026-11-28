@@ -158,6 +158,11 @@ never remove one (no money, no deletes, Ben gate).
 
 Ben's only part is the YouTube sign-in and the voice, as now.
 
+**Gate profile compatibility during phase 3 (J3012, 20 Nov).** The split retains each channel's
+`00_Brand/Channel-Setup/tools/channel_profile.py` in its channel tree. A temporary engine copy remains for legacy
+shared tools. Detached analytics explicitly loads the owning channel's profile, never that engine default;
+retire the compatibility copy only after the other shared callers are adapted.
+
 ## Phases (each one ships on its own, with the studio running 24/7 throughout)
 
 **1. Channel manifests, in place (no moves).**

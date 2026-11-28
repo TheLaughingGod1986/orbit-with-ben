@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {market,marketPatternsCard,marketBreakoutCard,setMarketFilter:(n,f)=>{marketNiche=n||'all';marketFormat=f||'all';},planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -150,7 +150,7 @@ assert(workingRow.includes('33% → 44%') && workingRow.includes('p24-delta'),
   'claimed cut can show live film progress delta from progress24h');
 assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-working'),
   'waiting cut does not impersonate live work');
-assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
+assert(progressHtml.includes('Nobody is working on these right now'), 'waiting group is labeled so it cannot look like live work');
 t.setSeg('all');
 
 // Claimed work must not be parked in QA by a sibling review/QA/Chief job (Ben, 7 Nov 2026 ~13:30).
@@ -1652,3 +1652,194 @@ assert.equal(t.agentReason("Claude said it's out of usage until 2026-11-18T07:50
 assert.equal(t.agentReason("usage limit", {until:"2026-07-01T12:00:00Z"}), "Out of usage, back Wed 1 Jul, 13:00");
 assert.equal(t.agentReason("Chief inbox delivered but not progressed within the acknowledgement window", {until:"2026-11-18T02:12:31Z"}), "Not responding, retry Wed 18 Nov, 02:12");
 assert(!t.agentReason("Waiting (J2829 probe)").includes("J2829"));
+
+// Third-channel analytics never turn missing reads into zero progress.
+assert(t.fieldOrderCard({fieldOrder:{name:'Field Order History',targets:[],films:[]}}).includes('pending / 1,000'));
+const fieldHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-17',targets:[{name:'Subscribers',current:50,target:1000,eta:null}],films:[{title:'<unsafe>',window:'48h',ctr:2,medianCtr:3,viewed:20,medianViewed:30,flags:['Tighten opening']} ]}});
+assert(fieldHtml.includes('&lt;unsafe&gt;'));
+assert(fieldHtml.includes('median 3'));
+assert(fieldHtml.includes('not enough growth data'));
+// Each figure says where it came from and when (Ben, 23 Nov: keep the monetisation card current).
+const freshHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-21',targets:[{name:'Subscribers',current:1,target:1000,eta:null,source:'Studio',asOf:'2026-11-23T12:41:00Z'},{name:'Public watch hours (estimate)',current:0,target:4000,eta:null,source:'API estimate',asOf:'data through 2026-11-21'}],films:[]}});
+assert(freshHtml.includes('<b>1 / 1,000</b> (Studio, 2026-11-23 12:41 UTC)'), freshHtml);
+assert(freshHtml.includes('(API estimate, data through 2026-11-21)'), freshHtml);
+assert(!fieldHtml.includes('(undefined'));
+
+// Ben, 23 Nov 2026: a scheduled film back in production showed "Scheduled" with no progress, and queued work read as
+// "In progress". Rework wins over Scheduled/Passed, queued is called queued, and relay rechecks are not a review.
+{
+  const sched={key:'WW2:002',type:'long',channel:'ww2',lane:'approved',youtube:{state:'scheduled',privacy:'private',publishAt:'2026-11-28T17:00:00Z',publishAtLondon:'Sat 28 Nov 2026 17:00 London'},
+    jobs:[{id:'J3364',status:'open',kind:'assembly',progress:{step:1,of:4}},{id:'J3422',status:'blocked',kind:'vo',progress:{step:4,of:5}},{id:'J3417',status:'blocked',kind:'thumb'},{id:'J3428',status:'blocked',kind:'review',title:'Verify condition for J3422'}]};
+  assert.strictEqual(t.videoLane(sched),'progress');
+  assert(t.stage(sched).startsWith('Being reworked before launch (scheduled Sat 28 Nov 2026 17:00 London)'), t.stage(sched));
+  const rowHtml=t.videoProductionRow(sched,Date.now(),{});
+  assert(rowHtml.includes('Picture and edit: step 1 of 4 · paused, waiting for an agent to pick it back up'), rowHtml);
+  assert(rowHtml.includes('Voice-over: step 4 of 5 · waiting for a step'), rowHtml);
+  assert(!rowHtml.includes('UAT handoff complete') && !rowHtml.includes('outlook-line'), rowHtml);
+  // Only a launch-day job left: back to Scheduled.
+  const launchOnly={...sched,jobs:[sched.jobs[2]]};
+  assert.strictEqual(t.videoLane(launchOnly),'scheduled');
+  // Open jobs nobody has claimed are queued, not in progress.
+  const queued={key:'WW2:004',type:'long',channel:'ww2',lane:'progress',jobs:[{id:'J3429',status:'open',kind:'image'}]};
+  assert.strictEqual(t.stage(queued),'Queued · no agent on it yet');
+  assert(t.videoProductionRow(queued,Date.now(),{}).includes('Archive photos · queued, no agent on it yet'));
+  // A relay "Verify condition for" job does not put a film in QA.
+  const recheck={key:'WW2:003',type:'long',channel:'ww2',lane:'progress',jobs:[{id:'J3205',status:'blocked',kind:'assembly'},{id:'J3392',status:'blocked',kind:'review',title:'Verify condition for J3205'}]};
+  assert.strictEqual(t.isQa(recheck),false);
+  assert.strictEqual(t.videoLane(recheck),'progress');
+  assert.strictEqual(t.stage(recheck),'Waiting');
+}
+
+// Ben, 23 Nov 2026: "with any job still in progress, I can't see the list of outstanding tasks that are left".
+{
+  const planned={id:'J9001',status:'open',kind:'assembly',title:'Pilot 2 picture rebuild',remaining_action:'Repair the repeated photos, then re-run the gates',
+    progress:{step:1,of:4,plan:['Check the ruling','Repair 13 repeated photos','Splice the new opening','Final gates and watch card']}};
+  const page=t.jobPage({owb:{jobs:[planned]},tracker:{videos:[]}},'J9001',Date.now());
+  assert(page.includes('✓ Check the ruling') && page.includes('○ Repair 13 repeated photos') && page.includes('(next)'), page);
+  assert(page.includes('Step 1 of 4 done · paused, waiting for an agent to pick it back up'), page);
+  const row=t.videoProductionRow({key:'WW2:002',type:'long',channel:'ww2',lane:'approved',youtube:{state:'scheduled',privacy:'private',publishAt:'2026-11-28T17:00:00Z'},jobs:[planned]},Date.now(),{});
+  assert(row.includes('Picture and edit: step 1 of 4 · paused, waiting for an agent to pick it back up · next: Repair 13 repeated photos'), row);
+  assert(t.jobCard({...planned,status:'claimed',by:'codex'}).includes('plan-steps'));
+}
+
+// Ben, 24 Nov 2026: the Schedule tab opens with the plan, per channel, from each channel's own publishing slots.
+{
+  const chans=[{slug:'owb',label:'OWB',name:'Orbit With Ben',cadence:{long:['Sun 18:00','Wed 18:00'],short:['Mon 11:30','Wed 11:30','Fri 11:30','Sat 11:30']}},
+    {slug:'hos',label:'HOS',name:'History of Science',cadence:{long:['Thu 18:00'],short:['Sat 11:30','Fri 11:30','Sun 11:30','Tue 11:30']}},
+    {slug:'ww2',label:'WW2',name:'Field Order History',cadence:{long:['Tue 17:00','Thu 17:00','Sat 17:00'],short:[]}}];
+  const plan=t.planOverview({channels:chans});
+  assert(plan.includes('The plan'), plan);
+  assert(plan.includes('<b>2 long films</b> a week (Wed, Sun 18:00)') && plan.includes('<b>4 Shorts</b> (Mon, Wed, Fri, Sat 11:30)'), plan);
+  assert(plan.includes('<b>1 long film</b> a week (Thu 18:00)') && plan.includes('(Tue, Fri, Sat, Sun 11:30)'), plan);
+  assert(plan.includes('<b>3 long films</b> a week (Tue, Thu, Sat 17:00) · no Shorts'), plan);
+  assert(plan.includes('In all: 6 long films and 8 Shorts a week'), plan);
+  assert.strictEqual(t.planOverview({channels:[]}), '');
+  const tab=t.renderView({tracker:{videos:[]},owb:{jobs:[]},channels:chans},'schedule',Date.now(),{});
+  assert(tab.indexOf('The plan') > tab.indexOf('<h1>Schedule</h1>'), 'plan sits on the Schedule tab');
+}
+
+// J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
+{
+  const alertBoard = {
+    ...board,
+    alerts: {
+      active: [{
+        id: 'pull:OWB:gc1:2026-11-21T11:30',
+        kind: 'pulled',
+        message: 'Muons Short pulled (<music>). Needs your watch by 10:45 to keep today\'s 11:30 slot',
+        href: '#review',
+      }],
+    },
+  };
+  for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
+    const out = t.renderView(alertBoard, tab, NOW);
+    assert(out.startsWith('<div class="urgent-banner" role="alert"'), `${tab} leads with red urgent banner`);
+    assert(out.includes('Muons Short pulled (&lt;music&gt;)'), `${tab} escapes banner text`);
+    assert(out.includes('href="#review"'), `${tab} links to watch card`);
+  }
+  for (const opts of [{uatKey: 'OWB:019'}, {videoKey: 'OWB:019'}, {hash: '#plan'}, {hash: '#firstday'}, {hash: '#channels'}]) {
+    const out = t.renderView(alertBoard, 'overview', NOW, opts);
+    assert(out.startsWith('<div class="urgent-banner" role="alert"'), `subpage ${JSON.stringify(opts)} leads with red urgent banner`);
+  }
+  const quietBoard = {...board, alerts: {active: []}};
+  assert.equal(t.urgentBannerHtml(quietBoard), '', 'no banner when alerts are empty');
+  assert(!t.renderView(quietBoard, 'overview', NOW).includes('urgent-banner'), 'overview clean with no active alerts');
+  console.log('Urgent alert banner OK');
+}
+
+// 24 Nov 2026 (Ben: why jobs are missed and build up in the past): the Overview's Stuck panel.
+{
+  const at = Date.parse('2026-11-24T12:00:00Z');
+  const sb = {
+    models: {models: [
+      {id: 'cursor', name: 'Cursor', status: 'red', why: 'Weekly usage limit reached. It resets in 2 days.', until: '2026-11-26T11:00Z'},
+      {id: 'codex', name: 'Codex', status: 'green', why: 'ready'},
+      {id: 'elevenlabs', name: 'ElevenLabs', status: 'red', why: 'not tracked'}]},
+    owb: {jobs: [
+      {id: 'J1', status: 'open', title: 'Upload the Titan Short', plain: 'Uploading the Titan Short', due: '2026-11-24T09:00:00Z', created_at: '2026-11-24T08:00Z'},
+      {id: 'J2', status: 'blocked', title: 'Old held job', created_at: '2026-10-25T08:00Z'},
+      {id: 'J3', status: 'blocked', title: 'Fresh held job', created_at: '2026-11-23T08:00Z'},
+      {id: 'J4', status: 'open', title: 'Verify condition for J2', recheck_of: 'J2', due: '2026-11-20T09:00:00Z'},
+      {id: 'J5', status: 'done', title: 'Finished', due: '2026-11-20T09:00:00Z'},
+      {id: 'J6', status: 'open', title: 'Future', due: '2026-11-30T09:00:00Z'},
+      {id: 'J7', status: 'blocked', title: 'Pin once public', created_at: '2026-10-25T08:00Z', hold: {type: 'public', check_at: '2026-12-06T18:05:00Z'}}]},
+  };
+  const m = t.stuckModel(sb, at);
+  assert.deepStrictEqual(m.out.map(a => a.name), ['Cursor'], 'only real agents that are out (not tool pools)');
+  assert.strictEqual(m.out[0].back, Date.parse('2026-11-26T11:00Z'));
+  assert.deepStrictEqual(m.overdue.map(j => j.id), ['J1'], 'overdue live jobs only, condition checks left out');
+  assert.deepStrictEqual(m.stale.map(j => j.id), ['J2'], 'blocked more than three days; a dated wait (J7) is on schedule, not stuck');
+  const html = t.stuckSection(sb, at);
+  assert(html.includes('<b>Stuck</b>') && html.includes('1 late') && html.includes('1 waiting 3+ days') && html.includes('1 agent out'));
+  assert(html.includes('Uploading the Titan Short') && html.includes('3 h late'), 'plain job line with how late');
+  assert(html.includes('back Thu 26 Nov'), 'says when the agent is back');
+  assert(html.includes('href="#job=J2"'), 'each line opens its job');
+  assert.strictEqual(t.stuckSection({models: {models: []}, owb: {jobs: []}}, at), '', 'nothing stuck: no panel');
+  const full = {...board, models: sb.models, owb: {...(board.owb || {}), jobs: [...((board.owb || {}).jobs || []), ...sb.owb.jobs]}};
+  assert(t.renderView(full, 'overview', at).includes('overview-stuck'), 'Overview shows the panel');
+  console.log('Stuck panel OK');
+}
+
+// J3650: Market intelligence tab renders breakouts, escapes text, supports niche/format filters, and shows weekly patterns.
+{
+  const mktBoard = {
+    ...board,
+    market: {
+      schemaVersion: 1,
+      updatedAt: '2026-11-25T06:40:00Z',
+      watchlistTotal: 90,
+      farmFilteredCount: 4,
+      patterns: {
+        count: 2,
+        avg_word_count: 8.5,
+        pct_searched_name: 50.0,
+        pct_how_why: 50.0,
+        pct_has_number: 50.0,
+        title_openers: [{key: 'searched_name', label: 'Searched subject first', count: 1, pct: 50.0}],
+        thumbnail_traits: [{label: 'Bright grade', count: 1, pct: 50.0}],
+      },
+      breakouts: [
+        {
+          videoId: 'vidWW2', niche: 'ww2', format: 'long',
+          title: 'Pearl Harbor Salvage <script>: How 21 Winches Raised a Battleship',
+          thumbnail: 'https://i.ytimg.com/vi/vidWW2/hqdefault.jpg',
+          channel: 'Rising Eng', subscribers: 1410, tier: 'rising',
+          ageHours: 36, views: 522000, viewsPerHour: 14500, multiple: 530.0,
+          angle: 'Field Order long: archive-photo salvage breakdown.',
+          thumbTags: {grade: 'bright', fillPct: 68.5},
+        },
+        {
+          videoId: 'vidOWB', niche: 'owb', format: 'short',
+          title: 'Why Is Europa Ice Cracked?',
+          thumbnail: 'https://i.ytimg.com/vi/vidOWB/hqdefault.jpg',
+          channel: 'Space Lab', subscribers: 85000, tier: 'benchmark',
+          ageHours: 24, views: 95000, viewsPerHour: 3958, multiple: 4.2,
+          angle: 'Orbit Short: 22-27s wonder-led question on Europa.',
+          thumbTags: {grade: 'normal', fillPct: 54.0},
+        },
+      ],
+    },
+  };
+  t.setMarketFilter('all', 'all');
+  const html = t.renderView(mktBoard, 'market', NOW);
+  assert(html.includes('<h1>Market</h1>'), 'Market heading renders');
+  assert(html.includes('90 channels tracked') && html.includes('4 farms filtered'), 'Market metadata renders');
+  assert(html.includes('Patterns this week') && html.includes('Searched subject first'), 'Patterns summary renders');
+  assert(html.includes('Pearl Harbor Salvage &lt;script&gt;') && !html.includes('<script>'), 'Market escapes titles');
+  assert(html.includes('530.0× median') && html.includes('14.5k/hr') && html.includes('1.4k subs'), 'Breakout metrics render');
+  assert(html.includes('Angle we could take:') && html.includes('Field Order long:'), 'Angle line renders');
+  assert(html.includes('vidWW2/hqdefault.jpg') && html.includes('Rising'), 'Thumbnail and rising tag render');
+
+  t.setMarketFilter('owb', 'short');
+  const filtered = t.renderTab('market', mktBoard, NOW);
+  assert(filtered.includes('Why Is Europa Ice Cracked?') && !filtered.includes('Pearl Harbor Salvage'), 'Niche + format filters narrow breakouts');
+
+  t.setMarketFilter('hos', 'all');
+  const emptyFiltered = t.renderTab('market', mktBoard, NOW);
+  assert(emptyFiltered.includes('No breakouts match the current filter'), 'Empty filter state renders cleanly');
+
+  t.setMarketFilter('all', 'all');
+  const pending = t.renderTab('market', {...board, market: {breakouts: [], note: 'Pending first sweep'}}, NOW);
+  assert(pending.includes('Pending first sweep'), 'Pending empty market state renders cleanly');
+  console.log('Market tab OK');
+}

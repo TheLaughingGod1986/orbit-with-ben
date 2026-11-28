@@ -5,91 +5,100 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J3501, J3559, J3790.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
-| J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0979 | mini | blocked | macbook-2 | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
-| J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
-| J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2035 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
-| J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
-| J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
-| J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
-| J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2537 | cloud | open | – | – | for codex · chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
-| J2652 | mini | blocked | gemini | – | 013 edit · for gemini · chart · `gemini-agy` · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
+| J2537 | cloud | blocked | codex | – | for codex · chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
-| J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
-| J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
-| J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
-| J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
-| J2857 | mini | open (after J2859) | – | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
-| J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
-| J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
+| J2857 | mini | blocked | claudecode | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
-| J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
-| J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2984 | mini | open | – | – | 008 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
-| J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
-| J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
-| J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
-| J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
-| J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
-| J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
-| J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
-| J3017 | mini | open | – | – | chief · Chief: resolve 003 script orphan-review |  |
-| J3018 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
-| J3019 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
-| J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
-| J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
-| J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
-| J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
-| J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
-| J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
-| J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
-| J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
-| J3034 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3010 |  |
-| J3035 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
-| J3038 | mini | claimed | gemini | 2026-11-18T11:20Z | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
-| J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
-| J3040 | mini | claimed | macbook | 2026-11-18T09:59Z | for gemini · studio · Shorts Test A, first readout: the opening Short against its two siblings, 7 days |  |
+| J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
+| J3012 | mini | blocked | codex | – | for gemini · chief · `gemini-argon` · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
+| J3023 | mini | blocked | gemini | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
+| J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
+| J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
+| J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
+| J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
+| J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
+| J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
+| J3501 | mini | blocked | gemini | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
+| J3517 | mini | blocked | gemini | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
+| J3532 | mini | blocked | claude | – | for claudecode · assembly · History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook |  |
+| J3536 | mini | blocked | gemini | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
+| J3537 | mini | blocked | gemini | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
+| J3559 | mini | blocked | claudecode | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
+| J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
+| J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
+| J3579 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch | J3563 |
+| J3580 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 2: build 'Operation Mincemeat: The Single Eyelash Trap' for Ben watch | J3563 |
+| J3581 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 1: build 'SS Ohio: Why a 27ft Torpedo Hole Didn't Sink Her' for Ben watch | J3563 |
+| J3582 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 2: build 'Operation Pedestal: The 4-Ship Splint Tow to Malta' for Ben watch | J3563 |
+| J3583 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 1: build 'Sherman DD: How Britain Made a 30-Ton Tank Swim' for Ben watch | J3563 |
+| J3584 | mini | blocked | claude | – | WW2:010 edit · assembly · WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch | J3563 |
+| J3585 | mini | blocked | claude | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
+| J3586 | mini | blocked | gemini | – | WW2:014 vo · vo · WW2 film 014: narration in Ben's voice (Dambusters, post-reset) |  |
+| J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
+| J3610 | mini | blocked | gemini | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
+| J3611 | mini | blocked | gemini | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
+| J3648 | mini | blocked | gemini | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
+| J3655 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link |  |
+| J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
+| J3670 | mini | blocked | claudecode | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
+| J3678 | mini | blocked | gemini | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
+| J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
+| J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
+| J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
+| J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
+| J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
+| J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
+| J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
+| J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
+| J3760 | mini | blocked | codex | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
+| J3776 | mini | blocked | gemini | – | 015 vo · vo · WW2 film 015: narration in Ben's voice (Higgins Boat, post-reset) |  |
+| J3780 | any | blocked | codex | – | HOS:128 vo · chief · HOS 128 Edison vs Tesla: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PR #797) | HOS PR #797, J3671, J3660 |
+| J3781 | mini | blocked | codex | – | HOS:136 vo · for codex · chief · `gpt-6-astra` · HOS 136 Trinity Test Explained: non-producer Chief review & PASS on Shorts S01/S02 VO (HOS PRs #798 & #799) | HOS PR #798, HOS PR #799, J3679, J3677 |
+| J3788 | mini | blocked | gemini | – | WW2:004 upload · studio · WW2 004-S1 Short: move from Mon 30 Nov to Wed 2 Dec 12:30 (the day after film 4) and link film 4 as Related video |  |
+| J3790 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 Short: move from Sat 28 to Sun 29 Nov 12:30 (the day after the B-29 film) and link the film as Related video |  |
+| J3816 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J3823 | mini | blocked | claude | – | WW2:008 vo · vo · WW2 film 008: narration in Ben's voice (Operation Mincemeat, post-reset) |  |
+| J3838 | mini | blocked | – | – | WW2:009 vo · vo · WW2 009: record locked Operation Pedestal v06 after reset | J3834; ww2-channel PR200 and PR203 |
+| J3853 | mini | blocked | gemini | – | for gemini · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J3870 | mini | open (after J3706) | – | – | WW2:016 vo · vo · WW2 016: record locked narration after reset and Pilot 2 seven-day review | ww2-channel#206 |
+| J3871 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: repair Newton apple Short opening, loop and sound cue |  |
+| J3872 | mini | open (after J3871) | – | – | 009 edit · qa · HOS 009: watch and listen to repaired Newton apple Short |  |
+| J3876 | mini | open | – | – | WW2:016 picture · chief · WW2 016: Chief review of J3869 archive harvest, shot list, code maps & thumbnail pixels (PR #207) | ww2-channel#207 |
+| J3904 | mini | open (after J3902) | – | – | 064 script · script · OWB 064 Short 2: Build companion planet-extremes Short (464°C Venus vs −224°C Uranus) | J3023 |
+| J3927 | mini | blocked | claude | – | WW2:004 upload · studio · WW2 004 (54sAav3iMQw): post-publish check at 17:05 on Tue 1 Dec, then 48 h read on Thu 3 Dec |  |
+| J3928 | mini | blocked | claude | – | WW2:002 upload · studio · FOH Shorts audit: do the U-boat and Mulberry Shorts send viewers to their longs? Studio read at 48 h |  |
+| J3936 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: post-publication check and pinned comment |  |
+| J3937 | mini | blocked | codex | – | WW2:005 upload · studio · WW2 005: first 48-hour performance and music test read |  |
+| J3946 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: public-state check and pinned comment |  |
+| J3947 | mini | blocked | – | – | WW2:006 upload · studio · WW2 006: 48-hour stranger-performance read and rules-review handoff |  |
+| J3962 | mini | open | – | – | chief · J3012: coordinate the reviewed studio engine move and prove live operation | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274 |
+| J3964 | mini | blocked | gemini | – | studio · Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z |  |
+| J3969 | any | blocked | codex | – | 009 edit · chief · HOS 009: rule on actual scaled-crop loop contract after v04 rerun |  |
+| J3972 | mini | blocked | codex | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
+| J3989 | mini | blocked | claude | – | WW2:011 vo · vo · WW2 film 011: narration in Ben's voice (P-51 Mustang, after the 7-day reads) |  |
+| J3990 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 
 Recently finished:
 
-- J3037 done: OWB 064: Verify corrected script and decide the narration lock (PASS & exact-hash script lock verdict recorded on OWB:064 every_planet_explained_script_master_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS, 16/16 primary-source MUST QUOTE rows & GEMINI_QUOTE_PASS_v02.md verified, all J3027 blockers/findings resolved, historical v01 preserved) in PR #1015 (b7d9ba09ee, CLAUDE_QUOTE_CHECK_v02.md & jobs/reviews/J3037/REVIEW.md). Elected Chief (codex) may now merge PR #1015, complete J3020, and release J3021 VO through the existing dependency.)
-- J3036 done: OWB 064: Correct script facts and rerun Gemini checks (Repaired OWB:064 script as every_planet_explained_script_master_v02.md & episode_script_draft_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS) in commit 4c8e91e3f5 while preserving v01 (c9945afa...) and SOURCES_v01.md untouched. Resolved both J3027 blockers (Neptune >2,000 km/h vs 400 km/h = >5x across narration and graphics; Earth outer-core top depth ~3,000 km beneath surface) and all remaining findings (New Horizons Kuiper Belt Pluto trajectory vs Voyager 2 only flyby of Neptune; Galileo 1610 moon discovery separated from Great Red Spot late-1800s shrinkage; Saturn 4,800-45,000 kg/s D-ring inflow answering why rings vanish and preserving Iess et al. 2019 'may have formed' uncertainty; Mercury 3 rotations per 2 orbits vs 176-day solar day; Venus hottest planetary surface scope; less number-dense narration with mechanisms; verified shelf Omni clips from 023 and 027). Fresh agy facts/claims pass preserved in GEMINI_QUOTE_PASS_v02.md (16/16 PASS). J3020 remains blocked and J3021 VO does not run; J3037 now unblocked for independent MUST QUOTE verification and narration lock.)
-- J3031 done: Verify condition for J2995 (KEEP: accepted independent Gemini review, locked unchanged WW2:002 v03 narration and merged PR 1009 as 77fa73e68d78d72751b0a3f6bab8d512a589a2bf (CI PASS). Decision: jobs/reviews/J3031/DECISION.md. J2995 condition satisfied and reopened with J2994 predecessor, live-credit preflight, six-chapter input, 21,000-character cap and voice checks retained. J2996 owns downstream picture/edit. No spend or publication. OWB J3030/J3032 untouched.)
-- J3029 cancelled: Verify condition for J2985 ()
-- J3028 done: J2985: integrate reviewed credit panel and verify live board (PR987 integrated and merged d7f2b56595; phone label fix PR1008 merged ce5ef9fa09. Cloudflare 9883e7bf, live version e4d6d8d41f87195e. 107 Python tests, both JS suites, 15 security checks and CI pass. Live 390px Agents Credits and AI verified: readable Time, historical readings, preserved Ultra decision, no overflow or unsafe downgrade advice. Evidence: /Users/benjaminoats/_desk/reviews/J3028/REPORT.md)
-- J3027 done: Verify condition for J3020 (Chief ruling FIX on v01 c9945afa744db370a1601e96395e8add391cf45439c5ee16a624d342e7902aae. Source PASS rejected as lock evidence: Neptune graphic equates 2000/400 with 9; Earth narration confuses core-top depth with core size. J3036 owns corrected v02 and fresh agy facts; J3037 after J3036 owns independent direct quotes and exact-hash lock. J3020 remains blocked, wait --recheck J3027 recorded for 2026-11-18T13:15Z; J3021 remains dependent on J3020. Ben topic/date approval retained; no spend or YouTube change.)
-- J3024 done: J2985: correct credit history and downgrade advice before merge (Chief KEEP at d569a115d3, PR 987 comment 6968740645: 104 Python tests, both JS suites, 13 security tests, static build and core/rules checks pass; phone evidence inspected. J3028 owns conflict integration, revalidation, merge and live verification; J2985 remains held.)
-- J3011 done: Orbit: Ben locked the every-planet film, book its slot and start the build (Ben lock recorded; Wed 16 Dec 2026 18:00 London reserved with no dated film moved. J3020 script/sources due 23 Nov, J3021 narration due 25 Nov, J3022 shelf picture/graphics/three thumbnails due 4 Dec, J3023 master QA and Ben watch due 11 Dec. Plan needs-you line cleared; stale film brief updated. PRs 1004 and 1005 merged; checks passed. No spend or YouTube change.)
-- J3009 done: WW2 channel: move it into its own repo with history, register it, check it out on both Macs (PR #1001 open (macbook/J3009 -> main): moved channels/ww2/ with history to TheLaughingGod1986/ww2-channel (first commit f0d1c8051bd1, HEAD 22fa00c8ffce; in-flight PRs mirrored as #1-#6); registered ww2 in channels/channels.json (channel_check --all PASS); checked out and push-verified on both the Mini (~/YouTube/ww2) and the MacBook (~/_desk/worker[/slot2]/ww2-channel); WW2 board ticks routed to #954 in checks.js; open/blocked WW2 jobs (J2993-J2996, J2998, J3000, J3002, J3006, J3007) repointed to repo=ww2.)
-- J3008 done: First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) ("How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) · Orbit With Ben · long · went live Sun 15 Nov 18:00 London
-At 48 h: views 8 · impressions 9 · click rate 11.1% · average viewed 1.0%
-Usual for this channel: click rate 2.2%, average viewed 19.3%
-
-Verdict: UNKNOWN
-  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
-  - By the next morning it had 4 views; the 6 before it had 1 (median).
-
-Do now
-  - Read it again from tomorrow morning's snapshot.)
+- J3991 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (No live fixes. Live API 09:35Z: 51 active (45 public + 6 scheduled), paid=false on all 51 (J3976 holds), 0 /go/, 8/8 sources 200, channel:audit 80/0 errors. Note: HOS PR #823 (records only, needs Chief merge))
+- J3988 done: Verify condition for J3780 (Condition UNMET for J3780 (HOS:128 Shorts S01/S02 VO independent non-producer listen). Live 28 Nov 09:14-09:17Z checks: codex (elected Chief, UP, 08:45:50Z probe) and claudecode (UP, 08:50:52Z probe) have capabilities available=[] (audio FAIL 0.00); cursor down until 2026-12-04T02:42:04Z (available=[]); claude down until 2026-11-28T12:50:00Z with no Mini audio_input probe; grok (UP) has no demonstrated audio_input. gemini has verified audio_input (08:45:34Z relay probe PASS 1.00 + 09:16Z direct read_file session probe on NAS S01_v03_tight.mp3 recorded via chief_relay.py capabilities) but authored J3671/HOS PR #797 and is barred by the non-producer guard. Freshly verified: HOS PR #797 OPEN/MERGEABLE/CLEAN (a855da7475, 6/6 applicable CI SUCCESS, 0 comments, 33 files, zero media); 5/5 SHA-256 hashes match (SHORTS_SCRIPTS_v03.md + both tight WAV/MP3 masters); HOS:128 status.json unchanged (J3670 waits for Mon 30 Nov 10:50Z ElevenLabs reset); zero new desk/thread rulings. Recorded typed capability wait on J3780 (--type capability --requires audio_input --recheck J3988 --check-at 2026-11-28T15:30:00Z). Reports posted: HOS desk #694 (#7237151972) and OWB thread #1353 (#7237155055). £0 / 0 credits spent.)
+- J3987 done: Verify condition for J3904 (Condition NOT met; J3904 stays blocked. Checked 2026-11-28 ~08:47Z: PR #1416 (head f67c2dcb) and QA PR #1417 (head 20862578) both OPEN, 0 reviews, 0 comments, unmerged; no Chief ruling on #99 or in git since 02:46Z. Length flag still open for Chief: master 18.375 s / 35 words vs 22 s floor and 55-65 words. Wait recorded on J3904 (type input, recheck J3987), next check 2026-11-28T14:45Z.)
+- J3986 done: Verify condition for J3816 (Condition NOT met; J3816 kept blocked, next verification 2026-11-28T16:00Z. J3874 is ruled and J3965 (HOS PR816) is merged, but J3871 is still blocked: the exact v04 fails the picture check on the scale-before-crop/codec-rounded contract and waits on J3969/J3972 (HOS PR822 open, CI green, not merged). J3872 review not started. PRs 811/814/820 still draft. No upload, UAT or spend.)
+- J3985 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only recheck of the last 10 live OWB videos (same window as J3973 PR #1423): 10/10 pass, 0 live fixes. All 10 descriptions match manifests/description files exactly (AR1/AR2 differ only by the Chief-approved J3253 line); all public, MFK false; 15 source URLs 12x200 + 3 known WAF 403s; end screens/Related not re-read in Studio as no job touched listings since J3973's 02:01Z Studio read. Wrote 05_Analytics/live_fixes/2026-11-28_recheck.md, PR #1427. Notes for Chief: superseded open listing PRs #1336 #1341 #1364 #1371 #1415; backlog refill repeats this job ~4x/day on unchanged windows. Nothing changed in Studio/API/Buffer, no public pages opened, GBP 0.)
+- J3984 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (19 OWB + 8 HOS longs and 133 Shorts (96 OWB + 37 HOS, 0 errors, 0 omitted) read from Studio (OWB CDP 9224, HOS CDP 9460; note 9223 currently holds WW2 UCu94mInMFosxu3W0H6jlI6Q), commit 75483cebf3; CTR hits vs 4%: OWB 4/19 (h8HGfyShEHI 5.3%/95, -jmMROGoZCM 4.9%/61, Js6EQJ8qDi8 4.4%/252, c5AdqQsnnys 4.3%/47), HOS 4/8 (wwcjcFfC-5M 15.8%/19, _C92tIJCk8A 6.7%/45, ETynHpIYLeY 6.2%/64, VbPubYd6Fbs 5.4%/92); studio_reach.py morning ran (28 Nov no-op); analytics-report.ts + board_publish.py complete.)
+- J3983 done: Verify condition for J3972 (J3972 publish condition met: Claude Code privacy-reviewed both diffs (clean), pushed codex/J3972-scale-before-crop in both repos and opened OWB PR #1425 + HOS PR #822 (cross-linked, merge clean, not merged). Reopen refused (only the elected Chief may release a verified hold), so J3972 stays blocked waiting on elected-Chief code review/merge of both PRs, recheck 2026-11-28T15:00Z.)
+- J3982 done: Verify condition for J3969 (J3969 publication condition met: both branches pushed normally at the reviewed SHAs; draft HOS PR820 (J3871 recheck) and PR821 (J3969 ruling). The worker reopen was refused by the Chief gate, so J3969 is recorded via wait --recheck J3982 for Chief to close and decide merging. No PASS/UAT/upload/spend.)
+- J3981 done: Field Order History channel totals read 2026-11-28 (Chief KEEP/PASS: dated Gemini Lifetime evidence matches four-file diff; 22/22 tests pass; strict importer reproduces output. PR1424 merged c24b89a8d94e452226d2492c95aac2e0d919e6c5. Totals 1 subscriber, 5.0 all-watch-time hours at 2026-11-28T06:47:55Z (data through 26 Nov); eligible hours and video windows preserved. Ruling PR1424 comment 7235603647. Follow-up existing automatic daily read 2026-11-29T06:40Z; no external hold or duplicate job.)
+- J3980 done: Verify condition for J3871 (Condition UNMET for J3871 (HOS:009 Newton apple Short): J3972 is still blocked at 3/4 awaiting designated Claude Code publication, Chief review, and merge of both OWB (4a31f3835a) and HOS (e05d7ad5) scale-before-crop code PRs (0 remote branches, 0 PRs, 0 merges as of 2026-11-28T06:05Z); J3969 recheck/ruling branches (0511c938, eafc150e) also remain local-only. Exact NAS v04 SHA-256 verified unchanged (3e21b51f9314df661b1556fc94ac313a6a73830a66c04ddfb59d33a8e2731dac) and remains picture FAIL; draft PRs #811/#814, J3816 hold, and J3872 dependency preserved. Recorded updated dependency hold on J3871 with --recheck J3980 and next check 2026-11-28T10:00:00Z; no media edit, spend, upload, or schedule change.)

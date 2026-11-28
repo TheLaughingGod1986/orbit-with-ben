@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# The Mini's three signed-in Chrome browsers that agents drive over CDP.
+# The Mini's signed-in Chrome browsers that agents drive over CDP.
 # Each one keeps its own profile, so its Google sign-in survives a restart.
 #
 #   9222  Google Flow browser
 #   9223  Orbit With Ben Studio            ~/.orbit-chrome-youtube-studio
+#   9224  Field Order History Studio       ~/.ww2-chrome-youtube-studio
 #   9460  History of Science Studio        ~/.hos-chrome-youtube-studio
 #
 # The 9222 profile folder is named after the account it is signed into, so its name is not kept in git.
@@ -23,7 +24,7 @@ set -uo pipefail
 
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 LOG_DIR="${HOME}/Library/Logs"
-PORTS=(9222 9223 9460)
+PORTS=(9222 9223 9224 9460)
 
 # Local settings that stay off git (the 9222 profile folder).
 # shellcheck disable=SC1091
@@ -33,6 +34,7 @@ profile_for() {
   case "$1" in
     9222) echo "${CDP_PROFILE_9222:-${HOME}/.hos-chrome-flow-cdp}" ;;
     9223) echo "${HOME}/.orbit-chrome-youtube-studio" ;;
+    9224) echo "${HOME}/.ww2-chrome-youtube-studio" ;;
     9460) echo "${HOME}/.hos-chrome-youtube-studio" ;;
     *) return 1 ;;
   esac
@@ -72,8 +74,13 @@ start_one() {
     return 0
   fi
   if [[ ! -d "$profile/Default" ]]; then
-    echo "$port DOWN: profile $profile is missing, so it was never set up here. Ben to sign in a fresh one."
-    return 1
+    if [[ "$port" == "9224" ]]; then
+      echo "$port: creating a fresh Studio profile at $profile (signed out until Ben signs in)"
+      mkdir -p "$profile"
+    else
+      echo "$port DOWN: profile $profile is missing, so it was never set up here. Ben to sign in a fresh one."
+      return 1
+    fi
   fi
   # A crash leaves Chrome's lock files behind, and they block the next start.
   rm -f "$profile/SingletonLock" "$profile/SingletonSocket" "$profile/SingletonCookie"

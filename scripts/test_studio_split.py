@@ -23,6 +23,12 @@ ROOT = split.ROOT
 
 
 class Routes(unittest.TestCase):
+    def test_gate_profile_stays_with_channel_and_legacy_engine_copy(self):
+        path = "00_Brand/Channel-Setup/tools/channel_profile.py"
+        placed = split.plan([path], ["sample"], "sample")
+        self.assertIn(path, placed["sample"])
+        self.assertIn(path, placed[split.STUDIO])
+
     def test_every_tracked_file_has_a_place(self):
         placed = split.plan(split.tracked(ROOT), channels.slugs(), split.resident(ROOT))
         self.assertEqual(placed["unrouted"], [])
@@ -65,6 +71,85 @@ class Routes(unittest.TestCase):
         import test_channel_ratchet as ratchet
         self.assertEqual(ratchet.counts().get("studio_split.py", 0), 0)
         self.assertEqual(ratchet.home_counts().get("studio_split.py", 0), 0)
+
+
+class CompleteSource(unittest.TestCase):
+    def test_sparse_or_deleted_tracked_source_refuses_before_build_or_scan(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "present.py").write_text("# present\n")
+            with mock.patch.object(split.channels, "slugs", return_value=["sample"]), \
+                 mock.patch.object(split, "resident", return_value="sample"), \
+                 mock.patch.object(split, "tracked", return_value=["present.py", "absent.py"]), \
+                 mock.patch.object(split, "build") as build, \
+                 mock.patch.object(split, "key_findings") as scan:
+                with self.assertRaisesRegex(SystemExit, "1 tracked source files are absent"):
+                    split.check(root, root / "export")
+                build.assert_not_called()
+                scan.assert_not_called()
+                self.assertFalse((root / "export").exists())
+
+
+class FormerResidentCache(unittest.TestCase):
+    def test_build_copies_former_resident_manifest_without_mutating_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source, scratch = root / "source", root / "scratch"
+            manifest = source / "studio/channel.json"
+            manifest.parent.mkdir(parents=True)
+            original = '{"slug": "sample", "name": "Sample"}\n'
+            manifest.write_text(original)
+            placed = {split.STUDIO: [], "sample": ["studio/channel.json"]}
+            with mock.patch.object(channels, "get", return_value={"repo": {"checkouts": ["sample"]}}):
+                split.build(scratch, source, placed, "sample", {})
+            cached = scratch / "studio/channels/sample/channel.json"
+            self.assertEqual(cached.read_text(), original)
+            self.assertFalse(cached.is_symlink())
+            cached.write_text("changed in scratch")
+            self.assertEqual(manifest.read_text(), original)
+            self.assertEqual((scratch / "sample/studio/channel.json").read_text(), original)
+
+
+class TestProcessOutcome(unittest.TestCase):
+    def test_only_a_successful_nonempty_suite_passes(self):
+        for code, output, passes in (
+            (0, "Ran 2 tests in 0.01s\n\nOK\n", True),
+            (0, "Ran 2 tests in 0.01s\n\nOK (skipped=1)\n", True),
+            (0, "Ran 0 tests in 0.01s\n\nOK\n", False),
+            (0, "", False),
+            (1, "unexpected process failure", False),
+            (-9, "Ran 2 tests in 0.01s\n\nOK\n", False),
+            (0, "Ran 2 tests in 0.01s\nFAILED\n", False),
+        ):
+            with self.subTest(code=code, output=output), mock.patch.object(
+                    split.subprocess, "run", return_value=subprocess.CompletedProcess([], code, "", output)):
+                result = split.run_tests(Path("unused"), {})
+                self.assertEqual(result == {}, passes)
+                if not passes:
+                    self.assertIn("test_process", result)
+
+    def test_real_discovery_rejects_empty_directory_and_accepts_a_test(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "scripts").mkdir()
+            self.assertIn("test_process", split.run_tests(root, dict(os.environ)))
+            (root / "scripts/test_sample.py").write_text(
+                "import unittest\nclass Sample(unittest.TestCase):\n"
+                "    def test_truth(self): self.assertTrue(True)\n")
+            self.assertEqual(split.run_tests(root, dict(os.environ)), {})
+
+    def test_parsed_failure_keeps_its_test_name(self):
+        output = "FAIL: test_one (test_alpha.Alpha.test_one)\nRan 1 test in 0.01s\nFAILED (failures=1)\n"
+        with mock.patch.object(split.subprocess, "run",
+                               return_value=subprocess.CompletedProcess([], 1, "", output)):
+            self.assertEqual(split.run_tests(Path("unused"), {}), {"test_alpha.py": ["test_one"]})
+
+    def test_timeout_and_start_failure_are_counted_without_details(self):
+        for error in (OSError("private detail"), subprocess.TimeoutExpired("private detail", 1)):
+            with self.subTest(error=type(error)), mock.patch.object(split.subprocess, "run", side_effect=error):
+                result = split.run_tests(Path("unused"), {})
+                self.assertIn("test_process", result)
+                self.assertNotIn("private detail", str(result))
 
 
 class Gates(unittest.TestCase):

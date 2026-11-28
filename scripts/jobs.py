@@ -255,6 +255,14 @@ PUBLISH_HARD = re.compile(
     r"\bupload(?:ed|s|ing)? (?:to|the|a)\b|youtube:package|\bupload packages?\b|"
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+# A needs=mini job the MacBook can take because it needs none of the Mini's tools (20 Nov 2026):
+# no upload, no Flow/Veo/Nano Banana, no ElevenLabs desk, no Mini-only token, no Mini worktree in progress.
+# The verification template says "not permission to upload"; that sentence is not the work.
+EXCLUSIVE_MINI = re.compile(
+    r"youtube:package|\bupload(?:ed|s|ing)?\b|(?-i:\bFlow\b)|\bveo\b|\bnano ?banana\b|"
+    r"\belevenlabs\b|\beleven_v3\b|\bvo_take\b|\bdesk-lock\b|"
+    r"\bmini-only token\b|\brefresh token\b|\bworktree\b", re.I)
+VERIFY_BOILER = re.compile(r"not permission to upload, spend or change a schedule\.?", re.I)
 # YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
 # MACBOOK_CDP = the CDP ports whose browser is up (the Mini's ports, same profiles). Each channel names its own port
 # in studio/channel.json (youtube.studio_port).
@@ -316,6 +324,21 @@ def mini_only_hit(text: str) -> bool:
     return bool(MINI_SOFT.search(MINI_PROHIBITION.sub(" ", raw)))
 
 
+def exclusive_mini(text: str) -> bool:
+    """True when the work itself needs a Mini-only tool (upload, Flow/Veo/Nano Banana, ElevenLabs, a Mini token, a worktree)."""
+    raw = VERIFY_BOILER.sub(" ", str(text or ""))
+    raw = MINI_PROHIBITION.sub(" ", raw)
+    return bool(EXCLUSIVE_MINI.search(raw)) or bool(MINI_HARD.search(raw))
+
+
+def records_only_job(job: dict) -> bool:
+    """A condition check or a records-only review: it reads the queue, it does not run the parent's tools."""
+    title = str(job.get("title") or "")
+    if re.search(r"\bverify condition for\b", title, re.I):
+        return True
+    return job.get("kind") == "review" and bool(re.search(r"\brecords[- ]only\b", title, re.I))
+
+
 def publish_mini_hit(text: str) -> bool:
     """True when the job needs the Mini's Studio login or Flow/Chrome — even if film media is on studio-live."""
     raw = str(text or "")
@@ -331,19 +354,40 @@ def shared_media_job(job: dict) -> bool:
     return bool(SHARED_MEDIA_TITLE.search(str(job.get("title") or "")))
 
 
+def job_film_identity(job: dict) -> tuple[str, str] | None:
+    """Resolve an explicit film without ever discarding a conflicting channel prefix.
+
+    A mismatched or unknown identity has no board/media target. Queue reconciliation
+    is explicit; lookups must not silently reroute an active worker's claim.
+    """
+    film = str(job.get("film") or "").strip()
+    try:
+        slug = channels.get(job.get("repo") or channels.of_job(job))["slug"]
+        if ":" in film:
+            prefix, film = film.split(":", 1)
+            if channels.get(prefix)["slug"] != slug:
+                return None
+    except KeyError:
+        return None
+    if not film or ":" in film or "/" in film or "\\" in film:
+        return None
+    return slug, film
+
+
 def job_film_number(job: dict) -> str:
     """The three-digit film number from `film`, a channel key in the text, or the title."""
     film = str(job.get("film") or "").strip()
-    if re.fullmatch(r"\d{3}", film):
-        return film
+    if film:
+        identity = job_film_identity(job)
+        return identity[1] if identity else ""
     blob = " ".join(str(job.get(k) or "") for k in ("title", "body", "remaining_action", "action"))
     keys = channels.film_keys(blob)
     if keys:
-        label = channels.label_of_job(job) + ":"
+        label = channels.label(job.get("repo") or channels.of_job(job)) + ":"
         for key in sorted(keys):
             if key.startswith(label):
                 return key.split(":", 1)[1]
-        return sorted(keys)[0].split(":", 1)[1]
+        return ""  # Text naming only another channel is not this channel's film.
     m = re.search(r"\b(\d{3})\b", str(job.get("title") or ""))
     return m.group(1) if m else ""
 
@@ -361,7 +405,10 @@ def film_folder_under(root: pathlib.Path, film: str) -> pathlib.Path | None:
 
 def media_reachable(job: dict) -> bool:
     """True when this machine can see the job's working film media on studio-live or a path the job already names."""
-    slug = channels.of_job(job)
+    identity = job_film_identity(job) if job.get("film") else None
+    if job.get("film") and identity is None:
+        return False
+    slug = identity[0] if identity else channels.of_job(job)
     live_root = studio_live_projects(slug)
     film = job_film_number(job)
     if film_folder_under(live_root, film) is not None:
@@ -404,6 +451,12 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
     text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
     if macbook_studio_ok(job, text):
         return True
+    own = " ".join(str(job.get(k) or "") for k in fields)
+    # Condition checks and records-only reviews are the MacBook's first non-Mini case (20 Nov 2026).
+    # The parent's picture or Studio work does not make the check itself Mini-only. A check whose own
+    # text needs a Mini tool (upload, Flow, ElevenLabs, a worktree) stays on the Mini.
+    if records_only_job(job):
+        return not job.get("mini_only") and not exclusive_mini(own)
     if job.get("kind") in NOT_PORTABLE_KINDS:
         return False
     if job.get("recheck_of") and parent and parent.get("needs") == "mini" and STUDIO_WORK.search(str(parent.get("title") or "")):
@@ -481,7 +534,24 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
     if is_macbook(agent) and "macbook" in can and macbook_portable(job, data):
         # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
         job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
+    elif job.get("open_claim") and not is_macbook(agent):
+        # An open reroute is claimable by any up worker with a live lane, not by one pinned `for`.
+        if agent == "claudecode" and _claude_flagged_out(at):
+            return False
+        if not routing.lane_fits(job, agent):
+            return False
     return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())
+
+
+def _claude_flagged_out(at: dt.datetime) -> bool:
+    """Claude is flagged, so Claude Code on the Mini does not take an open reroute."""
+    if routing.claude_flagged():
+        return True
+    down = chief_relay.read_json(chief_relay.d("down", "claude.json")) or {}
+    if not down:
+        return False
+    until = workflow.timestamp(down.get("until"))
+    return until is None or until > at
 
 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
@@ -489,7 +559,7 @@ def ordered(data: dict, at: dt.datetime | None = None) -> list:
     from workflow_board import load_tracker
     tracker = load_tracker()
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air, data["jobs"]))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
@@ -505,7 +575,7 @@ def ben_gate(text: str) -> bool:
     return bool(BEN_GATE.search(str(text or "")))
 
 
-def set_wait(job, agent, at, hold, action="", recheck=""):
+def set_wait(job, agent, at, hold, action="", recheck="", verifier=False):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
     if hold.get("type") == "ben" and not ben_gate(str(hold.get("condition") or "")):
@@ -518,7 +588,10 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
         _mine(job,agent)
     if job.get("status") not in ("claimed", "blocked"):
         raise ValueError("A hold can only be recorded on a claimed or blocked job")
-    if agent != "relay" and job.get("by") != agent and not chief_relay.elected_for(agent, at, job):
+    # `verifier`: the agent holding this job's own verification task (recheck_of) records that the condition is still
+    # unmet. That keeps the hold and only moves its next check; releasing a hold stays the Chief's. 27 Nov 2026: every
+    # UNMET verification (89 in three days) was parked for the Chief because only the Chief could record it.
+    if agent != "relay" and job.get("by") != agent and not verifier and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the holder or elected Chief may update this hold")
     condition = str(hold.get("condition") or "").strip()
     check = workflow.normalize_due(hold.get("check_at"))
@@ -527,10 +600,17 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     value = {"type":hold.get("type") or "input","condition":condition,"check_at":check}
     if requirements:
         value["requires"] = requirements
+    if hold.get("release") == "auto":
+        # A start-time wait (a 48-hour read, a timed check) whose time is the whole condition. It reopens itself at
+        # check_at: no verification task, no Chief release (24 Nov 2026: pilot 1's 48-hour read, J3414, sat behind a
+        # verification task that was then parked for the Chief, while Ben waited for the numbers).
+        if value["type"] != "date":
+            raise ValueError("--release-at-time is only for --type date holds whose time is the whole condition")
+        value["release"] = "auto"
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
-        if not chief_relay.elected_for(agent, at, job):
+        if not verifier and not chief_relay.elected_for(agent, at, job):
             raise ValueError("Only the elected Chief may record a condition check")
         value.update(last_recheck=recheck,checked_at=at.isoformat(),checked_by=agent)
     if job.get("status") == "claimed":
@@ -563,19 +643,42 @@ def apply_metadata(data, entries, agent, at):
             log(j,at,agent,"remaining action: " + action)
         if "required_capabilities" in entry:
             j["required_capabilities"] = workflow.capability_names(entry["required_capabilities"])
+        if "cloud_only" in entry:
+            if entry["cloud_only"]:
+                if j.get("needs") != "cloud" and (j.get("rerouted_from") or {}).get("needs") != "cloud":
+                    raise ValueError("cloud_only requires needs=cloud (or rerouted_from.needs=cloud)")
+                j["cloud_only"] = True
+            else:
+                j.pop("cloud_only", None)
         if entry.get("hold") and j["status"] == "blocked" and not j.get("hold"):
             set_wait(j,agent,at,entry["hold"])
     data.clear(); data.update(planned)
 
 
-RECHECK_MAX_H = 24
+RECHECK_MAX_H = 72
+RECHECK_STEPS_H = (1, 2, 4, 8, 16, 24, 48, 72)
+RECHECK_WINDOW = dt.timedelta(days=14)
+# A hold that waits on a decision only Ben can make. A worker re-reading it every few hours cannot change it: J2537 was
+# re-checked 14 times in a week (24 Nov 2026) while it waited on Ben's word about an irreversible history rewrite.
+BEN_WAIT_RE = re.compile(r"\bBen(?:'s)?\b\s*(?::|explicit|word|ok\b|okay|approval|decision|go\b|answer|exception|"
+                         r"to (?:decide|choose|approve|confirm|sign))|waiting (?:on|for) Ben\b|needs Ben\b|ask Ben\b", re.I)
+
+
+def waits_on_ben(job: dict) -> bool:
+    """True when the job's hold or blocked result says it waits on Ben's own decision."""
+    hold = job.get("hold") or {}
+    text = " ".join(str(x or "") for x in (hold.get("condition"), job.get("result")))
+    return hold.get("type") == "ben" or bool(BEN_WAIT_RE.search(text))
 
 
 def recheck_backoff(data, parent, by_id, at):
     """True while the next condition check for `parent` should wait (Ben, 4 Nov 2026: videos weren't moving; 357 of
     499 jobs since 1 Nov were hourly 'verify condition' re-checks of the same ~10 held jobs, all using the Chief's
-    slot). Each check that finds the hold unchanged doubles the wait: 1, 2, 4, 8, 16, then 24 h, counted from the last
-    check. A predecessor (`after`) finishing after that check is real news, so it is checked at once."""
+    slot). Each check that finds the hold unchanged lengthens the wait: 1, 2, 4, 8, 16, 24, 48, then 72 h, counted
+    from the last check. The count covers 14 days and restarts when the job is reopened (24 Nov 2026: the old 48-hour
+    count fell back to a 2-hour wait after every long gap, so stuck jobs were re-checked twice a day for weeks; 121
+    checks in seven days). A hold waiting on Ben's own decision waits at least 72 h between checks. A predecessor
+    (`after`) finishing after the last check is real news, so it is checked at once."""
     done = [j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") == "done"]
     stamps = sorted(t for t in (workflow.timestamp(next((h.get("at") for h in reversed(j.get("history") or [])
                                                           if str(h.get("what", "")).startswith("done")), None)) for j in done) if t)
@@ -588,9 +691,13 @@ def recheck_backoff(data, parent, by_id, at):
                                        if str(h.get("what", "")).startswith("done")), None))
         if fin and fin > last:
             return False
-    recent = [t for t in stamps if at - t <= dt.timedelta(hours=48)]
-    wait = dt.timedelta(hours=min(RECHECK_MAX_H, 2 ** max(0, len(recent) - 1)))
-    return at < last + wait
+    restart = max((t for t in (workflow.timestamp(h.get("at")) for h in parent.get("history") or []
+                               if str(h.get("what", "")).startswith(("reopened", "added"))) if t), default=None)
+    recent = [t for t in stamps if at - t <= RECHECK_WINDOW and (restart is None or t > restart)]
+    hours = RECHECK_STEPS_H[min(max(0, len(recent) - 1), len(RECHECK_STEPS_H) - 1)]
+    if waits_on_ben(parent):
+        hours = max(hours, RECHECK_MAX_H)
+    return at < last + dt.timedelta(hours=hours)
 
 
 def recheck_moot(parent: dict) -> str:
@@ -638,6 +745,14 @@ def reconcile_holds(data, at):
                 changed.append(pending["id"])
             continue
         if not workflow.hold_due(parent,by_id,at):
+            continue
+        hold = parent.get("hold") or {}
+        if hold.get("type") == "date" and hold.get("release") == "auto":
+            parent.pop("hold", None)
+            parent.update(status="open", by="", since="", eta="", result="")
+            parent.pop("progress", None)
+            log(parent, at, "relay", "reopened: its start time " + str(hold.get("check_at")) + " has come (release-at-time hold)")
+            changed.append(parent["id"])
             continue
         if recheck_backoff(data,parent,by_id,at):
             continue
@@ -695,10 +810,32 @@ def reconcile_dependencies(data: dict, at: dt.datetime) -> list:
 MINI_NEEDS = {"mini", "gemini", "any"}
 
 
-def can_any_mini_claim(data, job, at):
-    chief = chief_relay.acting(at, chief_relay.job_chain(job))[1] if workflow.role_job(job) else ""
-    actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
-    return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at),chief_relay.worker_capabilities()) for actor in actors)
+def can_any_mini_claim(data, job, at, memo: dict | None = None):
+    """True when a Mini worker could claim `job` at `at`. A caller checking many jobs at one `at` passes one `memo`
+    dict for the whole scan, so the acting Chief, the execution lease and the capability reports are read once.
+    acting() re-reads every Chief's state, the whole queue.json among it (15 MB), so asked once per job a single
+    refill scan parsed that file ~1,500 times: ~50 s and a 2.7-4 GB process on every relay tick, which ran the Mini
+    out of memory (Claude, 16 Nov 2026). None of them can change within one instant."""
+    memo = {} if memo is None else memo
+
+    def once(key, read):
+        if key not in memo:
+            memo[key] = read()
+        return memo[key]
+
+    role = workflow.role_job(job)
+    chain = chief_relay.job_chain(job) if role else None
+    acted = once(("chief", chain), lambda: chief_relay.acting(at, chain)) if role else None
+    chief = acted[1] if role else ""
+    # J3966: a cloud Chief's Mini role job is claimable by its delegated Chief on the Mini (same acting() result).
+    delegate = once(("delegate", chain, job.get("needs")),
+                    lambda: chief_relay.delegate_for(at, job, acted)[0]) if role else ""
+    actors = [chief, delegate] if role else [job["for"]] if job.get("for") else routing.MINI_WORKERS
+    execution = once("execution", lambda: chief_relay.current_execution(at))
+    capabilities = once("capabilities", chief_relay.worker_capabilities)
+    return any(actor and workflow.claimable(job, data["jobs"], at, actor, actor if role else chief, MINI_NEEDS,
+                                            execution, capabilities)
+               for actor in actors)
 
 
 def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
@@ -706,8 +843,10 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
     quiet  Mini work is waiting or stalled, nothing holds a live Mini claim, and no agent but Claude has touched the
            queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
     ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
+    memo = {}  # one scan at one `at`: the Chief and leases are read once, not per job
+
     def mini_able(j):
-        return can_any_mini_claim(data,j,at)
+        return can_any_mini_claim(data, j, at, memo)
     waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
     live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
     stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]
@@ -823,8 +962,10 @@ def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int
     if job.get("by") == agent and job["status"] == "claimed":
         return job
     took, prev = stalled(job, at), job.get("by", "")
+    delegate = chief_relay.delegated_from(agent, at, job)
     job.update(status="claimed", by=agent, since=studio.iso(at), eta=studio.iso(at + dt.timedelta(minutes=eta_min or job.get("eta_min") or DEFAULT_ETA)))
-    log(job, at, agent, f"claimed (took over a stalled claim by {prev})" if took else "claimed")
+    line = f"claimed (took over a stalled claim by {prev})" if took else "claimed"
+    log(job, at, agent, line + (f"; delegated_from: {delegate}" if delegate else ""))
     return job
 
 
@@ -929,7 +1070,8 @@ def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     log(job, at, agent, f"renewed to {job['eta']}")
 
 
-def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "", films: str | None = None, action: str | None = None) -> None:
+def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "", films: str | None = None, action: str | None = None,
+                plan: str | None = None) -> None:
     """Ben, 11 Oct 22:09: the board says "Working on X, 20% done, finished in about 30 min". A worker reports each
     finished step: `progress J0130 --step 3 --of 8` = 3 of 8 steps done. The page turns it into % done and an ETA from
     the pace so far. Kept across a release (the next run carries on from it); cleared when the job is reopened.
@@ -943,6 +1085,18 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
         raise ValueError(f"{job['id']} is {job['status']}; progress is for a job in hand")
     if action is not None and (not action.strip() or len(action.strip()) > 180):
         raise ValueError("--action needs a plain remaining action of 1-180 characters")
+    # The named steps (Ben, 23 Nov 2026: "with any job still in progress, I can't see the list of outstanding tasks
+    # that are left"). `--plan "check brief | fix 13 photos | render | final gates"`: one plain name per step, so the
+    # board can tick the first `step` and list the rest. Kept on later reports while `--of` is unchanged.
+    steps = None
+    if plan is not None:
+        steps = [scrub(s.strip()) for s in plan.split("|")]
+        if len(steps) != of or any(not s or len(s) > 80 for s in steps):
+            raise ValueError(f"--plan needs exactly {of} step names separated by '|', each 1-80 characters")
+    else:
+        old = job.get("progress") or {}
+        if isinstance(old.get("plan"), list) and len(old["plan"]) == of:
+            steps = old["plan"]
     if films is not None:
         keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
         if not keys or any(not channels.strict_key_re().fullmatch(x) for x in keys):
@@ -951,6 +1105,8 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
     if action is not None:
         job["remaining_action"] = action.strip()
     job["progress"] = {"step": step, "of": of, "at": studio.iso(at), "by": agent}
+    if steps:
+        job["progress"]["plan"] = steps
     if note:
         job["progress"]["note"] = note[:120]
     log(job, at, agent, f"step {step} of {of} done" + (": " + note if note else ""))
@@ -971,23 +1127,35 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "reopened" + (": " + note if note else ""))
 
 
-def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime) -> None:
-    """Hand a job to another worker on a given model (Ben, 11 Oct 2026 23:40: "if Claude Code is out of usage you can
-    use a Claude model in Cursor"). The job becomes an open Mini job only `to` may claim, carrying `model`; what it was
-    before is kept in rerouted_from. An open, blocked, or claimed job (the holder's claim ends) can be rerouted."""
+def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime, open_claim: bool = False) -> None:
+    """Hand a job on (Ben, 11 Oct 2026 23:40). An explicit reroute becomes an open Mini job only `to` may claim.
+
+    An automatic chain walk (`open_claim`, 20 Nov 2026) does not pin `for` or a single model. It stays claimable by
+    any up worker whose lane fits the kind. The chain order is unchanged, so the relay still wakes the preferred
+    worker first. What the job was before is kept in rerouted_from."""
     if job["status"] in ("done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; nothing to reroute")
     if model and model not in routing.MODELS:
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
-    if model and routing.RUNS_ON.get(model) != to:
+    if model and not open_claim and routing.RUNS_ON.get(model) != to:
         raise ValueError(f"{model} doesn't run on {to}")
     if job.get("kind") == "chief" and not chief_relay.elected_for(to, at, job):
         raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
+    if job.get("cloud_only"):
+        raise ValueError(f"{job['id']} is pinned to Claude cloud (cloud_only); it cannot be rerouted to a Mini worker")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
-    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
     if job.get("result") and job["rerouted_from"].get("status") == "blocked":
         job["result"] = ""
+    if open_claim:
+        job.update(status="open", by="", since="", eta="", needs="mini", open_claim=True)
+        job.pop("for", None)
+        job.pop("model", None)
+        log(job, at, agent, "opened to any worker in its chain"
+            + (f" (preferred {to}" + (f" on {model}" if model else "") + ")")
+            + (": " + note if note else ""))
+        return
+    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
     if model:
         job["model"] = model
     log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
@@ -1008,6 +1176,7 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
         else:
             job.pop(k, None)
     job.pop("rerouted_from", None)
+    job.pop("open_claim", None)
     log(job, at, agent, "handed back" + (": " + note if note else ""))
 
 
@@ -1104,7 +1273,8 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 def on_board(job: dict) -> bool:
     """Only the board channel's jobs have a film folder on the stage board (one status.json per film); a channel that
     keeps its films another way has none."""
-    return bool(job.get("film")) and job.get("repo", channels.default()) == channels.board_channel()
+    identity = job_film_identity(job)
+    return identity is not None and identity[0] == channels.board_channel()
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
@@ -1236,7 +1406,10 @@ def publish_board() -> None:
     whenever a job moves). Fire-and-forget: it never blocks the job or changes its exit code. Off with BOARD_PUBLISH=0,
     and a no-op anywhere without ~/_desk/state (cloud sessions, CI)."""
     script = ROOT / "scripts" / "board_publish.py"
-    if os.environ.get("BOARD_PUBLISH", "1") == "0" or not chief_relay.STATE.is_dir() or not script.exists():
+    # Off by default inside a test process (27 Nov 2026: tests had made ~/_desk/state in a cloud session, so every
+    # queue write there started a real background publish and relay run that launched real agent workers).
+    default = "0" if "unittest" in sys.modules else "1"
+    if os.environ.get("BOARD_PUBLISH", default) == "0" or not chief_relay.STATE.is_dir() or not script.exists():
         return
     try:
         subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
@@ -1246,6 +1419,8 @@ def publish_board() -> None:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("add")
@@ -1269,6 +1444,8 @@ def main(argv=None) -> int:
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
     a.add_argument("--mini-only", dest="mini_only", action="store_true",
                    help="pin a `needs mini` job to the Mini: the MacBook never takes it (e.g. a change that can't be undone)")
+    a.add_argument("--cloud-only", dest="cloud_only", action="store_true",
+                   help="pin a `needs cloud` job to Claude cloud: the relay never reroutes it to Mini/MacBook (e.g. vidIQ)")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
     a.add_argument("--approved-from", dest="approved_from", default="",
@@ -1283,7 +1460,8 @@ def main(argv=None) -> int:
     md = sub.add_parser("metadata", help="set explicit remaining actions and structured holds without releasing work")
     md.add_argument("--file", type=pathlib.Path, required=True)
     md.add_argument("--agent", required=True)
-    wt = sub.add_parser("wait", help="record a condition and verification time; never auto-release a hold")
+    wt = sub.add_parser("wait", help="record a condition and verification time; never auto-release a hold "
+                                      "(except --release-at-time on a --type date hold whose time is the whole condition)")
     wt.add_argument("id")
     wt.add_argument("--agent", required=True)
     wt.add_argument("--condition", required=True)
@@ -1292,6 +1470,8 @@ def main(argv=None) -> int:
     wt.add_argument("--requires", default="", help="missing capabilities; required for --type capability")
     wt.add_argument("--action", default="")
     wt.add_argument("--recheck", default="", help="verification task whose condition check this records")
+    wt.add_argument("--release-at-time", action="store_true",
+                    help="--type date only: reopen the job by itself at --check-at, because the time is the whole condition")
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -1312,11 +1492,13 @@ def main(argv=None) -> int:
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
             p.add_argument("--action", default=None, help="plain-English action still unfinished; update when the remaining work changes")
             p.add_argument("--films", default=None, help="video(s) this job advances, e.g. " + keys_example())
+            p.add_argument("--plan", default=None, help="the steps' plain names, '|' between them, as many as --of (send with the first report)")
         if name == "stuck":
             p.add_argument("--runs", type=int, required=True, help="runs in a row that hit the time cap (relay only)")
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
+            p.add_argument("--open", action="store_true", help="do not pin for=: any worker whose lane fits may claim")
     aw = sub.add_parser("awaits", help="mark a job as waiting on Ben's OK/watch: a Ready for OK card with Play + deadline")
     aw.add_argument("id")
     aw.add_argument("--agent", default="")
@@ -1403,6 +1585,10 @@ def main(argv=None) -> int:
                     job["plain"] = args.plain.strip()
                 if getattr(args, "mini_only", False):
                     job["mini_only"] = True
+                if getattr(args, "cloud_only", False):
+                    if args.needs != "cloud":
+                        raise ValueError("--cloud-only requires --needs cloud")
+                    job["cloud_only"] = True
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:
@@ -1456,14 +1642,17 @@ def main(argv=None) -> int:
                 if on_board(job):
                     board_claim(job, args.agent, at)
             elif args.cmd == "progress":
-                do_progress(job, args.agent, args.step, args.of, at, args.note, args.films, args.action)
+                do_progress(job, args.agent, args.step, args.of, at, args.note, args.films, args.action, args.plan)
                 return job, None, touched  # the film's board stage doesn't change
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "wait":
-                if args.recheck and (find(data,args.recheck) or {}).get("recheck_of") != job["id"]:
+                check = find(data, args.recheck) if args.recheck else None
+                if args.recheck and (check or {}).get("recheck_of") != job["id"]:
                     raise ValueError("--recheck must identify this job's verification task")
-                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires}, args.action, args.recheck)
+                verifier = bool(check and check.get("status") == "claimed" and check.get("by") == args.agent)
+                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires,
+                                                "release":"auto" if args.release_at_time else ""}, args.action, args.recheck, verifier=verifier)
             elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
                     args.ok or job["status"] in ("open", "claimed", "blocked")):
                 # Clearing a held job that goes on = Ben OK'd it (Ben, 25 Oct 14:13): it shows in "Approved, on its
@@ -1495,7 +1684,8 @@ def main(argv=None) -> int:
                     board_release(job, held, "blocked")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
-                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)
+                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at,
+                           open_claim=bool(getattr(args, "open", False)))
                 if held:
                     board_release(job, held, "doing")
             if on_board(job):

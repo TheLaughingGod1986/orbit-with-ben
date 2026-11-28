@@ -26,6 +26,14 @@ class FilmDir(unittest.TestCase):
             self.assertEqual(studio.film_dir(films, "OWB:026").name, "026_How-Far-Is-The-Nearest-Star")
             self.assertEqual(studio.film_dir(films, "026").name, "026_How-Far-Is-The-Nearest-Star")
 
+    def test_foreign_or_unknown_prefix_cannot_select_same_number(self):
+        with tempfile.TemporaryDirectory() as t:
+            films = pathlib.Path(t)
+            (films / "003_Exoplanets").mkdir()
+            for key in ("WW2:003", "HOS:003", "UNKNOWN:003"):
+                with self.subTest(key=key), self.assertRaises(SystemExit):
+                    studio.film_dir(films, key)
+
 
 class Claims(unittest.TestCase):
     def test_claim_marks_doing(self):

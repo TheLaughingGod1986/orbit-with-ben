@@ -30,6 +30,8 @@ def beat(note: str = "", out: bool = False, until: str = "", reason: str = "") -
 
 def push(hb: dict, remote: str = "origin") -> str:
     """One parentless commit holding heartbeat.json, force-pushed to the heartbeat branch."""
+    from engine_guard import require_active
+    require_active()
     blob = git("hash-object", "-w", "--stdin", inp=json.dumps(hb, indent=1) + "\n")
     tree = git("mktree", inp=f"100644 blob {blob}\theartbeat.json\n")
     commit = git("-c", "user.name=Claude", "-c", "user.email=noreply@anthropic.com", "commit-tree", tree, "-m",
@@ -44,6 +46,8 @@ def push(hb: dict, remote: str = "origin") -> str:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--note", default="")
     p.add_argument("--out", action="store_true", help="Claude is out of usage (give --until, the reset, in UTC)")

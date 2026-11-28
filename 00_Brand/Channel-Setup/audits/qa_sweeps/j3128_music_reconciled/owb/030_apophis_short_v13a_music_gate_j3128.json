@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+  "bed_sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/05_Music/owb-standalone-shorts_score_bed_v01_plan.json",
+  "seconds": 60.0,
+  "bpm": 120.0,
+  "brief_pace": "Pace: 84-96 BPM",
+  "fail": [],
+  "warn": [
+    "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+  ],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:030",
+    "export_id": "030_apophis_short_v13a",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13a_music.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.4457,
+    "max_similarity_bed": "light-speed_score_bed_v01_full.mp3",
+    "max_similarity_sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3",
+        "name": "owb-standalone-shorts_score_bed_v01.mp3",
+        "sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

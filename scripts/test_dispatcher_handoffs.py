@@ -13,6 +13,26 @@ import jobs
 import workflow_state as w
 
 AT = dt.datetime(2026, 11, 3, 19, 30, tzinfo=dt.timezone.utc)
+# Never write the real ~/_desk/state: that folder marks a worker machine, and on 27 Nov 2026 a test-made one turned a cloud
+# session into a worker that claimed and released real queue jobs (J3857). Alerts state goes to a temporary folder.
+_HOME_GUARD = []
+
+
+def setUpModule():
+    import os as _os, tempfile as _tempfile
+    from unittest import mock as _mock
+    tmp = _tempfile.mkdtemp()
+    guard = _mock.patch.dict(_os.environ, {"BEN_ALERTS_STATE": _os.path.join(tmp, "alerts", "state.json"),
+                                            "BOARD_STATE": _os.path.join(tmp, "board")})
+    guard.start()
+    _HOME_GUARD.append(guard)
+
+
+def tearDownModule():
+    while _HOME_GUARD:
+        _HOME_GUARD.pop().stop()
+
+
 def row(i, **kw):
     return dict(id=i, title=i, status='open', needs='mini', created_at=AT.isoformat(), history=[], **kw)
 def choose(j, up):
@@ -72,6 +92,31 @@ class Capabilities(unittest.TestCase):
         self.assertEqual(w.select_dispatch(data,AT,'codex',{'codex'},choose,capabilities={'codex':report('audio_input')})['job']['id'],check['id'])
         before=copy.deepcopy(data);jobs.reconcile_holds(data,AT+dt.timedelta(hours=2))
         self.assertEqual(before,data)
+
+    def test_release_at_time_date_hold_reopens_itself_without_a_verification_task(self):
+        parent={**row('READ'),'status':'blocked','by':'codex'}
+        jobs.set_wait(parent,'codex',AT,{'type':'date','condition':'Read the film at its 48-hour point',
+            'check_at':(AT+dt.timedelta(hours=1)).isoformat(),'release':'auto'})
+        data={'jobs':[parent],'next_id':1}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        self.assertEqual(parent['status'],'blocked')
+        self.assertEqual(jobs.reconcile_holds(data,AT+dt.timedelta(hours=1)),['READ'])
+        self.assertEqual((parent['status'],parent['by']),('open',''))
+        self.assertNotIn('hold',parent)
+        self.assertEqual(len(data['jobs']),1)
+
+    def test_plain_date_hold_still_asks_for_verification(self):
+        parent={**row('WAIT'),'status':'blocked','by':'codex'}
+        jobs.set_wait(parent,'codex',AT,{'type':'date','condition':'Credits reset','check_at':AT.isoformat()})
+        data={'jobs':[parent],'next_id':1}
+        jobs.reconcile_holds(data,AT)
+        self.assertEqual(parent['status'],'blocked')
+        self.assertEqual(data['jobs'][1]['recheck_of'],'WAIT')
+
+    def test_release_at_time_is_refused_on_other_hold_types(self):
+        parent={**row('X'),'status':'blocked','by':'codex'}
+        with self.assertRaises(ValueError):
+            jobs.set_wait(parent,'codex',AT,{'type':'credits','condition':'Voice credits back','check_at':AT.isoformat(),'release':'auto'})
 
     def test_pending_legacy_check_gains_requirement_when_parent_hold_is_typed(self):
         parent={**row('PARENT'),'status':'blocked','hold':{'type':'capability','requires':['audio_input'],
@@ -155,9 +200,9 @@ class RelayContinuation(unittest.TestCase):
             available={'codex','gemini'}
             stack.enter_context(patch.object(cr,'workers_up',side_effect=lambda at:set(available)))
             stack.enter_context(patch.object(cr,'mark_down',side_effect=lambda who,*a,**kw:available.discard(who)))
-            def reroute(job,to,model,note):
+            def reroute(job,to,model,note,open_claim=False):
                 d=json.loads(q.read_text());j=next(j for j in d['jobs'] if j['id']==job['id'])
-                jobs.do_reroute(j,'relay',to,model,note,AT)
+                jobs.do_reroute(j,'relay',to,model,note,AT,open_claim=open_claim)
                 q.write_text(json.dumps(d));return True
             stack.enter_context(patch.object(cr,'reroute',side_effect=reroute))
             def run(who,prompt,cap,model):

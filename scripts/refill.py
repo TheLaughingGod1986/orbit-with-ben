@@ -57,8 +57,10 @@ def load_backlog(path: pathlib.Path = BACKLOG) -> list:
 
 
 def ready(data: dict, at: dt.datetime) -> list:
-    """Jobs a Mini worker could claim right now."""
-    return [j for j in data["jobs"] if not j.get("for") and jobs.can_any_mini_claim(data, j, at)]
+    """Jobs a Mini worker could claim right now. One memo for the scan: the acting Chief is read once, not once per
+    job (each read parses the whole queue; see jobs.can_any_mini_claim)."""
+    memo: dict = {}
+    return [j for j in data["jobs"] if not j.get("for") and jobs.can_any_mini_claim(data, j, at, memo)]
 
 
 def parked_for_chief(job: dict) -> bool:
@@ -83,6 +85,10 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         nonlocal have
         j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
                         repo=it.get("repo") or channels.default(), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""), action=it.get("remaining_action") or it["title"][:180])
+        if it.get("cloud_only"):
+            j["cloud_only"] = True
+        if it.get("mini_only"):
+            j["mini_only"] = True
         j["backlog"] = it["key"]
         last[it["key"]] = studio.iso(at)
         added.append(j["id"])
@@ -255,7 +261,12 @@ def first_day_checks(data: dict, at: dt.datetime) -> list:
 
 
 def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
-    """One refill tick: the first-day checks that are due, then the standing backlog."""
+    """One refill tick: refresh flat-plan pace (once the file is stale), the first-day checks, then the backlog."""
+    try:
+        import plan_pace
+        plan_pace.refresh_if_stale(at)
+    except Exception as exc:  # noqa: BLE001 — a pace miss must not stop the refill
+        print(f"plan pace not refreshed: {exc}", file=sys.stderr)
     return first_day_checks(data, at) + do_refill(data, items, at, min_ready)
 
 

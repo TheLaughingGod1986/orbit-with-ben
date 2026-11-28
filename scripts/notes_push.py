@@ -114,6 +114,8 @@ def check(notes: pathlib.Path = NOTES) -> list[str]:
 
 def push(message: str, studio=None, notes: pathlib.Path = NOTES) -> str | None:
     """None when pushed (or there is nothing to push); else why not. The edit is handed back uncommitted on failure."""
+    from engine_guard import require_active
+    require_active(ROOT)
     if studio is None:
         sys.path.insert(0, str(HERE))
         import studio
@@ -138,6 +140,8 @@ def push(message: str, studio=None, notes: pathlib.Path = NOTES) -> str | None:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--check", action="store_true", help="run the checks only")
     ap.add_argument("-m", "--message", help="commit message; with it, a clean check is followed by commit and push")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Same-day alarm for missed daily jobs and silent agents (Ben, 4 Nov 2026, monthly report rec. 6).
-  Every 30 min, scripts/missed_runs.py --post reads git only (tracker and Buffer check commits on main,
+  Every 30 min, scripts/missed_runs.py (post mode) reads git only (tracker and Buffer check commits on main,
   claude-heartbeat and mini-heartbeat) and posts one "[alarm <check>]" line on the studio thread per miss,
   at most once per 22 h per check. It never restarts or changes anything.
   Log: ~/Library/Logs/owb-missed-runs.log

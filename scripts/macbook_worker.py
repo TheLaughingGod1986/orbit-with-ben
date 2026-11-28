@@ -131,6 +131,7 @@ The job is already claimed for you: {job}
 {other_checkouts}
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
+   On the first report add --plan "<step 1> | <step 2> | ..." (n short plain names) so Ben sees which steps are left.
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
    with gh; say the PR number in the result. Never merge, approve or close a PR, and never push to main: merges are
    the Chief's (AGENTS.md), so a brief that says "merge" stops at the open PR and says so. Then switch every checkout you touched back to main
@@ -445,7 +446,8 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     if store:  # the brief allows it, so the agent's own sandbox has to as well
         dirs += ["--add-dir", str(store)]
     if agent == "codex":
-        m = ["-m", model] if model.startswith("gpt-") else []
+        # Always a named model, never the Codex CLI default (22 Nov 2026: gpt-6.1-terra hit its own limit; chief_relay)
+        m = ["-m", model if model.startswith("gpt-") else os.environ.get("CODEX_DEFAULT_MODEL", "gpt-6.1-sol")]
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
@@ -886,6 +888,9 @@ def start_other_slots(popen=None, system=None) -> list:
     for n in range(2, SLOTS + 1):
         clones = {channels.get(s)["repo"]["env"]: str(slot_dir(n) / clone_name(s))
                   for s in channels.slugs() if channels.get(s)["repo"].get("env") and not channels.get(s).get("local")}
+        engine = channels.studio_repo()
+        if engine.get("env"):
+            clones[engine["env"]] = str(slot_dir(n) / (_repo_name(engine.get("url")) or channels.studio_key()))
         env = dict(os.environ, MACBOOK_SLOT=str(n), **clones)
         try:
             logs.mkdir(parents=True, exist_ok=True)
@@ -939,6 +944,8 @@ def _take_jobs() -> int:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cmd", choices=["run", "check"])
     a = ap.parse_args(argv)

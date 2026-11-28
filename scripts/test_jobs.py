@@ -256,6 +256,45 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+    def test_foreign_qualified_identity_never_reads_or_writes_board(self):
+        job = {"repo": "owb", "film": "WW2:003", "stage": "script"}
+        with mock.patch.object(studio, "film_dir") as resolve, mock.patch.object(studio, "save") as save:
+            self.assertFalse(jobs.on_board(job))
+            self.assertIsNone(jobs.film_status_path(job))
+            self.assertIsNone(jobs.board_claim(job, "macbook", T0))
+            jobs.board_release(job, "macbook", "review")
+            jobs.check_board_completion(job, "evidence")
+            resolve.assert_not_called()
+            save.assert_not_called()
+        with mock.patch.object(jobs, "film_folder_under") as folders:
+            self.assertEqual(jobs.job_film_number(job), "")
+            self.assertFalse(jobs.media_reachable(dict(job, body="/tmp/existing.mp4")))
+            folders.assert_not_called()
+
+    def test_all_registered_channel_identities_stay_in_their_channel(self):
+        for channel in jobs.channels.all_channels():
+            slug, label = channel["slug"], channel["label"]
+            with self.subTest(channel=slug):
+                job = {"repo": slug, "film": label + ":003", "stage": "script"}
+                self.assertEqual(jobs.job_film_identity(job), (slug, "003"))
+                self.assertEqual(jobs.job_film_number(job), "003")
+                self.assertEqual(jobs.on_board(job), slug == jobs.channels.board_channel())
+                with mock.patch.object(jobs, "studio_live_projects", return_value=pathlib.Path("/unused")) as root, \
+                        mock.patch.object(jobs, "film_folder_under", return_value=pathlib.Path("/unused/003_Film")):
+                    self.assertTrue(jobs.media_reachable(job))
+                    root.assert_called_once_with(slug)
+                if slug != jobs.channels.board_channel():
+                    with mock.patch.object(studio, "save") as save:
+                        jobs.board_claim(job, "macbook", T0)
+                        jobs.board_release(job, "macbook", "review")
+                        jobs.check_board_completion(job, "evidence")
+                        save.assert_not_called()
+
+    def test_unknown_prefix_and_foreign_text_have_no_film_target(self):
+        self.assertIsNone(jobs.job_film_identity({"repo": "owb", "film": "UNKNOWN:003"}))
+        self.assertEqual(jobs.job_film_number({"repo": "owb", "title": "Work WW2:003"}), "")
+        self.assertEqual(jobs.job_film_number({"repo": "owb", "film": "OWB:J01"}), "J01")
+
     def test_follow_up_work_never_reopens_a_finished_stage(self):
         with tempfile.TemporaryDirectory() as tmp:
             films = pathlib.Path(tmp)
@@ -304,6 +343,21 @@ class Progress(unittest.TestCase):
         jobs.do_progress(j, "cursor", 3, 8, T0 + 10 * MIN, note="grade done")
         self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
         self.assertEqual(j["history"][-1]["what"], "step 3 of 8 done: grade done")
+
+    def test_named_steps_are_kept_until_the_step_count_changes(self):
+        # Ben, 23 Nov 2026: the board lists which steps are left.
+        d = queue(("mini", "edit fixes", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        jobs.do_progress(j, "cursor", 0, 3, T0 + MIN, plan="check brief | fix photos | final gates")
+        self.assertEqual(j["progress"]["plan"], ["check brief", "fix photos", "final gates"])
+        jobs.do_progress(j, "cursor", 1, 3, T0 + 2 * MIN, note="brief checked")
+        self.assertEqual(j["progress"]["plan"], ["check brief", "fix photos", "final gates"])
+        jobs.do_progress(j, "cursor", 1, 4, T0 + 3 * MIN)
+        self.assertNotIn("plan", j["progress"])
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 1, 4, T0 + 4 * MIN, plan="only | three | names")
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 1, 2, T0 + 4 * MIN, plan="ok | " + "x" * 81)
 
     def test_progress_links_a_shared_job_without_completing_a_film_stage(self):
         d = queue(("mini", "Teaching overlays", {}))
@@ -418,6 +472,25 @@ class HandBack(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.do_handback(job, "relay", "", at)
 
+    def test_cloud_only_job_refuses_reroute_and_accepts_metadata_pin(self):
+        import datetime as _dt
+        at = _dt.datetime(2026, 11, 20, 23, 0, tzinfo=_dt.timezone.utc)
+        pinned = {"id": "J3231", "needs": "cloud", "cloud_only": True, "status": "open", "by": "", "kind": "review", "history": []}
+        with self.assertRaises(ValueError):
+            jobs.do_reroute(pinned, "relay", "gemini", "gemini-argon", "Claude out", at)
+        d = {"jobs": [{"id": "J3231", "needs": "mini", "for": "gemini", "status": "blocked", "by": "macbook-2",
+                       "kind": "review", "rerouted_from": {"needs": "cloud", "for": "", "model": ""}, "history": []}]}
+        with mock.patch.object(jobs.chief_relay, "is_elected_chief", return_value=True):
+            jobs.apply_metadata(d, [{"id": "J3231", "cloud_only": True}], "gemini", at)
+        self.assertTrue(d["jobs"][0]["cloud_only"])
+        with mock.patch.object(jobs.chief_relay, "elected_for", return_value=True):
+            jobs.do_reopen(d["jobs"][0], "gemini", "hand back to Claude cloud", at)
+        jobs.do_handback(d["jobs"][0], "gemini", "vidIQ requires Claude cloud", at)
+        self.assertEqual(d["jobs"][0]["needs"], "cloud")
+        self.assertTrue(d["jobs"][0]["cloud_only"])
+        self.assertNotIn("for", d["jobs"][0])
+        self.assertNotIn("rerouted_from", d["jobs"][0])
+
 
 class MiniOnlyPin(unittest.TestCase):
     """The Chief can pin a Studio job to the Mini (10 Nov 2026: removing playlists cannot be undone)."""
@@ -514,10 +587,66 @@ class MacBookTakesTextJobs(unittest.TestCase):
         self.assertEqual(jobs.do_next(d, "macbook", {"macbook", "any"}, T0)["id"], j["id"])
         self.assertEqual((j["needs"], j["for"]), ("mini", "gemini"))  # the job itself is unchanged
 
-    def test_a_review_of_media_work_stays_on_the_mini(self):
-        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}), ("mini", "verify condition for J0001", {"kind": "review"}))
+    def test_a_picture_review_stays_on_the_mini(self):
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}),
+                  ("mini", "Watch the 031 stills before the cut", {"kind": "review"}))
         d["jobs"][1]["recheck_of"] = "J0001"
         self.assertFalse(jobs.macbook_portable(d["jobs"][1], d))
+
+    def test_condition_checks_and_records_reviews_are_portable(self):
+        # 20 Nov 2026: a needs=mini job that needs nothing Mini-only is the MacBook's.
+        # A condition check is records work even when the job it checks is picture or Studio.
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}),
+                  ("mini", "Verify condition for J0001", {"kind": "review"}),
+                  ("mini", "Records-only review of the ledger", {"kind": "review"}))
+        d["jobs"][1]["recheck_of"] = "J0001"
+        self.assertTrue(jobs.macbook_portable(d["jobs"][1], d))
+        self.assertTrue(jobs.claimable(d, d["jobs"][1], {"macbook", "any"}, T0, "macbook"))
+        self.assertTrue(jobs.macbook_portable(d["jobs"][2], d))
+
+    def test_the_verifier_records_an_unmet_condition_but_never_releases_it(self):
+        # 27 Nov 2026: 89 verifications in three days; every UNMET one was parked for the Chief, who alone could
+        # record it. The job's own verifier now records "still unmet" (the hold stays, its next check moves).
+        parent = {"id": "J0001", "status": "blocked", "by": "codex", "history": [],
+                  "hold": {"type": "capability", "condition": "needs audio", "check_at": T0.isoformat(), "requires": ["audio_input"]}}
+        later = (T0 + dt.timedelta(hours=6)).isoformat()
+        hold = {"type": "capability", "condition": "still no audio reviewer", "check_at": later, "requires": ["audio_input"]}
+        with mock.patch.object(jobs.chief_relay, "elected_for", return_value=False):
+            with self.assertRaisesRegex(ValueError, "holder or elected Chief"):
+                jobs.set_wait(dict(parent), "gemini", T0, hold, recheck="J0002")
+            jobs.set_wait(parent, "gemini", T0, hold, recheck="J0002", verifier=True)
+        self.assertEqual(parent["status"], "blocked")
+        self.assertEqual(parent["hold"]["condition"], "still no audio reviewer")
+        self.assertEqual(parent["hold"]["last_recheck"], "J0002")
+
+    def test_mini_only_tools_keep_a_condition_check_on_the_mini(self):
+        for body in ("Mint the next Veo take if the condition holds.",
+                     "Call ElevenLabs under the desk-lock if the stem is missing.",
+                     "The Mini worktree is still in progress.",
+                     "Read the Mini-only token and upload the package."):
+            d = queue(("mini", "Verify condition for J0001", {"kind": "review"}))
+            d["jobs"][0]["body"] = body
+            d["jobs"][0]["recheck_of"] = "J0001"
+            self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), body)
+
+    def test_an_open_reroute_is_claimable_by_cursor_or_a_macbook(self):
+        # 20 Nov 2026: a chain walk does not pin for= to the next agent.
+        script = {"id": "J0902", "needs": "cloud", "status": "open", "by": "", "kind": "script", "history": []}
+        jobs.do_reroute(script, "relay", "gemini", "gemini-argon", "Claude out", T0, open_claim=True)
+        self.assertNotIn("for", script)
+        self.assertNotIn("model", script)
+        self.assertTrue(script.get("open_claim"))
+        self.assertEqual(script["needs"], "mini")
+        d = {"jobs": [script]}
+        self.assertTrue(jobs.claimable(d, script, {"mini", "any"}, T0, "cursor"))
+        self.assertTrue(jobs.claimable(d, script, {"macbook", "any"}, T0, "macbook"))
+        chart = {"id": "J0903", "needs": "mini", "status": "open", "by": "", "kind": "chart", "history": []}
+        jobs.do_reroute(chart, "relay", "cursor", "", "Codex out", T0, open_claim=True)
+        d2 = {"jobs": [chart]}
+        self.assertTrue(jobs.claimable(d2, chart, {"mini", "any"}, T0, "cursor"))
+        self.assertFalse(jobs.claimable(d2, chart, {"macbook", "any"}, T0, "macbook-2"))
+        with mock.patch.object(jobs.routing, "OUT", {"claude", "claudecode"}):
+            self.assertFalse(jobs.claimable(d, script, {"mini", "any"}, T0, "claudecode"))
 
     def test_false_mini_only_hits_do_not_block_portable_text(self):
         # Observed 6 Nov 2026: English "flow", "cut-over", do-not-touch Buffer/NAS, and BUFFER_POSTS.json
@@ -583,11 +712,30 @@ class MacBookTakesTextJobs(unittest.TestCase):
         for slug in channels.slugs():
             self.assertEqual(jobs.studio_live_projects(slug),
                              jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
-            if channels.get(slug).get("launch_state") != "prelaunch":
-                self.assertTrue(channels.studio_port(slug).isdigit(), slug)
+            # A channel may exist without a signed-in Studio browser. The manifest
+            # contract makes this optional; absence must deny browser dispatch.
+            port = channels.studio_port(slug)
+            self.assertEqual(port, str((channels.get(slug).get("youtube") or {}).get("studio_port") or ""))
+            if port:
+                self.assertTrue(port.isdigit(), slug)
+            else:
+                with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9222,9223,9224"}):
+                    self.assertFalse(jobs.macbook_studio_ok(
+                        {"repo": slug, "kind": "studio", "title": "Read YouTube Studio"},
+                        "Read YouTube Studio"), slug)
         ports = [channels.studio_port(s) for s in channels.slugs() if channels.studio_port(s)]
         self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
         self.assertRegex(jobs.keys_example(), r"^[A-Z0-9]+:006 or [A-Z0-9]+:028,[A-Z0-9]+:029$")
+
+    def test_missing_studio_port_never_borrows_another_channels_browser(self):
+        import channels
+        channel = {"slug": "test-channel", "youtube": {"id": "test-id"}}
+        with mock.patch.object(channels, "get", return_value=channel), \
+                mock.patch.object(channels, "of_job", return_value="test-channel"), \
+                mock.patch.dict(os.environ, {"MACBOOK_CDP": "9222,9223,9224"}):
+            self.assertEqual(channels.studio_port("test-channel"), "")
+            self.assertFalse(jobs.macbook_studio_ok(
+                {"repo": "test-channel", "kind": "studio"}, "Read YouTube Studio"))
 
     def test_a_job_added_with_no_channel_goes_to_the_default_channel(self):
         import channels

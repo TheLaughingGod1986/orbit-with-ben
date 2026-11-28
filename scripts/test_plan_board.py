@@ -47,15 +47,36 @@ class PlanBoardTest(unittest.TestCase):
         self.assertTrue(texts[0].startswith("Lock the every-planet film"))
         self.assertTrue(texts[1].startswith("Pause"))
         self.assertTrue(texts[-1].startswith("Titles"))
-        ww2 = block["plans"][1]
+        jan = block["plans"][1]
+        self.assertEqual(jan["id"], "orbit-search-2027-01")
+        self.assertEqual(jan["channel"], "owb")
+        self.assertEqual(jan["card"]["title"], "Plan: orbit from January: films people search for")
+        self.assertEqual(jan["card"]["next"], "Next: First weekly search research, Mon 7 Dec")
+        self.assertEqual(jan["card"]["needs"], "")
+        self.assertEqual(jan["card"]["score"], "No test film is public yet. Best long so far: 230 views")
+        self.assertEqual(len(jan["steps"]), 6)
+        self.assertEqual(jan["baseline"]["showings"],
+                         "All 16 longs: about 4,050 showings (read 12 Nov)")
+        ww2 = block["plans"][2]
         self.assertEqual(ww2["id"], "ww2-launch-2026-11")
         self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
         # Ben, 17 Nov 2026: on this channel he is asked only to watch finished films, so its plan asks him for nothing.
         self.assertEqual(ww2["card"]["needs"], "")
-        self.assertEqual(len(ww2["steps"]), 12)
+        self.assertEqual(len(ww2["steps"]), 19)
         self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
         self.assertEqual(ww2["card"]["score"], "No film is public yet.")
         self.assertEqual(ww2["baseline"]["best"], "No long film yet")
+        hos = block["plans"][3]
+        self.assertEqual(hos["id"], "hos-search-2027-01")
+        self.assertEqual(hos["channel"], "hos")
+        # Ben approved the plan in chat on 24 Nov 2026, so its lock step is done and it asks him for nothing.
+        self.assertEqual(hos["steps"][0]["stand"], "Done")
+        self.assertFalse(hos["steps"][0]["needsYou"])
+        self.assertEqual(hos["card"]["needs"], "")
+        self.assertEqual(hos["baseline"]["best"], "Best long so far: 162 views")
+        self.assertEqual(hos["baseline"]["showings"],
+                         "All 7 longs: about 2,185 showings (read 20 Nov)")
+        self.assertEqual(len(hos["steps"]), 14)
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -91,6 +112,17 @@ class PlanBoardTest(unittest.TestCase):
         self.assertEqual(planets["stand"], "Waiting for your lock")
         self.assertTrue(planets["needsYou"])
         self.assertEqual(block["plans"][0]["card"]["needs"], "1 thing needs you: lock the every-planet film")
+
+    def test_a_studio_wide_plan_needs_no_baseline_and_scores_nothing(self):
+        # 24 Nov 2026 (Ben: monthly scorecard, fade what isn't working): a plan for the whole studio, not one channel.
+        plan = {"id": "s", "scope": "studio", "channel": "", "title": "Grow what works", "agreed": "2026-11-24",
+                "goal": "Effort where it grows.", "why": ["Because."], "decisions": [],
+                "steps": [{"id": "first-review", "name": "First monthly review", "what": "Verdicts for Ben.", "when": "2027-01-04T09:00Z", "jobs": []}]}
+        block = plan_board.section([plan], [], [], {}, "2026-11-24T10:00:00Z", now=dt.datetime(2026, 11, 24, 10, tzinfo=dt.timezone.utc))
+        card = block["plans"][0]["card"]
+        self.assertEqual(card["score"], "")
+        self.assertEqual(block["plans"][0]["baseline"], {})
+        self.assertEqual(card["title"], "Plan: grow what works")
 
     def test_youtube_states_and_the_fourteen_day_verdict(self):
         step = {

@@ -118,7 +118,7 @@ class MiniPaths(unittest.TestCase):
 
     def test_env_falls_back_to_the_main_checkout(self):
         home = self.tmp / "home"
-        env = home / "YouTube" / "orbit-with-ben" / "07_Content-Ops" / ".env"
+        env = home / "YouTube" / ks.channels.studio_repo()["checkouts"][0] / "07_Content-Ops" / ".env"
         env.parent.mkdir(parents=True)
         env.write_text("R2_ACCOUNT_ID=a\nR2_ACCESS_KEY_ID=b\nR2_SECRET_ACCESS_KEY=c\nR2_PUBLIC_URL=https://p.r2.dev\n")
         with mock.patch.object(ks, "ROOT", self.tmp / "worktree"), mock.patch.dict(os.environ, {"HOME": str(home)}, clear=True):

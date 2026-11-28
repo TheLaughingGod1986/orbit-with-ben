@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-03T11:30:00.000Z",
+    "platformPostId": "71tXqugE-AI",
+    "platformUrl": "https://youtu.be/71tXqugE-AI",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-12-03T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"71tXqugE-AI\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-03T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/11_Upload-Package",
+    "sha256": "ff52475588e5ecee1caca6840105711bfed2b67c6b83ab3f08239e3761e47bd1",
+    "title": "What Will NASA's Roman Telescope Reveal on Dec 7?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 13,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/11_Upload-Package/roman_2026_12_07_cover_v02.jpg",
+    "scheduledAt": "2026-12-03T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Volumes/MiniWork/scratch/wt-j3366/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/06_Final-Exports/owb_dated_2026_12_07_roman_first_images_v01.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/11_Upload-Package/roman_2026_12_07_cover_v02.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-12-03T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "71tXqugE-AI",
+    "studioEditUrl": "https://studio.youtube.com/video/71tXqugE-AI/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to ziKBPJ6FY0U (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/71tXqugE-AI/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (71tXqugE-AI). 1 required Studio finish step(s) remain."
+  }
+}

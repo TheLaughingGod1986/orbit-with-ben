@@ -23,7 +23,30 @@ import {
   listScheduledUploads,
 } from "@/lib/youtube/data-api";
 
-export const REPO_ROOT = path.resolve(__dirname, "../../../..");
+export const ENGINE_ROOT = path.resolve(__dirname, "../../../..");
+
+/** Both legacy social registers belong to Orbit, including social/hos. Never
+ * create a second register in the engine when the channel checkout is missing.
+ * Detached engines require the registry's explicit checkout environment variable.
+ */
+export function bufferRecordRoot(engineRoot: string, env: NodeJS.ProcessEnv = process.env): string {
+  const registry = JSON.parse(fs.readFileSync(path.join(engineRoot, "channels/channels.json"), "utf8"));
+  const entry = registry.channels.find((c: { slug: string }) => c.slug === "owb");
+  if (!entry) throw new Error("Buffer record owner is absent from the studio registry");
+  if (entry.home) return engineRoot;
+  const manifest = JSON.parse(fs.readFileSync(path.join(engineRoot, "channels/owb/channel.json"), "utf8"));
+  const variable = entry.env || manifest.repo.env;
+  const configured = env[variable];
+  if (!configured || !path.isAbsolute(configured)) throw new Error(`Buffer needs an absolute ${variable} channel checkout`);
+  const root = path.resolve(configured);
+  const own = JSON.parse(fs.readFileSync(path.join(root, "studio/channel.json"), "utf8"));
+  if (own.slug !== "owb" || root === path.resolve(engineRoot)) throw new Error("Buffer record root must be the independent Orbit checkout");
+  return root;
+}
+
+// Compatibility name for callers: this is the record/media root, never the
+// location of credentials or the Content Ops executable after the split.
+export const REPO_ROOT = bufferRecordRoot(ENGINE_ROOT);
 export const SOCIAL_DIR = path.join(REPO_ROOT, "00_Brand/Channel-Setup/social");
 export const CHANNELS_FILE = path.join(SOCIAL_DIR, "BUFFER_CHANNELS.json");
 export const LEDGER_FILE = path.join(SOCIAL_DIR, "BUFFER_POSTS.json");

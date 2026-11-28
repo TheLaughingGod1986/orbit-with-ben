@@ -1,0 +1,50 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01.mp3",
+  "bed_sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01_plan.json",
+  "seconds": 30.0,
+  "bpm": 66.7,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [
+    "reused: sounds like jupiter_no_crust_short_bed_v01.mp3 (1.0) (Chief waiver music_gate_j2916_chief_waiver.json)"
+  ],
+  "matches": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01.mp3",
+      "similarity": 1.0,
+      "sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222"
+    }
+  ],
+  "waiver": "music_gate_j2916_chief_waiver.json",
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:DATED",
+    "export_id": "owb_dated_2026_11_30_moon_jupiter_v01",
+    "original_sidecar_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/07_Edit-Project/assembly_j2916_v01/qa/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 31,
+    "excluded_same_film_or_self_count": 0,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 1.0,
+    "max_similarity_bed": "jupiter_no_crust_short_bed_v01.mp3",
+    "max_similarity_sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222",
+    "excluded_same_film_or_self": [],
+    "repair_job": null
+  }
+}

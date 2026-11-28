@@ -1,0 +1,160 @@
+{
+  "field_registration": {
+    "anchor_unrotated_px": [
+      1921.6,
+      1449.413664
+    ],
+    "anchor_fraction": [
+      0.6005,
+      0.463664
+    ],
+    "roll_degrees": -28,
+    "roll_center": "the anchor",
+    "resample": "BICUBIC",
+    "expand": false,
+    "fill_rgb": [
+      6,
+      8,
+      18
+    ],
+    "window_on_rotated_field_px": {
+      "x0": 1220,
+      "y0": 798,
+      "width": 1920,
+      "height": 1080
+    },
+    "resize_to": [
+      1280,
+      720
+    ],
+    "resize": "LANCZOS",
+    "origin_circle_on_1280x720": {
+      "center": [
+        468,
+        434
+      ],
+      "radius": 34
+    }
+  },
+  "cutout_registration": {
+    "anchor_px": [
+      116,
+      115
+    ],
+    "anchor_rule": "width//2+6, height//2+5 on the 220px plate",
+    "roll_degrees": -28,
+    "roll_center_px": [
+      116,
+      115
+    ],
+    "resample": "BICUBIC",
+    "expand": false,
+    "patch_on_rotated_cutout_px": {
+      "x0": 84,
+      "y0": 83,
+      "x1": 148,
+      "y1": 147,
+      "size": 64
+    },
+    "j3088_loupe": {
+      "resize_to": 440,
+      "resample": "BICUBIC",
+      "linear_factor": 6.875,
+      "center_on_1280x720": [
+        950,
+        373
+      ],
+      "not_an_angular_magnification": "440/64 = 6.875. The old 4.5x wording is not this resize."
+    },
+    "j2983_loupe_for_comparison": {
+      "resize_to": 340,
+      "linear_factor": 5.3125,
+      "center_on_1280x720": [
+        895,
+        406
+      ]
+    }
+  },
+  "redder_component_in_rotated_64px_patch": {
+    "measured_on": "the -28 degree rotated 64px patch, before the 440px resize",
+    "yellow_orange_peak_px": [
+      32,
+      34
+    ],
+    "yellow_orange_core_centroid_px": [
+      31.31,
+      32.12
+    ],
+    "bluer_neighbour_peak_px": [
+      27,
+      21
+    ],
+    "reading": "The yellow-orange knot is the lower component. The bluer knot sits above and to its left. The builder anchor (116, 115) lands on the yellow-orange core: inverse-rotating that core returns about (115.3, 114.8).",
+    "in_j3088_440px_loupe": {
+      "scale": 6.875,
+      "loupe_center": [
+        950,
+        373
+      ],
+      "yellow_core_frame_px": [
+        945.3,
+        373.8
+      ],
+      "blue_peak_frame_px": [
+        915.6,
+        297.4
+      ],
+      "pointer": "Aim the single white pointer inside the loupe at the yellow-orange core, about 5px left of the loupe centre, not at the bluer knot above it."
+    }
+  },
+  "job": "J3129",
+  "target_pointer": {
+    "tail": [
+      1080,
+      446
+    ],
+    "tip": [
+      982,
+      393
+    ],
+    "axis_target": [
+      945.3,
+      373.8
+    ],
+    "note": "Tip ends on right edge of lower core; projected axis passes within 0.57px of recorded core centroid. Core centre is not covered."
+  },
+  "connector": {
+    "start": [
+      512,
+      431
+    ],
+    "end": [
+      714,
+      379
+    ],
+    "white_width_px": 4,
+    "arrowhead": false
+  },
+  "webb_inset": {
+    "box": [
+      40,
+      475,
+      340,
+      700
+    ],
+    "prior_art_px": [
+      236,
+      177
+    ],
+    "new_art_px": [
+      267,
+      200
+    ],
+    "increase_percent": [
+      13.14,
+      12.99
+    ],
+    "label": null
+  },
+  "qualification": "The NASA annotated inset has different framing/filter colour assignments. Its bytes do not equal the native crop; no exact crop equality is claimed. Recipe registration uses the recovered native cutout and recorded field anchor; visual identification agrees with the NASA pointer to the lower redder component."
+}

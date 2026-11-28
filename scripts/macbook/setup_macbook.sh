@@ -56,6 +56,16 @@ pick_repo "${OWB_REPO:-$YT/orbit-with-ben}" "$WORK/orbit-with-ben" https://githu
 OWB="$REPLY"
 pick_repo "${HOS_REPO:-$YT/History Of Science}" "$WORK/history-of-science" https://github.com/TheLaughingGod1986/history-of-science.git
 HOS="$REPLY"
+# Before the split the engine is Orbit. Cutover explicitly supplies STUDIO_REPO;
+# its independent fallback clone must never bootstrap the old engine by accident.
+ENGINE="$OWB"
+ENGINE_URL="https://github.com/TheLaughingGod1986/orbit-with-ben.git"
+if [[ -n "${STUDIO_REPO:-}" ]]; then
+  ENGINE_URL="${STUDIO_GIT_URL:-https://github.com/TheLaughingGod1986/studio.git}"
+  pick_repo "$STUDIO_REPO" "$WORK/studio" "$ENGINE_URL"
+  ENGINE="$REPLY"
+fi
+say "   engine uses: $ENGINE"
 say "   worker uses: $OWB"
 say "                $HOS"
 
@@ -93,11 +103,11 @@ for cli in codex agy claude agent; do
   command -v $cli >/dev/null || [[ -x "$HOME/.npm-global/bin/$cli" || -x "$HOME/.local/bin/$cli" ]] || MISSING+=($cli)
 done
 PLIST="$HOME/Library/LaunchAgents/com.owb.macbook-worker.plist"
-sed -e "s#__HOME__#$HOME#g" -e "s#__OWB__#$OWB#g" -e "s#__HOS__#$HOS#g" -e "s#__MODEL__#$MODEL#g" \
-  "$OWB/scripts/macbook/com.owb.macbook-worker.plist" > "$PLIST"
+python3 "$ENGINE/scripts/macbook/render_worker_plist.py" --home "$HOME" --engine "$ENGINE" \
+  --engine-url "$ENGINE_URL" --owb "$OWB" --hos "$HOS" --model "$MODEL" --out "$PLIST"
 launchctl bootout "gui/$(id -u)/com.owb.macbook-worker" 2>/dev/null || true
 launchctl bootstrap "gui/$(id -u)" "$PLIST"
-python3 "$OWB/scripts/macbook_worker.py" check || true
+STUDIO_REPO="$ENGINE" OWB_REPO="$OWB" HOS_REPO="$HOS" python3 "$ENGINE/scripts/macbook_worker.py" check || true
 
 print
 say "Done. The worker checks every 3 min and only takes 'macbook' jobs (plus portable Mini text/code)."

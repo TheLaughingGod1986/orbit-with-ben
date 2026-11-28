@@ -1,0 +1,110 @@
+
+> content-ops@0.1.0 youtube:package
+> tsx --env-file=.env scripts/youtube-package-upload.ts --package /Volumes/MiniWork/scratch/J3904-wt/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/07_Upload-Package --video /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01.mp4 --dry-run
+
+PASS  064_short02_venus_vs_uranus_v01.mp4  dur=18.38s  audio=-16.6dB  motion=10.18  f0diff=2.04  cut1=1.75s  vo_onset=0.05s  tail_gap=0.91s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01_vo.wav  dhash=004a00000003078e  visor=0.0004
+   full-bleed 0.00s  fills the frame  sharp above/middle/below=0.041/0.109/0.235  detail top/centre/bottom=13.25/3.0/3.1  spread top/bottom=52.05/13.85
+   full-bleed 0.25s  fills the frame  sharp above/middle/below=0.027/0.071/0.214  detail top/centre/bottom=13.21/2.77/3.13  spread top/bottom=49.58/15.66
+   full-bleed 0.50s  fills the frame  sharp above/middle/below=0.015/0.063/0.18  detail top/centre/bottom=13.24/2.68/2.91  spread top/bottom=47.65/17.8
+   full-bleed whole Short  0/19 frames padded at one a second, 0/37 at two a second  padded stretches: none  no end card named in meta
+   sheet /Volumes/MiniWork/scratch/orbit_shorts_gate/064_short02_venus_vs_uranus_v01_open_sheet.jpg
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-30T11:30:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-12-30T11:30:00.000Z.",
+    "responseSummary": "{\"title\":\"Why Is Venus 464°C While Uranus Drops to −224°C?\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-30T11:30:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"shorts\"}"
+  },
+  "package": {
+    "packageDir": "../../../../Volumes/MiniWork/scratch/J3904-wt/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/07_Upload-Package",
+    "sha256": "4eb7d94377a9e59b9319f7ccfd9ec96091f60dbebb034c2e9ed6d75a2c6c77ff",
+    "title": "Why Is Venus 464°C While Uranus Drops to −224°C?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 9,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01_cover.jpg",
+    "scheduledAt": "2026-12-30T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Volumes/MiniWork/scratch/J3904-wt/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/07_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/06_Final-Exports/064_short02_venus_vs_uranus_v01_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
+Wrote /Volumes/MiniWork/scratch/J3904-wt/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/10_Shorts/short02_venus_vs_uranus/07_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-11-27T20-36-59-799Z.json

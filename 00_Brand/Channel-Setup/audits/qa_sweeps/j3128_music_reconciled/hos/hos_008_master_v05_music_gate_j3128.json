@@ -1,0 +1,73 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/lightning008_score_bed_v01.mp3",
+  "bed_sha256": "3dffce5ebe85d2e2727c8e54f62c2ec7604a2f45b44753c017c8bad6110b5ac2",
+  "plan_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/lightning008_score_bed_v01_plan.json",
+  "seconds": 539.6,
+  "bpm": 66.7,
+  "brief_pace": "Pace: 64-72 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "HOS",
+    "film": "HOS:008",
+    "export_id": "hos_008_master_v05",
+    "original_sidecar_path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/J2243/music_gate_v05.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 80,
+    "excluded_same_film_or_self_count": 5,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.6632,
+    "max_similarity_bed": "hos004-full-sect2_score_bed_v02.mp3",
+    "max_similarity_sha256": "d8611ae55152522cc78da40183876a435e56e1d72fe8471391292cb55e5caa8f",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/hos_008_short_A_v03_bed.wav",
+        "name": "hos_008_short_A_v03_bed.wav",
+        "sha256": "0a64b7379ec721facf53824d23bea2f29364e9264a6ea50e7a457f7185aae0d9",
+        "reason": "same_film_05_music (HOS:008)"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/lightning008_score_bed_v01.mp3",
+        "name": "lightning008_score_bed_v01.mp3",
+        "sha256": "3dffce5ebe85d2e2727c8e54f62c2ec7604a2f45b44753c017c8bad6110b5ac2",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/lightning008_score_bed_v02.mp3",
+        "name": "lightning008_score_bed_v02.mp3",
+        "sha256": "40937135976eeb99fe33acedc5924b0bd41f89b20244b81a2759da7792f4404c",
+        "reason": "same_film_05_music (HOS:008)"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/lightning008_score_bed_v01_take.mp3",
+        "name": "lightning008_score_bed_v01_take.mp3",
+        "sha256": "42917e83640e9802ed4f3214221608e3fc4065da4b3cd70fcb76a628dab7c17e",
+        "reason": "same_film_05_music (HOS:008)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/05_Music/hos_008_short_C_v04_bed.wav",
+        "name": "hos_008_short_C_v04_bed.wav",
+        "sha256": "cf4143abdb8276185d7229664dd32a53adf1d80e018a451d23683a6f2f3cd690",
+        "reason": "same_film_05_music (HOS:008)"
+      }
+    ],
+    "repair_job": null
+  }
+}

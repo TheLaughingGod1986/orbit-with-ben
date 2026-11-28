@@ -80,6 +80,9 @@ def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) ->
     out = {}
     flags = _flags()
     rows = {r.get("agent"): r for r in (mini_hb or {}).get("chain") or [] if isinstance(r, dict)}
+    # The Mini's own worker states win (24 Nov 2026: Cursor was out "until it resets in 2 days" but, missing from the
+    # Chief chain, the forecast counted it up and queued ten jobs behind it).
+    rows.update({r.get("agent"): r for r in (mini_hb or {}).get("workers") or [] if isinstance(r, dict)})
     for a in routing.MINI_WORKERS:
         r = rows.get(a)
         why = "" if r and r.get("up") else str((r or {}).get("why") or "")

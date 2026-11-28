@@ -64,9 +64,9 @@ class FinalAudit(unittest.TestCase):
                 self.assertEqual(check['kind'],'review')
                 self.assertEqual(bool(check.get('mini_only')),bool(extra.get('mini_only')))
 
-    def test_check_on_a_studio_job_is_not_portable_to_a_macbook_without_studio(self):
-        # J2649, reviewer's gap: needs=mini alone did not keep the MacBook off a check on a Studio job.
-        for title, portable in (('Studio: set Related video on the 026 Shorts', False), ('Review the docs wording', True)):
+    def test_a_condition_check_is_portable_and_the_studio_job_itself_is_not(self):
+        # The check reads the queue (20 Nov 2026). The Studio job it checks still needs the browser.
+        for title, parent_portable in (('Studio: set Related video on the 026 Shorts', False), ('Review the docs wording', True)):
             with self.subTest(title=title):
                 j={**row('H'),'title':title,'status':'blocked','result':'waiting'}
                 data={'jobs':[j],'next_id':1}
@@ -74,7 +74,8 @@ class FinalAudit(unittest.TestCase):
                 jobs.reconcile_holds(data,AT)
                 check=next(x for x in data['jobs'] if x.get('recheck_of'))
                 with patch.dict('os.environ',{'MACBOOK_CDP':''}):
-                    self.assertEqual(jobs.macbook_portable(check,data),portable)
+                    self.assertTrue(jobs.macbook_portable(check,data))
+                    self.assertEqual(jobs.macbook_portable(j,data),parent_portable)
 
     def test_due_hold_creates_one_review_check_and_keeps_work_blocked(self):
         j={**row('H'),'status':'blocked','result':'date gate; original approval retained'}
@@ -142,8 +143,13 @@ class FinalAudit(unittest.TestCase):
         self.assertNotIn('hold',review)
         self.assertEqual(w.state(review,{'R':review},AT),'review')
         ben={**row('B'),'status':'claimed','by':'gemini'}
-        jobs.do_block(ben,'gemini','needs Ben: sign-in',AT)
+        jobs.do_block(ben,'gemini','needs Ben: real money for the Veo Quality spend',AT)
         data={'jobs':[ben],'next_id':1};self.assertEqual(jobs.reconcile_holds(data,AT+dt.timedelta(days=1)),[])
+        # 27 Nov 2026: a sign-in is Ben's to do but a machine's to check, so it gets one verification (the hold stays).
+        signin={**row('S'),'status':'claimed','by':'gemini'}
+        jobs.do_block(signin,'gemini','needs Ben: sign-in',AT)
+        data={'jobs':[signin],'next_id':1};self.assertIn('S',jobs.reconcile_holds(data,AT+dt.timedelta(days=1)))
+        self.assertEqual((signin['status'],len([x for x in data['jobs'] if x.get('recheck_of')=='S'])),('blocked',1))
 
     def test_dependency_completion_checks_immediately_without_waiting_for_a_timer(self):
         child=row('C');j={**row('P',after='C'),'status':'claimed','by':'gemini'}

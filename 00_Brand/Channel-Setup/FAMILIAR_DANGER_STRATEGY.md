@@ -119,7 +119,7 @@ Rules for the test:
 
 ## Before anything is filmed
 
-Every Short export passes `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` before upload: narrator audible (a silent file fails), no Orbit at 0 s, a different opening frame from the last 14 days, under 40 s. Then watch it once on a phone with the sound on.
+Every Short export passes `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` before upload: narrator audible (a silent file fails), no Orbit at 0 s, a different opening frame from the last 14 days, warns outside 16.0–19.0 s (Ben, 19 Nov 2026), hard-fails at 40 s and over. Then watch it once on a phone with the sound on.
 
 A long script scores at least 90. A 22–27 second Short is not padded to chase that long-film score. The reviewer caps a Short this size below 90. QA watches the moving picture. UAT watches the open voiceover. Then it can be uploaded. A live film is not remade by swapping the file.
 

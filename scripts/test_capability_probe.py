@@ -153,6 +153,20 @@ class RunnersCoverEveryMiniWorker(unittest.TestCase):
         self.assertIn("usage limit", ans["_error"])
         self.assertEqual(set(tools) - cp.FILE_TOOLS, {"command_execution"})
 
+        agy_lines = "\n".join([
+            json.dumps({"step_update": {"step_type": "tool", "tool_name": "read_file"}}),
+            json.dumps({"event": "result", "result": {"structured_output": {"watched": True, "direction": "right_to_left",
+                                                                            "colours_in_order": ["green", "yellow", "blue"]}}}),
+        ])
+        with patch.object(cp.subprocess, "run", return_value=MagicMock(returncode=0, stdout=agy_lines, stderr="")) as m_run:
+            ans, tools = cp.agy_runner("p", cp.VIDEO_SCHEMA, "/tmp")
+        called_cmd = m_run.call_args[0][0]
+        self.assertIn("--model", called_cmd)
+        self.assertEqual(called_cmd[called_cmd.index("--model") + 1], "gemini-4-neon-high")
+        self.assertEqual(called_cmd[-2:], ["-p", "p"])
+        self.assertEqual(ans["direction"], "right_to_left")
+        self.assertEqual(tools, {"read_file"})
+
 
 if __name__ == "__main__":
     unittest.main()

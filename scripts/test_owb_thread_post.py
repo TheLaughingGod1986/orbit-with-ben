@@ -5,6 +5,9 @@ the Mini's environment, with a local session token, was posted on the public thr
 `post` refusing that, and keep the briefs telling every worker to post from a file.
 """
 import pathlib
+import json
+import runpy
+from unittest import mock
 import subprocess
 import sys
 import unittest
@@ -79,6 +82,31 @@ class TheOldNameIsTheSameTool(unittest.TestCase):
         import channels
         self.assertEqual(channels.studio_env("AGENT"), "OWB_AGENT")
         self.assertEqual(channels.studio_env("THREAD_PR"), "OWB_THREAD_PR")
+
+
+class RetainedThreadRepository(unittest.TestCase):
+    def load(self, config):
+        import channels
+        with mock.patch.object(channels, "studio_github", return_value="example/new-engine"), \
+                mock.patch("builtins.open", mock.mock_open(read_data=json.dumps(config))):
+            return runpy.run_path(str(HERE / "studio_thread.py"))
+
+    def test_reads_and_posts_use_retained_repo_after_engine_moves(self):
+        thread = self.load({"repo": "example/retained-thread", "number": 123})
+        self.assertEqual(thread["REPO"], "example/retained-thread")
+        self.assertEqual(thread["PR"], 123)
+        api = thread["api"]
+        with mock.patch.dict(api.__globals__, token=lambda: "test-only"), \
+                mock.patch.object(studio_thread.urllib.request, "urlopen") as request:
+            request.return_value.__enter__.return_value.read.return_value = b"{}"
+            for method in ("GET", "POST"):
+                api(method, "/issues/123/comments", {} if method == "POST" else None)
+                self.assertEqual(request.call_args.args[0].full_url,
+                                 "https://api.github.com/repos/example/retained-thread/issues/123/comments")
+
+    def test_legacy_config_without_repo_uses_engine(self):
+        for repo in ({}, {"repo": ""}):
+            self.assertEqual(self.load(dict(repo, number=123))["REPO"], "example/new-engine")
 
 
 class WhatTheBriefsSay(unittest.TestCase):

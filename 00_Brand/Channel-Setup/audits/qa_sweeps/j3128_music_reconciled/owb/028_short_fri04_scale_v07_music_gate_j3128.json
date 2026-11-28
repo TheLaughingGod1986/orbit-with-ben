@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3",
+  "bed_sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03_plan.json",
+  "seconds": 497.8,
+  "bpm": 70.6,
+  "brief_pace": "Pace: 64-74 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:028",
+    "export_id": "028_short_fri04_scale_v07",
+    "original_sidecar_path": "/Users/benjaminoats/_desk/renders/J1100-v07/S5_028_jJ5LkFGyzLI/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.2882,
+    "max_similarity_bed": "betelgeuse_score_bed_v01.mp3",
+    "max_similarity_sha256": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3",
+        "name": "gliese_score_bed_v03.mp3",
+        "sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

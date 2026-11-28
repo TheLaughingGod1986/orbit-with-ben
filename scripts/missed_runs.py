@@ -5,6 +5,8 @@ Buffer's daily mirror was silent from 11 Oct to 1 Nov and the Claude worker from
 anyone noticed. This checks, from git alone, that each scheduled job left its mark inside its window:
 
   tracker   "Channel tracker <date>" commit on main (launchd 06:40 London)   due every 26 h
+  Detached engines additionally check each channel snapshot history independently.
+
   buffer    "Buffer check <date>" commit on main (launchd 07:05 London)      due every 26 h
   claude    claude-heartbeat branch heartbeat.json "at"                       due every 90 min
   mini      mini-heartbeat branch heartbeat.json "at"                         due every 75 min
@@ -40,30 +42,60 @@ def parse(s):
     return dt.datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(UTC)
 
 
-def git(*args):
-    return subprocess.run(["git", "-C", ROOT, *args], capture_output=True, text=True).stdout.strip()
+def git(*args, root=None):
+    try:
+        result = subprocess.run(["git", "-C", str(root or ROOT), *args],
+                                capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    return result.stdout.strip() if result.returncode == 0 else None
+
+
+def configured_checks():
+    """Keep resident alarms; detached engines check every record owner separately."""
+    checks = {key: dict(value) for key, value in CHECKS.items()}
+    if channels.studio_slug():
+        return checks
+    checks['tracker'].update(grep=r'^Channel tracker( 20|: daily analytics records$)',
+                             paths=('05_Analytics/dashboard',))
+    for slug in channels.slugs():
+        checks[f'tracker-{slug}'] = {
+            'kind': 'commit', 'root': channels.checkout(slug),
+            'grep': r'^Channel tracker( 20|: daily analytics records$)',
+            'paths': (f'05_Analytics/{slug}/snapshots',), 'max_h': 26,
+            'fix': f'check detached analytics collection and record publication for {slug}',
+        }
+    return checks
 
 
 def last_seen(check, fetch=True):
     """UTC time the check last left its mark, or None."""
+    if 'root' in check and check['root'] is None:
+        return None
+    root = check.get('root', ROOT)
     if check["kind"] == "commit":
-        if fetch:
-            git("fetch", "-q", "origin", "main")
-        out = git("log", "origin/main", "-1", "--format=%cI", "-E", f"--grep={check['grep']}", "--since=14 days ago")
-        return parse(out) if out else None
-    if fetch:
-        git("fetch", "-q", "origin", check["branch"])
-    raw = git("show", f"origin/{check['branch']}:heartbeat.json")
+        if fetch and git("fetch", "-q", "origin", "main", root=root) is None:
+            return None
+        out = git("log", "origin/main", "-1", "--format=%cI", "-E",
+                  f"--grep={check['grep']}", "--since=14 days ago",
+                  "--", *check.get('paths', ()), root=root)
+        try:
+            return parse(out) if out else None
+        except (ValueError, TypeError):
+            return None
+    if fetch and git("fetch", "-q", "origin", check["branch"], root=root) is None:
+        return None
+    raw = git("show", f"origin/{check['branch']}:heartbeat.json", root=root)
     try:
         return parse(json.loads(raw)["at"])
     except Exception:
         return None
 
 
-def misses(now, seen):
+def misses(now, seen, checks=None):
     """seen: {key: datetime|None}. Returns [(key, age_h or None, max_h)] for every check out of its window."""
     out = []
-    for key, c in CHECKS.items():
+    for key, c in (CHECKS if checks is None else checks).items():
         t = seen.get(key)
         age = None if t is None else (now - t).total_seconds() / 3600
         if age is None or age > c["max_h"]:
@@ -71,9 +103,10 @@ def misses(now, seen):
     return out
 
 
-def line(key, age, max_h):
-    when = "no record in 14 days" if age is None else f"last {age:.1f} h ago (window {max_h:g} h)"
-    return f"{MARK.format(key=key)} {key} missed: {when}. Fix: {CHECKS[key]['fix']}."
+def line(key, age, max_h, checks=None):
+    checks = CHECKS if checks is None else checks
+    when = "no record available in 14 days (or Git read/fetch failed)" if age is None else f"last {age:.1f} h ago (window {max_h:g} h)"
+    return f"{MARK.format(key=key)} {key} missed: {when}. Fix: {checks[key]['fix']}."
 
 
 def already_posted(key, now, recent_bodies):
@@ -81,17 +114,20 @@ def already_posted(key, now, recent_bodies):
     return any(tag in b for b in recent_bodies)
 
 
-def main():
+def main(argv=None):
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--post", action="store_true")
     ap.add_argument("--no-fetch", action="store_true")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
     now = dt.datetime.now(UTC)
-    seen = {k: last_seen(c, fetch=not a.no_fetch) for k, c in CHECKS.items()}
-    found = misses(now, seen)
-    for k, c in CHECKS.items():
+    checks = configured_checks()
+    seen = {k: last_seen(c, fetch=not a.no_fetch) for k, c in checks.items()}
+    found = misses(now, seen, checks)
+    for k, c in checks.items():
         print(f"{k:8} last {seen[k].isoformat() if seen[k] else '-'}")
-    lines = [line(*m) for m in found]
+    lines = [line(*m, checks=checks) for m in found]
     for l in lines:
         print(l)
     if a.post and found:

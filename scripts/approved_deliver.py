@@ -16,6 +16,7 @@ import datetime as dt
 import json
 import re
 import sys
+from urllib.parse import quote
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -31,6 +32,8 @@ import video_tracker as vt  # noqa: E402
 LONDON = ZoneInfo("Europe/London")
 BANNED_REUSE_IDS = frozenset({"TtgHNLXfDSs", "k9pXeeJvLpc"})
 SWAP_RE = re.compile(r"\bswap\b", re.I)
+# A job that uploads, posts or swaps. "Upload package" is the listing a cut carries to Ben's watch, not an upload.
+UPLOAD_WORD_RE = re.compile(r"\b(?:upload(?!\s+packages?\b)|buffer|swap)", re.I)
 LISTING_HOLD_RE = re.compile(r"listing|title|thumbnail|description|tags|package incomplete|needs title", re.I)
 # Locked cadence (Ben, 7 Nov 2026): each channel's own slots, in its studio/channel.json (`cadence`, read by
 # channels.cadence). Until 11 Nov 2026 the table was here, keyed by the two channels' labels.
@@ -162,7 +165,8 @@ def is_swap(job: dict | None, video: dict | None = None) -> bool:
         bits += [job.get("title") or "", job.get("body") or "", ((job.get("approved_from") or {}).get("what") or "")]
     if video:
         bits += [((video.get("approved") or {}).get("what") or ""), video.get("title") or ""]
-    return bool(SWAP_RE.search(" ".join(bits)))
+    text = re.sub(r"\b(?:do not|never|don't)\s+swap\b", "", " ".join(bits), flags=re.I)
+    return bool(SWAP_RE.search(text))
 
 
 def parent_long_public(video: dict, videos: list[dict]) -> bool:
@@ -178,6 +182,49 @@ def parent_long_public(video: dict, videos: list[dict]) -> bool:
         return is_public(video)
     # Short without a named parent: allow only when no parent key is required / unknown.
     return True
+
+
+def parent_long(video: dict, videos: list[dict]) -> dict | None:
+    """The long a Short belongs to: its named `parent` card, else its own channel's long with the film number its
+    number starts with ("008 Short s04" is HOS 008's). None for a long, or when that long has no card."""
+    if video.get("type") != "short":
+        return None
+    key = str(video.get("parent") or "")
+    if key:
+        return next((v for v in videos if v.get("key") == key), None)
+    m = re.match(r"(\d{3}|[A-Z]\d{2})\b", str(video.get("number") or ""))
+    if not m:
+        return None
+    ch = str(video.get("channel") or default_label()).upper()
+    longs = [v for v in videos if v.get("type") != "short" and str(v.get("number") or "") == m.group(1)
+             and str(v.get("channel") or default_label()).upper() == ch]
+    return next((v for v in longs if (v.get("youtube") or {}).get("videoId")), longs[0] if longs else None)
+
+
+def short_floor(video: dict, videos: list[dict], now: dt.datetime) -> tuple[dt.datetime, str]:
+    """The earliest a Short may be slotted (house rule: its long goes out first) and, when the long is not on YouTube
+    yet, the line its delivery job carries instead. A long, or a Short whose long is public or unknown, plans from now."""
+    parent = parent_long(video, videos)
+    if not parent or is_public(parent):
+        return now, ""
+    when = vt._parse_iso((parent.get("youtube") or {}).get("publishAt")) if is_scheduled(parent) else None
+    if when:
+        return max(now, when), ""
+    return now, (f"\nIts long ({parent.get('key')}) is not on YouTube yet: build the package now, then schedule this "
+                 f"Short after the long's publish time; if the long has none yet, block 'waiting for {parent.get('key')} "
+                 "to be scheduled'.")
+
+
+# A channel whose checkout is not on this machine has no package to read here.
+NO_CHECKOUT = Path("/nonexistent/channel-checkout")
+
+
+def listing_root(slug: str, root: Path) -> Path:
+    """Where a card's listing package lives: its own channel's checkout, never the default channel's film with the
+    same number (HOS 008's Shorts are not Orbit 008's)."""
+    if not slug or slug == channels.default():
+        return root
+    return channels.checkout(slug) or NO_CHECKOUT
 
 
 def _uploads_publish_days(path: Path, *, channel: str, want_short: bool, from_day: dt.date) -> set[str]:
@@ -231,8 +278,28 @@ def taken_cadence_days(videos: list[dict], channel: str, vtype: str, from_day: d
         uploads = base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json" if base else None
         if uploads and uploads.is_file():
             out |= _uploads_publish_days(uploads, channel=ch, want_short=want_short, from_day=from_day)
+        if want_short:
+            out |= _shorts_release_days(channels.checkout(slug) if slug and slug != channels.default() else (root or ROOT),
+                                        from_day)
     except Exception:  # noqa: BLE001
         pass
+    return out
+
+
+def _shorts_release_days(base: Path | None, from_day: dt.date) -> set[str]:
+    """London days of the Shorts a channel records per film in 10_Shorts/SHORTS_RELEASE.json (HOS does). Its upload
+    register carries no publish time, and a Short whose board card is not tied to its upload is otherwise invisible
+    (26 Nov 2026: Franklin Short A, Fri 27 Nov 11:30, would have been double-booked)."""
+    out: set[str] = set()
+    for path in sorted(base.glob("02_Video-Projects/*/10_Shorts/SHORTS_RELEASE.json")) if base else []:
+        try:
+            shorts = json.loads(path.read_text()).get("shorts") or []
+        except (OSError, ValueError, AttributeError):
+            continue
+        for s in shorts:
+            day = london_day(str((s or {}).get("airDate") or "")) if isinstance(s, dict) and s.get("id") else ""
+            if day and day >= from_day.isoformat():
+                out.add(day)
     return out
 
 
@@ -292,29 +359,83 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
     job_id = appr.get("job") or ""
     film = str(video.get("number") or "")
     key = video.get("key") or ""
+    # A job-keyed card (WW2:ASK:J3542) also answers to the name its ask gave it (WW2:001-S1), which the upload job
+    # names (25 Nov 2026: J3646 had delivered it for 17 h while the board still asked for an upload job).
+    names = {key, *(video.get("aliases") or [])} - {""}
     out = []
     for j in alljobs:
         if j.get("status") not in ("open", "claimed", "blocked", "done"):
             continue
-        if job_id and j.get("id") == job_id:
+        # An approval card names its original watch/review job too. That is not an upload.
+        text = " ".join(str(j.get(k) or "") for k in ("title", "action"))
+        # 24 Nov 2026: upload jobs filed as `listing` (the Uranus and Pluto Shorts) and the swap a card names (Muons,
+        # J2881) are delivery too; only review-type work is not. A job may list every card it delivers (`delivers`):
+        # one upload job takes a long and its Shorts (HOS 008 with Shorts A and C in J3500).
+        listed = bool(names & set(j.get("delivers") or []))
+        delivery = j.get("stage") == "upload" or listed or (
+            j.get("kind") not in ("review", "qa", "chief", "script", "facts")
+            and bool(UPLOAD_WORD_RE.search(text)))
+        if listed:
+            out.append(j)
+            continue
+        # The job that asked Ben is delivery only while it can still deliver (a held job that reopens to upload, J0940),
+        # when Ben's OK was linked onto it (approved_from) or it is a swap, or when it finished by reading an upload back. 27 Nov 2026: FOH 004-006's watch jobs ("edit, captions, three
+        # thumbnails and upload package, to Ben's watch") were done before his OK and counted as their own uploads, so
+        # nothing queued the uploads and no alert fired, four days before 004 airs.
+        if job_id and j.get("id") == job_id and delivery and (
+                j.get("status") != "done" or j.get("approved_from") or is_swap(j)
+                or vt.READBACK_RE.search(str(j.get("result") or ""))):
             out.append(j)
             continue
         if is_swap(j):
             continue
         af = j.get("approved_from") if isinstance(j.get("approved_from"), dict) else {}
-        if af and (af.get("card") == key or (film and af.get("number") == film and af.get("version") == (appr.get("version") or video.get("version")))):
+        if delivery and af and (af.get("card") in names or (
+                video.get("type") != "short" and film and str(af.get("number")) == film
+                and af.get("channel") == video.get("channel") and af.get("type") != "short"
+                and af.get("version") == (appr.get("version") or video.get("version")))):
             out.append(j)
             continue
+        if af.get("card") and af.get("card") not in names:
+            continue  # Ben's OK on another card (27 Nov 2026: Short 004-S1's upload) is that card's delivery, not this one's.
         title = (j.get("title") or "") + " " + (j.get("body") or "")
         kind = j.get("kind") or ""
-        if film and re.search(rf"\b{re.escape(film)}\b", title) and (
-                kind in ("studio",) or re.search(r"\bupload\b|\bbuffer-mirror\b|\bbuffer\b", title, re.I)):
+        if video.get("type") == "short" or channels.label_of_repo(j.get("repo")) != video.get("channel"):
+            continue  # A film number alone never identifies a Short or a channel.
+        # The film number must be in the job's own title, not just somewhere in a long brief (27 Nov 2026: J3254, the
+        # channel's upload-path setup, mentions "005" and "v05" in its body and hid FOH 005's missing upload).
+        if delivery and film and re.search(rf"\b{re.escape(film)}\b(?!-S)", j.get("title") or "") and (
+                kind in ("studio",) or UPLOAD_WORD_RE.search(title)):
             # Prefer jobs that name this cut's version when known.
             ver = appr.get("version") or video.get("version") or ""
             if ver and ver not in title and j.get("id") != job_id:
                 continue
             out.append(j)
     return out
+
+
+def waiting_approvals(videos: list[dict], alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+    """Every Passed card without live delivery work, including its age (unknown stays unknown)."""
+    out = []
+    for v in passed_candidates(videos):
+        # A finished delivery job counts as delivered: YouTube's read-back can lag the card (Muons, 24 Nov 2026).
+        if already_delivered(v, videos) or any(j.get("status") in ("open", "claimed", "blocked", "done")
+                                               for j in delivery_jobs_for(v, alljobs)):
+            continue
+        stamp = (v.get("check") or {}).get("at") or (v.get("approved") or {}).get("okAt")
+        when = vt._parse_iso(stamp)
+        hours = max(0, int((now - when).total_seconds() // 3600)) if when else None
+        out.append({"key": v.get("key"), "title": v.get("title") or v.get("key"),
+                    "ageHours": hours, "job": (v.get("approved") or {}).get("job") or ""})
+    return out
+
+
+def approval_alerts(videos: list[dict], alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+    # Each alert opens its own video's page (24 Nov 2026: "#videos" did nothing when Ben was already on Videos).
+    return [{"id": "approval:" + str(v["key"]), "kind": "approval", "href": "#v=" + quote(str(v["key"]), safe=""),
+             "message": f"Your OK on {v['title']} is waiting for an upload job, {v['ageHours']} h"}
+            for v in waiting_approvals(videos, alljobs, now=now)
+            if v["ageHours"] is not None and v["ageHours"] >= 12]
 
 
 def passed_candidates(videos: list[dict]) -> list[dict]:
@@ -329,6 +450,16 @@ def passed_candidates(videos: list[dict]) -> list[dict]:
             continue
         out.append(v)
     return out
+
+
+def approval_link(video: dict) -> dict:
+    approved, ask, tick = video.get("approved") or {}, video.get("ask") or {}, video.get("check") or {}
+    return {"key": video.get("key"), "approved_job": ask.get("job") or approved.get("askJob") or approved.get("job") or "",
+            "check_id": video.get("checkId") or vt.check_id(video.get("key") or ""),
+            "check_at": tick.get("at") or approved.get("okAt") or "", "ask_file": ask.get("file") or "",
+            "version": approved.get("version") or video.get("version") or "",
+            "channel": video.get("channel") or default_label(), "type": video.get("type") or "long",
+            "number": video.get("number") or "", "title": video.get("title") or ""}
 
 
 def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | None = None,
@@ -353,9 +484,14 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             actions.append({"op": "wait", "key": v.get("key"),
                             "reason": "Approved; waiting for YouTube connection"})
             continue
-        listing = lp.for_video(v, root)
+        listing = lp.for_video(v, listing_root(slug, root))
         dest = listing.get("destination") or "youtube"
-        if not listing.get("complete"):
+        jobs = delivery_jobs_for(v, alljobs)
+        # Ben's OK on a cut with no listing package used to wait here for a package nobody had been asked to make, until
+        # the 12 h alert (26 Nov 2026: the Franklin and Titan Shorts). With no delivery work at all, one job now builds
+        # the package and uploads; with some, it waits for that work as before.
+        package = not listing.get("complete")
+        if package and (dest == "social" or jobs or is_swap(None, v) or already_delivered(v, videos)):
             actions.append({"op": "wait", "key": v.get("key"), "reason": listing.get("status") or "Needs listing",
                             "missing": listing.get("missing") or []})
             continue
@@ -363,7 +499,6 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             actions.append({"op": "wait", "key": v.get("key"),
                             "reason": "Social waits until the parent long is public"})
             continue
-        jobs = delivery_jobs_for(v, alljobs)
         # Never touch a swap path.
         if any(is_swap(j, v) for j in jobs) or is_swap(None, v):
             actions.append({"op": "skip", "key": v.get("key"), "reason": "Swap stays on its own path"})
@@ -378,17 +513,28 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             j = live[0]
             if j.get("status") == "blocked" and LISTING_HOLD_RE.search(str(j.get("result") or "") + str((j.get("hold") or {}).get("condition") or "")):
                 actions.append({"op": "unblock", "key": v.get("key"), "job": j["id"],
-                                "destination": dest, "reason": "Listing package complete"})
+                                "destination": dest, "reason": "Listing package complete", **approval_link(v)})
+            elif (v.get("check") or {}).get("verdict") == "ok" and not (v.get("check") or {}).get("handled") and (
+                    (j.get("board_ok") or {}).get("at") != (v.get("check") or {}).get("at")):
+                actions.append({"op": "acknowledge", "job": j["id"], **approval_link(v)})
             else:
                 actions.append({"op": "skip", "key": v.get("key"), "job": j["id"],
                                 "reason": f"Delivery job already {j.get('status')}"})
+            continue
+        # A finished delivery job is delivery, as waiting_approvals counts it: YouTube's read-back can lag the card, and
+        # a second upload of the same cut is never wanted.
+        done = [j for j in jobs if j.get("status") == "done"]
+        if done:
+            actions.append({"op": "skip", "key": v.get("key"), "job": done[0]["id"],
+                            "reason": f"Delivered by {done[0]['id']}; waiting for YouTube to read it back"})
             continue
         # Create a new delivery job.
         channel = str(v.get("channel") or default_label()).upper()
         vtype = "short" if v.get("type") == "short" else "long"
         airs = ((v.get("approved") or {}).get("airs") or "")
         taken = taken_for(channel, vtype)
-        slot = next_cadence_slot(channel, vtype, now=now, taken_days=taken, airs=airs)
+        floor, long_note = short_floor(v, videos, now)
+        slot = next_cadence_slot(channel, vtype, now=floor, taken_days=taken, airs=airs)
         if dest != "social" and not slot:
             actions.append({"op": "wait", "key": v.get("key"),
                             "reason": "No free cadence slot in the next 60 days"})
@@ -407,6 +553,24 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
                     + "). Do not use the TikTok browser or API. Only after the parent long is public when that"
                     " house rule applies. Listing package is complete.")
             kind = "studio"
+        elif package:
+            when = f", {slot}" if slot else ""
+            title = f"Package and upload {channel} {num} {vtype} {ver} ({title_bit}) Private{when}".strip()
+            need = ", ".join(listing.get("missing") or lp.LISTING_FIELDS)
+            ok_title = str(v.get("title") or "")
+            body = (f"Ben OK'd this cut on the board, but it has no complete listing package yet (missing: {need}).\n"
+                    "1. Build its own listing package in the channel's repo, in the layout its other "
+                    + ("Shorts'" if vtype == "short" else "films'") + " packages already use: PACKAGE_MANIFEST.json with"
+                    " title, thumbnail (the custom cover), description and tags, by that channel's studio/RULES.md."
+                    + (f' Keep the title Ben OK\'d: "{ok_title}".' if ok_title else "")
+                    + (" The description's first line names and links its long, and its Related video is the long."
+                       if vtype == "short" else "")
+                    + " Merge it through a pull request.\n"
+                    "2. Upload the file Ben OK'd to YouTube Studio as Private and set publishAt in the locked cadence. "
+                    "Use youtube:package on the Mini. Do not swap a file onto an existing id. "
+                    f"Do not reuse {' or '.join(sorted(BANNED_REUSE_IDS))} as destinations.\n"
+                    "3. Read back Private + scheduled and record it in the channel's UPLOADS register.")
+            kind = "studio"
         else:
             when = f", {slot}" if slot else ""
             title = f"Upload {channel} {num} {vtype} {ver} ({title_bit}) Private{when}".strip()
@@ -415,16 +579,68 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
                     f"Do not reuse {' or '.join(sorted(BANNED_REUSE_IDS))} as destinations. "
                     "Listing package is complete (title, thumbnail, description, tags).")
             kind = "studio"
+        body += long_note
+        body += (f"\nApproved board card: {v.get('key') or ''}; cut: {ver}."
+                 f"\nApproval/watch job: {(v.get('ask') or {}).get('job') or (v.get('approved') or {}).get('job') or ''}."
+                 f"\nWatch file: {(v.get('ask') or {}).get('file') or ''}."
+                 f"\nListing package: {listing.get('packageDir') or listing.get('manifest') or ('to build in step 1' if package else '')}.")
         actions.append({
             "op": "create", "key": v.get("key"), "destination": dest, "title": title, "body": body,
+            "action": ("Build the listing package, then upload to YouTube Studio as Private" if package
+                       else "Schedule Buffer social posts" if dest == "social" else "Upload to YouTube Studio as Private"),
             # The queue can only claim a stage on the default channel's films, so only those carry film and stage.
             "kind": kind, "film": num if channel == default_label() and re.fullmatch(r"(?:\d{3}|[A-Z]\d{2})", str(num)) else "",
             "stage": "upload" if channel == default_label() and re.fullmatch(r"(?:\d{3}|[A-Z]\d{2})", str(num)) else "",
             "repo": slug_of(channel) or channels.default(),
             "airs": slot, "version": ver, "channel": channel, "type": vtype,
-            "approved_job": (v.get("approved") or {}).get("job") or "",
+            **{k: value for k, value in approval_link(v).items() if k not in ("title", "type", "channel", "version")},
         })
     return actions
+
+
+def link_approval(job: dict, a: dict, by_id: dict, *, agent: str, at: dt.datetime) -> None:
+    # Link Ben's approval onto the delivering job when we know the ask.
+    src_id = a.get("approved_job") or ""
+    src = by_id.get(src_id) if src_id else None
+    over = {k: a[k] for k in ("airs", "version", "channel", "type", "title") if a.get(k)}
+    if not over.get("airs") and (job.get("approved_from") or {}).get("airs"):
+        over["airs"] = job["approved_from"]["airs"]
+    over["number"] = a.get("number") or a.get("film") or ""
+    over["card"] = a.get("key") or ""
+    over["what"] = "Passed cut — deliver listing package"
+    # jobs.do_approved expects London wall time, not a UTC ISO cadence stamp.
+    if over.get("airs"):
+        over["airs"] = dt.datetime.fromisoformat(over["airs"].replace("Z", "+00:00")).astimezone(LONDON).strftime("%Y-%m-%d %H:%M")
+    if src and (src.get("awaits_ben") or src.get("awaits_was") or src.get("approved_from")):
+        raw = src.get("awaits_ben") or src.get("awaits_was") or {}
+        entries = raw if isinstance(raw, list) else [raw]
+        entry = 0
+        if len(entries) > 1:
+            matches = [i for i, item in enumerate(entries, 1)
+                       if item.get("version") == a.get("version") and (
+                           (a.get("ask_file") and item.get("file") == a["ask_file"])
+                           or item.get("card") == a.get("key"))]
+            entry = matches[0] if len(matches) == 1 else 0
+        # Ambiguous multi-cut approvals fail closed; never mark an unidentified cut handled.
+        J.do_approved(job, src, agent, at, entry=entry, over=over)
+    else:
+        job["approved_from"] = {
+            "what": over.get("what") or "Passed cut — deliver listing package",
+            "version": a.get("version") or "",
+            "airs": a.get("airs") or "",
+            "card": a.get("key") or "",
+            "title": a.get("title") or "",
+            "number": a.get("number") or a.get("film") or "",
+            "type": a.get("type") or "",
+            "channel": a.get("channel") or "",
+            "job": job["id"],
+            "okAt": J.studio.iso(at),
+        }
+    # Durable acknowledgement of precisely this tap, not any later version/undo.
+    if a.get("check_at"):
+        job["board_ok"] = {"id": a.get("check_id"), "at": a["check_at"],
+                           "version": a.get("version") or "", "handled": True}
+        job["approved_from"]["okAt"] = a["check_at"]
 
 
 def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetime) -> list[str]:
@@ -432,13 +648,19 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
     touched = []
     by_id = {j["id"]: j for j in data["jobs"]}
     for a in actions:
-        if a.get("op") == "unblock":
+        if a.get("op") == "acknowledge":
+            job = by_id.get(a["job"])
+            if job and job.get("status") in ("open", "claimed", "blocked"):
+                link_approval(job, a, by_id, agent=agent, at=at)
+                touched.append(job["id"])
+        elif a.get("op") == "unblock":
             j = by_id.get(a["job"])
             if not j or j.get("status") != "blocked":
                 continue
             j.update(status="open", by="", since="", eta="", result="")
             j.pop("hold", None)
             J.log(j, at, agent, "unblocked: listing package complete — ready to upload")
+            link_approval(j, a, by_id, agent=agent, at=at)
             touched.append(j["id"])
         elif a.get("op") == "create":
             # Idempotent: skip if a matching open job appeared this run.
@@ -447,37 +669,10 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
             kwargs = {"film": a["film"], "stage": a["stage"]} if a.get("film") and a.get("stage") else {}
             job = J.do_add(data, title=a["title"], needs="mini", body=a["body"], by=agent, at=at,
                            kind=a.get("kind") or "studio", repo=a.get("repo") or channels.default(),
-                           action=("Upload to YouTube Studio as Private" if a.get("destination") != "social"
-                                   else "Schedule Buffer social posts"),
+                           action=a.get("action") or ("Upload to YouTube Studio as Private" if a.get("destination") != "social"
+                                                      else "Schedule Buffer social posts"),
                            **kwargs)
-            # Link Ben's approval onto the delivering job when we know the ask.
-            src_id = a.get("approved_job") or ""
-            src = by_id.get(src_id) if src_id else None
-            over = {k: a[k] for k in ("airs", "version", "channel", "type", "title") if a.get(k)}
-            over["card"] = a.get("key") or ""
-            over["what"] = "Passed cut — deliver listing package"
-            if src and (src.get("awaits_ben") or src.get("awaits_was") or src.get("approved_from")):
-                try:
-                    J.do_approved(job, src, agent, at, over=over)
-                except ValueError:
-                    job["approved_from"] = {k: str(over.get(k) or "") for k in
-                                            ("what", "version", "airs", "card", "title", "number", "type", "channel")
-                                            if over.get(k)}
-                    job["approved_from"]["job"] = src_id or job["id"]
-                    job["approved_from"]["number"] = str(a.get("film") or "")
-            else:
-                job["approved_from"] = {
-                    "what": over.get("what") or "Passed cut — deliver listing package",
-                    "version": a.get("version") or "",
-                    "airs": a.get("airs") or "",
-                    "card": a.get("key") or "",
-                    "title": a.get("title") or "",
-                    "number": a.get("film") or "",
-                    "type": a.get("type") or "",
-                    "channel": a.get("channel") or "",
-                    "job": job["id"],
-                    "okAt": J.studio.iso(at),
-                }
+            link_approval(job, a, by_id, agent=agent, at=at)
             touched.append(job["id"])
             by_id[job["id"]] = job
     return touched
@@ -621,7 +816,8 @@ def run(*, apply: bool = False, git: bool = False, agent: str = "relay",
         return result
 
     def mutate(d):
-        touched = apply_actions(d, actions, agent=agent, at=at)
+        current_actions = plan_actions(videos, d["jobs"], now=at, root=root)
+        touched = apply_actions(d, current_actions, agent=agent, at=at)
         result["touched"] = touched
         return {"touched": touched, "n": len(touched)}, None, []
 

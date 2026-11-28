@@ -54,7 +54,8 @@ def validate(plans, job_ids: set[str]) -> None:
     for plan in plans:
         parse_when(plan.get("agreed") or "")
         base = plan.get("baseline") or {}
-        parse_when(base.get("readAt") or "")
+        if base or plan.get("scope") != "studio":  # a studio-wide plan need not carry a channel baseline
+            parse_when(base.get("readAt") or "")
         for step in plan.get("steps") or []:
             if step.get("when"):
                 parse_when(step["when"])
@@ -412,11 +413,12 @@ def _one(plan: dict, jobs_by_id: dict, videos: list, numbers: dict, now: dt.date
             "title": "Plan: " + (plan.get("title") or "the plan")[:1].lower() + (plan.get("title") or "the plan")[1:],
             "next": _next_line(plan.get("steps") or [], now),
             "needs": _needs_line(clean),
-            "score": _score_line(results, baseline),
+            # A studio-wide plan ("scope": "studio") has no films of its own to score.
+            "score": "" if plan.get("scope") == "studio" else _score_line(results, baseline),
         },
         "steps": clean,
         "results": results,
-        "baseline": _baseline_row(baseline),
+        "baseline": {} if plan.get("scope") == "studio" and not baseline else _baseline_row(baseline),
         "decisions": [item[2] for item in decisions],
     }
 

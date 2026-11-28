@@ -72,7 +72,16 @@ def parse(s):
 
 def film_dir(films, key):
     # A job may name its film as "OWB:026" as well as "026" (8 Nov 2026: three such jobs stopped every MacBook claim).
-    key = str(key).split(":")[-1]
+    key = str(key)
+    if ":" in key:
+        channels = _channels()
+        prefix, key = key.split(":", 1)
+        try:
+            slug = channels.get(prefix)["slug"]
+        except KeyError:
+            sys.exit(f"studio: unknown film channel '{prefix}'")
+        if slug != channels.board_channel():
+            sys.exit(f"studio: film channel '{prefix}' does not belong to this stage board")
     hits = [d for d in sorted(films.iterdir()) if d.is_dir() and d.name.split("_")[0] == key]
     if len(hits) != 1:
         sys.exit(f"studio: no single film folder for '{key}' under {films}")
@@ -309,6 +318,8 @@ def git_transaction(write, message, tries=3):
     times; even the last loss rolls back the verified commit. Other
     unpublished commits are never replayed or dropped.
     """
+    from engine_guard import require_active
+    require_active(ROOT)
     common = git("rev-parse", "--git-common-dir")
     if common.returncode:
         return None, "not a Git checkout"
@@ -413,6 +424,8 @@ def with_git(path, change, message, films, tries=3):
 
 
 def main(argv=None):
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--films", default=str(FILMS), help=argparse.SUPPRESS)
     sub = ap.add_subparsers(dest="cmd", required=True)

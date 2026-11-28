@@ -1,0 +1,1251 @@
+{
+  "job": "J3021",
+  "film": "OWB:064",
+  "script_master": "02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/01_Script/every_planet_explained_script_master_v04.md",
+  "script_sha256": "556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8",
+  "script_lock_ref": "jobs/reviews/J3711/CHIEF_RULING.md",
+  "stem": "every_planet_explained_vo_v01",
+  "studio_live_dir": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover",
+  "master_wav_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.wav",
+  "master_mp3_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/02_Voiceover/every_planet_explained_vo_v01.mp3",
+  "master_wav_sha256": "4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa",
+  "master_mp3_sha256": "cdf06f5a69a2d340e6ac2a46137119085a1cb19a99bbd06797257def828a3157",
+  "master_wav_bytes": 131301198,
+  "master_mp3_bytes": 10942892,
+  "stt_raw_sha256": "dca394c34569c8a63cc4085a148f4d5cb39747c9044a814d618f382135b7211f",
+  "words_srt_sha256": "dc33d4edd41d5b31ae0a8a2ef51768d143c92c38830d84dd12c7a773d5dff8d3",
+  "duration_s": 683.86,
+  "spoken_chars": 8481,
+  "spoken_words_whitespace": 1341,
+  "speaking_rate_wpm": 117.66,
+  "gap_s": 0.7,
+  "loudness": {
+    "lufs_integrated": -20.2,
+    "mean_volume_db": -23.4,
+    "max_volume_db": -3.6
+  },
+  "true_peak_measurement": {
+    "input_i": "-20.21",
+    "input_tp": "-3.64",
+    "input_lra": "4.20",
+    "input_thresh": "-30.82",
+    "output_i": "-20.07",
+    "output_tp": "-3.49",
+    "output_lra": "4.10",
+    "output_thresh": "-30.67",
+    "normalization_type": "dynamic",
+    "target_offset": "0.07"
+  },
+  "chapter_lufs_range": [
+    -20.7,
+    -19.6
+  ],
+  "chapter_lufs_spread_lu": 1.1,
+  "opening_timings_s": {
+    "sentence_1_end_heat": 6.52,
+    "sentence_2_answer_end_sunlight": 10.98,
+    "sentence_3_payoff_end_celsius": 25.04,
+    "chapter_2_venus_start": 82.06,
+    "subscribe_beat_start": 245.18,
+    "subscribe_beat_end": 251.2,
+    "subscribe_beat_position_pct": 35.9
+  },
+  "repetitions_detected": [],
+  "scribe_summary": {
+    "script_tokens": 1374,
+    "scribe_tokens": 1337,
+    "raw_match_rate_pct": 89.45,
+    "raw_vo_check": "REVIEW",
+    "mismatch_run_count": 63,
+    "true_wording_discrepancies": 0,
+    "true_word_match_pct": 100.0,
+    "mismatch_breakdown": {
+      "uk_us_spelling_or_possessive": 20,
+      "british_ordinal_date_reading": 9,
+      "spelled_number_to_digits_or_spelling": 34
+    },
+    "mismatches": [
+      {
+        "index": 1,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 2,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 3,
+        "op": "replace",
+        "script": [
+          "per",
+          "cent"
+        ],
+        "scribe": [
+          "percent"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 4,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 5,
+        "op": "replace",
+        "script": [
+          "per",
+          "cent"
+        ],
+        "scribe": [
+          "percent"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 6,
+        "op": "replace",
+        "script": [
+          "metres"
+        ],
+        "scribe": [
+          "meters"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 7,
+        "op": "replace",
+        "script": [
+          "1"
+        ],
+        "scribe": [
+          "the",
+          "1st",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 8,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 9,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 10,
+        "op": "replace",
+        "script": [
+          "kilometre"
+        ],
+        "scribe": [
+          "kilometer"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 11,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 12,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 13,
+        "op": "replace",
+        "script": [
+          "per",
+          "cent"
+        ],
+        "scribe": [
+          "percent"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 14,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 15,
+        "op": "replace",
+        "script": [
+          "per",
+          "cent"
+        ],
+        "scribe": [
+          "percent"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 16,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 17,
+        "op": "replace",
+        "script": [
+          "mars's"
+        ],
+        "scribe": [
+          "mars'"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 18,
+        "op": "replace",
+        "script": [
+          "10"
+        ],
+        "scribe": [
+          "the",
+          "10th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 19,
+        "op": "replace",
+        "script": [
+          "18"
+        ],
+        "scribe": [
+          "the",
+          "18th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 20,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 21,
+        "op": "replace",
+        "script": [
+          "forty",
+          "one",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "41",
+          "000",
+          "kilometers"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 22,
+        "op": "replace",
+        "script": [
+          "sixteen",
+          "thousand",
+          "five",
+          "hundred"
+        ],
+        "scribe": [
+          "16",
+          "500"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 23,
+        "op": "replace",
+        "script": [
+          "7"
+        ],
+        "scribe": [
+          "the",
+          "7th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 24,
+        "op": "replace",
+        "script": [
+          "fifty",
+          "eight"
+        ],
+        "scribe": [
+          "58"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 25,
+        "op": "replace",
+        "script": [
+          "one",
+          "point",
+          "four"
+        ],
+        "scribe": [
+          "1",
+          "4"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 26,
+        "op": "replace",
+        "script": [
+          "kilometres",
+          "nine",
+          "point",
+          "five"
+        ],
+        "scribe": [
+          "kilometers",
+          "9",
+          "5"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 27,
+        "op": "replace",
+        "script": [
+          "ten",
+          "point",
+          "seven"
+        ],
+        "scribe": [
+          "10",
+          "7"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 28,
+        "op": "replace",
+        "script": [
+          "six",
+          "hundred",
+          "and",
+          "eighty",
+          "seven"
+        ],
+        "scribe": [
+          "687"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 29,
+        "op": "replace",
+        "script": [
+          "metre"
+        ],
+        "scribe": [
+          "meter"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 30,
+        "op": "replace",
+        "script": [
+          "two",
+          "hundred",
+          "and",
+          "eighty",
+          "two",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "282",
+          "000",
+          "kilometers"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 31,
+        "op": "replace",
+        "script": [
+          "ten",
+          "metres"
+        ],
+        "scribe": [
+          "10",
+          "meters"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 32,
+        "op": "replace",
+        "script": [
+          "four",
+          "thousand",
+          "eight",
+          "hundred"
+        ],
+        "scribe": [
+          "4",
+          "800"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 33,
+        "op": "replace",
+        "script": [
+          "forty",
+          "five",
+          "thousand"
+        ],
+        "scribe": [
+          "45",
+          "000"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 34,
+        "op": "replace",
+        "script": [
+          "zero",
+          "point",
+          "four",
+          "one"
+        ],
+        "scribe": [
+          "0",
+          "41"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 35,
+        "op": "replace",
+        "script": [
+          "ten"
+        ],
+        "scribe": [
+          "10"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 36,
+        "op": "replace",
+        "script": [
+          "one",
+          "hundred"
+        ],
+        "scribe": [
+          "100"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 37,
+        "op": "replace",
+        "script": [
+          "thirty",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "30",
+          "000",
+          "kilometers"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 38,
+        "op": "replace",
+        "script": [
+          "three",
+          "hundred",
+          "and",
+          "twenty",
+          "two",
+          "kilometre"
+        ],
+        "scribe": [
+          "322",
+          "kilometer"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 39,
+        "op": "replace",
+        "script": [
+          "two",
+          "point",
+          "nine"
+        ],
+        "scribe": [
+          "2",
+          "9"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 40,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 41,
+        "op": "replace",
+        "script": [
+          "nineteen"
+        ],
+        "scribe": [
+          "19"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 42,
+        "op": "replace",
+        "script": [
+          "13"
+        ],
+        "scribe": [
+          "the",
+          "13th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 43,
+        "op": "replace",
+        "script": [
+          "eighty",
+          "four"
+        ],
+        "scribe": [
+          "84"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 44,
+        "op": "replace",
+        "script": [
+          "twenty",
+          "three",
+          "point",
+          "four"
+        ],
+        "scribe": [
+          "23",
+          "4"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 45,
+        "op": "replace",
+        "script": [
+          "ninety",
+          "seven",
+          "point",
+          "seven",
+          "seven"
+        ],
+        "scribe": [
+          "97",
+          "77"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 46,
+        "op": "replace",
+        "script": [
+          "seventeen"
+        ],
+        "scribe": [
+          "17"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 47,
+        "op": "replace",
+        "script": [
+          "twenty",
+          "one"
+        ],
+        "scribe": [
+          "21"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 48,
+        "op": "replace",
+        "script": [
+          "24"
+        ],
+        "scribe": [
+          "the",
+          "24th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 49,
+        "op": "replace",
+        "script": [
+          "minus",
+          "two",
+          "hundred",
+          "and",
+          "twenty",
+          "four",
+          "point",
+          "two"
+        ],
+        "scribe": [
+          "224",
+          "2"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 50,
+        "op": "replace",
+        "script": [
+          "sixty"
+        ],
+        "scribe": [
+          "60"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 51,
+        "op": "replace",
+        "script": [
+          "eighty",
+          "per",
+          "cent"
+        ],
+        "scribe": [
+          "80"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 52,
+        "op": "replace",
+        "script": [
+          "four",
+          "thousand",
+          "nine",
+          "hundred",
+          "and",
+          "eighty",
+          "two"
+        ],
+        "scribe": [
+          "4",
+          "982"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 53,
+        "op": "replace",
+        "script": [
+          "four",
+          "point",
+          "five"
+        ],
+        "scribe": [
+          "4",
+          "5"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 54,
+        "op": "replace",
+        "script": [
+          "kilometres",
+          "thirty"
+        ],
+        "scribe": [
+          "kilometers",
+          "30"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 55,
+        "op": "replace",
+        "script": [
+          "nine",
+          "hundred"
+        ],
+        "scribe": [
+          "900"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 56,
+        "op": "replace",
+        "script": [
+          "sixteen"
+        ],
+        "scribe": [
+          "16"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 57,
+        "op": "replace",
+        "script": [
+          "one",
+          "hundred",
+          "and",
+          "sixty",
+          "five"
+        ],
+        "scribe": [
+          "165"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 58,
+        "op": "replace",
+        "script": [
+          "23"
+        ],
+        "scribe": [
+          "the",
+          "23rd",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 59,
+        "op": "replace",
+        "script": [
+          "10"
+        ],
+        "scribe": [
+          "the",
+          "10th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 60,
+        "op": "replace",
+        "script": [
+          "25"
+        ],
+        "scribe": [
+          "the",
+          "25th",
+          "of"
+        ],
+        "classification": "british_ordinal_date_reading"
+      },
+      {
+        "index": 61,
+        "op": "replace",
+        "script": [
+          "two",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "2",
+          "000",
+          "kilometers"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      },
+      {
+        "index": 62,
+        "op": "replace",
+        "script": [
+          "kilometres"
+        ],
+        "scribe": [
+          "kilometers"
+        ],
+        "classification": "uk_us_spelling_or_possessive"
+      },
+      {
+        "index": 63,
+        "op": "replace",
+        "script": [
+          "thousand",
+          "kilometre"
+        ],
+        "scribe": [
+          "1",
+          "000",
+          "kilometer"
+        ],
+        "classification": "spelled_number_to_digits_or_spelling"
+      }
+    ]
+  },
+  "credits": {
+    "before_remaining": 11943,
+    "before_used": 109171,
+    "limit": 121114,
+    "immediate_after_used": 112902,
+    "immediate_after_remaining": 8212,
+    "settled_after_used": 113111,
+    "settled_after_remaining": 8003,
+    "settled_net_billed_credits": 3940,
+    "can_extend_character_limit": false,
+    "allowed_to_extend_character_limit": false,
+    "reset_utc": "2026-11-30T10:50:31Z",
+    "cash_spent_gbp": 0.0
+  },
+  "chapters": [
+    {
+      "index": 0,
+      "chapter": "open",
+      "chars": 1071,
+      "start_s": 0.0,
+      "end_s": 81.36,
+      "duration_s": 81.36,
+      "first_50ms_rms_dbfs": -91.26,
+      "first_50ms_peak_dbfs": -90.31,
+      "first_100ms_rms_dbfs": -91.54,
+      "first_100ms_peak_dbfs": -84.29,
+      "last_second_rms_100ms_dbfs": [
+        -39.37,
+        -20.38,
+        -24.75,
+        -26.02,
+        -34.81,
+        -23.79,
+        -20.03,
+        -40.76,
+        -25.55,
+        -32.68
+      ],
+      "last_50ms_rms_dbfs": -32.26,
+      "last_50ms_peak_dbfs": -25.78,
+      "last_100ms_peak_dbfs": -20.46,
+      "lufs_integrated": -20.3,
+      "mean_volume_db": -23.5,
+      "max_volume_db": -4.2,
+      "sha256_wav": "9f7df8fc5dfdce6dddf9690a82c8f9a25e2413627146518677b736c73189c6ed",
+      "sha256_mp3": "492f49a41c1c2fc94fcd1e3e887444af3473d85112e9bd7bf200f82790867ab0",
+      "scribe_words": 169,
+      "first_word": {
+        "text": "On",
+        "start_s": 0.16,
+        "offset_s": 0.16
+      },
+      "last_word": {
+        "text": "hotter?",
+        "end_s": 81.3,
+        "tail_s": 0.06
+      }
+    },
+    {
+      "index": 1,
+      "chapter": "Venus — The Backwards Furnace",
+      "chars": 925,
+      "start_s": 82.06,
+      "end_s": 157.9,
+      "duration_s": 75.84,
+      "first_50ms_rms_dbfs": -41.69,
+      "first_50ms_peak_dbfs": -25.6,
+      "first_100ms_rms_dbfs": -44.67,
+      "first_100ms_peak_dbfs": -25.6,
+      "last_second_rms_100ms_dbfs": [
+        -28.24,
+        -23.48,
+        -21.1,
+        -28.6,
+        -35.43,
+        -31.23,
+        -32.51,
+        -38.02,
+        -41.13,
+        -51.16
+      ],
+      "last_50ms_rms_dbfs": -54.98,
+      "last_50ms_peak_dbfs": -36.47,
+      "last_100ms_peak_dbfs": -35.57,
+      "lufs_integrated": -20.4,
+      "mean_volume_db": -23.6,
+      "max_volume_db": -4.0,
+      "sha256_wav": "cd2a63e0cb1514e175a520f25984cdc48afc031f74683dffbaf2c84766f6c0ce",
+      "sha256_mp3": "63bed9c4af77212ec15d45fb329e153404ebeb91edd5dbbea59f9947dcb67333",
+      "scribe_words": 149,
+      "first_word": {
+        "text": "At",
+        "start_s": 82.2,
+        "offset_s": 0.14
+      },
+      "last_word": {
+        "text": "oceans?",
+        "end_s": 157.76,
+        "tail_s": 0.14
+      }
+    },
+    {
+      "index": 2,
+      "chapter": "Earth — The Shielded Ocean World",
+      "chars": 1126,
+      "start_s": 158.6,
+      "end_s": 251.24,
+      "duration_s": 92.64,
+      "first_50ms_rms_dbfs": -78.83,
+      "first_50ms_peak_dbfs": -66.23,
+      "first_100ms_rms_dbfs": -35.5,
+      "first_100ms_peak_dbfs": -18.44,
+      "last_second_rms_100ms_dbfs": [
+        -50.7,
+        -39.17,
+        -27.22,
+        -27.05,
+        -30.87,
+        -33.4,
+        -31.32,
+        -23.0,
+        -26.76,
+        -31.25
+      ],
+      "last_50ms_rms_dbfs": -29.05,
+      "last_50ms_peak_dbfs": -22.66,
+      "last_100ms_peak_dbfs": -22.66,
+      "lufs_integrated": -19.6,
+      "mean_volume_db": -22.8,
+      "max_volume_db": -4.1,
+      "sha256_wav": "153d8fcda80902cb7084f233cd11c0b9ef4a8a64efa97c9a35e06ab79ef6c589",
+      "sha256_mp3": "b8857f771096e5876c148affae148d5fc2ecf56dcc4c28ad8af36151e4b953af",
+      "scribe_words": 171,
+      "first_word": {
+        "text": "At",
+        "start_s": 158.72,
+        "offset_s": 0.12
+      },
+      "last_word": {
+        "text": "you.",
+        "end_s": 251.2,
+        "tail_s": 0.04
+      }
+    },
+    {
+      "index": 3,
+      "chapter": "Mars — The Frozen Robot Desert",
+      "chars": 946,
+      "start_s": 251.94,
+      "end_s": 324.34,
+      "duration_s": 72.4,
+      "first_50ms_rms_dbfs": -65.31,
+      "first_50ms_peak_dbfs": -55.82,
+      "first_100ms_rms_dbfs": -36.44,
+      "first_100ms_peak_dbfs": -17.16,
+      "last_second_rms_100ms_dbfs": [
+        -22.78,
+        -36.66,
+        -27.13,
+        -27.71,
+        -33.93,
+        -26.17,
+        -30.55,
+        -55.43,
+        -39.13,
+        -48.82
+      ],
+      "last_50ms_rms_dbfs": -58.7,
+      "last_50ms_peak_dbfs": -46.62,
+      "last_100ms_peak_dbfs": -33.49,
+      "lufs_integrated": -20.4,
+      "mean_volume_db": -23.5,
+      "max_volume_db": -3.8,
+      "sha256_wav": "55ad5911a2855c57fba0887048b5c21ba10aadc1b5fb31e9712c2c9ff3bb9d5a",
+      "sha256_mp3": "0f08072acf96e5b1be078f6edb13d6e7c14945d2187fe3ec86d7d865ebcc1621",
+      "scribe_words": 145,
+      "first_word": {
+        "text": "At",
+        "start_s": 252.04,
+        "offset_s": 0.1
+      },
+      "last_word": {
+        "text": "belt?",
+        "end_s": 324.2,
+        "tail_s": 0.14
+      }
+    },
+    {
+      "index": 4,
+      "chapter": "Jupiter — The Ocean of Metallic Hydrogen",
+      "chars": 1048,
+      "start_s": 325.04,
+      "end_s": 406.88,
+      "duration_s": 81.84,
+      "first_50ms_rms_dbfs": -83.22,
+      "first_50ms_peak_dbfs": -70.31,
+      "first_100ms_rms_dbfs": -45.26,
+      "first_100ms_peak_dbfs": -25.34,
+      "last_second_rms_100ms_dbfs": [
+        -19.7,
+        -25.5,
+        -27.4,
+        -32.56,
+        -19.99,
+        -21.92,
+        -25.19,
+        -31.15,
+        -30.11,
+        -34.73
+      ],
+      "last_50ms_rms_dbfs": -35.35,
+      "last_50ms_peak_dbfs": -27.77,
+      "last_100ms_peak_dbfs": -25.0,
+      "lufs_integrated": -19.6,
+      "mean_volume_db": -22.9,
+      "max_volume_db": -3.7,
+      "sha256_wav": "11a145b80019ca24d48a842f4212fc2f87f2a7b71333d996e7a8f798a2e7245d",
+      "sha256_mp3": "428e51557b3b47817d16c2c8ff4668ba09998ff87d30a14342a354c11b98088d",
+      "scribe_words": 161,
+      "first_word": {
+        "text": "Beyond",
+        "start_s": 325.12,
+        "offset_s": 0.08
+      },
+      "last_word": {
+        "text": "vanishing?",
+        "end_s": 406.84,
+        "tail_s": 0.04
+      }
+    },
+    {
+      "index": 5,
+      "chapter": "Saturn — Disappearing Rings and the Hexagon Storm",
+      "chars": 1190,
+      "start_s": 407.58,
+      "end_s": 496.46,
+      "duration_s": 88.88,
+      "first_50ms_rms_dbfs": -45.52,
+      "first_50ms_peak_dbfs": -28.95,
+      "first_100ms_rms_dbfs": -48.51,
+      "first_100ms_peak_dbfs": -28.95,
+      "last_second_rms_100ms_dbfs": [
+        -22.92,
+        -29.41,
+        -23.82,
+        -19.65,
+        -22.48,
+        -30.6,
+        -27.72,
+        -32.71,
+        -35.41,
+        -33.07
+      ],
+      "last_50ms_rms_dbfs": -34.05,
+      "last_50ms_peak_dbfs": -20.61,
+      "last_100ms_peak_dbfs": -19.99,
+      "lufs_integrated": -20.1,
+      "mean_volume_db": -23.1,
+      "max_volume_db": -3.7,
+      "sha256_wav": "bb05866f894b1aa62c4551f83e3abcddbbd81b367d0676730926091ad968cdf1",
+      "sha256_mp3": "188cea8b97cc0d8e6b1b59ef2df8fd62a97ceda0f704fe205da9b0622b9fdae5",
+      "scribe_words": 164,
+      "first_word": {
+        "text": "At",
+        "start_s": 407.7,
+        "offset_s": 0.12
+      },
+      "last_word": {
+        "text": "sideways?",
+        "end_s": 496.42,
+        "tail_s": 0.04
+      }
+    },
+    {
+      "index": 6,
+      "chapter": "Uranus — Knocked Sideways Into 21-Year Winters",
+      "chars": 1045,
+      "start_s": 497.16,
+      "end_s": 584.44,
+      "duration_s": 87.28,
+      "first_50ms_rms_dbfs": -64.04,
+      "first_50ms_peak_dbfs": -55.04,
+      "first_100ms_rms_dbfs": -64.31,
+      "first_100ms_peak_dbfs": -55.04,
+      "last_second_rms_100ms_dbfs": [
+        -27.08,
+        -29.42,
+        -38.89,
+        -52.32,
+        -21.05,
+        -22.48,
+        -34.64,
+        -47.98,
+        -25.5,
+        -29.13
+      ],
+      "last_50ms_rms_dbfs": -28.67,
+      "last_50ms_peak_dbfs": -20.1,
+      "last_100ms_peak_dbfs": -17.81,
+      "lufs_integrated": -20.7,
+      "mean_volume_db": -23.9,
+      "max_volume_db": -4.2,
+      "sha256_wav": "3cd28aa5a8b386e322410a4f0a4f015292ef00009547f94b5ed8533b1fc6bf54",
+      "sha256_mp3": "b628315d07581df001187ea6b5bc88156d5f5c4815822091c18e9db0f9d90dca",
+      "scribe_words": 146,
+      "first_word": {
+        "text": "At",
+        "start_s": 497.28,
+        "offset_s": 0.12
+      },
+      "last_word": {
+        "text": "faster?",
+        "end_s": 584.4,
+        "tail_s": 0.04
+      }
+    },
+    {
+      "index": 7,
+      "chapter": "Neptune — Supersonic Winds at the Edge",
+      "chars": 1130,
+      "start_s": 585.14,
+      "end_s": 683.86,
+      "duration_s": 98.72,
+      "first_50ms_rms_dbfs": -34.03,
+      "first_50ms_peak_dbfs": -20.89,
+      "first_100ms_rms_dbfs": -21.77,
+      "first_100ms_peak_dbfs": -7.17,
+      "last_second_rms_100ms_dbfs": [
+        -34.47,
+        -40.29,
+        -43.94,
+        -79.0,
+        -82.08,
+        -81.06,
+        -78.4,
+        -79.9,
+        -79.98,
+        -57.14
+      ],
+      "last_50ms_rms_dbfs": -54.15,
+      "last_50ms_peak_dbfs": -33.77,
+      "last_100ms_peak_dbfs": -33.77,
+      "lufs_integrated": -20.5,
+      "mean_volume_db": -23.7,
+      "max_volume_db": -3.6,
+      "sha256_wav": "85e72ad11a2c853e569451f307c6c7bace16f4614eb1d4b627f02275720a9a5c",
+      "sha256_mp3": "25297b2494ce4edbdf85529cf15fbb18fcd12c2594b70f92f35bd06315cf0864",
+      "scribe_words": 173,
+      "first_word": {
+        "text": "Now,",
+        "start_s": 585.22,
+        "offset_s": 0.08
+      },
+      "last_word": {
+        "text": "craters.",
+        "end_s": 683.08,
+        "tail_s": 0.78
+      }
+    }
+  ],
+  "perception": "Tool measurements and Scribe scribe_v2 ASR evidence only; no direct audio perception claimed. Ben's final finished-cut UAT watch is the watch-and-listen check under the 4 Nov 2026 standing rule."
+}

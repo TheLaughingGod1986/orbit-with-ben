@@ -8,7 +8,12 @@
 #   4. If the check failed, shows a notification. The details are in the log.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {
-  local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
+  # Guard the code being invoked, not a caller-supplied checkout environment.
+  local engine
+  engine="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)" || return 1
+  python3 "$engine/scripts/engine_guard.py" || return 1
+  local repo="${STUDIO_REPO:-${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}}"
+  python3 "$repo/scripts/engine_guard.py" || return 1
   local social=00_Brand/Channel-Setup/social
   cd "$repo" || return 1
   echo "--- $(date)"
@@ -19,18 +24,29 @@ main() {
   else
     echo "git pull skipped (on $branch, or local code changes); running the code as it is"
   fi
+  # A pull or ORBIT_REPO override can select a different runtime: check that too.
+  python3 "$repo/scripts/engine_guard.py" || return 1
   echo "code: $(git log --oneline -1)"
 
+  # Resolve the records with the very same resolver as the CLI, before loading credentials.
+  # Both channel registers stay in their existing content checkout after the engine moves.
+  local records record_branch credentials
+  records=$(cd "$repo/07_Content-Ops" && npx tsx scripts/buffer-mirror.ts record-root) || return 1
+  [[ "$records" == /* && -d "$records/$social" ]] || { echo "Buffer record checkout unavailable" >&2; return 1; }
+  record_branch=$(git -C "$records" rev-parse --abbrev-ref HEAD) || return 1
+  credentials="${BUFFER_ENV_FILE:-$records/07_Content-Ops/.env}"
+  [[ "$credentials" == /* && -f "$credentials" ]] || { echo "Buffer credential file unavailable" >&2; return 1; }
+
   (
-    cd 07_Content-Ops || exit 1
+    cd "$repo/07_Content-Ops" || exit 1
     unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN \
       BUFFER_HOS_API_KEY YT_ANALYTICS_REFRESH_TOKEN_HOS
     # CLI owns the whole-operation lock; an outer npx lock self-deadlocks.
-    npx tsx --env-file=.env scripts/buffer-mirror.ts check
+    npx tsx --env-file="$credentials" scripts/buffer-mirror.ts check
     owb=$?
     (( owb == 75 )) && exit 75
     echo "--- History of Science"
-    npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos
+    npx tsx --env-file="$credentials" scripts/buffer-mirror.ts check --channel hos
     hos=$?
     (( owb != 0 )) && exit $owb
     exit $hos
@@ -50,10 +66,10 @@ main() {
     return 75
   fi
 
-  if [[ $branch == main ]] && [[ -n $(git status --porcelain -- "$social") ]]; then
-    git add -- "$social"
-    git commit -q -m "Buffer check $(date +%F): record what Buffer holds" -- "$social" &&
-      { git push -q origin main || echo "record not pushed (it goes with the next push)"; }
+  if [[ $record_branch == main ]] && [[ -n $(git -C "$records" status --porcelain -- "$social") ]]; then
+    git -C "$records" add -- "$social"
+    git -C "$records" commit -q -m "Buffer check $(date +%F): record what Buffer holds" -- "$social" &&
+      { git -C "$records" push -q origin main || echo "record not pushed (it goes with the next push)"; }
   fi
 
   if (( code != 0 )); then
@@ -61,4 +77,6 @@ main() {
   fi
   return $code
 }
-main "$@"
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  main "$@"
+fi

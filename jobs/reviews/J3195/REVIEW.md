@@ -1,0 +1,34 @@
+# J3195 Acting-Chief Condition Verification — J2529 (`HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02`)
+
+- **Verification Job:** `J3195` (`Verify condition for J2529`, `recheck_of: J2529`, `repo: owb`, `kind: review`, `taskKeys: ["HOS:013"]`)
+- **Parent Job:** `J2529` (`HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov`, `status: blocked`, `repo: hos`, `film: 013`, `stage: picture`, `kind: video`)
+- **Acting Chief:** `gemini` (elected acting Chief per fresh `chief_relay.py status`: `claude` down until `2026-11-20T17:50:00Z`, `chief` / Grok Bot down until `2026-11-20T17:33:46Z`, `codex` down until `2026-11-20T13:24:23Z`)
+- **Checked At:** `2026-11-20T13:08Z–13:11Z`
+- **Spend:** `£0` (`0` Flow credits, `0` takes minted, raw runner ledger/receipts untouched, no YouTube/Buffer/schedule changes)
+- **Ruling / Verdict:** **CONDITION NOT SATISFIED — KEEP `J2529` BLOCKED WITH TYPED CAPABILITY HOLD (`--type capability --requires moving_video_input --recheck J3195`, Next Check `2026-11-20T19:15:00Z`) AND CLOSE `J3195`**
+
+---
+
+## 1. Waiting Condition Checked (`J2529["hold"]` from `J3170`, Acting Chief `codex`, `2026-11-19T23:49:47Z`)
+
+> J3170 Chief ruling: generation verified (66 distinct rows, 6600 credits; 11/11 latest NAS hashes match), but ten rows 56-62,64-66 lack continuous playback approval. Session tools provide static images/text only; reviewed vidIQ watch tool accepts public YouTube and returns text, not local playback perception. HOS playbook section 5 and desk 7019983519 require continuous playback. Follow-up J3178 is open now with moving_video_input required; await its evidence and elected-Chief marks. Preserve 48 KEEP and eight RETAKE; no minting or assembly authorised.
+
+---
+
+## 2. Gate & Evidence Verification (`2026-11-20T13:08Z–13:09Z`)
+
+| Check | Status | Direct Evidence Verified |
+|---|---|---|
+| **1. Follow-up `J3178` (`continuous playback review of ten unresolved pass-one plates`)** | **UNMET (`blocked`)** | `J3178` is still `status: blocked` (`by: gemini`, `since: 2026-11-20T01:19Z`) with a typed capability hold (`hold.type: capability`, `hold.requires: ["moving_video_input"]`, evidence in `jobs/reviews/J3178/REVIEW.md`, OWB `#954` `#7027371842`). Its own condition verification `J3198` (`Verify condition for J3178`) is still `status: open`. No continuous-playback review evidence exists yet. |
+| **2. Desk & Thread History (`HOS #180`, `HOS #694`, `OWB #954`)** | **NO NEW `013` MARKS** | - `HOS #180` reached GitHub's 2,500-comment cap at `#7024089854` (`2026-11-19T22:33:32Z`); no `013` comments after `#7023438730`.<br>- `HOS #694` (*HOS desk 2*, rolled over at `#7039583631`, `2026-11-20T12:30:11Z`) contains rollover/HOS `005` messages through `#7040229217` only; no `013` continuous-playback evidence or marks.<br>- `OWB #954` (through `2026-11-20T13:03:22Z`) has only Codex's `J3170` ruling (`#7025559275`), Gemini's `J3178` capability hold (`#7027371842`), and relay chain walks (`#7030489655`, `#7033791510`). |
+| **3. Direct Session Media Capability Probe (`agy` `read_file`)** | **`audio_input` ONLY (NO CONTINUOUS 24-FPS `moving_video_input`)** | - **Audio (`audio_input` — DEMONSTRATED):** Direct `read_file` on `02_Voiceover/hos_013_pickup_shaping_v01.wav` natively delivered `audio/wav`; heard *"But what was doing the shaping"*.<br>- **Moving Video (`moving_video_input` — NOT AVAILABLE):** Direct `read_file` on NAS `P05_10_darwin_worried_shelf_t1.mp4` (row 58, 24 fps, used window `0.00–7.66 s`) returned **8 discrete 1-fps static images (`00:00..00:07`, 1 frame per 24 frames)**. Darwin's head is whole in `00:03` (`3.00 s`) and completely absent in `00:04` (`4.00 s`); the `3.833–4.250 s` (`f092..f102`) passing exit across the left border falls completely unseen between integer-second frames.<br>- Recorded `chief_relay.py capabilities --agent gemini --available 'audio_input'` with direct probe evidence.<br>- **Note on relay probe (`capabilities.json`, `12:47:11Z`):** `scripts/capability_probe.py`'s `make_video()` tests a 6 s square changing colour every 2 s (`0–2 s`, `2–4 s`, `4–6 s`), which a 1-fps extractor solves (`00:00..00:05`), even though `agy`'s `read_file` does **not** deliver continuous 24-fps playback required by HOS Playbook §5 and owner-authored desk `#7019983519`. No playback PASS is claimed here. |
+| **4. Live NAS Archive Integrity (`Batches 12–14`, `11/11` Clips)** | **VERIFIED (`11/11` EXACT SHA-256 MATCH)** | Freshly re-hashed all 11 `.mp4` files in `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_pass1/` against `jobs/reviews/J2529/BATCH_12_RECEIPT.json`–`BATCH_14_RECEIPT.json`:<br>- B12 Row 56 `P05_08a_wallace_opens_origin_t2.mp4`: `4f831312a32c9d8f...` MATCH<br>- B12 Row 57 `P05_08b_wallace_reads_origin_t1.mp4`: `641b40ba5cf30290...` MATCH<br>- B12 Row 58 `P05_10_darwin_worried_shelf_t1.mp4`: `1bb721296dba13e0...` MATCH<br>- B12 Row 59 `P06_02a_jenkin_study_t1.mp4`: `9337659ea233b934...` MATCH<br>- B12 Row 60 `P06_02b_paint_pots_mix_t1.mp4`: `8a0efce2f9faac95...` MATCH<br>- B13 Row 61 `P06_04a_mendel_pea_garden_t1.mp4`: `ce83b71a50ffb743...` MATCH<br>- B13 Row 62 `P06_05_beads_not_paint_t1.mp4`: `727f49def4209db9...` MATCH<br>- B13 Row 63 `P06_06a_origin_fifth_edition_t1.mp4`: `dd2f82440c4512c5...` MATCH (preserved `RETAKE`)<br>- B13 Row 64 `P06_06b_spencer_coined_t1.mp4`: `2f725db7cd3cfb50...` MATCH<br>- B13 Row 65 `P06_07_key_in_lock_t1.mp4`: `96f01dfb0f802512...` MATCH<br>- B14 Row 66 `P06_08b_darwin_mendel_synthesis_t1.mp4`: `45c388088bcb4fb5...` MATCH |
+| **5. Review Ledger (`jobs/reviews/J2529/REVIEW_STATE.json`)** | **PRESERVED UNCHANGED** | `minted_rows: 66`, `ruled_rows: 56`, `keep_count: 48`, `retake_count: 8` (`3, 10, 24, 28, 47, 49, 54, 63`), `pending_review_rows: [56, 57, 58, 59, 60, 61, 62, 64, 65, 66]` (`keep: null`). Raw runner ledger and batch receipts untouched. |
+
+---
+
+## 3. Acting-Chief Disposition (`J3195` -> `J2529`)
+
+1. **Keep `J2529` blocked** and record the updated typed capability hold via `jobs.py wait J2529 --agent gemini --type capability --requires moving_video_input --recheck J3195 --check-at 2026-11-20T19:15:00Z --git` (next check cleanly after both Grok Bot `17:33:46Z` and Claude `17:50:00Z` return, and allowing `J3198` / `J3178` to resolve when genuine continuous `moving_video_input` is available).
+2. **Close `J3195`** via `jobs.py done J3195 --agent gemini --git`.
+3. **Preserved guardrails:** `48` `KEEP` and `8` `RETAKE` (`3, 10, 24, 28, 47, 49, 54, 63`) preserved unchanged; `£0` / `0` Flow credits spent; no minting, no retake allowance, no assembly, no final plate approval; raw runner ledger and receipts untouched; nothing for Ben.

@@ -67,6 +67,19 @@ class Forecast(unittest.TestCase):
             lanes = {a["agent"]: a for a in q.section(d, mini, BOOK, AT)["agents"]}
         self.assertFalse(lanes["cursor"]["up"])
 
+    def test_the_minis_worker_states_beat_the_chief_chain(self):
+        """24 Nov 2026: Cursor said "resets in 2 days" and its down mark said so, but the forecast read it as up because
+        it is not in the Chief chain. The heartbeat's `workers` rows now decide."""
+        mini = {"chain": [{"agent": "codex", "up": True}, {"agent": "gemini", "up": True}],
+                "workers": [{"agent": "cursor", "up": False, "why": "out of usage (resets in 2 days)",
+                             "until": "2026-11-26T11:00Z"},
+                            {"agent": "claudecode", "up": True, "why": "ready"}]}
+        with patch.object(q, "_flags", return_value={}):
+            up = q.agents_up(mini, BOOK, AT)
+        self.assertIn("resets in 2 days", up["cursor"])
+        self.assertEqual(up["claudecode"], "")
+        self.assertEqual(up["codex"], "")
+
     def test_macbook_and_cloud_lanes(self):
         d = queue(("macbook", "book job", {}), ("cloud", "cloud job", {}))
         f = run(d)["jobs"]

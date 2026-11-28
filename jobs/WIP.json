@@ -1,15 +1,16 @@
 {
-  "about": "Ben's WIP limit (G, 4 Nov 2026: 'yes to E, F, G'; raised to 8 the same evening for two OWB longs a week). At most `limit` films are in production (topic to Ben's watch) at once. A film leaves `active` when it reaches Ben's watch (UAT); the first film in `next` then enters through one topic go/no-go review (AGENTS.md rule E) and its work is queued. Shorts and Studio finishing on uploaded films don't count. Per channel (5 Nov 2026, Ben: 'we've almost run out of history of science'): OWB 5 and HOS 4 places; a film that leaves is replaced from its own channel's line (`next` for OWB, `next_hos` for HOS). Before this, `next` held only OWB films, so every HOS place that freed up went to OWB.",
-  "limit": 9,
+  "about": "Ben's WIP limit (G, 4 Nov 2026: 'yes to E, F, G'; raised to 8 the same evening for two OWB longs a week). At most `limit` films are in production (topic to Ben's watch) at once. A film leaves `active` when it reaches Ben's watch (UAT); the first film in `next` then enters through one topic go/no-go review (AGENTS.md rule E) and its work is queued. Shorts and Studio finishing on uploaded films don't count. Per channel (5 Nov 2026, Ben: 'we've almost run out of history of science'): OWB 5 and HOS 4 places; a film that leaves is replaced from its own channel's line (`next` for OWB, `next_hos` for HOS). Before this, `next` held only OWB films, so every HOS place that freed up went to OWB. 24 Nov 2026 (Ben, in chat, on the History of Science January search-led plan: \"If we can get that one queued up and working straight away\"): HOS 5 places and 10 in all (Orbit keeps its 5), so HOS:128 (Edison vs Tesla, film 1, Rule-E GO 22 Nov) entered production the same day; the other January films (Trinity, Accidental Inventions, Wright Brothers) take the next HOS places in that order (J3495).",
+  "limit": 10,
   "active": [
-    "HOS:008",
-    "HOS:009",
-    "HOS:010",
     "OWB:030",
     "OWB:034",
     "HOS:013",
     "OWB:J01",
-    "OWB:064"
+    "OWB:064",
+    "HOS:128",
+    "HOS:136",
+    "HOS:011",
+    "HOS:137"
   ],
   "next": [
     "OWB:035",
@@ -54,10 +55,16 @@
     "OWB:078",
     "OWB:079",
     "OWB:080",
-    "OWB:081"
+    "OWB:081",
+    "OWB:082",
+    "OWB:083",
+    "OWB:084",
+    "OWB:085",
+    "OWB:086",
+    "OWB:087"
   ],
-  "updated": "2026-11-17T23:38:39Z",
-  "by": "codex",
+  "updated": "2026-11-25T19:12:00Z",
+  "by": "gemini",
   "entered": {
     "HOS:008": "2026-11-04",
     "HOS:009": "2026-11-04",
@@ -70,15 +77,20 @@
     "HOS:013": "2026-11-05",
     "OWB:J01": "2026-11-08",
     "OWB:062": "2026-11-14",
-    "OWB:064": "2026-11-17"
+    "OWB:064": "2026-11-17",
+    "HOS:128": "2026-11-24",
+    "HOS:136": "2026-11-25",
+    "HOS:011": "2026-11-25",
+    "HOS:137": "2026-11-25"
   },
   "entered_note": "Date each film entered active, for the days-to-Ben's-watch speed tile (target 14). The first six are counted from the WIP start, 4 Nov 2026.",
   "limits": {
     "OWB": 5,
-    "HOS": 4
+    "HOS": 5
   },
   "next_hos": [
-    "HOS:011",
+    "HOS:127",
+    "HOS:010",
     "HOS:012",
     "HOS:014",
     "HOS:015",

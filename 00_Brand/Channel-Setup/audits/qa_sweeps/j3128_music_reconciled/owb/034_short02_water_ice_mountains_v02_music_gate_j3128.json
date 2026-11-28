@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/05_Music/pluto_score_bed_v01.mp3",
+  "bed_sha256": "8230d846d2cd3a315a96ea5e922a93f0b377301951ded860a614a69832285a1c",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/05_Music/pluto_score_bed_v01_plan.json",
+  "seconds": 646.9,
+  "bpm": 66.7,
+  "brief_pace": "Pace: 64-74 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:034",
+    "export_id": "034_short02_water_ice_mountains_v02",
+    "original_sidecar_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short02_water_ice_mountains/06_Final-Exports/music_gate_v02.json",
+    "original_unreadable_warn_count": 10,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.2797,
+    "max_similarity_bed": "gliese_score_bed_v03.mp3",
+    "max_similarity_sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/05_Music/pluto_score_bed_v01.mp3",
+        "name": "pluto_score_bed_v01.mp3",
+        "sha256": "8230d846d2cd3a315a96ea5e922a93f0b377301951ded860a614a69832285a1c",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

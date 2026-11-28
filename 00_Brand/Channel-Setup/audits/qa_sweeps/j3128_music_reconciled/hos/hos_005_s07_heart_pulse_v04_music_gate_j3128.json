@@ -1,0 +1,118 @@
+{
+  "verdict": "FAIL",
+  "bed": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos005-part05-temp_score_bed_v01.mp3",
+  "bed_sha256": "73c3ff63468e21723bbdc410d958465d3f515a5854a62e4a7679315f00d6d362",
+  "plan_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos005-part05-temp_score_bed_v01_plan.json",
+  "seconds": 128.0,
+  "bpm": 150.0,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [
+    "reused: sounds like hos_002_part01_curious_workshop_v01_norm.wav (0.843), hos_002_part01_curious_workshop_v02_norm.wav (0.837), hos004-full-sect2_score_bed_v02.mp3 (0.823)"
+  ],
+  "warn": [],
+  "waived": [],
+  "matches": [
+    {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/05_Music/hos_002_part01_curious_workshop_v01_norm.wav",
+      "similarity": 0.843
+    },
+    {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/05_Music/hos_002_part01_curious_workshop_v02_norm.wav",
+      "similarity": 0.837
+    },
+    {
+      "file": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/05_Music/hos004-full-sect2_score_bed_v02.mp3",
+      "similarity": 0.823
+    }
+  ],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "HOS",
+    "film": "HOS:005",
+    "export_id": "hos_005_s07_heart_pulse_v04",
+    "original_sidecar_path": "/Users/benjaminoats/_desk/renders/J2921_qa/hos/hos_005_s07_heart_pulse_v04/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 75,
+    "excluded_same_film_or_self_count": 10,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.8428,
+    "max_similarity_bed": "hos_002_part01_curious_workshop_v01_norm.wav",
+    "max_similarity_sha256": "46eb493fb8850b33a147ac9911bbcbd6c9b5f31e95a496f240d5e369d3876eaf",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s05_valves_v02_bed.wav",
+        "name": "hos_005_s05_valves_v02_bed.wav",
+        "sha256": "132ec3c51f4596e0568fe1221ffba467cec43776371150d9cead36035363aabb",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s01_the_sum_v04_bed.wav",
+        "name": "hos_005_s01_the_sum_v04_bed.wav",
+        "sha256": "39d839d85286bba62a0365b72dba236c8666d27b476895ec2223b233535aa684",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s04_galen_stove_v02_bed.wav",
+        "name": "hos_005_s04_galen_stove_v02_bed.wav",
+        "sha256": "482a4a5e0649e72b11d99dce9dd2a45e8c4dd4a7b2957d4e695979924e667f94",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos005-part03-temp_score_bed_v01.mp3",
+        "name": "hos005-part03-temp_score_bed_v01.mp3",
+        "sha256": "58b08baf616000ba1376ff81e31ea947d7dc86327f9df4b8537c375c3903ea76",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos005-part05-temp_score_bed_v01.mp3",
+        "name": "hos005-part05-temp_score_bed_v01.mp3",
+        "sha256": "73c3ff63468e21723bbdc410d958465d3f515a5854a62e4a7679315f00d6d362",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s04_galen_stove_v03_bed.wav",
+        "name": "hos_005_s04_galen_stove_v03_bed.wav",
+        "sha256": "74437aa51ff7c6fea79ffe4509b961f1920745506d3aaef806dcb7fcd65b763c",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s02_tied_arm_v04_bed.wav",
+        "name": "hos_005_s02_tied_arm_v04_bed.wav",
+        "sha256": "7ff8b27dfcaf53d7b3b7024b5bd844d31dfb3654a5b5c1c666577d5c4b51da8f",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s04_galen_stove_v04_bed.wav",
+        "name": "hos_005_s04_galen_stove_v04_bed.wav",
+        "sha256": "a681cd37d6f10cdd527804398ea59b58b51ee51c5f0dc583b6349173970bb5b2",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s03_never_saw_v03_bed.wav",
+        "name": "hos_005_s03_never_saw_v03_bed.wav",
+        "sha256": "bf15d28b205f833471b82151939e95ff484b74e22c88bd379da62ded767e3923",
+        "reason": "same_film_05_music (HOS:005)"
+      },
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/05_Music/hos_005_s01_the_sum_v03_bed.wav",
+        "name": "hos_005_s01_the_sum_v03_bed.wav",
+        "sha256": "f727969acedf9063fc91749fb3cd392ab60c94c9eedd155a19c460e70b5190d4",
+        "reason": "same_film_05_music (HOS:005)"
+      }
+    ],
+    "repair_job": "J3137"
+  }
+}

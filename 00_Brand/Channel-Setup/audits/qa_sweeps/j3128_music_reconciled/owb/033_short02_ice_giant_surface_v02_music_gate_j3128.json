@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/05_Music/uranus_score_bed_v01.mp3",
+  "bed_sha256": "47f68d66c4ef7b0287c4939b14e7d906582309ca2a3354c3c262daa7e21309f0",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/05_Music/uranus_score_bed_v01_plan.json",
+  "seconds": 629.4,
+  "bpm": 70.6,
+  "brief_pace": "Pace: 66-76 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:033",
+    "export_id": "033_short02_ice_giant_surface_v02",
+    "original_sidecar_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/033_short02_ice_giant_surface/06_Final-Exports/033_short02_ice_giant_surface_v02_music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 29,
+    "excluded_same_film_or_self_count": 2,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.3395,
+    "max_similarity_bed": "magnetic_field_flip_score_bed_v01.wav",
+    "max_similarity_sha256": "302886e03195ec305237ae00d3e39f4a3ee1152ccb196446c08e57ca65726f7d",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/05_Music/uranus_score_bed_v01.wav",
+        "name": "uranus_score_bed_v01.wav",
+        "sha256": "0cd785972bdb1fbd297d909dfd970c390d480bb6293e89530a50e91c0c3ec3e2",
+        "reason": "same_film_05_music (OWB:033)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/05_Music/uranus_score_bed_v01.mp3",
+        "name": "uranus_score_bed_v01.mp3",
+        "sha256": "47f68d66c4ef7b0287c4939b14e7d906582309ca2a3354c3c262daa7e21309f0",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

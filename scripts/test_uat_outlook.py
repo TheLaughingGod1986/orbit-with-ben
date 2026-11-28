@@ -71,6 +71,13 @@ class OutlookTests(unittest.TestCase):
                                    snap(12, 'doing'), snap(17, 'done')], 'OWB')
         self.assertEqual(samples[('OWB', 'long', 'edit')], [(15, key)])
 
+    def test_a_stage_recorded_as_a_bare_word_counts_as_its_state(self):
+        key = 'WW2:003'
+        def snap(minutes, state):
+            return NOW+timedelta(minutes=minutes), {key: {'edit': state}}
+        samples = learn_documents([snap(0, 'todo'), snap(1, 'doing'), snap(11, 'done')], 'WW2')
+        self.assertEqual(samples[('WW2', 'long', 'edit')], [(10, key)])
+
     def test_complete_milestones_without_handoff_are_not_ready(self):
         e = self.run_forecast()['eta']
         self.assertEqual(e['state'], 'unavailable')

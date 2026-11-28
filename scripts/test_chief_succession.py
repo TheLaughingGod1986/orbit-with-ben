@@ -1,4 +1,4 @@
-"""Ben, 26 Oct (reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini, with real role authority and recovery."""
+"""Ben, 26 Oct (reordered 9 Nov and 24 Nov 2026): Claude -> Codex -> Gemini -> Grok, with real role authority and recovery."""
 import contextlib
 import datetime as dt
 import io
@@ -14,6 +14,26 @@ import jobs
 import board_publish as bp
 
 T0, MIN = fixture.T0, fixture.MIN
+
+
+# Never write the real ~/_desk/state: that folder marks a worker machine, and on 27 Nov 2026 a test-made one turned a cloud
+# session into a worker that claimed and released real queue jobs (J3857). Alerts state goes to a temporary folder.
+_HOME_GUARD = []
+
+
+def setUpModule():
+    import os as _os, tempfile as _tempfile
+    from unittest import mock as _mock
+    tmp = _tempfile.mkdtemp()
+    guard = _mock.patch.dict(_os.environ, {"BEN_ALERTS_STATE": _os.path.join(tmp, "alerts", "state.json"),
+                                            "BOARD_STATE": _os.path.join(tmp, "board")})
+    guard.start()
+    _HOME_GUARD.append(guard)
+
+
+def tearDownModule():
+    while _HOME_GUARD:
+        _HOME_GUARD.pop().stop()
 
 
 class ChiefTestCase(unittest.TestCase):
@@ -39,38 +59,43 @@ class ChiefTestCase(unittest.TestCase):
 
 class ChiefSuccession(ChiefTestCase):
     def test_default_order_and_each_successor(self):
-        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])  # Ben, 9 Nov 2026: Claude first
+        # Ben, 24 Nov 2026: Grok Bot shares a £20 X plan, so it is the last link.
+        self.assertEqual(cr.chain(), ['claude', 'codex', 'gemini', 'chief'])
         self.assertEqual(self.chief(), 'codex')
         cr.seen('chief', T0)
-        self.assertEqual(self.chief(), 'chief')
+        self.assertEqual(self.chief(), 'codex')
         self.beat(T0 - 5 * MIN)
         self.assertEqual(self.chief(), 'claude')
         self.beat(T0 - 100 * MIN)
-        self.assertEqual(self.chief(), 'chief')
-        cr.mark_down('chief', 'credit exhausted', None, T0)
         self.assertEqual(self.chief(), 'codex')
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
+        cr.mark_down('gemini', 'usage limit', T0 + 60 * MIN, T0)
+        self.assertEqual(self.chief(), 'chief')
         self.assertTrue(cr.state_of('cursor', T0)[0])  # available Cursor does not enter succession
 
-    def test_history_of_science_keeps_grok_first_while_orbit_keeps_claude(self):
-        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])
-        self.assertEqual(cr.chain('hos'), ['chief', 'claude', 'codex', 'gemini'])
+    def test_both_channels_put_grok_bot_last(self):
+        # Ben, 24 Nov 2026: Grok Bot is on a £20 plan spent mostly on other projects; History of Science's 11 Nov
+        # Grok-first chain gives way to the same order as Orbit's.
+        self.assertEqual(cr.chain(), ['claude', 'codex', 'gemini', 'chief'])
+        self.assertEqual(cr.chain('hos'), ['claude', 'codex', 'gemini', 'chief'])
         self.beat(T0 - 5 * MIN)
         cr.seen('chief', T0)
         hos = {'id': 'J9', 'repo': 'hos', 'kind': 'chief', 'title': 'Desk ruling'}
         owb = {'id': 'J8', 'repo': 'owb', 'kind': 'chief', 'title': 'Queue ruling'}
         self.assertEqual(self.chief(), 'claude')
-        self.assertEqual(cr.acting(T0, 'hos')[1], 'chief')
-        self.assertTrue(cr.elected_for('chief', T0, hos))
-        self.assertFalse(cr.elected_for('claude', T0, hos))
-        self.assertTrue(cr.elected_for('claude', T0, owb))
-        self.assertFalse(cr.elected_for('chief', T0, owb))
-        cr.mark_down('chief', 'quiet', None, T0)
         self.assertEqual(cr.acting(T0, 'hos')[1], 'claude')
         self.assertTrue(cr.elected_for('claude', T0, hos))
+        self.assertFalse(cr.elected_for('chief', T0, hos))
+        self.assertTrue(cr.elected_for('claude', T0, owb))
+        self.assertFalse(cr.elected_for('chief', T0, owb))
+        cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
+        cr.mark_down('gemini', 'usage limit', T0 + 60 * MIN, T0)
+        self.beat(T0 - 100 * MIN)
+        self.assertEqual(cr.acting(T0, 'hos')[1], 'chief')
+        self.assertTrue(cr.elected_for('chief', T0, hos))
 
-    def test_a_hos_queue_job_names_grok_while_grok_is_up(self):
+    def test_a_hos_queue_job_names_claude_while_claude_is_up(self):
         self.beat(T0 - 5 * MIN)
         cr.seen('chief', T0)
         self.queue([{'id': 'J1', 'status': 'open', 'needs': 'mini', 'kind': 'assembly',
@@ -81,16 +106,15 @@ class ChiefSuccession(ChiefTestCase):
                 mock.patch.object(cr, 'queue_has_work', return_value=True):
             cr.cmd_run(T0)
         self.assertTrue(calls)
-        self.assertIn('Grok Bot is Chief for History of Science', calls[0])
-        self.assertIn('If this line names anyone but Grok Bot, Grok is down', calls[0])
-        self.assertNotIn('Claude is Chief (reviews, PASS, merges', calls[0])
+        self.assertIn('Claude is Chief for History of Science', calls[0])
+        self.assertIn('If this line names anyone but Claude, Claude is out', calls[0])
 
     def test_recovery_hands_back_in_priority_order_without_manual_switches(self):
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
         self.assertEqual(self.chief(T0 + 61 * MIN), 'codex')
         cr.seen('chief', T0 + 60 * MIN)
-        self.assertEqual(self.chief(T0 + 62 * MIN), 'chief')
+        self.assertEqual(self.chief(T0 + 62 * MIN), 'codex')  # Grok Bot back does not jump ahead of Codex
         self.beat(T0 + 63 * MIN)
         self.assertEqual(self.chief(T0 + 64 * MIN), 'claude')
 
@@ -303,3 +327,94 @@ class AutomaticChiefDuties(ChiefTestCase):
             cr.cmd_run(T0)
         self.assertEqual(calls[0][0],'codex')
         self.assertIn('review J1',calls[0][1])
+
+
+class DelegatedChief(ChiefTestCase):
+    """J3966 (Ben, 27 Nov 2026: "Nothing running"): Claude is elected but is a cloud session that never claims a Mini
+    job, so the first agent below it in the chain that is up on the Mini takes Mini Chief jobs as delegated Chief."""
+
+    def mini_job(self, **extra):
+        return dict({'id': 'J1', 'title': 'Close 034 packaging', 'kind': 'chief', 'status': 'open', 'needs': 'mini',
+                     'history': []}, **extra)
+
+    def test_claude_up_codex_claims_a_mini_chief_job_and_gemini_cannot_while_codex_is_up(self):
+        self.beat(T0 - 5 * MIN)
+        self.assertEqual(self.chief(), 'claude')
+        j = self.mini_job()
+        data = {'jobs': [j]}
+        self.assertTrue(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'codex'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'gemini'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'cursor'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'claudecode'))  # a worker, not in the chain
+        self.assertEqual(cr.delegated_from('codex', T0, j), 'claude')
+        self.assertTrue(cr.elected_for('codex', T0, j))
+        self.assertFalse(cr.is_elected_chief('codex', T0))  # authority for that job only, not the role
+        self.assertTrue(jobs.can_any_mini_claim(data, j, T0))
+        jobs.do_next(data, 'codex', jobs.MINI_NEEDS, T0, job_id='J1')
+        self.assertEqual((j['status'], j['by']), ('claimed', 'codex'))
+        self.assertIn('delegated_from: claude', j['history'][-1]['what'])
+        jobs.require_chief(j, 'codex', T0)  # may complete it
+        with self.assertRaises(ValueError):
+            jobs.require_chief(j, 'gemini', T0)
+
+    def test_codex_down_gemini_is_the_delegate(self):
+        self.beat(T0 - 5 * MIN)
+        cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
+        j = self.mini_job(needs='gemini')
+        data = {'jobs': [j]}
+        self.assertTrue(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'gemini'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'codex'))
+        self.assertEqual(cr.delegated_from('gemini', T0, j), 'claude')
+
+    def test_a_cloud_or_any_chief_job_stays_claudes(self):
+        self.beat(T0 - 5 * MIN)
+        for needs in ('cloud', 'any'):
+            j = self.mini_job(needs=needs)
+            self.assertFalse(jobs.claimable({'jobs': [j]}, j, jobs.MINI_NEEDS, T0, 'codex'), needs)
+            self.assertEqual(cr.delegated_from('codex', T0, j), '')
+            self.assertTrue(cr.elected_for('claude', T0, j))
+
+    def test_a_ben_gate_or_an_ordinary_job_gets_no_delegate(self):
+        self.beat(T0 - 5 * MIN)
+        self.assertEqual(cr.delegated_from('codex', T0, self.mini_job(needs='ben')), '')
+        self.assertEqual(cr.delegated_from('codex', T0, self.mini_job(kind='assembly')), '')
+        j = self.mini_job(awaits_ben={'version': 'v1'})
+        self.assertFalse(jobs.claimable({'jobs': [j]}, j, jobs.MINI_NEEDS, T0, 'codex'))  # Ben's watch gate holds
+
+    def test_claude_out_nothing_changes_codex_is_simply_elected(self):
+        self.beat(T0 - 200 * MIN)
+        self.assertEqual(self.chief(), 'codex')
+        j = self.mini_job()
+        data = {'jobs': [j]}
+        self.assertEqual(cr.delegated_from('codex', T0, j), '')
+        self.assertTrue(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'codex'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'gemini'))
+        jobs.do_next(data, 'codex', jobs.MINI_NEEDS, T0, job_id='J1')
+        self.assertNotIn('delegated_from', j['history'][-1]['what'])
+
+    def test_hos_chain_order_is_respected(self):
+        self.beat(T0 - 5 * MIN)
+        os.environ['CHIEF_CHAIN_' + cr.channels.label('hos')] = 'claude,gemini,codex,chief'
+        j = self.mini_job(repo='hos')
+        data = {'jobs': [j]}
+        self.assertEqual(cr.acting(T0, 'hos')[1], 'claude')
+        self.assertTrue(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'gemini'))
+        self.assertFalse(jobs.claimable(data, j, jobs.MINI_NEEDS, T0, 'codex'))
+        home = self.mini_job(id='J2')
+        self.assertTrue(jobs.claimable({'jobs': [home]}, home, jobs.MINI_NEEDS, T0, 'codex'))  # home chain unchanged
+
+    def test_the_overrides_end_date_still_applies(self):
+        # Ben's override names Claude from outside a chain without it: delegation lasts only while the override holds.
+        os.environ['CHIEF_CHAIN'] = 'codex,gemini,chief'
+        self.beat(T0 - 5 * MIN)
+        cr.mark_down('codex', 'usage limit', T0 + 600 * MIN, T0)
+        (cr.STUDIO / 'scripts').mkdir(parents=True, exist_ok=True)
+        until = T0 + 60 * MIN
+        cr.write_json(cr.STUDIO / 'scripts' / 'chief_override.json', {'agent': 'claude', 'until': cr.iso(until)})
+        j = self.mini_job()
+        self.assertEqual(cr.acting(T0)[1], 'claude')
+        self.assertEqual(cr.delegated_from('gemini', T0, j), 'claude')
+        later = until + MIN
+        self.assertEqual(cr.acting(later)[1], 'gemini')
+        self.assertEqual(cr.delegated_from('gemini', later, j), '')
+        self.assertTrue(cr.elected_for('gemini', later, j))  # elected in its own right once the override ends

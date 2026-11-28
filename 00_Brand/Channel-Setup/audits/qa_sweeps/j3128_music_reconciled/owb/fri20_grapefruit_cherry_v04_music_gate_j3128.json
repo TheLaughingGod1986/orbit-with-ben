@@ -1,0 +1,67 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav",
+  "bed_sha256": "0e98ed6485a24cc3e5906fd604af6cade4f27295bc7ff522a2416455c0eb775c",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full_plan.json",
+  "seconds": 494.5,
+  "bpm": 66.7,
+  "brief_pace": "Pace: 66-80 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:026",
+    "export_id": "fri20_grapefruit_cherry_v04",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04_music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 27,
+    "excluded_same_film_or_self_count": 4,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.5891,
+    "max_similarity_bed": "moon-leaving-part02_score_bed_v01.mp3",
+    "max_similarity_sha256": "5093a4c23253748eb2cd4e1cbbb216ecf896350aea15760ff69e137988b6ccb1",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav",
+        "name": "nearest-star_score_bed_v01_full.wav",
+        "sha256": "0e98ed6485a24cc3e5906fd604af6cade4f27295bc7ff522a2416455c0eb775c",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.mp3",
+        "name": "nearest-star_score_bed_v01_full.mp3",
+        "sha256": "4db6d824cff97d012af29b731e9b0ce66f4af882764b4685fc4a6161e8a23d84",
+        "reason": "same_film_05_music (OWB:026)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01.mp3",
+        "name": "nearest-star_score_bed_v01.mp3",
+        "sha256": "767a574c164e296bcc9d70b7d56cd98e129de6c961f38e4b30bf6a28f5ae8452",
+        "reason": "same_film_05_music (OWB:026)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_linking_bed_v01.wav",
+        "name": "j01_journey_linking_bed_v01.wav",
+        "sha256": "9b9bf9e6bf4db40c970778bc726f9345e1a853bfc3cd9015e6d464e22d715159",
+        "reason": "downstream_j01_linking_stem_derived_from_owb026_own_bed (j01_journey_linking_bed_v01_plan.json)"
+      }
+    ],
+    "repair_job": null
+  }
+}

@@ -250,6 +250,8 @@ def note_text(res: dict) -> str:
 
 
 def post(text: str) -> str:
+    from engine_guard import require_active
+    require_active(ROOT)
     if text.lstrip().startswith("[Ben]"):
         return "refused: a board-check note never starts with [Ben]"
     r = subprocess.run(["gh", "issue", "comment", str(THREAD[1]), "--repo", THREAD[0], "--body", text],
@@ -258,6 +260,8 @@ def post(text: str) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--no-post", action="store_true")
     ap.add_argument("--quiet", action="store_true")

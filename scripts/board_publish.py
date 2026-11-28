@@ -78,7 +78,8 @@ FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref 
 CHANNEL_SPARSE = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
 # STUDIO_SPARSE: the studio's own files, read from the repo that carries them.
 STUDIO_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
-                 "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
+                 "/05_Analytics/dashboard/data.json", "/05_Analytics/market/board.json",
+                 "/00_Brand/Channel-Setup/social/*/UPLOADS.json"]  # tracker, market intel & social uploads registries
 # A channel that keeps one status file per film also has its upload results beside them (actual schedules,
 # excluding dry runs).
 FILM_STATUS_SPARSE = ["/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
@@ -90,7 +91,8 @@ def sparse(slug: str) -> list[str]:
     """What this run's read-only copy of a channel's main branch holds: its settings, its film state (where its
     studio/channel.json `pipeline` says that is kept), its uploads register and what channel_check.py reads; plus
     the studio's own files for the channel whose repo carries them."""
-    kept = channels.pipeline(slug)
+    # The studio's own repo (no channel) has no film state of its own: only a channel has a pipeline setting.
+    kept = channels.pipeline(slug) if slug else {}
     films = ["/" + kept["path"]] if kept.get("path") else []
     if kept.get("kind") == "film_status":
         films += FILM_STATUS_SPARSE
@@ -758,6 +760,13 @@ def quick_key(remote=ls_remote) -> str | None:
     parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
     parts.append({a: r for a,r in relay.worker_capabilities().items()
                   if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > now()})
+    try:
+        import ben_alerts
+        ap = ben_alerts.state_path()
+        parts.append(ap.read_text() if ap.exists() else "")
+        parts.append(ben_alerts.has_due_work(now()))
+    except Exception:  # noqa: BLE001
+        parts.append("")
     return digest(parts)
 
 
@@ -833,7 +842,56 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
     add_plan(board, at)
+    add_field_order(board)
+    add_market(board)
+    add_alerts(board, at, dry_run=a.dry_run)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
+
+
+def add_alerts(board: dict, at: dt.datetime, dry_run: bool = False) -> None:
+    """Urgent alerts to Ben (same-day pull/unschedule/replace within 24 h or awaits_ben watch within 12 h; J3292)."""
+    try:
+        import ben_alerts
+        queue = _read_json(wt() / "jobs" / "queue.json") or {}
+        jobs = queue.get("jobs") or []
+        videos = ((board.get("tracker") or {}).get("videos")) or []
+        checks = board.get("checks") or {}
+        roots = {s: wt(s) for s in channels.slugs()}
+        uploads = ben_alerts.load_channel_uploads(roots, studio_root=wt())
+        res = ben_alerts.evaluate(
+            at=at, jobs=jobs, checks=checks, videos=videos, uploads=uploads, deliver=not dry_run,
+        )
+        board["alerts"] = res["board"]
+    except Exception as e:  # noqa: BLE001
+        log(f"ben alerts not built: {e}")
+
+
+def add_field_order(board: dict) -> None:
+    """Field Order History's analytics card; missing data stays explicitly pending."""
+    try:
+        source = wt() / "channels/ww2/05_Analytics/board.json"
+        board["fieldOrder"] = json.loads(source.read_text()) if source.is_file() else {
+            "name": "Field Order History", "through": None, "deadline": "2027-02-01",
+            "targets": [], "films": [], "note": "Analytics will start after channel creation and the read-only sign-in."}
+    except (OSError, ValueError):
+        board["fieldOrder"] = {"name": "Field Order History", "targets": [], "films": [],
+                               "note": "Analytics could not be read; progress is unknown."}
+
+
+def add_market(board: dict) -> None:
+    """Market intelligence tab data (`05_Analytics/market/board.json`); missing data stays explicitly pending."""
+    fallback = {
+        "schemaVersion": 1, "updatedAt": "", "watchlistTotal": 0, "farmFilteredCount": 0,
+        "niches": {}, "patterns": {"count": 0, "title_openers": [], "thumbnail_traits": []},
+        "breakouts": [],
+    }
+    try:
+        source = wt() / "05_Analytics/market/board.json"
+        board["market"] = json.loads(source.read_text()) if source.is_file() else {
+            **fallback, "note": "Market tracker has not published a snapshot yet.",
+        }
+    except (OSError, ValueError):
+        board["market"] = {**fallback, "note": "Market intelligence could not be read."}
 
 
 def add_plan(board: dict, at: dt.datetime) -> None:
@@ -994,6 +1052,8 @@ def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true")

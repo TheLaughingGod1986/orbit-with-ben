@@ -1,0 +1,154 @@
+{
+  "job": "J3599",
+  "parent_job": "J3542",
+  "film": "WW2:001",
+  "reviewed_at": "2026-11-24T18:11:00Z",
+  "reviewer": "macbook-2",
+  "elected_chief_at_review": "codex",
+  "verdict": "FIX",
+  "spend_gbp": 0.0,
+  "youtube_writes": 0,
+  "nas_writes": 0,
+  "perception_note": "Still-frame visual inspection (review_sheet.jpg + 14 extracted 1080x1920 frames) and automated ffmpeg/ffprobe/hash/text checks only; no audio listening or moving-video perception claimed.",
+  "master": {
+    "relative_nas_path": "ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/Shorts/Mulberry_Test_v01/mulberry_short_v01.mp4",
+    "sha256": "30b6a3a3de762dcbb5d0ea941c275058c4bd284352ad0450312d2e3b9f85d11b",
+    "size_bytes": 20087314,
+    "video": "1080x1920, 25fps, h264 High yuv420p, 1185 frames, 47.40s",
+    "audio": "aac LC stereo, 96000Hz, 187222bps, 47.40s",
+    "decode_exit_code": 0,
+    "loudness_lufs": -16.4,
+    "true_peak_dbfs": -1.5,
+    "lra_lu": 3.8,
+    "silences_ge_0_4s_below_neg40db": [
+      [1.845, 2.338, 0.493],
+      [5.427, 6.030, 0.603],
+      [12.746, 13.450, 0.704],
+      [16.335, 16.777, 0.442],
+      [20.275, 20.675, 0.400],
+      [24.843, 26.241, 1.398],
+      [32.333, 33.080, 0.747],
+      [38.758, 39.170, 0.413],
+      [46.237, 47.403, 1.166]
+    ]
+  },
+  "pickup_vo": {
+    "file": "vo/mulberry_short_pickup_v01.mp3",
+    "sha256": "0fe9d400a1371609d6d71453c31cbcbc894b1840b58ffe991fd7dafa3b1fab60",
+    "chars": 94,
+    "words": 17,
+    "hook_end_s": 1.86,
+    "scribe_differences": ["harbours/harbors", "harbour/harbor"]
+  },
+  "archive_shots_verified": [
+    {
+      "shot": 0,
+      "interval_s": [0.0, 6.07],
+      "file": "B_5726_30887292.jpg",
+      "dims": [1789, 1772],
+      "sha256_match": true,
+      "upscale": 1.084,
+      "motion_mean_abs_diff": 14.94,
+      "issue": "Duplicated by Shot 2 (36px horizontal shift; 39.9% of runtime)"
+    },
+    {
+      "shot": 1,
+      "interval_s": [6.07, 13.47],
+      "file": "A_25814_25084644.jpg",
+      "dims": [800, 600],
+      "sha256_match": true,
+      "upscale": 3.2,
+      "motion_mean_abs_diff": 3.45,
+      "issue": "Upscale 3.200x exceeds 2.35x cap; soft blowup"
+    },
+    {
+      "shot": 2,
+      "interval_s": [13.47, 26.29],
+      "file": "B_5726_30887292.jpg",
+      "dims": [1789, 1772],
+      "sha256_match": true,
+      "upscale": 1.084,
+      "motion_mean_abs_diff": 18.95,
+      "issue": "Exact photo duplicate of Shot 0 held 12.82s"
+    },
+    {
+      "shot": 3,
+      "interval_s": [26.29, 33.13],
+      "file": "A_24159_25266765.jpg",
+      "dims": [800, 523],
+      "sha256_match": true,
+      "upscale": 3.671,
+      "motion_mean_abs_diff": 3.13,
+      "issue": "Upscale 3.671x exceeds 2.35x cap; visibly smeared"
+    },
+    {
+      "shot": 4,
+      "interval_s": [33.13, 39.21],
+      "file": "IWM_H_39297.jpg",
+      "dims": [800, 557],
+      "sha256_match": true,
+      "upscale": 3.447,
+      "motion_mean_abs_diff": 3.47,
+      "issue": "Upscale 3.447x exceeds 2.35x cap; NAS has 80_G_285141.jpg (2662x2142)"
+    },
+    {
+      "shot": 5,
+      "interval_s": [39.21, 47.4],
+      "file": "Lot_2186_5.jpg",
+      "dims": [2792, 1991],
+      "sha256_match": true,
+      "upscale": 0.964,
+      "motion_mean_abs_diff": 11.68,
+      "issue": null
+    }
+  ],
+  "blocking_findings": [
+    {
+      "id": "F1_CAPTION_OVERLAPS_AND_CUT_SPLITS",
+      "overlapping_pairs": 11,
+      "rendered_dual_caption_frames": 14,
+      "dual_caption_frame_indices_25fps": [95, 162, 201, 351, 384, 424, 589, 590, 610, 683, 684, 844, 989, 990],
+      "visually_confirmed_garbled_frames": {
+        "162": "6.48s: 'five interlocking rings.' stacked over 'offshore, in eleven to' (overwrites 'Furthest')",
+        "683": "27.32s: 'seabed. Flanking the' stacked over 'wall in shallower water' (overwrites 'concrete')"
+      },
+      "shot_cuts_splitting_active_caption": [6.07, 13.47, 26.29, 33.13, 39.21],
+      "spelling_mismatches_vs_srt": ["Furthest -> Farthest", "Spud pier heads -> Spud pierheads"]
+    },
+    {
+      "id": "F2_EXCESSIVE_UPSCALE_AND_DUPLICATE_SHOT",
+      "provenance_upscale_cap": 2.35,
+      "violations": [
+        {"shot": 1, "file": "A_25814_25084644.jpg", "upscale": 3.2},
+        {"shot": 3, "file": "A_24159_25266765.jpg", "upscale": 3.671},
+        {"shot": 4, "file": "IWM_H_39297.jpg", "upscale": 3.447}
+      ],
+      "duplicate_photo_runtime_s": 18.89,
+      "available_high_res_nas_assets": [
+        "03_Picture/archive_v43/80_G_285141.jpg (2662x2142, Spud pierheads)",
+        "03_Picture/archive_originals_v07/A_24675_25086141.jpg (2480x1673, Mulberry B overview)",
+        "03_Picture/archive_originals_v07/BU_1024_24494355.jpg (4580x4590, Mulberry B aerial)",
+        "03_Picture/archive_v42/IWM_H_39300.jpg (2746x2480, towed Phoenix)",
+        "03_Picture/archive_v43/IWM_H_38675.jpg (1868x1772, Phoenix caissons)",
+        "03_Picture/archive_v41/IWM_H_37606.jpg (3496x3508, Phoenix construction)"
+      ]
+    },
+    {
+      "id": "F3_SHORTS_SAFE_ZONE_COLLISION",
+      "credit_margin_v": 230,
+      "caption_margin_v": 335,
+      "recommended_caption_margin_v": 520,
+      "recommended_credit_placement": "Top under Label (MarginV=325) or bottom-left at MarginV=430 clear of bottom 420px Shorts UI / Related Video pill"
+    }
+  ],
+  "polish_findings": [
+    "Add Pilot 1 original score bed from NAS 05_Music/original_score_v01/engineering_v01.mp3 at -16 to -18 LU under VO to remove 1.40s and 1.17s digital dead silence (£0.00)",
+    "Encode AAC audio at standard 48000 Hz stereo 192 kbps instead of 96000 Hz"
+  ],
+  "title_check": {
+    "title": "Mulberry Harbours: How Did They Work?",
+    "chars": 37,
+    "rule2_pass": true,
+    "rule13_pass": true
+  }
+}

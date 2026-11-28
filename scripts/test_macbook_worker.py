@@ -390,17 +390,28 @@ class AllAgents(unittest.TestCase):
         import tempfile
         seq = iter(["ran", "ran", "idle"])
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
-                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one:
+                mock.patch.dict(os.environ), \
+                mock.patch.object(mw, "start_other_slots") as slots, \
+                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one, \
+                mock.patch.object(mw.subprocess, "Popen") as popen:
             self.assertEqual(mw.run(), 0)
             self.assertEqual(one.call_count, 3)
+            slots.assert_called_once_with()
+            popen.assert_not_called()
 
     def test_run_stops_at_its_loop_budget(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
                 mock.patch.dict(os.environ, {"MACBOOK_LOOP_MIN": "0"}), \
-                mock.patch.object(mw, "run_one", return_value="ran") as one:
+                mock.patch.object(mw, "start_other_slots") as slots, \
+                mock.patch.object(mw, "log") as log, \
+                mock.patch.object(mw, "run_one", return_value="ran") as one, \
+                mock.patch.object(mw.subprocess, "Popen") as popen:
             self.assertEqual(mw.run(), 0)
             self.assertEqual(one.call_count, 1)
+            slots.assert_called_once_with()
+            popen.assert_not_called()
+            log.assert_called_once()
 
     def test_checkouts_are_the_workers_own_never_bens(self):
         # Whichever slot runs this test (J2235 F-01c: it failed inside slot 2), the checkout is that slot's own folder.
@@ -886,7 +897,7 @@ class AsksTheChannelLoader(unittest.TestCase):
         import channels
         base = channels._load()
         home = next(c for c in base if c["slug"] == channels.default())
-        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=4,
                    title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
                    repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
         return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
@@ -899,7 +910,7 @@ class AsksTheChannelLoader(unittest.TestCase):
             '1. Orbit With Ben (/o) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then',
             "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.",
             "   History of Science folder must always be left on main.",
-            "  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch",
+            "  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science) or 9224 (Field Order History), check the channel name first, and touch",
             "- keep files inside the two checkouts and ~/_desk. The shared working-film store on the NAS is not",
             "- leave nothing running when you stop.",
             "     python3 scripts/jobs.py show J1102",
@@ -908,45 +919,38 @@ class AsksTheChannelLoader(unittest.TestCase):
             self.assertIn(line + ("\n" if not line.endswith(":") else ""), p)
         self.assertNotIn("{", p)                                   # every placeholder was filled
 
-    def test_clones_urls_and_ports_come_from_the_channel_files(self):
-        self.assertEqual(mw.URLS, {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
-                                   "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"})
-        self.assertEqual(mw.studio_clone().name, "orbit-with-ben")
-        self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["history-of-science"])
-        self.assertEqual(mw.STUDIO, mw.studio_clone().parent / mw.STUDIO.name)       # the constants are built the same way
-        self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
-        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
-        self.assertEqual(mw.clone_name("hos"), "history-of-science")
-
     def test_a_third_channel_gets_its_own_clone_its_line_in_the_brief_and_its_port(self):
         with self.sky():
-            self.assertEqual(mw.other_slugs(), ["hos", "sky"])
+            self.assertEqual(mw.other_slugs(), ["hos", "ww2", "sky"])
             self.assertEqual(mw.clone_name("sky"), "night-sky")
             with mock.patch.dict(os.environ, {"SKY_REPO": str(mw.HOME / "YouTube" / "Night Sky")}):
                 self.assertEqual(mw.channel_clone("sky"), mw.slot_dir(mw.SLOT) / "night-sky")   # never Ben's folder
-            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/s"]):
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/w", "/s"]):
                 p = mw.brief("J1", "m", 25)
             self.assertIn("   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                          "   For a WW2 job, work in the WW2 checkout (/w) and follow its AGENTS.md.\n"
                           "   For a SKY job, work in the SKY checkout (/s) and follow its AGENTS.md.\n", p)
-            self.assertIn("History of Science and Night Sky folders must always be left on main", p)
-            self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
-            self.assertIn("inside the three checkouts", p)
+            self.assertIn("History of Science and Field Order History and Night Sky folders must always be left on main", p)
+            self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9224 (Field Order History) or 9300 (Night Sky)", p)
+            self.assertIn("inside the four checkouts", p)
 
     def test_the_brief_names_each_checkouts_rule_files(self):
         # J2577: the rule book is two files since J2527. A checkout with studio/RULES.md is told both, in order; one
         # that has not split its rules yet is told AGENTS.md alone, as before; a made-up third channel needs no edit.
         with tempfile.TemporaryDirectory() as d:
             root = pathlib.Path(d)
-            for name, split in (("o", True), ("h", False), ("s", True)):
+            for name, split in (("o", True), ("h", False), ("w", True), ("s", True)):
                 (root / name / "studio").mkdir(parents=True)
                 if split:
                     (root / name / "studio" / "RULES.md").write_text("# rules\n")
-            o, h, sk = str(root / "o"), str(root / "h"), str(root / "s")
-            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, sk]):
+            o, h, w, sk = str(root / "o"), str(root / "h"), str(root / "w"), str(root / "s")
+            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, w, sk]):
                 p = mw.brief("J1", "m", 25)
             self.assertIn(f'1. Orbit With Ben ({o}) is pulled. Read AGENTS.md and then studio/RULES.md '
                           '(the rules, the Never list, "Stop and ask Ben") and then\n', p)
             self.assertIn(f"   For a HOS job, work in the HOS checkout ({h}) and follow its AGENTS.md.\n"
+                          f"   For a WW2 job, work in the WW2 checkout ({w}) and follow its AGENTS.md and then "
+                          "studio/RULES.md.\n"
                           f"   For a SKY job, work in the SKY checkout ({sk}) and follow its AGENTS.md and then "
                           "studio/RULES.md.\n", p)
             self.assertNotIn("{", p)
@@ -974,7 +978,7 @@ class AsksTheChannelLoader(unittest.TestCase):
             self.assertEqual(mw.clone_name("new"), "new")
             self.assertEqual(mw.channel_clone("new"), mw.slot_dir(mw.SLOT) / "new")
             with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/n"]):
-                self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science), check", mw.brief("J1", "m", 25))
+                self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9224 (Field Order History), check", mw.brief("J1", "m", 25))
 
     def test_once_the_studio_has_its_own_repo_every_channel_is_one_of_the_others(self):
         # J2621 (plan decision 1: no home channel). The registry marks no channel `home`; the studio's own repo is its
@@ -985,16 +989,18 @@ class AsksTheChannelLoader(unittest.TestCase):
         with mock.patch.object(channels, "_load", lambda directory=None: apart), \
                 mock.patch.object(channels, "_studio_section", lambda: kept):
             self.assertIsNone(channels.studio_slug())
-            self.assertEqual(mw.other_slugs(), ["owb", "hos"])
+            self.assertEqual(mw.other_slugs(), ["owb", "hos", "ww2"])
             self.assertEqual(mw.studio_clone(), mw.slot_dir(mw.SLOT) / "studio")
-            self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["orbit-with-ben", "history-of-science"])
-            with mock.patch.object(mw, "STUDIO", "/s"), mock.patch.object(mw, "OTHERS", ["/o", "/h"]):
+            self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()],
+                             ["orbit-with-ben", "history-of-science", "ww2-channel"])
+            with mock.patch.object(mw, "STUDIO", "/s"), mock.patch.object(mw, "OTHERS", ["/o", "/h", "/w"]):
                 p = mw.brief("J1", "m", 25)
         self.assertIn('1. the studio (/s) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then\n', p)
         self.assertIn("   For a OWB job, work in the OWB checkout (/o) and follow its AGENTS.md.\n"
-                      "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n", p)
-        self.assertIn("Orbit With Ben and History of Science folders must always be left on main", p)
-        self.assertIn("inside the three checkouts", p)
+                      "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                      "   For a WW2 job, work in the WW2 checkout (/w) and follow its AGENTS.md.\n", p)
+        self.assertIn("Orbit With Ben and History of Science and Field Order History folders must always be left on main", p)
+        self.assertIn("inside the four checkouts", p)
         self.assertNotIn("{", p)
         # The constants are set when the module loads, so the line that sets them is held here; the dry run of the
         # move loads the module with no home channel every day.
@@ -1004,6 +1010,22 @@ class AsksTheChannelLoader(unittest.TestCase):
         # the list an unattended Claude may use without asking, as it stood before this change
         self.assertEqual(len(mw.CLAUDE_ALLOWED_TOOLS), ALLOWED_BEFORE_J2526)
         self.assertFalse(any("merge" in r or "pull" in r for r in mw.CLAUDE_ALLOWED_TOOLS))
+
+
+class CurrentRegistryClones(unittest.TestCase):
+    def test_clones_urls_and_ports_come_from_the_channel_files(self):
+        import channels
+        studio_name = channels.studio_github().split("/")[-1]
+        expected = {studio_name: "https://github.com/" + channels.studio_github() + ".git"}
+        expected.update({mw.clone_name(s): channels.get(s)["repo"]["url"] for s in mw.other_slugs()})
+        self.assertEqual(mw.URLS, expected)
+        self.assertEqual(mw.studio_clone().name, studio_name)
+        self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()],
+                         [mw.clone_name(s) for s in mw.other_slugs()])
+        self.assertEqual(mw.STUDIO, mw.studio_clone().parent / mw.STUDIO.name)       # the constants are built the same way
+        self.assertEqual(mw.CDP_PORTS, ("9223", "9222", "9224"))  # Field Order History got its Studio port in #1089
+        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
+        self.assertEqual(mw.clone_name("hos"), "history-of-science")
 
 
 class FilmStoreOnTheNas(unittest.TestCase):

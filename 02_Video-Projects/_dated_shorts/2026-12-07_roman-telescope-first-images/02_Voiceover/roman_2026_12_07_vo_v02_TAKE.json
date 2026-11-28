@@ -1,0 +1,101 @@
+{
+  "stem": "roman_2026_12_07_vo_v02",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "J3299",
+    "J3331"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 280,
+      "duration_s": 21.84
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 280,
+  "words": 39,
+  "duration_s": 17.2,
+  "loudness": {
+    "lufs_integrated": -20.2,
+    "mean_volume_db": -23.1,
+    "max_volume_db": -4.0
+  },
+  "sha256_mp3": "69b99e5bc4449bcdf14ad0be3b43aa5501d7a3ecbe766dabc777ab3aaccc0cb4",
+  "scribe": {
+    "transcript": "NASA's Roman Telescope unveils its first images on December 7th. One photo spans more sky than a full moon. Its mirror matches Hubble's, yet captures 100 Hubble views. A million miles out, it hunts dark energy and alien worlds. Watch NASA live and claim your own pixel",
+    "script_words": 48,
+    "scribe_words": 47,
+    "match_rate_pct": 93.75,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "seventh"
+        ],
+        "scribe": [
+          "7th"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "a",
+          "hundred"
+        ],
+        "scribe": [
+          "100"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 105762,
+      "limit": 121114,
+      "remaining": 15352
+    },
+    "after": {
+      "used": 105762,
+      "limit": 121114,
+      "remaining": 15352
+    },
+    "counter_delta": 0
+  },
+  "text": "NASA's Roman telescope unveils its first images on December seventh.\nIts mirror matches Hubble's, yet captures a hundred Hubble views.\nA million miles out, it hunts dark energy and alien worlds.\nWatch NASA live, and claim your own pixel.",
+  "made_at": "2026-11-21T22:31:12+0000",
+  "sha256_wav": "4efacb1c23fac2e1f7ea606765a651d2f7792f0bb7b54826b041cc715990b679",
+  "splice_of": "roman_2026_12_07_vo_v01",
+  "splice_rule": "C7 Trim 2 (39w, 4 sentences: Lines 1, 3, 4, 5; Line 2 Moon scale kept on DATA overlay)",
+  "splice_source_sha256_wav": "3a3ab893acb46f444190478bd059bb42e5d8dba29fb01c12375a58df1614f7e3",
+  "splice_spans_s": [
+    [
+      0.0,
+      4.58
+    ],
+    [
+      8.58,
+      13.28
+    ],
+    [
+      13.6,
+      18.28
+    ],
+    [
+      18.6,
+      21.84
+    ]
+  ]
+}

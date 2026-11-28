@@ -1,9 +1,9 @@
-# Pre-build vidIQ audit — Orbit with Ben
+# Pre-build vidIQ audit — Orbit With Ben
 
 **Hard gate:** Run **before** locking script, VO, prompts, or picture gen for any new long.  
-**Goal:** Every episode is aimed at **views + full-video watch** using live data — not gut feel alone.  
-**Also follow:** `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` and `FAMILIAR_DANGER_STRATEGY.md`.  
-**Listing path:** vidIQ keyword + title scoring, then `THUMBNAIL_AND_TITLE_RULES.md` — apply the same VidIQ optimize path to **longs and Shorts** (title, description, tags, thumbs/ABC; VidIQ generate thumbs if needed).
+**Method (effective for topics locked from 1 Jan 2027 · Ben, 20 Nov 2026 · `J3222`):** Search-led topic method (`00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2, `05_Analytics/LEARNINGS.md` rule 37). Replaces the 1 Oct 2026 neighbour pass as the blocking gate; the neighbour list below is a **tie-breaker only**.  
+**Goal:** Every episode targets proven Anglosphere adult search demand with a real results-page gap and small-channel outlier proof — not gut feel or crowded giant-channel subjects.  
+**Also follow:** `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`, `studio/RULES.md`, `THUMBNAIL_AND_TITLE_RULES.md`, and `FAMILIAR_DANGER_STRATEGY.md`.
 
 Copy into each project as:
 
@@ -17,71 +17,103 @@ Copy into each project as:
 |-------|-------|
 | ID / slug | |
 | Working title | |
+| Cluster (3–4 active clusters × 5–10 films) | |
+| Format fit (passing Dec format) | |
+| Weekly research file | `05_Analytics/owb/search_research/<YYYY-MM-DD>.md` |
 | Date pulled | |
-| Credits used (approx) | |
+| vidIQ credits used (approx) | |
 | Brand guardrails | Wonder over fearbait · no conspiracy · Orbit DNA |
 
 ---
 
-## 1. Success targets (this episode)
+## 1. Search-led gate summary (steps 1–4 · blocking from 1 Jan 2027)
 
-| Metric | Target |
-|--------|--------|
-| Title score | ≥ **90** (aim **95+**) |
-| Primary keyword overall | Note score / volume / competition |
-| Hook promise | One sentence — must match thumb + open VO |
-| Retention design | Chapters that earn the next minute (teach + turn) |
-| Packaging | Thumb readable on mobile; one idea |
+| Field | Value | Gate / pass bar | Pass? |
+|-------|-------|-----------------|-------|
+| **Query** (signed-out US YouTube autocomplete exact phrasing) | | Exact phrase adults type | |
+| **Volume** (vidIQ monthly searches) | | **10k–150k / month** | |
+| **Competition** (vidIQ competition) | | **≤ 45** | |
+| **Growth & seasonality** (vidIQ growth + Google Trends) | | Steady / rising evergreen | |
+| **Top countries** (Anglosphere) | | US, UK, Canada, Australia among top markets; not dominated by low-paying markets | |
+| **Adult** (adult intent) | | **Yes** — no kids or made-for-kids queries; evergreen; 10–20 min + series fit | |
+| **RPM / earnings proxy** (vidIQ sub-niche channel estimates) | | Healthy Anglosphere adult RPM proxy | |
+| **Top-10 gap** (signed-out top 10 count) | / 10 | Count of old (3+ yr), weak, off-target or small-channel results | |
+| **Small-channel outliers** (<50k subs, ≥5× usual, last 12 mo) | | **≥ 1 verified outlier** (none = **no real opening**) | |
+| **Cluster** | | Active cluster with playlist/end-screen chain; Shorts → long | |
+| **Shorts-as-test signal** *(if already tested)* | | Fed Short + high stayed-to-watch | |
 
 ---
 
-## 2. Keyword research (vidIQ)
+## 2. Keyword demand & value (vidIQ + US autocomplete + Google Trends)
 
-Pull GB (or primary market) research for 5–8 terms.
+Pull vidIQ keyword research (US / Anglosphere), signed-out US YouTube autocomplete, and Google Trends for the primary query and 4–7 supporting terms.
 
-| Keyword | Overall | Est./mo | Comp | Role (title / desc / chapter / Shorts) | Keep? |
-|---------|--------:|--------:|-----:|----------------------------------------|-------|
-| | | | | primary | |
-| | | | | secondary | |
-| | | | | umbrella | |
-| | | | | Shorts hooks | |
+| Query | Est./mo (Volume) | Comp (≤45) | Growth / Trends | Top countries (US/UK/CA/AU?) | Adult? | Role (primary / secondary / chapter / Short) | Keep? |
+|-------|-----------------:|-----------:|-----------------|------------------------------|--------|----------------------------------------------|-------|
+| | | | | | | primary | |
+| | | | | | | secondary | |
+| | | | | | | chapter | |
+| | | | | | | Short | |
 
-**Decision:** Primary keyword for title lead =  
+**Primary query (exact US autocomplete phrasing):**  
+**Sub-niche RPM / earnings proxy (vidIQ channel estimates):**  
 **Description first 100 chars must include:**  
 
 ---
 
-## 2b. Neighbour pass (blocking · 1 Oct 2026)
+## 2b. Signed-out top-10 results-page gap (step 3)
 
-At least **three** big education/space videos (≈1M+ views) on this subject. Copy from `templates/TOPIC_OPPORTUNITY_SCORE.md`. Package so Orbit can sit next to them in Suggested / related — **subject words only; never channel names** in title, description, or tags.
+Run `vidIQ youtube_search` or signed-out YouTube for the exact primary query and score all top 10 results.
 
-| # | Views | Channel (internal) | id | Title | Words we may reuse |
-|---|------:|--------------------|----|-------|--------------------|
+| Rank | Video title | Channel | Subs | Age | Views | Answers query? | Gap flag (3+ yr / weak / off-target / <50k)? |
+|-----:|-------------|---------|-----:|----:|------:|----------------|----------------------------------------------|
+| 1 | | | | | | | |
+| 2 | | | | | | | |
+| 3 | | | | | | | |
+| 4 | | | | | | | |
+| 5 | | | | | | | |
+| 6 | | | | | | | |
+| 7 | | | | | | | |
+| 8 | | | | | | | |
+| 9 | | | | | | | |
+| 10 | | | | | | | |
+
+**Top-10 gap score:** ____ / 10 *(count of old 3+ yr, weak, off-target or small-channel results)*
+
+---
+
+## 2c. Neighbour list (tie-breaker only from 1 Jan 2027; was blocking 1 Oct 2026)
+
+Optional tie-breaker between close search-led candidates and source of **subject-only words** for descriptions and tags. **Never** put channel names in title, description, or tags.
+
+| # | Views | Channel (internal) | id | Title | Subject words we may reuse |
+|---|------:|--------------------|----|-------|----------------------------|
 | 1 | | | | | |
 | 2 | | | | | |
 | 3 | | | | | |
 
-**Proposed description first line(s)** (use neighbour subject language; keep wonder brand):  
-
+**Proposed description first line(s)** (starts with primary query; wonder brand):  
 **Proposed subject-only tags (5–8):**  
-
-**Locked title unchanged by this pass?** yes / no (default: keep locked title; neighbours inform desc + tags only)
 
 ---
 
-## 3. Title ABC (score before VO)
+## 3. Package first — Title ABC & Thumbnail concepts (step 5, before any script)
 
-**Growth System v2:** one promise · prefer ≤ ~60 characters · **do not** append `| Orbit's Cosmic Journey` (or similar series suffix). Brand lives in the content.
+Title starts with the **query words plus one hook** (≤70 chars, no series suffix, no fearbait/hedging). Score **three titles and two thumbnail ideas** against the small-channel outlier set before writing any script.
 
-| | Title | Score | Keep? |
-|---|-------|------:|-------|
-| A | | | |
-| B | | | |
-| C | | | |
-| Reject (fearbait / off-brand / series-suffix clutter even if high) | | | **Reject** |
+| | Title (query words + one hook) | vidIQ score | Beats outlier set? | Keep? |
+|---|--------------------------------|------------:|--------------------|-------|
+| A | | | | |
+| B | | | | |
+| C | | | | |
+| Reject (fearbait / off-brand / no query words) | | | No | **Reject** |
+
+**Thumbnail ideas (2 concepts scored against the outlier set, 168 px readable, no Orbit):**
+- **Thumb A:**
+- **Thumb B:**
 
 **Locked title:**  
-**Why it wins (score + brand + keyword):**  
+**Why it wins (query lead + hook + outlier comparison):**  
 
 Regen sheet:
 
@@ -103,37 +135,37 @@ cd 07_Content-Ops && npm run review:script -- --file <path-to-script.md>
 
 ---
 
-## 4. Outlier / competitive patterns (on-brand only)
+## 4. Small-channel proof — vidIQ outliers (step 4 · blocking from 1 Jan 2027)
 
-Pull outliers for the primary topic (≤80K–mid sub channels preferred). Ignore meme/movie noise.
+Pull last-12-month vidIQ outliers on the subject from channels **under 50k subscribers** achieving **≥5×** their channel's usual views. **None found = no real opening (NO-GO).** Ignore meme/movie/kids noise.
 
-| Outlier / pattern | Views / multiple | Steal (structure) | Do **not** copy |
-|-------------------|------------------|-------------------|-----------------|
-| | | journey / assumption-flip / roadmap | dread / fearbait |
-| | | | |
+| Outlier video | Channel | Subs (<50k) | Views / multiple (≥5×) | Published (last 12 mo) | Steal (structure / packaging) | Do **not** copy |
+|---------------|---------|------------:|-----------------------:|------------------------|-------------------------------|-----------------|
+| | | | | | | dread / fearbait |
+| | | | | | | |
 
 **Patterns we will use in this script:**
 
-- [ ] Assumption-flip / open-loop title  
+- [ ] Assumption-flip / open-loop hook  
 - [ ] Numbered layers or chapter journey  
 - [ ] Body-scale anchor  
 - [ ] Slow reveal / delayed answer  
-- [ ] Engineering roadmap (if topic fits)  
+- [ ] Engineering / mission roadmap (if topic fits)  
 - [ ] Other:  
 
 ---
 
-## 5. Incorporate into the build (required)
+## 5. Incorporate into the build & cluster plan (step 6 · required)
 
-Translate data → creative decisions **before** writing the full script:
+Translate research → creative and cluster decisions **before** writing the full script:
 
 | Data finding | Change to script / chapters / visuals / packaging |
 |--------------|-----------------------------------------------------|
-| Primary keyword | Title lead + early VO mention + desc |
-| High-volume related term | One chapter or Short dedicated to it |
-| Winning outlier structure | Chapter arc shape |
-| Weak competition angle | Our Orbit-unique hook (character / teach) |
-| Thumb pattern that works | Thumb ABC concept |
+| Primary query | Title lead + early VO mention + description line 1 |
+| Top-10 gap | What existing results miss or explain poorly that we nail |
+| Winning small-channel outlier | Chapter arc + thumbnail contrast |
+| Cluster & playlist chain | Playlist name, end-screen next film, 2 cluster Shorts pointing here |
+| Monthly own search terms (step 8) | Confirms cluster search views are growing (or first test in cluster) |
 
 **Chapter list after audit** (4–6, each with a teach-point):
 
@@ -148,48 +180,47 @@ Translate data → creative decisions **before** writing the full script:
 
 ## 6. Retention plan (whole-video watch)
 
-Design for **watching through**, not just CTR (Growth System v2):
+Design for **watching through**, not just CTR:
 
 | Minute zone | Job | Picture / VO note |
 |-------------|-----|-------------------|
-| 0–0:05 | Curiosity spike | Mystery / danger on frame 1 |
-| ~0:15 | Stakes | Why it matters now |
-| ~0:30 | Journey clear | Viewer knows the ride |
-| Chapter starts | Re-hook + chapter card | New question / turn |
-| Mid | Teach while story continues | Orbit experiences the science |
-| Final chapter | Payoff + bigger question | Answer loop · open next |
-| Outro | Soft return CTA | Brand outro — don’t dump new science |
+| 0–0:08 | Stakes in title's words | Most striking real moving image at frame 0; no Orbit/logo/fade |
+| ~0:20 | Concrete payoff hint | Real number, date, or answer image; picture change ≤4 s |
+| ~0:30 | Journey clear | Every sentence adds a new fact; zero agenda line |
+| Chapter starts | Re-hook + chapter card | First card ≥0:45; new question / turn |
+| Mid | Teach while story continues | DATA + SCALE + WHO/WHEN/FACT overlays |
+| Final chapter | Payoff + bigger question | Answer loop · hand off to next film in cluster |
+| Outro | Cluster hand-off | No goodbye / no subscribe ask; end screen → cluster playlist |
 
-- [ ] No 30s+ stretch without a new teach or turn  
+- [ ] No 30 s+ stretch without a new teach or turn  
 - [ ] Every chapter earns the next one  
-- [ ] Runtime target **8–12 min** in trust-building window  
+- [ ] Runtime target **10–20 min** (or passing December format runtime)  
 
 ---
 
 ## 7. Sign-off (block production until checked)
 
-- [ ] Keywords pulled and primary locked  
-- [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [ ] Script reviewer ≥ 90  
-- [ ] Outlier patterns mapped into chapter arc  
-- [ ] Thumb concepts match title promise (one object · one emotion)  
-- [ ] Chapter teach-points listed (4–6 acts)  
-- [ ] Cold-open clock (5 / 15 / 30s) written  
-- [ ] Retention plan filled  
-- [ ] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`  
+- [ ] Primary query verified via signed-out US autocomplete; volume **10k–150k/mo**, competition **≤45**
+- [ ] Anglosphere (US/UK/CA/AU) top markets, **adult intent** (not kids), evergreen, RPM proxy checked
+- [ ] Signed-out **top-10 gap** scored
+- [ ] **Small-channel outlier proof** (<50k subs, ≥5× usual, last 12 mo) verified
+- [ ] **Cluster** assigned (playlist + end screen + Shorts → long)
+- [ ] **Package first:** 3 titles + 2 thumb concepts scored against outlier set; locked title starts with query words + hook (≥90 vidIQ)
+- [ ] Script reviewer ≥ 90 & `gate:episode` PASS
+- [ ] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`
 
 **Signed off by:**  
 **Date:**  
 
-**Only then:** full script → ElevenLabs VO → AI Studio picture (stills first · Veo world · Omni Orbit-only) → edit.
+**Only then:** full script → ElevenLabs VO → picture → edit.
 
 ---
 
 ## Tools
 
-- Title Analyzer / Keyword: https://app.vidiq.com  
-- Script reviewer: `cd 07_Content-Ops && npm run review:script -- --file <script.md>`  
-- Latest channel numbers: `00_Brand/Channel-Setup/audits/weekly/<date>/REPORT.md`  
-- How to build: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`  
-- Strategy: `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`  
+- vidIQ Keyword / Outliers / Title Analyzer (Claude cloud lane, `search-research` weekly run)
+- Script reviewer: `cd 07_Content-Ops && npm run review:script -- --file <script.md>`
+- Weekly search research: `05_Analytics/owb/search_research/<date>.md`
+- Latest channel numbers: `00_Brand/Channel-Setup/audits/weekly/<date>/REPORT.md`
+- How to build: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`
 - Brand: wonder over clickbait — data informs structure, never overrides Orbit DNA

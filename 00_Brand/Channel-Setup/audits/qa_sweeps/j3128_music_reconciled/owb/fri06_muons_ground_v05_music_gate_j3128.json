@@ -1,0 +1,56 @@
+{
+  "verdict": "FAIL",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01_full.mp3",
+  "bed_sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01_full_plan.json",
+  "seconds": 526.0,
+  "bpm": 150.0,
+  "brief_pace": "Pace: 72-88 BPM",
+  "fail": [
+    "reused: sounds like moon-leaving-part02_score_bed_v01.mp3 (0.83)"
+  ],
+  "warn": [],
+  "waived": [],
+  "matches": [
+    {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part02_score_bed_v01.mp3",
+      "similarity": 0.83
+    }
+  ],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:024",
+    "export_id": "fri06_muons_ground_v05",
+    "original_sidecar_path": "/Users/benjaminoats/_desk/renders/J2921_qa/owb/fri06_muons_ground_v05/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.83,
+    "max_similarity_bed": "moon-leaving-part02_score_bed_v01.mp3",
+    "max_similarity_sha256": "5093a4c23253748eb2cd4e1cbbb216ecf896350aea15760ff69e137988b6ccb1",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01_full.mp3",
+        "name": "light-speed_score_bed_v01_full.mp3",
+        "sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": "J3136"
+  }
+}

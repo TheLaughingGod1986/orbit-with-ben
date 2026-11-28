@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-13T18:00:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-12-13T18:00:00.000Z.",
+    "responseSummary": "{\"title\":\"Why Pluto's Frozen Heart Has Zero Craters\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-13T18:00:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"longform\"}"
+  },
+  "package": {
+    "packageDir": "../../../../private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package",
+    "sha256": "e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62",
+    "title": "Why Pluto's Frozen Heart Has Zero Craters",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 12,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/034_pluto_A_j3105_v01.jpg",
+    "scheduledAt": "2026-12-13T18:00:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "descriptionFile": "/private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/Descriptions/pluto_frozen_heart_long_description_v01.txt",
+      "chaptersFile": "/private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/Chapters/pluto_frozen_heart_chapters_v02.txt",
+      "tagsFile": "/private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/Tags/pluto_frozen_heart_long_tags_v01.txt",
+      "pinnedCommentFile": "/private/tmp/j3106-wt/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/Pinned-Comments/pluto_frozen_heart_pinned_v01.txt",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/09_Final-Export/034_pluto_frozen_heart_master_v02.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/034_pluto_A_j3105_v01.jpg",
+      "trailer": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/Trailer/034_why_plutos_frozen_heart_has_zero_craters_trailer.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (4) · thumbs (3). Not available via Data API."
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}

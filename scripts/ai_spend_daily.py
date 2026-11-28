@@ -732,6 +732,8 @@ def last_recorded(pool: str, now: datetime | None = None) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pools", default=",".join(ALL))
     ap.add_argument("--by", default="mini-daily")

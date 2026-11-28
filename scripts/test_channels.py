@@ -33,7 +33,8 @@ class Loader(unittest.TestCase):
         self.assertEqual(channels.slugs(), ["owb", "hos", "ww2"])
         self.assertIn(channels.home(), ("owb", None))       # None once the studio has a repo of its own
         self.assertEqual(channels.default(), "owb")         # ... and a job that names no channel is still Orbit's
-        self.assertEqual((channels.label("hos"), channels.name("owb")), ("HOS", "Orbit With Ben"))
+        self.assertEqual((channels.label("hos"), channels.label("ww2"), channels.name("owb")),
+                         ("HOS", "WW2", "Orbit With Ben"))
 
     def test_a_jobs_channel_comes_from_repo_then_title_then_home(self):
         self.assertEqual(channels.of_job({"repo": "hos", "title": "x"}), "hos")
@@ -157,7 +158,7 @@ class NoHomeChannel(unittest.TestCase):
                 (where[slug] / "studio").mkdir(parents=True)
                 (where[slug] / "studio" / "channel.json").write_text("{}")
             with self.apart(), mock.patch.object(channels, "repo_path", lambda slug, home_dir=None: where[slug]):
-                for slug in ("owb", "hos"):
+                for slug in channels.slugs():
                     self.assertEqual(channels.checkout(slug), where[slug])            # never the studio's root
                     self.assertEqual(channels.analytics_dir(slug), where[slug] / "05_Analytics" / slug)
                     self.assertEqual(channels.uploads_file(slug),
@@ -235,12 +236,18 @@ class OwnRepos(unittest.TestCase):
         self.assertEqual(channels.name("hos"), "History of Science")  # cached copy again without the checkout
 
     def test_the_cached_copy_matches_the_channel_repo_when_it_is_here(self):
-        entry = next(e for e in json.loads((channels.DIR / "channels.json").read_text())["channels"] if e["slug"] == "hos")
-        co = channels._checkout(entry)
-        if not co:
-            self.skipTest("history-of-science is not checked out on this machine")
-        self.assertEqual((co / "studio" / "channel.json").read_text(), (channels.DIR / "hos" / "channel.json").read_text(),
-                         "run: python3 scripts/channels.py sync")
+        checked = 0
+        for entry in json.loads((channels.DIR / "channels.json").read_text())["channels"]:
+            if entry.get("home"):
+                continue
+            co = channels._checkout(entry)
+            if co:
+                checked += 1
+                self.assertEqual((co / "studio" / "channel.json").read_text(),
+                                 (channels.DIR / entry["slug"] / "channel.json").read_text(),
+                                 "run: python3 scripts/channels.py sync")
+        if not checked:
+            self.skipTest("non-home channel repos are not checked out on this machine")
 
 
 class Films(unittest.TestCase):
@@ -536,15 +543,15 @@ T_BALANCE = __import__("datetime").date(2026, 10, 9)
 class StudioOwnRepo(unittest.TestCase):
     """What board_check.py asks instead of naming the repo that carries the board (J2522)."""
 
-    def test_the_board_repo_and_its_github_name_come_from_the_home_channel(self):
-        self.assertEqual(channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
-        self.assertEqual(channels.home_label(), "OWB")
+    def test_the_board_repo_and_checkout_follow_the_registry(self):
+        registry = json.loads((channels.DIR / "channels.json").read_text())["studio"]
+        self.assertEqual(channels.studio_github(), registry["github"])
         repo = channels.studio_repo()             # the home channel's repo today, the studio's own after the move
         if repo["env"]:
             with mock.patch.dict("os.environ", {repo["env"]: "/somewhere/else"}):
                 self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
         with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {repo["env"] or "NO_SUCH_VARIABLE": ""}):
-            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / "orbit-with-ben")
+            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / repo["checkouts"][0])
 
 
 class ThirdChannelInTheBoardCheck(unittest.TestCase):
@@ -799,7 +806,7 @@ class DeliveryAsksTheLoader(unittest.TestCase):
     def test_a_channels_desk_comes_from_its_file_and_from_the_cached_copy_when_its_checkout_is_behind(self):
         # J2618: the relay's brief sends an agent to a channel's desk. On the Mini that channel's checkout can sit on
         # an old branch, with no `desk` in its file yet; the brief must not lose the desk for that.
-        want = {"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 180}
+        want = {"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 694}
         self.assertEqual(channels.desk("hos"), want)
         self.assertEqual(channels.desk("owb"), {})
         stale = tuple({k: v for k, v in c.items() if k != "desk"} if c["slug"] == "hos" else c for c in channels._load())

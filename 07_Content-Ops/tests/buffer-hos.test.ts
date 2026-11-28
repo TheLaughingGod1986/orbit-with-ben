@@ -1,6 +1,6 @@
+import { REPO_ROOT as REPO } from "../src/lib/publishing/buffer-deps";
 import { describe, expect, it, vi } from "vitest";
 import fs from "fs";
-import path from "path";
 import type { BufferClient } from "../src/lib/publishing/buffer-api";
 import type { BufferStore } from "../src/lib/publishing/buffer-store";
 import { executeActions, runBufferCheck, type MirrorDeps } from "../src/lib/publishing/buffer-runner";
@@ -18,7 +18,7 @@ import {
 const NOW = new Date("2026-10-26T07:05:00Z");
 const HOS = PROFILES.hos;
 const OWB = PROFILES.owb;
-const REPO = path.resolve(__dirname, "../..");
+
 
 function video(over: Partial<YouTubeVideo> = {}): YouTubeVideo {
   return {

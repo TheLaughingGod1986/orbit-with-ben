@@ -96,7 +96,7 @@ async function main() {
   }
 
   // Dry runs never need the YouTube login.
-  const accessToken = dryRun ? "" : await channel.youtubeAccessToken();
+  const accessToken = dryRun ? "" : await channel.youtubeAccessToken(resolved.packageDir);
 
   const hashtagsJson = JSON.stringify(resolved.tags);
 
@@ -115,7 +115,7 @@ async function main() {
       thumbnailPath: resolved.thumbnailPath,
       contentFormat: resolved.format,
     },
-    { dryRun, accessToken, channel: channel.UPLOAD },
+    { dryRun, accessToken, channel: channel.uploadFor(resolved.packageDir) },
   );
 
   let firstCommentPosted = false;

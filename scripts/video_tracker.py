@@ -728,22 +728,55 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
 # follow-on upload or swap is recorded in UPLOADS.json is scheduled (or live), not "waiting for the Chief". The ask and
 # OK cards are keyed by job, so they never meet the upload's own card: match by the cut's file name (the UAT copy's
 # "_PHONE" suffix dropped), or by the one live video id of the right kind that the delivering job's result names.
+def _register_paths(root: Path) -> list[Path]:
+    """Every upload register the board can read: the studio's own, the per-channel registers the studio keeps beside it
+    (social/<slug>/), and, for the live studio only, each other channel's register in its own checkout (27 Nov 2026:
+    only the studio's own was read, so two Shorts uploaded on 24 Nov sat in Passed as "waiting for the upload")."""
+    social = root / "00_Brand" / "Channel-Setup" / "social"
+    paths = [social / "UPLOADS.json", *(social / slug / "UPLOADS.json" for slug in channels.slugs())]
+    if root == ROOT:
+        for slug in channels.slugs():
+            base = channels.checkout(slug)
+            if base and base != root:
+                paths.append(base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
+    return paths
+
+
+def _release_dates(root: Path) -> dict:
+    """{videoId: airDate} from the per-film 10_Shorts/SHORTS_RELEASE.json a channel keeps (some channels record their
+    Shorts' publish times there, not in their upload register)."""
+    out: dict = {}
+    bases = [root] + ([b for b in (channels.checkout(s) for s in channels.slugs()) if b and b != root] if root == ROOT else [])
+    for base in bases:
+        for path in sorted(base.glob("02_Video-Projects/*/10_Shorts/SHORTS_RELEASE.json")):
+            try:
+                shorts = json.loads(path.read_text()).get("shorts") or []
+            except (OSError, ValueError, AttributeError):
+                continue
+            for item in shorts:
+                if isinstance(item, dict) and item.get("id") and item.get("airDate"):
+                    out[str(item["id"])] = str(item["airDate"])
+    return out
+
+
 def upload_files(root: Path | None = None) -> dict:
     """{"file": {basename: row}, "id": {videoId: row}} for every live upload (not retired, not swapped out)."""
     root = root or ROOT
-    try:
-        vids = json.loads((root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json").read_text()).get("videos", {})
-    except (OSError, ValueError):
-        vids = {}
+    dates = _release_dates(root)
     out: dict = {"file": {}, "id": {}}
-    for vid, meta in vids.items():
-        if not isinstance(meta, dict) or meta.get("retired") or meta.get("supersededBy"):
+    for path in _register_paths(root):
+        try:
+            vids = json.loads(path.read_text()).get("videos", {})
+        except (OSError, ValueError, AttributeError):
             continue
-        row = {"videoId": vid, "kind": meta.get("kind") or "long", "publishAt": meta.get("publishAt") or "",
-               "privacyStatus": meta.get("privacyStatus") or meta.get("privacy") or ""}
-        out["id"][vid] = row
-        if meta.get("file"):
-            out["file"][Path(str(meta["file"])).name] = row
+        for vid, meta in vids.items():
+            if not isinstance(meta, dict) or meta.get("retired") or meta.get("supersededBy") or vid in out["id"]:
+                continue
+            row = {"videoId": vid, "kind": meta.get("kind") or "long", "publishAt": meta.get("publishAt") or dates.get(vid) or "",
+                   "privacyStatus": meta.get("privacyStatus") or meta.get("privacy") or ""}
+            out["id"][vid] = row
+            if meta.get("file"):
+                out["file"].setdefault(Path(str(meta["file"])).name, row)
     return out
 
 
@@ -788,10 +821,46 @@ def settle_uploaded(videos: list[dict], card: dict, row: dict, now: datetime) ->
     card.pop("approved", None)
 
 
+def settle_on_youtube(videos: list[dict], files: dict | None, now: datetime) -> None:
+    """A card waiting in Passed with no delivery work in flight that is already on YouTube is done, not waiting for an
+    upload. 27 Nov 2026: a long live since 24 Nov and two Shorts uploaded on 24 Nov all said "Waiting for the Chief to
+    queue the upload". A card whose OK has a job still running stays put: that job may be a
+    swap onto the live video."""
+    for v in list(videos):
+        if v.get("lane") != "approved" or (v.get("approved") or {}).get("state") not in (None, "", "waiting", "uploaded"):
+            continue
+        yt = v.get("youtube") or {}
+        if yt.get("videoId") and yt.get("state") in ("live", "scheduled", "uploaded"):
+            v.update(lane="done", readyFor="", waitingOn="YouTube", okNote="", collapsed=False,
+                     line=(f"Private, scheduled {yt.get('publishAtLondon')}." if yt.get("state") == "scheduled" else "On YouTube."))
+            v.pop("approved", None)
+            v.pop("ask", None)
+            continue
+        cut = {"file": (v.get("ask") or {}).get("file") or (v.get("watch") or {}).get("file") or "",
+               "version": "", "type": v.get("type")}
+        row = matched_upload(cut, files) if cut["file"] else None
+        if row:
+            settle_uploaded(videos, v, row, now)
+
+
+def card_names(videos: list[dict]) -> dict:
+    """{name: card} by each card's key and every name its ask gave it (`aliases`)."""
+    by_key = {v["key"]: v for v in videos}
+    for v in videos:
+        for name in v.get("aliases") or []:
+            by_key.setdefault(name, v)
+    return by_key
+
+
 def ask_card(e: dict) -> dict:
-    """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap)."""
+    """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap).
+
+    It keeps the name the ask gave it (`card`) as an alias: the upload job names that card in `delivers` or
+    `approved_from` (25 Nov 2026: WW2 001-S1 was uploaded by J3646, but the board kept "waiting for an upload job" on
+    WW2:ASK:J3542 for 17 hours because nothing matched the two names)."""
     airs = e.get("airs") or ""
-    return {"key": f"{e['channel']}:ASK:{e['id']}", "checkId": ask_check_id(e), "channel": e["channel"],
+    return {"key": f"{e['channel']}:ASK:{e['id']}", "aliases": [e["card"]] if e.get("card") else [],
+            "checkId": ask_check_id(e), "channel": e["channel"],
             "number": e.get("number") or "", "title": e.get("title") or e.get("what") or e["id"], "type": e["type"],
             "version": e.get("version") or "", "air": airs[:10], "airText": london_slot(airs) if airs else "",
             "lane": "ready", "line": "", "waitingOn": "Ben", "readyFor": "Ben", "notes": [], "flags": [], "okNote": "",
@@ -800,7 +869,7 @@ def ask_card(e: dict) -> dict:
 
 
 def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, files: dict | None = None) -> None:
-    by_key = {v["key"]: v for v in videos}
+    by_key = card_names(videos)
     for e in asks or []:
         if not ask_live(e, checks):
             continue
@@ -809,6 +878,8 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, 
             card = ask_card(e)
             videos.append(card)
             by_key[card["key"]] = card
+            for name in card["aliases"]:
+                by_key.setdefault(name, card)
         apply_ask(card, e, checks, now)
         row = matched_upload(e, files)
         if row and card.get("lane") == "approved":
@@ -964,7 +1035,7 @@ def approved_card(e: dict) -> dict:
 
 def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime,
                  files: dict | None = None) -> None:
-    by_key = {v["key"]: v for v in videos}
+    by_key = card_names(videos)
     for e in entries or []:
         if e.get("jobStatus") == "cancelled":
             # shown with a warning for 2 days (or until it would have aired), so Ben sees it didn't go ahead
@@ -1194,6 +1265,19 @@ def film_rows(slug: str, doc) -> list[dict]:
              "release": f.get("release"), "upload": None, "status_files": True} for f in (doc or [])]
 
 
+def handled_checks(checks: dict, alljobs: list[dict]) -> dict:
+    """Overlay durable queue acknowledgements; never consume a newer tap or a request for changes."""
+    result = {k: dict(v) for k, v in checks.items()}
+    for job in alljobs:
+        receipt = job.get("board_ok") or {}
+        tick = result.get(receipt.get("id"))
+        if (receipt.get("handled") and job.get("status") in LIVE_STATUSES | {"done"}
+                and tick and tick.get("verdict") == "ok" and tick.get("at") == receipt.get("at")
+                and (tick.get("version") or "") == receipt.get("version")):
+            tick.update(handled=True, handledBy=job.get("id"))
+    return result
+
+
 def build_videos(
     *,
     briefs: dict,
@@ -1219,6 +1303,7 @@ def build_videos(
     `documents` is {slug: that channel's film document} (see `film_rows`). A caller may also pass each one as a
     keyword named by the channel's slug, as every caller did when there were two channels. A channel given no
     document is read from its own checkout through channel_films."""
+    checks = handled_checks(checks, alljobs or jobs)
     documents = dict(documents or {})
     for slug, doc in by_slug.items():
         if slug not in channels.slugs():
@@ -1425,6 +1510,7 @@ def build_videos(
     # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
     add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now, files)
     settle_ready(videos, now)
+    settle_on_youtube(videos, files, now)
     for video in videos:   # a swap's card takes the real title of the video in its slot (see snapshot_slots)
         real = title_from_slot(video, scheduled_slots) if ":OK:" in str(video.get("key") or "") else ""
         if real:

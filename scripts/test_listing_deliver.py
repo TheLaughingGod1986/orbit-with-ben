@@ -117,9 +117,13 @@ class ApprovedDeliver(unittest.TestCase):
             "listing": ready_listing(),
             "approved": {},
         }
+        # The package is on its way in a live delivery job, so the card waits for it (26 Nov 2026: with no delivery work
+        # at all, the relay queues a package-and-upload job instead; test_board_ok_handoff covers that).
+        packaging = {"id": "J2", "status": "open", "kind": "listing", "repo": "owb", "stage": "upload",
+                     "title": "Upload package for OWB 032 v03", "approved_from": {"card": "OWB:032"}}
         empty = Path(tempfile.mkdtemp())
         with mock.patch.object(ad.lp, "for_video", side_effect=lambda v, root=None: v.get("listing") or {}):
-            actions = ad.plan_actions([incomplete, banned], [], now=NOW, root=empty)
+            actions = ad.plan_actions([incomplete, banned], [packaging], now=NOW, root=empty)
         by_key = {a["key"]: a for a in actions}
         self.assertEqual(by_key["OWB:032"]["op"], "wait")
         self.assertIn("thumbnail", by_key["OWB:032"]["reason"])
@@ -446,7 +450,7 @@ class AnyChannel(unittest.TestCase):
             film.write_text(json.dumps({"film": "041", "title": "Made up", "stages": {}}))
             # J2622: this part is about the one-file shape, so History of Science is pinned to it; its real shape (one
             # file per film, read from its own checkout) has no document on a machine without that checkout, as in CI.
-            with channel_pins.one_file("hos"), self.sky(), mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
+            with channel_pins.one_file("hos"), channel_pins.one_file("ww2"), self.sky(), mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
                 docs = ad.load_documents(root)
                 self.assertEqual(docs["sky"]["films"][0]["id"], "007")
                 self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])

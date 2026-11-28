@@ -285,6 +285,8 @@ def load() -> list[dict]:
 
 
 def append(row: dict, git: bool) -> None:
+    from engine_guard import require_active
+    require_active(ROOT)
     # Same destination lock as SharedFlowAccounting.export_ai_spend. Resolve
     # aliases before choosing the lock so symlinks cannot create two writers.
     target = LEDGER.resolve()
@@ -401,6 +403,8 @@ def build_doc(rows: list[dict], as_of: str | None = None, plans: dict | None = N
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("record", help="a balance reading")
