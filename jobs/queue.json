@@ -366390,9 +366390,14 @@
           "at": "2026-11-28T01:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-28T01:53Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Identifying last 10 live OWB videos from latest snapshot and YouTube API",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -366405,11 +366410,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-28T01:52Z",
+        "of": 5,
+        "at": "2026-11-28T01:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Identify last 10 live OWB videos",
+          "Fetch live YouTube API metadata",
+          "Audit Studio end screens and Related pills",
+          "Check chapters against cuts and sources",
+          "Write fix list, commit PR, report and block or close"
+        ]
       }
     }
   ],
