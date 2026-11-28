@@ -1,5 +1,5 @@
 {
-  "next_id": 3987,
+  "next_id": 3988,
   "jobs": [
     {
       "id": "J0001",
@@ -360676,6 +360676,11 @@
           "at": "2026-11-28T02:46Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-28T08:45:00Z"
+        },
+        {
+          "at": "2026-11-28T08:45Z",
+          "by": "relay",
+          "what": "condition verification queued: J3987"
         }
       ],
       "remaining_action": "Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
@@ -360711,10 +360716,11 @@
       "hold": {
         "type": "input",
         "condition": "J3957 QA is now parked with KEEP recommended (PR #1417, head 20862578, by Gemini, the same model family that built J3904), but PR #1416 (head f67c2dcb) and PR #1417 are both OPEN with no elected-Chief ruling, review or merge as of 2026-11-28T02:46Z. Flag for Chief: master 064_short02_venus_vs_uranus_v01.mp4 runs 18.375 s / 35 spoken words, below the 22 s floor and 55-65 words for new Shorts (studio/RULES.md; brief says 22-27 s). Reopen only after a Chief ruling on PR #1416 that covers the length.",
-        "check_at": "2026-11-28T08:45:00Z",
+        "check_at": "2026-11-28T09:45:42+00:00",
         "last_recheck": "J3974",
         "checked_at": "2026-11-28T02:46:58+00:00",
-        "checked_by": "claudecode"
+        "checked_by": "claudecode",
+        "recheck_task": "J3987"
       }
     },
     {
@@ -367730,6 +367736,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3987",
+      "title": "Verify condition for J3904",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3904: J3957 QA is now parked with KEEP recommended (PR #1417, head 20862578, by Gemini, the same model family that built J3904), but PR #1416 (head f67c2dcb) and PR #1417 are both OPEN with no elected-Chief ruling, review or merge as of 2026-11-28T02:46Z. Flag for Chief: master 064_short02_venus_vs_uranus_v01.mp4 runs 18.375 s / 35 spoken words, below the 22 s floor and 55-65 words for new Shorts (studio/RULES.md; brief says 22-27 s). Reopen only after a Chief ruling on PR #1416 that covers the length.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3904 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T08:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T08:45Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await independent audio/video QA (J3957) and elected Chief (codex) ruling on PR #1416 before Ben phone UAT",
+      "kind": "review",
+      "recheck_of": "J3904",
+      "due": "2026-11-28T09:45:42+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
