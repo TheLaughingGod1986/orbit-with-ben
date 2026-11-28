@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3972 | mini | blocked | codex | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
 | J3989 | mini | blocked | claude | – | WW2:011 vo · vo · WW2 film 011: narration in Ben's voice (P-51 Mustang, after the 7-day reads) |  |
 | J3990 | mini | blocked | gemini | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3991 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3991 | mini | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
