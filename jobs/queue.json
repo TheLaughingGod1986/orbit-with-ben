@@ -274011,6 +274011,11 @@
           "at": "2026-11-28T12:18Z",
           "by": "relay",
           "what": "condition verification queued: J3995"
+        },
+        {
+          "at": "2026-11-28T12:20Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-28T18:20:00Z"
         }
       ],
       "remaining_action": "Complete live migration and operational proof through J3962",
@@ -274046,12 +274051,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3962 (elected-Chief live coordination and operational proof of studio engine move: relay, board, ticks and both MacBook slots) is still open and unclaimed; studio remote has no main branch and Mini launchd still runs from orbit-with-ben. PR1389 (42e9bb1483) and J3961 KEEP remain merged/done. Preserve parent 3/4 and all gates; no activation in verification.",
-        "check_at": "2026-11-28T13:18:25+00:00",
-        "last_recheck": "J3978",
-        "checked_at": "2026-11-28T04:17:50+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3995"
+        "condition": "J3962 (elected-Chief live coordination and operational proof of studio engine move: relay, board, ticks and both MacBook slots) is still open and unclaimed (checked 28 Nov 12:19Z); studio remote has no main branch (only macbook-heartbeat-2 and rehearsal/j3012* heads) and Mini launchd com.owb.chief-relay/board-publish still run from orbit-with-ben. PR1389 (42e9bb1483) merged and J3961 done. Preserve parent 3/4 and all gates; no activation in verification.",
+        "check_at": "2026-11-28T18:20:00Z",
+        "last_recheck": "J3995",
+        "checked_at": "2026-11-28T12:20:01+00:00",
+        "checked_by": "claudecode"
       }
     },
     {
