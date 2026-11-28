@@ -357577,25 +357577,30 @@
           "at": "2026-11-28T00:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Recovered resume history: v04 already built; J3965 merged. Exact rerun only, no render or media change."
+        },
+        {
+          "at": "2026-11-28T00:31Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Exact v04/NAS/stems hashes verified; fresh opening/polish/music/VO/SFX PASS, picture FAIL integer source-crop contract. J3969 queued; no media change or approval."
         }
       ],
-      "remaining_action": "Rechecking the unchanged Newton apple Short with the corrected loop contract",
+      "remaining_action": "Waiting for a decision on the Short’s actual crop and loop contract",
       "kind": "assembly",
       "plain": "Repair the opening and ending of the Newton apple Short",
       "taskKeys": [
         "HOS:009"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-28T00:28Z",
+        "at": "2026-11-28T00:31Z",
         "by": "codex",
         "plan": [
           "Verify existing v04 and merged gate ruling",
           "Run exact-file gate checks",
           "Commit receipts and hand off for review"
         ],
-        "note": "Recovered resume history: v04 already built; J3965 merged. Exact rerun only, no render or media change."
+        "note": "Exact v04/NAS/stems hashes verified; fresh opening/polish/music/VO/SFX PASS, picture FAIL integer source-crop contract. "
       }
     },
     {
