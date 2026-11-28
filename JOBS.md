@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3962 | mini | open | – | – | chief · J3012: coordinate the reviewed studio engine move and prove live operation | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1389#issuecomment-7229040274 |
 | J3964 | mini | blocked | gemini | – | studio · Package and upload OWB 064 Short 1 short v03 (Why Does Water Ice Survive 430°C Heat on Mercury?) Private, 2026-12-23T11:30Z |  |
 | J3965 | mini | claimed | codex | 2026-11-28T01:00Z | assembly · Gates: Shorts loop contract follows the channel's Shorts band; picture_qa allows only the declared loop return (J3874) |  |
+| J3966 | mini | open | – | – | assembly · Chief claims: let the next Mini Chief take mini Chief jobs while the elected Chief is the cloud Claude |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3966,
+  "next_id": 3967,
   "jobs": [
     {
       "id": "J0001",
@@ -365643,6 +365643,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3966",
+      "title": "Chief claims: let the next Mini Chief take mini Chief jobs while the elected Chief is the cloud Claude",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 27 Nov 23:54: \"Nothing running\").** All four machines sat idle while six Chief jobs were open. J3115 (034 Pluto packaging close) had been ready since 08:10Z and J3819 since 09:56Z. Only the elected Chief may claim a `kind: chief` job, and Ben's override (scripts/chief_override.json) makes Claude the Chief while its heartbeat is fresh. But Claude is a cloud session: it never claims a `needs: mini` job. So whenever Claude counts as up, the Mini's Chief jobs wait for the twice-daily cloud sweep. Codex was claiming other work at 00:05Z but could not take them.\n\n**Do (orbit-with-ben, code + tests, one PR for the Chief to review):**\n1. In the claim path (workflow_state.claimable / chief_relay), when the elected Chief for a job's chain is an agent that cannot run that job's `needs` (Claude for `mini` jobs), let the first agent below it in the same chain that is up on that machine claim it as **delegated Chief** (Codex, then Gemini). Record `delegated_from: claude` in the claim log line.\n2. The delegated Chief gets exactly the Chief's authority for that job (merge, PASS, close), and nothing more: Ben's gates (watch, money, logins) and the never-list are unchanged.\n3. When Claude's heartbeat is out, nothing changes (Codex is already elected).\n4. Tests: Claude up plus an open mini Chief job, so Codex can claim and Gemini can't while Codex is up; Codex down, so Gemini can; a `needs: cloud` Chief job stays Claude's; HOS's chain order is respected; the override's end date still applies. Run the full suite with HOME set to a temp dir.\n5. Open a PR; the Chief reviews it before merge. No live changes beyond the merged code.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-28T00:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T00:04Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Delegated-Chief claim for mini Chief jobs when the elected Chief can't run on the Mini; tests; PR",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [
