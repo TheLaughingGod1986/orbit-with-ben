@@ -366700,15 +366700,20 @@
           "at": "2026-11-28T03:59Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: verified 002/003/004 package/upload records confirm zero sponsorship/endorsement/paid placement (affiliate=none/null), lint:package exit 0, pre-session API confirms all 11 paid=true and __UtUYdEUwg public, writer lock free"
+        },
+        {
+          "at": "2026-11-28T04:10Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: cleared Paid promotion Yes->No on all 11 HOS videos in Studio CDP 9460 (one setting per save, reload-verified Paid No, Not MFK, Altered Yes, Public, Related & A/B test unchanged, zero dialogs)"
         }
       ],
-      "remaining_action": "Clear Paid promotion=Yes to No in HOS Studio (CDP 9460) for 11 videos",
+      "remaining_action": "Confirm all 11 via YouTube API paidProductPlacementDetails and run post-session channel:audit",
       "kind": "studio",
       "plain": "Correct the paid-promotion labels on eleven older History of Science videos",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-28T03:59Z",
+        "at": "2026-11-28T04:10Z",
         "by": "gemini",
         "plan": [
           "Verify records & lint:package",
@@ -366717,7 +366722,7 @@
           "Update records & open PR",
           "Post desk report"
         ],
-        "note": "Step 1 done: verified 002/003/004 package/upload records confirm zero sponsorship/endorsement/paid placement (affiliate="
+        "note": "Step 2 done: cleared Paid promotion Yes->No on all 11 HOS videos in Studio CDP 9460 (one setting per save, reload-verifi"
       },
       "taskKeys": [
         "HOS:002",
