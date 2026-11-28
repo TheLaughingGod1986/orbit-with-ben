@@ -1,5 +1,5 @@
 {
-  "next_id": 3993,
+  "next_id": 3995,
   "jobs": [
     {
       "id": "J0001",
@@ -332541,6 +332541,11 @@
           "at": "2026-11-25T11:42Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
+        },
+        {
+          "at": "2026-11-28T12:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J3993"
         }
       ],
       "remaining_action": "Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule sMPlMuxK3YU, and update UPLOADS.json, BUFFER_POSTS.json and shorts_open_library together",
@@ -332566,7 +332571,8 @@
       "hold": {
         "type": "dependency",
         "condition": "HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged).",
-        "check_at": "2026-11-28T12:00:00Z"
+        "check_at": "2026-11-28T13:00:39+00:00",
+        "recheck_task": "J3993"
       }
     },
     {
@@ -332632,6 +332638,11 @@
           "at": "2026-11-25T11:57Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
+        },
+        {
+          "at": "2026-11-28T12:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J3994"
         }
       ],
       "remaining_action": "Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule mpK3D6S7WLk, and update UPLOADS.json, BUFFER_POSTS.json and shorts_open_library together",
@@ -332658,7 +332669,8 @@
       "hold": {
         "type": "dependency",
         "condition": "HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule mpK3D6S7WLk strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3512 records are merged (HOS PR #782, OWB PR #1317) and all J3512 private-only Studio finishing settings on mpK3D6S7WLk are completed and verified on reload (HOS PR #784 merged, 8c9ab7fa).",
-        "check_at": "2026-11-28T12:00:00Z"
+        "check_at": "2026-11-28T13:00:39+00:00",
+        "recheck_task": "J3994"
       }
     },
     {
@@ -368304,6 +368316,70 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3993",
+      "title": "Verify condition for J3610",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3610: HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3610 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T12:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T12:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule",
+      "kind": "review",
+      "recheck_of": "J3610",
+      "mini_only": true,
+      "due": "2026-11-28T13:00:39+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3994",
+      "title": "Verify condition for J3611",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3611: HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule mpK3D6S7WLk strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3512 records are merged (HOS PR #782, OWB PR #1317) and all J3512 private-only Studio finishing settings on mpK3D6S7WLk are completed and verified on reload (HOS PR #784 merged, 8c9ab7fa).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3611 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-28T12:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T12:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule",
+      "kind": "review",
+      "recheck_of": "J3611",
+      "mini_only": true,
+      "due": "2026-11-28T13:00:39+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
