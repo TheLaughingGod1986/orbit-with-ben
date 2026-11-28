@@ -366936,13 +366936,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-28T06:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-28T06:00Z",
-      "result": "parked for Chief: J3760 condition MET; reopen is Chief-only (worker reopen refused). Cause: Chrome had frozen background tabs. /json/activate of Flow tab 998B0717 made Runtime.evaluate and Page.getFrameTree answer in about 2 ms (both had timed out at 15 s minutes earlier). Playwright attach also needed the frozen detailed.com tab 8BA2E2EC activated, then Flow activated again. Read-only _mint_flow_v01_pass1.read_live_balance at 06:04Z: host flow.google.com, ULTRA true, studio account SHA PASS, balance 22,600 cr (runner should reconcile against the 22,550 projected after row 49). The 100-cr Quality price shows only once the composer is set to Quality; the runner checks it before Create. No Create clicked. Gates unchanged (Option A, before 5 Dec, row 63 only). Next worker: activate the Flow tab via /json/activate before attaching. Chief run: python3 scripts/jobs.py reopen J3760 --agent <chief> --note 'Condition met per J3979: Flow tab responds after /json/activate; account SHA + ULTRA guard PASS, balance 22,600 cr; mint row 63 only, before 5 Dec 00:00Z' --git",
+      "result": "",
       "history": [
         {
           "at": "2026-11-28T06:00Z",
@@ -366978,6 +366978,11 @@
           "at": "2026-11-28T06:05Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: J3760 condition MET; reopen is Chief-only (worker reopen refused). Cause: Chrome had frozen background tabs. /json/activate of Flow tab 998B0717 made Runtime.evaluate and Page.getFrameTree answer in about 2 ms (both had timed out at 15 s minutes earlier). Playwright attach also needed the frozen detailed.com tab 8BA2E2EC activated, then Flow activated again. Read-only _mint_flow_v01_pass1.read_live_balance at 06:04Z: host flow.google.com, ULTRA true, studio account SHA PASS, balance 22,600 cr (runner should reconcile against the 22,550 projected after row 49). The 100-cr Quality price shows only once the composer is set to Quality; the runner checks it before Create. No Create clicked. Gates unchanged (Option A, before 5 Dec, row 63 only). Next worker: activate the Flow tab via /json/activate before attaching. Chief run: python3 scripts/jobs.py reopen J3760 --agent <chief> --note 'Condition met per J3979: Flow tab responds after /json/activate; account SHA + ULTRA guard PASS, balance 22,600 cr; mint row 63 only, before 5 Dec 00:00Z' --git"
+        },
+        {
+          "at": "2026-11-28T06:12Z",
+          "by": "codex",
+          "what": "reopened: Required lifecycle transition to complete the explicitly assigned Chief review: exact next --id J3979 returned exit 10 because this verification is blocked; do_done requires a codex claim. J3760 remains held. Reopen only J3979, then claim the exact id and record the ruling."
         }
       ],
       "remaining_action": "Chief: reopen J3760 (condition met)",
@@ -366993,18 +366998,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-28T06:05Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3760 history",
-          "Probe Flow tab on CDP 9222",
-          "Record result on J3760"
-        ],
-        "note": "Condition met; worker reopen refused, parked for Chief with exact command"
-      },
       "taskKeys": [
         "HOS:013"
       ]
