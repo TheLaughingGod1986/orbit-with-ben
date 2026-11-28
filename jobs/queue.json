@@ -366182,16 +366182,21 @@
           "at": "2026-11-28T00:42Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inspected v1 validator, correspondence threshold and reuse negative regressions; v2 will explicitly encode scale, crop, SAR and fps in order."
+        },
+        {
+          "at": "2026-11-28T00:44Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Corrected film link to Newton HOS009. Actual 952x1692 synthetic rendered correspondence and inverse-crop difference verified; completing boundary negatives."
         }
       ],
-      "remaining_action": "Adding strict scale-before-crop validation and synthetic rendered regressions",
+      "remaining_action": "Completing frame-rate boundary tests and schema documentation",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the loop check verify the Newton apple Short’s actual framing",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-28T00:42Z",
+        "at": "2026-11-28T00:44Z",
         "by": "codex",
         "plan": [
           "Inspect contract and regressions",
@@ -366199,10 +366204,10 @@
           "Run gates and sync shared code",
           "Commit and submit for review"
         ],
-        "note": "Inspected v1 validator, correspondence threshold and reuse negative regressions; v2 will explicitly encode scale, crop, "
+        "note": "Corrected film link to Newton HOS009. Actual 952x1692 synthetic rendered correspondence and inverse-crop difference veri"
       },
       "taskKeys": [
-        "HOS:003"
+        "HOS:009"
       ]
     }
   ],
