@@ -365948,9 +365948,14 @@
           "at": "2026-11-28T00:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3967 (recheck of J3756 for HOS 013); starting direct capability probe and fresh state verification."
+        },
+        {
+          "at": "2026-11-28T00:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still returns only 8 discrete 1-fps integer-second stills (00:00..00:07) on P01_03a_unlabelled_birds_t2.mp4; recorded honest capabilities."
         }
       ],
-      "remaining_action": "Probe actual session media capabilities and verify J3756 waiting condition",
+      "remaining_action": "Verify J3756/J3178 history, HOS #694, OWB #954, open/merged PRs, and NAS SHA-256 hashes",
       "kind": "review",
       "recheck_of": "J3756",
       "required_capabilities": [
@@ -365967,7 +365972,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-28T00:59Z",
         "by": "gemini",
@@ -365977,7 +365982,7 @@
           "Update J3756 wait state and close J3967",
           "Post verification report on studio thread"
         ],
-        "note": "Claimed J3967 (recheck of J3756 for HOS 013); starting direct capability probe and fresh state verification."
+        "note": "Probed agy 1.5.18 read_file directly: audio_input + image_input demonstrated, moving_video_input still returns only 8 di"
       },
       "taskKeys": [
         "HOS:013"
