@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3972 | mini | blocked | codex | – | assembly · Gates: verify explicit scale-before-crop terminal return and nearest-even portrait width |  |
 | J3975 | mini | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3976 | mini | open (after J3975) | – | – | studio · J3975 corrections: clear incorrect paid-promotion flags on 11 HOS videos | https://github.com/TheLaughingGod1986/history-of-science/pull/817#issuecomment-7233462175 |
+| J3977 | any | open (after J3975) | – | – | assembly · J3975 follow-up: expose paid-product-placement in HOS channel audit | https://github.com/TheLaughingGod1986/history-of-science/pull/817#issuecomment-7233462175 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3977,
+  "next_id": 3978,
   "jobs": [
     {
       "id": "J0001",
@@ -366679,6 +366679,35 @@
       "remaining_action": "Verify and correct the eleven paid-promotion labels, then record the saved settings",
       "kind": "studio",
       "plain": "Correct the paid-promotion labels on eleven older History of Science videos"
+    },
+    {
+      "id": "J3977",
+      "title": "J3975 follow-up: expose paid-product-placement in HOS channel audit",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Follow-up to elected-Chief Codex ruling J3975 (HOS PR817, review comment 7233462175). Fix the read-only HOS channel audit blind spot: include paidProductPlacementDetails in videos.list and surface true flags for review, with video IDs and an explicit distinction between unexpected, declared sponsored and unknown/missing values. Never infer no sponsorship solely from a missing affiliate link; never silently equate unavailable data with false. Use existing contract/exception conventions if present. No YouTube/API writes or automatic flag corrections.\n\nAdd focused fixtures/tests proving true is visible, false is clean and missing is not asserted false; preserve pagination, direct-ID recovery and existing metadata checks. Check whether shared-core rules apply before editing. Run relevant tests and HOS required checks. Deliver a clean-worktree code PR and report for Chief review; no rule change or new service. Ready after J3975 closes; does not block the already-authorized Studio corrections.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/817#issuecomment-7233462175",
+      "film": "",
+      "stage": "",
+      "after": "J3975",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-28T03:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-28T03:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add paid-promotion reporting and focused tests to the channel audit",
+      "kind": "assembly",
+      "plain": "Make the History of Science audit report unexpected paid-promotion labels"
     }
   ],
   "focus": [
